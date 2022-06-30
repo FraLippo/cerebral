@@ -66,9 +66,7 @@ export default  class MenuPrincipalFR extends Component {
         </Menu.Item>    
       
         
-        <Menu.Item style={{float : 'right'}}>
-        <a href="https://cerebral.evalquiz.com/en">English</a>
-    </Menu.Item>
+     
     </Menu>
           </div>
       

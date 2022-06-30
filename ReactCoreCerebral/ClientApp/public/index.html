@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="icon" sizes="192x192" href="icon.png"><link rel="apple-touch-icon" href="ios-icon.png">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta name="theme-color" content="#000000" />
+   
+    
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <style type="text/css">
+     
+      .modalRgpd { background-color: rgb(255,255,255); opacity: .4 }
+
+      .modalContent { position: absolute; bottom: 0px; right: 0px; background: black; color: white; padding: 10px; z-index: 3344223; width: 100%; text-align: center; pointer-events: all; opacity: 1; border: 1px solid black; width: 350px; display: none; }
+
+      .bandeauNon {height : 250px; color:black; width:100%; display:none; background-color: tan; padding: 50px 20px;}
+
+      .rgpdMain { pointer-events: none; overflow: hidden; }
+
+      .espaceDroit10 { margin-right: 10px; }
+  </style>
+
+    <script>
+
+      function getCookie(name) {
+          var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+          return v ? v[2] : null;
+      }
+      function setCookie(name, value, days) {
+          var d = new Date;
+          d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * days);
+        //  document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString() + ";domain=.evalquiz.com";
+          document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+      }
+      window.cookieConsent = false;
+      document.addEventListener("DOMContentLoaded", function (event) {
+
+          let btnAccepter = document.getElementById("accepter");
+          let btnRefuser = document.getElementById("refuser");
+          let btnNouveau = document.getElementById("nouveauChoix");
+
+
+          let rgpdMain = document.getElementById("root");
+          let modalContent = document.getElementById("modalContent");
+          let modalRgpd = document.getElementById("modalRgpd");
+          let bandeauNon = document.getElementById("bandeauNon");
+
+        
+          let cookie = getCookie("cookieConsent");
+          if (cookie == null) {
+              rgpdMain.className = "rgpdMain";
+              modalRgpd.className = "modalRgpd";
+              modalContent.style.display = "block";
+          }
+          function ajoutGA()
+          {
+                  //nouveau
+              const head = document.getElementsByTagName("head")[0];
+              var myScript = document.createElement('script');
+              myScript.setAttribute('src', "https://www.googletagmanager.com/gtag/js?id=G-916D7SW5D6");
+
+            
+              window.dataLayer = window.dataLayer || [];
+              function gtag() { dataLayer.push(arguments); }
+              gtag('js', new Date());
+
+              gtag('config', 'G-916D7SW5D6');
+              //ancien
+              (function (i, s, o, g, r, a, m) {
+                  i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                      (i[r].q = i[r].q || []).push(arguments)
+                  }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+              })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+              window.ga('create', 'UA-82336662-1', 'auto');
+              window.ga('send', 'pageview');
+
+              //adsense
+              (window.adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+            
+          }
+
+          if (cookie === "YES") {    
+              ajoutGA();
+          }
+
+          if (cookie === "NO") {
+              bandeauNon.style.display = "block";
+          }
+
+
+      
+          btnAccepter.addEventListener("click", function (event) {
+              rgpdMain.className = "";
+              modalRgpd.className = "";
+              modalContent.style.display = "none";
+              setCookie("cookieConsent", "YES", 365);
+              ajoutGA();
+          });
+
+          btnRefuser.addEventListener("click", function (event) {
+              rgpdMain.className = "";
+              modalRgpd.className = "";
+              modalContent.style.display = "none";
+              setCookie("cookieConsent", "NO", 365);
+          });
+
+
+          btnNouveau.addEventListener("click", function (event) {
+              setCookie("cookieConsent", "YES", 365);
+              ajoutGA();
+              bandeauNon.style.display = "none";
+         
+          });
+      });
+  </script>
+
+
+
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="modalContent" id="modalContent">
+
+      <p>Nous travaillons avec la société Google et avec des technologies comme les cookies pour stocker et/ou accéder à des informations personnelles non sensibles stockées sur votre terminal (identifiants uniques, …), que nous traitons afin de réaliser des statistiques d'usage du site, personnaliser les publicités et le contenu et en mesurer les performances, produire des données d’audience, développer et améliorer les produits. </p>
+      <p>Acceptez-vous les cookies déposés pour la publicité et les mesures d'audience ?</p>
+      <p>  <button id="refuser" class="btn btn-primary espaceDroit10">Je refuse</button><button id="accepter" class="btn btn-primary espaceDroit10"><b>J'accepte</b></button></p>
+
+  </div>
+  <div id="modalRgpd">
+    <div class="bandeauNon" id="bandeauNon">
+      Vous pouvez supprimer ce bandeau si vous acceptez les cookies pour la publicité. Nous essayons de limiter au maximum le nombre de publicités sur le site et nous estimons que tout travail mérite salaire.
+    <div>  <button id="nouveauChoix" class="btn btn-primary espaceDroit10">Accepter</button></div>
+  </div>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    </div>
+  </body>
+  
+  </html>
+</html>

@@ -1,0 +1,40 @@
+.margeCarte
+{
+  margin: 5px 0px;
+}
+.align
+{
+  text-align: center;
+}
+
+.marge20
+{
+  margin-top: 30px;
+}
+.margeMenu
+{
+  margin-top: 10px;
+}
+.tailleJeu
+{
+  font-size: 1.5em;
+}
+
+.ant-radio-wrapper .ant-radio + span
+{
+  white-space: normal;
+  font-size: 1.3em;
+}
+
+.ant-radio-group > .ant-radio-wrapper
+{
+  display: block;
+  margin-bottom: 18px
+}
+
+.margeAttente
+{
+  margin-top : 50px;
+}
+
+

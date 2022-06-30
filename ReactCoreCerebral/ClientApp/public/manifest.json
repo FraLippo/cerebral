@@ -1,0 +1,22 @@
+{
+  "short_name": "Evalquiz",
+  "name": "Evalquiz cérébral",
+  "icons": [
+    {
+      "src": "light192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/light512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#afe4e2",
+  "background_color": "#000000", 
+  "lang" : "fr-fr",
+  "description" : "Nous vous proposons une série de tests simples et de petits jeux pour faire travailler son cerveau en espérant améliorer ses capacités cognitives et son intelligence. Tous les jeux sont gratuits et ne nécessitent aucune inscription. Chaque série de tests stimule une partie du cerveau différente : la mémoire, la capacité de concentration, la vitesse de réaction, le discernement des couleurs et des formes... Les tests sont simples à comprendre et peuvent être réalisés par des juniors ou des seniors."
+}

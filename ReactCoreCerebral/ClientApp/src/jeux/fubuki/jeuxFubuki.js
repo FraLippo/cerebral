@@ -10,7 +10,7 @@ import ResultatCommun from '../../components/commun/ResultatCommun';
 import FinEtape from '../concours/FinEtape';
 import ProgressBar from '../../components/commun/ProgressBar';
 import { addGame } from '../../components/commun/localStorage';
-
+import { analytics } from '../../components/commun/analytics';
 
 class JeuxFubuki extends Component {
 
@@ -43,6 +43,7 @@ class JeuxFubuki extends Component {
             }
 
             addGame('jeuxFubuki', this.id);
+            analytics();
         }
     }
 

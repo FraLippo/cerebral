@@ -5,7 +5,8 @@ import MenuPrincipalFR from './MenuPrincipalFR';
 import MenuPrincipalEN from './MenuPrincipalEN';
 import Routeur from './Routeur';
 import { Helmet } from 'react-helmet';
-
+import ReactGA from 'react-ga';
+import ReactGA4 from "react-ga4";
 import intl from 'react-intl-universal';
 // common locale data
 require('intl/locale-data/jsonp/en.js');
@@ -24,7 +25,8 @@ class App extends Component {
   constructor(props) {
     super(props);
       
-
+   ReactGA.initialize("UA-82336662-1");
+   ReactGA4.initialize("G-916D7SW5D6");
 
   this.currentLocale= this.determineLang();
   

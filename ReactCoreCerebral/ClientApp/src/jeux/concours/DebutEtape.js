@@ -6,7 +6,7 @@ import ButtonLink from '../../components/commun/ButtonLink';
 import { prochainObjectif, imageJeu, titreJeu } from './logiqueConcours';
 import { Steps } from 'antd';
 import intl from 'react-intl-universal';
-
+import { analytics } from '../../components/commun/analytics';
 import { Helmet } from 'react-helmet';
 import { readGameContest, addGameContest } from '../../components/commun/localStorage';
 const { Step } = Steps;
@@ -30,7 +30,7 @@ export default class DebutEtape extends Component {
                 this.noEtape = 0;
             }
             this.jeu = this.concours.liste[this.noEtape];
-    
+            analytics();
         }
     }
 

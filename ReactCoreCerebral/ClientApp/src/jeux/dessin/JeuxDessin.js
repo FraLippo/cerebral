@@ -7,7 +7,7 @@ import LogiqueMemoire from './LogiqueMemoire';
 import { Button, message } from 'antd';
 import { withRouter, Redirect } from 'react-router-dom';
 import FinEtape from '../concours/FinEtape';
-
+import { analytics } from '../../components/commun/analytics';
 import { addGame} from '../../components/commun/localStorage';
 import CompteRebours from '../../components/commun/CompteRebours';
 
@@ -40,7 +40,7 @@ class JeuxDessin extends Component {
                 afficheRebours : true
             };
 
-   
+            analytics();
             addGame('jeuxMemoireDessin', this.id);
         }
     }

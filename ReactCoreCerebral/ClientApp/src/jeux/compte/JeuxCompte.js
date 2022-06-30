@@ -12,7 +12,7 @@ import dicoMessage from './Message';
 import { Button} from 'antd';
 import ResultatCommun from '../../components/commun/ResultatCommun';
 import FinEtape from '../concours/FinEtape';
-
+import { analytics } from '../../components/commun/analytics';
 import {Helmet } from 'react-helmet';
 import {addGame} from '../../components/commun/localStorage';
 import intl from 'react-intl-universal';
@@ -48,6 +48,7 @@ class JeuxCompte extends Component {
           });
 
           addGame('jeuxCompte', this.id);
+          analytics();
         }
     }
 

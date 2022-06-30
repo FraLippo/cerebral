@@ -7,7 +7,7 @@ import Regle from './Regle';
 import { Redirect } from 'react-router-dom';
 import intl from 'react-intl-universal';
 import { Helmet } from 'react-helmet';
-
+import { analytics } from '../../components/commun/analytics';
 import FinEtape from '../concours/FinEtape';
 
 
@@ -41,6 +41,7 @@ export default class JeuxBingo extends Component {
             this.numeroPrecedent = -1;
             this.timer = 0;
             this.stop = false;
+            analytics();
 
         }
     }

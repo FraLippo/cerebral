@@ -8,7 +8,7 @@ import ResultatCommun from '../../components/commun/ResultatCommun';
 import FinEtape from '../concours/FinEtape';
 import ProgressBar from '../../components/commun/ProgressBar';
 import { withRouter, Redirect } from 'react-router-dom';
-
+import { analytics } from '../../components/commun/analytics';
 import { Helmet } from 'react-helmet';
 import { addGame } from '../../components/commun/localStorage';
 
@@ -45,6 +45,7 @@ class JeuxPyramide extends Component {
             }
 
             addGame('jeuxPyramide', this.id);
+            analytics();
 
         }
     }

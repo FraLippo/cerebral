@@ -8,7 +8,7 @@ import ResultatCommunFaute from '../../components/commun/ResultatCommunFaute';
 import { addGame } from '../../components/commun/localStorage';
 import { Helmet } from 'react-helmet';
 import intl from 'react-intl-universal';
-
+import { analytics } from '../../components/commun/analytics';
 
 
 
@@ -34,6 +34,7 @@ class JeuEsp extends Component {
             this.nbFautes = 0;
 
             addGame('jeuxEsp', this.id);
+            analytics();
         }
     }
 

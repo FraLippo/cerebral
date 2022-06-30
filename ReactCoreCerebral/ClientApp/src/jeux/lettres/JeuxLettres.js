@@ -15,7 +15,7 @@ import { withRouter } from 'react-router-dom';
 import { readGameNumber } from '../../components/commun/localStorage';
 import Regle from './Regle';
 import FinEtape from '../concours/FinEtape';
-
+import { analytics } from '../../components/commun/analytics';
 
 class JeuxLettres extends Component {
 
@@ -62,7 +62,7 @@ class JeuxLettres extends Component {
             .withUrl(process.env.REACT_APP_URL_LETTREHUB)
             .build();
         this.confirm = Modal.confirm;
-
+        analytics();
     }
     setServeur =() =>
     {

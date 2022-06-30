@@ -3,7 +3,7 @@ import Image from './Image';
 import LogiquePuzzleRotation from './LogiquePuzzleRotation';
 import ResultatCommun from '../../components/commun/ResultatCommun';
 import { withRouter, Redirect } from 'react-router-dom';
-
+import { analytics } from '../../components/commun/analytics';
 import { Helmet } from 'react-helmet';
 import { addGame } from '../../components/commun/localStorage';
 import CompteRebours from '../../components/commun/CompteRebours';
@@ -40,6 +40,7 @@ class JeuxPuzzleRotation extends Component {
         this.dureeJeu = Date.now();
 
         addGame('jeuxPuzzleRotation', this.id);
+        analytics();
        
     }
 

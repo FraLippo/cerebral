@@ -81,7 +81,7 @@ export default class MenuJeuFR extends Component {
       <div className="centre"><img className="img-responsive" width="1000" height="396" src={presentation} alt="presentation"></img></div>
     <Tableau></Tableau>
       <Row><Ad></Ad></Row>
-
+      Le respect de votre vie privée est notre priorité : <a   href="https://evalquiz.com/home/choisir">Choisir ses cookies</a>
       <h2>Crédits</h2>
       <p>Les icônes de bordure sont l'oeuvre d'<a href="https://thenounproject.com/zzyzz/">Olena Panasovska.</a></p>
       <p>Les cartes Zener sont issues du travail de <a href="https://commons.wikimedia.org/w/index.php?curid=31927664">Mikhail Ryazanov</a></p>

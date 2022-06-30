@@ -6,7 +6,7 @@ import { message } from 'antd';
 import ResultatCommun from '../../components/commun/ResultatCommun';
 import '../../style/jeux.css';
 import { withRouter, Redirect } from 'react-router-dom';
-
+import { analytics } from '../../components/commun/analytics';
 import { addGame } from '../../components/commun/localStorage';
 import { Helmet } from 'react-helmet';
 import CompteRebours from '../../components/commun/CompteRebours';
@@ -41,6 +41,7 @@ class JeuxOrdre extends Component {
  
             addGame('jeuxOrdre', this.id);
         }
+        analytics();
     }
 
     componentDidMount() {

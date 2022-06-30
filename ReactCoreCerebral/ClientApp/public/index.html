@@ -28,7 +28,8 @@
       .bandeauNon {height : 250px; color:black; width:100%; display:none; background-color: tan; padding: 50px 20px;}
 
       .rgpdMain { pointer-events: none; overflow: hidden; }
-
+      .buttonRefuse { margin-right: 10px; background-color: blueviolet;}
+      .buttonAccept { margin-right: 10px; background-color: blueviolet; padding: 7px;}
       .espaceDroit10 { margin-right: 10px; }
   </style>
 
@@ -41,10 +42,17 @@
       function setCookie(name, value, days) {
           var d = new Date;
           d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * days);
-        //  document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString() + ";domain=.evalquiz.com";
-          document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+          <% if (process.env.NODE_ENV === 'production') { %>
+   
+        document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString() + ";domain=.evalquiz.com";
+    <%}
+    else { %>
+      document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+<% 
+  } %>
+      
       }
-      window.cookieConsent = false;
+     
       document.addEventListener("DOMContentLoaded", function (event) {
 
           let btnAccepter = document.getElementById("accepter");
@@ -66,28 +74,7 @@
           }
           function ajoutGA()
           {
-                  //nouveau
-              const head = document.getElementsByTagName("head")[0];
-              var myScript = document.createElement('script');
-              myScript.setAttribute('src', "https://www.googletagmanager.com/gtag/js?id=G-916D7SW5D6");
-
-            
-              window.dataLayer = window.dataLayer || [];
-              function gtag() { dataLayer.push(arguments); }
-              gtag('js', new Date());
-
-              gtag('config', 'G-916D7SW5D6');
-              //ancien
-              (function (i, s, o, g, r, a, m) {
-                  i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                      (i[r].q = i[r].q || []).push(arguments)
-                  }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-              })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-              window.ga('create', 'UA-82336662-1', 'auto');
-              window.ga('send', 'pageview');
-
+     
               //adsense
               (window.adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
             
@@ -137,7 +124,7 @@
 
       <p>Nous travaillons avec la société Google et avec des technologies comme les cookies pour stocker et/ou accéder à des informations personnelles non sensibles stockées sur votre terminal (identifiants uniques, …), que nous traitons afin de réaliser des statistiques d'usage du site, personnaliser les publicités et le contenu et en mesurer les performances, produire des données d’audience, développer et améliorer les produits. </p>
       <p>Acceptez-vous les cookies déposés pour la publicité et les mesures d'audience ?</p>
-      <p>  <button id="refuser" class="btn btn-primary espaceDroit10">Je refuse</button><button id="accepter" class="btn btn-primary espaceDroit10"><b>J'accepte</b></button></p>
+      <p>  <a  class="espaceDroit10" href="https://evalquiz.com/home/choisir">Choisir</a><button id="refuser" class="buttonRefuse">Je refuse</button><button id="accepter" class="buttonAccept"><b>J'accepte</b></button></p>
 
   </div>
   <div id="modalRgpd">

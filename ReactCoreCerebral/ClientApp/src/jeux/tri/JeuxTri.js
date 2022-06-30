@@ -10,6 +10,7 @@ import ResultatCommun from '../../components/commun/ResultatCommun';
 import { message} from 'antd';
 import FinEtape from '../concours/FinEtape';
 import intl from 'react-intl-universal';
+import { analytics } from '../../components/commun/analytics';
 
 
 
@@ -38,6 +39,7 @@ class JeuxTri extends Component {
             this.dureeJeu = Date.now();
             this.chemin = "";
             addGame('jeuxTri', this.id);
+            analytics();
 
         }
     }

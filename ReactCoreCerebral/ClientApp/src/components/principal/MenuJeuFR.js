@@ -32,7 +32,7 @@ export default class MenuJeuFR extends Component {
           <p>Chaque série de tests stimule une partie du cerveau différente : la mémoire, la capacité de concentration, la vitesse de réaction, le discernement des couleurs et des formes...</p>
           <p>Les tests sont simples à comprendre et peuvent être réalisés par des juniors ou des seniors.</p>
           <p>Les tests ne sont en aucun cas des tests scientifiques. Ce sont surtout des petits jeux qui servent à évaluer ses capacités par rapport aux autres. A la fin de chaque jeu vous obtenez votre classement et votre position par rapport aux autres utilisateurs.</p>
-          <Row gutter={8}><Col md={8} className="centre"><img className="resp" src={concours} alt="concours"></img></Col>
+          <Row gutter={8}><Col md={8} className="centre"><img className="img-responsive" src={concours} alt="concours"></img></Col>
             <Col md={16}> <h3>Le challenge des mots </h3>
           <p>Vous aimez les jeux de lettres et de mots comme le Boogle, le Scrabble, Motus, les anagrammes ? Alors vous devez essayer notre nouveau <a href="https://concours.evalquiz.com">challenge des lettres et des mots</a>.</p>
         <p>Les jeux sont ouvert à tous (junior ou senior) et ils ne nécessitent pas d'inscription.</p>
@@ -81,7 +81,7 @@ export default class MenuJeuFR extends Component {
       <div className="centre"><img className="img-responsive" width="1000" height="396" src={presentation} alt="presentation"></img></div>
     <Tableau></Tableau>
       <Row><Ad></Ad></Row>
-      Le respect de votre vie privée est notre priorité : <a   href="https://evalquiz.com/home/choisir">Choisir ses cookies</a>
+      <p>Le respect de votre vie privée est notre priorité : <a   href="https://evalquiz.com/home/choisir">Choisir ses cookies</a></p>
       <h2>Crédits</h2>
       <p>Les icônes de bordure sont l'oeuvre d'<a href="https://thenounproject.com/zzyzz/">Olena Panasovska.</a></p>
       <p>Les cartes Zener sont issues du travail de <a href="https://commons.wikimedia.org/w/index.php?curid=31927664">Mikhail Ryazanov</a></p>

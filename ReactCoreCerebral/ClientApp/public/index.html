@@ -30,6 +30,7 @@
       .rgpdMain { pointer-events: none; overflow: hidden; }
       .buttonRefuse { margin-right: 10px; background-color: blueviolet;}
       .buttonAccept { margin-right: 10px; background-color: blueviolet; padding: 7px;}
+      .buttonChoisir { margin-right: 10px; background-color: blueviolet; padding: 5px; color: white } 
       .espaceDroit10 { margin-right: 10px; }
   </style>
 
@@ -56,7 +57,6 @@
       document.addEventListener("DOMContentLoaded", function (event) {
 
           let btnAccepter = document.getElementById("accepter");
-          let btnRefuser = document.getElementById("refuser");
           let btnNouveau = document.getElementById("nouveauChoix");
 
 
@@ -98,13 +98,7 @@
               ajoutGA();
           });
 
-          btnRefuser.addEventListener("click", function (event) {
-              rgpdMain.className = "";
-              modalRgpd.className = "";
-              modalContent.style.display = "none";
-              setCookie("cookieConsent", "NO", 365);
-          });
-
+        
 
           btnNouveau.addEventListener("click", function (event) {
               setCookie("cookieConsent", "YES", 365);
@@ -122,11 +116,11 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div class="modalContent" id="modalContent">
 
-      <p>Nous travaillons avec la société Google et avec des technologies comme les cookies pour stocker et/ou accéder à des informations personnelles non sensibles stockées sur votre terminal (identifiants uniques, …), que nous traitons afin de réaliser des statistiques d'usage du site, personnaliser les publicités et le contenu et en mesurer les performances, produire des données d’audience, développer et améliorer les produits. </p>
-      <p>Acceptez-vous les cookies déposés pour la publicité et les mesures d'audience ?</p>
-      <p>  <a  class="espaceDroit10" href="https://evalquiz.com/home/choisir">Choisir</a><button id="refuser" class="buttonRefuse">Je refuse</button><button id="accepter" class="buttonAccept"><b>J'accepte</b></button></p>
+        <p>Nous travaillons avec la société Google et avec des technologies comme les cookies pour stocker et/ou accéder à des informations personnelles non sensibles stockées sur votre terminal (identifiants uniques, …), que nous traitons afin de réaliser des statistiques d'usage du site, personnaliser les publicités et le contenu et en mesurer les performances, produire des données d’audience, développer et améliorer les produits. </p>
+        <p>Acceptez-vous les cookies déposés pour la publicité et les mesures d'audience ?</p>
+        <p>  <a class="buttonChoisir espaceDroit10" href="https://evalquiz.com/home/choisir">Choisir</a><button id="accepter" class="buttonAccept"><b>J'accepte</b></button></p>
 
-  </div>
+    </div>
   <div id="modalRgpd">
     <div class="bandeauNon" id="bandeauNon">
       Vous pouvez supprimer ce bandeau si vous acceptez les cookies pour la publicité. Nous essayons de limiter au maximum le nombre de publicités sur le site et nous estimons que tout travail mérite salaire.

@@ -3,15 +3,19 @@ import React, { Component } from 'react';
 import border from '../../images/border.png';
 import {Col, Row} from 'antd';
 import SousMenu from './SousMenu';
-import compte from '../../images/compte.webp';
 import pyramide from '../../images/pyramide.webp';
 import calcul from '../../images/calcul.webp';
 import fubuki from '../../images/fubuki.webp';
 import { Helmet } from 'react-helmet';
-
+import { analytics } from '../../components/commun/analytics';
 
 export default class Logique extends Component {
  
+  constructor()
+  {
+    super();
+    analytics();
+  }
 
   render() {
     return <div>
@@ -73,20 +77,7 @@ export default class Logique extends Component {
             <SousMenu type="fubuki" titre="FUBUKI_TITLE"></SousMenu>
           </Col>
         </Row>
-        <Row className="centre"><img src={border} alt="bordure"></img></Row>
-        <Row gutter={8} className="espaceHaut">
-          <Col md={10}>
-            <h2>Le compte est bon</h2>
-            <p>Un jeu qui ressemble au "Compte est bon" de la célèbre émission <b>"Des chiffres et des lettres"</b>.</p>
-            <p>Vous devez retrouver un nombre donné à partir d'autres nombres et des 4 opérations. </p>
-            <p>Le temps n'est pas limité. Vous pouvez recommencer autant de fois que vous le voulez. Il y a toujours une solution et vous pouvez à chaque fois afficher la correction.</p>
-            <div className="centre"><img className="img-responsive" width="230" height="278" src={compte} alt="le compte est bon"></img></div>
-
-          </Col>
-          <Col md={14}>
-            <SousMenu type="compte" titre="TITLE_COMPTE"></SousMenu>
-          </Col>
-        </Row>
+       
 
          </div>
   }

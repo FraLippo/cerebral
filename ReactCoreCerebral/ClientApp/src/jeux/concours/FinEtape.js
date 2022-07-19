@@ -15,6 +15,7 @@ import { addGameContest, addAttemptGameContest, addGame, addFirstName, readFirst
 import SousMenu from '../../components/principal/SousMenu';
 import Prenom from '../../components/commun/Prenom';
 import confetti from '../../images/confetti.webp';
+import Confetti from 'react-confetti';
 import applause from '../../images/applause.webp';
 const { Step } = Steps;
 let donneesConcours = [...donneesConcoursCerebral,...donneesConcoursCalcul,...donneesConcoursMot];
@@ -152,7 +153,7 @@ export default class FinEtape extends Component {
                         <div className="animationSuite"><p className="grandeLettre couleurTitre">{intl.get('DEFI_BRAVO')}</p>
                        <h1>{intl.get(this.concours.titre)}</h1></div>
                         <p>{intl.get('DEFI_TENTATIVE1')} <b>{this.tentative} {this.tentative <= 1 ? intl.get('DEFI_TENTATIVE2')  : intl.get('DEFI_TENTATIVE3')}</b>.</p><img className="img-responsive" src={victory} alt="victoire"></img>
-                    {this.tentative === 1 && <p className="tailleMoyenne">{intl.get('DEFI_HONNEUR1')} <Link to={intl.get('LIEN_TABLEAU')}>{intl.get('DEFI_HONNEUR2')}</Link>.</p>}
+                    {this.tentative === 1 &&  <div><Confetti width={window.innerWidth - 30} height={300} /><p className="tailleMoyenne">{intl.get('DEFI_HONNEUR1')} <Link to={intl.get('LIEN_TABLEAU')}>{intl.get('DEFI_HONNEUR2')}</Link>.</p></div>}
                         {this.prenomVisible && <Prenom callbackPrenom={this.callbackPrenom}></Prenom>
                         }<Ad></Ad></div>
                 : <div className="centre"><p>{intl.get('DEFI_ERREUR')} </p>

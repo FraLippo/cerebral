@@ -36,7 +36,7 @@ export default class MenuJeuFR extends Component {
             <Col md={16}> <h3>Le challenge des mots </h3>
           <p>Vous aimez les jeux de lettres et de mots comme le Boogle, le Scrabble, Motus, les anagrammes ? Alors vous devez essayer notre nouveau <a href="https://concours.evalquiz.com">challenge des lettres et des mots</a>.</p>
         <p>Les jeux sont ouvert à tous (junior ou senior) et ils ne nécessitent pas d'inscription.</p>
-        <p>Arrivez-vous à réussir les 32 étapes de notre challenge ?</p>
+        <p>Arrivez-vous à réussir les 64 étapes de notre challenge ?</p>
 </Col>
                  </Row>
           
@@ -69,10 +69,11 @@ export default class MenuJeuFR extends Component {
       <div className="centre"><img src={border} alt="bordure"></img></div>
 <h1 className="titre centre">Les tests</h1>
     <Row className="margeHaut">
-    <Col xs={12}><Link to="/calcul-mental"><div className="tuile">Calcul mental / Mathématique</div></Link></Col>
+    <Col xs={12}><Link to="/calcul-mental"><div className="tuile">Calcul mental</div></Link></Col>
     <Col xs={12}><Link to="/puzzle"><div className="tuile">Puzzle</div></Link></Col>
     <Col xs={12}><Link to="/logique"><div className="tuile">Logique</div></Link></Col>
     <Col xs={12}><Link to="/memoire"><div className="tuile">Mémoire</div></Link></Col>
+    <Col xs={12}><Link to="/chiffres-lettres"><div className="tuile">Des chiffres et des lettres</div></Link></Col>
     </Row>
 
 

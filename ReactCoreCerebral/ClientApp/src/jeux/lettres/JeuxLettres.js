@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as signalR from "@microsoft/signalr";
 import '../../style/jeux.css';
 //import { addFirstName, readFirstName } from '../../components/commun/localStorage';
-
+import Confetti from 'react-confetti';
 import { Modal } from 'antd';
 //import Prenom from '../../components/commun/Prenom';
 import EspaceJoueur from './EspaceJoueurs';
@@ -240,7 +240,7 @@ class JeuxLettres extends Component {
              <div className="titreLettre centre"><span className="titreBingo margeDroit tailleMoyenne">Le mot le plus long</span><Regle></Regle></div>
                     {this.state.etat === "attente" && this.nbJoueurs >= 2 && this.state.msgJoueurs[1] !== undefined && this.state.msgJoueurs[1].infoJeu.includes('attente')  && <p>Le seul moyen pour jouer à plusieurs est d'inviter vos amis en leur envoyant ce lien par messagerie : <b>{process.env.REACT_APP_URL_JEUXLETTRES}/{this.gameNumber}/2/2 </b> . Vous pouvez ensuite revenir quand ils sont prêts.</p>}
                     <EspaceLettres clickCarte={this.clickCarte} disabled={this.state.boutonManche} etat={this.state.etat} lettres={this.state.tabLettres}></EspaceLettres>
-                   <div className="vainqueur">{this.state.vainqueur}</div>
+                   <div className="vainqueur">{!this.perdu && this.state.vainqueur !== '' && <Confetti width={window.innerWidth - 30} height={250} />}{this.state.vainqueur}</div>
                     <div className="compteur">{this.state.compteur}</div>
                     <Manche noManche={this.state.manche} concours={this.concours} id={this.id} boutonManche={this.state.boutonManche} nouveauJeu={this.nouveauJeu} niveau={this.niveau} nbJoueurs={this.nbJoueurs}></Manche>
                     <div className="grilleAction">

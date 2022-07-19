@@ -8,6 +8,7 @@ import Calcul from './Calcul';
 import Puzzle from './Puzzle';
 import Logique from './Logique';
 import Memoire from './Memoire';
+import ChiffresLettres from './ChiffresLettres';
 import Scroll from './Top';
 
 import intl from 'react-intl-universal';
@@ -67,7 +68,10 @@ export default class Routeur extends Component {
                     <Route path='/logique/' render={(props) => <Logique {...props} keyProp={'logique'} key={Math.floor(Math.random() * 1000)} />} />
                     <Route path='/puzzle/' render={(props) => <Puzzle {...props} keyProp={'puzzle'} key={Math.floor(Math.random() * 1000)} />} />
                     <Route path='/memoire/' render={(props) => <Memoire {...props} keyProp={'memoire'} key={Math.floor(Math.random() * 1000)} />} />
-<Route path='/jeux-memory/:id' render={(props) => <JeuxMemoryGame {...props} keyProp={'jeuxMemoryGame'} key={Math.floor(Math.random() * 1000)} />} />
+                    <Route path='/chiffres-lettres/' render={(props) => <ChiffresLettres {...props} keyProp={'ChiffresLettres'} key={Math.floor(Math.random() * 1000)} />} />
+
+                    <Route path='/calcul/:id' render={(props) => <JeuxMath {...props} keyProp={'jeuxMath'} key={Math.floor(Math.random() * 1000)} />} />
+                    <Route path='/jeux-memory/:id' render={(props) => <JeuxMemoryGame {...props} keyProp={'jeuxMemoryGame'} key={Math.floor(Math.random() * 1000)} />} />
                     <Route path='/(tableau|board/en)' render={(props) => <Tableau {...props} keyProp={'tableau'} key={Math.floor(Math.random() * 1000)} />} />
                     <Route path='/(defi|brain-challenge)/:no' render={(props) => <DebutEtape {...props} keyProp={'debutEtape'} key={Math.floor(Math.random() * 1000)} />} />
                     <Route path='/terms-of-service' render={(props) => <TermService {...props} keyProp={'termService'} key={Math.floor(Math.random() * 1000)} />} />

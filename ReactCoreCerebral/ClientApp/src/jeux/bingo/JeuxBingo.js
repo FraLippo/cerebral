@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Logique from './Logique';
 import Grille from './Grille';
+import { message } from 'antd';
 import MessagesOrdi from './MessagesOrdi';
 import Resultat from './Resultat';
 import Regle from './Regle';
@@ -33,7 +34,8 @@ export default class JeuxBingo extends Component {
                 numeroTire: '',
                 messagesOrdinateur: this.jeu.messagePossibiliteOrdinateur().messagesJoueurs,
                 fin: false,
-                nbErreurs: 0
+                nbErreurs: 0,
+                afficheResultat : false
             }
 
             this.tabReponse = [];
@@ -55,7 +57,7 @@ export default class JeuxBingo extends Component {
     miseJourTimer = () => {
 
         if (this.stop) {
-
+            message.error(intl.get('BINGO_DEFAITE'), 5, this.afficheFin);
             const manque = this.jeu.calculCaseManque();
             const msg = this.state.messagePossibilite !== intl.get('BINGO_GAGNE') ? manque > 0 ? intl.get('BINGO_OUBLI') + (manque === 1 ? intl.get('BINGO_CASE') : manque + intl.get('BINGO_CASES')) : '' : '';
             clearTimeout(this.timer);
@@ -86,6 +88,13 @@ export default class JeuxBingo extends Component {
         });
     }
 
+    afficheFin = () =>
+    {
+        this.setState({
+            afficheResultat : true
+        });
+    }
+
     clickNumero = (id) => {
         let nouveauTableau = [...this.state.grille];
         let trouve = this.jeu.verificationBonNumero(id);
@@ -96,6 +105,7 @@ export default class JeuxBingo extends Component {
                 fin: true,
                 numeroTire: intl.get('BINGO_FIN')
             });
+            message.error(intl.get('BINGO_DEFAITE'), 4, this.afficheFin);
             clearTimeout(this.timer);
             return;
         }
@@ -113,6 +123,7 @@ export default class JeuxBingo extends Component {
                     fin: true,
                     numeroTire: intl.get('BINGO_FIN')
                 });
+                message.success(intl.get('BINGO_VICTOIRE'), 3, this.afficheFin);
                 this.perdu = false;
                 clearTimeout(this.timer);
             }
@@ -137,14 +148,15 @@ export default class JeuxBingo extends Component {
             <meta name="description" content={intl.get('BINGO_META')} />
         </Helmet>
             <div><span className="titreBingo grandeLettre margeDroit">{intl.get('BINGO_TITRE')}</span><Regle></Regle></div>
-            <div>{intl.get('BINGO_NBERREUR')}{this.state.nbErreurs}</div><div className="espaceJeuBingo espaceHaut"><div className="joueurBingo"><div className="grandeLettre hauteurTirage couleurNumero">{this.state.numeroTire}</div>
+            {this.state.afficheResultat ?  (this.jeu.concours ? <FinEtape donneesJeu={this.jeu.donnees} perdu={this.perdu} ></FinEtape> :<Resultat id={this.id}></Resultat>) :
+           <div><div>{intl.get('BINGO_NBERREUR')}{this.state.nbErreurs}</div><div className="espaceJeuBingo espaceHaut"><div className="joueurBingo"><div className="grandeLettre hauteurTirage couleurNumero">{this.state.numeroTire}</div>
                 <Grille taille={this.taille} grille={this.state.grille} clickNumero={this.clickNumero}></Grille>
                 <div className="espaceHaut hauteurBingo tailleMoyenne"><b>{this.state.messagePossibilite}</b></div></div>
                 <div className="infoBingo espaceHaut">
 
                     <h2 className="couleurJoueur">{intl.get('BINGO_JOUEURS')}</h2>
                     <MessagesOrdi messageOrdis={this.state.messagesOrdinateur} ></MessagesOrdi>
-                    {this.state.fin &&  (this.jeu.concours ? <FinEtape donneesJeu={this.jeu.donnees} perdu={this.perdu} ></FinEtape> :<Resultat id={this.id}></Resultat>)}</div>
-            </div></div>;
+                  </div> 
+            </div></div>}</div>
     }
 }

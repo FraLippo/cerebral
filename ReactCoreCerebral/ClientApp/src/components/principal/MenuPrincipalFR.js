@@ -19,14 +19,25 @@ export default  class MenuPrincipalFR extends Component {
         <Menu.Item key="home">    
         <a href="https://evalquiz.com"><Icon type="home" style={{ fontSize: 20}}/></a>
         </Menu.Item>
-        <Menu.Item key="cerbral">
-        <a href="/">
-           Sport cérébral
+        <Menu.Item key="orthographe">
+        <a href="https://orthographe.evalquiz.com">
+          Orthographe
           </a>
-        </Menu.Item> 
+        </Menu.Item>  
+        <Menu.Item key="culture">
+          <a href="https://evalquiz.com/tests/culture">
+           Culture
+          </a>
+        </Menu.Item>
+        
         <Menu.Item key="challenge">
-        <a href="https://concours.evalquiz.com">
+        <a href="https://concours.evalquiz.com/presentation">
            Challenge
+          </a>
+        </Menu.Item>  
+          <Menu.Item key="psycho">
+        <a href="https://evalquiz.com/tests/psycho">
+           Psycho
           </a>
         </Menu.Item> 
         <Menu.Item key="quizRoyal">
@@ -34,36 +45,30 @@ export default  class MenuPrincipalFR extends Component {
            Quiz Royal
           </a>
         </Menu.Item> 
-        <Menu.Item key="psycho">
-        <a href="https://evalquiz.com/tests/psycho">
-           Psycho
+      <Menu.Item key="anglais">
+          <a href="https://anglais.evalquiz.com">
+           Anglais
           </a>
         </Menu.Item> 
-        <Menu.Item key="orthographe">
-        <a href="https://evalquiz.com/tests/orthographe">
-          Orthographe
+         <Menu.Item key="qi">
+          <a href="https://evalquiz.com/tests/logique">
+           QI
           </a>
-        </Menu.Item>
-        <Menu.Item key="culture">
-          <a href="https://evalquiz.com/tests/culture">
-           Culture
-          </a>
-        </Menu.Item>
+        </Menu.Item>    
+      
         <Menu.Item key="math">
           <a href="https://evalquiz.com/tests/math">
            Calcul
           </a>
         </Menu.Item>
-        <Menu.Item key="anglais">
-          <a href="https://anglais.evalquiz.com">
-           Anglais
+     <Menu.Item key="reflexion">
+        <a href="https://cerebral.evalquiz.com">
+           Cérébral
           </a>
         </Menu.Item> 
-        <Menu.Item key="qi">
-          <a href="https://evalquiz.com/tests/logique">
-           QI
-          </a>
-        </Menu.Item>    
+       
+       
+       
       
         
      

@@ -15,7 +15,7 @@ export default class Resultat extends Component {
 render()
 {
     
-    return <div>
+    return <div className="centre">
         <h2>{intl.get('BINGO_FINI')}</h2>
         <div><Link to={this.chemin + this.props.id}>{intl.get('BINGO_PARTIE5')}</Link></div>
         <div><Link to={this.chemin + 1000}>{intl.get('BINGO_PARTIE1')}</Link></div>

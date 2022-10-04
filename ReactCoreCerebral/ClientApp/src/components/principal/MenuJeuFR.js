@@ -6,7 +6,7 @@ import '../../style/jeux.css';
 import border from '../../images/border.png';
 import presentation from '../../images/presentation.webp'
 import { Helmet } from 'react-helmet';
-import concours from '../../images/concours.jpg';
+
 
 import Tableau from '../commun/Tableau';
 
@@ -20,30 +20,36 @@ export default class MenuJeuFR extends Component {
   render() {
     return <div>
  <Helmet>
-            <title>evalquiz : le sport cérébral</title>
-            <meta name="description" content="Des jeux de sports cérébraux pour faire travailler son cerveau tout en s'amusant. Tous les jeux sont accessibles en ligne gratuitement, ils peuvent être pratiqués aussi bien par les enfants que les adultes."/>
+            <title>Sport cérébral et jeux de réflexion</title>
+            <meta name="description" content="Des jeux de réflexion pour faire travailler son cerveau tout en s'amusant. Tous les jeux sont accessibles en ligne gratuitement, ils peuvent être pratiqués aussi bien par les enfants que les adultes."/>
         </Helmet>
-      <h1 className="titre centre couleurTitre">Sport cérébral</h1>
+      <h1 className="titre centre couleurTitre">Sport cérébral et jeux de réflexion</h1>
       <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
       <Row className="centre"><img src={border} alt="bordure"></img></Row>
       <Row gutter={8} className="espaceHaut">
         <Col md={24}>
-          <p>Nous vous proposons une série de tests simples et de petits jeux pour faire travailler son cerveau en espérant améliorer ses capacités cognitives et son intelligence. Tous les jeux sont gratuits et ne nécessitent aucune inscription.</p>
+          <p>Nous vous proposons une série de tests simples et de petits jeux de réflexion pour faire travailler son cerveau en espérant améliorer ses capacités cognitives et son intelligence. Tous les jeux sont gratuits et ne nécessitent aucune inscription.</p>
           <p>Chaque série de tests stimule une partie du cerveau différente : la mémoire, la capacité de concentration, la vitesse de réaction, le discernement des couleurs et des formes...</p>
           <p>Les tests sont simples à comprendre et peuvent être réalisés par des juniors ou des seniors.</p>
-          <p>Les tests ne sont en aucun cas des tests scientifiques. Ce sont surtout des petits jeux qui servent à évaluer ses capacités par rapport aux autres. A la fin de chaque jeu vous obtenez votre classement et votre position par rapport aux autres utilisateurs.</p>
-          <Row gutter={8}><Col md={8} className="centre"><img className="img-responsive" src={concours} alt="concours"></img></Col>
-            <Col md={16}> <h3>Le challenge des mots </h3>
-          <p>Vous aimez les jeux de lettres et de mots comme le Boogle, le Scrabble, Motus, les anagrammes ? Alors vous devez essayer notre nouveau <a href="https://concours.evalquiz.com">challenge des lettres et des mots</a>.</p>
-        <p>Les jeux sont ouvert à tous (junior ou senior) et ils ne nécessitent pas d'inscription.</p>
-        <p>Arrivez-vous à réussir les 64 étapes de notre challenge ?</p>
-</Col>
-                 </Row>
+          <p>Les tests ne sont en aucun cas des tests scientifiques. Ce sont surtout des petits jeux de réflexion qui servent à évaluer ses capacités par rapport aux autres. A la fin de chaque jeu vous obtenez votre classement et votre position par rapport aux autres utilisateurs.</p>
+          
           
           <Row className="centre"><img src={border} alt="bordure" ></img></Row>
 
         </Col>
 
+      </Row>
+      <Row>
+        <h1 className="titre couleurTitre centre">Le challenge (nouveau)</h1>
+        <Row className="centre"><img src={border} alt="bordure"></img></Row>
+        <Row>
+        <div className="bordureInfo">
+
+<p>Vous aimez les jeux de réflexion comme le Picross, le Mastermind, Binero ou les puzzles ? Venez essayer notre challenge en 64 étapes.</p>
+<p className="centre sequenceSuite"><a href="https://concours.evalquiz.com/presentationCerebral">Le challenge</a></p>
+</div>
+
+        </Row>
       </Row>
 
 
@@ -69,11 +75,11 @@ export default class MenuJeuFR extends Component {
       <div className="centre"><img src={border} alt="bordure"></img></div>
 <h1 className="titre centre">Les tests</h1>
     <Row className="margeHaut">
-    <Col xs={12}><Link to="/calcul-mental"><div className="tuile">Calcul mental</div></Link></Col>
-    <Col xs={12}><Link to="/puzzle"><div className="tuile">Puzzle</div></Link></Col>
-    <Col xs={12}><Link to="/logique"><div className="tuile">Logique</div></Link></Col>
-    <Col xs={12}><Link to="/memoire"><div className="tuile">Mémoire</div></Link></Col>
-    <Col xs={12}><Link to="/chiffres-lettres"><div className="tuile">Des chiffres et des lettres</div></Link></Col>
+    <Col xs={24} sm={12}><Link to="/calcul-mental"><div className="tuile">Calcul mental</div></Link></Col>
+    <Col xs={24} sm={12}><Link to="/puzzle"><div className="tuile">Puzzle</div></Link></Col>
+    <Col xs={24} sm={12}><Link to="/logique"><div className="tuile">Logique</div></Link></Col>
+    <Col xs={24} sm={12}><Link to="/memoire"><div className="tuile">Mémoire</div></Link></Col>
+    <Col xs={24} sm={12}><Link to="/chiffres-lettres"><div className="tuile">Des chiffres et des lettres</div></Link></Col>
     </Row>
 
 

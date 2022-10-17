@@ -93,9 +93,6 @@ export default class FinEtape extends Component {
     }
 
     verificationVictoire() {
-        console.log(this.perdu);
-        console.log(this.temps);
-        console.log(this.donneesJeu.qualifTemps);
         if ((this.perdu !== undefined && !this.perdu) ||
             (this.nbFautes !== undefined && this.donneesJeu.qualifFaute !== undefined && this.nbFautes <= this.donneesJeu.qualifFaute) ||
             (this.temps !== undefined  && this.donneesJeu.qualifTemps !== undefined && this.temps < this.donneesJeu.qualifTemps)) {

@@ -170,7 +170,12 @@ let donneesConcoursCerebral =
             ]
 
         },
-       
+        {
+            id: 35,
+            titre: "DEFI_35",
+            liste: [{ type: 'NOM_BINERO', id: 10350, titre: "binero" }, { type: 'NOM_PICROSS', id: 10351, titre: "picross" } ]
+
+        },
        
       
     ]

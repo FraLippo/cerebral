@@ -97,6 +97,14 @@ export default class SousMenu extends Component {
                 this.nom = "jeuxSimon";
                 this.lien = "NOM_SIMON";
                 break;
+            case "binero":
+                this.nom = "binero";
+                this.lien = "NOM_BINERO";
+                break;
+            case "picross":
+                this.nom = "picross";
+                this.lien = "NOM_PICROSS";
+                break;
             default:
                 break;
         }

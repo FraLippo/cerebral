@@ -31,7 +31,6 @@ export default class Resultat extends Component {
 
     componentDidMount() {
 
-
         let url = new URL(process.env.REACT_APP_URL_JEUXPUZZLE);
         var data = new FormData();
         data.append('idTest', this.props.idTest);
@@ -47,7 +46,6 @@ export default class Resultat extends Component {
                 let afficheGraphique = false;
                 let point = [0, 0];
                 let statTemps = res.statTemps;
-                console.log(statTemps);
                 if (statTemps !== undefined && statTemps.length > 3) {
                     afficheGraphique = true;
                     point = [statTemps[0].xTemps, statTemps[0].yNbJoueurs];
@@ -80,6 +78,7 @@ export default class Resultat extends Component {
     }
     initChemin() {
         let chemin = "";
+
         switch (this.props.type) {
             case 'puzzle':
                 chemin = intl.get('NOM_PUZZLE');
@@ -110,6 +109,12 @@ export default class Resultat extends Component {
                 break;
             case 'simon':
                 chemin = intl.get('NOM_SIMON');
+                break;
+            case 'picross':
+                chemin = intl.get('NOM_PICROSS');
+                break;
+            case 'binero':
+                chemin = intl.get('NOM_BINERO');
                 break;
             case 'memoryGame':
                 chemin = 'jeux-memory';

@@ -19,7 +19,11 @@
     background-color: #dfdfeb;
 }
 
-
+.titreJeu {
+     font-size: 1.8em;
+     color: purple;
+     font-weight: 600;
+ }
 
 body {
      touch-action: manipulation;
@@ -46,6 +50,9 @@ ul li {
 
 .marge10 {
      margin-top: 10px;
+}
+.margeGauche10 {
+     margin-left: 10px;
 }
 
 .couleurHonneur {
@@ -1853,3 +1860,124 @@ ul li {
      -webkit-animation: apparition .7s linear;
      animation: apparition .7s linear
 }
+
+
+/* Binero */
+
+.jeuBinero {
+     display: flex;
+     flex-direction: column;
+     user-select: none;
+ 
+ }
+ 
+ 
+ .grilleCentre {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .grilleBinero {
+     display: grid;
+     grid-template-columns: repeat(4, 60px);
+     grid-template-rows: repeat(4, 60px);
+     grid-auto-columns: 60px;
+     grid-auto-rows: 60px;
+     grid-gap: 1px;
+ }
+ 
+ .caseBinero
+ {
+     border: 2px solid #95a4f7;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 5px;
+     font-weight: 500;
+     user-select: none;
+ }
+ 
+ .caseBineroChoix
+ {
+     background-color: #f5f0f0;
+     cursor: pointer;
+ 
+ }
+ 
+ @media screen and (max-width: 600px) {
+     .grilleBinero {
+         display: grid;
+         grid-template-columns: repeat(4, 55px);
+         grid-template-rows: repeat(4, 55px);
+         grid-auto-columns: 55px;
+         grid-auto-rows: 55px;
+         grid-gap: 1px;
+     }
+ }
+ 
+ /* Picross */
+ 
+ .jeuPicross {
+     display: flex;
+     flex-direction: column;
+     user-select: none;
+ 
+ }
+ 
+ 
+ 
+ 
+ .grillePicross {
+     display: grid;
+     grid-template-columns: repeat(11, 20px);
+     grid-template-rows: repeat(11, 20px);
+     grid-auto-columns: 20px;
+     grid-auto-rows: 20px;
+    
+ }
+ 
+ .bordureCote
+ {
+     font-size: 1.3em;
+     border-left: 1px solid #ff00cd;
+     border-right : 1px solid #ff00cd;
+ 
+ }
+ 
+ .bordureBas
+ {
+     font-size: 1.3em;
+     border-top: 1px solid #ff00cd;
+     border-bottom : 1px solid #ff00cd;
+  
+ }
+ 
+ 
+ 
+ .bordureGrille
+ {
+    
+   border: 1px solid gray;
+ }
+ 
+ .centrePicross
+ {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ 
+ }
+ 
+ .pleinPicross
+ {
+     background-color : #e01860;
+ }
+ .lignes
+ {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         justify-content: center;
+     
+ } 

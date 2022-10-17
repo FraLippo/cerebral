@@ -34,6 +34,8 @@ const JeuxFubuki = React.lazy(() => import('../../jeux/fubuki/jeuxFubuki'));
 const JeuxMath = React.lazy(() => import('../../jeux/math/MathJeu'));
 const JeuxMemoryGame = React.lazy(() => import('../../jeux/memoryGame/JeuxMemory'));
 const JeuxSimon = React.lazy(() => import('../../jeux/simon/jeuxSimon'));
+const JeuxBinero = React.lazy(() => import('../../jeux/binero/JeuxBinero'));
+const JeuxPicross = React.lazy(() => import('../../jeux/picross/JeuxPicross'));
 
 
 export default class Routeur extends Component {
@@ -63,6 +65,8 @@ export default class Routeur extends Component {
                     <Route path='/(jeux-bingo|brain-game-bingo)/:id' render={(props) => <JeuxBingo {...props} keyProp={'jeuxBingo'} key={Math.floor(Math.random() * 1000)} />} />
                     <Route path='/(jeux-fubuki|brain-game-fubuki)/:id' render={(props) => <JeuxFubuki {...props} keyProp={'jeuxFubuki'} key={Math.floor(Math.random() * 1000)} />} />
                     <Route path='/jeux-simon/:id' render={(props) => <JeuxSimon {...props} keyProp={'jeuxSimon'} key={Math.floor(Math.random() * 1000)} />} />
+                    <Route path='/binero/:id' render={(props) => <JeuxBinero {...props} keyProp={'jeuxBinero'} key={Math.floor(Math.random() * 1000)} />} />
+                    <Route path='/picross/:id' render={(props) => <JeuxPicross {...props} keyProp={'jeuxPicross'} key={Math.floor(Math.random() * 1000)} />} />
                     <Route path='/calcul/:id' render={(props) => <JeuxMath {...props} keyProp={'jeuxMath'} key={Math.floor(Math.random() * 1000)} />} />
                     <Route path='/calcul-mental/' render={(props) => <Calcul {...props} keyProp={'calculMental'} key={Math.floor(Math.random() * 1000)} />} />
                     <Route path='/logique/' render={(props) => <Logique {...props} keyProp={'logique'} key={Math.floor(Math.random() * 1000)} />} />

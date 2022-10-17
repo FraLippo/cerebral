@@ -133,8 +133,8 @@ import FinEtape from '../concours/FinEtape';
 
         return <div>
             <Helmet>
-                <title>Test de calcul mental en ligne</title>
-                <meta name="description" content="Des petits exercices de calcul mental en ligne pour tous les âges du plus simple (niveau cm2) au plus difficile." />
+                <title>Test de calcul mental en ligne pour tous les niveaux du cm1 aux seniors</title>
+                <meta name="description" content="Des petits exercices de calcul mental en ligne pour tous les âges et pour tous les niveaux : ce2, cm1, cm2 et adultes." />
             </Helmet>
             <h1>Le jeu du calcul mental</h1>
             <p>Trouver les chiffres ou les sigles manquants</p>

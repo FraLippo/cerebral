@@ -126,7 +126,6 @@ export default class Logique extends AccesDonnees {
 
             const tabPossibilite = this.calculPossibiliteGagner(index + 1);
             const nbPossibilite = this.nombrePossibiliteGagner(tabPossibilite);
-            console.log(nbPossibilite);
             const victoire = this.testGagne(tabPossibilite);
             if (victoire > 0) {
                 messagesJoueurs[index].msg = messagesJoueurs[index].joueur + intl.get('BINGO_JOUEURSV');

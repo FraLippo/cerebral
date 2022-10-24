@@ -173,9 +173,21 @@ let donneesConcoursCerebral =
         {
             id: 35,
             titre: "DEFI_35",
-            liste: [{ type: 'NOM_BINERO', id: 10350, titre: "binero" }, { type: 'NOM_PICROSS', id: 10351, titre: "picross" } ]
+            liste: [{ type: 'NOM_BINERO', id: 10350, titre: "binero" },{ type: 'NOM_BINERO', id: 10351, titre: "binero" }, { type: 'NOM_BINERO', id: 10352, titre: "binero" }, { type: 'NOM_BINERO', id: 10353, titre: "binero" } ]
 
         },
+        {
+            id: 36,
+            titre: "DEFI_36",
+            liste: [{ type: 'NOM_PICROSS', id: 10360, titre: "picross" }, { type: 'NOM_PICROSS', id: 10361, titre: "picross" }, { type: 'NOM_PICROSS', id: 10362, titre: "picross" }, { type: 'NOM_PICROSS', id: 10363, titre: "picross" } ]
+
+        },
+        {
+            id: 37,
+            titre: "DEFI_37",
+            liste: [{ type: 'NOM_BINERO', id: 10370, titre: "binero" }, { type: 'NOM_PICROSS', id: 10371, titre: "picross" }, { type: 'NOM_BINERO', id: 10372, titre: "binero" }, { type: 'NOM_PICROSS', id: 10373, titre: "picross" } ]
+
+        }
        
       
     ]

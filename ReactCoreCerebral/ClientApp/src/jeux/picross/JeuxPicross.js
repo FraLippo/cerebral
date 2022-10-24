@@ -100,6 +100,7 @@ export default class JeuxPicross extends Component {
     }
 
     abandon = () => {
+        if (this.stop) return;
         this.perdu = true;
         this.stop = true;
         this.setState({

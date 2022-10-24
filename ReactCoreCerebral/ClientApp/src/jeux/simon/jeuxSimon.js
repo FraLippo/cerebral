@@ -121,7 +121,7 @@ export default class JeuxSimon extends Component {
                 (this.jeu.concours ? <FinEtape donneesJeu={this.jeu.donnees} perdu={this.perdu}>
 
                 </FinEtape> : <ResultatCommun type='simon' perdu={this.perdu} prochainJeu={this.jeu.obtenirProchainJeu()} idTest={this.id} dureeJeu={this.dureeJeu} dureeMax={60}></ResultatCommun>) : <div className='centreGrille'><div><Grille tabGrille={this.state.tabGrille} taille={this.taille} clic={this.clic}></Grille></div>
-                    {this.state.debutJeu && <div className='espaceHaut centre'><Button onClick={this.reset}>Recommencer à 0</Button><div className='fontMoyenne espaceHaut'>Refaire la séquence que vous venez de voir</div></div>}
+                    {this.state.debutJeu && <div className='espaceHaut centre'><Button onClick={this.reset}>Revoir la séquence</Button><div className='fontMoyenne espaceHaut'>Refaire la séquence que vous venez de voir.</div></div>}
                 </div>}
         </div>
     }

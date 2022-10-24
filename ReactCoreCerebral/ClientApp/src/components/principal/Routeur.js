@@ -36,6 +36,7 @@ const JeuxMemoryGame = React.lazy(() => import('../../jeux/memoryGame/JeuxMemory
 const JeuxSimon = React.lazy(() => import('../../jeux/simon/jeuxSimon'));
 const JeuxBinero = React.lazy(() => import('../../jeux/binero/JeuxBinero'));
 const JeuxPicross = React.lazy(() => import('../../jeux/picross/JeuxPicross'));
+// const CreaPicross = React.lazy(() => import('../../jeux/picross/CreationPicross'));
 
 
 export default class Routeur extends Component {

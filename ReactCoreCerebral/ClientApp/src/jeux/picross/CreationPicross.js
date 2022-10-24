@@ -9,7 +9,7 @@ export default class CreationPicross extends Component {
 
     constructor(props) {
         super();
-        const index = 1; //taille 4  1 pour taille 6
+        const index = 0; //taille 4  1 pour taille 6
         let donnees = data[index];
         this.taille = donnees.taille;
         this.state =

@@ -40,12 +40,12 @@ export default class MenuJeuFR extends Component {
 
       </Row>
       <Row>
-        <h1 className="titre couleurTitre centre">Le challenge (nouveau)</h1>
+        <h1 className="titre couleurTitre centre">Le challenge cérebral(nouveau)</h1>
         <Row className="centre"><img src={border} alt="bordure"></img></Row>
         <Row>
         <div className="bordureInfo">
 
-<p>Vous aimez les jeux de réflexion comme le Picross, le Mastermind, Binero ou les puzzles ? Venez essayer notre challenge en 64 étapes.</p>
+<p>Vous aimez les jeux de réflexion comme le Picross, le Mastermind, Binero ou les puzzles ? Venez essayer notre challenge en 32 étapes.</p>
 <p className="centre sequenceSuite"><a href="https://concours.evalquiz.com/presentationCerebral">Le challenge</a></p>
 </div>
 

@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #41383b12;;
+    background-color: #41383b12;
     margin: 10px;
     font-size: 1.5em;
     border-radius: 5px;
@@ -56,7 +56,7 @@ ul li {
 }
 
 .couleurHonneur {
-     color: #fe07fe;
+     color: #cf0186;
 }
 
 .grandeLettre {
@@ -1205,7 +1205,7 @@ ul li {
 }
 
 .couleurTitre {
-     color: #e317c0;
+     color: #cc04aa;
 }
 
 /* Memoire */

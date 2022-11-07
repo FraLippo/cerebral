@@ -32,10 +32,10 @@ export default class ChiffreLetttre extends Component {
 
     
         <h2 className="titre couleurTitre centre">Des chiffres et des lettres</h2>
-        <Row className="centre"><img src={border} alt="bordure"></img></Row>
+        <Row className="centre"><img src={border} alt="bordure" width="100" height="41"></img></Row>
    
     
-      <div className="centre"><img src={border} alt="bordure"></img></div>
+        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Le mot le plus long</h2>
@@ -66,7 +66,7 @@ export default class ChiffreLetttre extends Component {
             </div>
           </Col>
         </Row>
-        <Row className="centre"><img src={border} alt="bordure"></img></Row>
+        <Row className="centre"><img src={border} alt="bordure" width="100" height="41"></img></Row>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Le compte est bon</h2>

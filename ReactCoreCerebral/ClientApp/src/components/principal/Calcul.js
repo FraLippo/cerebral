@@ -31,7 +31,7 @@ export default class Logique extends Component {
 
 
 
-<Row className="centre"><img src={border} alt="bordure"></img></Row>
+        <Row className="centre"><img src={border} alt="bordure" width="100" height="41"></img></Row>
 
 
         <Row gutter={8} className="espaceHaut">
@@ -49,7 +49,7 @@ export default class Logique extends Component {
             <SousMenu type="math" titre="MATH_TITLE"></SousMenu>
           </Col>
         </Row>
-        <Row className="centre"><img src={border} alt="bordure"></img></Row>
+        <Row className="centre"><img src={border} alt="bordure" width="100" height="41"></img></Row>
         <Row gutter={8} className="espaceHaut">
 
           <Col md={10}>
@@ -63,7 +63,7 @@ export default class Logique extends Component {
             <SousMenu type="pyramide" titre="PYRAMIDE_TITLE"></SousMenu>
           </Col>
         </Row>
-        <Row className="centre"><img src={border} alt="bordure"></img></Row>
+        <Row className="centre"><img src={border} alt="bordure" width="100" height="41"></img></Row>
         <Row gutter={8} className="espaceHaut">
 
           <Col md={10}>

@@ -25,7 +25,7 @@ export default class MenuJeuFR extends Component {
         </Helmet>
       <h1 className="titre centre couleurTitre">Sport cérébral et jeux de réflexion</h1>
       <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
-      <Row className="centre"><img src={border} alt="bordure"></img></Row>
+      <Row className="centre"><img src={border} width="100" height="41" alt="bordure"></img></Row>
       <Row gutter={8} className="espaceHaut">
         <Col md={24}>
           <p>Nous vous proposons une série de tests simples et de petits jeux de réflexion pour faire travailler son cerveau en espérant améliorer ses capacités cognitives et son intelligence. Tous les jeux sont gratuits et ne nécessitent aucune inscription.</p>
@@ -34,14 +34,14 @@ export default class MenuJeuFR extends Component {
           <p>Les tests ne sont en aucun cas des tests scientifiques. Ce sont surtout des petits jeux de réflexion qui servent à évaluer ses capacités par rapport aux autres. A la fin de chaque jeu vous obtenez votre classement et votre position par rapport aux autres utilisateurs.</p>
           
           
-          <Row className="centre"><img src={border} alt="bordure" ></img></Row>
+          <Row className="centre"><img src={border} alt="bordure"  width="100" height="41" ></img></Row>
 
         </Col>
 
       </Row>
       <Row>
-        <h1 className="titre couleurTitre centre">Le challenge cérebral(nouveau)</h1>
-        <Row className="centre"><img src={border} alt="bordure"></img></Row>
+        <h1 className="titre couleurTitre centre">Le challenge cérebral (nouveau)</h1>
+        <Row className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></Row>
         <Row>
         <div className="bordureInfo">
 
@@ -55,7 +55,7 @@ export default class MenuJeuFR extends Component {
 
       <Row>
         <h1 className="titre couleurTitre centre">Les défis</h1>
-        <Row className="centre"><img src={border} alt="bordure"></img></Row>
+        <Row className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></Row>
         <Row gutter={8} className="espaceHaut">
 
           <Col md={10}>
@@ -72,7 +72,7 @@ export default class MenuJeuFR extends Component {
         </Row>
       </Row>
 
-      <div className="centre"><img src={border} alt="bordure"></img></div>
+      <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
 <h1 className="titre centre">Les tests</h1>
     <Row className="margeHaut">
     <Col xs={24} sm={12}><Link to="/calcul-mental"><div className="tuile">Calcul mental</div></Link></Col>
@@ -84,7 +84,7 @@ export default class MenuJeuFR extends Component {
 
 
 
-      <div className="centre"><img src={border} alt="bordure"></img></div>
+      <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
       <div className="centre"><img className="img-responsive" width="1000" height="396" src={presentation} alt="presentation"></img></div>
     <Tableau></Tableau>
       <Row><Ad></Ad></Row>

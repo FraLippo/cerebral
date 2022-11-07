@@ -33,7 +33,7 @@ export default class Memoire extends Component {
 
       <Row>
         
-        <Row className="centre"><img src={border} alt="bordure"></img></Row>
+            <Row className="centre"><img src={border} alt="bordure" width="100" height="41"></img></Row>
 
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
@@ -50,7 +50,7 @@ export default class Memoire extends Component {
             <SousMenu type="memoryGame" titre="MEMORY_TITLE"></SousMenu>
           </Col>
         </Row>
-        <Row className="centre"><img src={border} alt="bordure"></img></Row>
+            <Row className="centre"><img src={border} alt="bordure" width="100" height="41"></img></Row>
   <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Le jeu de Simon</h2>
@@ -64,7 +64,7 @@ export default class Memoire extends Component {
             <SousMenu type="simon" titre="SIMON_TITLE"></SousMenu>
           </Col>
         </Row>
-        <Row className="centre"><img src={border} alt="bordure"></img></Row>
+            <Row className="centre"><img src={border} alt="bordure" width="100" height="41"></img></Row>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Mémoriser des cartes</h2>
@@ -77,7 +77,7 @@ export default class Memoire extends Component {
             <SousMenu type="esp" titre="ESP_TITLE"></SousMenu>
           </Col>
         </Row>
-        <Row className="centre"><img src={border} alt="bordure"></img></Row>
+            <Row className="centre"><img src={border} alt="bordure" width="100" height="41"></img></Row>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Mémoriser un dessin</h2>
@@ -90,7 +90,7 @@ export default class Memoire extends Component {
             <SousMenu type="memoireDessin" titre="DESSIN_TITLE"></SousMenu>
           </Col>
         </Row>
-        <Row className="centre"><img src={border} alt="bordure"></img></Row>
+            <Row className="centre"><img src={border} alt="bordure" width="100" height="41"></img></Row>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Se souvenir de l'image précédente</h2>

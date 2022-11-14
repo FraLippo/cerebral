@@ -72,7 +72,7 @@ export default class JeuxPicross extends Component {
 
         if (nouveauTabJeu.toString() === this.resultat.toString()) {
             this.stop = true;
-            message.success('Bravo ! Vous avez réussi', 2, this.afficherResultat);
+            message.success('Bravo ! Vous avez réussi', 3, this.afficherResultat);
         }
         this.setState({
             tabJeu: nouveauTabJeu,

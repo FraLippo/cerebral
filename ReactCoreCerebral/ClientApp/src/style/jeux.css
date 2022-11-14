@@ -1916,9 +1916,9 @@ ul li {
      }
  }
  
- /* Picross */
- 
- .jeuPicross {
+/* Picross */
+
+.jeuPicross {
      display: flex;
      flex-direction: column;
      user-select: none;
@@ -1934,44 +1934,50 @@ ul li {
      grid-template-rows: repeat(11, 20px);
      grid-auto-columns: 20px;
      grid-auto-rows: 20px;
-    
+ 
  }
  
- .bordureCote
- {
+ 
+ @media screen and (max-width: 380px) {
+     .grillePicross {
+         display: grid;
+         grid-template-columns: repeat(11, 17px);
+         grid-template-rows: repeat(11, 17px);
+         grid-auto-columns: 17px;
+         grid-auto-rows: 17px;
+     }
+ }
+ 
+ .bordureCote {
      font-size: 1.3em;
      border-left: 1px solid #ff00cd;
-     border-right : 1px solid #ff00cd;
+     border-right: 1px solid #ff00cd;
  
  }
  
- .bordureBas
- {
+ .bordureBas {
      font-size: 1.3em;
      border-top: 1px solid #ff00cd;
-     border-bottom : 1px solid #ff00cd;
-  
+     border-bottom: 1px solid #ff00cd;
+ 
  }
  
  
  
- .bordureGrille
- {
-    
-   border: 1px solid gray;
+ .bordureGrille {
+ 
+     border: 1px solid gray;
  }
  
- .centrePicross
- {
+ .centrePicross {
      display: flex;
      justify-content: center;
      align-items: center;
  
  }
  
- .pleinPicross
- {
-     background-color : #e01860;
+ .pleinPicross {
+     background-color: #e01860;
  }
  .lignes
  {

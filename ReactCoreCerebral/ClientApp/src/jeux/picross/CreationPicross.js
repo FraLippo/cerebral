@@ -9,8 +9,9 @@ export default class CreationPicross extends Component {
 
     constructor(props) {
         super();
-        const index = 0; //taille 4  1 pour taille 6
+        const index = 2; //taille 4  1 pour taille 6 2 pour taille 8
         let donnees = data[index];
+        console.log(data);
         this.taille = donnees.taille;
         this.state =
         {
@@ -24,6 +25,7 @@ export default class CreationPicross extends Component {
 
     clic = (id) =>
     {
+        // console.log("id " + id + " x" + x + " y " + y);
         let nouveauTabIndiceX = [...this.state.tabIndiceX];
         let nouveauTabIndiceY = [...this.state.tabIndiceY];
         let nouveauTabJeu = [...this.state.tabJeu];
@@ -61,7 +63,7 @@ export default class CreationPicross extends Component {
                     <Grille taille={this.taille} tabJeu={this.state.tabJeu} clic={this.clic}></Grille>
                  
             </div> 
-              <div className="margeGauche30">{this.generer()}</div>
+              <div className="margeGauche30" style={{userSelect : "all"}}>{this.generer()}</div>
             </div>
 
         </div>

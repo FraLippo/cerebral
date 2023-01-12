@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import * as signalR from "@microsoft/signalr";
 import '../../style/jeux.css';
-//import { addFirstName, readFirstName } from '../../components/commun/localStorage';
 import Confetti from 'react-confetti';
 import { Modal } from 'antd';
-//import Prenom from '../../components/commun/Prenom';
 import EspaceJoueur from './EspaceJoueurs';
 import EspaceLettres from './EspaceLettres';
 import EspaceSaisie from './EspaceSaisie';
 import LogiqueLettre from './LogiqueLettre';
 import { Helmet } from 'react-helmet';
 import Manche from './Manche';
-import { withRouter } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import { readGameNumber } from '../../components/commun/localStorage';
 import Regle from './Regle';
 import FinEtape from '../concours/FinEtape';
 import { analytics } from '../../components/commun/analytics';
+import * as signalR from "@microsoft/signalr";
 
 class JeuxLettres extends Component {
 
@@ -38,12 +36,12 @@ class JeuxLettres extends Component {
             erreur : false
         }
 
-        this.id = parseInt(props.match.params.id);
+        this.id = parseInt(props.params.id);
         this.perdu = false;
         this.concours = false;
         this.donneesJeu ={};
-        this.nbJoueurs = parseInt(props.match.params.nbJoueurs);
-        this.niveau = parseInt(props.match.params.niveau);
+        this.nbJoueurs = parseInt(props.params.nbJoueurs);
+        this.niveau = parseInt(props.params.niveau);
         if (this.id > 10000)
         {
             this.concours = true;   
@@ -55,24 +53,23 @@ class JeuxLettres extends Component {
       
         this.tabLettresOrigine = [];
         this.gameNumber = readGameNumber();
-
+        this.hubConnection == null;
         this.motEnCours = "";
         this.dicoLettres = new Map();
-        this.hubConnection = new signalR.HubConnectionBuilder()
-            .withUrl(process.env.REACT_APP_URL_LETTREHUB)
-            .build();
+      
         this.confirm = Modal.confirm;
         analytics();
     }
     setServeur =() =>
     {
-    this.hubConnection.start().then(() => {
+   
         this.hubConnection.invoke("InscriptionJeu", this.id, this.state.prenom, this.niveau, this.nbJoueurs).catch(function (err) {
-           this.setState({erreur: true})
+           this.setState({erreur: true});
+         
             return console.error(err.toString());
         });
-    }
-    ).catch(err =>  this.setState({erreur: true}));
+    
+
 
     this.hubConnection.on("AfficheCompteRebours", this.afficheCompteRebours);
     this.hubConnection.on("AfficheInfoJoueur", this.afficheInfoJoueur);
@@ -82,8 +79,11 @@ class JeuxLettres extends Component {
     this.hubConnection.on("FinJeu", this.finJeu);
 }
 
-    componentDidMount = () => {
-       
+async componentDidMount()  {
+         this.hubConnection =  new signalR.HubConnectionBuilder()
+        .withUrl(process.env.REACT_APP_URL_LETTREHUB)
+        .build();
+        await this.hubConnection.start();
         window.onpopstate = this.onBackButtonEvent;
         this.setServeur();
         // const prenom = readFirstName();

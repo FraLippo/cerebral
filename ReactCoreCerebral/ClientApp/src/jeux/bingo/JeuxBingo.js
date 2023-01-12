@@ -4,27 +4,22 @@ import Grille from './Grille';
 import { message } from 'antd';
 import MessagesOrdi from './MessagesOrdi';
 import Resultat from './Resultat';
-import Regle from './Regle';
-import { Redirect } from 'react-router-dom';
 import intl from 'react-intl-universal';
 import { Helmet } from 'react-helmet';
 import { analytics } from '../../components/commun/analytics';
 import FinEtape from '../concours/FinEtape';
+import withRouter from '../../components/commun/withRouter';
+import Regle from './Regle';
 
 
-
-export default class JeuxBingo extends Component {
+ class JeuxBingo extends Component {
 
     constructor(props) {
         super();
-        this.id = parseInt(props.match.params.id);
-        this.erreurStop = false;
+        this.id = parseInt(props.params.id);
+  
         this.jeu = new Logique(this.id);
-        if (isNaN(this.id) || this.jeu.donnees === undefined) {
-            this.erreurStop = true;
-            this.id = 0;
-        }
-        else {
+    
             this.perdu = true;
             this.taille = this.jeu.taille;
             this.intervalle = this.jeu.intervalle;
@@ -45,7 +40,6 @@ export default class JeuxBingo extends Component {
             this.stop = false;
             analytics();
 
-        }
     }
     componentWillUnmount() {
         clearTimeout(this.timer);
@@ -140,9 +134,7 @@ export default class JeuxBingo extends Component {
     }
 
     render() {
-        if (this.erreurStop) {
-            return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
-        }
+  
         return <div>  <Helmet>
             <title>{intl.get('BINGO_TITLE')}</title>
             <meta name="description" content={intl.get('BINGO_META')} />
@@ -160,3 +152,5 @@ export default class JeuxBingo extends Component {
             </div></div>}</div>
     }
 }
+
+export default withRouter(JeuxBingo);

@@ -13,7 +13,7 @@ import Tableau from '../commun/Tableau';
 import { Link } from 'react-router-dom';
 
 
-export default class MenuJeuFR extends Component {
+export default class Presentation extends Component {
 
 
 
@@ -25,7 +25,7 @@ export default class MenuJeuFR extends Component {
         </Helmet>
       <h1 className="titre centre couleurTitre">Sport cérébral et jeux de réflexion</h1>
       <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
-      <Row className="centre"><img src={border} width="100" height="41" alt="bordure"></img></Row>
+      <div className="centre"><img src={border} width="100" height="41" alt="bordure"></img></div>
       <Row gutter={8} className="espaceHaut">
         <Col md={24}>
           <p>Nous vous proposons une série de tests simples et de petits jeux de réflexion pour faire travailler son cerveau en espérant améliorer ses capacités cognitives et son intelligence. Tous les jeux sont gratuits et ne nécessitent aucune inscription.</p>
@@ -34,28 +34,29 @@ export default class MenuJeuFR extends Component {
           <p>Les tests ne sont en aucun cas des tests scientifiques. Ce sont surtout des petits jeux de réflexion qui servent à évaluer ses capacités par rapport aux autres. A la fin de chaque jeu vous obtenez votre classement et votre position par rapport aux autres utilisateurs.</p>
           
           
-          <Row className="centre"><img src={border} alt="bordure"  width="100" height="41" ></img></Row>
+          <div className="centre"><img src={border} alt="bordure"  width="100" height="41" ></img></div>
 
         </Col>
 
       </Row>
       <Row>
-        <h1 className="titre couleurTitre centre">Le challenge cérebral (32 nouvelles étapes)</h1>
-        <Row className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></Row>
-        <Row>
+      <Col xs={24} className="centre">
+        <h1 className="titre couleurTitre centre">Le challenge cérebral</h1>
+       <div><img src={border} alt="bordure"  width="100" height="41"></img></div>
+    
         <div className="bordureInfo">
 
 <p>Vous aimez les jeux de réflexion comme le Picross, le Mastermind, Binero ou les puzzles ? Venez essayer notre challenge en 64 étapes. </p>
 <p className="centre sequenceSuite"><a href="https://concours.evalquiz.com/presentationCerebral">Le challenge</a></p>
 </div>
 
-        </Row>
+      </Col>
       </Row>
 
 
-      <Row>
+      <div>
         <h1 className="titre couleurTitre centre">Les défis</h1>
-        <Row className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></Row>
+        <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
         <Row gutter={8} className="espaceHaut">
 
           <Col md={10}>
@@ -70,7 +71,7 @@ export default class MenuJeuFR extends Component {
             <SousMenu type="defiMot" titre="NOM_DEFI_MOT"></SousMenu>
           </Col>
         </Row>
-      </Row>
+      </div>
 
       <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
 <h1 className="titre centre">Les tests</h1>

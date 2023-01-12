@@ -3,7 +3,7 @@ import SousMenu from '../principal/SousMenu';
 import { LienMenuPrincipal } from '../commun/SuiteJeux';
 
 import { Statistic } from 'antd';
-import { Link, Redirect } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Ad from './adSense';
 import intl from 'react-intl-universal';
 import { Graphic } from '../commun/Graphic';
@@ -20,7 +20,6 @@ export default class Resultat extends Component {
             nbJoueurs: 0,
             tempsMoyen: 0,
             afficheResultat: false,
-            redirection: false,
             statTemps: [],
             point: [0, 0],
             afficheGraphique: false
@@ -159,10 +158,7 @@ export default class Resultat extends Component {
 
 
     render() {
-        if (this.state.redirection) {
-            return <Redirect to={this.chemin}></Redirect>
-        }
-        else {
+       
             return (
 
                 <div>
@@ -191,7 +187,7 @@ export default class Resultat extends Component {
 
                 </div>
             );
-        }
+        
     }
 }
 

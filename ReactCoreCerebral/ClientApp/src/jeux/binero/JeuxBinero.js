@@ -4,25 +4,20 @@ import { Button, message } from 'antd';
 import CompteRebours from '../../components/commun/CompteRebours2';
 import Regle from './Regle';
 import ResultatCommun from '../../components/commun/ResultatCommun';
-import { Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { analytics } from '../../components/commun/analytics';
 import Logique from './Logique';
 import FinEtape from '../concours/FinEtape';
 import { addGame } from '../../components/commun/localStorage';
-
-export default class JeuxBinero extends Component {
+import withRouter from '../../components/commun/withRouter';
+ class JeuxBinero extends Component {
 
     constructor(props) {
         super(props);
-        this.id = parseInt(this.props.match.params.id);
-        this.stop = false;
+        this.id = parseInt(props.params.id);
         this.jeu = new Logique(this.id);
 
-        if (isNaN(this.id) || this.jeu.donnees === undefined) {
-            this.stop = true;
-        }
-        else {
+       
             this.taille = 0;
             this.perdu = false;
             this.state = {
@@ -34,7 +29,7 @@ export default class JeuxBinero extends Component {
             this.fin = false;
             analytics();
             addGame('binero', this.id);
-        }
+        
     }
 
     async componentDidMount() {
@@ -137,7 +132,6 @@ export default class JeuxBinero extends Component {
 
 
     render() {
-        if (this.stop) return (<Redirect to="/"></Redirect>);
         return <div className="JeuBinero">
             <Helmet>
                 <title>Sport cérebral : le binero</title>
@@ -158,3 +152,5 @@ export default class JeuxBinero extends Component {
         </div>
     }
 }
+
+export default withRouter(JeuxBinero);

@@ -3,7 +3,7 @@ import { Button } from 'antd';
 import Icone from './Icone';
 import LogiqueSuite from './LogiqueSuite'
 import '../../style/jeux.css';
-import { withRouter, Redirect } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import { addGame } from '../../components/commun/localStorage';
 import ResultatCommunFaute from '../../components/commun/ResultatCommunFaute';
 import { analytics } from '../../components/commun/analytics';
@@ -15,13 +15,10 @@ class JeuxSuite extends Component {
 
     constructor(props) {
         super(props);
-        this.idTest = parseInt(this.props.match.params.id);
-        this.stop = false;
+        this.idTest = parseInt(props.params.id);
+
         this.logique = new LogiqueSuite(this.idTest);
-        if (isNaN(this.idTest) || this.logique.donnees === undefined) {
-            this.stop = true;
-        }
-        else {
+       
 
             this.elementEnCours = 0;
             this.tabReponse = this.logique.construireTableauReponse();
@@ -35,7 +32,7 @@ class JeuxSuite extends Component {
    
             addGame('jeuxSuite', this.idTest);
             analytics();
-        }
+        
 
     }
     updateElement = (id) => {
@@ -73,7 +70,6 @@ class JeuxSuite extends Component {
     }
 
     render() {
-        if (this.stop) return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
         return <div>
             <Helmet>
                 <title>{intl.get('SUITE_TITLE')}</title>

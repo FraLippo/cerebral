@@ -5,7 +5,7 @@ import Bouton from './Bouton';
 import { message } from 'antd';
 import ResultatCommun from '../../components/commun/ResultatCommun';
 import '../../style/jeux.css';
-import { withRouter, Redirect } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import { analytics } from '../../components/commun/analytics';
 import { addGame } from '../../components/commun/localStorage';
 import { Helmet } from 'react-helmet';
@@ -19,13 +19,10 @@ import intl from 'react-intl-universal';
 class JeuxOrdre extends Component {
     constructor(props) {
         super(props);
-        this.id = parseInt(this.props.match.params.id);
-        this.stop = false;
+        this.id = parseInt(this.props.params.id);
+  
         this.donneeLogique = new Logique(this.id);
-        if (isNaN(this.id) || this.donneeLogique.donnees === undefined) {
-            this.stop = true;
-        }
-        else {
+      
             this.perdu = false;
             this.tabPion = [];
             this.debutJeu = 0;
@@ -40,7 +37,7 @@ class JeuxOrdre extends Component {
             }
  
             addGame('jeuxOrdre', this.id);
-        }
+        
         analytics();
     }
 
@@ -98,10 +95,7 @@ class JeuxOrdre extends Component {
     }
 
     render() {
-        if (this.stop) {
-            return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
-        }
-        else {
+      
             return (<div>
                 <Helmet>
                     <title>{intl.get('ORDRE_TITLE')}</title>
@@ -117,7 +111,7 @@ class JeuxOrdre extends Component {
                     </React.Fragment>  :  this.donneeLogique.concours ? <FinEtape donneesJeu={this.donneeLogique.donnees} perdu={this.perdu}></FinEtape> :<ResultatCommun   dureeMax={this.temps} type='ordre' perdu={this.perdu} prochainJeu={this.donneeLogique.obtenirProchainJeu()} dureeJeu={this.dureeJeu} idTest={this.id}></ResultatCommun>}
             </div>)
         }
-    }
+    
 }
 
 

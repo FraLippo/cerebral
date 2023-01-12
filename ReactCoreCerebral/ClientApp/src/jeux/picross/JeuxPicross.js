@@ -11,18 +11,15 @@ import { addGame } from '../../components/commun/localStorage';
 import Helmet from 'react-helmet';
 import { analytics } from '../../components/commun/analytics';
 import { Redirect } from 'react-router-dom';
-
-export default class JeuxPicross extends Component {
+import withRouter from '../../components/commun/withRouter';
+ class JeuxPicross extends Component {
 
     constructor(props) {
         super(props);
-        this.id = parseInt(this.props.match.params.id);
-        this.stopErreur = false;
+        this.id = parseInt(this.props.params.id);
+       
         this.jeu = new Logique(this.id);
-        if (isNaN(this.id) || this.jeu.donnees === undefined) {
-            this.stopErreur = true;
-        }
-        else {
+      
             this.taille = 0;
             this.dureeJeu = Date.now();
             this.perdu = false;
@@ -38,7 +35,7 @@ export default class JeuxPicross extends Component {
             }
             analytics();
             addGame('picross', this.id);
-        }
+        
     }
 
     async componentDidMount() {
@@ -112,7 +109,7 @@ export default class JeuxPicross extends Component {
 
 
     render() {
-        if (this.stopErreur) return (<Redirect to="/"></Redirect>);
+
         return <React.Fragment>
             <Helmet>
                 <title>Jeu cérebral : Picross</title>
@@ -140,3 +137,5 @@ export default class JeuxPicross extends Component {
 
     }
 }
+
+export default withRouter(JeuxPicross)

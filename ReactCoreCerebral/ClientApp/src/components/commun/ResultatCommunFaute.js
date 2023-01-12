@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import SousMenu from '../../components/principal/SousMenu';
 import { LienMenuPrincipal } from '../../components/commun/SuiteJeux';
-import { Row, Col, Button, Statistic } from 'antd';
-import CompteRebours from '../../components/commun/CompteRebours';
-import {withRouter, Redirect, Link} from 'react-router-dom';
+import { Row, Col,  Statistic } from 'antd';
+import {Link} from 'react-router-dom';
 import Ad from '../../components/commun/adSense';
 import intl from 'react-intl-universal';
+import withRouter from './withRouter';
 
 class Resultat extends Component {
 
@@ -97,33 +97,16 @@ class Resultat extends Component {
        
         this.chemin += this.props.prochainJeu.id;
         element = <div className="centre"><b>{intl.get('PROCHAIN_JEU')}</b> <div><Link to={this.chemin}>{intl.get(this.props.prochainJeu.titre)}</Link></div>
-            {!this.state.annuler && <div><CompteRebours temps={13} finTimer={this.finTimer}></CompteRebours>
-                <Button type="primary" onClick={this.annuler}>{intl.get('ANNULER')}</Button></div>}
+        
         </div>
         return element;
     }
 
-    
-    annuler = () => 
-    {
-        this.setState({
-            annuler: true
-        })
-    }
-    
-    finTimer = () => {
-        this.setState({
-            redirection: true
-        })
-    }
+ 
 
 
     render() {
-        if (this.state.redirection) {
-            return <Redirect to={this.chemin}></Redirect>
-        }
-        else
-        
+     
         return (<div>{this.state.afficheResultat && <Row type="flex" justify="center"><Col xs={{ span: 20 }} md={{ span: 12 }} lg={{ span: 8 }}><div>
             <h1>{intl.get('ESP_NOMBREFAUTES')}<span className="lettreRouge">{this.props.nbFautes}</span></h1>
             <div className="centre"> <Statistic title={intl.get('CLASSEMENT')} value={this.state.classement} suffix={'/ ' + this.state.nombreJoueurs} /></div>

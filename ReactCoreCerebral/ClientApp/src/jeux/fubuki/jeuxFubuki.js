@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter, Redirect } from 'react-router-dom';
 import Logique from './Logique';
 import Grille from './Grille';
 import Choix from './Choix';
@@ -11,19 +10,17 @@ import FinEtape from '../concours/FinEtape';
 import ProgressBar from '../../components/commun/ProgressBar';
 import { addGame } from '../../components/commun/localStorage';
 import { analytics } from '../../components/commun/analytics';
+import withRouter from '../../components/commun/withRouter';
 
 class JeuxFubuki extends Component {
 
     constructor(props) {
         super(props);
-        this.id = parseInt(this.props.match.params.id);
-        this.stop = false;
+        this.id = parseInt(this.props.params.id);
+   
         this.logiqueFubuki = new Logique(this.id);
 
-        if (isNaN(this.id) || this.logiqueFubuki.donnees === undefined) {
-            this.stop = true;
-        }
-        else {
+       
             this.taille = this.logiqueFubuki.donnees.info.taille;
             const tabValeurs = this.logiqueFubuki.donnees.info.valeurs;
             this.tabValeursOrigine = [...this.logiqueFubuki.donnees.info.valeurs];
@@ -44,7 +41,7 @@ class JeuxFubuki extends Component {
 
             addGame('jeuxFubuki', this.id);
             analytics();
-        }
+        
     }
 
     clickNumero = (id) => {
@@ -157,7 +154,6 @@ class JeuxFubuki extends Component {
     }
 
     render() {
-        if (this.stop) return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
 
         return <React.Fragment><h1>{intl.get('FU_TITRE')}</h1>
             {this.state.afficheResultat ? this.logiqueFubuki.concours ? <FinEtape donneesJeu={this.logiqueFubuki.donnees} perdu={this.perdu}></FinEtape> : <ResultatCommun perdu={this.perdu} prochainJeu={this.logiqueFubuki.obtenirProchainJeu()} type="fubuki" idTest={this.id} dureeJeu={this.dureeJeu} dureeMax={this.temps/10}></ResultatCommun> :

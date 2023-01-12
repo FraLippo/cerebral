@@ -4,7 +4,7 @@ import LogiqueFamille from './LogiqueFamille';
 import Erreur from './Erreur';
 import CompteRebours from '../../components/commun/CompteRebours';
 import ResultatCommun from '../../components/commun/ResultatCommun';
-import { withRouter, Redirect } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import { analytics } from '../../components/commun/analytics';
 import { addGame } from '../../components/commun/localStorage';
 import FinEtape from '../concours/FinEtape';
@@ -17,13 +17,10 @@ class JeuxFamille extends Component {
 
     constructor(props) {
         super(props);
-        this.id = parseInt(this.props.match.params.id);
-        this.stop = false;
+        this.id = parseInt(this.props.params.id);
+
         this.logique = new LogiqueFamille(this.id);
-        if (isNaN(this.id) || this.logique.donnees === undefined) {
-            this.stop = true;
-        }
-        else {
+      
             this.dureeJeu = Date.now();
             this.tabOrigine = this.logique.obtenirGrille();
             this.state = {
@@ -36,7 +33,7 @@ class JeuxFamille extends Component {
 
             addGame('jeuxFamille', this.id);
             analytics();
-        }
+        
     }
 
     modifFamille = () => {
@@ -85,8 +82,6 @@ class JeuxFamille extends Component {
     }
 
     render() {
-        if (this.stop) return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
-
 
         return <React.Fragment>
             <Helmet>

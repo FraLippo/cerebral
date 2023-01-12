@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {withRouter,Redirect } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import Operations from './Operations';
 import Donnees from './Donnees';
 import Carte from './Carte';
@@ -23,14 +23,10 @@ class JeuxCompte extends Component {
     constructor(props)
     {
         super(props);
-        this.id = parseInt(this.props.match.params.id);
-        this.stop = false;
+        this.id = parseInt(this.props.params.id);
+       
         this.donnees = new Donnees(this.id);
-        if (isNaN(this.id) || this.donnees.donnees === undefined) {
-            this.stop = true;
-        }
-        else
-        {
+       
         let cartes= this.donnees.obtenirCartes();
         this.resultat = this.donnees.obtenirResultat();
         this.nbCartesRestantes = cartes.length;
@@ -49,7 +45,7 @@ class JeuxCompte extends Component {
 
           addGame('jeuxCompte', this.id);
           analytics();
-        }
+        
     }
 
    
@@ -195,7 +191,6 @@ class JeuxCompte extends Component {
 
     render()
     {
-        if (this.stop) return (<Redirect to="/"></Redirect>);
 
         return <div>
             <Helmet>

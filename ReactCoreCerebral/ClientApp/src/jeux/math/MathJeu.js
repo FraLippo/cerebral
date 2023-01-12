@@ -6,7 +6,7 @@ import ResultatCommunFaute from '../../components/commun/ResultatCommunFaute';
 import LogiqueMath from './LogiqueMath';
 import { analytics } from '../../components/commun/analytics';
 import { Helmet } from 'react-helmet';
-import { withRouter} from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import { addGame } from '../../components/commun/localStorage';
 import FinEtape from '../concours/FinEtape';
 
@@ -17,7 +17,7 @@ import FinEtape from '../concours/FinEtape';
     constructor(props) {
         super();
        
-        this.id = parseInt(props.match.params.id);
+        this.id = parseInt(props.params.id);
         this.donneeJeu = null;
         this.reponseEnCours = false;
         this.noQuestion = 0;

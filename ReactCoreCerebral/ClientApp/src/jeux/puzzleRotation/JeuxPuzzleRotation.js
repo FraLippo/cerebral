@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Image from './Image';
 import LogiquePuzzleRotation from './LogiquePuzzleRotation';
 import ResultatCommun from '../../components/commun/ResultatCommun';
-import { withRouter, Redirect } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import { analytics } from '../../components/commun/analytics';
 import { Helmet } from 'react-helmet';
 import { addGame } from '../../components/commun/localStorage';
@@ -19,13 +19,8 @@ class JeuxPuzzleRotation extends Component {
         super(props);
 
 
-        this.id = parseInt(this.props.match.params.id);
-        this.stop = false;
+        this.id = parseInt(props.params.id);
         this.logiquePuzzleRotation = new LogiquePuzzleRotation(this.id);
-        if (isNaN(this.id) || this.logiquePuzzleRotation.donnees === undefined) {
-            this.stop = true;
-            this.id = 300;
-        }
 
         this.donneesJeu = this.logiquePuzzleRotation.obtenirInfo();
         this.taille = this.logiquePuzzleRotation.obtenirTaille();
@@ -88,7 +83,6 @@ class JeuxPuzzleRotation extends Component {
     }
 
     render() {
-        if (this.stop) return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
         return <div className="espaceHaut">
             <Helmet>
                 <title>{intl.get('ROTATION_TITLE')}</title>

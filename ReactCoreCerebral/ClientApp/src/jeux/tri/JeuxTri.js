@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LogiqueTri from './LogiqueTri'
 import '../../style/jeux.css';
-import { Redirect, withRouter } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import Choix from './Choix';
 import { addGame } from '../../components/commun/localStorage';
 import { Helmet } from 'react-helmet';
@@ -17,13 +17,9 @@ import { analytics } from '../../components/commun/analytics';
 class JeuxTri extends Component {
     constructor(props) {
         super(props);
-        this.id = parseInt(this.props.match.params.id);
-        this.stop = false;
+        this.id = parseInt(props.params.id);
         this.logiqueTri = new LogiqueTri(this.id);
-        if (isNaN(this.id) || this.logiqueTri.donnees === undefined) {
-            this.stop = true;
-        }
-        else {
+       
             this.state = {
                 jeuEnCours: 0,
                 finJeu: false,
@@ -41,7 +37,6 @@ class JeuxTri extends Component {
             addGame('jeuxTri', this.id);
             analytics();
 
-        }
     }
 
     testResultat = (id) => {
@@ -82,7 +77,6 @@ class JeuxTri extends Component {
     }
 
     render() {
-        if (this.stop) return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
         return <div>
             <Helmet>
                 <title>{intl.get('TRI_TITLE')}</title>

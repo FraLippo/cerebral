@@ -28,9 +28,9 @@ export default class Puzzle extends Component {
 <div className="titre centre couleurTitre">Jeux d'entrainement cérébral</div>
 <div className='centre'>evalquiz.com : le site numéro 1 du divertissement intelligent</div>
 
-      <Row>
+    
         <h2 className="titre couleurTitre centre">Les puzzles</h2>
-            <Row className="centre"><img src={border} alt="bordure" width="100" height="41"></img></Row>
+            <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
         <Row gutter={8} className="espaceHaut">
 
           <Col md={10}>
@@ -58,7 +58,7 @@ export default class Puzzle extends Component {
             <SousMenu type="puzzleRotation" titre="ROTATION_TITLE"></SousMenu>
           </Col>
         </Row>
-      </Row>
+     
     
    
  <Ad></Ad>

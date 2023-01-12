@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import {Button} from 'antd';
-import {Redirect} from 'react-router-dom';
+import ButtonLink from '../../components/commun/ButtonLink';
 
 export default class Manche extends Component {
 
     constructor(props)
     {
         super();
-        this.state = {redirection : false};
         this.niveauSuivant = '';
     }
     clickFin = () =>
@@ -20,35 +19,22 @@ export default class Manche extends Component {
         if (this.props.nbJoueurs === 1 && (this.props.niveau >=  1 && this.props.niveau <= 3 ))
         {
             this.niveauSuivant = '/JeuxLettres/0/1/' + (this.props.niveau+1);
-            return <Button className="autresJeux" type="primary" onClick={this.redirectionSuivant}>Niveau suivant</Button>
+            return <ButtonLink className="autresJeux" titre="Niveau Suivant" href={this.niveauSuivant}></ButtonLink>
         }
     }
 
-    redirectionSuivant= () =>
+  
+    recommencer= () =>
     {
-        this.niveauSuivant = '/JeuxLettres/0/1/' + (this.props.niveau+1);
-        this.setState({redirection : true})   
-    }
-    redirection= () =>
-    {
-        if (this.props.nbJoueurs > 1)
-        {
-            this.props.nouveauJeu();
-        }
-        else
-        {
+      
             this.niveauSuivant = '/JeuxLettres/0/1/' + this.props.niveau;
-        }
-        this.setState({redirection : true})   
+            return <ButtonLink className="autresJeux" titre="Recommencer" href={this.niveauSuivant}></ButtonLink>  
     }
 
     render()
     {
-        if (this.state.redirection)
-        {
-            return <Redirect to={this.niveauSuivant}></Redirect>
-        }
-        return <div  className="manche">{(this.props.boutonManche ? this.props.noManche!==3 ? <Button type="primary"  onClick={this.clickFin}>Commencer la manche</Button>: (!this.props.concours && <div><Button onClick={this.redirection}>Recommencer</Button>{this.boutonNiveau()}<Button className="autresJeux" href="/">Autres jeux</Button></div>) : <span>Manche {this.props.noManche}  / 3</span>)}</div>
+     
+        return <div  className="manche">{(this.props.boutonManche ? this.props.noManche!==3 ? <Button type="primary"  onClick={this.clickFin}>Commencer la manche</Button>: (!this.props.concours && <div>{this.recommencer()} {this.boutonNiveau()}<Button className="autresJeux" href="/">Autres jeux</Button></div>) : <span>Manche {this.props.noManche}  / 3</span>)}</div>
     }
 
 }

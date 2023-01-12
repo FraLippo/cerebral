@@ -7,7 +7,7 @@ import intl from 'react-intl-universal';
 import ResultatCommun from '../../components/commun/ResultatCommun';
 import FinEtape from '../concours/FinEtape';
 import ProgressBar from '../../components/commun/ProgressBar';
-import { withRouter, Redirect } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import { analytics } from '../../components/commun/analytics';
 import { Helmet } from 'react-helmet';
 import { addGame } from '../../components/commun/localStorage';
@@ -17,14 +17,9 @@ class JeuxPyramide extends Component {
 
     constructor(props) {
         super(props);
-        this.id = parseInt(this.props.match.params.id);
-        this.stop = false;
+        this.id = parseInt(props.params.id);
         this.logiquePyramide = new LogiquePyramide(this.id);
-        if (isNaN(this.id) || this.logiquePyramide.donnees === undefined) {
-            this.stop = true;
-        }
-        else {
-
+       
             const tabValeurs = this.logiquePyramide.donnees.info.valeurs;
             this.tabChoixOrigine = this.logiquePyramide.donnees.info.choix;
             this.tabValeursCorrection = this.logiquePyramide.donnees.info.valeursCorrection;
@@ -47,7 +42,7 @@ class JeuxPyramide extends Component {
             addGame('jeuxPyramide', this.id);
             analytics();
 
-        }
+        
     }
     clickNumero = (id) => {
         if (this.state.tabValeurs[id] === '?' && !this.reponseEnCours) {
@@ -146,7 +141,6 @@ class JeuxPyramide extends Component {
 
 
     render() {
-        if (this.stop) return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
         return <div className="pyramide">
              <Helmet>
         <title>{intl.get('PY_TITLE')}</title>

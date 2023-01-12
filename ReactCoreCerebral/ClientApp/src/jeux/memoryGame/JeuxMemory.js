@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, Redirect } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import Logique from './Logique';
 import Grille from './Grille';
 import { message } from 'antd';
@@ -16,13 +16,10 @@ class JeuxMemoryGame extends Component {
 
     constructor(props) {
         super(props);
-        this.id = parseInt(props.match.params.id);
-        this.stop = false;
+        this.id = parseInt(props.params.id);
+       
         this.logique = new Logique(this.id);
-        if (isNaN(this.id) || this.logique.donnees === undefined) {
-            this.stop = true;
-        }
-        else {
+      
         let vue = this.logique.donnees.info.vue;
         let nbFaute = this.logique.donnees.info.erreur;
         this.taille = this.logique.donnees.info.taille;
@@ -48,7 +45,7 @@ class JeuxMemoryGame extends Component {
   
         addGame('jeuxMemoryGame', this.id);
         analytics();
-    }
+    
 
     }
 
@@ -226,7 +223,7 @@ class JeuxMemoryGame extends Component {
     }
 
     render() {
-        if (this.stop) return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
+      
         return <div>
               <Helmet>
                 <title>Le jeu du memory gratuit en ligne</title>

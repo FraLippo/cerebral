@@ -5,7 +5,7 @@ import Revoir from './Revoir';
 import ResultatCommun from '../../components/commun/ResultatCommun';
 import LogiqueMemoire from './LogiqueMemoire';
 import { Button, message } from 'antd';
-import { withRouter, Redirect } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import FinEtape from '../concours/FinEtape';
 import { analytics } from '../../components/commun/analytics';
 import { addGame} from '../../components/commun/localStorage';
@@ -18,14 +18,11 @@ import intl from 'react-intl-universal';
 class JeuxDessin extends Component {
     constructor(props) {
         super(props);
-        this.id = parseInt(this.props.match.params.id);
-        this.stop = false;
+        this.id = parseInt(props.params.id);
+    
         this.logiqueMem = new LogiqueMemoire(this.id);
 
-        if (isNaN(this.id) || this.logiqueMem.donnees === undefined) {
-            this.stop = true;
-        }
-        else {
+       
             this.dureeJeu = Date.now();
 
             ({ grille: this.tabGrille, taille: this.taille, nbCouleurs: this.nbCouleurs, nbRevoir: this.nbRevoirTotal } = this.logiqueMem.obtenirInfo());
@@ -42,7 +39,7 @@ class JeuxDessin extends Component {
 
             analytics();
             addGame('jeuxMemoireDessin', this.id);
-        }
+        
     }
 
     terminerJeu = () => {
@@ -96,8 +93,6 @@ class JeuxDessin extends Component {
     }
 
     render() {
-        if (this.stop)  return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
-   
 
             return <div>
                 <Helmet>

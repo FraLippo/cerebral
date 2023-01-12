@@ -1,13 +1,13 @@
-import '../../style/App.css';
-import React, { Component } from 'react';
-import { Layout} from 'antd';
-import MenuPrincipalFR from './MenuPrincipalFR';
-import MenuPrincipalEN from './MenuPrincipalEN';
-import Routeur from './Routeur';
+import '../../style/jeux.css';
+import React, { Component, Suspense } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { ConfigProvider} from 'antd';
+import {router} from './router'
 import { Helmet } from 'react-helmet';
 import ReactGA from 'react-ga';
 import ReactGA4 from "react-ga4";
 import intl from 'react-intl-universal';
+
 // common locale data
 require('intl/locale-data/jsonp/en.js');
 require('intl/locale-data/jsonp/fr.js');
@@ -19,7 +19,6 @@ const locales = {
 };
 
 
-const { Header, Content} = Layout;
 
 class App extends Component {
   constructor(props) {
@@ -61,17 +60,7 @@ class App extends Component {
   });
   }
 
-  menuPrincipalLangue()
-  {
-    if (this.currentLocale === 'en-US')
-    {
-        return <MenuPrincipalEN></MenuPrincipalEN>
-    }
-    else
-    {
-      return <MenuPrincipalFR></MenuPrincipalFR>
-    }
-  }
+ 
 
   render() {
     return ( this.state.initDone &&  <div>   
@@ -79,11 +68,24 @@ class App extends Component {
           <title>{intl.get('TITRE_PRINCIPAL')}</title>
           <meta name="description" content={intl.get('META_PRINCIPAL')}/>
         </Helmet>
-        <Layout>
-      <Header>{this.menuPrincipalLangue()}</Header>
-      <Content className="margePrincipale"><Routeur></Routeur></Content> 
-    </Layout> 
+        <ConfigProvider
+    theme={{
+      token: {
+         fontSize: '16px',
+      },
+      components: {
+        Menu: {
+          colorItemBg: '#afe4e2',
+        }}
+    }}
+  >
   
+        <Suspense fallback={<div>En cours de chargement...</div>}>
+          <RouterProvider router={router} >
+            </RouterProvider>
+            </Suspense>
+
+  </ConfigProvider>
         </div>)
     
     

@@ -4,7 +4,7 @@ import PiecePuzzle from './PiecePuzzle';
 import ImagePresentation from './ImagePresentation';
 import LogiquePuzzle from './LogiquePuzzle';
 import ResultatCommun from '../../components/commun/ResultatCommun';
-import { withRouter, Redirect } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import { addGame } from '../../components/commun/localStorage';
 import CompteRebours from '../../components/commun/CompteRebours';
 import FinEtape from '../concours/FinEtape';
@@ -18,13 +18,10 @@ class JeuxPuzzle extends Component {
 
     constructor(props) {
         super(props);
-        this.id = parseInt(this.props.match.params.id);
+        this.id = parseInt(props.params.id);
         this.stop = false;
         this.logiquePuzzle = new LogiquePuzzle(this.id);
-        if (isNaN(this.id) || this.logiquePuzzle.donnees === undefined) {
-            this.stop = true;
-        }
-        else {
+      
             let tabPieces = [];
             let tabPuzzle = [];
             let i = 1;
@@ -56,7 +53,7 @@ class JeuxPuzzle extends Component {
    
             addGame('jeuxPuzzle', this.id);
             analytics();
-        }
+        
     }
 
     clickPuzzle = (id) => {
@@ -188,8 +185,6 @@ class JeuxPuzzle extends Component {
     }
 
     render() {
-        if (this.stop) return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
-
         return <div>
             <Helmet>
                 <title>{intl.get('PUZZLE_TITLE')}</title>

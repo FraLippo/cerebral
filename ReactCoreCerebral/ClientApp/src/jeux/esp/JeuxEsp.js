@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LogiqueEsp from './LogiqueEsp';
-import { Redirect, withRouter } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import ListeCarte from './ListeCarte';
 import CompteRebours from './CompteRebours';
 import FinEtape from '../concours/FinEtape';
@@ -16,14 +16,9 @@ class JeuEsp extends Component {
 
     constructor(props) {
         super(props);
-        this.stop = false;
-        this.id = parseInt(this.props.match.params.id);
+        this.id = parseInt(this.props.params.id);
         this.LogiqueEsp = new LogiqueEsp(this.id);
-        if (isNaN(this.id) || this.LogiqueEsp.donnees === undefined) {
-            this.stop = true;
-        }
-        else {
-
+       
             this.state = ({
                 tabCarte: [],
                 affichageCarte: true,
@@ -35,7 +30,7 @@ class JeuEsp extends Component {
 
             addGame('jeuxEsp', this.id);
             analytics();
-        }
+        
     }
 
 
@@ -75,8 +70,6 @@ class JeuEsp extends Component {
         })
     }
     render() {
-        if (this.stop) return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
-
             return <div>
                 <Helmet>
                     <title>{intl.get('ESP_TITLE')}(</title>

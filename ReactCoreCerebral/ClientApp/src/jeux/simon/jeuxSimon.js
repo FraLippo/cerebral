@@ -4,7 +4,7 @@ import Grille from './Grille'
 import { Button, message } from 'antd';
 import ResultatCommun from '../../components/commun/ResultatCommun';
 import Helmet from 'react-helmet';
-import { Redirect } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import { analytics } from '../../components/commun/analytics';
 import { addGame } from '../../components/commun/localStorage';
 import intl from 'react-intl-universal';
@@ -12,10 +12,10 @@ import intl from 'react-intl-universal';
 import FinEtape from '../concours/FinEtape';
 
 
-export default class JeuxSimon extends Component {
+class JeuxSimon extends Component {
     constructor(props) {
         super(props);
-        this.id = parseInt(this.props.match.params.id);
+        this.id = parseInt(props.params.id);
         this.stop = false;
         this.jeu = new Logique(this.id);
         if (isNaN(this.id) || this.jeu.donnees === undefined) {
@@ -127,3 +127,4 @@ export default class JeuxSimon extends Component {
     }
 
 }
+export default withRouter(JeuxSimon)

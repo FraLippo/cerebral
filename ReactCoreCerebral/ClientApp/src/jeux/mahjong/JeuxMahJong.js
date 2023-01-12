@@ -4,7 +4,7 @@ import LogiqueMah from './LogiqueMah';
 import { message } from 'antd';
 import CompteRebours from '../../components/commun/CompteRebours';
 import ResultatCommun from '../../components/commun/ResultatCommun';
-import { withRouter, Redirect } from 'react-router-dom';
+import withRouter from '../../components/commun/withRouter';
 import { analytics } from '../../components/commun/analytics';
 import { addGame } from '../../components/commun/localStorage';
 import FinEtape from '../concours/FinEtape';
@@ -16,13 +16,9 @@ class JeuxMah extends Component {
 
     constructor(props) {
         super();
-        this.id = parseInt(props.match.params.id);
-        this.stop = false;
+        this.id = parseInt(props.params.id);
         this.logique = new LogiqueMah(this.id);
-        if (isNaN(this.id) || this.logique.donnees === undefined) {
-            this.stop = true;
-        }
-        else {
+       
             this.dureeJeu = Date.now();
             this.tabOrigine = this.logique.obtenirGrille();
             this.state = {
@@ -36,7 +32,7 @@ class JeuxMah extends Component {
      
             addGame('jeuxMahJong', this.id);
             analytics();
-        }
+        
     }
     afficheResultat = () => {
         this.setState({ afficheResultat: true });
@@ -74,7 +70,7 @@ class JeuxMah extends Component {
     }
 
     render() {
-        if (this.stop) return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
+    
 
         return <React.Fragment>
             <Helmet>

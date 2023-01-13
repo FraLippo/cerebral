@@ -4,10 +4,9 @@ import donneesConcoursCerebral from '../../data/donneesConcoursCerebral';
 import donneesConcoursCalcul from '../../data/donneesConcoursCalcul';
 import donneesConcoursMot from '../../data/donneesConcoursMot';
 import ButtonLink from '../../components/commun/ButtonLink';
-import { Link } from 'react-router-dom';
 import { Steps } from 'antd';
 import victory from '../../images/victory.jpg';
-import { prochainObjectif, imageJeu, titreJeu } from './logiqueConcours';
+import { prochainObjectif, imageJeu, creerEtape } from './logiqueConcours';
 import intl from 'react-intl-universal';
 import Ad from '../../components/commun/adSense'
 import { analytics } from '../../components/commun/analytics';
@@ -17,11 +16,12 @@ import Prenom from '../../components/commun/Prenom';
 import confetti from '../../images/confetti.webp';
 import Confetti from 'react-confetti';
 import applause from '../../images/applause.webp';
+import withRouter from '../../components/commun/withRouter';
 const { Step } = Steps;
 let donneesConcours = [...donneesConcoursCerebral,...donneesConcoursCalcul,...donneesConcoursMot];
 
 
-export default class FinEtape extends Component {
+class FinEtape extends Component {
 
     constructor(props) {
         super();
@@ -40,10 +40,7 @@ export default class FinEtape extends Component {
             this.victoire = this.verificationVictoire();
             this.jeuSuivant = this.rechercheProchainJeu();
             let infoContest = readInfoContest(this.concours.id);
-            if (infoContest === -1 || this.jeuSuivant.indexEnCours !== infoContest.level) {
-                this.erreur = true;
-            }
-            else {
+         
                 if (this.victoire) {
 
 
@@ -66,7 +63,7 @@ export default class FinEtape extends Component {
                     addAttemptGameContest(this.concours.id);
                 }
             }
-        }
+        
         this.state = { erreur: this.erreur };
         analytics();
 
@@ -152,17 +149,19 @@ export default class FinEtape extends Component {
                         <div className="animationSuite"><p className="grandeLettre couleurTitre">{intl.get('DEFI_BRAVO')}</p>
                        <h1>{intl.get(this.concours.titre)}</h1></div>
                         <p>{intl.get('DEFI_TENTATIVE1')} <b>{this.tentative} {this.tentative <= 1 ? intl.get('DEFI_TENTATIVE2')  : intl.get('DEFI_TENTATIVE3')}</b>.</p><img className="img-responsive" src={victory} alt="victoire"></img>
-                    {this.tentative === 1 &&  <div><Confetti width={window.innerWidth - 30} height={300} /><p className="tailleMoyenne">{intl.get('DEFI_HONNEUR1')} <Link to={intl.get('LIEN_TABLEAU')}>{intl.get('DEFI_HONNEUR2')}</Link>.</p></div>}
+                    {this.tentative === 1 &&  <div><Confetti width={window.innerWidth - 30} height={300} /><p className="tailleMoyenne">{intl.get('DEFI_HONNEUR1')} {intl.get('DEFI_HONNEUR2')}.</p></div>}
                         {this.prenomVisible && <Prenom callbackPrenom={this.callbackPrenom}></Prenom>
                         }<Ad></Ad></div>
                 : <div className="centre"><p>{intl.get('DEFI_ERREUR')} </p>
                     <p>{intl.get('DEFI_RECO')}</p>
                     <div><ButtonLink titre={intl.get('DEFI_REFAIRE')} href={'/' +  intl.get(this.jeuSuivant.type) + '/' + this.jeuSuivant.id}></ButtonLink></div></div>}
                 <div className="margeStep">
-                    <Steps size="small" current={this.victoire ? this.jeuSuivant.indexEnCours + 1 : this.jeuSuivant.indexEnCours}>
-                        {this.concours.liste.map((jeu, i) => <Step key={i} title={titreJeu(jeu.titre)}></Step>)}
-                        <Step title={intl.get('DEFI_FIN')}></Step>
-                    </Steps>
+                    
+                    <div className="margeStep">
+                <Steps size="small" current={this.victoire ? this.jeuSuivant.indexEnCours + 1 : this.jeuSuivant.indexEnCours} items={creerEtape(this.concours.liste)}>  
+                </Steps>
+
+            </div>
                     <p className="centre espaceHautMemoire">{intl.get('DEFI_PROGRESSION')}</p>
                 </div>
                 {this.jeuSuivant.id === -1 && <div>
@@ -174,3 +173,4 @@ export default class FinEtape extends Component {
         </div>
     }
 }
+export default withRouter(FinEtape);

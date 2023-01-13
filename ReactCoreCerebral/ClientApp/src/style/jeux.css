@@ -215,8 +215,10 @@ ul li {
      height: 50px;
      width: 50px;
      text-align: center;
-     padding-top: 10px;
      font-weight: bold;
+     display: flex;
+     justify-content: center;
+     align-items: center;
 }
 
 @media screen and (max-width: 479px) {
@@ -239,7 +241,7 @@ ul li {
           height: 30px;
           width: 30px;
           text-align: center;
-          padding-top: 2px;
+       
           font-weight: bold;
      }
 }
@@ -784,11 +786,11 @@ ul li {
      text-align: center;
      width: 128px;
      height: 128px;
-     grid-area: s1;
      font-size: 2em;
      border: 2px solid blue;
      border-radius: 5px;
-     padding: 20px;
+     background-repeat:no-repeat;
+background-position: center center;
 }
 
 .boutonSuite {
@@ -827,8 +829,13 @@ ul li {
 
 .animationSuite {
      animation: fadeInFromNone 1.2s linear forwards;
+   
 }
 
+.emplacementImageSuite
+{
+     grid-area: s1;
+}
 /* puzzleRotation */
 
 .container {
@@ -1402,6 +1409,7 @@ ul li {
      display: grid;
      grid-template-columns: repeat(7, 70px);
      grid-template-rows: repeat(7, 70px);
+     gap:1px;
 }
 
 .imageFamille {
@@ -1411,7 +1419,7 @@ ul li {
 }
 
 .imageFamille:hover {
-     border: 1px green solid;
+     outline: 1px green solid;
 }
 
 .erreurFamille {
@@ -1621,7 +1629,7 @@ ul li {
 }
 
 .casePySelection {
-     border: 5px solid #4cba0e;
+     box-shadow: 0px 0px 8px 0px #1238ff;
      background-color: #bdfaa6;
 }
 
@@ -1752,11 +1760,11 @@ ul li {
 }
 
 .bordMath {
-     /* padding: 5px; */
+      padding: 2px;
      background-color: violet;
      border-radius: 5px;
      display: inline-block;
-     vertical-align: text-bottom;
+     vertical-align: middle;
      width: 24px;
      min-height: 30px;
      text-align: center;

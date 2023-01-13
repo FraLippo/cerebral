@@ -100,4 +100,20 @@ function titreJeu(titre) {
 
 }
 
-export { prochainObjectif, imageJeu, titreJeu }
+function creerEtape(liste)
+{
+   let tabItem = [];
+   let i;
+  for (i = 0; i < liste.length; i++) {
+
+       tabItem.push({ description: titreJeu(liste[i].titre)})
+    }
+    tabItem.push({ description: intl.get('DEFI_FIN')})
+
+
+    
+    return tabItem;
+}
+
+
+export { prochainObjectif, imageJeu, titreJeu, creerEtape }

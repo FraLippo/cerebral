@@ -19,6 +19,7 @@ export default class Icone extends Component {
         this.timer = setInterval(this.updateTimer, this.props.interval);
     }
     updateTimer = () => {
+       
         this.elementEnCours++;
         if (this.elementEnCours < this.props.tabNombre.length) {
             this.setState({
@@ -43,7 +44,7 @@ export default class Icone extends Component {
 
     updateElement = () =>
     {
-        this.props.updateElement(this.elementEnCours);
+      this.props.updateElement(this.elementEnCours);
     }
 
     finTimer = () => {
@@ -70,6 +71,6 @@ findImage()
 }
 
     render() {
-    return <div>{this.state.affichage && <div className="animationSuite"><div className={"nombreSuite " + this.props.fond} style={{backgroundImage : "url("+ this.findImage()   + ")"}}></div></div>}</div>
+    return <div className="emplacementImageSuite">{this.state.affichage && <div className="animationSuite"><div className={"nombreSuite " + this.props.fond} style={{backgroundImage : "url("+ this.findImage()   + ")"}}></div></div>}</div>
     }
 }

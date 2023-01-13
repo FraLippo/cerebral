@@ -3,23 +3,24 @@ import donneesConcoursCerebral from '../../data/donneesConcoursCerebral';
 import donneesConcoursCalcul from '../../data/donneesConcoursCalcul';
 import donneesConcoursMot from '../../data/donneesConcoursMot';
 import ButtonLink from '../../components/commun/ButtonLink';
-import { prochainObjectif, imageJeu, titreJeu } from './logiqueConcours';
+import { prochainObjectif, imageJeu, titreJeu, creerEtape } from './logiqueConcours';
 import { Steps } from 'antd';
 import intl from 'react-intl-universal';
 import { analytics } from '../../components/commun/analytics';
 import { Helmet } from 'react-helmet';
+import withRouter from '../../components/commun/withRouter';
 import { readGameContest, addGameContest } from '../../components/commun/localStorage';
-const { Step } = Steps;
+
 let donneesConcours = [...donneesConcoursCerebral,...donneesConcoursCalcul,...donneesConcoursMot];
 
 
 
-export default class DebutEtape extends Component {
+class DebutEtape extends Component {
 
     constructor(props) {
         super();
         this.erreur = false;
-        const no = parseInt(props.match.params.no);
+        const no = parseInt(props.params.no);
         this.concours = donneesConcours.find(x => x.id === no);
         if (this.concours == null) this.erreur = true;
         else {
@@ -48,10 +49,13 @@ export default class DebutEtape extends Component {
             {imageJeu(this.jeu.titre)}
         </div>
             <div className="margeStep">
-                <Steps current={this.noEtape} >
-                    {this.concours.liste.map((jeu, i) => <Step key={i} title={titreJeu(jeu.titre)}></Step>)}
-                    <Step title={intl.get('DEFI_FIN')}></Step>
+                
+            
+                <Steps current={this.noEtape} items={creerEtape(this.concours.liste)}>
+                   
                 </Steps>
+
+          
 
             </div>
             <p className="centre">{intl.get('DEFI_PROGRESSION')}</p>
@@ -59,4 +63,6 @@ export default class DebutEtape extends Component {
 
     }
 }
+
+export default withRouter(DebutEtape);
 

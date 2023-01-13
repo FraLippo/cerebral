@@ -8,7 +8,7 @@ import calcul from '../../images/calcul.webp';
 import fubuki from '../../images/fubuki.webp';
 import { Helmet } from 'react-helmet';
 import { analytics } from '../../components/commun/analytics';
-
+import Ad from '../commun/adSense';
 export default class Logique extends Component {
  
   constructor()
@@ -77,7 +77,7 @@ export default class Logique extends Component {
             <SousMenu type="fubuki" titre="FUBUKI_TITLE"></SousMenu>
           </Col>
         </Row>
-       
+       <Ad></Ad>
 
          </div>
   }

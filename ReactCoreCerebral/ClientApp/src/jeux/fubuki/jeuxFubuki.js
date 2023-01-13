@@ -167,7 +167,7 @@ class JeuxFubuki extends Component {
                     <Grille numeroEnCours={this.state.numeroEnCours} grilleOrigine={this.tabValeursOrigine} clickNumero={this.clickNumero} taille={this.taille} grille={this.state.tabValeurs}></Grille>
                     <Choix choixEnCours={this.state.choixEnCours} clickChoix={this.clickChoix} tabChoix={this.state.tabChoix}></Choix>
 
-                    <div><Button type="danger" onClick={this.reset} >{intl.get('RESET')}</Button></div>
+                    <div><Button danger onClick={this.reset} >{intl.get('RESET')}</Button></div>
 
                 </div>
                     <ProgressBar temps={this.temps} finTimer={this.finJeu}></ProgressBar>

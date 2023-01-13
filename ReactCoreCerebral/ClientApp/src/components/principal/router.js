@@ -29,7 +29,7 @@ const JeuxFamille = React.lazy(() => import('../../jeux/memoireFamille/JeuxFamll
 const JeuxMah = React.lazy(() => import('../../jeux/mahjong/JeuxMahJong'));
 const JeuxBingo = React.lazy(() => import('../../jeux/bingo/JeuxBingo'));
 const JeuxPyramide = React.lazy(() => import('../../jeux/pyramide/JeuxPyramide'));
-// const DebutEtape = React.lazy(() => import('../../jeux/concours/DebutEtape'));
+const DebutEtape = React.lazy(() => import('../../jeux/concours/DebutEtape'));
 // const Tableau = React.lazy(() => import('../../components/commun/Tableau'));
 const JeuxFubuki = React.lazy(() => import('../../jeux/fubuki/jeuxFubuki'));
 const JeuxMath = React.lazy(() => import('../../jeux/math/MathJeu'));
@@ -245,8 +245,17 @@ const router = createBrowserRouter([
             element: <JeuxOrdre/>,
             
           },
-      
-      
+          {
+            path: 'defi/:no',
+            element: <DebutEtape/>,
+            
+          },
+          {
+            path: 'brain-challenge/:no',
+            element: <DebutEtape/>,
+            
+          },
+    
       ], 
     },
    

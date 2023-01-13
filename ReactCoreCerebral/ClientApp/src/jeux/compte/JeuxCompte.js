@@ -213,7 +213,7 @@ class JeuxCompte extends Component {
       
             <div className="boutonsCompte espaceHautBas">
              <Button className="reset" type="primary" onClick={this.clickRecommencer}>{intl.get('BOUTON_RECOMMENCER')}</Button>
-             <Button type="danger" onClick={this.clickAbandonner}>{intl.get('BOUTON_SOLUTION')}</Button>
+             <Button danger onClick={this.clickAbandonner}>{intl.get('BOUTON_SOLUTION')}</Button>
              </div>
             
             

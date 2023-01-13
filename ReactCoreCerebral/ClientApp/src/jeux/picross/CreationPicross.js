@@ -25,7 +25,7 @@ export default class CreationPicross extends Component {
 
     clic = (id) =>
     {
-        // console.log("id " + id + " x" + x + " y " + y);
+   
         let nouveauTabIndiceX = [...this.state.tabIndiceX];
         let nouveauTabIndiceY = [...this.state.tabIndiceY];
         let nouveauTabJeu = [...this.state.tabJeu];

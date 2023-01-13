@@ -121,7 +121,7 @@ import withRouter from '../../components/commun/withRouter';
 
                 <div className="JeuPicross">
                     <div className="titreJeu">Picross<span className="margeGauche10"><Regle></Regle></span></div>
-                    <div><Button type="danger" onClick={this.abandon}>Abandon</Button></div>
+                    <div><Button danger onClick={this.abandon}>Abandon</Button></div>
                     <div className="grilleCentre">
                         <div className="grillePicross">
                             <Indice type="x" indice={this.state.tabIndiceX} ></Indice>

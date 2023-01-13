@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <link rel="icon" sizes="192x192" href="light192.png"><link rel="apple-touch-icon" href="light192.png">
-    <meta name="theme-color" content="#000000" />
-   
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <link rel="icon" sizes="192x192" href="light192.png">
+  <link rel="apple-touch-icon" href="light192.png">
+  <meta name="theme-color" content="#000000" />
+
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -20,101 +23,154 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Les tests d'orthographe</title>
+  <title>Les tests d'orthographe</title>
 
-    <style type="text/css">
-     
-      .modalRgpd { background-color: rgb(255,255,255); opacity: .4 }
+  <style type="text/css">
+    .modalRgpd {
+      background-color: rgb(255, 255, 255);
+      opacity: .4
+    }
 
-      .modalContent { position: absolute; bottom: 0px; left: 50%; transform: translateX(-50%); background: black; color: white; padding: 10px; z-index: 3344223; width: 100%; pointer-events: all; opacity: 1; border: 1px solid black; width: 320px; display: none; }
+    .modalContent {
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: black;
+      color: white;
+      padding: 10px;
+      z-index: 3344223;
+      width: 100%;
+      pointer-events: all;
+      opacity: 1;
+      border: 1px solid black;
+      width: 320px;
+      display: none;
+    }
 
-      .bandeauNon {height : 250px; color:black; width:100%; display:none; background-color: tan; padding: 50px 20px;}
+    .bandeauNon {
+      height: 250px;
+      color: black;
+      width: 100%;
+      display: none;
+      background-color: tan;
+      padding: 50px 20px;
+    }
 
-      .rgpdMain { pointer-events: none; overflow: hidden; }
-      .buttonRefuse { margin-right: 10px; background-color: blueviolet;}
-      .buttonAccept { margin-right: 10px; background-color: blueviolet; padding: 7px;}
-      .buttonChoisir { margin-right: 10px; background-color: blueviolet; padding: 5px; color: white } 
-      .espaceDroit10 { margin-right: 10px; }
+    .rgpdMain {
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .buttonRefuse {
+      margin-right: 10px;
+      background-color: blueviolet;
+    }
+
+    .buttonAccept {
+      color: white;
+      background-color: #5aa340;
+      ;
+      padding: 10px;
+    }
+
+    .buttonChoisir {
+      margin-right: 10px;
+      background-color: blueviolet;
+      padding: 5px;
+      color: white
+    }
+
+    .espaceDroit10 {
+      margin-right: 10px;
+    }
   </style>
 
-    <script>
+  <script>
 
-      function getCookie(name) {
-          var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-          return v ? v[2] : null;
-      }
-      function setCookie(name, value, days) {
-          var d = new Date;
-          d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * days);
-           if (process.env.NODE_ENV === 'production') { 
-   
-        document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString() + ";domain=.evalquiz.com";
+    function getCookie(name) {
+      var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+      return v ? v[2] : null;
     }
-    else { 
-      document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+    function setCookie(name, value, days) {
+      var d = new Date;
+      d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * days);
+      if ('%process.env.NODE_ENV%' === 'production') {
 
-  } 
-      
+        document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString() + ";domain=.evalquiz.com";
       }
-     
+    else {
+          document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+
+        }
+
+      }
+
       document.addEventListener("DOMContentLoaded", function (event) {
 
-          let btnAccepter = document.getElementById("accepter");
-          let btnNouveau = document.getElementById("nouveauChoix");
+        let btnAccepter = document.getElementById("accepter");
+        let btnNouveau = document.getElementById("nouveauChoix");
 
 
-          let rgpdMain = document.getElementById("root");
-          let modalContent = document.getElementById("modalContent");
-          let modalRgpd = document.getElementById("modalRgpd");
-          let bandeauNon = document.getElementById("bandeauNon");
-
-        
-          let cookie = getCookie("cookieConsent");
-          if (cookie == null) {
-              rgpdMain.className = "rgpdMain";
-              modalRgpd.className = "modalRgpd";
-              modalContent.style.display = "block";
-          }
-       
-
-        
-          if (cookie === "NO") {
-              bandeauNon.style.display = "block";
-          }
+        let rgpdMain = document.getElementById("root");
+        let modalContent = document.getElementById("modalContent");
+        let modalRgpd = document.getElementById("modalRgpd");
+        let bandeauNon = document.getElementById("bandeauNon");
 
 
-      
-          btnAccepter.addEventListener("click", function (event) {
-              rgpdMain.className = "";
-              modalRgpd.className = "";
-              modalContent.style.display = "none";
-              setCookie("cookieConsent", "YES", 365);
-         
-          });
+        let cookie = getCookie("cookieConsent");
+        if (cookie == null) {
+          rgpdMain.className = "rgpdMain";
+          modalRgpd.className = "modalRgpd";
+          modalContent.style.display = "block";
+        }
 
-          btnNouveau.addEventListener("click", function (event) {
-              setCookie("cookieConsent", "YES", 365);
-   
-              bandeauNon.style.display = "none";
-         
-          });
+
+
+        if (cookie === "NO") {
+          bandeauNon.style.display = "block";
+        }
+
+
+
+        btnAccepter.addEventListener("click", function (event) {
+          rgpdMain.className = "";
+          modalRgpd.className = "";
+          modalContent.style.display = "none";
+          setCookie("cookieConsent", "YES", 365);
+
+        });
+
+        btnNouveau.addEventListener("click", function (event) {
+          setCookie("cookieConsent", "YES", 365);
+
+          bandeauNon.style.display = "none";
+
+        });
       });
   </script>
 
-  </head>
-  <body>
-    <div class="modalContent" id="modalContent">
+</head>
 
-      <p>Nous travaillons avec la société Google et avec des technologies comme les cookies pour stocker et/ou accéder à des informations personnelles non sensibles stockées sur votre terminal (identifiants uniques, …), que nous traitons afin de réaliser des statistiques d'usage du site, personnaliser les publicités et le contenu et en mesurer les performances, produire des données d’audience, développer et améliorer les produits. </p>
-      <p>Acceptez-vous les cookies déposés pour la publicité et les mesures d'audience ?</p>
-      <div>  <a  style="color: white; text-decoration: underline; font-size: 1.2em;" href="https://evalquiz.com/home/choisir">Choisir</a></div><div class="centre"><button id="accepter" class="buttonAccept"><b>J'accepte</b></button></div>
+<body>
+  <div class="modalContent" id="modalContent">
+
+    <p>Nous travaillons avec la société Google et avec des technologies comme les cookies pour stocker et/ou accéder à
+      des informations personnelles non sensibles stockées sur votre terminal (identifiants uniques, …), que nous
+      traitons afin de réaliser des statistiques d'usage du site, personnaliser les publicités et le contenu et en
+      mesurer les performances, produire des données d’audience, développer et améliorer les produits. </p>
+    <p>Acceptez-vous les cookies déposés pour la publicité et les mesures d'audience ?</p>
+    <div> <a style="color: white; text-decoration: underline; font-size: 1.2em;"
+        href="https://evalquiz.com/home/choisir">Choisir</a></div>
+    <div class="centre"><button id="accepter" class="buttonAccept"><b>J'accepte</b></button></div>
 
   </div>
   <div id="modalRgpd">
     <div class="bandeauNon" id="bandeauNon">
-      Vous pouvez supprimer ce bandeau si vous acceptez les cookies pour la publicité. Nous essayons de limiter au maximum le nombre de publicités sur le site et nous estimons que tout travail mérite salaire.
-    <div>  <button id="nouveauChoix" class="btn btn-primary espaceDroit10">Accepter</button></div>
-  </div>
+      Vous pouvez supprimer ce bandeau si vous acceptez les cookies pour la publicité. Nous essayons de limiter au
+      maximum le nombre de publicités sur le site et nous estimons que tout travail mérite salaire.
+      <div> <button id="nouveauChoix" class="btn btn-primary espaceDroit10">Accepter</button></div>
+    </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -128,5 +184,6 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </div>
-  </body>
+</body>
+
 </html>

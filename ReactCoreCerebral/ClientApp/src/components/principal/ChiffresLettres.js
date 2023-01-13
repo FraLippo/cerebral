@@ -52,7 +52,7 @@ export default class ChiffreLetttre extends Component {
                 <li><Link to={"/JeuxLettres/0/1/2"}>Le mot le plus long niveau intermédiaire contre l'ordinateur.</Link></li>
                 <li><Link to={"/JeuxLettres/0/1/3"}>Le mot le plus long niveau difficile contre l'ordinateur.</Link></li>
                 <li><Link to={"/JeuxLettres/0/1/4"}>Le mot le plus long niveau très difficile contre l'ordinateur.</Link></li>
-                <li><Link to={"/JeuxLettres/0/1/5"}>Le mot le plus long niveau impossible contre l'ordinateur (mot de 9 lettres possibles).</Link></li>
+                {/* <li><Link to={"/JeuxLettres/0/1/5"}>Le mot le plus long niveau impossible contre l'ordinateur (mot de 9 lettres possibles).</Link></li> */}
               </ul>
               {/* <p>La fréquentation de ce site n'est pas suffisante pour trouver des joueurs en ligne. Vous devez inviter vos propres amis.
             Il suffit de leur envoyer ce lien <b>{process.env.REACT_APP_URL_JEUXLETTRES}/{this.gameNumber}/2/2 </b> <span className="copier" onClick={this.copier}>copier</span> par mail ou par messagerie.

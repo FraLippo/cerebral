@@ -54,7 +54,7 @@ export default class PresentationEN extends Component {
             <h2>Can you pass a challenge? (new)</h2>
             <p>A challenge is a set of small games and brain tests, all your skills and agility will be needed to complete these challenges.</p>
             <p>It is best to practice with the games below before starting a challenge.</p>
-            <p>If you manage to complete a challenge on the first attempt your name will be listed on our <Link to="/board/en">honor board</Link>.</p>
+           
           </Col>
           <Col md={14}>
             <SousMenu type="defiCerebral" titre="NOM_DEFI_CEREBRAL"></SousMenu>
@@ -274,7 +274,7 @@ export default class PresentationEN extends Component {
       <p>Photo of animals and paintings for the puzzles games : <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> license:  Creative Commons Attribution 2.0 Generic</p>
       <p>Icons of animals in the "previous image game" <a href="https://icon-icons.com/fr/pack/Flat-Animal-Icons/365">icons-icons.com</a></p>
       <p>Icons of the mahjong by <a href="http://www.martinpersson.org/">Martin Persson</a></p>
-      <p className="centre"><Link to={'terms-of-service'}>Terms of service</Link></p>
+      <p className="centre"><Link to={'/terms-of-service'}>Terms of service</Link></p>
     </div>
   }
 }

@@ -5,7 +5,7 @@ import intl from 'react-intl-universal';
 
 function LienMenuPrincipal()
 {
-    return <div className="centre"><Link className="lienFinal" to={intl.get('LIEN_HOME')}>{intl.get('AUTRE_JEU')}</Link></div>
+    return <div className="centre"><Link reloadDocument className="lienFinal" to={intl.get('LIEN_HOME')}>{intl.get('AUTRE_JEU')}</Link></div>
 }
 
 export {LienMenuPrincipal};

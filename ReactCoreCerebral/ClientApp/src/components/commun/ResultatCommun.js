@@ -24,7 +24,7 @@ export default class Resultat extends Component {
             point: [0, 0],
             afficheGraphique: false
         }
-
+ console.log(props.idTest);
         this.initChemin();
     }
 
@@ -79,6 +79,9 @@ export default class Resultat extends Component {
         let chemin = "";
 
         switch (this.props.type) {
+            case 'tri':
+                chemin = intl.get('NOM_TRI');
+                break;
             case 'puzzle':
                 chemin = intl.get('NOM_PUZZLE');
                 break;
@@ -146,16 +149,7 @@ export default class Resultat extends Component {
     }
 
 
-    renderProchainJeu() {
-        if (this.props.prochainJeu === 0) return
-        let element;
-        this.chemin += this.props.prochainJeu.id;
-        element = <div className="centre"><b>{intl.get('PROCHAIN_JEU')}</b> <div><Link to={this.chemin}>{intl.get(this.props.prochainJeu.titre)}</Link></div>{this.props.prochainJeu.explication && <div>{intl.get(this.props.prochainJeu.explication)}</div>}
-        </div>
-        return element;
-    }
-
-
+  
 
     render() {
        
@@ -170,12 +164,11 @@ export default class Resultat extends Component {
                                 <Statistic title={intl.get('CLASSEMENT')} value={this.state.classement} suffix={'/ ' + this.state.nbJoueurs} />
                                 {this.state.afficheGraphique && <div><p>{intl.get('MSG_GRAPHIQUE1')}</p><div className="graph center"><Graphic point={this.state.point} statTemps={this.state.statTemps}></Graphic></div></div>}</div> :
                                 <div><div><b>{intl.get('PERDU')}</b></div>
-                                    <div><Link to={this.chemin + this.props.idTest}>{intl.get('REFAIRE')}</Link></div></div>}
+                                    <div><Link reloadDocument to={this.chemin + this.props.idTest}>{intl.get('REFAIRE')}</Link></div></div>}
                             <p className="espaceHaut">{intl.get('MEILLEUR_TEMPS')}<b>{`${Math.floor(this.state.meilleurTemps / 60 | 0)}:${Math.floor(this.state.meilleurTemps % 60)}`}</b></p>
                             <p>{intl.get('TEMPS_MOYEN')}<b>{`${Math.floor(this.state.tempsMoyen / 60 | 0)}:${Math.floor(this.state.tempsMoyen % 60)}`}</b></p>
                             {!this.props.perdu && <p>{this.messageAnalyse()}</p>}</div>
 
-                        <div>{this.renderProchainJeu()}</div>
                         <div className="espaceHaut bullet">
                             <SousMenu titre='TITRE_CATEGORIE' type={this.props.type} supprimer={this.props.idTest}></SousMenu>
                         </div>

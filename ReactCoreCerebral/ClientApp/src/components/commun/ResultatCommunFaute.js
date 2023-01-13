@@ -91,17 +91,7 @@ class Resultat extends Component {
         }
     }
 
-    renderProchainJeu() {
-        if (this.props.prochainJeu === 0) return
-        let element;
-       
-        this.chemin += this.props.prochainJeu.id;
-        element = <div className="centre"><b>{intl.get('PROCHAIN_JEU')}</b> <div><Link to={this.chemin}>{intl.get(this.props.prochainJeu.titre)}</Link></div>
-        
-        </div>
-        return element;
-    }
-
+   
  
 
 
@@ -116,7 +106,7 @@ class Resultat extends Component {
                 <li>{intl.get('ESP_SANSFAUTE')} {this.state.sansFaute}</li>
             </ul>
             {this.messageAnalyse()}
-            {this.renderProchainJeu()}  
+     
            <div className="espaceHaut"><SousMenu type={this.props.type}  titre='TITRE_CATEGORIE' supprimer={this.props.idTest}></SousMenu></div>
         </div>
         <Ad></Ad>

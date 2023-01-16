@@ -21,7 +21,8 @@ render () {
   if (!this.ad) return <div></div>
     return (
       
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0014588513895125"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0014588513895125"
+            crossorigin="anonymous"></script>
     );
   }
 }

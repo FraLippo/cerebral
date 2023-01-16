@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       element: <div><ScrollRestoration></ScrollRestoration>
       <div className='menuHaut'><Menu items={itemsMenu} mode="horizontal"></Menu></div>
       <div className='margeEcran'><Outlet></Outlet></div></div>,
-      //errorElement : <PageFaute></PageFaute>,
+      errorElement : <PageFaute></PageFaute>,
       children: [
        
           {

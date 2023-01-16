@@ -10,7 +10,6 @@ import CompteRebours from '../../components/commun/CompteRebours2';
 import { addGame } from '../../components/commun/localStorage';
 import Helmet from 'react-helmet';
 import { analytics } from '../../components/commun/analytics';
-import { Redirect } from 'react-router-dom';
 import withRouter from '../../components/commun/withRouter';
  class JeuxPicross extends Component {
 

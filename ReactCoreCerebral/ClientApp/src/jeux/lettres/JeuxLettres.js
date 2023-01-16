@@ -53,7 +53,7 @@ class JeuxLettres extends Component {
       
         this.tabLettresOrigine = [];
         this.gameNumber = readGameNumber();
-        this.hubConnection == null;
+        this.hubConnection = null;
         this.motEnCours = "";
         this.dicoLettres = new Map();
       

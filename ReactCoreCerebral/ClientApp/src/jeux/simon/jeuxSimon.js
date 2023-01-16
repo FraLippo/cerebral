@@ -108,7 +108,7 @@ class JeuxSimon extends Component {
     }
 
     render() {
-        if (this.stop) return (<Redirect to={intl.get('LIEN_HOME')}></Redirect>);
+   
         return <div>
             <Helmet>
                 <title>Le jeu Simon pour améliorer sa mémoire</title>

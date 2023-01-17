@@ -33,7 +33,7 @@ export default class Presentation extends Component {
           <p>Les tests sont simples à comprendre et peuvent être réalisés par des juniors ou des seniors.</p>
           <p>Les tests ne sont en aucun cas des tests scientifiques. Ce sont surtout des petits jeux de réflexion qui servent à évaluer ses capacités par rapport aux autres. A la fin de chaque jeu vous obtenez votre classement et votre position par rapport aux autres utilisateurs.</p>
           
-          
+          <Ad></Ad>
           <div className="centre"><img src={border} alt="bordure"  width="100" height="41" ></img></div>
 
         </Col>
@@ -72,7 +72,7 @@ export default class Presentation extends Component {
           </Col>
         </Row>
       </div>
-
+<Ad></Ad>
       <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
 <h1 className="titre centre">Les tests</h1>
     <Row className="margeHaut">
@@ -88,7 +88,7 @@ export default class Presentation extends Component {
       <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
       <div className="centre"><img className="img-responsive" width="1000" height="396" src={presentation} alt="presentation"></img></div>
     <Tableau></Tableau>
-      <Row><Ad></Ad></Row>
+    
       <p>Le respect de votre vie privée est notre priorité : <a   href="https://evalquiz.com/home/choisir">Choisir ses cookies</a></p>
       <h2>Crédits</h2>
       <p>Les icônes de bordure sont l'oeuvre d'<a href="https://thenounproject.com/zzyzz/">Olena Panasovska.</a></p>

@@ -1,28 +1,21 @@
 import React from 'react';
 
-function getCookie(name) {
-  var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-  return v ? v[2] : null;
-}
-export default class Ad extends React.Component {
 
+export default function Ad()  {
 
-constructor()
-{
-  super();
-  this.ad = true;
-  let cookie = getCookie("cookieConsent");
-      if (cookie == null || cookie === "NO") {
-         this.ad = false;
-      }
-}
+    return <React.Fragment><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0014588513895125"
+      crossOrigin="anonymous"></script>
 
-render () {
-  if (!this.ad) return <div></div>
-    return (
-      
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0014588513895125"
-            crossorigin="anonymous"></script>
-    );
-  }
+      <ins className="adsbygoogle"
+        style={{display:"block"}}
+        data-ad-client="ca-pub-0014588513895125"
+        data-ad-slot="6880354109"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({ });
+      </script>
+    </React.Fragment>
+
+  
 }

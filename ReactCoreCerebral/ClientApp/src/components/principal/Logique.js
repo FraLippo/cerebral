@@ -80,6 +80,7 @@ export default class Logique extends Component {
         </Row>
         <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
 
+        <Ad></Ad>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Trier des éléments</h2>
@@ -108,7 +109,7 @@ export default class Logique extends Component {
       </Row>
         <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
 
-      <Ad></Ad>
+  
   </div>
   }
 }

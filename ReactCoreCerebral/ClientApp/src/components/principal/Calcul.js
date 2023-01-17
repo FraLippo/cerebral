@@ -49,6 +49,8 @@ export default class Logique extends Component {
             <SousMenu type="math" titre="MATH_TITLE"></SousMenu>
           </Col>
         </Row>
+        
+       <Ad></Ad>
         <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
         <Row gutter={8} className="espaceHaut">
 
@@ -77,8 +79,8 @@ export default class Logique extends Component {
             <SousMenu type="fubuki" titre="FUBUKI_TITLE"></SousMenu>
           </Col>
         </Row>
-       <Ad></Ad>
 
+        <Ad></Ad>
          </div>
   }
 }

@@ -17,7 +17,7 @@ import confetti from '../../images/confetti.webp';
 import Confetti from 'react-confetti';
 import applause from '../../images/applause.webp';
 import withRouter from '../../components/commun/withRouter';
-const { Step } = Steps;
+
 let donneesConcours = [...donneesConcoursCerebral,...donneesConcoursCalcul,...donneesConcoursMot];
 
 

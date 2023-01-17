@@ -7,6 +7,10 @@
     content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
   <link rel="icon" sizes="192x192" href="light192.png">
   <link rel="apple-touch-icon" href="light192.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0014588513895125"
+     crossorigin="anonymous"></script>
+     <script>(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=1;</script>
+
   <meta name="theme-color" content="#000000" />
 
   <!--
@@ -87,6 +91,11 @@
 
   <script>
 
+    function addScript()
+    {
+      (window.adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
+    }
+
     function getCookie(name) {
       var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
       return v ? v[2] : null;
@@ -124,7 +133,9 @@
           modalContent.style.display = "block";
         }
 
-
+        if (cookie === "YES") {
+          addScript();
+        }
 
         if (cookie === "NO") {
           bandeauNon.style.display = "block";
@@ -136,13 +147,14 @@
           rgpdMain.className = "";
           modalRgpd.className = "";
           modalContent.style.display = "none";
+          addScript();
           setCookie("cookieConsent", "YES", 365);
 
         });
 
         btnNouveau.addEventListener("click", function (event) {
           setCookie("cookieConsent", "YES", 365);
-
+          addScript();
           bandeauNon.style.display = "none";
 
         });

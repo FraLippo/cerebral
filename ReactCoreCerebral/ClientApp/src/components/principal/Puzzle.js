@@ -45,6 +45,8 @@ export default class Puzzle extends Component {
             <SousMenu type="puzzle" titre="PUZZLE_TITLE"></SousMenu>
           </Col>
         </Row>
+        
+       <Ad></Ad>
             <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
@@ -61,7 +63,7 @@ export default class Puzzle extends Component {
      
     
    
- <Ad></Ad>
+
 
          </div>
   }

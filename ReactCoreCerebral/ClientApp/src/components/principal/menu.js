@@ -15,7 +15,7 @@ const itemsMenu = [
     },
 
     {
-        label: ( <a href="/">
+        label: ( <a href="https://orthographe.evalquiz.com">
         Orthographe
         </a>
         ),

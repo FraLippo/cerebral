@@ -2,6 +2,7 @@
 import React from 'react';
 import {ScrollRestoration, createBrowserRouter, Outlet } from "react-router-dom";
 import Presentation from './Presentation';
+import PresentationTemps from './PresentationTemps';
 import PresentationEN from './Presentationanglais';
 import { Menu } from 'antd';
 import { itemsMenu } from './menu';
@@ -35,8 +36,9 @@ const JeuxFubuki = React.lazy(() => import('../../jeux/fubuki/jeuxFubuki'));
 const JeuxMath = React.lazy(() => import('../../jeux/math/MathJeu'));
 const JeuxMemoryGame = React.lazy(() => import('../../jeux/memoryGame/JeuxMemory'));
 const JeuxSimon = React.lazy(() => import('../../jeux/simon/jeuxSimon'));
- const JeuxBinero = React.lazy(() => import('../../jeux/binero/JeuxBinero'));
+const JeuxBinero = React.lazy(() => import('../../jeux/binero/JeuxBinero'));
 const JeuxPicross = React.lazy(() => import('../../jeux/picross/JeuxPicross'));
+const JeuCouleur = React.lazy(() => import('../../jeux/vitesse/couleur/JeuCouleur'));
 
 
 
@@ -51,11 +53,15 @@ const router = createBrowserRouter([
        
           {
             index : true,
-            element: <Presentation />,
+            element: <PresentationTemps />,
           },
           {
             path :"en",
             element: <PresentationEN />,
+          },
+          {
+            path :"defi",
+            element: <Presentation />,
           },
           {
             path: 'binero/:id',
@@ -253,6 +259,11 @@ const router = createBrowserRouter([
           {
             path: 'brain-challenge/:no',
             element: <DebutEtape/>,
+            
+          },
+          {
+            path: 'vitesseCouleur',
+            element: <JeuCouleur/>,
             
           },
     

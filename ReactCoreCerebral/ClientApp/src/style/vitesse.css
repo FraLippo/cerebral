@@ -1,0 +1,56 @@
+.rougeV{
+    color: red;
+}
+.bleuV
+{
+    color: blue;
+}
+.jauneV
+{
+    color: yellow;
+}
+.vertV
+{
+    color: green;
+}
+.roseV
+{
+    color: pink;
+}
+.violetV
+{
+    color: violet;
+}
+
+.jeuCouleur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.caseCouleur
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    border: 3px solid black;
+    border-radius: 5px;
+    font-size: 3em;
+
+}
+
+.caseCouleur2
+{
+    background-color: #933f3f;
+}
+.compteReboursVitesse
+{
+    float: right;
+}
+.reponseCouleur
+{
+    height: 30px;
+}

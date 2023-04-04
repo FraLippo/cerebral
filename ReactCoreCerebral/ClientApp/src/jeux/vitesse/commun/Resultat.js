@@ -55,8 +55,6 @@ class Resultat extends Component {
 
     async envoyerMessage(prenom) {
         let url = new URL(process.env.REACT_APP_URL_RAPIDITERESULTAT);
-
-
         var data = new FormData();
         data.append('typeExo', this.props.typeExo);
         data.append('score', this.props.score);
@@ -88,9 +86,6 @@ class Resultat extends Component {
 
     }
 
-
-
-   
 
     render() {
         return <div>

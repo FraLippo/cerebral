@@ -52,13 +52,14 @@ export default class Logique {
             do {
                 tirage2 = this.tiragecouleur();
 
-            } while (tirage2 === tirage)
+            } while (tirage2 === tirage1)
         } else {
             tirage2 = tirage1;
         }
         let couleurBas = this.choixCouleur(tirage2);
         let tirage3 = Math.floor(Math.random() * 6);
         let motBas = this.choixMot(tirage3);
+        console.log(motHaut + " couleurBas  " + couleurBas + " resultat " + !!tirage )
         return { resultat : !!tirage, motHaut, couleurBas, motBas };
     }
 }

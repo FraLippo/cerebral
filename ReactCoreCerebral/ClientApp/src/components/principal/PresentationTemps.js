@@ -2,9 +2,8 @@ import SousMenu from './SousMenu';
 import React, { Component } from 'react';
 import { Row, Col } from 'antd';
 import Ad from '../commun/adSense';
-import '../../style/jeux.css';
+import '../../style/vitesse.css';
 import border from '../../images/border.png';
-import ClassementScore from '../commun/ClassementScore';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
@@ -33,10 +32,47 @@ export default class PresentationTemps extends Component {
           <div className="centre"><img src={border} alt="bordure"  width="100" height="41" ></img></div>
 
         </Col>
-<Link to='vitesseCouleur'>Vitesse Couleur</Link>
+        </Row>
+      <h1>Nos jeux d'entrainement cérébral</h1>
+        <div className="presentationJeu">
+<div className="centre fontMoyenne"><Link to='vitesseCouleur'>Jeu de reconnaissance des couleurs</Link></div>
+<p className="marge20">But du jeu : reconnaitre la couleur dans laquelle est écrit un mot. La difficulté provient du fait que que le mot affiché est une couleur. 
+Par exemple si on écrit le mot "rouge" en vert. Le but est de reconnaitre la couleur verte et pas le nom de la couleur(rouge), ce qui n'est pas facile pour notre cerveau. Vous avez 30 s pour réaliser le meilleur score, vous gagnez un point par bonne réponse, chaque faute retranche un point à votre score.</p>
+<div>Intêret du jeu :</div>
+<ul>
+  <li>Développer la perception des couleurs</li>
+  <li>Améliorer la mémoire</li>
+  <li>Développer la coordination œil-main</li>
+  <li>Améliorer la vitesse de traitement de l'information visuelle </li>
+</ul>
+</div>
+<div className="presentationJeu marge20">
+<div className="centre fontMoyenne"><Link to='vitesseSolitaire'>Jeu de la tuile solitaire</Link></div>
+<p className="marge20">But du jeu : Retrouvez la tuile solitaire parmi un ensemble de tuiles. Vous avez 60 s pour réaliser le meilleur score, Le score augmente par multiple de 2. La première tuile trouvée vous donne 2 points, La seconde 4 points, etc...   </p>
+<div>Intêret du jeu :</div>
+<ul>
+  <li>Développer la perception des élements</li>
+  <li>Améliorer la concentration</li>
+  <li>Améliorer la vitesse de traitement de l'information visuelle</li>
+  <li>Augmenter la capacité d'analyse</li>
+</ul>
+<div className="centre fontMoyenne"><Link to='classement/vitesseSolitaire'>Classement</Link></div>
+</div>
 
-<ClassementScore typeExo="vitesseCouleur"></ClassementScore>
-      </Row>
+<div className="presentationJeu marge20">
+<div className="centre fontMoyenne"><Link to='vitesseOrdre'>Remettre dans l'ordre des nombres</Link></div>
+<p className="marge20">But du jeu : Remettre dans l'ordre des nombres entre 1 et 100. Vous avez 60 s pour réaliser le meilleur score, vous gagnez un point si vous placez un nombre dans le bon ordre.</p>
+<div>Intêret du jeu :</div>
+<ul>
+  <li>Améliore la capacité de traitement de l'information</li>
+  <li>Développe les compétences de prise de décision</li>
+  <li>Développe les compétences en résolution de problèmes</li>
+  <li>Renforce les compétences en mathématiques de base (comparaison de nombres)</li>
+</ul>
+<div className="centre fontMoyenne"><Link to='classement/vitesseOrdre'>Classement</Link></div>
+</div>
+
+      
     
 
    

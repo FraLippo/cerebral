@@ -64,7 +64,7 @@ class JeuCouleur extends Component {
 
     render() {
         return <React.Fragment>{this.state.afficheFin ? <Resultat score={this.state.score} typeExo='vitesseCouleur'></Resultat>:<React.Fragment><div>Score : {this.state.score}
-        <div className="compteReboursVitesse"><CompteRebours finTimer={this.finTimer} temps={3}></CompteRebours></div>
+        <div className="compteReboursVitesse"><CompteRebours finTimer={this.finTimer} temps={30}></CompteRebours></div>
         </div><div className="jeuCouleur"><div>Le mot dans la case du bas est <b>écrit</b> en :</div>
         <div className="caseCouleur">{this.state.motHaut}</div>
         <div className={"marge20 caseCouleur " + this.state.couleurBas + (this.state.score >= 15 ? " caseCouleur2" : "" )}><b>{this.state.motBas}</b></div>

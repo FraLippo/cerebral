@@ -36,7 +36,7 @@ export default class ClassementScore extends Component {
 
     async componentDidMount() { 
         let url = new URL(process.env.REACT_APP_URL_RAPIDITECLASSEMENT);
-alert("rrr")
+
        
         const reponse = await fetch(url + "?typeExo=" + this.props.typeExo);
         if (!verifierStatus(reponse.status))
@@ -61,12 +61,12 @@ alert("rrr")
 
     render()
     {
-        return <div>
-            <div>
+        return <div className="marge20">
+           
         <div> <Row justify="center">
         <Col xs={24} sm={24} md={16}><Table    pagination={{ defaultPageSize: 10, hideOnSinglePage: true }} columns={this.columns} dataSource={this.state.listePremiers} rowKey='cle' /></Col></Row>
 </div>
-    </div>
+   
             </div>
             
           

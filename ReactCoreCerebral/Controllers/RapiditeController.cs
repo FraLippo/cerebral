@@ -44,7 +44,7 @@ namespace ReactCoreCerebral.Controllers
         {
           
             Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
-            var classement = _dbTableau.Resultat2019.Where(x => x.typeExo == typeExo && x.date >= DateTime.Now.AddDays(-30)).OrderByDescending(x => x.nbFaute).Take(10).
+            var classement = _dbTableau.Resultat2019.Where(x => x.typeExo == typeExo && x.date >= DateTime.Now.AddDays(-30)).OrderByDescending(x => x.nbFaute).ThenByDescending(x=> x.date).Take(20).
                 Select(x => new DTOClassementScore() { Cle = 0,Prenom= x.prenom, Date = x.date.HasValue ? x.date.Value.ToShortDateString(): "", Score = x.nbFaute}).ToList();
             for (int i = 0; i < classement.Count; i++)
             {

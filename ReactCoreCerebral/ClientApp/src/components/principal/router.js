@@ -39,6 +39,9 @@ const JeuxSimon = React.lazy(() => import('../../jeux/simon/jeuxSimon'));
 const JeuxBinero = React.lazy(() => import('../../jeux/binero/JeuxBinero'));
 const JeuxPicross = React.lazy(() => import('../../jeux/picross/JeuxPicross'));
 const JeuCouleur = React.lazy(() => import('../../jeux/vitesse/couleur/JeuCouleur'));
+const Classement = React.lazy(() => import('../../jeux/vitesse/commun/Classement'));
+const JeuOrdre = React.lazy(() => import('../../jeux/vitesse/ordre/JeuOrdre'));
+const JeuSolitaire = React.lazy(() => import('../../jeux/vitesse/solitaire/JeuSolitaire'));
 
 
 
@@ -265,6 +268,20 @@ const router = createBrowserRouter([
             path: 'vitesseCouleur',
             element: <JeuCouleur/>,
             
+          },
+          {
+            path: 'vitesseOrdre',
+            element: <JeuOrdre/>,
+            
+          },
+          {
+            path: 'vitesseSolitaire',
+            element: <JeuSolitaire/>,
+            
+          },
+          {
+            path: 'classement/:type',
+            element: <Classement/>,
           },
     
       ], 

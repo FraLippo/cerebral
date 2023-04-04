@@ -1,3 +1,13 @@
+.presentationJeu
+{
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: aliceblue;
+    padding: 10px;
+}
+.presentationJeu a, a:visited, a:hover, a:active {
+    color: #ad0000;
+  }
 .rougeV{
     color: red;
 }
@@ -54,3 +64,4 @@
 {
     height: 30px;
 }
+

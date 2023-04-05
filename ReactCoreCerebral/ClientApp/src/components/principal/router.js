@@ -42,7 +42,8 @@ const JeuCouleur = React.lazy(() => import('../../jeux/vitesse/couleur/JeuCouleu
 const Classement = React.lazy(() => import('../../jeux/vitesse/commun/Classement'));
 const JeuOrdre = React.lazy(() => import('../../jeux/vitesse/ordre/JeuOrdre'));
 const JeuSolitaire = React.lazy(() => import('../../jeux/vitesse/solitaire/JeuSolitaire'));
-
+const JeuPaire = React.lazy(() => import('../../jeux/vitesse/paire/JeuPaire'));
+const JeuCalcul = React.lazy(() => import('../../jeux/vitesse/calcul/JeuCalcul'));
 
 
 const router = createBrowserRouter([
@@ -277,6 +278,16 @@ const router = createBrowserRouter([
           {
             path: 'vitesseSolitaire',
             element: <JeuSolitaire/>,
+            
+          },
+          {
+            path: 'vitessePaire',
+            element: <JeuPaire/>,
+            
+          },
+          {
+            path: 'vitesseCalcul',
+            element: <JeuCalcul/>,
             
           },
           {

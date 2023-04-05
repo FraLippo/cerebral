@@ -40,10 +40,10 @@ export default class PresentationTemps extends Component {
 Par exemple si on écrit le mot "rouge" en vert. Le but est de reconnaitre la couleur verte et pas le nom de la couleur(rouge), ce qui n'est pas facile pour notre cerveau. Vous avez 30 s pour réaliser le meilleur score, vous gagnez un point par bonne réponse, chaque faute retranche un point à votre score.</p>
 <div>Intêret du jeu :</div>
 <ul>
-  <li>Développer la perception des couleurs</li>
-  <li>Améliorer la mémoire</li>
-  <li>Développer la coordination œil-main</li>
-  <li>Améliorer la vitesse de traitement de l'information visuelle </li>
+  <li>Développe la perception des couleurs</li>
+  <li>Améliore la mémoire</li>
+  <li>Développe la coordination œil-main</li>
+  <li>Améliore la vitesse de traitement de l'information visuelle </li>
 </ul>
 </div>
 <div className="presentationJeu marge20">
@@ -51,10 +51,10 @@ Par exemple si on écrit le mot "rouge" en vert. Le but est de reconnaitre la co
 <p className="marge20">But du jeu : Retrouvez la tuile solitaire parmi un ensemble de tuiles. Vous avez 60 s pour réaliser le meilleur score, Le score augmente par multiple de 2. La première tuile trouvée vous donne 2 points, La seconde 4 points, etc...   </p>
 <div>Intêret du jeu :</div>
 <ul>
-  <li>Développer la perception des élements</li>
-  <li>Améliorer la concentration</li>
-  <li>Améliorer la vitesse de traitement de l'information visuelle</li>
-  <li>Augmenter la capacité d'analyse</li>
+  <li>Développe la perception des élements</li>
+  <li>Améliore la concentration</li>
+  <li>Améliore la vitesse de traitement de l'information visuelle</li>
+  <li>Augmente la capacité d'analyse</li>
 </ul>
 <div className="centre fontMoyenne"><Link to='classement/vitesseSolitaire'>Classement</Link></div>
 </div>
@@ -72,6 +72,30 @@ Par exemple si on écrit le mot "rouge" en vert. Le but est de reconnaitre la co
 <div className="centre fontMoyenne"><Link to='classement/vitesseOrdre'>Classement</Link></div>
 </div>
 
+<div className="presentationJeu marge20">
+<div className="centre fontMoyenne"><Link to='vitessePaire'>Se souvenir de l'animal précedent</Link></div>
+<p className="marge20">But du jeu : On vous montre une suite d'images d'animaux, vous devez indiquer si l'animal que vous avez vu juste avant est le même que l'animal affiché. Vous avez 30 s pour obtenir le meilleur score, +1 point par bonne réponse, -2 par mauvaise réponse.</p>
+<div>Intêret du jeu :</div>
+<ul>
+  <li>Améliore la mémoire à court terme</li>
+  <li>Améliore la concentration</li>
+  <li>Développe les capacités cognitives</li>
+</ul>
+<div className="centre fontMoyenne"><Link to='classement/vitessePaire'>Classement</Link></div>
+</div>
+
+<div className="presentationJeu marge20">
+<div className="centre fontMoyenne"><Link to='vitesseCalcul'>La grille de calcul</Link></div>
+<p className="marge20">But du jeu : On vous donne 9 petits calculs (des additions et des soustractions) dans une grille, vous devez pointer les cases qui sont supérieures ou inférieures à un résultat donné. Vous avez 60 s pour réaliser le meilleur score, +1 par bonne réponse, -1 en cas de mauvaise réponse.</p>
+<div>Intêret du jeu :</div>
+<ul>
+  <li>Améliore les compétences en calcul mental </li>
+  <li>Améliore la concentration</li>
+  <li>Renforce la confiance en soi (si l'on réussit)</li>
+
+</ul>
+<div className="centre fontMoyenne"><Link to='classement/vitesseCalcul'>Classement</Link></div>
+</div>
       
     
 

@@ -8,26 +8,31 @@ class Classement extends Component {
     constructor(props) {
         super(props);
         this.type = props.params.type;
-    
-        }
 
-   
-        nomType = () => {
-            switch (this.type) {
-                case "vitesseCouleur":
-                    return "Reconnaissance des couleurs";
-            }
-        }
-   
+    }
 
-   
+
+    nomType = () => {
+        switch (this.type) {
+            case "vitesseCouleur":
+                return "Reconnaissance des couleurs";
+            case "vitesseSolitaire":
+                return "La tuile solitaire";
+            case "vitesseOrdre":
+                return "Les nombres en ordre";
+
+        }
+    }
+
+
+
 
     render() {
         return <div><h1>Le Classement</h1>
-        <p>Classement des 20 meilleurs scores du mois en cours pour le jeu de <b>{this.nomType()}</b></p>
-        <div className="marge20 centre"><ButtonLink titre="Retour à l'accueil" href={'/'}></ButtonLink></div>
-        <ClassementScore typeExo={this.type}></ClassementScore>
-</div>
+            <p>Classement des 20 meilleurs scores des 30 derniers jours pour le jeu de <b>{this.nomType()}</b></p>
+            <div className="marge20 centre"><ButtonLink titre="Retour à l'accueil" href={'/'}></ButtonLink></div>
+            <ClassementScore typeExo={this.type}></ClassementScore>
+        </div>
 
     }
 }

@@ -18,38 +18,37 @@ class JeuSolitaire extends Component {
         super();
 
         this.logique = new Logique();
-       
 
-            this.tabOrigine = this.logique.creerGrille();
-            console.log(this.tabOrigine)
-            this.state = {
-                grille: this.tabOrigine,
-                afficheResultat: false,
-                score : 0
-            }
-            this.fin = false;
-            this.perdu = false;
-            this.reponseEnCours = false;
-            analytics();
-        
+
+        this.tabOrigine = this.logique.creerGrille();
+        console.log(this.tabOrigine)
+        this.state = {
+            grille: this.tabOrigine,
+            afficheResultat: false,
+            score: 0
+        }
+        this.fin = false;
+
+        this.reponseEnCours = false;
+        analytics();
+
     }
     nouveauJeu = () => {
         if (this.fin) return;
         let score = this.state.score;
-        if (!this.perdu) {
-             score += ((this.logique.grilleEnCours + 1) *2);
-            if (this.logique.grilleEnCours < this.logique.tabDonnee.length - 1)
-            {
-                this.logique.grilleEnCours++;
-            }
-           
-        }
-        console.log(score);
-        this.tabOrigine = this.logique.creerGrille();
-        this.perdu = false;
-        this.setState({  grille: this.tabOrigine,
 
-            score});
+        score += ((this.logique.grilleEnCours + 1) * 2);
+        if (this.logique.grilleEnCours < this.logique.tabDonnee.length - 1) {
+            this.logique.grilleEnCours++;
+        }
+
+
+        this.tabOrigine = this.logique.creerGrille();
+        this.setState({
+            grille: this.tabOrigine,
+
+            score
+        });
         this.reponseEnCours = false;
     }
 
@@ -62,34 +61,34 @@ class JeuSolitaire extends Component {
             if (result === "ok") {
                 message.success("Bravo", .7, this.nouveauJeu);
                 nouveauTableau[no] = -1;
-          
+                this.reponseEnCours = true;
 
             }
             if (result === "erreur") {
-                this.perdu = true;
-                message.error("Ce n'est pas la bonne tuile", 1.2, this.nouveauJeu);
-   
+
+                message.error("Ce n'est pas la bonne tuile", 1.2);
+
             }
-            this.reponseEnCours = true;
+        
             this.setState({ grille: nouveauTableau });
         }
     }
 
 
     finTimer = () => {
-     this.fin = true;
-            this.setState({ afficheResultat: true });
-        
+        this.fin = true;
+        this.setState({ afficheResultat: true });
+
     }
 
     render() {
-    
+
 
         return <React.Fragment>
             <Helmet>
                 <title>Retrouver la tuile solitaire</title>
                 <meta name="description" content="TO DO" />
-                
+
             </Helmet>
             <div> {this.state.afficheResultat ?
                 <Resultat score={this.state.score} typeExo='vitesseSolitaire'></Resultat> :
@@ -97,10 +96,10 @@ class JeuSolitaire extends Component {
                     <div className="infoFamille">
                         <h1 className="couleurTitre espaceHaut">La tuile solitaire</h1>
                         <p>Cliquer sur la tuile solitaire</p>
-                       <div className="centre"><CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours>
+                        <div className="centre"><CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours>
 
-                    </div>
-                </div></div>}</div>
+                        </div>
+                    </div></div>}</div>
         </React.Fragment>
 
 

@@ -65,3 +65,69 @@
     height: 30px;
 }
 
+.rougePaire
+{
+    color: white;
+    background-color: red;
+    width:100px;
+    margin: 5px auto;
+    text-align: center;
+}
+
+.bleuPaire
+{
+    color: white;
+    background-color: blue;
+    width:100px;
+    margin: 5px auto;
+    text-align: center;
+}
+
+@keyframes fadeInFromNone2 {
+    0% {
+         opacity: 0;
+    }
+
+    40% {
+         opacity: 0;
+    }
+
+    100% {
+         opacity: 1;
+    }
+}
+
+.animationSuite2 {
+    animation: fadeInFromNone2 1.2s linear forwards;
+  
+}
+
+/* calcul */
+
+/* Simon */
+.centreGrilleCalMen {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.grilleCalMen {
+    font-size: 1.2em;
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-template-rows: repeat(3, 110px)
+}
+
+.caseCalMen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #a29ae1
+}
+
+.messageCalMen
+{
+    color :#146613
+}

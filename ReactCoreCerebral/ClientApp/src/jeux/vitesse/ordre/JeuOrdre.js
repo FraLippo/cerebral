@@ -113,7 +113,7 @@ class JeuOrdre extends Component {
         return (<div>
             <Helmet>
                 <title>Remettre les nombres dans l'ordre</title>
-                <meta name="description" content="TO DO" />
+                <meta name="description" content="Un jeu très facile à comprendre où il suffit de remettre une série de nombres dans l'ordre croissant." />
 
             </Helmet>
 

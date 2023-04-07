@@ -17,7 +17,6 @@ export default class Logique {
         this.tabResultatsComplet= [...this.tabNombresValides, ...this.tabNombresInvalides];
         this.construireTableauOperations();
        this.tabOperation = this.melangerTableau(this.tabOperation);
-        console.log(this.tabOperation)
      
     }
 
@@ -113,7 +112,6 @@ melangerTableau()
 contruireChainesOperations(){
     let tabOperationsChaine = [];
     for (let index = 0; index < this.tabOperation.length; index++) {
-        console.log(tabOperationsChaine)
         tabOperationsChaine.push(this.tabOperation[index].nombre1 + " " + this.tabOperation[index].signe + " " + this.tabOperation[index].nombre2);
     }
     return tabOperationsChaine;

@@ -19,7 +19,6 @@ class Resultat extends Component {
             prenomVisible: false
         }
         analytics();
-        console.log(props.score)
         }
 
    
@@ -69,7 +68,6 @@ class Resultat extends Component {
         }
         if (reponse.ok) {
             const res = await reponse.json();
-         console.log(res)
             this.setState({
                 classement: res.classement,
                 prenom: res.prenom,

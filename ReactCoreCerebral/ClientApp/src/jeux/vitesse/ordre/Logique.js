@@ -17,7 +17,6 @@ export default class Logique {
         }
         //trie le tableau dans l'ordre croissant
         tab.sort((a, b) => a - b);
-        console.log(tab);
         return tab;
     }
 
@@ -36,7 +35,6 @@ export default class Logique {
                 i++;
             }
         }
-        console.log(tab)
         return tab;
     }
     //tirage de 10 couleurs aléatoires  et les stocke dans un tableau

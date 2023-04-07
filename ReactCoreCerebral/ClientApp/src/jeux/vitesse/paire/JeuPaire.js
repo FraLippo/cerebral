@@ -76,7 +76,7 @@ class JeuPaire extends Component {
         }
         else
         {
-            this.setState({score : this.state.score - 2, 
+            this.setState({score : this.state.score - 3, 
             reponse : "Incorrect"});
         }
         this.suivant();
@@ -96,7 +96,7 @@ class JeuPaire extends Component {
         return <div>
             <Helmet>
                 <title>Trouver les paires</title>
-                <meta name="description" content="TO DO" />
+                <meta name="description" content="Dans ce jeu simple et amusant vous devez arriver à mémoriser deux images consécutivement et déterminer si elles sont semblables." />
                
             </Helmet>
             {this.state.afficheResultat ?  <Resultat score={this.state.score} typeExo='vitessePaire'></Resultat>  :

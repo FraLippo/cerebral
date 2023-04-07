@@ -272,7 +272,6 @@ export default class PresentationEN extends Component {
       <p>The Zener cards by <a href="https://commons.wikimedia.org/w/index.php?curid=31927664">Mikhail Ryazanov</a></p>
       <p>Icons for the family game : <a href="https://thenounproject.com/nicore/collection/love-and-wedding/">Love and wedding</a>-<a href="https://thenounproject.com/thepyramidschool/collection/dance-isotype/>">Ballerina</a>-<a href="https://thenounproject.com/sevag/collection/arabesque-design/">Arabesque</a> </p>
       <p>Photo of animals and paintings for the puzzles games : <a href="https://commons.wikimedia.org/">Wikimedia Commons</a> license:  Creative Commons Attribution 2.0 Generic</p>
-      <p>Icons of animals in the "previous image game" <a href="https://icon-icons.com/fr/pack/Flat-Animal-Icons/365">icons-icons.com</a></p>
       <p>Icons of the mahjong by <a href="http://www.martinpersson.org/">Martin Persson</a></p>
       <p className="centre"><Link to={'/terms-of-service'}>Terms of service</Link></p>
     </div>

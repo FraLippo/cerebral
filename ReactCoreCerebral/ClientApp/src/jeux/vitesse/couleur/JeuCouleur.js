@@ -5,6 +5,7 @@ import withRouter from  '../../../components/commun/withRouter';
 import { Button} from 'antd';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat';
+import { Helmet } from 'react-helmet';
 
 class JeuCouleur extends Component {
 
@@ -51,7 +52,7 @@ class JeuCouleur extends Component {
 
     clickFaux = () => {
         let resultat = this.resultat ? "Non" : "Oui";
-        let score = this.resultat ? this.state.score - 1 : this.state.score + 1;
+        let score = this.resultat ? this.state.score - 2 : this.state.score + 1;
         this.setState({resultat: resultat, score});
         this.debutTimer();
         this.nouveauTirage();
@@ -63,8 +64,15 @@ class JeuCouleur extends Component {
    
 
     render() {
-        return <React.Fragment>{this.state.afficheFin ? <Resultat score={this.state.score} typeExo='vitesseCouleur'></Resultat>:<React.Fragment><div>Score : {this.state.score}
-        <div className="compteReboursVitesse"><CompteRebours finTimer={this.finTimer} temps={30}></CompteRebours></div>
+ 
+       
+   
+        return <React.Fragment> <Helmet>
+                    <title>Le jeu des couleurs</title>
+                    <meta name="description" content="Un jeu simple à comprendre mais difficile à mettre en pratique pour entrainer son cerveau à reconnaitre les couleurs. " />
+                </Helmet>
+            {this.state.afficheFin ? <Resultat score={this.state.score} typeExo='vitesseCouleur'></Resultat>:<React.Fragment><div>Score : {this.state.score}
+        <div className="compteReboursVitesse"><CompteRebours finTimer={this.finTimer} temps={40}></CompteRebours></div>
         </div><div className="jeuCouleur"><div>Le mot dans la case du bas est <b>écrit</b> en :</div>
         <div className="caseCouleur">{this.state.motHaut}</div>
         <div className={"marge20 caseCouleur " + this.state.couleurBas + (this.state.score >= 15 ? " caseCouleur2" : "" )}><b>{this.state.motBas}</b></div>

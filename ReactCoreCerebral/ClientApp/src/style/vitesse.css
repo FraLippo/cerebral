@@ -1,12 +1,65 @@
+.titreVitesse
+{
+    border-radius: 10px;
+    background-color:#e2ffb5b5;
+    padding: 10px 0px;
+}
+
+.carteVitesse
+{
+    border-radius: 10px;
+    background-color:#e2ffb5b5;
+    width: 48%;
+    margin:3px;
+    padding: 10px;
+  
+}
+.autreVitesse
+{
+    border-radius: 10px;
+    background-color:#e2ffb5b5;
+
+    margin:15px 3px;
+    padding: 10px;
+}
+.defiVitesse
+{
+    display: flex;
+}
+
+@media screen and (max-width: 479px) {
+.defiVitesse{
+    flex-direction: column;
+}
+.carteVitesse{
+    width: 95%;
+   
+}
+}
+
+.carteVitesse li
+{
+    margin-top: 7px;
+ 
+}
+
 .presentationJeu
 {
     border: 2px solid black;
     border-radius: 5px;
-    background-color: aliceblue;
+    background-color: #e4ffef70;
     padding: 10px;
 }
+
+.autreVitesse a, a:visited, a:hover, a:active {
+    color: #094fe6;
+}
+.carteVitesse a, a:visited, a:hover, a:active {
+    color: #094fe6;
+  }
+
 .presentationJeu a, a:visited, a:hover, a:active {
-    color: #ad0000;
+    color: #094fe6;
   }
 .rougeV{
     color: red;
@@ -60,6 +113,24 @@
 {
     float: right;
 }
+
+@media screen and (max-width: 479px) {
+    .compteReboursVitesse
+    {
+        float: none;
+       text-align: center;
+    }
+
+    .caseCouleur
+{
+   
+    width: 140px;
+    height: 140px;
+
+
+}
+}
+
 .reponseCouleur
 {
     height: 30px;
@@ -102,9 +173,8 @@
   
 }
 
-/* calcul */
 
-/* Simon */
+/* Calcul Men (CalMen */
 .centreGrilleCalMen {
     width: 100%;
     display: flex;
@@ -114,6 +184,7 @@
 }
 
 .grilleCalMen {
+    user-select: none;
     font-size: 1.2em;
     display: grid;
     grid-template-columns: repeat(3, 110px);
@@ -131,3 +202,6 @@
 {
     color :#146613
 }
+
+/*intrus*/
+

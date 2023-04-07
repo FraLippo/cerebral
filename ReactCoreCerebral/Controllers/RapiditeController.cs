@@ -4,7 +4,6 @@ using ReactCoreCerebral.Models;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 using ReactCoreCerebral.Donnees;
 using System.Collections.Generic;
 using System.Globalization;
@@ -25,10 +24,21 @@ namespace ReactCoreCerebral.Controllers
 
         public async Task<IActionResult> Resultat(string typeExo, int score, string prenom)
         {
-           
-            
-                Resultat2019 newResultat = new() { typeExo = typeExo, date = DateTime.Now, prenom = prenom, nbFaute = score};
-            _dbTableau.Resultat2019.Add(newResultat);
+            var ancienResultat = _dbTableau.Resultat2019.FirstOrDefault(x => x.prenom == prenom && x.typeExo == typeExo);
+            if (ancienResultat != null)
+            {
+                if (score > ancienResultat.nbFaute)
+                {
+                    ancienResultat.date = DateTime.Now;
+                    ancienResultat.nbFaute = score;
+                }
+
+            }
+            else
+            {
+                Resultat2019 newResultat = new() { typeExo = typeExo, date = DateTime.Now, prenom = prenom, nbFaute = score };
+                _dbTableau.Resultat2019.Add(newResultat);
+            }
                 await _dbTableau.SaveChangesAsync();
 
             var classement = _dbTableau.Resultat2019.Where(x => x.typeExo == typeExo && x.nbFaute > score).Count() + 1;

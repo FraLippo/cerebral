@@ -59,7 +59,6 @@ export default class Logique {
         let couleurBas = this.choixCouleur(tirage2);
         let tirage3 = Math.floor(Math.random() * 6);
         let motBas = this.choixMot(tirage3);
-        console.log(motHaut + " couleurBas  " + couleurBas + " resultat " + !!tirage )
         return { resultat : !!tirage, motHaut, couleurBas, motBas };
     }
 }

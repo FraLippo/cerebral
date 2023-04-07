@@ -24,7 +24,6 @@ export default class Resultat extends Component {
             point: [0, 0],
             afficheGraphique: false
         }
- console.log(props.idTest);
         this.initChemin();
     }
 

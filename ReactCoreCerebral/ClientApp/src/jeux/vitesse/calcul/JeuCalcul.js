@@ -5,6 +5,7 @@ import {message} from 'antd';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat';
 import '../../../style/vitesse.css';
+import { Helmet } from 'react-helmet';
 
 export default class JeuCalcul extends Component
 {
@@ -29,7 +30,7 @@ export default class JeuCalcul extends Component
         let tabGrille = this.logique.contruireChainesOperations();
 
        let message = this.logique.construireMessage();
-      console.log(tabGrille);
+
         
        this.setState({ message, tabGrille});
        this.nbMax+= 10;
@@ -57,7 +58,6 @@ export default class JeuCalcul extends Component
             message.error("Mauvaise réponse");
             score--;
         }
-        console.log(this.nbDecouverte)
         if (this.nbDecouverte === 2)
         {
             this.setState({ score});
@@ -78,10 +78,15 @@ export default class JeuCalcul extends Component
    
     render()
     {
-return this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitesseCalcul'></Resultat>:<div><div className="centreGrilleCalMen"><Grille clic={this.clic} taille={3} tabGrille={this.state.tabGrille}></Grille></div>
+return <React.Fragment>
+    <Helmet>
+                <title>Le  jeu de la grille de calcul mental</title>
+                <meta name="description" content="Un jeu de calcul amusant et simple pour toute la famille, vous devez rapidement effectuer des opérations pour éliminer les mauvais résultats." />
+            </Helmet>
+    {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitesseCalcul'></Resultat>:<div><div className="centreGrilleCalMen"><Grille clic={this.clic} taille={3} tabGrille={this.state.tabGrille}></Grille></div>
 <div className="centre fontMoyenne messageCalMen">{this.state.message}</div>
 <div className="centre marge20">Score: {this.state.score}</div>
 <div className="centre"><CompteRebours finTimer={this.finTimer} temps={60}></CompteRebours></div>
-</div>
+</div>}</React.Fragment>
 }
 }

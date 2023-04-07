@@ -21,7 +21,6 @@ class JeuSolitaire extends Component {
 
 
         this.tabOrigine = this.logique.creerGrille();
-        console.log(this.tabOrigine)
         this.state = {
             grille: this.tabOrigine,
             afficheResultat: false,
@@ -87,7 +86,7 @@ class JeuSolitaire extends Component {
         return <React.Fragment>
             <Helmet>
                 <title>Retrouver la tuile solitaire</title>
-                <meta name="description" content="TO DO" />
+                <meta name="description" content="Un jeu accessible à tous où vous devrez être concentré pour trouver la tuile de mah-jong solitaire parmi une série de tuiles." />
 
             </Helmet>
             <div> {this.state.afficheResultat ?

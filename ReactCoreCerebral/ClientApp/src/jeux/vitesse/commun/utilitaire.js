@@ -1,6 +1,5 @@
 function verifierStatus(status)
 {
-    console.log(status);
     if (status === 401)
     {
         alert("Désolé, vous devez être authentifié pour accèder à cette page.")

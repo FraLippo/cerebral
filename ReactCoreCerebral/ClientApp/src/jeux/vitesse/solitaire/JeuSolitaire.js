@@ -86,7 +86,7 @@ class JeuSolitaire extends Component {
         return <React.Fragment>
             <Helmet>
                 <title>Retrouver la tuile solitaire</title>
-                <meta name="description" content="Un jeu accessible à tous où vous devrez être concentré pour trouver la tuile de mah-jong solitaire parmi une série de tuiles." />
+                <meta name="description" content="Un jeu accessible à tous où vous devez être concentré pour trouver la tuile de mah-jong solitaire parmi une série de tuiles." />
 
             </Helmet>
             <div> {this.state.afficheResultat ?

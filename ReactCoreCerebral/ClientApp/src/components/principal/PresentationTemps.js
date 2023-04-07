@@ -6,6 +6,7 @@ import '../../style/vitesse.css';
 import border from '../../images/border.png';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import pres from '../../images/pres.png';
 
 
 export default class PresentationTemps extends Component {
@@ -20,7 +21,7 @@ export default class PresentationTemps extends Component {
       </Helmet>
       <h1 className="titre centre couleurTitre">Sport cérébral et jeux de réflexion</h1>
       <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
-      <div className="centre"><img src={border} width="100" height="41" alt="bordure"></img></div>
+      <div className="centre"><img src={pres} width="200" height="176" alt="fleur"></img></div>
       <Row gutter={8} className="espaceHaut">
         <Col md={24}>
           <p>Nous vous proposons une série de tests simples et de petits jeux de réflexion pour faire travailler son cerveau en espérant améliorer ses capacités cognitives et son intelligence. Tous les jeux sont gratuits et ne nécessitent aucune inscription.</p>
@@ -64,7 +65,7 @@ export default class PresentationTemps extends Component {
 
       <div className="presentationJeu marge20">
         <div className="centre fontMoyenne titreVitesse"><Link to='vitesseIntrus'>Repérer les différences</Link></div>
-        <p className="marge20">But du jeu : Repérer tous les intrus dans une grille de 3x3 c'est-à-dire toutes les images qui ne correspondent à l'image de référence. Vous avez 60 s pour réaliser le meilleur score, +1 point par bonne réponse, -2 points par mauvaise réponse.</p>
+        <p className="marge20">But du jeu : Repérer tous les intrus dans une grille de 3x3 c'est-à-dire toutes les images qui ne correspondent pas à l'image de référence. Vous avez 60 s pour réaliser le meilleur score, +1 point par bonne réponse, -2 points par mauvaise réponse.</p>
         <div>Intêret du jeu :</div>
         <ul>
           <li>Améliore la concentration et l'attention</li>
@@ -76,7 +77,7 @@ export default class PresentationTemps extends Component {
       </div>
 
       <div className="presentationJeu marge20">
-        <div className="centre fontMoyenne titreVitesse"><Link to='vitesseOrdre'>Remettre dans l'ordre des nombres</Link></div>
+        <div className="centre fontMoyenne titreVitesse"><Link to='vitesseOrdre'>Remettre des nombres dans l'ordre</Link></div>
         <p className="marge20">But du jeu : Remettre dans l'ordre des nombres entre 1 et 100. Vous avez 60 s pour réaliser le meilleur score, vous gagnez un point si vous placez un nombre dans le bon ordre.</p>
         <div>Intêret du jeu :</div>
         <ul>
@@ -89,7 +90,7 @@ export default class PresentationTemps extends Component {
       </div>
 
       <div className="presentationJeu marge20">
-        <div className="centre fontMoyenne titreVitesse"><Link to='vitessePaire'>Se souvenir de l'animal précedent</Link></div>
+        <div className="centre fontMoyenne titreVitesse"><Link to='vitessePaire'>Se souvenir de l'animal précédent</Link></div>
         <p className="marge20">But du jeu : On vous montre une suite d'images d'animaux, vous devez indiquer si l'animal que vous avez vu juste avant est le même que l'animal affiché. Vous avez 30 s pour obtenir le meilleur score, +1 point par bonne réponse, -3 points par mauvaise réponse.</p>
         <div>Intêret du jeu :</div>
         <ul>

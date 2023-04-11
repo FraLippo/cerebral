@@ -10,6 +10,7 @@ import { Helmet } from 'react-helmet';
 import Resultat from '../commun/Resultat';
 
 
+
 class JeuPaire extends Component {
 
     constructor(props) {

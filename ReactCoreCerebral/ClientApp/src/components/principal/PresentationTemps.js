@@ -36,6 +36,21 @@ export default class PresentationTemps extends Component {
       </Row>
       <h1>Nos jeux d'entrainement cérébral</h1>
       <p>Tous nos jeux en ligne sont gratuits et ne nécessitent pas d'inscription. Vous pouvez recommencer autant de fois que vous le désirez. Nous demandons simplement le prénom pour établir des classements. </p>
+   
+      <div className="presentationJeu marge20">
+        <div className="centre fontMoyenne titreVitesse"><Link to='vitesseOperation'>Les 4 opérations (nouveau)</Link></div>
+        <p className="marge20">But du jeu : Le plus simple des jeux de calcul mental, calculer le plus vite possible le résultat d'une simple opération. Les 4 opérateurs sont utilisés. Vous avez 90 secondes pour réaliser le meilleur score. Chaque bonne réponse rapporte 1 point.</p>
+        <div>Intêret du jeu :</div>
+        <ul>
+          <li>Améliore la vitesse de calcul</li>
+          <li>Renforce la confiance en soi</li>
+          <li>Améliore la concentration</li>
+          <li>Renforce les compétences mathématiques de base</li>
+
+        </ul>
+        <div className="centre fontMoyenne"><Link to='classement/vitesseOperation'>Classement</Link></div>
+      </div>
+   
       <div className="presentationJeu">
         <div className="centre fontMoyenne titreVitesse"><Link to='vitesseCouleur'>Jeu de reconnaissance des couleurs</Link></div>
         <p className="marge20">But du jeu : Reconnaitre la couleur dans laquelle est écrit un mot. La difficulté provient du fait  que le mot affiché est une couleur.
@@ -113,6 +128,7 @@ export default class PresentationTemps extends Component {
         </ul>
         <div className="centre fontMoyenne"><Link to='classement/vitesseCalcul'>Classement</Link></div>
       </div>
+    
 
       <h2>Nos autres jeux</h2>
       <p>Dans nos défis vous pouvez trouver des autres séries de petits jeux cérebraux.</p>

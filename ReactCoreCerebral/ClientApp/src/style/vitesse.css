@@ -251,3 +251,25 @@
     margin-top: 30px;
 }
 
+/* chemin */
+.centreGrilleChemin {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.grilleChemin {
+    font-size: 1.2em;
+    display: grid;
+    grid-template-columns: repeat(6, 60px);
+    grid-template-rows: repeat(6, 60px)
+}
+
+.caseChemin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #a29ae1
+}

@@ -171,6 +171,7 @@ export default class PresentationTemps extends Component {
       <p>Images puzzle défi : Photo by Tim Gouw, julie aagaard,  Vanessa GarciaP, Pham Hoang Kha, cottonbro,  Julius Silver, Pixabay, Matheus Cenali,  Polina Tankilevitch, Michael Block from Pexels</p>
       <p>L'image de fin pour la victoire (Photo par Andrea Piacquadio from Pexels)</p>
       <p>Les tuiles du mah-jong <a href="http://www.martinpersson.org/">Martin Persson</a></p>
+      <p>Les icônes pour le jeu Retrouver son chemin : Arrow Down by Kartika Sholehatin from <a href="https://thenounproject.com/browse/icons/term/arrow-down/" target="_blank" title="Arrow Down Icons">Noun Project</a> </p>
       <p>Vous pouvez nous contacter si vous avez des remarques ou des propositions en consultant la page des <a href="https://evalquiz.com/home/faq">mentions légales.</a></p>
     </div>
   }

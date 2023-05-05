@@ -4,8 +4,8 @@ export default class Logique {
 
     static constuireParcours(etape) {
 
-        let tabNbCases = [3,4,5,6,8,10,11]
-        if (etape > tabNbCases.length) {
+        let tabNbCases = [3,3,4,4,5,5,6,4,7,4,7]
+        if (etape >= tabNbCases.length) {
             etape = tabNbCases.length-1;
         }
         let nbEnCours = 0;
@@ -14,16 +14,16 @@ export default class Logique {
         let tabDep =[];
         do {
             let tabPossibilite = [];
-            if (pos > 6 && tabParcours.indexOf(pos - 6) === -1) {
-                tabPossibilite.push(-6);
+            if (pos > 7 && tabParcours.indexOf(pos - 7) === -1) {
+                tabPossibilite.push(-7);
             }
-            if (pos < 18 && tabParcours.indexOf(pos + 6) === -1) {
-                tabPossibilite.push(6);
+            if (pos < 21 && tabParcours.indexOf(pos + 7) === -1) {
+                tabPossibilite.push(7);
             }
-            if (pos % 6 !== 0 && tabParcours.indexOf(pos - 1) === -1) {
+            if (pos % 7 !== 0 && tabParcours.indexOf(pos - 1) === -1) {
                 tabPossibilite.push(-1);
             }
-            if ((pos + 1) % 6 !== 0 && tabParcours.indexOf(pos + 1) === -1) {
+            if ((pos + 1) % 7 !== 0 && tabParcours.indexOf(pos + 1) === -1) {
                 tabPossibilite.push(1);
             }
             let dep = 0;

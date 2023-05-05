@@ -6,9 +6,9 @@ import flecheDroite from '../../../images/flecheDroite.png';
 
 function choixImage(no)
 {
-    if (no === -6)
+    if (no === -7)
         return flecheHaut;
-    else if (no === 6)
+    else if (no === 7)
         return flecheBas;
     else if (no === -1)
         return flecheGauche;

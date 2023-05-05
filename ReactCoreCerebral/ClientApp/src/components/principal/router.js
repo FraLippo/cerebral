@@ -59,7 +59,7 @@ const router = createBrowserRouter([
        
           {
             index : true,
-            element: <JeuChemin />,
+            element: <PresentationTemps />,
           },
           {
             path :"en",

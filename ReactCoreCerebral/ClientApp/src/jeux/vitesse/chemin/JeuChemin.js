@@ -82,7 +82,7 @@ export default class JeuChemin extends Component {
         return <div>
             <Helmet>
                 <title>Retrouver son chemin</title>
-                <meta name="description" content="Le classique jeu Simon dans lequel vous devez mémoriser la séquence qui s'affiche à l'écran. Un jeu pour faire travailler sa mémoire visuelle tout en s'amusant." />
+                <meta name="description" content="Un jeu simple d'entrainement cérébral. Retrouvez la sortie en suivant les flêches." />
             </Helmet>
             {this.state.finJeu ?
                 <Resultat score={this.state.score} typeExo='vitesseChemin'></Resultat> :

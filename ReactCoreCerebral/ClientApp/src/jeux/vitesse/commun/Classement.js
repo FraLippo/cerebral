@@ -30,6 +30,8 @@ class Classement extends Component {
                 return "La grille de calcul mental";
             case "vitesseOperation":
                 return "Les 4 opérations";
+                case "vitesseChemin":
+                    return "Retrouver son chemin";
             default:
                 return "";
         }

@@ -7,10 +7,46 @@ import border from '../../images/border.png';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import pres from '../../images/pres.png';
-
+import Podium from '../../jeux/vitesse/commun/Podium';
+import { verifierStatus } from '../../jeux/vitesse/commun/utilitaire';
+import { moisEnFrancais } from '../commun/utilitaire';
 
 export default class PresentationTemps extends Component {
 
+
+  constructor()
+  {
+    super();
+
+  
+  const d = new Date();
+this.nomMois = moisEnFrancais[d.getMonth()];
+    this.state={
+      tabPrenoms :['','','']
+    }
+  }
+  async componentDidMount() { 
+    let url = new URL(process.env.REACT_APP_URL_RAPIDITECLASSEMENTPODIUM);
+
+   
+    const reponse = await fetch(url);
+    if (!verifierStatus(reponse.status))
+    {
+        return;
+    }
+    if(reponse.ok) {
+        const res = await reponse.json();
+        this.setState({
+        tabPrenoms : res
+    })
+    }
+    else 
+    {
+        alert("Désolé, il y a un problème.")
+        window.location.href = "/"
+    }
+    
+}
 
 
   render() {
@@ -35,6 +71,10 @@ export default class PresentationTemps extends Component {
 
         </Col>
       </Row>
+      <h2>Le podium du mois  {this.nomMois === 'août' || this.nomMois === 'avril' || this.nomMois === 'octobre' ? "d'" + this.nomMois : 'de ' + this.nomMois} </h2>
+      <p>Le podium montre les 3 premiers du mois en cours, le podium peut changer à tout moment, tous les résultats des jeux de rapidité sur cette page sont pris en compte.</p>
+      <Podium tabPrenoms={this.state.tabPrenoms}></Podium>
+      <div className="centre fontMoyenne"><Link to='classementMois'>Le classement du mois</Link></div>
       <h1>Nos jeux d'entrainement cérébral</h1>
       <p>Tous nos jeux en ligne sont gratuits et ne nécessitent pas d'inscription. Vous pouvez recommencer autant de fois que vous le désirez. Nous demandons simplement le prénom pour établir des classements. </p>
    

@@ -42,7 +42,7 @@ class Tableau extends Component {
         {this.state.resultats.map((info, i) => <Col key={i} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 12 }}  xl={{ span: 6 }}><Card className="hauteurCarte">
           <Meta
             avatar={<Avatar src={laurier} alt="laurier de la victoire" />}
-            title={<span className="couleurHonneur">{info.prenom.length > 15 ? info.prenom.slice(0, 15) : info.prenom}</span>}
+            title={<span className="couleurHonneur">{info.prenom.includes('@') ? info.prenom.split('@')[0].slice(0, 15)  : info.prenom.slice(0, 15)}</span>}
           />
           <p>{intl.get('TABLEAU_FAUTE')} </p>
           <p>{info.titre}</p>

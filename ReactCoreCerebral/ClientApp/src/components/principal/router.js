@@ -40,6 +40,7 @@ const JeuxBinero = React.lazy(() => import('../../jeux/binero/JeuxBinero'));
 const JeuxPicross = React.lazy(() => import('../../jeux/picross/JeuxPicross'));
 const JeuCouleur = React.lazy(() => import('../../jeux/vitesse/couleur/JeuCouleur'));
 const Classement = React.lazy(() => import('../../jeux/vitesse/commun/Classement'));
+const ClassementMois =  React.lazy(() => import('../../jeux/vitesse/commun/ClassementMois'));
 const JeuOrdre = React.lazy(() => import('../../jeux/vitesse/ordre/JeuOrdre'));
 const JeuSolitaire = React.lazy(() => import('../../jeux/vitesse/solitaire/JeuSolitaire'));
 const JeuPaire = React.lazy(() => import('../../jeux/vitesse/paire/JeuPaire'));
@@ -310,6 +311,10 @@ const router = createBrowserRouter([
           {
             path: 'classement/:type',
             element: <Classement/>,
+          },
+          {
+            path: 'classementMois',
+            element: <ClassementMois/>,
           },
     
       ], 

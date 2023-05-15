@@ -25,7 +25,12 @@ class Resultat extends Component {
 
     componentDidMount = () => {
         
-            const prenom = readFirstName();
+            let prenom = readFirstName();
+            if (prenom !== null && !prenom.includes('@'))
+            {
+                prenom = prenom + '@' + Math.floor(Math.random()*100000);
+                addFirstName(prenom);
+            }
             if (prenom === null) {
                 this.setState({
                     prenomVisible: true
@@ -70,7 +75,7 @@ class Resultat extends Component {
             const res = await reponse.json();
             this.setState({
                 classement: res.classement,
-                prenom: res.prenom,
+                prenom: res.prenom.includes('@') ? res.prenom.split('@')[0] : res.prenom,
                 meilleur: res.meilleur,
                 moyenne: res.moyenne,
                 nbJoueurs : res.nbJoueurs

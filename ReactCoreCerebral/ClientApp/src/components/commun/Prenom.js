@@ -17,7 +17,7 @@ export default function Prenom({callbackPrenom}) {
     }
     else
     {
-        callbackPrenom(prenom);
+        callbackPrenom(prenom + '@' + Math.floor(Math.random()*100000));
         setVisible(false);
     }
  };

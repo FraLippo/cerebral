@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {verifierStatus} from '../../jeux/vitesse/commun/utilitaire';
+import {verifierStatus} from './utilitaire';
 import { Table, Row, Col } from 'antd';
 
 
@@ -18,6 +18,9 @@ export default class ClassementScore extends Component {
                 title: 'Prénom',
                 dataIndex: 'prenom',
                 key: 'prenom',
+                render: (prenom) => {
+                    return prenom.includes('@') ? prenom.split('@')[0].slice(0,15) : prenom.slice(0,15);
+                }
                 
             },
             {

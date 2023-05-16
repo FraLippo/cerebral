@@ -1,7 +1,7 @@
 .titreVitesse
 {
     border-radius: 10px;
-    background-color:#e2ffb5b5;
+    background-color:#ffff8f;
     padding: 10px 0px;
 }
 
@@ -49,6 +49,7 @@
     border-radius: 5px;
     background-color: #e4ffef70;
     padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
 .autreVitesse a, a:visited, a:hover, a:active {
@@ -309,6 +310,7 @@
     justify-content: center;
     color:white;
     font-size: 1.5em;
+    box-shadow: 5px 7px 4px 1px #c4c4e4
 
 }
 .place1Podium

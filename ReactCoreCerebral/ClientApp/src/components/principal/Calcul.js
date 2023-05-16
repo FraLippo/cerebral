@@ -29,7 +29,9 @@ export default class Logique extends Component {
       
 <h2 className="titre couleurTitre centre">Le calcul mental</h2>
 
+<p>Plongez dans l'univers stimulant des jeux de calcul mental où la rapidité, la précision et la flexibilité mentale sont mises à l'épreuve. Ces jeux captivants vous offrent une expérience ludique tout en vous permettant de renforcer vos compétences en mathématiques. Que vous soyez un passionné des chiffres ou que vous souhaitiez simplement améliorer votre agilité mentale, les jeux de calcul mental sont une façon amusante d'exercer votre cerveau.</p>
 
+<p>Les jeux de calcul mental sont non seulement divertissants, mais aussi bénéfiques pour votre développement cognitif. Ils améliorent votre capacité de concentration, votre mémoire de travail et votre résolution de problèmes. En jouant régulièrement, vous constaterez une amélioration de vos compétences mathématiques et une plus grande confiance envers les chiffres.</p>
 
         <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
 

@@ -105,7 +105,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         <div className="centre fontMoyenne"><Link to='classement/vitesseOperation'>Classement</Link></div>
       </div>
    
-      <div className="presentationJeu">
+      <div className="presentationJeu marge20">
         <div className="centre fontMoyenne titreVitesse"><Link to='vitesseCouleur'>Jeu de reconnaissance des couleurs</Link></div>
         <p className="marge20">But du jeu : Reconnaitre la couleur dans laquelle est écrit un mot. La difficulté provient du fait  que le mot affiché est une couleur.
           Par exemple si l'on écrit le mot "rouge" en vert. Le but est de reconnaitre la couleur verte. Rassurez-vous vous comprendrez très vite en jouant. Vous avez 40 s pour réaliser le meilleur score, vous gagnez un point par bonne réponse, chaque faute retranche 2 points à votre score.</p>

@@ -31,21 +31,20 @@ export default class ChiffreLetttre extends Component {
 <div className='centre'>evalquiz.com : le site numéro 1 du divertissement intelligent</div>
 
     
-        <h2 className="titre couleurTitre centre">Des chiffres et des lettres</h2>
-        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+        <h1 className="titre couleurTitre centre">Des chiffres et des lettres</h1>
    
     
         <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
         <Row gutter={8} className="espaceHaut">
-          <Col md={10}>
+          <Col md={24}>
             <h2>Le mot le plus long</h2>
             <p>Un jeu qui ressemble au jeu du mot le plus long de l'émission <b>"Des chiffres et des lettres"</b>.</p>
-            <p>Vous devez retouver le mot le plus long à partir d'une suite de lettres tirées au hasard. Vous jouez seul contre l'ordinateur.</p>
+            <p>"Le Mot le Plus Long : Testez vos compétences en vocabulaire et remportez des défis passionnants ! Plongez dans une expérience de jeu linguistique captivante où votre talent pour les mots est mis à l'épreuve. Déjouez les lettres mélangées, formez le mot le plus étendu possible et révélez votre maîtrise des mots. Que vous soyez un passionné des jeux de lettres ou amateur de défis intellectuels, "Le Mot le Plus Long" vous offre une expérience unique qui stimulera votre esprit tout en vous divertissant.</p>
             <p>Le programme accepte tous les mots et les verbes conjugués. Dans l'esprit des mots acceptés on est plus proche du Scrabble que des chiffres et des lettres. </p>
-            <p> La partie se joue en 3 manches, si vous remportez la manche, c'est à dire si vous trouvez un mot plus long que celui de l'ordinateur, vous gagnez 3 points (6 points pour la dernière manche) plus le nombre de lettres du mot.</p>
+            <p>La partie se joue en 3 manches, si vous remportez la manche, c'est à dire si vous trouvez un mot plus long que celui de l'ordinateur, vous gagnez 3 points (6 points pour la dernière manche) plus le nombre de lettres du mot.</p>
 
-          </Col>
-          <Col md={14}>
+            <div className="centre"><img className="espaceHaut img-responsive" width="500" height="66" src={motLong} alt="le mot le plus long"></img></div>
+
             <div> <Card title={<span style={{ whiteSpace: 'normal' }}>Le mot le plus long</span>}>
               <ul>
                 <li><Link to={"/JeuxLettres/0/1/1"}>Le mot le plus long niveau facile contre l'ordinateur.</Link></li>
@@ -62,23 +61,30 @@ export default class ChiffreLetttre extends Component {
                 <li><Link to={"/JeuxLettres/" + this.gameNumber + "/2/2"}>Jouer au mot le plus long niveau avec vos amis en ligne.</Link></li>
               </ul> */}
             </Card>
-              <div className="centre"><img className="espaceHaut img-responsive" width="500" height="66" src={motLong} alt="le mot le plus long"></img></div>
             </div>
           </Col>
         </Row>
         <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
         <Row gutter={8} className="espaceHaut">
-          <Col md={10}>
-            <h2>Le compte est bon</h2>
-            <p>Un jeu qui ressemble au "Compte est bon" de la célèbre émission <b>"Des chiffres et des lettres"</b>.</p>
-            <p>Vous devez retrouver un nombre donné à partir d'autres nombres et des 4 opérations. </p>
-            <p>Le temps n'est pas limité. Vous pouvez recommencer autant de fois que vous le voulez. Il y a toujours une solution et vous pouvez à chaque fois afficher la correction.</p>
-            <div className="centre"><img className="img-responsive" width="230" height="278" src={compte} alt="le compte est bon"></img></div>
+          <Col md={24}> 
+          <h2>Le compte est bon</h2>
+          <p>Bienvenue dans "Le Compte est Bon", un jeu qui ressemble au "Compte est bon" de la célèbre émission <b>"Des chiffres et des lettres"</b>.</p>
 
-          </Col>
-          <Col md={14}>
+<p>Le principe du jeu est simple : vous serez confronté à une sélection de chiffres aléatoires et votre objectif sera de les combiner pour obtenir un résultat spécifique. Que vous soyez un génie des mathématiques ou simplement passionné par les énigmes, "Le Compte est Bon" vous offre une expérience divertissante et cérébrale.
+Vous devrez faire preuve de créativité et d'ingéniosité pour trouver les bonnes combinaisons en utilisant les opérations mathématiques de base telles que l'addition, la soustraction, la multiplication et la division. </p>
+<p>Êtes-vous prêt à vous plonger dans l'univers fascinant du jeu  Le Compte est Bon ? Alors, enfilez votre chapeau de mathématicien et préparez-vous à résoudre des puzzles passionnants pour devenir le maître incontesté des calculs ! Le temps n'est pas limité. Vous pouvez recommencer autant de fois que vous le voulez. Il y a toujours une solution et vous pouvez à chaque fois afficher la correction.</p>
+
+
+<p>Que le défi commence !</p>
+          
+           
+              <div className="centre"><img className="img-responsive" width="230" height="278" src={compte} alt="le compte est bon"></img></div>
+
+       
             <SousMenu type="compte" titre="TITLE_COMPTE"></SousMenu>
+           
           </Col>
+          
         </Row>
  <Ad></Ad>
 

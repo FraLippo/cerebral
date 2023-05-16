@@ -30,17 +30,36 @@ export default class Presentation extends Component {
       <div>
         <h1 className="titre couleurTitre centre">Les défis</h1>
         <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
-        <Row gutter={8} className="espaceHaut">
+        <p>Un défi est un ensemble de petits jeux et tests, toutes vos compétences et votre agilité seront nécessaires pour arriver au bout de ces défis.</p>
+            <p>Si vous arrivez à terminer un défi à la première tentative votre prénom sera inscrit sur notre tableau honneur.</p>
+         <Row gutter={8} className="espaceHaut">
 
-          <Col md={10}>
-            <h2>Pouvez-vous réussir un défi ?</h2>
-            <p>Un défi est un ensemble de petits jeux et tests, toutes vos compétences et votre agilité seront nécessaires pour arriver au bout de ces défis.</p>
-            <p>Il est préférable de s'entraîner avec les jeux ci-dessous avant de se lancer dans un défi.</p>
-            <p>Si vous arrivez à terminer un défi à la première tentative votre prénom sera inscrit sur notre  <Link to="/tableau">tableau honneur</Link>.</p>
-          </Col>
+           
+          <Col md={10}>  
+          <h3>Les jeux cognitifs</h3>
+                    <p>Une série de jeux de réflexion à enchainer pour réaliser les défis. On retrouve des défis orientés sur les jeux de logique, de mémoire ou de réflexion. La sélection des jeux comporte des grands classiques comme les jeux Memory, Simon, Picross, Binero... </p>
+
+              </Col>
           <Col md={14}>
           <SousMenu type="defiCerebral" titre="NOM_DEFI_CEREBRAL"></SousMenu>
+          </Col>
+          </Row>
+          <Row gutter={8} className="espaceHaut">
+          <Col md={10}>  
+          <h3>Les jeux de calcul</h3>
+                      <p>Testez votre capacité de calcul en résolvant des opérations mathématiques. Que ce soit en addition, en soustraction, en multiplication ou en division, chaque jeu offre des défis uniques pour affiner vos compétences en calcul. Vous pouvez choisir entre des exercices simples pour les débutants ou des défis plus complexes pour les experts.</p>
+
+              </Col>
+              <Col md={14}>
             <SousMenu type="defiCalcul" titre="NOM_DEFI_CALCUL"></SousMenu>
+            </Col>
+            </Row>
+            <Row gutter={8} className="espaceHaut">
+            <Col md={10}>
+              <h3>Des chiffres et des lettres</h3>
+              <p>Découvrez le jeu des chiffres et des lettres, une combinaison captivante de réflexion mathématique et de compétences linguistiques. Mettez votre esprit à l'épreuve en résolvant des calculs arithmétiques complexes et en formant des mots à partir d'un ensemble de lettres données. Ce jeu stimulant est parfait pour les amateurs de défis intellectuels à la recherche d'une expérience divertissante alliant mathématiques et mots.</p>
+              </Col>
+              <Col md={14}>
             <SousMenu type="defiMot" titre="NOM_DEFI_MOT"></SousMenu>
           </Col>
         </Row>

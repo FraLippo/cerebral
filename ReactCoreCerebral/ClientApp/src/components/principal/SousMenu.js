@@ -120,7 +120,7 @@ export default class SousMenu extends Component {
         const dejaFait = readLocalStorage(this.nom.includes('defi') ? 'defi' : this.nom);
 
         return (this.state.affiche && <div> <Card title={<span style={{ whiteSpace: 'normal' }}>{intl.get(this.props.titre)}</span>}>
-            <ul>
+            <ul className="ulStyle">
                 {this.state.donnees.map((v, i) => <React.Fragment key={i}>{(this.props.supprimer !== v.id && intl.get(v.titre) !== '') && <li> <span><Link reloadDocument to={'/' + intl.get(this.lien) + '/' + v.id}>{intl.get(v.titre)}</Link>
                     {v.hasOwnProperty('explication') && v.explication !== undefined && <span className="petiteLettre">{" " + intl.get(v.explication)}</span>}
                     {(dejaFait !== null && dejaFait.includes(v.id)) && <Tag color="magenta" className="tag">{intl.get('DEJA_FAIT')}</Tag>}</span></li>}</React.Fragment>)}

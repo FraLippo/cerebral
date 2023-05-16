@@ -16,6 +16,29 @@ function verifierStatus(status)
 }
 
 
+function nomType(type)
+{
+    switch (type) {
+        case "vitesseCouleur":
+            return "Reconnaissance des couleurs";
+        case "vitesseSolitaire":
+            return "La tuile solitaire";
+        case "vitesseOrdre":
+            return "Les nombres en ordre";
+        case "vitesseIntrus":
+            return "Supprimer les images différentes";
+        case "vitessePaire":
+            return "Se souvenir de l'image précedente";
+        case "vitesseCalcul":
+            return "La grille de calcul mental";
+        case "vitesseOperation":
+            return "Les 4 opérations";
+            case "vitesseChemin":
+                return "Retrouver son chemin";
+        default:
+            return "";
+    }
+}
+let tabJeu = ["vitesseCouleur", "vitesseSolitaire", "vitesseOrdre", "vitesseIntrus","vitessePaire", "vitesseCalcul", "vitesseOperation", "vitesseChemin" ]
 
-
-export {verifierStatus};
+export {verifierStatus, nomType, tabJeu};

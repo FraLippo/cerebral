@@ -41,8 +41,7 @@ export default class JeuChemin extends Component {
         let jeu = Logique.constuireParcours(this.etape);
 
         this.tabParcours = jeu.tabCase;
-        console.log(this.tabParcours);
-        console.log(jeu.tabDep);
+      
         this.last = this.tabParcours[this.tabParcours.length - 1];
         this.setState({
             tabDep: jeu.tabDep,
@@ -60,7 +59,7 @@ export default class JeuChemin extends Component {
         if (this.last === id) {
             this.etape++;
             message.success('Bravo !', .5, this.init);
-            score++;
+            score+=3;
         }
         else {
             message.error("Ce n'est pas la bonne case", 1.5, this.init);

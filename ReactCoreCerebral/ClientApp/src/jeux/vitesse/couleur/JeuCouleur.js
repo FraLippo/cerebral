@@ -45,7 +45,7 @@ class JeuCouleur extends Component {
     }
     clickVrai = () => {
         let resultat = this.resultat ? "Oui" : "Non";
-        let score = this.resultat ? this.state.score + 1 : this.state.score - 1;
+        let score = this.resultat ? this.state.score + 2 : this.state.score - 2;
 
         this.setState({resultat: resultat, score});
        this.debutTimer();
@@ -55,7 +55,7 @@ class JeuCouleur extends Component {
 
     clickFaux = () => {
         let resultat = this.resultat ? "Non" : "Oui";
-        let score = this.resultat ? this.state.score - 2 : this.state.score + 1;
+        let score = this.resultat ? this.state.score - 2 : this.state.score + 2;
         this.setState({resultat: resultat, score});
         this.debutTimer();
         this.nouveauTirage();

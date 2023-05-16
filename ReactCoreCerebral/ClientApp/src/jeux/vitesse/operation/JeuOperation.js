@@ -65,7 +65,7 @@ class JeuOperation extends Component {
         }
         else if (chaineResultat === chaineNombre) {
             this.setState({
-                score: this.state.score + 1
+                score: this.state.score + 2
             });
             return "gagne";
         }

@@ -105,6 +105,11 @@ body {
      font-size: 1.2em;
 }
 
+.fontPetite
+{
+     font-size: .8em;
+}
+
 .petiteImage {
      max-width: 300px;
 }

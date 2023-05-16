@@ -35,8 +35,9 @@ class JeuSolitaire extends Component {
     nouveauJeu = () => {
         if (this.fin) return;
         let score = this.state.score;
-
-        score += ((this.logique.grilleEnCours + 1) * 2);
+        let ajout = 3;
+        if (this.logique.grilleEnCours > 3) ajout = 6;
+        score += ajout;
         if (this.logique.grilleEnCours < this.logique.tabDonnee.length - 1) {
             this.logique.grilleEnCours++;
         }

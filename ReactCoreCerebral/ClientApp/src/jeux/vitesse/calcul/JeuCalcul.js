@@ -51,14 +51,14 @@ export default class JeuCalcul extends Component
         {
             this.nbDecouverte++;
             nouveauTabGrille[no] = "";
-            score++;
+            score+=2;
 
         }
         else
         {
             nouveauTabGrille[no] = this.logique.tabOperation[no].resultat;
             message.error("Mauvaise réponse");
-            score--;
+            score-=2;
         }
         if (this.nbDecouverte === 2)
         {

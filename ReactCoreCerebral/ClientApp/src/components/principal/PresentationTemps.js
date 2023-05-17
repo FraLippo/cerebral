@@ -190,31 +190,31 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         <div  className="carteVitesse">
           <h3>Les défis de la logique</h3>
           <ul>
-            <li> <span><a className="espaceVitesseUl" href="/defi/14">Défi puzzle - difficile</a></span></li>
-            <li> <span><a href="/defi/35">Défi Binero - facile</a></span></li>
-            <li> <span><a href="/defi/36">Défi Picross - facile </a></span></li>
-            <li> <span><a href="/defi/37">Défi Binero et Picross</a></span></li>
-            <li> <span><a href="/defi/38">Défi Binero - moyen</a></span></li>
-            <li> <span><a href="/defi/39">Défi Picross - difficile</a></span></li>
+            <li> <span><Link className="espaceVitesseUl" to="/defi/14">Défi puzzle - difficile</Link></span></li>
+            <li> <span><Link to="/defi/35">Défi Binero - facile</Link></span></li>
+            <li> <span><Link to="/defi/36">Défi Picross - facile </Link></span></li>
+            <li> <span><Link to="/defi/37">Défi Binero et Picross</Link></span></li>
+            <li> <span><Link to="/defi/38">Défi Binero - moyen</Link></span></li>
+            <li> <span><Link to="/defi/39">Défi Picross - difficile</Link></span></li>
           </ul>
         </div>
         <div className="carteVitesse">
           <h3>Les défis du calcul mental</h3>
           <ul>
-            <li> <span><a href="/defi/19">Défi calcul - facile</a></span></li>
-            <li> <span><a href="/defi/20">Défi calcul - intermédiaire</a></span></li>
-            <li> <span><a href="/defi/21">Défi calcul mental rapide - facile</a></span></li>
-            <li> <span><a href="/defi/22">Défi calcul mental rapide - intermédiaire</a></span></li>
-            <li> <span><a href="/defi/23">Pour les amateurs de maths mentales - facile</a></span></li>
-            <li> <span><a href="/defi/24">Pour les amateurs de maths mentales - intermédiaire</a></span></li>
-            <li> <span><a href="/defi/34">Exercices de calcul mental - intermédiaire</a></span></li>
-            <li> <span><a href="/defi/11">Défi compte est bon - simple</a></span></li>
+            <li> <span><Link to="/defi/19">Défi calcul - facile</Link></span></li>
+            <li> <span><Link to="/defi/20">Défi calcul - intermédiaire</Link></span></li>
+            <li> <span><Link to="/defi/21">Défi calcul mental rapide - facile</Link></span></li>
+            <li> <span><Link to="/defi/22">Défi calcul mental rapide - intermédiaire</Link></span></li>
+            <li> <span><Link to="/defi/23">Pour les amateurs de maths mentales - facile</Link></span></li>
+            <li> <span><Link to="/defi/24">Pour les amateurs de maths mentales - intermédiaire</Link></span></li>
+            <li> <span><Link to="/defi/34">Exercices de calcul mental - intermédiaire</Link></span></li>
+            <li> <span><Link to="/defi/11">Défi compte est bon - simple</Link></span></li>
           </ul>
         </div>
       </div>
 
       <div className="margeHaut ">
-        <div className="fontMoyenne centre autreVitesse"><a href="/defi">Tous les autres défis et jeux cérébraux</a></div>
+        <div className="fontMoyenne centre autreVitesse"><Link to="/defi">Tous les autres défis et jeux cérébraux</Link></div>
     </div>
     <Ad></Ad>
       <p>Le respect de votre vie privée est notre priorité : <a href="https://evalquiz.com/home/choisir">Choisir ses cookies</a></p>

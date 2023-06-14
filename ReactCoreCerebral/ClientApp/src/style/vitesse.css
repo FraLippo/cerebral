@@ -361,3 +361,61 @@
         background-color: #04AA6D;
         color: white;
     }
+
+    /* burger */
+
+    .caseVideBurger
+    {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .caseBordureBurger
+    {
+        background-color: #094fe617;
+    }
+    .plateauBurger{
+        width : 70%
+    }
+
+    .msgBurger
+    {
+        width: 30%;
+    }
+
+    .jeuBurger
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center; 
+    }
+
+    .finBurger
+    {
+        pointer-events: none;
+    }
+
+    .preview
+    {
+        width: 100px;
+        height: 44px;
+        border : 1px solid blue;
+    }
+
+    @media screen and (max-width: 800px) {
+        .jeuBurger
+        {
+            flex-direction: column;
+      
+        }
+        .plateauBurger{
+            width : 100%
+        }
+    
+        .msgBurger
+        {
+            width: 100%;
+        }
+    }

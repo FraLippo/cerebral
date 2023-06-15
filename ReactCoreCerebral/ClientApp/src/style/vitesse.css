@@ -401,7 +401,7 @@
     {
         width: 100px;
         height: 44px;
-        border : 1px solid blue;
+        border : 1px dotted #1a79ff5c;
     }
 
     @media screen and (max-width: 800px) {

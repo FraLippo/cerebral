@@ -11,7 +11,8 @@ import oignon from  '../../../images/oignon.jpg';
 import {useDrag } from 'react-dnd'
 import { ItemTypes } from './ItemType.js';
 import ItemPreview from './ItemPreview';
-import Circle from './Circle';
+
+
 
 
 
@@ -31,7 +32,7 @@ export const ImageBurger = ({type}) => {
 
 
     return <div ref={drag}>
-          <ItemPreview item={Circle} />
+          <ItemPreview  />
       <img  style={{
 
         opacity: isDragging ? 0.5 : 1,

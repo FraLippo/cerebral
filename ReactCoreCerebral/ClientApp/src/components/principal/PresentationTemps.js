@@ -77,9 +77,19 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <div className="centre fontMoyenne"><Link to='classementMois'>Le classement du mois</Link></div>
       <h1>Nos jeux d'entrainement cérébral</h1>
       <p>Tous nos jeux en ligne sont gratuits et ne nécessitent pas d'inscription. Vous pouvez recommencer autant de fois que vous le désirez. Nous demandons simplement le prénom pour établir des classements. </p>
-   
       <div className="presentationJeu marge20">
-        <div className="centre fontMoyenne titreVitesse"><Link to='vitesseChemin'>Retrouver son chemin (nouveau)</Link></div>
+        <div className="centre fontMoyenne titreVitesse" style={{backgroundColor: 'yellow'}}><Link to='vitesseBurger'>Préparer des burgers (nouveau)</Link></div>
+        <p className="marge20">But du jeu : Créer des burger en plaçant les ingrédients de la recette dans l'ordre. Chaque burger créé rapporte 5 points. Le temps alloué pour obtenir le meilleur score est de 90 secondes.</p>
+        <ul>
+          <li>Améliore la coordination œil-main</li>
+          <li>Améliore la concentration et la mémoire</li>
+          <li>Renforce les compétences en organisation</li>
+
+        </ul>
+        <div className="centre fontMoyenne"><Link to='classement/vitesseBurger'>Classement</Link></div>
+      </div>
+      <div className="presentationJeu marge20">
+        <div className="centre fontMoyenne titreVitesse"><Link to='vitesseChemin'>Retrouver son chemin</Link></div>
         <p className="marge20">But du jeu : Trouver la sortie en suivant  les flèches, on vous indique le point de départ et vous devez trouver le point d'arrivée, le chemin est indiqué par une suite de flèches (haut, bas, droite, gauche). Vous avez 60 secondes pour réaliser le meilleur score. Chaque bonne réponse rapporte 1 point.</p>
         <div>Intêret du jeu :</div>
         <ul>

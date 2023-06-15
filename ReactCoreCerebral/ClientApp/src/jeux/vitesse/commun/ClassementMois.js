@@ -4,7 +4,7 @@ import { Table, Row, Col } from 'antd';
 import { readFirstName } from '../../../components/commun/localStorage';
 import { moisEnFrancais } from '../../../components/commun/utilitaire';
 import { nomType, tabJeu } from './utilitaire';
-
+import { analytics } from '../../../components/commun/analytics';
 
 export default class ClassementMois extends Component {
 
@@ -48,6 +48,7 @@ export default class ClassementMois extends Component {
             }
            
         ]
+        analytics();
     }
 
     async componentDidMount() { 

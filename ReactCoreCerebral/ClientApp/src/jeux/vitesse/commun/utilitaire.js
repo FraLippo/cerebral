@@ -1,13 +1,10 @@
-function verifierStatus(status)
-{
-    if (status === 401)
-    {
+function verifierStatus(status) {
+    if (status === 401) {
         alert("Désolé, vous devez être authentifié pour accèder à cette page.")
         window.location.href = "/";
         return false;
     }
-    if (status === 403 || status === 404)
-    {
+    if (status === 403 || status === 404) {
         alert("Désolé, vous n'avez plus accès à cette page.")
         window.location.href = "/";
         return false;
@@ -16,8 +13,8 @@ function verifierStatus(status)
 }
 
 
-function nomType(type)
-{
+function nomType(type) {
+ 
     switch (type) {
         case "vitesseCouleur":
             return "Reconnaissance des couleurs";
@@ -33,12 +30,16 @@ function nomType(type)
             return "La grille de calcul mental";
         case "vitesseOperation":
             return "Les 4 opérations";
-            case "vitesseChemin":
-                return "Retrouver son chemin";
+        case "vitesseChemin":
+            return "Retrouver son chemin";
+            case "vitesseBurger":
+                return "Préparer des burgers";
+        
+        
         default:
             return "";
     }
 }
-let tabJeu = ["vitesseCouleur", "vitesseSolitaire", "vitesseOrdre", "vitesseIntrus","vitessePaire", "vitesseCalcul", "vitesseOperation", "vitesseChemin" ]
+let tabJeu = ["vitesseBurger", "vitesseCouleur", "vitesseSolitaire", "vitesseOrdre", "vitesseIntrus", "vitessePaire", "vitesseCalcul", "vitesseOperation", "vitesseChemin"]
 
-export {verifierStatus, nomType, tabJeu};
+export { verifierStatus, nomType, tabJeu };

@@ -1,6 +1,7 @@
+import React from 'react';
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { TouchBackend } from 'react-dnd-touch-backend'
-
+import { Helmet } from 'react-helmet';
 import { DndProvider, TouchTransition, MouseTransition } from 'react-dnd-multi-backend'
 
 import { Game } from './Game.js';
@@ -10,7 +11,7 @@ import { Board } from './Board.js';
 import { Ingredients } from './Ingredients.js';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat.js';
-
+import { analytics } from '../../../components/commun/analytics';
 
 const containerStyle = {
     width: '360px',
@@ -18,6 +19,8 @@ const containerStyle = {
     margin: '10px auto'
     
   }
+
+  analytics();
   const HTML5toTouch = {
     backends: [
       {
@@ -51,7 +54,7 @@ export default function JeuBurger() {
     function finTimer()
     {
         setFinJeu(true);
-        console.log(game.score);
+    
         setScore(game.score);
     }
 
@@ -59,9 +62,17 @@ export default function JeuBurger() {
   
   
     return (
-        finJeu ?
-            <Resultat score={score} typeExo='vitesseBurger'></Resultat> :
+        <React.Fragment> 
+               <Helmet>
+                <title>Préparer des burgers</title>
+                <meta name="description" content="Un jeu simple et amusant pour entrainer son cerveau en concevant des burgers ! " />
+            </Helmet>
+        {finJeu ? <Resultat score={score} typeExo='vitesseBurger'></Resultat> :
+         <React.Fragment>
+           <div className="titreJeu">Préparer des burgers</div>
         <div className="jeuBurger">
+        
+           
             <div className="plateauBurger">
             <DndProvider options={HTML5toTouch}>
             <div style={containerStyle}>
@@ -69,11 +80,12 @@ export default function JeuBurger() {
     </div>
             </DndProvider>
          </div>  
+        
           <div className="msgBurger">
             <p>Prépare le burger ci-dessous en glissant les ingrédients dans la colonne du centre. L'ordre doit être respecté.</p>
             <Ingredients tabListe={tabListe}></Ingredients>
-            <div className="centre marge10"><CompteRebours temps={20} finTimer={finTimer}></CompteRebours></div>
+            <div className="centre marge10"><CompteRebours temps={90} finTimer={finTimer}></CompteRebours></div>
             </div>
-        </div>
+        </div> </React.Fragment>}</React.Fragment>
     )
 }

@@ -88,7 +88,7 @@ export class Game {
             }
 
         }
-        console.log('place ' + place)
+        
         this.observers[place]([-1, -1, -1]);
 
         this.observers[toY * 3 + toX]([toX, toY, type]);
@@ -137,8 +137,7 @@ export class Game {
         this.construireBurger();
         this.elementPositions = [...this.elementPositionsDepart];
         this.construireGrille();
-        console.log("nouvelle grille");
-        console.log(this.elementPositions);
+      
         for (let index = 0; index < 15; index++) {
             const set = this.observers[index];
 

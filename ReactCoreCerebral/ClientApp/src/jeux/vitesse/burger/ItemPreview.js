@@ -11,9 +11,7 @@ const ItemPreview = ({ item }) => {
   }
 
   return (
-    <div style={style} className="preview"> 
-      {/* Affichez ici le contenu de la prévisualisation */}
-      
+    <div style={style} className="preview">    
     </div>
   );
 };

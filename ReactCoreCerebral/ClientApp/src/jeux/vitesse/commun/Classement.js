@@ -6,6 +6,7 @@ import Ad from '../../../components/commun/adSense';
 import { Helmet } from 'react-helmet';
 import { moisEnFrancais} from '../../../components/commun/utilitaire';
 import { nomType } from './utilitaire';
+import { analytics } from '../../../components/commun/analytics';
 
 class Classement extends Component {
 
@@ -14,13 +15,8 @@ class Classement extends Component {
         this.type = props.params.type;
         const d = new Date();
         this.nomMois = moisEnFrancais[d.getMonth()];
-
+        analytics();
     }
-
-
-
-
-
 
     render() {
         return <div>
@@ -31,7 +27,7 @@ class Classement extends Component {
             </Helmet>
 
             <h1>Le Classement du mois  {this.nomMois === 'août' || this.nomMois === 'avril' || this.nomMois === 'octobre' ? "d'" + this.nomMois : 'de ' + this.nomMois} </h1>
-            <p>Classement des 20 meilleurs scores du mois en cours pour le jeu  <b>{nomType()}</b>. Le classement repart à 0 en début de chaque mois.</p>
+            <p>Classement des 20 meilleurs scores du mois en cours pour le jeu  <b>{nomType(this.type)}</b>. Le classement repart à 0 en début de chaque mois.</p>
             <div className="marge20 centre"><ButtonLink titre="Retour à l'accueil" href={'/'}></ButtonLink></div>
             <Ad></Ad>
             <ClassementScore typeExo={this.type}></ClassementScore>

@@ -8,7 +8,7 @@ function Reponse(props)
         const id = parseInt(event.currentTarget.id);
         props.clicReponse(String.fromCharCode(id - 500));
     }
-    return <div className="serieLettres">{props.tabLettres.map((lettre, i) => <div id={i+565} key={i+565} onClick={clicReponse} className="carreLettres">{lettre}</div>)}</div>
+    return <div className="serieLettres">{props.tabLettres.map((lettre, i) => <div id={i+565} key={i+565} onClick={clicReponse} className="reponseLettres">{lettre}</div>)}</div>
 }
 
 export default Reponse;

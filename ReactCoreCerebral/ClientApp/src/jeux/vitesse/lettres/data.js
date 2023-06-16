@@ -1,4 +1,4 @@
-const mots = ["ORANGE", "BANANE", "POIRES", "CERISE", "MELON", "POMMES", "PRUNES", "ABRICO", "PECHES", "CITRON",   "CHIEN",
+const mots = ["ORANGE", "BANANE", "POIRE", "CERISE", "MELON", "POMME", "PRUNE", "PECHE", "CITRON",   "CHIEN",
 "ARBRE",
 "SOLEIL",
 "MAISON",
@@ -17,7 +17,6 @@ const mots = ["ORANGE", "BANANE", "POIRES", "CERISE", "MELON", "POMMES", "PRUNES
 "HORLOGE",
 "BATEAU",
 "FRAISE",
-"BANANE",
 "POISSON",
 "TIGRE",
 "ELEPHANT",

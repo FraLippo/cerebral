@@ -102,7 +102,7 @@ export default class Logique {
     creerJeu(nbLettres, nbMots)
     {
         this.infoJeu = {};
-        this.tabCouleur = [...this.tabCouleurOrigine];
+        this.tabCouleur = this.tabCouleurOrigine.slice(0,nbLettres);
         this.construitJeuMots(nbLettres, nbMots);
         this.construitTableauMots();
     }

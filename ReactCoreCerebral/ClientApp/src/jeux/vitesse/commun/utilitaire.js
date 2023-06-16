@@ -34,12 +34,14 @@ function nomType(type) {
             return "Retrouver son chemin";
             case "vitesseBurger":
                 return "Préparer des burgers";
-        
+                case "vitesseLettres":
+                    return "Lettres manquantes";
+            
         
         default:
             return "";
     }
 }
-let tabJeu = ["vitesseBurger", "vitesseCouleur", "vitesseSolitaire", "vitesseOrdre", "vitesseIntrus", "vitessePaire", "vitesseCalcul", "vitesseOperation", "vitesseChemin"]
+let tabJeu = ["vitesseLettres", "vitesseBurger", "vitesseCouleur", "vitesseSolitaire", "vitesseOrdre", "vitesseIntrus", "vitessePaire", "vitesseCalcul", "vitesseOperation", "vitesseChemin"]
 
 export { verifierStatus, nomType, tabJeu };

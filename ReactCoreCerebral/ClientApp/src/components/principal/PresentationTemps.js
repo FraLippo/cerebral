@@ -78,6 +78,19 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <h1>Nos jeux d'entrainement cérébral</h1>
       <p>Tous nos jeux en ligne sont gratuits et ne nécessitent pas d'inscription. Vous pouvez recommencer autant de fois que vous le désirez. Nous demandons simplement le prénom pour établir des classements. </p>
       <div className="presentationJeu marge20">
+        <div className="centre fontMoyenne titreVitesse" style={{backgroundColor: 'yellow'}}><Link to='vitesseLettres'>Les lettres manquantes (nouveau)</Link></div>
+        <p className="marge20">But du jeu : Créer des burger en plaçant les ingrédients de la recette dans l'ordre. Chaque burger créé rapporte 5 points. Le temps alloué pour obtenir le meilleur score est de 90 secondes.</p>
+        <ul>
+          <li>Améliore la coordination œil-main</li>
+          <li>Améliore la concentration et la mémoire</li>
+          <li>Renforce les compétences en organisation</li>
+
+        </ul>
+        <div className="centre fontMoyenne"><Link to='classement/vitesseLettres'>Classement</Link></div>
+      </div>
+     
+     
+      <div className="presentationJeu marge20">
         <div className="centre fontMoyenne titreVitesse" style={{backgroundColor: 'yellow'}}><Link to='vitesseBurger'>Préparer des burgers (nouveau)</Link></div>
         <p className="marge20">But du jeu : Créer des burger en plaçant les ingrédients de la recette dans l'ordre. Chaque burger créé rapporte 5 points. Le temps alloué pour obtenir le meilleur score est de 90 secondes.</p>
         <ul>

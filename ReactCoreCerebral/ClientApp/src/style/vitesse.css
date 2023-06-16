@@ -433,21 +433,34 @@
     .serieLettres
     {
         display: flex;
-        flex-direction: row;
+        flex-flow: row wrap;
+        
         align-items: center;
         justify-content: center; 
     }
 
   
-
-    .carreLettres
-    {display: flex;
+    .reponseLettres
+    {
+        display: flex;
         align-items: center;
         justify-content: center; 
         width: 30px;
         height: 30px;
-        margin: 0px 5px;
-        background-color: orange;
+        margin: 5px 5px;
+        background-color: #dae3d64f;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+  
+    .carreLettres
+    {display: flex;
+        align-items: center;
+        justify-content: center; 
+        width: 25px;
+        height: 25px;
+        margin: 0px 2px;
+        background-color: #dae3d64f;
         font-size: 1.5em;
     }
 

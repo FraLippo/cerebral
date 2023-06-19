@@ -42,15 +42,15 @@ class JeuPaire extends Component {
         this.precedent = this.state.numero;
         if (numJeu < 8)
         {
-           numero = this.logique.tirerNombre(2);
+           numero = this.logique.tirerNombre(1);
         }
-        else if (numJeu < 16)
+        else if (numJeu < 20)
         {
-            numero = this.logique.tirerNombre(3);   
+            numero = this.logique.tirerNombre(2);   
         }
         else
         {
-            numero = this.logique.tirerNombre(4);
+            numero = this.logique.tirerNombre(3);
         }
         this.setState({numero, numJeu});
     }

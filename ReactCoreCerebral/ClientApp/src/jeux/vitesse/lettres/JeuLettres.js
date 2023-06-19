@@ -6,6 +6,7 @@ import { message, Button } from 'antd';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat.js';
 import { analytics } from '../../../components/commun/analytics';
+import { Helmet } from 'react-helmet';
 
 export default class JeuLettres extends Component {
 
@@ -27,6 +28,7 @@ export default class JeuLettres extends Component {
             mots: [],
             couleur: ''
         }
+        analytics();
     }
     componentDidMount()
     {
@@ -42,7 +44,7 @@ export default class JeuLettres extends Component {
     {
         this.lettreEnCours = 0;
         this.partie++;
-        if (this.partie === 5 || this.partie ==11)
+        if (this.partie === 6 || this.partie ==12)
         {
             this.nbLettres++;
         }
@@ -67,7 +69,7 @@ export default class JeuLettres extends Component {
             this.jeu.construitTableauMots();
             nouveauTabMots = [...this.jeu.infoJeu.tabMotsInfo];
             this.lettreEnCours++;
-            this.score += this.lettreEnCours;
+            this.score += (this.lettreEnCours+2);
             if (this.jeu.tabCouleur.length === 0)
             {
                 this.fin = true;
@@ -112,6 +114,10 @@ export default class JeuLettres extends Component {
 
 
         return <React.Fragment>
+            <Helmet>
+                    <title>Les lettres manquantes</title>
+                    <meta name="description" content="Un jeu de lettres simple et très addictif, il suffit de retrouver les lettres manquantes dans les mots." />
+                </Helmet>
              { this.state.finJeu ? <Resultat score={this.score} typeExo='vitesseLettres'></Resultat> :
             <div className="jeuLettres">
                 {this.state.mots.map((tabLettres, i) => <div className="marge20" key={i + 1000}><Lettres tabLettres={tabLettres}></Lettres></div>)}

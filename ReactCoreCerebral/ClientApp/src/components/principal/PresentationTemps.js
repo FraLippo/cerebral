@@ -79,11 +79,11 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <p>Tous nos jeux en ligne sont gratuits et ne nécessitent pas d'inscription. Vous pouvez recommencer autant de fois que vous le désirez. Nous demandons simplement le prénom pour établir des classements. </p>
       <div className="presentationJeu marge20">
         <div className="centre fontMoyenne titreVitesse" style={{backgroundColor: 'yellow'}}><Link to='vitesseLettres'>Les lettres manquantes (nouveau)</Link></div>
-        <p className="marge20">But du jeu : Créer des burger en plaçant les ingrédients de la recette dans l'ordre. Chaque burger créé rapporte 5 points. Le temps alloué pour obtenir le meilleur score est de 90 secondes.</p>
+        <p className="marge20">But du jeu : Retrouver les lettres manquantes dans les mots. Les lettres sont cachées sous des carrés de couleur. L'ordre pour retrouver les lettres associées aux couleurs est toujours le même : bleu, rouge et jaune. Chaque bonne réponse rapporte 3 point puis 4 points quand il y a 2 lettres à retrouver. Chaque mauvaise réponse vous fait perdre 1 point, le fait de passer vous coûte 2 points. Le temps alloué est de 2 minutes. </p>
         <ul>
-          <li>Améliore la coordination œil-main</li>
-          <li>Améliore la concentration et la mémoire</li>
-          <li>Renforce les compétences en organisation</li>
+          <li>Enrichissement du vocabulaire</li>
+          <li>Développe la pensée logique </li>
+          <li>Améliore les compétences linguistiques</li>
 
         </ul>
         <div className="centre fontMoyenne"><Link to='classement/vitesseLettres'>Classement</Link></div>

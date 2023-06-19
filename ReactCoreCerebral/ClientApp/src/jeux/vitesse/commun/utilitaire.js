@@ -14,7 +14,7 @@ function verifierStatus(status) {
 
 
 function nomType(type) {
- 
+
     switch (type) {
         case "vitesseCouleur":
             return "Reconnaissance des couleurs";
@@ -32,12 +32,12 @@ function nomType(type) {
             return "Les 4 opérations";
         case "vitesseChemin":
             return "Retrouver son chemin";
-            case "vitesseBurger":
-                return "Préparer des burgers";
-                case "vitesseLettres":
-                    return "Lettres manquantes";
-            
-        
+        case "vitesseBurger":
+            return "Préparer des burgers";
+        case "vitesseLettres":
+            return "Lettres manquantes";
+
+
         default:
             return "";
     }

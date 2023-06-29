@@ -75,6 +75,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <p>Le podium montre les 3 premiers du mois en cours, le podium peut changer à tout moment, tous les résultats des jeux de rapidité sur cette page sont pris en compte.</p>
       <Podium tabPrenoms={this.state.tabPrenoms}></Podium>
       <div className="centre fontMoyenne"><Link to='classementMois'>Le classement du mois</Link></div>
+      <p>Bravo à Gwendal, le gagnant du mois de juin.</p>
       <h1>Nos jeux d'entrainement cérébral</h1>
       <p>Tous nos jeux en ligne sont gratuits et ne nécessitent pas d'inscription. Vous pouvez recommencer autant de fois que vous le désirez. Nous demandons simplement le prénom pour établir des classements. </p>
       <div className="presentationJeu marge20">
@@ -89,12 +90,23 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         <div className="centre fontMoyenne"><Link to='classement/vitesseLettres'>Classement</Link></div>
       </div>
      
-     
       <div className="presentationJeu marge20">
-        <div className="centre fontMoyenne titreVitesse" style={{backgroundColor: 'yellow'}}><Link to='vitesseBurger'>Préparer des burgers (nouveau)</Link></div>
+        <div className="centre fontMoyenne titreVitesse" style={{backgroundColor: 'yellow'}}><Link to='vitesseNotes'>L'oreille musicale (nouveau)</Link></div>
+        <p className="marge20">But du jeu : Retrouver une note inconnue. On vous joue une note inconnue représentée par un point d'interrogation. Vous devez retrouver à quelle note elle correspond simplement avec votre oreille. Vous pouvez réécouter les notes autant de fois que vous le désirez. Vous n'avez pas besoin de connaissance musicale pour jouer, seule votre oreille est mise à contribution. Tout le monde a la capacité de reconnaitre les notes par contre certains doivent s'entrainer plus que d'autres.  Chaque note trouvée rapporte 7 points. Le temps alloué est de 90 secondes.</p>
+        <ul>
+        <li>Développe l'oreille musicale</li>
+          <li>Améliore la précision musicale </li>
+          <li>Enrichi l'expérience musicale</li>
+         
+
+        </ul>
+        <div className="centre fontMoyenne"><Link to='classement/vitesseNotes'>Classement</Link></div>
+      </div>
+      <div className="presentationJeu marge20">
+        <div className="centre fontMoyenne titreVitesse"><Link to='vitesseBurger'>Préparer des burgers</Link></div>
         <p className="marge20">But du jeu : Créer des burger en plaçant les ingrédients de la recette dans l'ordre. Chaque burger créé rapporte 5 points. Le temps alloué pour obtenir le meilleur score est de 90 secondes.</p>
         <ul>
-          <li>Améliore la coordination œil-main</li>
+        <li>Améliore la coordination œil-main</li>
           <li>Améliore la concentration et la mémoire</li>
           <li>Renforce les compétences en organisation</li>
 

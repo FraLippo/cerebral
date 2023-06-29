@@ -113,7 +113,7 @@ namespace ReactCoreCerebral.Controllers
 
             var classementsJoueur = _dbTableau.Resultat2019.Where(x => x.noExo == 999 && x.date >= startDate && x.date <= endDate && x.prenom == prenom).Select( x => new DTOResultatJoueur() { NomJeu = x.typeExo, Score = x.nbFaute}).ToList();
 
-            DTOInfoClassement DTOInfoJoueur = new() { ClassementJoueurs = classement.Take(5), Classement = positionJoueur, Resultats = classementsJoueur, ScoreTotal = scoreJoueur };                      
+            DTOInfoClassement DTOInfoJoueur = new() { ClassementJoueurs = classement.Take(10), Classement = positionJoueur, Resultats = classementsJoueur, ScoreTotal = scoreJoueur };                      
             return DTOInfoJoueur;
         }
 

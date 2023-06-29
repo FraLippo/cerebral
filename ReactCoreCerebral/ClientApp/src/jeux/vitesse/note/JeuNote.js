@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import * as Tone from 'tone';
+
 import Clavier from './Clavier';
 import NotesInconnues from './NotesInconnues';
 import { Button, message } from 'antd';
-import { SplendidGrandPiano } from "smplr";
+import { ElectricPiano } from "smplr";
+import CompteRebours from '../commun/CompteRebours';
+import Resultat from '../commun/Resultat.js';
+import { analytics } from '../../../components/commun/analytics';
+import { Helmet } from 'react-helmet';
 
 export default class JeuNote extends Component {
     constructor(props) {
         super(props);
-        // Charger le préréglage pour un synthétiseur spécifique
-        this.synth = null;
-        this.synth1 = null;
+
         this.nbPartie = 1;
-        this.type = 0;
-
-
+        this.type = 1;
+        this.fin = false;
+        this.piano = null;
+        this.score = 0;
         let tabNotes = [{ nom: 'C', note: 'C3', noteEnCours: 0 },
         { nom: 'Db', note: 'Db3', noteEnCours: 0 },
         { nom: 'D', note: 'D3', noteEnCours: 0 },
@@ -27,12 +30,13 @@ export default class JeuNote extends Component {
         { nom: 'A', note: 'A3', noteEnCours: 0 },
         { nom: 'Bb', note: 'Bb3', noteEnCours: 0 },
         { nom: 'B', note: 'B3', noteEnCours: 0 }];
-      
+
         this.state = {
             tabNotes: tabNotes,
-            tabNotesInconnues: []
+            tabNotesInconnues: [],
+            finJeu: false
         }
-
+        analytics();
 
     }
 
@@ -40,131 +44,63 @@ export default class JeuNote extends Component {
         let tabNoteX = [];
         let nombre = Math.floor(Math.random() * this.state.tabNotes.length);
         tabNoteX.push(this.state.tabNotes[nombre].note);
-
+        console.log(tabNoteX[0]);
         this.setState({ tabNotesInconnues: tabNoteX })
     }
     async componentDidMount() {
-        const context = new AudioContext();
-        this.piano = await new SplendidGrandPiano(context).loaded();
-        this.choisirNote();
-        if (Tone.context.state === 'running') {
-            console.log('Audio est déjà activé.');
+        //  const instruments = getElectricPianoNames(); // => ["CP80", "PianetT", "WurlitzerEP200"]
 
-            this.joueNote(this.state.tabNotesInconnues[0], this.type);
-        }
+        this.piano1 = new ElectricPiano(new AudioContext(), {
+            instrument: "PianetT",
+        });
+        this.piano2 = new ElectricPiano(new AudioContext(), {
+            instrument: "CP80",
+        });
+        this.piano3 = new ElectricPiano(new AudioContext(), {
+            instrument: "WurlitzerEP200",
+        });
+
+        this.piano1.loaded().then(() => {
+            console.log('activated1');
+        });
+        this.piano2.loaded().then(() => {
+            console.log('activated2');
+        });
+        this.piano3.loaded().then(() => {
+            console.log('activated3');
+        });
+        this.choisirNote();
+
 
 
     }
-    joueNote = (nom, type) => {
-        if (Tone.context.state === 'running') {
-            this.entendreNote(nom, type);
-        }
-        else {
-            Tone.start().then(() => {
-                console.log('Audio activé.');
-                var instrument1 = new Tone.Synth();
-                var synthJSON = {
-                    "oscillator": {
-                        "partials": [
-                            1,
-                            0,
-                            2,
-                            0,
-                            3
-                        ]
-                    },
-                    "envelope": {
-                        "attack": 0.001,
-                        "decay": 1.2,
-                        "sustain": 0,
-                        "release": 1.2
-                    }
-                }
-
-                instrument1.set(synthJSON);
-                this.synth = instrument1.toDestination();
-                
-                
-                //2e synthe
-                var instrument2 = new Tone.MonoSynth();
-                var synthJSON ={
-                   
-                    "oscillator": {
-                        "type": "square"
-                    },
-                    "filter": {
-                        "Q": 2,
-                        "type": "lowpass",
-                        "rolloff": -12
-                    },
-                    "envelope": {
-                        "attack": 0.005,
-                        "decay": 3,
-                        "sustain": 0,
-                        "release": 0.45
-                    },
-                    "filterEnvelope": {
-                        "attack": 0.001,
-                        "decay": 0.32,
-                        "sustain": 0.9,
-                        "release": 3,
-                        "baseFrequency": 700,
-                        "octaves": 2.3
-                    }
-                }
-                instrument2.volume.value = -12;
-                instrument2.set(synthJSON);
-                this.synth1 = instrument2.toDestination();
-            
-
-                //3e synthe
-                var instrument3 = new Tone.FMSynth();
-                var synthJSON ={
-                    "harmonicity": 3.01,
-                    "modulationIndex": 14,
-                    "oscillator": {
-                        "type": "triangle"
-                    },
-                    "envelope": {
-                        "attack": 0.2,
-                        "decay": 0.3,
-                        "sustain": 0.1,
-                        "release": 1.2
-                    },
-                    "modulation" : {
-                        "type": "square"
-                    },
-                    "modulationEnvelope" : {
-                        "attack": 0.01,
-                        "decay": 0.5,
-                        "sustain": 0.2,
-                        "release": 0.1
-                    }
-                }
-                //instrument2.volume.value = -12;
-                instrument3.set(synthJSON);
-                this.synth2 = instrument3.toDestination();
-            
-
-
-
-                this.entendreNote(nom, type);
-            }).catch((error) => {
-                console.log('Impossible de démarrer l\'audio :', error);
-            });
+    joueNote = (nom,type) => {
+        if (this.fin) return;
+        switch (type) {
+            case 1:
+                this.piano1.start({ note: nom, duration: .2 });
+                break;
+            case 2:
+                this.piano2.start({ note: nom, duration: .2 });
+                break;
+            case 3:
+                this.piano3.start({ note: nom, duration: .2 });
+                break;
         }
 
     }
     reset = () => {
+        this.fin = false;
         let nouveauTabNote = this.state.tabNotes.map(element => { return { note: element.note, nom: element.nom, noteEnCours: 0 } })
         this.choisirNote();
-        if (this.nbPartie > 2)
-        {
+        if (this.nbPartie > 7) {
+            this.type = 3;
+        }
+        else if (this.nbPartie > 5) {
             this.type = 2;
         }
-        else if (this.nbPartie > 1)
-        { this.type = 1;
-        }
+        console.log(this.type);
+        console.log(this.nbPartie);
         this.setState({
             tabNotes: nouveauTabNote,
 
@@ -172,29 +108,14 @@ export default class JeuNote extends Component {
     }
 
     componentWillUnmount() {
-        // Arrête le synthétiseur lorsque le composant est démonté
-        if (this.synth != null)  this.synth.dispose();
-        if (this.synth1 != null)  this.synth1.dispose();
-        if (this.synth2 != null)  this.synth2.dispose();
-        
+
+
     }
     clicBouton = () => {
 
         this.joueNote(this.state.tabNotesInconnues[0], this.type);
     }
-    entendreNote = (nom, type) => {
-        // if (type === 0) {
-        //     this.synth.triggerAttackRelease(nom, '4n');
-        // }
-        // else if (type === 1) {
-        //     this.synth1.triggerAttackRelease(nom, '4n');
-        // }
-        // else
-        // {
-        //     this.synth2.triggerAttackRelease(nom, '4n');
-        // }
-        this.piano.start({ note: nom });
-    };
+
 
     clicNote = (id) => {
         let nouveauTabNote = [...this.state.tabNotes];
@@ -206,13 +127,14 @@ export default class JeuNote extends Component {
             nouveauTabNote[index].noteEnCours = 0;
             nouveauTabNote[id].noteEnCours = 1;
         }
-        this.joueNote(nouveauTabNote[id].note, 0);
+        this.joueNote(nouveauTabNote[id].note, this.type);
         this.setState({
             tabNotes: nouveauTabNote
         })
     }
 
     clickReponse = () => {
+        if (this.fin) return;
         let victoire;
         let nouveauTabNote = [...this.state.tabNotes];
         let index = this.state.tabNotes.findIndex(x => x.noteEnCours === 1);
@@ -227,7 +149,7 @@ export default class JeuNote extends Component {
         }
         if (victoire) {
             message.success('Bravo', this.reset);
-        
+            this.score += 7;
             this.nbPartie++;
         }
         else {
@@ -238,18 +160,38 @@ export default class JeuNote extends Component {
                 tabNotes: nouveauTabNote
             })
         }
-        
+        this.fin = true;
+
     }
+    finTimer = () =>
+    {
+        this.setState({
+            finJeu: true
+        });
+    }
+
 
     render() {
         return (
             <div>
-                <div className="jeuNote">
+            <Helmet>
+                    <title>L'oreille musicale</title>
+                    <meta name="description" content="Un jeu pour tester votre oreille musicale, arriverez-vous à reconnaitre la note jouée ? Un jeu pour tous même sans connaitre la musique." />
+                </Helmet>
+             { this.state.finJeu ? <Resultat score={this.score} typeExo='vitesseNotes'></Resultat> :
+               <React.Fragment> 
+                <div className="fontMoyenne couleurTitre">L'oreille musicale</div>
+               <div className="jeuNote">
+                   
                     <NotesInconnues tabNotesInconnues={this.state.tabNotesInconnues} clicBouton={this.clicBouton} ></NotesInconnues>
-                    <Button onClick={this.clicBouton}>Jouer le son inconnu</Button>
+                    <p>Cliquer sur le point d'interrogation pour entendre la note inconnue.</p>
                     <Clavier clicNote={this.clicNote} tabNotes={this.state.tabNotes}></Clavier>
-                    <Button onClick={this.clickReponse}>Je valide la réponse</Button></div>
-
+                    <p>Sélectionner la note qui correspond au point d'interrogation puis valider. Pas besoin de connaitre la musique, il suffit de se fier à son oreille.</p>
+                    <Button onClick={this.clickReponse}>Je valide la réponse</Button>  
+                    <div className="centre marge10"><CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours></div>
+                    </div></React.Fragment>
+                    }
+                 
 
             </div>
         );

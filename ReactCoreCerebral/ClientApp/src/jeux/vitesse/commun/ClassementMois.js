@@ -122,7 +122,7 @@ export default class ClassementMois extends Component {
     </tbody>
 </table></div>
 </div></React.Fragment>}  
-  <h2>Les 5 meilleurs du mois</h2>
+  <h2>Les 10 meilleurs du mois</h2>
              <Row justify="center">
         <Col xs={24} sm={24} md={16}><Table    pagination={{ defaultPageSize: 10, hideOnSinglePage: true }} columns={this.columns} dataSource={this.state.listePremiers} rowKey='cle' />
         </Col></Row>

@@ -44,7 +44,7 @@ export default class JeuLettres extends Component {
     {
         this.lettreEnCours = 0;
         this.partie++;
-        if (this.partie === 6 || this.partie ==12)
+        if (this.partie === 5 || this.partie ==10)
         {
             this.nbLettres++;
         }

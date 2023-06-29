@@ -36,12 +36,15 @@ function nomType(type) {
             return "Préparer des burgers";
         case "vitesseLettres":
             return "Lettres manquantes";
+            case "vitesseNotes":
+                return "L'oreille musicale";
+    
 
 
         default:
             return "";
     }
 }
-let tabJeu = ["vitesseLettres", "vitesseBurger", "vitesseCouleur", "vitesseSolitaire", "vitesseOrdre", "vitesseIntrus", "vitessePaire", "vitesseCalcul", "vitesseOperation", "vitesseChemin"]
+let tabJeu = ["vitesseNotes", "vitesseLettres", "vitesseBurger", "vitesseCouleur", "vitesseSolitaire", "vitesseOrdre", "vitesseIntrus", "vitessePaire", "vitesseCalcul", "vitesseOperation", "vitesseChemin"]
 
 export { verifierStatus, nomType, tabJeu };

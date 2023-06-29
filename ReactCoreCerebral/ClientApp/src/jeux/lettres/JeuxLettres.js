@@ -240,16 +240,18 @@ async componentDidMount()  {
              <div className="titreLettre centre"><span className="titreBingo margeDroit tailleMoyenne">Le mot le plus long</span><Regle></Regle></div>
                     {this.state.etat === "attente" && this.nbJoueurs >= 2 && this.state.msgJoueurs[1] !== undefined && this.state.msgJoueurs[1].infoJeu.includes('attente')  && <p>Le seul moyen pour jouer à plusieurs est d'inviter vos amis en leur envoyant ce lien par messagerie : <b>{process.env.REACT_APP_URL_JEUXLETTRES}/{this.gameNumber}/2/2 </b> . Vous pouvez ensuite revenir quand ils sont prêts.</p>}
                     <EspaceLettres clickCarte={this.clickCarte} disabled={this.state.boutonManche} etat={this.state.etat} lettres={this.state.tabLettres}></EspaceLettres>
-                   <div className="vainqueur">{!this.perdu && this.state.vainqueur !== '' && <Confetti width={window.innerWidth - 30} height={250} />}{this.state.vainqueur}</div>
+                   <div className="vainqueur">{!this.perdu && this.state.vainqueur !== '' && <Confetti  />}{this.state.vainqueur}</div>
                     <div className="compteur">{this.state.compteur}</div>
                     <Manche noManche={this.state.manche} concours={this.concours} id={this.id} boutonManche={this.state.boutonManche} nouveauJeu={this.nouveauJeu} niveau={this.niveau} nbJoueurs={this.nbJoueurs}></Manche>
+                    {this.concours && this.state.vainqueur !== '' && <FinEtape donneesJeu={this.donneesJeu} perdu={this.perdu}></FinEtape> }
                     <div className="grilleAction">
+                   
+              
                         <EspaceJoueur msgJoueurs={this.state.msgJoueurs}></EspaceJoueur>
                         <div className="espaceSaisie">
                         <EspaceSaisie disabled={this.state.boutonManche} reset={this.reset} tabLettresSaisies={this.state.tabLettresSaisies}  verifierReponse={this.verifierReponse} changeMessage={this.changeMessage} messageErreur={this.state.messageErreur}></EspaceSaisie>
-           {/* {this.nbJoueurs !==1 &&  <EspaceConversation messages={this.state.messages} envoyerMessage={this.envoyerMessage}></EspaceConversation>} */}
-           {this.concours && this.state.vainqueur !== '' && <FinEtape donneesJeu={this.donneesJeu} perdu={this.perdu}></FinEtape>}
-                 </div>
+              </div>  
+                 
                     </div>
 
                 </div>}

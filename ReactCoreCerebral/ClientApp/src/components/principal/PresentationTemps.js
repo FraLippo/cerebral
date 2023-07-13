@@ -78,8 +78,23 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <p>Bravo à Gwendal, le gagnant du mois de juin.</p>
       <h1>Nos jeux d'entrainement cérébral</h1>
       <p>Tous nos jeux en ligne sont gratuits et ne nécessitent pas d'inscription. Vous pouvez recommencer autant de fois que vous le désirez. Nous demandons simplement le prénom pour établir des classements. </p>
+     
       <div className="presentationJeu marge20">
-        <div className="centre fontMoyenne titreVitesse" style={{backgroundColor: 'yellow'}}><Link to='vitesseLettres'>Les lettres manquantes (nouveau)</Link></div>
+        <div className="centre fontMoyenne titreVitesse" style={{backgroundColor: 'yellow'}}><Link to='vitesseMemoire'>Se souvenir des cercles (nouveau)</Link></div>
+        <p className="marge20">But du jeu : On vous montre un certain nombre de cercles dans une grille, vous devez mémoriser leurs emplacements et reproduire ce que vous venez de voir dans une nouvelle grille. Le temps alloué est de 90 secondes, chaque cercle trouvé rapporte 1 point, il n'y a pas de pénalité en cas d'erreur.</p>
+        <ul>
+        <li>Améliore la concentration et la mémoire</li>
+          <li>Améliore la mémoire spatiale</li>
+          <li>Améliore la vitesse de traitement de l'information visuelle</li>
+         
+
+        </ul>
+        <div className="centre fontMoyenne"><Link to='classement/vitesseMemoire'>Classement</Link></div>
+      </div>
+     
+     
+      <div className="presentationJeu marge20">
+        <div className="centre fontMoyenne titreVitesse" ><Link to='vitesseLettres'>Les lettres manquantes</Link></div>
         <p className="marge20">But du jeu : Retrouver les lettres manquantes dans les mots. Les lettres sont cachées sous des carrés de couleur. L'ordre pour retrouver les lettres associées aux couleurs est toujours le même : bleu, rouge et jaune. Chaque bonne réponse rapporte 3 point puis 4 points quand il y a 2 lettres à retrouver. Chaque mauvaise réponse vous fait perdre 1 point, le fait de passer vous coûte 2 points. Le temps alloué est de 2 minutes. </p>
         <ul>
           <li>Enrichissement du vocabulaire</li>
@@ -91,7 +106,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       </div>
      
       <div className="presentationJeu marge20">
-        <div className="centre fontMoyenne titreVitesse" style={{backgroundColor: 'yellow'}}><Link to='vitesseNotes'>L'oreille musicale (nouveau)</Link></div>
+        <div className="centre fontMoyenne titreVitesse" ><Link to='vitesseNotes'>L'oreille musicale</Link></div>
         <p className="marge20">But du jeu : Retrouver une note inconnue. On vous joue une note inconnue représentée par un point d'interrogation. Vous devez retrouver à quelle note elle correspond simplement avec votre oreille. Vous pouvez réécouter les notes autant de fois que vous le désirez. Vous n'avez pas besoin de connaissance musicale pour jouer, seule votre oreille est mise à contribution. Tout le monde a la capacité de reconnaitre les notes par contre certains doivent s'entrainer plus que d'autres.  Chaque note trouvée rapporte 7 points. Le temps alloué est de 90 secondes.</p>
         <ul>
         <li>Développe l'oreille musicale</li>

@@ -6,7 +6,7 @@ import '../../style/jeux.css';
 import border from '../../images/border.png';
 import puzzle from '../../images/puzzle.webp';
 import puzzleRotation from '../../images/puzzleRotation.webp';
-import { analytics } from '../../components/commun/analytics';
+
 import { Helmet } from 'react-helmet';
 
 
@@ -15,7 +15,7 @@ export default class Puzzle extends Component {
   constructor()
   {
     super();
-    analytics();
+
   }
 
 

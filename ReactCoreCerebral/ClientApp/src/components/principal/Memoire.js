@@ -9,7 +9,7 @@ import imagePre from '../../images/imagePre.webp';
 import dessin from '../../images/dessin.webp';
 import memory from '../../images/memory.webp';
 import simon from '../../images/simon.webp';
-import { analytics } from '../../components/commun/analytics';
+
 import { Helmet } from 'react-helmet';
 
 
@@ -18,7 +18,6 @@ export default class Memoire extends Component {
   constructor()
   {
     super();
-    analytics();
   }
 
   render() {

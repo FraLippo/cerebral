@@ -5,7 +5,7 @@ import { message } from 'antd';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat';
 import withRouter from '../../../components/commun/withRouter';
-import { analytics } from '../../../components/commun/analytics';
+
 
 
 import { Helmet } from 'react-helmet';
@@ -29,7 +29,7 @@ class JeuSolitaire extends Component {
         this.fin = false;
 
         this.reponseEnCours = false;
-        analytics();
+ 
 
     }
     nouveauJeu = () => {

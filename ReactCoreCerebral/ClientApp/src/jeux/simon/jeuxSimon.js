@@ -5,7 +5,7 @@ import { Button, message } from 'antd';
 import ResultatCommun from '../../components/commun/ResultatCommun';
 import Helmet from 'react-helmet';
 import withRouter from '../../components/commun/withRouter';
-import { analytics } from '../../components/commun/analytics';
+
 import { addGame } from '../../components/commun/localStorage';
 import intl from 'react-intl-universal';
 
@@ -38,7 +38,7 @@ class JeuxSimon extends Component {
             this.timer = setTimeout(this.finTimer, this.intervalle);
  
             addGame('jeuxSimon', this.id);
-            analytics();
+        
         }
     }
 

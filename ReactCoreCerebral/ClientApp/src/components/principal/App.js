@@ -4,7 +4,6 @@ import { RouterProvider } from 'react-router-dom';
 import { ConfigProvider} from 'antd';
 import {router} from './router'
 import { Helmet } from 'react-helmet';
-import ReactGA from 'react-ga';
 import ReactGA4 from "react-ga4";
 import intl from 'react-intl-universal';
 
@@ -24,7 +23,7 @@ class App extends Component {
   constructor(props) {
     super(props);
       
-   ReactGA.initialize("UA-82336662-1");
+
    ReactGA4.initialize("G-916D7SW5D6");
 
   this.currentLocale= this.determineLang();

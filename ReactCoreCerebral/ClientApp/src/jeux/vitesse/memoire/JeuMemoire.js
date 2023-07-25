@@ -4,7 +4,7 @@ import Grille from './Grille'
 import { Button, message } from 'antd';
 import Helmet from 'react-helmet';
 import withRouter from '../../../components/commun/withRouter';
-import { analytics } from '../../../components/commun/analytics';
+
 import Resultat from '../commun/Resultat';
 import CompteRebours from '../commun/CompteRebours';
 
@@ -27,10 +27,6 @@ class JeuxMemoire extends Component {
 
         this.fin = false;
 
-     
-
-
-        analytics();
     }
 
     nouveauJeu = () =>

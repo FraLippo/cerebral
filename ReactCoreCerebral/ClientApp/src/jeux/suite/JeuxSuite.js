@@ -6,7 +6,7 @@ import '../../style/jeux.css';
 import withRouter from '../../components/commun/withRouter';
 import { addGame } from '../../components/commun/localStorage';
 import ResultatCommunFaute from '../../components/commun/ResultatCommunFaute';
-import { analytics } from '../../components/commun/analytics';
+
 import { Helmet } from 'react-helmet';
 import FinEtape from '../concours/FinEtape';
 import intl from 'react-intl-universal';
@@ -31,7 +31,7 @@ class JeuxSuite extends Component {
             }
    
             addGame('jeuxSuite', this.idTest);
-            analytics();
+         
         
 
     }

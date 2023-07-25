@@ -4,7 +4,7 @@ import Icone from './Icone';
 import Logique from './Logique'
 import '../../../style/jeux.css';
 import withRouter from '../../../components/commun/withRouter';
-import { analytics } from '../../../components/commun/analytics';
+
 import CompteRebours from '../commun/CompteRebours';
 import { Helmet } from 'react-helmet';
 import Resultat from '../commun/Resultat';
@@ -32,7 +32,7 @@ class JeuPaire extends Component {
                 reponse : "",
                 numJeu
             }
-            analytics();
+   
         
 
     }

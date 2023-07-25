@@ -6,7 +6,7 @@ import MessagesOrdi from './MessagesOrdi';
 import Resultat from './Resultat';
 import intl from 'react-intl-universal';
 import { Helmet } from 'react-helmet';
-import { analytics } from '../../components/commun/analytics';
+
 import FinEtape from '../concours/FinEtape';
 import withRouter from '../../components/commun/withRouter';
 import Regle from './Regle';
@@ -38,7 +38,7 @@ import Regle from './Regle';
             this.numeroPrecedent = -1;
             this.timer = 0;
             this.stop = false;
-            analytics();
+         
 
     }
     componentWillUnmount() {

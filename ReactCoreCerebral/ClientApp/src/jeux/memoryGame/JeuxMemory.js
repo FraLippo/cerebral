@@ -8,7 +8,7 @@ import intl from 'react-intl-universal';
 import { Helmet } from 'react-helmet';
 import FinEtape from '../concours/FinEtape';
 import { addGame } from '../../components/commun/localStorage';
-import { analytics } from '../../components/commun/analytics';
+
 
 
 
@@ -44,7 +44,7 @@ class JeuxMemoryGame extends Component {
         };
   
         addGame('jeuxMemoryGame', this.id);
-        analytics();
+     
     
 
     }

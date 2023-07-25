@@ -14,163 +14,14 @@
   
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0014588513895125"
      crossorigin="anonymous"></script>
-     <script>(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=1;</script>
 
-
-
-  <style type="text/css">
-    .modalRgpd {
-      background-color: rgb(255, 255, 255);
-      opacity: .4
-    }
-
-    .modalContent {
-      position: absolute;
-      bottom: 0px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: black;
-      color: white;
-      padding: 10px;
-      z-index: 3344223;
-      width: 100%;
-      pointer-events: all;
-      opacity: 1;
-      border: 1px solid black;
-      width: 320px;
-      display: none;
-    }
-
-    .bandeauNon {
-      height: 250px;
-      color: black;
-      width: 100%;
-      display: none;
-      background-color: tan;
-      padding: 50px 20px;
-    }
-
-    .rgpdMain {
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .buttonRefuse {
-      margin-right: 10px;
-      background-color: blueviolet;
-    }
-
-    .buttonAccept {
-      color: white;
-      background-color: #5aa340;
-      padding: 10px;
-    }
-
-    .buttonChoisir {
-      margin-right: 10px;
-      background-color: blueviolet;
-      padding: 5px;
-      color: white
-    }
-
-    .espaceDroit10 {
-      margin-right: 10px;
-    }
-  </style>
-
-  <script>
-
-    function addScript()
-    {
-      (window.adsbygoogle = window.adsbygoogle || []).pauseAdRequests = 0;
-    }
-
-    function getCookie(name) {
-      var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
-      return v ? v[2] : null;
-    }
-    function setCookie(name, value, days) {
-      var d = new Date;
-      d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * days);
-      if ('%process.env.NODE_ENV%' === 'production') {
-
-        document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString() + ";domain=.evalquiz.com";
-      }
-    else {
-          document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
-
-        }
-
-      }
-
-      document.addEventListener("DOMContentLoaded", function (event) {
-
-        let btnAccepter = document.getElementById("accepter");
-        let btnNouveau = document.getElementById("nouveauChoix");
-
-
-        let rgpdMain = document.getElementById("root");
-        let modalContent = document.getElementById("modalContent");
-        let modalRgpd = document.getElementById("modalRgpd");
-        let bandeauNon = document.getElementById("bandeauNon");
-
-
-        let cookie = getCookie("cookieConsent");
-        if (cookie == null) {
-          rgpdMain.className = "rgpdMain";
-          modalRgpd.className = "modalRgpd";
-          modalContent.style.display = "block";
-        }
-
-        if (cookie === "YES") {
-          addScript();
-        }
-
-        if (cookie === "NO") {
-          bandeauNon.style.display = "block";
-        }
-
-
-
-        btnAccepter.addEventListener("click", function (event) {
-          rgpdMain.className = "";
-          modalRgpd.className = "";
-          modalContent.style.display = "none";
-          addScript();
-          setCookie("cookieConsent", "YES", 365);
-
-        });
-
-        btnNouveau.addEventListener("click", function (event) {
-          setCookie("cookieConsent", "YES", 365);
-          addScript();
-          bandeauNon.style.display = "none";
-
-        });
-      });
-  </script>
 
 </head>
 
 <body>
-  <div class="modalContent" id="modalContent">
 
-    <p>Nous travaillons avec la société Google et avec des technologies comme les cookies pour stocker et/ou accéder à
-      des informations personnelles non sensibles stockées sur votre terminal (identifiants uniques, …), que nous
-      traitons afin de réaliser des statistiques d'usage du site, personnaliser les publicités et le contenu et en
-      mesurer les performances, produire des données d’audience, développer et améliorer les produits. </p>
-    <p>Acceptez-vous les cookies déposés pour la publicité et les mesures d'audience ?</p>
-    <div> <a style="color: white; text-decoration: underline; font-size: 1.2em;"
-        href="https://evalquiz.com/home/choisir">Choisir</a></div>
-    <div class="centre"><button id="accepter" class="buttonAccept"><b>J'accepte</b></button></div>
-
-  </div>
-  <div id="modalRgpd">
-    <div class="bandeauNon" id="bandeauNon">
-      Vous pouvez supprimer ce bandeau si vous acceptez les cookies pour la publicité. Nous essayons de limiter au
-      maximum le nombre de publicités sur le site et nous estimons que tout travail mérite salaire.
-      <div> <button id="nouveauChoix" class="btn btn-primary espaceDroit10">Accepter</button></div>
-    </div>
+ 
+   
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -183,7 +34,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </div>
+
 </body>
 
 </html>

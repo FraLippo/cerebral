@@ -6,7 +6,7 @@ import { Button} from 'antd';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat';
 import { Helmet } from 'react-helmet';
-import { analytics } from '../../../components/commun/analytics';
+
 
 
 class JeuCouleur extends Component {
@@ -25,7 +25,7 @@ class JeuCouleur extends Component {
             score: 0,
             afficheFin : false
         }
-        analytics(); 
+    
     }
 
     nouveauTirage = () => {

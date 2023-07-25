@@ -5,7 +5,7 @@ import Reponse from './Reponse';
 import { message, Button } from 'antd';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat.js';
-import { analytics } from '../../../components/commun/analytics';
+
 import { Helmet } from 'react-helmet';
 
 export default class JeuLettres extends Component {
@@ -28,7 +28,7 @@ export default class JeuLettres extends Component {
             mots: [],
             couleur: ''
         }
-        analytics();
+    
     }
     componentDidMount()
     {

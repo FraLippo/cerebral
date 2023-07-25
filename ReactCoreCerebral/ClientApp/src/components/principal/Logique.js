@@ -9,7 +9,7 @@ import bingo from '../../images/bingo.webp';
 import famille from '../../images/famille.webp';
 import tri from '../../images/tri.webp';
 import solitaire from '../../images/solitaire.webp';
-import { analytics } from '../../components/commun/analytics';
+
 import { Helmet } from 'react-helmet';
 
 
@@ -18,7 +18,7 @@ export default class Logique extends Component {
   constructor()
   {
     super();
-    analytics();
+
   }
 
 

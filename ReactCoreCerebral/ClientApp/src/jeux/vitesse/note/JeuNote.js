@@ -6,7 +6,7 @@ import { Button, message } from 'antd';
 import { ElectricPiano } from "smplr";
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat.js';
-import { analytics } from '../../../components/commun/analytics';
+
 import { Helmet } from 'react-helmet';
 
 export default class JeuNote extends Component {
@@ -36,7 +36,7 @@ export default class JeuNote extends Component {
             tabNotesInconnues: [],
             finJeu: false
         }
-        analytics();
+   
 
     }
 

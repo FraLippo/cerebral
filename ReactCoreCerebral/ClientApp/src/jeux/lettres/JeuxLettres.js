@@ -12,7 +12,7 @@ import withRouter from '../../components/commun/withRouter';
 import { readGameNumber } from '../../components/commun/localStorage';
 import Regle from './Regle';
 import FinEtape from '../concours/FinEtape';
-import { analytics } from '../../components/commun/analytics';
+
 import * as signalR from "@microsoft/signalr";
 
 class JeuxLettres extends Component {
@@ -58,7 +58,7 @@ class JeuxLettres extends Component {
         this.dicoLettres = new Map();
       
         this.confirm = Modal.confirm;
-        analytics();
+  
     }
     setServeur =() =>
     {

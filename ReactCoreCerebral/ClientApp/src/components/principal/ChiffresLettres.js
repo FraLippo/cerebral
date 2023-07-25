@@ -6,7 +6,7 @@ import '../../style/jeux.css';
 import border from '../../images/border.png';
 import compte from '../../images/compte.webp';
 import motLong from '../../images/motLong.webp';
-import { analytics } from '../commun/analytics';
+
 import { Link } from 'react-router-dom';
 import { Card } from 'antd';
 import { Helmet } from 'react-helmet';
@@ -17,7 +17,7 @@ export default class ChiffreLetttre extends Component {
   constructor()
   {
     super();
-    analytics();
+   
   }
 
 

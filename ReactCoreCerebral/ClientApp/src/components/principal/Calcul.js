@@ -7,14 +7,14 @@ import pyramide from '../../images/pyramide.webp';
 import calcul from '../../images/calcul.webp';
 import fubuki from '../../images/fubuki.webp';
 import { Helmet } from 'react-helmet';
-import { analytics } from '../../components/commun/analytics';
+
 import Ad from '../commun/adSense';
 export default class Logique extends Component {
  
   constructor()
   {
     super();
-    analytics();
+    
   }
 
   render() {

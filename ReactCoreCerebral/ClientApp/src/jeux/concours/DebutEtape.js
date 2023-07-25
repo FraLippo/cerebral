@@ -6,7 +6,7 @@ import ButtonLink from '../../components/commun/ButtonLink';
 import { prochainObjectif, imageJeu, titreJeu, creerEtape } from './logiqueConcours';
 import { Steps } from 'antd';
 import intl from 'react-intl-universal';
-import { analytics } from '../../components/commun/analytics';
+
 import { Helmet } from 'react-helmet';
 import withRouter from '../../components/commun/withRouter';
 import { readGameContest, addGameContest } from '../../components/commun/localStorage';
@@ -31,7 +31,7 @@ class DebutEtape extends Component {
                 this.noEtape = 0;
             }
             this.jeu = this.concours.liste[this.noEtape];
-            analytics();
+       
         }
     }
 

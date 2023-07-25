@@ -5,7 +5,7 @@ import CompteRebours from '../../components/commun/CompteRebours2';
 import Regle from './Regle';
 import ResultatCommun from '../../components/commun/ResultatCommun';
 import { Helmet } from 'react-helmet';
-import { analytics } from '../../components/commun/analytics';
+
 import Logique from './Logique';
 import FinEtape from '../concours/FinEtape';
 import { addGame } from '../../components/commun/localStorage';
@@ -27,7 +27,7 @@ import withRouter from '../../components/commun/withRouter';
                 finJeu: false
             }
             this.fin = false;
-            analytics();
+        
             addGame('binero', this.id);
         
     }

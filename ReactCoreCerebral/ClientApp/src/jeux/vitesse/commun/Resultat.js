@@ -5,7 +5,7 @@ import ButtonLink from '../../../components/commun/ButtonLink';
 import Prenom from '../../../components/commun/Prenom';
 import Confetti from 'react-confetti';
 import { addFirstName, readFirstName } from '../../../components/commun/localStorage';
-import { analytics } from '../../../components/commun/analytics';
+
 import {Helmet } from 'react-helmet';
 import Ad from  '../../../components/commun/adSense';
 
@@ -18,7 +18,7 @@ class Resultat extends Component {
             resultat: 0,
             prenomVisible: false
         }
-        analytics();
+     
         }
 
    

@@ -4,7 +4,7 @@ import Reponse from './Reponse';
 import { Button, message } from 'antd';
 import ResultatCommunFaute from '../../components/commun/ResultatCommunFaute';
 import LogiqueMath from './LogiqueMath';
-import { analytics } from '../../components/commun/analytics';
+
 import { Helmet } from 'react-helmet';
 import withRouter from '../../components/commun/withRouter';
 import { addGame } from '../../components/commun/localStorage';
@@ -35,7 +35,7 @@ import FinEtape from '../concours/FinEtape';
             enonceFin: '',
             questionEnCours: 0
         }
-        analytics();
+  
 
     }
 

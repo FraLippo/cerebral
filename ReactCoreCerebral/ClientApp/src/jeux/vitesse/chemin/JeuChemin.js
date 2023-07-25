@@ -3,7 +3,7 @@ import Logique from './Logique';
 import Grille from './Grille'
 import '../../../style/vitesse.css';
 import Helmet from 'react-helmet';
-import { analytics } from '../../../components/commun/analytics';
+
 import Resultat from '../commun/Resultat';
 import Direction from './Direction';
 import depart from '../../../images/depart.png';
@@ -33,7 +33,7 @@ export default class JeuChemin extends Component {
             score: 0
 
         }
-        analytics();
+       
 
     }
 

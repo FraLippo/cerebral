@@ -9,7 +9,7 @@ import Logique from './Logique';
 import CompteRebours from '../../components/commun/CompteRebours2';
 import { addGame } from '../../components/commun/localStorage';
 import Helmet from 'react-helmet';
-import { analytics } from '../../components/commun/analytics';
+
 import withRouter from '../../components/commun/withRouter';
  class JeuxPicross extends Component {
 
@@ -32,7 +32,7 @@ import withRouter from '../../components/commun/withRouter';
                 afficheRebours: false,
 
             }
-            analytics();
+     
             addGame('picross', this.id);
         
     }

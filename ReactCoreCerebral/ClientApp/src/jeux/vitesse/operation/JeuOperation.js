@@ -6,7 +6,7 @@ import '../../../style/jeux.css';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat';
 import { Helmet } from 'react-helmet';
-import { analytics } from '../../../components/commun/analytics';
+
 
 
 class JeuOperation extends Component {
@@ -22,7 +22,7 @@ class JeuOperation extends Component {
             afficheResultat: false,
             score: 0
         }
-        analytics();
+       
     }
     choixOperation = () => {
         let operation = Math.floor(Math.random() * 4);

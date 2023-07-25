@@ -9,7 +9,7 @@ import { addGame } from '../../components/commun/localStorage';
 import CompteRebours from '../../components/commun/CompteRebours';
 import FinEtape from '../concours/FinEtape';
 import { message, Button } from 'antd';
-import { analytics } from '../../components/commun/analytics';
+
 import '../../style/jeux.css';
 import { Helmet } from 'react-helmet';
 import intl from 'react-intl-universal';
@@ -52,7 +52,7 @@ class JeuxPuzzle extends Component {
             this.perdu = false;
    
             addGame('jeuxPuzzle', this.id);
-            analytics();
+       
         
     }
 

@@ -6,7 +6,7 @@ import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat';
 import '../../../style/vitesse.css';
 import { Helmet } from 'react-helmet';
-import { analytics } from '../../../components/commun/analytics';
+
 
 export default class JeuCalcul extends Component
 {
@@ -23,7 +23,7 @@ export default class JeuCalcul extends Component
             afficheResultat : false,
             message: ''
         }
-        analytics();
+ 
     }
 
     niveauSuivant = () => {  

@@ -5,7 +5,7 @@ import Erreur from './Erreur';
 import CompteRebours from '../../components/commun/CompteRebours';
 import ResultatCommun from '../../components/commun/ResultatCommun';
 import withRouter from '../../components/commun/withRouter';
-import { analytics } from '../../components/commun/analytics';
+
 import { addGame } from '../../components/commun/localStorage';
 import FinEtape from '../concours/FinEtape';
 import { Helmet } from 'react-helmet';
@@ -32,7 +32,7 @@ class JeuxFamille extends Component {
             this.familleEnCours = -10;
 
             addGame('jeuxFamille', this.id);
-            analytics();
+         
         
     }
 

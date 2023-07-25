@@ -11,7 +11,7 @@ import { Board } from './Board.js';
 import { Ingredients } from './Ingredients.js';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat.js';
-import { analytics } from '../../../components/commun/analytics';
+
 
 const containerStyle = {
     width: '360px',
@@ -20,7 +20,7 @@ const containerStyle = {
     
   }
 
-  analytics();
+ 
   const HTML5toTouch = {
     backends: [
       {

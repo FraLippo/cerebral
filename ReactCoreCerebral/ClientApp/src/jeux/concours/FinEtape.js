@@ -9,7 +9,7 @@ import victory from '../../images/victory.jpg';
 import { prochainObjectif, imageJeu, creerEtape } from './logiqueConcours';
 import intl from 'react-intl-universal';
 import Ad from '../../components/commun/adSense'
-import { analytics } from '../../components/commun/analytics';
+
 import { addGameContest, addAttemptGameContest, addGame, addFirstName, readFirstName, readInfoContest } from '../../components/commun/localStorage';
 import SousMenu from '../../components/principal/SousMenu';
 import Prenom from '../../components/commun/Prenom';
@@ -65,7 +65,7 @@ class FinEtape extends Component {
             }
         
         this.state = { erreur: this.erreur };
-        analytics();
+   
 
     }
 

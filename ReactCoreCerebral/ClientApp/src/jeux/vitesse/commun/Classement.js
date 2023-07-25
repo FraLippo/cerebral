@@ -6,7 +6,7 @@ import Ad from '../../../components/commun/adSense';
 import { Helmet } from 'react-helmet';
 import { moisEnFrancais} from '../../../components/commun/utilitaire';
 import { nomType } from './utilitaire';
-import { analytics } from '../../../components/commun/analytics';
+
 
 class Classement extends Component {
 
@@ -15,7 +15,7 @@ class Classement extends Component {
         this.type = props.params.type;
         const d = new Date();
         this.nomMois = moisEnFrancais[d.getMonth()];
-        analytics();
+    
     }
 
     render() {

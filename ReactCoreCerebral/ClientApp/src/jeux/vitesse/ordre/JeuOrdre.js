@@ -6,7 +6,7 @@ import { message } from 'antd';
 import Resultat from '../commun/Resultat';
 import '../../../style/jeux.css';
 import withRouter from '../../../components/commun/withRouter';
-import { analytics } from '../../../components/commun/analytics';
+
 import CompteRebours from '../commun/CompteRebours';
 import { Helmet } from 'react-helmet';
 
@@ -35,7 +35,7 @@ class JeuOrdre extends Component {
         }
 
 
-        analytics();
+     
     }
 
 

@@ -24,7 +24,7 @@ class App extends Component {
     super(props);
       
 
-   ReactGA4.initialize("G-916D7SW5D6");
+      ReactGA4.initialize("G-916D7SW5D6", { legacyDimensionMetric: false, gtagOptions: { send_page_view: true } })
 
   this.currentLocale= this.determineLang();
   

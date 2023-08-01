@@ -265,7 +265,7 @@ export default class PresentationEN extends Component {
           </Col>
         </Row>
      
-      <Row><Ad></Ad></Row>
+      <Ad></Ad>
       <InstallBouton></InstallBouton>
       <h2>Crédits</h2>
       <p>The borders by <a href="https://thenounproject.com/zzyzz/">Olena Panasovska.</a></p>

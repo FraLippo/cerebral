@@ -75,7 +75,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <p>Le podium montre les 3 premiers du mois en cours, le podium peut changer à tout moment, tous les résultats des jeux de rapidité sur cette page sont pris en compte.</p>
       <Podium tabPrenoms={this.state.tabPrenoms}></Podium>
       <div className="centre fontMoyenne"><Link to='classementMois'>Le classement du mois</Link></div>
-      <p>Bravo à Gwendal, le gagnant du mois de juin.</p>
+      <p>Bravo à Gwendal, le gagnant du mois de juin et à Meneleus, le gagnant du mois de juillet avec le record (700 points).</p>
       <h1>Nos jeux d'entrainement cérébral</h1>
       <p>Tous nos jeux en ligne sont gratuits et ne nécessitent pas d'inscription. Vous pouvez recommencer autant de fois que vous le désirez. Nous demandons simplement le prénom pour établir des classements. </p>
      

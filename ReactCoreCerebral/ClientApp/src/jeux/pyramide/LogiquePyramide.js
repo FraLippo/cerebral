@@ -6,7 +6,7 @@ export default class LogiquePyramide extends AccesDonnees
 {
     constructor(id)
     {
-        super('jeuxPyramide',id)
+        super('jeuxpyramide',id)
     }
 
     static constructionEmplacement(index, taille) {

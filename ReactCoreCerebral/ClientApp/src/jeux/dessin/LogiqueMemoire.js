@@ -6,7 +6,7 @@ export default class LogiqueMemoire extends AccesDonnees
 {
     constructor(id)
     {
-        super('jeuxMemoireDessin',id)
+        super('jeuxmemoiredessin',id)
     }
 
 

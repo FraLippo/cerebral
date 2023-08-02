@@ -115,7 +115,7 @@ const router = createBrowserRouter([
             
           },
           {
-            path: 'jeuxCompte/:id',
+            path: 'jeuxcompte/:id',
             element: <JeuxCompte/>,
             
           },
@@ -125,12 +125,12 @@ const router = createBrowserRouter([
             
           },
           {
-            path: '/jeuxLettres/:id/:nbJoueurs/:niveau',
+            path: '/jeuxlettres/:id/:nbJoueurs/:niveau',
             element: <JeuxLettres/>,
             
           },
           {
-            path: 'jeuxMemoireDessin/:id',
+            path: 'jeuxmemoiredessin/:id',
             element: <JeuxDessin/>,
             
           },
@@ -140,7 +140,7 @@ const router = createBrowserRouter([
             
           },
           {
-            path: 'jeuxEsp/:id',
+            path: 'jeuxesp/:id',
             element: <JeuxEsp/>,
             
           },
@@ -150,7 +150,7 @@ const router = createBrowserRouter([
             
           },
           {
-            path: 'jeuxPuzzle/:id',
+            path: 'jeuxpuzzle/:id',
             element: <JeuxPuzzle/>,
             
           },
@@ -160,7 +160,7 @@ const router = createBrowserRouter([
             
           },
           {
-            path: 'jeuxTri/:id',
+            path: 'jeuxtri/:id',
             element: <JeuxTri/>,
             
           },
@@ -181,7 +181,7 @@ const router = createBrowserRouter([
             
           },
           {
-            path: 'jeuxPuzzleRotation/:id',
+            path: 'jeuxpuzzlerotation/:id',
             element: <JeuxPuzzleRotation/>,
             
           },
@@ -191,7 +191,7 @@ const router = createBrowserRouter([
             
           },
           {
-            path: 'jeuxFamille/:id',
+            path: 'jeuxfamille/:id',
             element: <JeuxFamille/>,
             
           },
@@ -201,7 +201,7 @@ const router = createBrowserRouter([
             
           },
           {
-            path: 'jeuxMahJong/:id',
+            path: 'jeuxmahjong/:id',
             element: <JeuxMah/>,
             
           },
@@ -252,7 +252,7 @@ const router = createBrowserRouter([
             
           },
           {
-            path: 'jeuxOrdre/:id',
+            path: 'jeuxordre/:id',
             element: <JeuxOrdre/>,
             
           },
@@ -272,62 +272,62 @@ const router = createBrowserRouter([
             
           },
           {
-            path: 'vitesseCouleur',
+            path: 'vitessecouleur',
             element: <JeuCouleur/>,
             
           },
           {
-            path: 'vitesseOrdre',
+            path: 'vitesseordre',
             element: <JeuOrdre/>,
             
           },
           {
-            path: 'vitesseSolitaire',
+            path: 'vitessesolitaire',
             element: <JeuSolitaire/>,
             
           },
           {
-            path: 'vitessePaire',
+            path: 'vitessepaire',
             element: <JeuPaire/>,
             
           },
           {
-            path: 'vitesseCalcul',
+            path: 'vitessecalcul',
             element: <JeuCalcul/>,
             
           },
           {
-            path: 'vitesseIntrus',
+            path: 'vitesseintrus',
             element: <JeuIntrus/>,
             
           },
           {
-            path: 'vitesseOperation',
+            path: 'vitesseoperation',
             element: <JeuOperation/>,
             
           },
           {
-            path: 'vitesseChemin',
+            path: 'vitessechemin',
             element: <JeuChemin/>,
             
           },
           {
-            path: 'vitesseBurger',
+            path: 'vitesseburger',
             element: <JeuBurger/>,
             
           },
           {
-            path: 'vitesseLettres',
+            path: 'vitesselettres',
             element: <JeuLettres/>,
             
           },
           {
-            path: 'vitesseNotes',
+            path: 'vitessenotes',
             element: <JeuNote/>,
             
           },
           {
-            path: 'vitesseMemoire',
+            path: 'vitessememoire',
             element: <JeuMemoire/>,
             
           },
@@ -336,7 +336,7 @@ const router = createBrowserRouter([
             element: <Classement/>,
           },
           {
-            path: 'classementMois',
+            path: 'classementmois',
             element: <ClassementMois/>,
           },
     

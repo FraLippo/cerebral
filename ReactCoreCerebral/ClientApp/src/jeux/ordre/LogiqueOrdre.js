@@ -6,7 +6,7 @@ export default class LogiqueOrdre extends AccesDonnees
 {
     constructor(id)
     {
-        super('jeuxOrdre', id);      
+        super('jeuxordre', id);      
     }
 
     get temps()

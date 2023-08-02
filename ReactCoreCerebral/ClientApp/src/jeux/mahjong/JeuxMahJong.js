@@ -30,7 +30,7 @@ class JeuxMah extends Component {
             this.perdu = false;
             this.reponseEnCours = false;
      
-            addGame('jeuxMahJong', this.id);
+            addGame('jeuxmahjong', this.id);
        
         
     }
@@ -76,7 +76,7 @@ class JeuxMah extends Component {
             <Helmet>
                 <title>{intl.get('MAH_TITLE')}</title>
                 <meta name="description" content={intl.get('MAH_META')} />
-                <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxMahJong/${this.id}`} />
+                <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxmahjong/${this.id}`} />
                 <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-solo/${this.id}`} />
 
             </Helmet>

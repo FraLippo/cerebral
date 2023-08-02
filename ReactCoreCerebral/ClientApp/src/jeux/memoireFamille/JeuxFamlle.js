@@ -31,7 +31,7 @@ class JeuxFamille extends Component {
             this.perdu = false;
             this.familleEnCours = -10;
 
-            addGame('jeuxFamille', this.id);
+            addGame('jeuxfamille', this.id);
          
         
     }
@@ -87,7 +87,7 @@ class JeuxFamille extends Component {
             <Helmet>
                 <title>{intl.get('FAMILLE_TITLE')}</title>
                 <meta name="description" content={intl.get('FAMILLE_META')} />
-                <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxFamille/${this.id}`} />
+                <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxfamille/${this.id}`} />
                 <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-family/${this.id}`} />
 
             </Helmet>

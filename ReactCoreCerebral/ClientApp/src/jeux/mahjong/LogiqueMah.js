@@ -14,7 +14,7 @@ export default class LogiqueMah extends AccesDonnees
 {
     constructor(id)
     {
-        super('jeuxMahJong',id)
+        super('jeuxmahjong',id)
     }
 
     

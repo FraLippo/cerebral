@@ -178,7 +178,7 @@ export default class JeuNote extends Component {
                     <title>L'oreille musicale</title>
                     <meta name="description" content="Un jeu pour tester votre oreille musicale, arriverez-vous à reconnaitre la note jouée ? Un jeu pour tous même sans connaitre la musique." />
                 </Helmet>
-             { this.state.finJeu ? <Resultat score={this.score} typeExo='vitesseNotes'></Resultat> :
+             { this.state.finJeu ? <Resultat score={this.score} typeExo='vitessenotes'></Resultat> :
                <React.Fragment> 
                 <div className="fontMoyenne couleurTitre">L'oreille musicale</div>
                <div className="jeuNote">

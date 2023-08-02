@@ -39,7 +39,7 @@ class JeuxFubuki extends Component {
 
             }
 
-            addGame('jeuxFubuki', this.id);
+            addGame('jeuxfubuki', this.id);
       
         
     }

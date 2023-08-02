@@ -18,7 +18,7 @@ export default class Manche extends Component {
     {
         if (this.props.nbJoueurs === 1 && (this.props.niveau >=  1 && this.props.niveau <= 3 ))
         {
-            this.niveauSuivant = '/JeuxLettres/0/1/' + (this.props.niveau+1);
+            this.niveauSuivant = '/jeuxlettres/0/1/' + (this.props.niveau+1);
             return <ButtonLink className="autresJeux" titre="Niveau Suivant" href={this.niveauSuivant}></ButtonLink>
         }
     }
@@ -27,7 +27,7 @@ export default class Manche extends Component {
     recommencer= () =>
     {
       
-            this.niveauSuivant = '/JeuxLettres/0/1/' + this.props.niveau;
+            this.niveauSuivant = '/jeuxlettres/0/1/' + this.props.niveau;
             return <ButtonLink className="autresJeux" titre="Recommencer" href={this.niveauSuivant}></ButtonLink>  
     }
 

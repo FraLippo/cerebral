@@ -39,7 +39,7 @@ class JeuxPyramide extends Component {
                 afficheResultat: false
             }
 
-            addGame('jeuxPyramide', this.id);
+            addGame('jeuxpyramide', this.id);
        
 
         

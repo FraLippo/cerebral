@@ -85,7 +85,7 @@ return <React.Fragment>
                 <title>Le  jeu de la grille de calcul mental</title>
                 <meta name="description" content="Un jeu de calcul amusant et simple pour toute la famille, vous devez rapidement effectuer des opérations pour éliminer les mauvais résultats." />
             </Helmet>
-    {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitesseCalcul'></Resultat>:<div><div className="centreGrilleCalMen"><Grille clic={this.clic} taille={3} tabGrille={this.state.tabGrille}></Grille></div>
+    {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitessecalcul'></Resultat>:<div><div className="centreGrilleCalMen"><Grille clic={this.clic} taille={3} tabGrille={this.state.tabGrille}></Grille></div>
 <div className="centre fontMoyenne messageCalMen">{this.state.message}</div>
 <div className="centre marge20">Score: {this.state.score}</div>
 <div className="centre"><CompteRebours finTimer={this.finTimer} temps={60}></CompteRebours></div>

@@ -5,7 +5,7 @@ export default class LogiqueSuite extends AccesDonnees
 {
     constructor(id)
     {
-        super('jeuxSuite', id)
+        super('jeuxsuite', id)
     }
    
     construireTableauReponse()

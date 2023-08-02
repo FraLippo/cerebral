@@ -93,7 +93,7 @@ render() {
                
             </Helmet>
         
-         {this.state.afficheResultat ?  <Resultat score={this.state.score} typeExo='vitesseOperation'></Resultat>  : <div>
+         {this.state.afficheResultat ?  <Resultat score={this.state.score} typeExo='vitesseoperation'></Resultat>  : <div>
 
         <div className="calculOp">{this.state.operation}</div>
         <div><Saisie nouveauNombre={this.nouveauNombre} clickNombre={this.clickNombre}></Saisie></div>

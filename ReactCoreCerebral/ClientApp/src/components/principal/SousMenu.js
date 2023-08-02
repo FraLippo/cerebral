@@ -22,79 +22,79 @@ export default class SousMenu extends Component {
         let donnees = [];
         switch (this.props.type) {
             case 'compte':
-                this.nom = 'jeuxCompte';
+                this.nom = 'jeuxcompte';
                 this.lien = 'NOM_COMPTE';
                 break;
             case 'esp':
-                this.nom = 'jeuxEsp';
+                this.nom = 'jeuxesp';
                 this.lien = 'NOM_ESP';
                 break;
             case 'ordre':
-                this.nom = 'jeuxOrdre';
+                this.nom = 'jeuxordre';
                 this.lien = 'NOM_ORDRE';
                 break;
             case 'puzzle':
-                this.nom = 'jeuxPuzzle';
+                this.nom = 'jeuxpuzzle';
                 this.lien = 'NOM_PUZZLE';
                 break;
             case 'puzzleRotation':
-                this.nom = 'jeuxPuzzleRotation';
+                this.nom = 'jeuxpuzzlerotation';
                 this.lien = 'NOM_ROTATION';
                 break;
             case 'suite':
-                this.nom = 'jeuxSuite';
+                this.nom = 'jeuxsuite';
                 this.lien = "NOM_SUITE";
                 break;
             case 'tri':
-                this.nom = 'jeuxTri';
+                this.nom = 'jeuxtri';
                 this.lien = 'NOM_TRI';
                 break;
             case 'memoireDessin':
-                this.nom = 'jeuxMemoireDessin';
+                this.nom = 'jeuxmemoiredessin';
                 this.lien = 'NOM_DESSIN';
                 break;
             case 'memoireFamille':
-                this.nom = 'jeuxFamille';
+                this.nom = 'jeuxfamille';
                 this.lien = 'NOM_FAMILLE';
                 break;
             case 'mahJong':
-                this.nom = 'jeuxMahJong';
+                this.nom = 'jeuxmahjong';
                 this.lien = 'NOM_MAH';
                 break;
             case 'bingo':
-                this.nom = 'jeuxBingo';
+                this.nom = 'jeuxbingo';
                 this.lien = 'NOM_BINGO';
                 break;
             case 'pyramide':
-                this.nom = 'jeuxPyramide';
+                this.nom = 'jeuxpyramide';
                 this.lien = 'NOM_PYRAMIDE';
                 break;
             case 'fubuki':
-                this.nom = 'jeuxFubuki';
+                this.nom = 'jeuxfubuki';
                 this.lien = 'NOM_FUBUKI';
                 break;
             case 'math':
-                this.nom = 'jeuxMath';
+                this.nom = 'jeuxmath';
                 this.lien = 'NOM_MATH';
                 break;
             case 'memoryGame':
-                this.nom = 'jeuxMemoryGame';
+                this.nom = 'jeuxmemorygame';
                 this.lien = 'NOM_MEMORY'
                 break;
             case 'defiCalcul':
-                this.nom = 'defiCalcul';
+                this.nom = 'deficalcul';
                 this.lien = 'NOM_DEFI';
                 break;
             case 'defiCerebral':
-                this.nom = 'defiCerebral';
+                this.nom = 'deficerebral';
                 this.lien = 'NOM_DEFI';
                 break;
             case 'defiMot':
-                this.nom = 'defiMot';
+                this.nom = 'defimot';
                 this.lien = 'NOM_DEFI';
                 break;
             case "simon":
-                this.nom = "jeuxSimon";
+                this.nom = "jeuxsimon";
                 this.lien = "NOM_SIMON";
                 break;
             case "binero":
@@ -118,7 +118,6 @@ export default class SousMenu extends Component {
 
 
         const dejaFait = readLocalStorage(this.nom.includes('defi') ? 'defi' : this.nom);
-
         return (this.state.affiche && <div> <Card title={<span style={{ whiteSpace: 'normal' }}>{intl.get(this.props.titre)}</span>}>
             <ul className="ulStyle">
                 {this.state.donnees.map((v, i) => <React.Fragment key={i}>{(this.props.supprimer !== v.id && intl.get(v.titre) !== '') && <li> <span><Link reloadDocument to={'/' + intl.get(this.lien) + '/' + v.id}>{intl.get(v.titre)}</Link>

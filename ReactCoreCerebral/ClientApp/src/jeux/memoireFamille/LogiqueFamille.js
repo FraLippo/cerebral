@@ -12,7 +12,7 @@ export default class LogiqueFamille extends AccesDonnees
 {
     constructor(id)
     {
-        super('jeuxFamille',id)  
+        super('jeuxfamille',id)  
     }
 
     obtenirGrille()

@@ -5,7 +5,7 @@ export default class LogiquePuzzle extends AccesDonnees
 {
     constructor(id)
     {
-        super('jeuxPuzzle', id)
+        super('jeuxpuzzle', id)
     }
 
     obtenirInfo()

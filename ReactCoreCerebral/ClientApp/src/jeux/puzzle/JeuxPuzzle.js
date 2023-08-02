@@ -51,7 +51,7 @@ class JeuxPuzzle extends Component {
             this.nbPieces = this.logiquePuzzle.obtenirInfo().length;
             this.perdu = false;
    
-            addGame('jeuxPuzzle', this.id);
+            addGame('jeuxpuzzle', this.id);
        
         
     }
@@ -189,7 +189,7 @@ class JeuxPuzzle extends Component {
             <Helmet>
                 <title>{intl.get('PUZZLE_TITLE')}</title>
                 <meta name="description" content={intl.get('PUZZLE_META')} />
-                <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxPuzzle/${this.id}`} />
+                <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxpuzzle/${this.id}`} />
                 <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-puzzle/${this.id}`} />
 
 

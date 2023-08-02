@@ -6,7 +6,7 @@ export default class LogiqueTri extends AccesDonnees
 {
     constructor(id)
     {
-        super('jeuxTri',id)
+        super('jeuxtri',id)
     }
 
   

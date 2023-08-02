@@ -34,7 +34,7 @@ class JeuxTri extends Component {
             this.temps = this.logiqueTri.temps;
             this.dureeJeu = Date.now();
             this.chemin = "";
-            addGame('jeuxTri', this.id);
+            addGame('jeuxtri', this.id);
    
 
     }
@@ -81,7 +81,7 @@ class JeuxTri extends Component {
             <Helmet>
                 <title>{intl.get('TRI_TITLE')}</title>
                 <meta name="description" content={intl.get('TRI_META')} />
-                <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxTri/${this.id}`} />
+                <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxtri/${this.id}`} />
                 <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-sorting/${this.id}`} />
 
             </Helmet>

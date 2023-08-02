@@ -43,7 +43,7 @@ class JeuxCompte extends Component {
             maxCount: 1,
           });
 
-          addGame('jeuxCompte', this.id);
+          addGame('jeuxcompte', this.id);
     
         
     }
@@ -196,7 +196,7 @@ class JeuxCompte extends Component {
             <Helmet>
           <title>{intl.get('META_COMPTE')}</title>
           <meta name="description" content={intl.get('META_COMPTE')} />
-          <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxCompte/${this.id}`}/>
+          <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxcompte/${this.id}`}/>
           <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-numbers/${this.id}`} />
           
                  </Helmet>

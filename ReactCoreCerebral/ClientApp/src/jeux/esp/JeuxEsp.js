@@ -28,7 +28,7 @@ class JeuEsp extends Component {
             this.cartes = this.LogiqueEsp.cartes;
             this.nbFautes = 0;
 
-            addGame('jeuxEsp', this.id);
+            addGame('jeuxesp', this.id);
 
         
     }
@@ -74,7 +74,7 @@ class JeuEsp extends Component {
                 <Helmet>
                     <title>{intl.get('ESP_TITLE')}(</title>
                     <meta name="description" content={intl.get('ESP_META')} />
-                    <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxEsp/${this.id}`} />
+                    <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxesp/${this.id}`} />
                     <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-cards/${this.id}`} />
                 </Helmet>
                 {this.state.affichageCarte ? <div className="espaceJeu espaceHaut">

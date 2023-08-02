@@ -43,7 +43,7 @@ class JeuxMemoryGame extends Component {
             fin : false
         };
   
-        addGame('jeuxMemoryGame', this.id);
+        addGame('jeuxmemorygame', this.id);
      
     
 

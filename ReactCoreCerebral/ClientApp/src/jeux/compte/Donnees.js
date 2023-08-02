@@ -7,7 +7,7 @@ export default class Donnees  extends AccesDonnees
 {
     constructor(id)
     {
-        super('jeuxCompte',id)
+        super('jeuxcompte',id)
     }
 
 

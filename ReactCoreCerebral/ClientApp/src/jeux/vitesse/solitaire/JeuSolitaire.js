@@ -91,7 +91,7 @@ class JeuSolitaire extends Component {
 
             </Helmet>
             <div> {this.state.afficheResultat ?
-                <Resultat score={this.state.score} typeExo='vitesseSolitaire'></Resultat> :
+                <Resultat score={this.state.score} typeExo='vitessesolitaire'></Resultat> :
                 <div className="espaceJeuMah"><div className="joueurMah"><GrilleJoueur grille={this.state.grille} taille={5} clickImage={this.clickImage}></GrilleJoueur></div>
                     <div className="infoFamille">
                         <h1 className="couleurTitre espaceHaut">La tuile solitaire</h1>

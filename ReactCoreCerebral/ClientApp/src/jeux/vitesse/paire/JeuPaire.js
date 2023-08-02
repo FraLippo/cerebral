@@ -100,7 +100,7 @@ class JeuPaire extends Component {
                 <meta name="description" content="Dans ce jeu simple et amusant vous devez arriver à mémoriser deux images consécutivement et déterminer si elles sont semblables." />
                
             </Helmet>
-            {this.state.afficheResultat ?  <Resultat score={this.state.score} typeExo='vitessePaire'></Resultat>  :
+            {this.state.afficheResultat ?  <Resultat score={this.state.score} typeExo='vitessepaire'></Resultat>  :
                <React.Fragment><h1 className="couleurTitre">Connaitre le précédent</h1>
                <div className="centre"><CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours></div>
                 <div className="gridSuite"><Icone numJeu={this.state.numJeu}  numero={this.state.numero}></Icone>

@@ -46,7 +46,7 @@ import FinEtape from '../concours/FinEtape';
             this.donneeJeu = this.donneeMath.donnees.info;
             this.dureeJeu = Date.now();
             this.initJeu();
-            addGame('jeuxMath', this.id);
+            addGame('jeuxmath', this.id);
         } else {
             alert("Désolé, il y a un problème.")
             window.location.href = "/";

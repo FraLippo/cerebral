@@ -91,7 +91,7 @@ return <React.Fragment>
             <title>Le jeu des différences</title>
             <meta name="description" content="Un jeu simple où vous devez rapidement trouver les différences entre plusieurs dessins." />
         </Helmet>
-        {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitesseIntrus'></Resultat>:<div>
+        {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitesseintrus'></Resultat>:<div>
     <div className="centreGrilleCalMen"><Grille clicImage={this.clicImage} taille={3} type={this.state.typeImage} tabGrille={this.state.tabGrille}></Grille></div>
 <div className="centre" >Clique sur toutes les images qui <b>ne sont pas semblables</b> à l'image ci-dessous:</div>
 <div className="centre"><img src={Logique.obtenirImage(this.state.typeImage, this.state.imageVrai)}></img></div>

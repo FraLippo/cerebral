@@ -5,7 +5,7 @@ export default class LogiqueMath extends AccesDonnees
 {
     constructor(id)
     {
-        super('jeuxMath',id)
+        super('jeuxmath',id)
     }
 
 }

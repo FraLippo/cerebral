@@ -118,7 +118,7 @@ export default class JeuLettres extends Component {
                     <title>Les lettres manquantes</title>
                     <meta name="description" content="Un jeu de lettres simple et très addictif, il suffit de retrouver les lettres manquantes dans les mots." />
                 </Helmet>
-             { this.state.finJeu ? <Resultat score={this.score} typeExo='vitesseLettres'></Resultat> :
+             { this.state.finJeu ? <Resultat score={this.score} typeExo='vitesselettres'></Resultat> :
             <div className="jeuLettres">
                 {this.state.mots.map((tabLettres, i) => <div className="marge20" key={i + 1000}><Lettres tabLettres={tabLettres}></Lettres></div>)}
                 <div className='centrer marge20'>Quelle est la lettre qui se cache sous le carré <b>{this.state.couleur}</b> ?</div>

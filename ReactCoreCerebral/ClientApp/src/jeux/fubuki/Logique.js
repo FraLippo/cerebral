@@ -6,7 +6,7 @@ export default class Logique extends AccesDonnees
 {
     constructor(id)
     {
-        super('jeuxFubuki',id)
+        super('jeuxfubuki',id)
     }
 
     static constructionEmplacement(index, taille) {

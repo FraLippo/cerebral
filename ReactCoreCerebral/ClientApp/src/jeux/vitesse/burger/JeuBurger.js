@@ -67,7 +67,7 @@ export default function JeuBurger() {
                 <title>Préparer des burgers</title>
                 <meta name="description" content="Un jeu simple et amusant pour entrainer son cerveau en concevant des burgers ! " />
             </Helmet>
-        {finJeu ? <Resultat score={score} typeExo='vitesseBurger'></Resultat> :
+        {finJeu ? <Resultat score={score} typeExo='vitesseburger'></Resultat> :
          <React.Fragment>
            <div className="titreJeu">Préparer des burgers</div>
         <div className="jeuBurger">

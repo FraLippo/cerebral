@@ -120,7 +120,7 @@ class JeuOrdre extends Component {
             {!this.state.finJeu ? <React.Fragment><div className="fontMoyenne couleurTitre">Remettre les nombres dans l'ordre</div><div className="jeuOrdre"><div className="centre">
                 {this.state.afficheRebours && <CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours>}</div><div className="containerOrdre">{this.state.donnees.map((el, i) => <Pion key={el.ordre} donnee={el} click={this.clickPion} test={this.state.test}></Pion>)}
                     <div className="ligneGrise"></div>  </div>  {this.state.boutonSupprimer && <div className='centre'><Bouton click={this.clickBouton}></Bouton></div>}</div>
-            </React.Fragment> : <Resultat score={this.state.score} typeExo='vitesseOrdre'></Resultat>}
+            </React.Fragment> : <Resultat score={this.state.score} typeExo='vitesseordre'></Resultat>}
         </div>)
     }
 

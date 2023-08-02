@@ -4,7 +4,7 @@ export default class LogiquePuzzleRotation extends AccesDonnees
 {
     constructor(id)
     {
-        super('jeuxPuzzleRotation',id)
+        super('jeuxpuzzlerotation',id)
     }
 
     obtenirInfo()

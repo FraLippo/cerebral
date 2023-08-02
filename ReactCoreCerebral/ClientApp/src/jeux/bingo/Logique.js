@@ -5,7 +5,7 @@ export default class Logique extends AccesDonnees {
 
 
     constructor(id) {
-        super('jeuxBingo', id)
+        super('jeuxbingo', id)
         if (this.donnees !== undefined) {
             this.nbJoueurs = this.donnees.info.nbJoueurs;
             this.taille = this.donnees.info.taille;

@@ -74,7 +74,7 @@ class JeuCouleur extends Component {
                     <title>Le jeu des couleurs</title>
                     <meta name="description" content="Un jeu simple à comprendre mais difficile à mettre en pratique pour entrainer son cerveau à reconnaitre les couleurs. " />
                 </Helmet>
-            {this.state.afficheFin ? <Resultat score={this.state.score} typeExo='vitesseCouleur'></Resultat>:<React.Fragment><div>Score : {this.state.score}
+            {this.state.afficheFin ? <Resultat score={this.state.score} typeExo='vitessecouleur'></Resultat>:<React.Fragment><div>Score : {this.state.score}
         <div className="compteReboursVitesse"><CompteRebours finTimer={this.finTimer} temps={40}></CompteRebours></div>
         </div><div className="jeuCouleur"><div>Le mot dans la case du bas est <b>écrit</b> en :</div>
         <div className="caseCouleur">{this.state.motHaut}</div>

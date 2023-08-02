@@ -16,29 +16,29 @@ function verifierStatus(status) {
 function nomType(type) {
 
     switch (type) {
-        case "vitesseCouleur":
+        case "vitessecouleur":
             return "Reconnaissance des couleurs";
-        case "vitesseSolitaire":
+        case "vitessesolitaire":
             return "La tuile solitaire";
-        case "vitesseOrdre":
+        case "vitesseordre":
             return "Les nombres en ordre";
-        case "vitesseIntrus":
+        case "vitesseintrus":
             return "Supprimer les images différentes";
-        case "vitessePaire":
+        case "vitessepaire":
             return "Se souvenir de l'image précedente";
-        case "vitesseCalcul":
+        case "vitessecalcul":
             return "La grille de calcul mental";
-        case "vitesseOperation":
+        case "vitesseoperation":
             return "Les 4 opérations";
-        case "vitesseChemin":
+        case "vitessechemin":
             return "Retrouver son chemin";
-        case "vitesseBurger":
+        case "vitesseburger":
             return "Préparer des burgers";
-        case "vitesseLettres":
+        case "vitesselettres":
             return "Lettres manquantes";
-        case "vitesseNotes":
+        case "vitessenotes":
             return "L'oreille musicale";
-        case "vitesseMemoire":
+        case "vitessememoire":
             return "Se souvenir des cercles";
 
 
@@ -47,6 +47,6 @@ function nomType(type) {
             return "";
     }
 }
-let tabJeu = ["vitesseMemoire", "vitesseNotes", "vitesseLettres", "vitesseBurger", "vitesseCouleur", "vitesseSolitaire", "vitesseOrdre", "vitesseIntrus", "vitessePaire", "vitesseCalcul", "vitesseOperation", "vitesseChemin"]
+let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire", "vitessecalcul", "vitesseoperation", "vitessechemin"]
 
 export { verifierStatus, nomType, tabJeu };

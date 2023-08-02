@@ -37,7 +37,7 @@ class JeuxSimon extends Component {
             this.finJeu = false;
             this.timer = setTimeout(this.finTimer, this.intervalle);
  
-            addGame('jeuxSimon', this.id);
+            addGame('jeuxsimon', this.id);
         
         }
     }

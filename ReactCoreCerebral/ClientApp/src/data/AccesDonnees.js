@@ -43,48 +43,49 @@ export default class AccesDonnees {
 
 
     static obtenirFichier(nom) {
+      
         switch (nom) {
-            case 'jeuxMahJong':
+            case 'jeuxmahjong':
                 return donneesJeuxMah;
-            case 'jeuxMemoireDessin':
+            case 'jeuxmemoiredessin':
                 return donneesjeuxDessin;
-            case 'jeuxCompte':
+            case 'jeuxcompte':
                 return donneesJeuxCompte;
-            case 'jeuxEsp':
+            case 'jeuxesp':
                 return donneesJeuxEsp;
-            case 'jeuxOrdre':
+            case 'jeuxordre':
                 return donneesJeuxOrdre
-            case 'jeuxPuzzle':
+            case 'jeuxpuzzle':
                 return donneesJeuxPuzzle;
-            case 'jeuxPuzzleRotation':
+            case 'jeuxpuzzlerotation':
                 return donneesJeuxRotation;
-            case 'jeuxSuite':
+            case 'jeuxsuite':
                 return donneesJeuxSuite;
-            case 'jeuxTri':
+            case 'jeuxtri':
                 return donneesJeuxTri;
-            case 'jeuxFamille':
+            case 'jeuxfamille':
                 return donneesJeuxFamille;
-            case 'jeuxBingo':
+            case 'jeuxbingo':
                 return donneesJeuxBingo;
-            case 'jeuxPyramide':
+            case 'jeuxpyramide':
                 return donneesJeuxPyramide;
-            case 'jeuxFubuki':
+            case 'jeuxfubuki':
                 return donneesJeuxFubuki;
-            case 'jeuxMath':
+            case 'jeuxmath':
                 return donneesJeuxMath;
-            case 'jeuxSimon':
+            case 'jeuxsimon':
                 return donneesJeuxSimon;
-            case 'jeuxMemoryGame':
+            case 'jeuxmemorygame':
                 return donneesJeuxMemoryGame;
             case 'picross':
                 return donneesJeuxPicross;
             case 'binero':
                 return donneesJeuxBinero;
-            case 'defiCalcul':
+            case 'deficalcul':
                 return donneesConcoursCalcul;
-            case 'defiCerebral':
+            case 'deficerebral':
                 return donneesConcoursCerebral;
-            case 'defiMot':
+            case 'defimot':
                 return donneesConcoursMot;
 
             default:
@@ -97,7 +98,7 @@ export default class AccesDonnees {
 
     static obtenirInfoJeux(nom) {
         const fichier = AccesDonnees.obtenirFichier(nom);
-   
+
         return fichier.map(x => ({ id: x.id, titre: x.titre }));
     }
 

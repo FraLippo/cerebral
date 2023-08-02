@@ -83,7 +83,7 @@ class JeuxMemoire extends Component {
                 <title>Le jeu de la mémoire</title>
                 <meta name="description" content="Un jeu de rapidité et de mémorisation pour tous les âges et toute la famille, le principe est simple : se souvenir de ce que l'on vient de voir." />
             </Helmet>
-           {this.state.afficheResultat ?  <Resultat score={this.score} typeExo='vitesseMemoire'></Resultat>  :
+           {this.state.afficheResultat ?  <Resultat score={this.score} typeExo='vitessememoire'></Resultat>  :
            <React.Fragment>  <div className='titreJeu'>Le jeu de la mémoire</div>
             <div className="espaceTitreBas">Vous devez mémoriser les cercles qui s'affichent pour ensuite les reproduire à l'identique.</div> 
              <div className='jeuTimerMemoireV'>     

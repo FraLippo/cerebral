@@ -47,18 +47,18 @@ export default class ChiffreLetttre extends Component {
 
             <div> <Card title={<span style={{ whiteSpace: 'normal' }}>Le mot le plus long</span>}>
               <ul>
-                <li><Link to={"/JeuxLettres/0/1/1"}>Le mot le plus long niveau facile contre l'ordinateur.</Link></li>
-                <li><Link to={"/JeuxLettres/0/1/2"}>Le mot le plus long niveau intermédiaire contre l'ordinateur.</Link></li>
-                <li><Link to={"/JeuxLettres/0/1/3"}>Le mot le plus long niveau difficile contre l'ordinateur.</Link></li>
-                <li><Link to={"/JeuxLettres/0/1/4"}>Le mot le plus long niveau très difficile contre l'ordinateur.</Link></li>
-                {/* <li><Link to={"/JeuxLettres/0/1/5"}>Le mot le plus long niveau impossible contre l'ordinateur (mot de 9 lettres possibles).</Link></li> */}
+                <li><Link to={"/jeuxlettres/0/1/1"}>Le mot le plus long niveau facile contre l'ordinateur.</Link></li>
+                <li><Link to={"/jeuxlettres/0/1/2"}>Le mot le plus long niveau intermédiaire contre l'ordinateur.</Link></li>
+                <li><Link to={"/jeuxlettres/0/1/3"}>Le mot le plus long niveau difficile contre l'ordinateur.</Link></li>
+                <li><Link to={"/jeuxlettres/0/1/4"}>Le mot le plus long niveau très difficile contre l'ordinateur.</Link></li>
+                {/* <li><Link to={"/jeuxlettres/0/1/5"}>Le mot le plus long niveau impossible contre l'ordinateur (mot de 9 lettres possibles).</Link></li> */}
               </ul>
               {/* <p>La fréquentation de ce site n'est pas suffisante pour trouver des joueurs en ligne. Vous devez inviter vos propres amis.
             Il suffit de leur envoyer ce lien <b>{process.env.REACT_APP_URL_JEUXLETTRES}/{this.gameNumber}/2/2 </b> <span className="copier" onClick={this.copier}>copier</span> par mail ou par messagerie.
             Ensuite vous devez attendre votre ou vos camarades de jeu (4 au maximum) ou revenir plus tard quand ils seront disponibles, un message est affiché dès qu'un autre joueur vient dans la partie.
             Le lien vers votre salle de jeu ne change pas, vous pouvez venir jouer quand vous le souhaitez, il suffit de se synchroniser avec vos amis pour jouer en même temps.</p>
               <ul>
-                <li><Link to={"/JeuxLettres/" + this.gameNumber + "/2/2"}>Jouer au mot le plus long niveau avec vos amis en ligne.</Link></li>
+                <li><Link to={"/jeuxlettres/" + this.gameNumber + "/2/2"}>Jouer au mot le plus long niveau avec vos amis en ligne.</Link></li>
               </ul> */}
             </Card>
             </div>

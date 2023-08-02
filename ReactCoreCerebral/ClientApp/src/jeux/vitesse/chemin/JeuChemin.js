@@ -84,7 +84,7 @@ export default class JeuChemin extends Component {
                 <meta name="description" content="Un jeu simple d'entrainement cérébral. Retrouvez la sortie en suivant les flêches." />
             </Helmet>
             {this.state.finJeu ?
-                <Resultat score={this.state.score} typeExo='vitesseChemin'></Resultat> :
+                <Resultat score={this.state.score} typeExo='vitessechemin'></Resultat> :
                 <div> <div className="titreJeu">Retrouver son chemin</div>
                     <div>Score : {this.state.score}</div>
                     <div className="centreGrilleChemin"><div className="grilleChemin"><Grille tabGrille={this.state.tabGrille} taille={this.taille} clic={this.clic}></Grille>

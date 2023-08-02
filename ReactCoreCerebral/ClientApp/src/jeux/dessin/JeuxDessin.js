@@ -38,7 +38,7 @@ class JeuxDessin extends Component {
             };
 
           
-            addGame('jeuxMemoireDessin', this.id);
+            addGame('jeuxmemoiredessin', this.id);
         
     }
 
@@ -98,7 +98,7 @@ class JeuxDessin extends Component {
                 <Helmet>
                     <title>{intl.get('DESSIN_TITLE')}</title>
                     <meta name="description" content={intl.get('DESSIN_META')} />
-                    <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxMemoireDessin/${this.id}`} />
+                    <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxmemoiredessin/${this.id}`} />
                     <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-drawing/${this.id}`} />
 
                 </Helmet>

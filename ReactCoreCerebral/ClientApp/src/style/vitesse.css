@@ -573,3 +573,27 @@ a:active {
 
     }
 }
+
+/* écrire */
+
+.ligneEcrire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.caseEcrire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: pre;
+    font-size: 1em;
+    color: black;
+
+}
+
+.caseEcrire1 {
+    color: gray;
+}

@@ -80,7 +80,7 @@ export default class JeuChemin extends Component {
 
         return <div>
             <Helmet>
-                <title>Retrouver son chemin</title>
+                <title>Trouver son chemin</title>
                 <meta name="description" content="Un jeu simple d'entrainement cérébral. Retrouvez la sortie en suivant les flêches." />
             </Helmet>
             {this.state.finJeu ?

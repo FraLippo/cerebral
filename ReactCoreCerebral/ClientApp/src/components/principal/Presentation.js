@@ -6,6 +6,7 @@ import '../../style/jeux.css';
 import border from '../../images/border.png';
 import presentation from '../../images/presentation.webp'
 import { Helmet } from 'react-helmet';
+import concours from '../../images/presentation.jpg';
 
 
 import Tableau from '../commun/Tableau';
@@ -28,7 +29,8 @@ export default class Presentation extends Component {
       <div className="centre"><img src={border} width="100" height="41" alt="bordure"></img></div>
  
       <div>
-        <h1 className="titre couleurTitre centre">Les défis</h1>
+      
+     <h1 className="titre couleurTitre centre">Les défis</h1>
         <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
         <p>Un défi est un ensemble de petits jeux et tests, toutes vos compétences et votre agilité seront nécessaires pour arriver au bout de ces défis.</p>
             <p>Si vous arrivez à terminer un défi à la première tentative votre prénom sera inscrit sur notre tableau honneur.</p>
@@ -66,7 +68,11 @@ export default class Presentation extends Component {
       </div>
 <Ad></Ad>
       <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
-<h1 className="titre centre">Les tests</h1>
+      <a href="https://cerebral.evalquiz.com">
+      <div className="centre "><img src={concours} className="img-responsive" width="600" height="337" alt="présentation concours jeu cognitif"></img></div>
+      <div className="centre fontMoyenne">Participer au concours</div>  </a> 
+      <div className="centre espaceHaut"><img src={border} alt="bordure"  width="100" height="41"></img></div>
+<h1 className="titre centre">Tous les tests</h1>
     <Row className="margeHaut">
     <Col xs={24} sm={12}><Link to="/calcul-mental"><div className="tuile">Calcul mental</div></Link></Col>
     <Col xs={24} sm={12}><Link to="/puzzle"><div className="tuile">Puzzle</div></Link></Col>

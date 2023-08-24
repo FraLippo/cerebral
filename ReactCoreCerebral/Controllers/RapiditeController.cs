@@ -28,11 +28,15 @@ namespace ReactCoreCerebral.Controllers
             var ancienResultat = _dbTableau.Resultat2019.FirstOrDefault(x => x.prenom == prenom && x.typeExo == typeExo);
             if (ancienResultat != null)
             {
-                if (score > ancienResultat.nbFaute)
+                DateTime now = DateTime.Now;
+                var startDate = new DateTime(now.Year, now.Month, 1);
+                var endDate = startDate.AddMonths(1).AddDays(-1);
+                if (score > ancienResultat.nbFaute || !(ancienResultat.date >= startDate && ancienResultat.date <= endDate))
                 {
                     ancienResultat.date = DateTime.Now;
                     ancienResultat.nbFaute = score;
                 }
+
 
             }
             else

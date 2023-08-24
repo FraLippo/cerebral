@@ -7,6 +7,7 @@ import border from '../../images/border.png';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import pres from '../../images/pres.png';
+import record from '../../images/record.png';
 import Podium from '../../jeux/vitesse/commun/Podium';
 import { verifierStatus } from '../../jeux/vitesse/commun/utilitaire';
 import { moisEnFrancais } from '../commun/utilitaire';
@@ -76,11 +77,13 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <Podium tabPrenoms={this.state.tabPrenoms}></Podium>
       <div className="centre fontMoyenne"><Link to='classementmois'>Le classement du mois</Link></div>
       <p>Bravo à Gwendal, le gagnant du mois de juin et à Meneleus, le gagnant du mois de juillet avec le record (700 points).</p>
+      <div className="centre"><img  className="img-responsive" src={record} width="600" height="337" alt="record du jeu"></img></div>
+    
       <h1>Nos jeux d'entrainement cérébral</h1>
       <p>Tous nos jeux en ligne sont gratuits et ne nécessitent pas d'inscription. Vous pouvez recommencer autant de fois que vous le désirez. Nous demandons simplement le prénom pour établir des classements. </p>
      
       <div className="presentationJeu marge20">
-        <div className="centre fontMoyenne titreVitesse" style={{backgroundColor: 'yellow'}}><Link to='vitessememoire'>Se souvenir des cercles (nouveau)</Link></div>
+        <div className="centre fontMoyenne titreVitesse" ><Link to='vitessememoire'>Se souvenir des cercles</Link></div>
         <p className="marge20">But du jeu : On vous montre un certain nombre de cercles dans une grille, vous devez mémoriser leurs emplacements et reproduire ce que vous venez de voir dans une nouvelle grille. Le temps alloué est de 90 secondes, chaque cercle trouvé rapporte 1 point, il n'y a pas de pénalité en cas d'erreur.</p>
         <ul>
         <li>Améliore la concentration et la mémoire</li>
@@ -107,7 +110,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
      
       <div className="presentationJeu marge20">
         <div className="centre fontMoyenne titreVitesse" ><Link to='vitessenotes'>L'oreille musicale</Link></div>
-        <p className="marge20">But du jeu : Retrouver une note inconnue. On vous joue une note inconnue représentée par un point d'interrogation. Vous devez retrouver à quelle note elle correspond simplement avec votre oreille. Vous pouvez réécouter les notes autant de fois que vous le désirez. Vous n'avez pas besoin de connaissance musicale pour jouer, seule votre oreille est mise à contribution. Tout le monde a la capacité de reconnaitre les notes par contre certains doivent s'entrainer plus que d'autres.  Chaque note trouvée rapporte 7 points. Le temps alloué est de 90 secondes.</p>
+        <p className="marge20">But du jeu : Retrouver une note inconnue. L'ordinateur joue une note inconnue représentée par un point d'interrogation. Vous devez retrouver à quelle note elle correspond simplement avec votre oreille. Vous pouvez réécouter les notes autant de fois que vous le désirez. Vous n'avez pas besoin de connaissance musicale pour jouer, seule votre oreille est mise à contribution. Tout le monde a la capacité de reconnaitre les notes par contre certains doivent s'entrainer plus que d'autres.  Chaque note trouvée rapporte 7 points. Le temps alloué est de 90 secondes.</p>
         <ul>
         <li>Développe l'oreille musicale</li>
           <li>Améliore la précision musicale </li>

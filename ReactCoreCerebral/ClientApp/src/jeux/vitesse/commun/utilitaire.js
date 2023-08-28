@@ -40,6 +40,9 @@ function nomType(type) {
             return "L'oreille musicale";
         case "vitessememoire":
             return "Se souvenir des cercles";
+        case "vitesseecrire":
+            return "La dactylographie";
+
 
 
 
@@ -47,6 +50,6 @@ function nomType(type) {
             return "";
     }
 }
-let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire", "vitessecalcul", "vitesseoperation", "vitessechemin"]
+let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire", "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire"]
 
 export { verifierStatus, nomType, tabJeu };

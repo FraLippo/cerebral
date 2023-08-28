@@ -54,7 +54,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
     return <div>
       <Helmet>
         <title>Sport cérébral et jeux cognitifs gratuits</title>
-        <meta name="description" content="Des jeux de réflexion pour faire travailler son cerveau tout en s'amusant. Tous les jeux sont accessibles en ligne gratuitement, ils peuvent être pratiqués aussi bien par les enfants que les adultes." />
+        <meta name="description" content="Des jeux de réflexion pour faire travailler son cerveau tout en s'amusant. Tous les jeux sont accessibles en ligne gratuitement, ils peuvent être pratiqués aussi bien par les enfants que les adultes et les seniors." />
       </Helmet>
       <h1 className="titre centre couleurTitre">Sport cérébral et jeux cognitifs</h1>
       <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
@@ -79,9 +79,24 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <p>Bravo à Gwendal, le gagnant du mois de juin et à Meneleus, le gagnant du mois de juillet avec le record (700 points).</p>
       <div className="centre"><img  className="img-responsive" src={record} width="600" height="337" alt="record du jeu"></img></div>
     
-      <h1>Nos jeux d'entrainement cérébral</h1>
+      <h1>Nos jeux cognitifs</h1>
       <p>Tous nos jeux en ligne sont gratuits et ne nécessitent pas d'inscription. Vous pouvez recommencer autant de fois que vous le désirez. Nous demandons simplement le prénom pour établir des classements. </p>
      
+      <div className="presentationJeu marge20">
+        <div className="centre fontMoyenne titreVitesse" ><Link to='vitesseecrire'>La dactylographie</Link></div>
+        <p className="marge20">But du jeu : Taper une série de mots le plus vite possible au clavier. Le temps alloué est de 30 secondes pour 30 mots. Chaque mot correctement saisi augmente votre score de 2 points, il n'y a pas de pénalité si vous ne tapez pas la bonne lettre. Si vous réussissez à écrire les 30 mots avant la fin du temps (belle performance) vous obtenez un bonus de 20 points.
+        Vous pouvez consulter ce <a href="https://fr.wikihow.com/apprendre-la-dactylographie">wiki</a> si vous désirez améliorer votre cadence de frappe. </p>
+        <ul>
+        <li>Améliore la productivité</li>
+          <li>Améliore la communication en ligne</li>
+          <li>Réduction de la fatigue physique</li>
+         
+
+        </ul>
+        <div className="centre fontMoyenne"><Link to='classement/vitesseecrire'>Classement</Link></div>
+      </div>
+
+
       <div className="presentationJeu marge20">
         <div className="centre fontMoyenne titreVitesse" ><Link to='vitessememoire'>Se souvenir des cercles</Link></div>
         <p className="marge20">But du jeu : On vous montre un certain nombre de cercles dans une grille, vous devez mémoriser leurs emplacements et reproduire ce que vous venez de voir dans une nouvelle grille. Le temps alloué est de 90 secondes, chaque cercle trouvé rapporte 1 point, il n'y a pas de pénalité en cas d'erreur.</p>

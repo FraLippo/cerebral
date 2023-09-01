@@ -2,6 +2,7 @@
     border-radius: 10px;
     background-color: #ffff8f;
     padding: 10px 0px;
+    font-family: cursive;
 }
 
 .carteVitesse {
@@ -605,6 +606,8 @@ width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
+   flex-flow: column;
  }
   
   .game-board {
@@ -620,33 +623,36 @@ width: 100%;
     background-color: white;
     position: relative;
     overflow: hidden;
+    border-bottom: 5px solid white;
   }
   
   .active {
     background-color: #8bc34a;
   }
   
-  .mole {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 5px;
+  /* .mole {
+  
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     animation: popUp 1.5s ease-out  forwards, popDown 1s ease-in 1.5s forwards;
   
-  }
+  } */
   .success {
    border-bottom: 5px solid green; /* Couleur verte en cas de succès */
-    animation: fadeOut 0.3s ease-in forwards;
+    animation: fadeOut 0.5s ease-in forwards;
   }
+
+  .error {
+    border-bottom: 5px solid red; /* Couleur rouge en cas de d'erreur */
+     animation: fadeOut 0.5s ease-in forwards;
+   }
 
   .mole-image {
     width: 98px;
-
+    pointer-events: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -658,9 +664,11 @@ width: 100%;
   
   @keyframes fadeOut {
     to {
-      border-bottom:  white;
+      border-bottom:  5px solid white;
     }
   }
+
+  
 
   @keyframes popUp {
     0% {
@@ -682,3 +690,107 @@ width: 100%;
       transform: translate(-50%, 120%);
     }
   }
+
+  /* tresor */
+  
+  .jeuTresor
+  {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     user-select: none;
+    flex-flow: row;
+  }
+.infoTresor
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+   flex-flow: column;
+}
+.nombreTresor
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grilleTresor {
+
+    font-size: 1.2em;
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-template-rows: repeat(7, 50px)
+}
+
+.caseTresor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #24dde7;
+}
+.flecheTresor:active
+{
+
+        transform: translateY(1px);
+}
+
+.grilleCroix {
+    margin-left: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(4, 50px);
+    grid-template-areas: 
+    ". haut . "
+    "gauche efface droit"
+    ". bas ."
+    "fin fin fin";
+}
+
+.hautTresor
+{
+    grid-area: haut;
+}
+.finTresor
+{
+    grid-area: fin;
+}
+
+.gaucheTresor
+{
+    grid-area: gauche;
+}
+
+.droitTresor
+{
+    grid-area: droit;
+}
+.basTresor
+{
+    grid-area: bas;
+}
+.effaceTresor
+{
+    grid-area: efface;
+}
+
+.directionsTresor
+{
+    min-height: 60px;
+ display: flex;
+  pointer-events: none;
+   flex-flow: row;
+   flex-wrap: wrap;
+}
+
+
+@media screen and (max-width: 700px) {
+    .jeuTresor
+    {
+      flex-flow: column;
+    }
+
+    .grilleCroix {
+        margin-left: 0px;
+    }
+}

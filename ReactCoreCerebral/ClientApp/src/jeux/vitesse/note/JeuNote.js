@@ -44,7 +44,6 @@ export default class JeuNote extends Component {
         let tabNoteX = [];
         let nombre = Math.floor(Math.random() * this.state.tabNotes.length);
         tabNoteX.push(this.state.tabNotes[nombre].note);
-        console.log(tabNoteX[0]);
         this.setState({ tabNotesInconnues: tabNoteX })
     }
     async componentDidMount() {
@@ -61,13 +60,13 @@ export default class JeuNote extends Component {
         });
 
         this.piano1.loaded().then(() => {
-            console.log('activated1');
+          
         });
         this.piano2.loaded().then(() => {
-            console.log('activated2');
+         
         });
         this.piano3.loaded().then(() => {
-            console.log('activated3');
+       
         });
         this.choisirNote();
 
@@ -99,8 +98,8 @@ export default class JeuNote extends Component {
         else if (this.nbPartie > 5) {
             this.type = 2;
         }
-        console.log(this.type);
-        console.log(this.nbPartie);
+   
+   
         this.setState({
             tabNotes: nouveauTabNote,
 
@@ -148,14 +147,14 @@ export default class JeuNote extends Component {
             }
         }
         if (victoire) {
-            message.success('Bravo', this.reset);
+            message.success('👍 Super', this.reset);
             this.score += 7;
             this.nbPartie++;
         }
         else {
             message.error('Erreur', this.reset);
             nouveauTabNote[indexBonneNote].noteEnCours = 2;
-            console.log(nouveauTabNote);
+      
             this.setState({
                 tabNotes: nouveauTabNote
             })

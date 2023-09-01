@@ -30,8 +30,8 @@ namespace ReactCoreCerebral.Controllers
             {
                 DateTime now = DateTime.Now;
                 var startDate = new DateTime(now.Year, now.Month, 1);
-                var endDate = startDate.AddMonths(1).AddDays(-1);
-                if (score > ancienResultat.nbFaute || !(ancienResultat.date >= startDate && ancienResultat.date <= endDate))
+                var endDate = startDate.AddMonths(1);
+                if (score > ancienResultat.nbFaute || !(ancienResultat.date >= startDate && ancienResultat.date < endDate))
                 {
                     ancienResultat.date = DateTime.Now;
                     ancienResultat.nbFaute = score;
@@ -59,9 +59,9 @@ namespace ReactCoreCerebral.Controllers
         {
             DateTime now = DateTime.Now;
             var startDate = new DateTime(now.Year, now.Month, 1);
-            var endDate = startDate.AddMonths(1).AddDays(-1);
+            var endDate = startDate.AddMonths(1);
             Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
-            var classement = _dbTableau.Resultat2019.Where(x => x.typeExo == typeExo && x.date >= startDate && x.date <= endDate).OrderByDescending(x => x.nbFaute).ThenByDescending(x => x.date).Take(20).
+            var classement = _dbTableau.Resultat2019.Where(x => x.typeExo == typeExo && x.date >= startDate && x.date < endDate).OrderByDescending(x => x.nbFaute).ThenByDescending(x => x.date).Take(20).
                 Select(x => new DTOClassementScore() { Cle = 0, Prenom = x.prenom, Date = x.date.HasValue ? x.date.Value.ToShortDateString() : "", Score = x.nbFaute }).ToList();
             for (int i = 0; i < classement.Count; i++)
             {
@@ -76,12 +76,12 @@ namespace ReactCoreCerebral.Controllers
         {
             DateTime now = DateTime.Now;
             var startDate = new DateTime(now.Year, now.Month, 1);
-            var endDate = startDate.AddMonths(1).AddDays(-1);
+            var endDate = startDate.AddMonths(1);
             Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
 
             var classement =
                              (from sc in _dbTableau.Resultat2019
-                              where sc.noExo == 999 && sc.date >= startDate && sc.date <= endDate
+                              where sc.noExo == 999 && sc.date >= startDate && sc.date < endDate
                               group sc by sc.prenom into grouping
                               select new DTOClassement
                               {
@@ -115,7 +115,7 @@ namespace ReactCoreCerebral.Controllers
                 classement[i].Cle = i;
             }
 
-            var classementsJoueur = _dbTableau.Resultat2019.Where(x => x.noExo == 999 && x.date >= startDate && x.date <= endDate && x.prenom == prenom).Select( x => new DTOResultatJoueur() { NomJeu = x.typeExo, Score = x.nbFaute}).ToList();
+            var classementsJoueur = _dbTableau.Resultat2019.Where(x => x.noExo == 999 && x.date >= startDate && x.date < endDate && x.prenom == prenom).Select( x => new DTOResultatJoueur() { NomJeu = x.typeExo, Score = x.nbFaute}).ToList();
 
             DTOInfoClassement DTOInfoJoueur = new() { ClassementJoueurs = classement.Take(10), Classement = positionJoueur, Resultats = classementsJoueur, ScoreTotal = scoreJoueur };                      
             return DTOInfoJoueur;
@@ -125,12 +125,12 @@ namespace ReactCoreCerebral.Controllers
         {
             DateTime now = DateTime.Now;
             var startDate = new DateTime(now.Year, now.Month, 1);
-            var endDate = startDate.AddMonths(1).AddDays(-1);
+            var endDate = startDate.AddMonths(1);
             Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
 
             var classement =
                              (from sc in _dbTableau.Resultat2019
-                              where sc.noExo == 999 && sc.date >= startDate && sc.date <= endDate
+                              where sc.noExo == 999 && sc.date >= startDate && sc.date < endDate
                               group sc by sc.prenom into grouping
                               select new DTOClassement
                               {

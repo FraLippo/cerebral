@@ -14,7 +14,6 @@ export default class Logique {
 
     obtenirCouleur()
     {
-        console.log(this.tabCouleur);
         let index = this.tabCouleur[0].indexOf('L');
         return this.tabCouleur[0].substring(0,index);
     }
@@ -56,6 +55,7 @@ export default class Logique {
         let lettres = [];
         do {
             lettres = this.construitsTableauLettres(nbLettres);
+            
             lesMots = this.construitListeMot(lettres);
 
         } while (lesMots.length < nbMots)
@@ -95,7 +95,6 @@ export default class Logique {
             tabMotInfo.push(nouveauMot);
         }
         this.infoJeu.tabMotsInfo = tabMotInfo;
-        console.log(tabMotInfo)
     
     }
 

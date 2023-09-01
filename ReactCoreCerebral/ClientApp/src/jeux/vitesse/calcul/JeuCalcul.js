@@ -51,7 +51,7 @@ export default class JeuCalcul extends Component
         {
             this.nbDecouverte++;
             nouveauTabGrille[no] = "";
-            score+=2;
+            score+=3;
 
         }
         else

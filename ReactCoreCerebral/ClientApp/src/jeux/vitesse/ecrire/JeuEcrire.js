@@ -42,7 +42,7 @@ export default class JeuEcrire extends Component {
         if (position >= this.state.tabLettres.length - 1) {
             this.setState({
                 finJeu: true,
-                score: this.state.score + 22
+                score: this.state.score + 52
             });
         }
     }

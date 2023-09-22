@@ -29,7 +29,8 @@ export default class Presentation extends Component {
       <div className="centre"><img src={border} width="100" height="41" alt="bordure"></img></div>
  
       <div>
-      
+      <div className="centre marge20 fontMoyenne"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdryjIBFEJam5wua6P2v6EHUafayIQrV4d4_QjHUjiEe7878w/viewform?usp=pp_url">Venez donner votre avis !</a></div>
+
      <h1 className="titre couleurTitre centre">Les défis</h1>
         <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
         <p>Un défi est un ensemble de petits jeux et tests, toutes vos compétences et votre agilité seront nécessaires pour arriver au bout de ces défis.</p>

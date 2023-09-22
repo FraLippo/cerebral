@@ -76,6 +76,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <p>Le podium montre les 3 premiers du mois en cours, le podium peut changer à tout moment, tous les résultats des jeux de rapidité sur cette page sont pris en compte.</p>
       <Podium tabPrenoms={this.state.tabPrenoms}></Podium>
       <div className="centre fontMoyenne marge20"><Link to='classementmois'>Le classement du mois</Link></div>
+      <h2 className='centre'>Sondage en cours</h2>
+      <div className="centre marge20"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdryjIBFEJam5wua6P2v6EHUafayIQrV4d4_QjHUjiEe7878w/viewform?usp=pp_url">Venez donner votre avis !</a></div>
       <h3>Les précédents gagnants</h3>
       <ul>
       <li>Juin : Gwendal</li>
@@ -86,9 +88,19 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <Ad></Ad>
       <h1>Nos jeux cognitifs</h1>
       <p>Tous nos jeux en ligne sont gratuits et ne nécessitent pas d'inscription. Vous pouvez recommencer autant de fois que vous le désirez. Nous demandons simplement le prénom pour établir des classements. </p>
-     
       <div className="presentationJeu marge20">
-        <div className="centre fontMoyenne titreVitesse" >🪙<Link to='vitessetresor'> La chasse au trésor (nouveau)</Link></div>
+        <div className="centre fontMoyenne titreVitesse" >⊕<Link to='vitesseaddition'> L'addition XOR (nouveau)</Link></div>
+        <p className="marge20">But du jeu : Faire la somme de deux grilles dans une troisième grille. L'addition se fait case par case comme une addition normale sauf que si vous additionnez deux cases bleues le résultat est une case blanche. Le terme XOR (ou exclusif) désigne un opérateur logique en informatique. Pour ceux qui veulent en savoir plus sur <a href="https://www.techno-science.net/definition/6742.html">l'opérateur XOR</a>. Si vous terminez une grille vous gagnez 3 points par bonne réponse. Le temps alloué est de 90 secondes. </p>
+        <div>Intêret du jeu :</div>
+        <ul>
+          <li>Améliore la perception spatiale</li>
+          <li>Stimule le cerveau</li>
+          <li>Découverte de la logique booléenne</li>
+        </ul>
+        <div className="centre fontMoyenne"><Link to='classement/vitesseaddition'>Classement</Link></div>
+      </div>
+      <div className="presentationJeu marge20">
+        <div className="centre fontMoyenne titreVitesse" >🪙<Link to='vitessetresor'> La chasse au trésor</Link></div>
         <p className="marge20">But du jeu : Ramasser le plus rapidement possible les pièces disséminées dans une grille en indiquant la direction des pièces à votre personnage. Chaque pièce récoltée vous fait gagner 2 points. Ramasser toutes les pièces ajoute un bonus de 2 points. Il y a un malus de 5 points si vous n'arrivez pas à ramasser toutes les pièces sur la grille. Le temps alloué est de 60 secondes. </p>
         <div>Intêret du jeu :</div>
         <ul>
@@ -99,7 +111,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       </div>
 
       <div className="presentationJeu marge20">
-        <div className="centre fontMoyenne titreVitesse" >🛑<Link to='vitessepanneaux'> Les panneaux routiers (nouveau)</Link></div>
+        <div className="centre fontMoyenne titreVitesse" >🛑<Link to='vitessepanneaux'> Les panneaux routiers</Link></div>
         <p className="marge20">But du jeu : Reconnaitre les types de panneaux routiers le plus rapidement possible avant qu'ils ne disparaissent.
         Dans ce jeu on considère 4 types de panneaux routiers : Danger, Obligation, Interdiction et Obligation. Il faut se baser sur la forme et la couleur pour pouvoir facilement les distinguer. Vous pouvez trouver des informations utiles sur ce <a href="https://www.codedelaroute.fr/cours-code-auto/circulation/comprendre-la-signalisation/circulation-types-de-panneaux">site</a>. Le score maximum possible est de 58 points.</p>
         <div>Intêret du jeu :</div>
@@ -115,7 +127,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
 
 
       <div className="presentationJeu marge20">
-        <div className="centre fontMoyenne titreVitesse" >📠 <Link to='vitesseecrire'>La dactylographie (nouveau)</Link></div>
+        <div className="centre fontMoyenne titreVitesse" >📠 <Link to='vitesseecrire'>La dactylographie</Link></div>
         <p className="marge20">But du jeu : Taper une série de mots le plus vite possible au clavier. Le temps alloué est de 30 secondes pour 30 mots. Chaque mot correctement saisi augmente votre score de 2 points, il n'y a pas de pénalité si vous ne tapez pas la bonne lettre. Si vous réussissez à écrire les 30 mots avant la fin du temps (belle performance) vous obtenez un bonus de 50 points !
         Vous pouvez consulter ce <a href="https://fr.wikihow.com/apprendre-la-dactylographie">wiki</a> si vous désirez améliorer votre cadence de frappe. </p>
         <div>Intêret du jeu :</div>

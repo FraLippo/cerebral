@@ -794,3 +794,90 @@ width: 100%;
         margin-left: 0px;
     }
 }
+
+/* addition */
+
+.grilleAddition {
+    font-size: 1.2em;
+    display: grid;
+    grid-template-columns: repeat(4, 30px);
+    grid-template-rows: repeat(4, 30px)
+}
+
+.pleinAddition
+{
+    background-color: blue;
+}
+
+.videAddition
+{
+    background-color: white;
+}
+
+.caseAdditionJoueur {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid brown;
+}
+
+.jeuAddition
+{
+    display: flex;
+    user-select: none;
+   flex-flow: row;
+}
+.plateauAddition
+{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   flex-flow: column;
+}
+
+.infoAddition
+{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+   flex-flow: column;
+}
+
+
+.caseGrilleAddition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid blueviolet;
+}
+
+@media screen and (max-width: 700px) {
+    .jeuAddition
+    {
+        display: flex;
+        user-select: none;
+       flex-flow: column;
+    }
+  
+    .plateauAddition
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       flex-flow: column;
+    }
+    
+    .infoAddition
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       flex-flow: column;
+    }
+    
+    
+}

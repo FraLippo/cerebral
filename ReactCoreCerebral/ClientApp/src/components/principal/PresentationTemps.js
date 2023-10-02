@@ -76,13 +76,11 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <p>Le podium montre les 3 premiers du mois en cours, le podium peut changer à tout moment, tous les résultats des jeux de rapidité sur cette page sont pris en compte.</p>
       <Podium tabPrenoms={this.state.tabPrenoms}></Podium>
       <div className="centre fontMoyenne marge20"><Link to='classementmois'>Le classement du mois</Link></div>
-      <h2 className='centre'>Sondage en cours</h2>
-      <div className="centre marge20"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdryjIBFEJam5wua6P2v6EHUafayIQrV4d4_QjHUjiEe7878w/viewform?usp=pp_url">Venez donner votre avis !</a></div>
-      <h3>Les précédents gagnants</h3>
+          <h3>Les précédents gagnants</h3>
       <ul>
       <li>Juin : Gwendal</li>
       <li>Juillet : Meneleus</li>
-      <li>Août : Quentin</li>
+      <li>Août - Septembre : Quentin</li>
       </ul>
       <div className="centre"><img  className="img-responsive" src={record} width="600" height="337" alt="record du jeu"></img></div>
       <Ad></Ad>

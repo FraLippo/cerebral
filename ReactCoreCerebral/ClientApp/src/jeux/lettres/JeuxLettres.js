@@ -12,7 +12,7 @@ import withRouter from '../../components/commun/withRouter';
 import { readGameNumber } from '../../components/commun/localStorage';
 import Regle from './Regle';
 import FinEtape from '../concours/FinEtape';
-
+import lettres from '../../images/lettres.png'
 import * as signalR from "@microsoft/signalr";
 
 class JeuxLettres extends Component {
@@ -245,16 +245,14 @@ async componentDidMount()  {
                     <Manche noManche={this.state.manche} concours={this.concours} id={this.id} boutonManche={this.state.boutonManche} nouveauJeu={this.nouveauJeu} niveau={this.niveau} nbJoueurs={this.nbJoueurs}></Manche>
                     {this.concours && this.state.vainqueur !== '' && <FinEtape donneesJeu={this.donneesJeu} perdu={this.perdu}></FinEtape> }
                     <div className="grilleAction">
-                   
-              
                         <EspaceJoueur msgJoueurs={this.state.msgJoueurs}></EspaceJoueur>
                         <div className="espaceSaisie">
                         <EspaceSaisie disabled={this.state.boutonManche} reset={this.reset} tabLettresSaisies={this.state.tabLettresSaisies}  verifierReponse={this.verifierReponse} changeMessage={this.changeMessage} messageErreur={this.state.messageErreur}></EspaceSaisie>
               </div>  
-                 
                     </div>
 
                 </div>}
+                  {this.state.vainqueur !== '' &&  <a href="https://concours.evalquiz.com/presmot"><div className="centre"><img  className="img-responsive" src={lettres} width="360" height="202" alt="défi des jeux de lettres en 99 étapes"></img></div></a> }
                 {/*this.state.prenomVisible && <Prenom callbackPrenom={this.callbackPrenom}></Prenom>*/}
             </div>
         );

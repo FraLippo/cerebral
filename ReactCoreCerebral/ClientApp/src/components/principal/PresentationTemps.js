@@ -90,7 +90,18 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <p>Tous nos jeux en ligne sont gratuits et ne nécessitent pas d'inscription. Vous pouvez recommencer autant de fois que vous le désirez. Nous demandons simplement le prénom pour établir des classements. </p>
       <div className='jeuVitesse'>
       <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >⊕<Link to='vitesseaddition'> L'addition XOR (nouveau)</Link></div>
+        <div className="centre titreVitesse" >🔺<Link to='vitesseforme'> Mémoire des formes (nouveau)</Link></div>
+        <p className="marge20">But du jeu : Se souvenir des formes et de la couleur des éléments présentés sur des cartes. Une fois les cartes mémorisées, elles sont retournées puis c'est à vous de les retrouver. Chaque bonne réponse rapporte 2 points puis 4 points, une mauvaise réponse vous fait perdre 3 points. Le temps alloué est de 60 secondes.</p>
+        <div>Intêret du jeu :</div>
+        <ul>
+          <li>Améliore la mémoire</li>
+          <li>Améliore la concentration</li>
+          <li>Prévient la perte de mémoire</li>
+        </ul>
+        <div className="centre fontMoyenne"><Link to='classement/vitesseforme'>Classement</Link></div>
+      </div>
+      <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >⊕<Link to='vitesseaddition'> L'addition XOR</Link></div>
         <p className="marge20">But du jeu : Faire la somme de deux grilles dans une troisième grille. L'addition se fait case par case comme une addition normale sauf que si vous additionnez deux cases bleues le résultat est une case blanche. Le terme XOR (ou exclusif) désigne un opérateur logique en informatique. Pour ceux qui veulent en savoir plus sur <a target='_blank' style={{all: 'revert'}} href="https://www.techno-science.net/definition/6742.html">l'opérateur XOR</a>. Si vous terminez une grille vous gagnez 3 points par bonne réponse. Le temps alloué est de 90 secondes. </p>
         <div>Intêret du jeu :</div>
         <ul>

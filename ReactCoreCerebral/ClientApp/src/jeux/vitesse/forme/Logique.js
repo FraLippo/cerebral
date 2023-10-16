@@ -1,14 +1,43 @@
-let infoJeuCarte = [{
+let infoJeuCarte = [
+{
     nbCarte: 4,
-    typeQuestion: 'couleur' },
+    typeQuestion: 'couleur'
+},{
+    nbCarte: 4,
+    typeQuestion: 'couleur'
+},
 {
     nbCarte: 4,
     typeQuestion: 'couleur'
 },
 {
     nbCarte: 4,
-    typeQuestion: 'formecouleur'
-}
+    typeQuestion: 'forme'
+},
+{
+    nbCarte: 4,
+    typeQuestion: 'forme'
+},
+{
+    nbCarte: 4,
+    typeQuestion: 'forme'
+},
+{
+    nbCarte: 4,
+    typeQuestion: 'formecouleur' 
+},
+{
+    nbCarte: 4,
+    typeQuestion: 'formecouleur' 
+},
+{
+    nbCarte: 5,
+    typeQuestion: 'formecouleur' 
+},
+{
+    nbCarte: 6,
+    typeQuestion: 'formecouleur' 
+},
 
 ]
 
@@ -97,4 +126,9 @@ function verifierElement(question, carte)
     }
 }
 
-export { creationJeu, compterElement, verifierElement }
+function finJeu()
+{
+    return infoJeuCarte.length;
+}
+
+export { creationJeu, compterElement, verifierElement, finJeu }

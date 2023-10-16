@@ -117,7 +117,7 @@
     font-weight:bold;
     border-radius:5px;
     text-decoration: none;
-} */
+} 
 
 
 .rougeV {
@@ -690,12 +690,12 @@ width: 100%;
   
   } */
   .success {
-   border-bottom: 5px solid green; /* Couleur verte en cas de succès */
+   border-bottom: 5px solid green;
     animation: fadeOut 0.5s ease-in forwards;
   }
 
   .error {
-    border-bottom: 5px solid red; /* Couleur rouge en cas de d'erreur */
+    border-bottom: 5px solid red; 
      animation: fadeOut 0.5s ease-in forwards;
    }
 
@@ -949,25 +949,26 @@ width: 100%;
         justify-content: center;
         align-items: center;
        flex-flow: row;
+       flex-wrap: wrap;
     }
 
 
 
   .cardForme {
-    margin: 2px;
-    width: 90px;
-    height: 150px;
-    background-color: #3498db;
+    
+    width: 80px;
+    height: 140px;
+    margin: 5px;
     position: relative;
-    border : 2px black solid;
-    border-radius: 5px;
+border: 1px solid black;
+
     transform-style: preserve-3d;
     transition: transform 0.5s ease;
-    transform: rotateY(0deg); /* Ajoutez cette ligne pour l'état initial */
+    transform: rotateY(0deg); 
   }
   
   .cardForme.flipped {
-    transform: rotateY(180deg); /* Ajoutez cette ligne pour l'état "flipped" */
+    transform: rotateY(180deg); 
   }
   
   .front, .back {
@@ -981,6 +982,8 @@ width: 100%;
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
+
+   
    
   }
   
@@ -991,14 +994,14 @@ width: 100%;
   
   .back {
     background-color: #d5ffe9;
-    transform: rotateY(180deg); /* Ajoutez cette ligne pour l'état initial de la face arrière */
+    transform: rotateY(180deg); 
   }
 
 
   .geoForme {
    
-    stroke: black; /* Couleur de la bordure du carré */
-    stroke-width: 2; /* Largeur de la bordure du carré */
+    stroke: black; 
+    stroke-width: 2; 
   }
   
   .rougeForme
@@ -1014,5 +1017,11 @@ width: 100%;
   {
     fill: white;
   }
+
+  .boldForme
+  {
+    font-weight: bold;
+  }
+
 
   

@@ -48,6 +48,9 @@ function nomType(type) {
             return "La chasse au trésor";
         case "vitesseaddition":
             return "L'addition XOR";
+            case "vitesseforme":
+                return "Mémoire des formes";
+    
 
 
 
@@ -56,6 +59,6 @@ function nomType(type) {
             return "";
     }
 }
-let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire", "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessepanneaux", "vitessetresor", "vitesseaddition"]
+let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire", "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessepanneaux", "vitessetresor", "vitesseaddition", "vitesseforme"]
 
 export { verifierStatus, nomType, tabJeu };

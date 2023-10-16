@@ -29,8 +29,11 @@ export default class Presentation extends Component {
       <div className="centre"><img src={border} width="100" height="41" alt="bordure"></img></div>
  
       <div>
-      <div className="centre marge20 fontMoyenne"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdryjIBFEJam5wua6P2v6EHUafayIQrV4d4_QjHUjiEe7878w/viewform?usp=pp_url">Venez donner votre avis !</a></div>
-
+      <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
+      <a href="https://cerebral.evalquiz.com">
+      <div className="centre "><img src={concours} className="img-responsive" width="600" height="337" alt="présentation concours jeu cognitif"></img></div>
+      <div className="centre fontMoyenne">La bataille des esprits : qui sera couronné champion des jeux cérébraux ?</div>  </a> 
+      <div className="centre espaceHaut"><img src={border} alt="bordure"  width="100" height="41"></img></div>
      <h1 className="titre couleurTitre centre">Les défis</h1>
         <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
         <p>Un défi est un ensemble de petits jeux et tests, toutes vos compétences et votre agilité seront nécessaires pour arriver au bout de ces défis.</p>
@@ -68,11 +71,7 @@ export default class Presentation extends Component {
         </Row>
       </div>
 <Ad></Ad>
-      <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
-      <a href="https://cerebral.evalquiz.com">
-      <div className="centre "><img src={concours} className="img-responsive" width="600" height="337" alt="présentation concours jeu cognitif"></img></div>
-      <div className="centre fontMoyenne">Participer au concours</div>  </a> 
-      <div className="centre espaceHaut"><img src={border} alt="bordure"  width="100" height="41"></img></div>
+      
 <h1 className="titre centre">Tous les tests</h1>
     <Row className="margeHaut">
     <Col xs={24} sm={12}><Link to="/calcul-mental"><div className="tuile">Calcul mental</div></Link></Col>

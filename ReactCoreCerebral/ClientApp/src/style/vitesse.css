@@ -228,6 +228,7 @@
 
 /* Calcul Men (CalMen */
 .centreGrilleCalMen {
+    user-select: none;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1022,6 +1023,36 @@ border: 1px solid black;
   {
     font-weight: bold;
   }
+/* match */
 
+.jeuMatch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.grilleMatch {
+    user-select: none;
+    display: grid;
+    grid-template-columns: repeat(8, 45px);
+    grid-template-rows: repeat(7, 45px)
+}
+
+.centreMatch{
+   font-size: 2em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;   
+  }
+  
+  .selectionMatch{
+   
+    border-radius : 5px;
+    border : 2px solid blueviolet;
+  }
+  
 
   

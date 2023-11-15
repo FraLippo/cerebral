@@ -82,21 +82,35 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <ul>
       <li>Juin : Gwendal</li>
       <li>Juillet : Meneleus</li>
-      <li>Août - Septembre : Quentin</li>
+            <li>Août - Septembre : Quentin</li>
+            <li>Octobre : rvteo</li>
       </ul>
       <div className="centre"><img  className="img-responsive" src={record} width="600" height="337" alt="record du jeu"></img></div>
       <Ad></Ad>
       <h1>Nos jeux cognitifs</h1>
       <p>Tous nos jeux en ligne sont gratuits et ne nécessitent pas d'inscription. Vous pouvez recommencer autant de fois que vous le désirez. Nous demandons simplement le prénom pour établir des classements. </p>
       <div className='jeuVitesse'>
+
       <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >🔺<Link to='vitesseforme'> Mémoire des formes (nouveau)</Link></div>
+        <div className="centre titreVitesse" >🐒 <Link to='vitessematch'> Former des paires (nouveau)</Link></div>
+        <p className="marge20">But du jeu : Un jeu très simple, reconstituer des paires à partir des éléments qui sont présents sur la page. Le temps alloué est de 60 secondes. Chaque paire trouvée rapporte 1 point. Des bonus vous sont alloués à la fin de chaque tableau (5, 10 et 15 points).</p>
+        <ul>
+          <li>Améliore la mémoire de travail</li>
+          <li>Améliore la concentration et l'attention</li>
+          <li>Améliore la coordination œil-main</li>
+        </ul>
+        <div className="centre fontMoyenne"><Link to='classement/vitessematch'>Classement</Link></div>
+      </div>
+
+
+      <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >🔺<Link to='vitesseforme'> Mémoire des formes</Link></div>
         <p className="marge20">But du jeu : Se souvenir des formes et de la couleur des éléments présentés sur des cartes. Une fois les cartes mémorisées, elles sont retournées puis c'est à vous de les retrouver. Chaque bonne réponse rapporte 2 points puis 4 points, une mauvaise réponse vous fait perdre 3 points. Le temps alloué est de 60 secondes.</p>
         <div>Intêret du jeu :</div>
         <ul>
           <li>Améliore la mémoire</li>
-          <li>Améliore la concentration</li>
-          <li>Prévient la perte de mémoire</li>
+          <li>Améliore la concentration et l'attention</li>
+          <li>Améliore la coordination œil-main</li>
         </ul>
         <div className="centre fontMoyenne"><Link to='classement/vitesseforme'>Classement</Link></div>
       </div>

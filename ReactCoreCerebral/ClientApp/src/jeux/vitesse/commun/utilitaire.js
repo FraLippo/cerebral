@@ -52,6 +52,8 @@ function nomType(type) {
             return "Mémoire des formes";
         case "vitessematch":
             return "Former des paires";
+            case "vitesserecensement":
+                return "Le recensement";
 
 
 
@@ -61,6 +63,6 @@ function nomType(type) {
             return "";
     }
 }
-let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire", "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessepanneaux", "vitessetresor", "vitesseaddition", "vitesseforme", "vitessematch"]
+let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire", "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessepanneaux", "vitessetresor", "vitesseaddition", "vitesseforme", "vitessematch", "vitesserecensement"]
 
 export { verifierStatus, nomType, tabJeu };

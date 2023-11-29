@@ -1054,5 +1054,79 @@ border: 1px solid black;
     border : 2px solid blueviolet;
   }
   
+  /* recensement */
+  .grilleRece
+  {
+    width: 360px;  
+    display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; 
+      
+  }
 
-  
+  .caseRece
+    {
+        font-size: 1.3em;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       width: 40px;
+       height: 40px;
+       border : 1px solid blueviolet;
+    }
+
+.headerRece
+{
+    font-weight: bold;
+    color: red;
+}
+
+.reponsesRece
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.caseRepRece
+{
+    margin : 2px 10px;
+    padding: 5px;
+    font-size: 1.3em;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   border-radius: 5px;
+   border : 1px solid blueviolet;
+}
+
+.questionRece
+{
+    font-size: 1.2em;
+}
+
+.caseRepRece:active {
+
+    transform: translateY(2px);
+}
+
+.caseRepRece:hover {
+
+    background-color: #094fe6;
+    cursor: pointer;
+    
+}
+
+.fade-outRece {
+    opacity: 1; /* Opacité initiale */
+    transition: opacity .8s ease-out; /* Transition de l'opacité sur 1 seconde avec une fonction d'accélération (ease-out) */
+  }
+
+  .fade-outRece.fade {
+    opacity: 0; /* Opacité lorsque la classe "fade" est ajoutée */
+  }

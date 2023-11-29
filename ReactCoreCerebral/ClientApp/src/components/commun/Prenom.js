@@ -29,7 +29,7 @@ export default function Prenom({callbackPrenom}) {
 
     
    
-   return  <Modal cancelButtonProps={{ style: { display: 'none' } }} onCancel={handleCancel} title={intl.get('PRENOM')} visible={visible} onOk={handleOk}>
+   return  <Modal closable={false}  cancelButtonProps={{ style: { display: 'none' } }} onCancel={handleCancel} title={intl.get('PRENOM')} visible={visible} onOk={handleOk}>
    <Input placeholder={intl.get('PRENOM')} onChange={(event) => setPrenom(event.target.value)} value={prenom}></Input>
    <p className="centre espaceHaut">{erreur}</p>
  </Modal> 

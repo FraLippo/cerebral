@@ -10,23 +10,31 @@
 
 .titreVitesse {
     border-radius: 10px;
-    background-color: #e0b5eb;
+    background-color: #b5ecf5;
     padding: 10px 0px;
-    font-family: cursive;
+    font-family: sans-serif;
     text-decoration: none;
-
+    font-weight: bold;
 }
 
 .titreClassement
 {
     text-align: center;
-    margin: 20px 0px;
+    margin: 20px auto;
     border-radius: 10px;
-    background-color: #e0b5eb;
+     background-color: rgb(205, 202, 202);
     padding: 10px 0px;
-    font-family: cursive;
+    font-family: sans-serif;
+
+    width: 200px;
+    border: 2px black solid;
     text-decoration: none;
 }
+.titreClassement a{
+    color: #16111a;
+    text-decoration: none;
+}
+
 .carteVitesse {
     border-radius: 10px;
     background-color: #e2ffb5b5;
@@ -72,15 +80,14 @@
 .presentationJeu {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     margin: 2px;
     width: 30%;
     min-width: 450px;
     border: 2px solid black;
     border-radius: 5px;
-    background-color: #e4ffef70;
     padding: 10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    box-shadow: rgba(0, 0, 0, 0.3) 15px -1px 36px -18px;
 }
 
 @media screen and (max-width: 800px) {
@@ -111,12 +118,21 @@
  .presentationJeu  a:visited,
  .presentationJeu  a:hover,
  .presentationJeu  a:active {
-    color: #094fe6;
-    background-color: #EEEEEE;
-    padding: 8px 20px;
-    font-weight:bold;
-    border-radius:5px;
+    color: #821cba;
     text-decoration: none;
+    font-size: 1.2em;
+} 
+.titreVitesse a,
+.titreVitesse  a:visited,
+.titreVitesse  a:hover,
+.titreVitesse  a:active {
+   color: #094fe6;
+   background-color: #EEEEEE;
+   padding: 8px 20px;
+   font-weight:bold;
+   border-radius:5px;
+   text-decoration: none;
+   font-size: 1.2em;
 } 
 
 

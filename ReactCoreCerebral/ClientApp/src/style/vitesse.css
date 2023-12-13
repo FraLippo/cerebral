@@ -1146,3 +1146,15 @@ border: 1px solid black;
   .fade-outRece.fade {
     opacity: 0; /* Opacité lorsque la classe "fade" est ajoutée */
   }
+
+  /* panneaux */
+
+  .panneauRoute
+  {
+    width: 60px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }

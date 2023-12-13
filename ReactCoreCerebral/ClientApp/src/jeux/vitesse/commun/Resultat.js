@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import {verifierStatus} from '../commun/utilitaire';
+import { verifierStatus } from '../commun/utilitaire';
 import withRouter from '../../../components/commun/withRouter';
 import ButtonLink from '../../../components/commun/ButtonLink';
 import Prenom from '../../../components/commun/Prenom';
 import Confetti from 'react-confetti';
 import { addFirstName, readFirstName } from '../../../components/commun/localStorage';
 
-import {Helmet } from 'react-helmet';
-import Ad from  '../../../components/commun/adSense';
+import { Helmet } from 'react-helmet';
+import Ad from '../../../components/commun/adSense';
 
 class Resultat extends Component {
 
@@ -16,32 +16,34 @@ class Resultat extends Component {
         this.state = {
             prenom: "",
             resultat: 0,
-            prenomVisible: false
-        }
-     
+            prenomVisible: false,
+            ancien : 0,
+            moyenne : 0,
+            nbJoueurs :0 
         }
 
-   
+    }
+
+
 
     componentDidMount = () => {
-        
-            let prenom = readFirstName();
-            if (prenom !== null && !prenom.includes('@'))
-            {
-                prenom = prenom + '@' + Math.floor(Math.random()*100000);
-                addFirstName(prenom);
-            }
-            if (prenom === null) {
-                this.setState({
-                    prenomVisible: true
-                })
-            }
-            else {
 
-                this.envoyerMessage(prenom);
+        let prenom = readFirstName();
+        if (prenom !== null && !prenom.includes('@')) {
+            prenom = prenom + '@' + Math.floor(Math.random() * 100000);
+            addFirstName(prenom);
+        }
+        if (prenom === null) {
+            this.setState({
+                prenomVisible: true
+            })
+        }
+        else {
 
-            }
-        
+            this.envoyerMessage(prenom);
+
+        }
+
     }
 
     callbackPrenom = (prenom) => {
@@ -76,9 +78,9 @@ class Resultat extends Component {
             this.setState({
                 classement: res.classement,
                 prenom: res.prenom.includes('@') ? res.prenom.split('@')[0] : res.prenom,
-                meilleur: res.meilleur,
+                ancien: res.ancien,
                 moyenne: res.moyenne,
-                nbJoueurs : res.nbJoueurs
+                nbJoueurs: res.nbJoueurs
             })
 
         }
@@ -88,36 +90,63 @@ class Resultat extends Component {
         }
 
     }
-
+    messageEncouragement = () => {
+  
+        if (!(this.props.score === 0 || this.state.ancien === 0)) {
+        
+            if (this.props.score > this.state.ancien) {
+                return <div className='rotationEspace'> 
+                   <div className='rotationVic'> 🏆 Bravo ! nouveau record personnel 🎉</div>
+                </div>
+           }
+            else {
+                let pourcent = 100 - ((this.props.score * 100) / this.state.ancien);
+                console.log(pourcent);
+                if (pourcent <= 20) {
+                    return <div ><div>Ton meilleur score ce mois : {this.state.ancien}</div><div className='rotationEspace'>Tu n'es vraiment pas passer loin de battre ton record sur ce jeu.</div></div>
+                }
+                else {
+                    return <div><div>Ton meilleur score ce mois : {this.state.ancien}</div> <div className='rotationEspace'>Tu peux recommencer pour améliorer ton score.</div></div>
+                }
+           }
+       }
+    }
 
     render() {
+      
+     
         return <div>
-             <Helmet>
+            <Helmet>
                 <title>Résultat des exercices de conjugaison en anglais</title>
                 <meta name="description" content="Les résultats des exercices de conjugaison des verbes irréguliers en anglais." />
             </Helmet>
-            
+
             <div className="couleurTitre centre fontMoyenne">Voici tes résultats {this.state.prenom}</div>
             {this.state.prenomVisible && <Prenom callbackPrenom={this.callbackPrenom}></Prenom>}
             <div className='centre fontMoyenne'>
                 {this.state.classement === 1 && <div>
                     <Confetti></Confetti>
                     <div>Fantastique <b>{this.state.prenom} ! </b>tu es le meilleur</div>
-                    <div>Tu es un champion !</div>
-                  
+                    <div>Tu es le champion incontesté de ce jeu !</div>
+
                 </div>}
-                 <div className="margeHaut30">
+         
+                <div className="margeHaut30">
                     <p>Ton score : {this.props.score}</p>
-                    <div>Le meilleur score : {this.state.meilleur}</div>
-                    <div>La moyenne des scores : {this.state.moyenne}</div>
-                    <div>Ton classement : <b>{this.state.classement}</b> / {this.state.nbJoueurs}</div>
+ 
 
-                <div className="marge20"><ButtonLink titre="Recommencer" href={'/' + this.props.typeExo}></ButtonLink></div>
-                <div className="marge20"><ButtonLink titre="Retour à l'accueil" href={'/'}></ButtonLink></div>
-
-                <Ad></Ad>
+                    <div>{this.messageEncouragement()}</div> 
+                  
+                    <div>La moyenne des autres joueurs sur l'année : {this.state.moyenne}</div>
+                    <div>Ton classement de l'année : <b>{this.state.classement}</b></div>
+                  
+                    <div className="marge20"><ButtonLink titre="Recommencer" href={'/' + this.props.typeExo}></ButtonLink></div>
+                    <div className="marge20"><ButtonLink titre="Retour à l'accueil" href={'/'}></ButtonLink></div>
+                 
+                  
+                    
+                </div>  <Ad></Ad>
             </div>
-        </div>
         </div>
     }
 }

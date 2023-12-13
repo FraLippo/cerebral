@@ -26,7 +26,7 @@ const itemsMenu = [
               Les défis
               </a>
           ),
-              key: 'orthographeCo',
+              key: 'defiCo',
             },
           
 

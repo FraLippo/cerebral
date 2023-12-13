@@ -26,11 +26,14 @@ namespace ReactCoreCerebral.Controllers
         public async Task<IActionResult> Resultat(string typeExo, int score, string prenom)
         {
             var ancienResultat = _dbTableau.Resultat2019.FirstOrDefault(x => x.prenom == prenom && x.typeExo == typeExo);
-            if (ancienResultat != null)
-            {
-                DateTime now = DateTime.Now;
+            var ancienScore = 0;
+             DateTime now = DateTime.Now;
                 var startDate = new DateTime(now.Year, now.Month, 1);
                 var endDate = startDate.AddMonths(1);
+            if (ancienResultat != null)
+            {
+              
+                ancienScore = ancienResultat.nbFaute;
                 if (score > ancienResultat.nbFaute || !(ancienResultat.date >= startDate && ancienResultat.date < endDate))
                 {
                     ancienResultat.date = DateTime.Now;
@@ -49,10 +52,10 @@ namespace ReactCoreCerebral.Controllers
             var classement = _dbTableau.Resultat2019.Where(x => x.typeExo == typeExo && x.nbFaute > score).Count() + 1;
             var nbJoueurs = _dbTableau.Resultat2019.Where(x => x.typeExo == typeExo).Count();
             var moyenne = Math.Round(_dbTableau.Resultat2019.Where(x => x.typeExo == typeExo).Average(x => x.nbFaute), 2);
-            var meilleur = _dbTableau.Resultat2019.Where(x => x.typeExo == typeExo).Max(x => x.nbFaute);
+            var ancien = ancienScore;
 
 
-            return Ok(new { classement, nbJoueurs, moyenne, meilleur, prenom });
+            return Ok(new { classement, nbJoueurs, moyenne, ancien, prenom });
         }
 
         public IEnumerable<DTOClassementScore> Classement(string typeExo)

@@ -1154,7 +1154,9 @@ border: 1px solid black;
     width: 60px;
     height: 65px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    user-select: none;
 
   }

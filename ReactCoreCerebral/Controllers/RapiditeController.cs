@@ -39,8 +39,6 @@ namespace ReactCoreCerebral.Controllers
                     ancienResultat.date = DateTime.Now;
                     ancienResultat.nbFaute = score;
                 }
-
-
             }
             else
             {

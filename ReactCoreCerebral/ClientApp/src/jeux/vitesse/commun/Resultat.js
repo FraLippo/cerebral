@@ -96,7 +96,7 @@ class Resultat extends Component {
         
             if (this.props.score > this.state.ancien) {
                 return <div className='rotationEspace'> 
-                   <div className='rotationVic'> 🏆 Bravo ! nouveau record personnel 🎉</div>
+                   <div className='rotationVic'> 🏆 Bravo ! Nouveau record personnel 🎉</div>
                 </div>
            }
             else {

@@ -57,6 +57,7 @@ const JeuTaupe = React.lazy(() => import('../../jeux/vitesse/taupe/JeuTaupe'));
 const JeuLettres = React.lazy(() => import('../../jeux/vitesse/lettres/JeuLettres'));
 const JeuNote = React.lazy(() => import('../../jeux/vitesse/note/JeuNote'));
 const JeuMemoire = React.lazy(() => import('../../jeux/vitesse/memoire/JeuMemoire'));
+const JeuCercle = React.lazy(() => import('../../jeux/vitesse/cercle/JeuCercle'));
 const JeuRecensement = React.lazy(() => import('../../jeux/vitesse/recensement/JeuRecensement'));
 const JeuPanneaux = React.lazy(() => import('../../jeux/vitesse/panneaux/JeuPanneaux'));
 const JeuMatch = React.lazy(() => import('../../jeux/vitesse/match/JeuMatch'));
@@ -71,7 +72,7 @@ const router = createBrowserRouter([
        
           {
             index : true,
-            element: <JeuPanneaux />,
+            element: <JeuCercle />,
           },
           {
             path :"en",
@@ -290,6 +291,11 @@ const router = createBrowserRouter([
             
           },
           {
+            path: 'vitessepanneauroutier',
+            element: <JeuPanneaux/>,
+            
+          },
+          {
             path: 'vitessesolitaire',
             element: <JeuSolitaire/>,
             
@@ -332,6 +338,11 @@ const router = createBrowserRouter([
           {
             path: 'vitesserecensement',
             element: <JeuRecensement/>,
+            
+          },
+          {
+            path: 'vitessecercle',
+            element: <JeuCercle/>,
             
           },
           {

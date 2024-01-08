@@ -1160,3 +1160,107 @@ border: 1px solid black;
     user-select: none;
 
   }
+
+
+/* cercle mots*/
+path {
+    stroke: rgb(204, 77, 77);
+    stroke-width: 2px;
+}
+
+path:hover
+{
+    fill: blue;
+}
+.type0 {
+    fill: white;
+}
+
+.lettreCercle1
+{
+    position: absolute;
+    left: 68px;
+    top : -25px;
+    
+}
+
+.lettreCercle2
+{
+    position: absolute;
+    left: 105px;
+    top : 8px;
+  
+}
+.lettreCercle3
+{
+    position: absolute;
+    left: 105px;
+    top : 58px;
+  
+}
+.lettreCercle4
+{
+    position: absolute;
+    left: 68px;
+    top : 95px;
+  
+}
+.lettreCercle5
+{
+    position: absolute;
+    left: 18px;
+    top : -25px;
+  
+}
+.lettreCercle6
+{
+    position: absolute;
+    left: -15px;
+    top : 8px;
+  
+}
+.lettreCercle7
+{
+    position: absolute;
+    left: -15px;
+    top : 58px;
+  
+}
+.lettreCercle8
+{
+    position: absolute;
+    left: 18px;
+    top : 95px;
+  
+}
+
+
+.parentCercle
+{
+    margin: 30px 30px 10px 30px;
+    position: relative;
+    font-size: 1.4em;
+    font-family: 'Courier New', Courier, monospace;
+}
+.svgCercle
+{
+    overflow: visible;
+}
+
+.plateauCercle
+{
+    display: flex;
+    flex-direction: row;
+}
+.colonneCercle
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.flechesCercle
+{
+    margin: 5px auto;
+    display: flex;
+    flex-direction: row;
+}

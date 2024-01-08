@@ -76,8 +76,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <div className="titreClassement"><Link to='classementmois'><b>Mes résultats</b></Link></div>
      
           <h3>Les précédents gagnants</h3>
-      <p className='fontMoyenne'>👑 Félicitations aux précédents champions du mois : Gwendal, Meneleus, Quentin (2 fois),  rvteo et inconnu583 en novembre. 👑</p>
-      <h3 className='centre'>🎄 Qui sera le dernier champion de 2023 ? 🎁</h3>
+      <p className='fontMoyenne'>👑 Félicitations aux précédents champions du mois : Gwendal, Meneleus, Quentin (2 fois),  rvteo, inconnu583, rvteo est de nouveau le grand gagnant du dernier concours de 2023 ! 👑</p>
+      <h3 className='centre'>🎄 Qui sera le premier champion de 2024 ? 🎁</h3>
       <Ad></Ad>
       <h1>Nos jeux cognitifs</h1>
       <p>Nous vous proposons une série de tests simples et de petits jeux de réflexion pour faire travailler son cerveau en espérant améliorer ses capacités cognitives et son intelligence. Tous les jeux sont gratuits et ne nécessitent aucune inscription.</p>
@@ -85,8 +85,15 @@ this.nomMois = moisEnFrancais[d.getMonth()];
           <p>Les tests sont simples à comprendre et peuvent être réalisés par des juniors ou des seniors. Ils sont dans l'esprit des jeux que l'on retrouve sur les sites Luminosity ou Neuronation en version gratuite.</p>
                 <div className='jeuVitesse'>
 
+                <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >🚦 <Link to='vitessepanneauroutier'> Le code de la route (nouveau)</Link></div>
+         <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
+          <p className="marge20">But du jeu : Une grille est affichée avec des panneaux routiers, il suffit de retrouver le panneau routier indiqué par la question. Vous avez 120 secondes pour essayer de trouver tous les panneaux. Vous gagnez 2 points par panneau trouvé, -4 points en cas d'erreur. Si vous terminez la grille bonus de 50 points ! Le maximum est de (36 x 2) + 50 = 122 points. </p>
+     
+        <div className="centre"><Link to='classement/vitessepanneauroutier'>Classement</Link></div>
+      </div>
       <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >🔍 <Link to='vitesserecensement'> Le recensement (nouveau)</Link></div>
+        <div className="centre titreVitesse" >🔍 <Link to='vitesserecensement'> Le recensement</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={3} /></div> 
           <p className="marge20">But du jeu : Une grille est affichée avec des symboles, il suffit de répondre aux questions concernant l'emplacement de certains symboles ou le nombre de symboles. Attention aux négations dans les questions. Le jeu dure 90 secondes. Une bonne réponse rapporte 5 points et une mauvaise vous fait perdre 6 points.</p>
      

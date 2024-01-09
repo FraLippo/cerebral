@@ -1168,9 +1168,13 @@ path {
     stroke-width: 2px;
 }
 
-path:hover
+.type0:hover
 {
     fill: blue;
+}
+.selectionCercle
+{
+    fill: red;
 }
 .type0 {
     fill: white;
@@ -1205,28 +1209,28 @@ path:hover
     top : 95px;
   
 }
-.lettreCercle5
+.lettreCercle8
 {
     position: absolute;
     left: 18px;
     top : -25px;
   
 }
-.lettreCercle6
+.lettreCercle7
 {
     position: absolute;
     left: -15px;
     top : 8px;
   
 }
-.lettreCercle7
+.lettreCercle6
 {
     position: absolute;
     left: -15px;
     top : 58px;
   
 }
-.lettreCercle8
+.lettreCercle5
 {
     position: absolute;
     left: 18px;
@@ -1237,7 +1241,7 @@ path:hover
 
 .parentCercle
 {
-    margin: 30px 30px 10px 30px;
+    margin: 30px 50px 10px 50px;
     position: relative;
     font-size: 1.4em;
     font-family: 'Courier New', Courier, monospace;
@@ -1263,4 +1267,23 @@ path:hover
     margin: 5px auto;
     display: flex;
     flex-direction: row;
+    
+}
+
+.flecheCercle{
+    border-radius: 5px;
+    border: 1px solid blue;
+    background-color: #24dde7;
+    margin: 0px 2px;
+}
+
+.flecheCercle:active {
+
+    transform: translateY(1px);
+}
+
+.finColonneCercle
+{
+     pointer-events: none;
+ 
 }

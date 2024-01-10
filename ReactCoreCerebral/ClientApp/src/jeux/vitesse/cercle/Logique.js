@@ -13,7 +13,7 @@ export default class Logique {
                 i++;
                 liste.add(nbHasard);
             }
-        } while (i < 4);
+        } while (i < 6);
 
         let tabMots = [];
       

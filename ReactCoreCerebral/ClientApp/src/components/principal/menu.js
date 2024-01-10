@@ -13,6 +13,18 @@ const itemsMenu = [
       ),
       key: 'jeucognitif',
       children: [
+        {
+          label: (  <a href="https://concours.evalquiz.com/presentationcerebral">
+          Jeux de logique</a>
+      ),
+          key: 'logiqueCo',
+        },
+        {
+          label: (  <a href="https://concours.evalquiz.com/presreflexion">
+          Jeux de réflexion</a>
+      ),
+          key: 'reflexionCo',
+        },
        
             {
               label: (  <a href="/">
@@ -63,18 +75,7 @@ const itemsMenu = [
             ),
                 key: 'vocabulaireCo',
               },
-              {
-                label: (  <a href="https://concours.evalquiz.com/presentationcerebral">
-                Jeux de logique</a>
-            ),
-                key: 'logiqueCo',
-              },
-              {
-                label: (  <a href="https://concours.evalquiz.com/presreflexion">
-                Jeux de réflexion</a>
-            ),
-                key: 'reflexionCo',
-              },
+             
               {
                 label: (  <a href="https://concours.evalquiz.com/presgeographie">
                 Jeux sur la géographie</a>

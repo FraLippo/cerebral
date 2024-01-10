@@ -56,6 +56,9 @@ function nomType(type) {
                 return "Le recensement";
                 case "vitessepanneauroutier":
                     return "Le code de la route";
+                    case "vitessecercle":
+                        return "Les cercles de mots";
+        
     
 
 
@@ -66,6 +69,6 @@ function nomType(type) {
             return "";
     }
 }
-let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire", "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessepanneaux", "vitessetresor", "vitesseaddition", "vitesseforme", "vitessematch", "vitesserecensement", "vitessepanneauroutier"]
+let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire", "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessepanneaux", "vitessetresor", "vitesseaddition", "vitesseforme", "vitessematch", "vitesserecensement", "vitessepanneauroutier", "vitessecercle"]
 
 export { verifierStatus, nomType, tabJeu };

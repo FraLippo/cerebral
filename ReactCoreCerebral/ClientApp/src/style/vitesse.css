@@ -1174,7 +1174,7 @@ path {
 }
 .selectionCercle
 {
-    fill: red;
+    fill: rgb(255, 173, 197);
 }
 .type0 {
     fill: white;
@@ -1255,6 +1255,9 @@ path {
 {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 .colonneCercle
 {
@@ -1272,7 +1275,7 @@ path {
 
 .flecheCercle{
     border-radius: 5px;
-    border: 1px solid blue;
+    border: 2px solid blue;
     background-color: #24dde7;
     margin: 0px 2px;
 }

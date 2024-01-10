@@ -29,10 +29,8 @@ export default class Presentation extends Component {
       <div className="centre"><img src={border} width="100" height="41" alt="bordure"></img></div>
  
       <div>
-      <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
-      <a href="https://cerebral.evalquiz.com">
-      <div className="centre "><img src={concours} className="img-responsive" width="600" height="337" alt="présentation concours jeu cognitif"></img></div>
-      <div className="centre fontMoyenne">La bataille des esprits : qui sera couronné champion des jeux cérébraux ?</div>  </a> 
+   
+     
       <div className="centre espaceHaut"><img src={border} alt="bordure"  width="100" height="41"></img></div>
      <h1 className="titre couleurTitre centre">Les défis</h1>
         <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>

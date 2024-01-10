@@ -84,9 +84,15 @@ this.nomMois = moisEnFrancais[d.getMonth()];
           <p>Chaque série de tests stimule une partie du cerveau différente : la mémoire, la capacité de concentration, la vitesse de réaction, le discernement des couleurs et des formes...</p>
           <p>Les tests sont simples à comprendre et peuvent être réalisés par des juniors ou des seniors. Ils sont dans l'esprit des jeux que l'on retrouve sur les sites Luminosity ou Neuronation en version gratuite.</p>
                 <div className='jeuVitesse'>
-
                 <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >🚦 <Link to='vitessepanneauroutier'> Le code de la route (nouveau)</Link></div>
+        <div className="centre titreVitesse" >⭕ <Link to='vitessecercle'> Cercles de mots (nouveau)</Link></div>
+         <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div> 
+          <p className="marge20">But du jeu : Retrouvez des mots de 8 lettres à partir de lettres mélangées. Les lettres du mot sont placées autour d'un cercle. Vous devez indiquer la première lettre du mot puis un sens de rotation pour retrouver le mot caché. Chaque mot trouvé rapporte 10 points, -10 en cas d'erreur. Si vous trouvez les 6 mots en moins de 80 secondes vous avez un bonus de 50 points. Le score maximal est donc de (6 x 10) + 50 = 110.  </p>
+     
+        <div className="centre"><Link to='classement/vitessecercle'>Classement</Link></div>
+      </div>
+                <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >🚦 <Link to='vitessepanneauroutier'> Le code de la route</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
           <p className="marge20">But du jeu : Une grille est affichée avec des panneaux routiers, il suffit de retrouver le panneau routier indiqué par la question. Vous avez 120 secondes pour essayer de trouver tous les panneaux. Vous gagnez 2 points par panneau trouvé, -4 points en cas d'erreur. Si vous terminez la grille bonus de 50 points ! Le maximum est de (36 x 2) + 50 = 122 points. </p>
      

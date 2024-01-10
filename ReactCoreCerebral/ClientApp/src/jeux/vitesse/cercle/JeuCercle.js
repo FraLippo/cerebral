@@ -149,7 +149,7 @@ export default class JeuCercle extends Component {
         </div>)
       }
     </div>
-    <div className="centre marge10"><CompteRebours temps={80} finTimer={this.finTimer}></CompteRebours></div>
+    <div className="centre marge10"><CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours></div>
     <div className="titreJeu">Les cercles de mots</div>
     <p>Retrouve les mots de 8 lettres cachés autour des cercles. Clique sur la lettre du camembert qui débute le mot puis clique sur un sens de rotation. </p>
     </div>}</div>

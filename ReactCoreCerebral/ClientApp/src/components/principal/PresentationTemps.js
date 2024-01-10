@@ -87,7 +87,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
                 <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >⭕ <Link to='vitessecercle'> Cercles de mots (nouveau)</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div> 
-          <p className="marge20">But du jeu : Retrouvez des mots de 8 lettres à partir de lettres mélangées. Les lettres du mot sont placées autour d'un cercle. Vous devez indiquer la première lettre du mot puis un sens de rotation pour retrouver le mot caché. Chaque mot trouvé rapporte 10 points, -10 en cas d'erreur. Si vous trouvez les 6 mots en moins de 80 secondes vous avez un bonus de 50 points. Le score maximal est donc de (6 x 10) + 50 = 110.  </p>
+          <p className="marge20">But du jeu : Retrouvez des mots de 8 lettres à partir de lettres mélangées. Les lettres du mot sont placées autour d'un cercle. Vous devez indiquer la première lettre du mot puis un sens de rotation pour retrouver le mot caché. Chaque mot trouvé rapporte 10 points, -10 en cas d'erreur. Si vous trouvez les 6 mots en moins de 60 secondes vous avez un bonus de 50 points. Le score maximal est donc de (6 x 10) + 50 = 110.  </p>
      
         <div className="centre"><Link to='classement/vitessecercle'>Classement</Link></div>
       </div>

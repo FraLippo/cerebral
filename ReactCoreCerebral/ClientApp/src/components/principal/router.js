@@ -3,17 +3,19 @@ import React from 'react';
 import {ScrollRestoration, createBrowserRouter, Outlet } from "react-router-dom";
 import Presentation from './Presentation';
 import PresentationTemps from './PresentationTemps';
-import PresentationEN from './Presentationanglais';
+
 import { Menu } from 'antd';
 import { itemsMenu } from './menu';
 import PageFaute from '../commun/PageFaute';
 
- import TermService from './TermService';
- import Calcul from './Calcul';
- import Puzzle from './Puzzle';
- import Logique from './Logique';
- import Memoire from './Memoire';
- import ChiffresLettres from './ChiffresLettres';
+
+const Calcul = React.lazy(() => import('./Calcul'));
+const Puzzle = React.lazy(() => import('./Puzzle'));
+const Logique = React.lazy(() => import('./Logique'));
+const Memoire = React.lazy(() => import('./Memoire'));
+const ChiffresLettres = React.lazy(() => import('./ChiffresLettres'));
+const TermService = React.lazy(() => import('./TermService'));
+const PresentationEN = React.lazy(() => import('./Presentationanglais'));
 
 
 
@@ -61,6 +63,9 @@ const JeuCercle = React.lazy(() => import('../../jeux/vitesse/cercle/JeuCercle')
 const JeuRecensement = React.lazy(() => import('../../jeux/vitesse/recensement/JeuRecensement'));
 const JeuPanneaux = React.lazy(() => import('../../jeux/vitesse/panneaux/JeuPanneaux'));
 const JeuMatch = React.lazy(() => import('../../jeux/vitesse/match/JeuMatch'));
+const JeuNombre = React.lazy(() => import('../../jeux/vitesse/nombre/JeuNombre'));
+
+
 const router = createBrowserRouter([
     {
       path: '/',
@@ -72,7 +77,7 @@ const router = createBrowserRouter([
        
           {
             index : true,
-            element: <PresentationTemps />,
+            element: <JeuNombre />,
           },
           {
             path :"en",
@@ -353,6 +358,11 @@ const router = createBrowserRouter([
           {
             path: 'vitessenotes',
             element: <JeuNote/>,
+            
+          },
+          {
+            path: 'vitessenombre',
+            element: <JeuNombre/>,
             
           },
           {

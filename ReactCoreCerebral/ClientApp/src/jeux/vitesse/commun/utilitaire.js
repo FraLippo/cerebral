@@ -52,23 +52,20 @@ function nomType(type) {
             return "Mémoire des formes";
         case "vitessematch":
             return "Former des paires";
-            case "vitesserecensement":
-                return "Le recensement";
-                case "vitessepanneauroutier":
-                    return "Le code de la route";
-                    case "vitessecercle":
-                        return "Les cercles de mots";
-        
-    
-
-
-
-
+        case "vitesserecensement":
+            return "Le recensement";
+        case "vitessepanneauroutier":
+            return "Le code de la route";
+        case "vitessecercle":
+            return "Les cercles de mots";
+        case "vitessenombre":
+            return "Se souvenir des nombres";
 
         default:
             return "";
     }
 }
-let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire", "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessepanneaux", "vitessetresor", "vitesseaddition", "vitesseforme", "vitessematch", "vitesserecensement", "vitessepanneauroutier", "vitessecercle"]
+let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire", "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessepanneaux", "vitessetresor", "vitesseaddition", "vitesseforme", "vitessematch", "vitesserecensement", "vitessepanneauroutier",
+ "vitessecercle", "vitessenombre"]
 
 export { verifierStatus, nomType, tabJeu };

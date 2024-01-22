@@ -17,9 +17,9 @@ class Resultat extends Component {
             prenom: "",
             resultat: 0,
             prenomVisible: false,
-            ancien : 0,
-            moyenne : 0,
-            nbJoueurs :0 
+            ancien: 0,
+            moyenne: 0,
+            nbJoueurs: 0
         }
 
     }
@@ -91,30 +91,33 @@ class Resultat extends Component {
 
     }
     messageEncouragement = () => {
-  
+
         if (!(this.props.score === 0 || this.state.ancien === 0)) {
-        
+
             if (this.props.score > this.state.ancien) {
-                return <div className='rotationEspace'> 
-                   <div className='rotationVic'> 🏆 Bravo ! Nouveau record personnel 🎉</div>
+                return <div className='rotationEspace'>
+                    <div className='rotationVic'> 🏆 Bravo ! Nouveau record personnel 🎉</div>
                 </div>
-           }
+            }
             else {
                 let pourcent = 100 - ((this.props.score * 100) / this.state.ancien);
                 console.log(pourcent);
+                if (pourcent === 0) {
+                    return <div ><div>Ton meilleur score ce mois : {this.state.ancien}</div><div className='rotationEspace'>Tu as égalé ton meilleur score sur ce jeu.</div></div>
+                }
                 if (pourcent <= 20) {
                     return <div ><div>Ton meilleur score ce mois : {this.state.ancien}</div><div className='rotationEspace'>Tu n'es vraiment pas passer loin de battre ton record sur ce jeu.</div></div>
                 }
                 else {
                     return <div><div>Ton meilleur score ce mois : {this.state.ancien}</div> <div className='rotationEspace'>Tu peux recommencer pour améliorer ton score.</div></div>
                 }
-           }
-       }
+            }
+        }
     }
 
     render() {
-      
-     
+
+
         return <div>
             <Helmet>
                 <title>Résultat des exercices de conjugaison en anglais</title>
@@ -130,21 +133,21 @@ class Resultat extends Component {
                     <div>Tu es le champion incontesté de ce jeu !</div>
 
                 </div>}
-         
+
                 <div className="margeHaut30">
                     <p>Ton score : {this.props.score}</p>
- 
 
-                    <div>{this.messageEncouragement()}</div> 
-                  
+
+                    <div>{this.messageEncouragement()}</div>
+
                     <div>La moyenne des autres joueurs sur l'année : {this.state.moyenne}</div>
                     <div>Ton classement de l'année : <b>{this.state.classement}</b></div>
-                  
+
                     <div className="marge20"><ButtonLink titre="Recommencer" href={'/' + this.props.typeExo}></ButtonLink></div>
                     <div className="marge20"><ButtonLink titre="Retour à l'accueil" href={'/'}></ButtonLink></div>
-                 
-                  
-                    
+
+
+
                 </div>  <Ad></Ad>
             </div>
         </div>

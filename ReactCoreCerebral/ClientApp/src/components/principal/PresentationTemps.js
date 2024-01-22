@@ -85,9 +85,18 @@ this.nomMois = moisEnFrancais[d.getMonth()];
           <p>Les tests sont simples à comprendre et peuvent être réalisés par des juniors ou des seniors. Ils sont dans l'esprit des jeux que l'on retrouve sur les sites Luminosity ou Neuronation en version gratuite.</p>
                 <div className='jeuVitesse'>
                 <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >⭕ <Link to='vitessecercle'> Cercles de mots (nouveau)</Link></div>
+        <div className="centre titreVitesse" >✅ <Link to='vitessenombre'> Se souvenir des nombres (nouveau)</Link></div>
+         <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
+          <p className="marge20">But du jeu : Mémoriser une série de chiffres pour pouvoir la restituer plus tard. La suite de chiffres augmente à chaque fois d'un chiffre jusqu'à 8 ensuite elle redescend pour revenir à 1 chiffre. Chaque nombre trouvé rapporte 5 points. Si vous réussissez à revenir à 1 chiffre en moins de 60 secondes vous obtenez un bonus de 50 points.</p>
+     
+        <div className="centre"><Link to='classement/vitessenombre'>Classement</Link></div>
+      </div>
+
+
+                <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >⭕ <Link to='vitessecercle'> Cercles de mots</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div> 
-          <p className="marge20">But du jeu : Retrouvez des mots de 8 lettres à partir de lettres mélangées. Les lettres du mot sont placées autour d'un cercle. Vous devez indiquer la première lettre du mot puis un sens de rotation pour retrouver le mot caché. Chaque mot trouvé rapporte 10 points, -10 en cas d'erreur. Si vous trouvez les 6 mots en moins de 60 secondes vous avez un bonus de 50 points. Le score maximal est donc de (6 x 10) + 50 = 110.  </p>
+          <p className="marge20">But du jeu : Retrouver des mots de 8 lettres à partir de lettres mélangées. Les lettres du mot sont placées autour d'un cercle. Vous devez indiquer la première lettre du mot puis un sens de rotation pour retrouver le mot caché. Chaque mot trouvé rapporte 10 points, -10 en cas d'erreur. Si vous trouvez les 6 mots en moins de 60 secondes vous avez un bonus de 50 points. Le score maximal est donc de (6 x 10) + 50 = 110.  </p>
      
         <div className="centre"><Link to='classement/vitessecercle'>Classement</Link></div>
       </div>

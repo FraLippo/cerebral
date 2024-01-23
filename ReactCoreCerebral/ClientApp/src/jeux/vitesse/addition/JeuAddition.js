@@ -71,7 +71,7 @@ export default class JeuAddition extends Component {
         for (let index = 0; index < this.state.tab1.length; index++) {
             tabReponse[index] = this.state.tab1[index] ^ this.state.tab2[index];
         }
-        console.log(tabReponse);
+   
         let index = 0;
        
         while (index < this.state.tabJoueur.length && this.state.tabJoueur[index] === tabReponse[index]) {

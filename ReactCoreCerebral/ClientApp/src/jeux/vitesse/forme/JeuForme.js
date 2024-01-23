@@ -13,7 +13,7 @@ export default class JeuForme extends Component {
         this.niveau = 0;
         let { question, tabCarte } = creationJeu(this.niveau);
 
-        console.log(question);
+  
         this.stop = false;
         this.state =
         {

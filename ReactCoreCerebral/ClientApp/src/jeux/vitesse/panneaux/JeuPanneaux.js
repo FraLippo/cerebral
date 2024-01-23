@@ -37,15 +37,14 @@ export default class JeuPanneaux extends Component {
     clic = (event) => {
    
         const id = parseInt(event.currentTarget.id); 
-            console.log("clic " + id);
+       
         let score = this.state.score;
         let nouveauTabPanneau = [...this.state.tabPanneaux];
         if (nouveauTabPanneau[id].etat === 'fade-outRece fade') return;
             if (id === this.choixQuestions[this.noQuestion]) {
                 nouveauTabPanneau[id].etat = 'fade-outRece fade';
                 if (this.noQuestion < nouveauTabPanneau.length) {
-                    console.log(this.noQuestion);
-                    console.log(nouveauTabPanneau.length);
+            
                     this.noQuestion++;
                 }
                    

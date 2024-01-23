@@ -60,7 +60,7 @@ function creationJeu(niveau) {
         question.forme = choixForme();
         question.couleur = choixcouleur();
     } while (verification(question, tabCarte))
-    console.log("nb : " + i);
+   
     return { question, tabCarte }
 
 }
@@ -92,7 +92,7 @@ function verification(question, tabCarte) {
       i++;
        
     }
-    console.log(i);
+  
     return i === tabCarte.length
 }
 

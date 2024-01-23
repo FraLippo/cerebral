@@ -27,6 +27,8 @@ const Saisie = (props) => {
     <div>
       <div htmlFor="grande-zone-saisie">Saisir le nombre</div>
       <input
+       autoComplete="off" autoCorrect="off" autoCapitalize="off" 
+       spellCheck="false"
       type='text'
         ref={grandeZoneRef}
         id="grande-zone-saisie"

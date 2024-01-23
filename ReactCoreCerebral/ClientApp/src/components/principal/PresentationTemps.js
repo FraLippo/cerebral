@@ -76,30 +76,98 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <div className="titreClassement"><Link to='classementmois'><b>Mes résultats</b></Link></div>
      
           <h3>Les précédents gagnants</h3>
-      <p className='fontMoyenne'>👑 Félicitations aux précédents champions du mois : Gwendal, Meneleus, Quentin (2 fois),  rvteo, inconnu583, rvteo est de nouveau le grand gagnant du dernier concours de 2023 ! 👑</p>
+      <p className='fontMoyenne'>👑 Félicitations aux précédents champions du mois : <b>Gwendal</b>, <b>Meneleus</b>, <b>Quentin</b> (2 fois),  <b>rvteo</b>, <b>inconnu583</b>, <b>rvteo</b> est de nouveau le grand gagnant du dernier concours de 2023 ! 👑</p>
       <h3 className='centre'>🎄 Qui sera le premier champion de 2024 ? 🎁</h3>
       <Ad></Ad>
       <h1>Nos jeux cognitifs</h1>
       <p>Nous vous proposons une série de tests simples et de petits jeux de réflexion pour faire travailler son cerveau en espérant améliorer ses capacités cognitives et son intelligence. Tous les jeux sont gratuits et ne nécessitent aucune inscription.</p>
           <p>Chaque série de tests stimule une partie du cerveau différente : la mémoire, la capacité de concentration, la vitesse de réaction, le discernement des couleurs et des formes...</p>
           <p>Les tests sont simples à comprendre et peuvent être réalisés par des juniors ou des seniors. Ils sont dans l'esprit des jeux que l'on retrouve sur les sites Luminosity ou Neuronation en version gratuite.</p>
-                <div className='jeuVitesse'>
+              <h2>Tests de la  mémoire</h2>
+              <div className='jeuVitesse'>
+
+
+
                 <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >✅ <Link to='vitessenombre'> Se souvenir des nombres (nouveau)</Link></div>
+        <div className="centre titreVitesse" >✅ <Link to='vitessenombre'> Mémoire des nombres 🆕</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
           <p className="marge20">But du jeu : Mémoriser une série de chiffres pour pouvoir la restituer plus tard. La suite de chiffres augmente à chaque fois d'un chiffre jusqu'à 8 ensuite elle redescend pour revenir à 1 chiffre. Chaque nombre trouvé rapporte 5 points. Si vous réussissez à revenir à 1 chiffre en moins de 60 secondes vous obtenez un bonus de 50 points.</p>
      
         <div className="centre"><Link to='classement/vitessenombre'>Classement</Link></div>
       </div>
 
+      <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >🔺<Link to='vitesseforme'> Mémoire des formes</Link></div>
+          <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div>
+           <p className="marge20">But du jeu : Se souvenir des formes et de la couleur des éléments présentés sur des cartes. Une fois les cartes mémorisées, elles sont retournées puis c'est à vous de les retrouver. Chaque bonne réponse rapporte 2 points puis 4 points, une mauvaise réponse vous fait perdre 3 points. Le temps alloué est de 60 secondes.</p>
+     
+        <div className="centre "><Link to='classement/vitesseforme'>Classement</Link></div>
+      </div>
 
+      <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >🔵 <Link to='vitessememoire'>Se souvenir des cercles</Link></div>
+        <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div>
+        <p className="marge20">But du jeu : On vous montre un certain nombre de cercles dans une grille, vous devez mémoriser leurs emplacements et reproduire ce que vous venez de voir dans une nouvelle grille. Le temps alloué est de 90 secondes, chaque cercle trouvé rapporte 1 point, il n'y a pas de pénalité en cas d'erreur.</p>
+       
+        <div className="centre"><Link to='classement/vitessememoire'>Classement</Link></div>
+      </div>
+      <div className="presentationJeu marge20">
+        <div className="centre titreVitesse">🐈‍⬛ <Link to='vitessepaire'>L'animal précédent</Link></div>
+        <div className='centre'>Difficulté : <Rate disabled defaultValue={3} /></div>
+        <p className="marge20">But du jeu : On vous montre une suite d'images d'animaux, vous devez indiquer si l'animal que vous avez vu juste avant est le même que l'animal affiché. Vous avez 30 secondes pour obtenir le meilleur score, +1 point par bonne réponse, -3 points par mauvaise réponse.</p>
+       
+        <div className="centre"><Link to='classement/vitessepaire'>Classement</Link></div>
+      </div>
+
+
+                </div>  <h2>Tests de vocabulaire</h2>
+                <div className='jeuVitesse'>
+              
                 <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >✍ <Link to='vitesselettres'>Les lettres manquantes</Link></div>
+        <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div>
+        <p className="marge20">But du jeu : Retrouver les lettres manquantes dans les mots. Les lettres sont cachées sous des carrés de couleur. L'ordre pour retrouver les lettres associées aux couleurs est toujours le même : bleu, rouge et jaune. Chaque bonne réponse rapporte 3 point puis 4 points quand il y a 2 lettres à retrouver. Chaque mauvaise réponse vous fait perdre 1 point, le fait de passer vous coûte 2 points. Le temps alloué est de 2 minutes. </p>
+       
+        <div className="centre"><Link to='classement/vitesselettres'>Classement</Link></div>
+      </div>
+
+      <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >⭕ <Link to='vitessecercle'> Cercles de mots</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div> 
           <p className="marge20">But du jeu : Retrouver des mots de 8 lettres à partir de lettres mélangées. Les lettres du mot sont placées autour d'un cercle. Vous devez indiquer la première lettre du mot puis un sens de rotation pour retrouver le mot caché. Chaque mot trouvé rapporte 10 points, -10 en cas d'erreur. Si vous trouvez les 6 mots en moins de 60 secondes vous avez un bonus de 50 points. Le score maximal est donc de (6 x 10) + 50 = 110.  </p>
      
         <div className="centre"><Link to='classement/vitessecercle'>Classement</Link></div>
       </div>
+                
+                
+                
+                </div>
+                <h2>Tests de calcul</h2>
+                <div className='jeuVitesse'>
+                <div className="presentationJeu marge20">
+        <div className="centre titreVitesse">➕ <Link to='vitesseoperation'>Les 4 opérations</Link></div>
+        <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div>
+        <p className="marge20">But du jeu : Le plus simple des jeux de calcul mental, calculer le plus vite possible le résultat d'une simple opération. Les 4 opérateurs sont utilisés. Vous avez 90 secondes pour réaliser le meilleur score. Chaque bonne réponse rapporte 1 point.</p>
+       
+        <div className="centre"><Link to='classement/vitesseoperation'>Classement</Link></div>
+ </div>
+        <div className="presentationJeu marge20">
+        <div className="centre titreVitesse">🟰 <Link to='vitessecalcul'>La grille de calcul</Link></div>
+        <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div>
+        <p className="marge20">But du jeu : On vous donne 9 petits calculs (des additions et des soustractions) dans une grille, vous devez pointer les cases qui sont supérieures ou inférieures à un résultat donné. Vous avez 60 secondes pour réaliser le meilleur score, +1 par bonne réponse, -1 en cas de mauvaise réponse.</p>
+
+    
+        <div className="centre"><Link to='classement/vitessecalcul'>Classement</Link></div>
+      </div>
+
+     
+                </div>
+<h2>Tests de rapidité et de concentration</h2>
+                <div className='jeuVitesse'>
+                
+
+
+              
                 <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >🚦 <Link to='vitessepanneauroutier'> Le code de la route</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
@@ -125,13 +193,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       </div>
 
 
-      <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >🔺<Link to='vitesseforme'> Mémoire des formes</Link></div>
-          <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div>
-           <p className="marge20">But du jeu : Se souvenir des formes et de la couleur des éléments présentés sur des cartes. Une fois les cartes mémorisées, elles sont retournées puis c'est à vous de les retrouver. Chaque bonne réponse rapporte 2 points puis 4 points, une mauvaise réponse vous fait perdre 3 points. Le temps alloué est de 60 secondes.</p>
-     
-        <div className="centre "><Link to='classement/vitesseforme'>Classement</Link></div>
-      </div>
+      
       <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >⊕<Link to='vitesseaddition'> L'addition XOR</Link></div>
        <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div> 
@@ -167,22 +229,10 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       </div>
 
 
-      <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >🔵 <Link to='vitessememoire'>Se souvenir des cercles</Link></div>
-        <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div>
-        <p className="marge20">But du jeu : On vous montre un certain nombre de cercles dans une grille, vous devez mémoriser leurs emplacements et reproduire ce que vous venez de voir dans une nouvelle grille. Le temps alloué est de 90 secondes, chaque cercle trouvé rapporte 1 point, il n'y a pas de pénalité en cas d'erreur.</p>
-       
-        <div className="centre"><Link to='classement/vitessememoire'>Classement</Link></div>
-      </div>
+    
      
      
-      <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >✍ <Link to='vitesselettres'>Les lettres manquantes</Link></div>
-        <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div>
-        <p className="marge20">But du jeu : Retrouver les lettres manquantes dans les mots. Les lettres sont cachées sous des carrés de couleur. L'ordre pour retrouver les lettres associées aux couleurs est toujours le même : bleu, rouge et jaune. Chaque bonne réponse rapporte 3 point puis 4 points quand il y a 2 lettres à retrouver. Chaque mauvaise réponse vous fait perdre 1 point, le fait de passer vous coûte 2 points. Le temps alloué est de 2 minutes. </p>
-       
-        <div className="centre"><Link to='classement/vitesselettres'>Classement</Link></div>
-      </div>
+      
      
       <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >♬ <Link to='vitessenotes'>L'oreille musicale</Link></div>
@@ -205,13 +255,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         
         <div className="centre"><Link to='classement/vitessechemin'>Classement</Link></div>
       </div>
-      <div className="presentationJeu marge20">
-        <div className="centre titreVitesse">➕ <Link to='vitesseoperation'>Les 4 opérations</Link></div>
-        <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div>
-        <p className="marge20">But du jeu : Le plus simple des jeux de calcul mental, calculer le plus vite possible le résultat d'une simple opération. Les 4 opérateurs sont utilisés. Vous avez 90 secondes pour réaliser le meilleur score. Chaque bonne réponse rapporte 1 point.</p>
-       
-        <div className="centre"><Link to='classement/vitesseoperation'>Classement</Link></div>
-      </div>
+   
    
       <div className="presentationJeu marge20">
         <div className="centre titreVitesse">🎨 <Link to='vitessecouleur'>Reconnaitre les couleurs</Link></div>
@@ -246,22 +290,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         <div className="centre"><Link to='classement/vitesseordre'>Classement</Link></div>
       </div>
 
-      <div className="presentationJeu marge20">
-        <div className="centre titreVitesse">🐈‍⬛ <Link to='vitessepaire'>L'animal précédent</Link></div>
-        <div className='centre'>Difficulté : <Rate disabled defaultValue={3} /></div>
-        <p className="marge20">But du jeu : On vous montre une suite d'images d'animaux, vous devez indiquer si l'animal que vous avez vu juste avant est le même que l'animal affiché. Vous avez 30 secondes pour obtenir le meilleur score, +1 point par bonne réponse, -3 points par mauvaise réponse.</p>
-       
-        <div className="centre"><Link to='classement/vitessepaire'>Classement</Link></div>
-      </div>
-
-      <div className="presentationJeu marge20">
-        <div className="centre titreVitesse">🟰 <Link to='vitessecalcul'>La grille de calcul</Link></div>
-        <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div>
-        <p className="marge20">But du jeu : On vous donne 9 petits calculs (des additions et des soustractions) dans une grille, vous devez pointer les cases qui sont supérieures ou inférieures à un résultat donné. Vous avez 60 secondes pour réaliser le meilleur score, +1 par bonne réponse, -1 en cas de mauvaise réponse.</p>
-
     
-        <div className="centre"><Link to='classement/vitessecalcul'>Classement</Link></div>
-      </div>
+    
     </div>
     <h2>Pourquoi pratiquer des jeux cognitifs ?</h2>
     <p>En participant régulièrement à des jeux cognitifs, vous défiez votre cerveau de manière amusante et stimulante. Ces activités contribuent à renforcer la mémoire, à améliorer la concentration et à affiner la résolution de problèmes. Que ce soit des puzzles, des énigmes ou des jeux de mémoire, chaque défi offre une opportunité d'explorer de nouvelles façons de penser.</p>

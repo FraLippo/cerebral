@@ -39,7 +39,7 @@ export default class Nombre extends Component
                 this.setState({nombreAffiche : nouveauNombreAffiche})
             }
         
-        }, 300)
+        }, 100)
     }
 
     componentWillUnmount()

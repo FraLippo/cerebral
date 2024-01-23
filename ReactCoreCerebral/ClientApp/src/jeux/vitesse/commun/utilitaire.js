@@ -59,7 +59,7 @@ function nomType(type) {
         case "vitessecercle":
             return "Les cercles de mots";
         case "vitessenombre":
-            return "Se souvenir des nombres";
+            return "Mémoire des nombres";
 
         default:
             return "";

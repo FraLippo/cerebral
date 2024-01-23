@@ -101,7 +101,7 @@ class Resultat extends Component {
             }
             else {
                 let pourcent = 100 - ((this.props.score * 100) / this.state.ancien);
-                console.log(pourcent);
+         
                 if (pourcent === 0) {
                     return <div ><div>Ton meilleur score ce mois : {this.state.ancien}</div><div className='rotationEspace'>Tu as égalé ton meilleur score sur ce jeu.</div></div>
                 }

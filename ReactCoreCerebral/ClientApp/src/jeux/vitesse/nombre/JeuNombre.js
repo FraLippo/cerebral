@@ -72,8 +72,7 @@ export default class JeuNombre extends Component {
         if (this.fin) return;
        
         let nbSansEspace = this.state.nombre.join('').replace(/\s/g, '');
-        console.log(numero);
-        console.log(nbSansEspace)
+   
         if (numero.length === nbSansEspace.length) { 
             this.fin = true;
             if (numero === nbSansEspace) {

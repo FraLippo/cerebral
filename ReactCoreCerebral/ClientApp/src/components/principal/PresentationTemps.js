@@ -76,8 +76,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <div className="titreClassement"><Link to='classementmois'><b>Mes résultats</b></Link></div>
      
           <h3>Les précédents gagnants</h3>
-      <p className='fontMoyenne'>👑 Félicitations aux précédents champions du mois : <b>Gwendal</b>, <b>Meneleus</b>, <b>Quentin</b> (2 fois),  <b>rvteo</b>, <b>inconnu583</b>, <b>rvteo</b> est de nouveau le grand gagnant du dernier concours de 2023 ! 👑</p>
-      <h3 className='centre'>🎄 Qui sera le premier champion de 2024 ? 🎁</h3>
+      <p className='fontMoyenne'>👑 Félicitations aux précédents champions du mois : <b>Gwendal</b>, <b>Meneleus</b>, <b>Quentin</b> (2 fois),  <b>rvteo (2 fois)</b>, <b>inconnu583</b> vient à nouveau de remporter le concours du mois 👑</p>
+      <h3 className='centre'>🚩 Qui peut battre l'inconnu583 ? 📅</h3>
       <Ad></Ad>
       <h1>Nos jeux cognitifs</h1>
       <p>Nous vous proposons une série de tests simples et de petits jeux de réflexion pour faire travailler son cerveau en espérant améliorer ses capacités cognitives et son intelligence. Tous les jeux sont gratuits et ne nécessitent aucune inscription.</p>

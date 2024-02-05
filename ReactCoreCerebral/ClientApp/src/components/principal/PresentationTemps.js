@@ -91,7 +91,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
                 <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >✅ <Link to='vitessenombre'> Mémoire des nombres 🆕</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
-          <p className="marge20">But du jeu : Mémoriser une série de chiffres pour pouvoir la restituer plus tard. La suite de chiffres augmente à chaque fois d'un chiffre jusqu'à 8 ensuite elle redescend pour revenir à 1 chiffre. Chaque nombre trouvé rapporte 5 points. Si vous réussissez à revenir à 1 chiffre en moins de 60 secondes vous obtenez un bonus de 50 points.</p>
+          <p className="marge20">But du jeu : Mémoriser une série de chiffres pour pouvoir la restituer plus tard. La suite de chiffres augmente à chaque fois d'un chiffre jusqu'à 8 ensuite elle redescend pour revenir à 1 chiffre. Chaque nombre trouvé rapporte 5 points. Si vous réussissez à revenir à 1 chiffre en moins de 80 secondes vous obtenez un bonus de 50 points.</p>
      
         <div className="centre"><Link to='classement/vitessenombre'>Classement</Link></div>
       </div>

@@ -103,7 +103,7 @@ export default class JeuNombre extends Component {
 
 
 
-                    {this.state.afficheRebours &&<div className='espaceHaut'> <CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours></div>}</div></div>
+                    {this.state.afficheRebours &&<div className='espaceHaut'> <CompteRebours temps={80} finTimer={this.finTimer}></CompteRebours></div>}</div></div>
             </React.Fragment> : <Resultat score={this.score} typeExo='vitessenombre' ></Resultat>}
         </div>)
     }

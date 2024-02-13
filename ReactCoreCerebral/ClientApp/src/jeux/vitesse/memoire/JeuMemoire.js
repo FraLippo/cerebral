@@ -92,7 +92,7 @@ class JeuxMemoire extends Component {
                     <Button type='primary' className="tailleBoutonMemoireV marge10" onClick={this.clicSuite}>J'ai mémorisé</Button> </div> :
                 <div className='centreMemoireV'><Grille tabGrille={this.state.tabGrille} taille={this.taille} clic={this.clic}></Grille>
                     <div  className="tailleBoutonMemoireV marge10">Reproduire le dessin</div></div>
-                } <div className="timerMemoireV"> <CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours></div>
+                } <div className="timerMemoireV"> <CompteRebours temps={70} finTimer={this.finTimer}></CompteRebours></div>
                 
             </div></React.Fragment> }
            

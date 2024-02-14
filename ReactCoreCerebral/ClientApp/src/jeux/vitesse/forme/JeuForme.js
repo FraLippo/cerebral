@@ -95,6 +95,7 @@ export default class JeuForme extends Component {
                 <Resultat score={this.state.score} typeExo='vitesseforme'></Resultat> :
                 <div>
                     <div className="titreJeu">Se souvenir des formes</div>
+                    <div>Mémorise les cartes puis clique sur le bouton bleu.</div>
                     <div className="plateauForme">
 
                         <div className="centre marge10"><CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours></div>
@@ -102,7 +103,8 @@ export default class JeuForme extends Component {
                         <div>Score : {this.state.score}</div>
                         <div className="jeuForme"><Cartes clic={this.clicCarte} tabCarte={this.state.tabCarte}></Cartes></div>
                         {this.state.etat === 'memorisation' ?
-                            <div className='marge20'><Button onClick={this.tourner}><span>Mémorise {this.state.question.type === 'formecouleur' ? 'la forme et la couleur' : this.state.question.type === 'couleur' ? 'la couleur' : 'la forme'}</span></Button></div> :
+                        
+                            <div className='marge20'><Button type="primary" onClick={this.tourner}><span>Mémorise {this.state.question.type === 'formecouleur' ? 'la forme et la couleur' : this.state.question.type === 'couleur' ? 'la couleur' : 'la forme'}</span></Button></div> :
                             <div>{this.state.compteurReponse <= 1 ? <div>Clique sur la carte avec l'élément :</div> : <div>Clique sur les {this.state.compteurReponse} cartes avec les élements :</div>}
                                 <div className="fontMoyenne centre marge20 boldForme">
                                     {(this.state.question.type === 'formecouleur' || this.state.question.type === 'forme') && <span>{this.state.question.forme === 'carre' ? 'carré' : this.state.question.forme}</span>}

@@ -175,7 +175,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
                 <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >🎨 <Link to='vitessetresse'> Le jeu du peintre 🆕</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
-          <p className="marge20">But du jeu : Vous devez refaire le dessin qui est affiché en cliquant sur les pinceaux de couleur. Les pinceaux colorient une ligne ou une colonne entière. Une nouvelle couleur efface les autres. Il suffit de trouver le bon ordre dans laquelle le dessin a été colorié. Vous avez 50 secondes pour terminer les 10 figures (+50 points).</p>
+          <p className="marge20">But du jeu : Vous devez refaire le dessin qui est affiché en cliquant sur les pinceaux de couleur. Les pinceaux colorient une ligne ou une colonne entière. Une nouvelle couleur efface les autres. Il suffit de trouver le bon ordre dans lequelle le dessin a été colorié. Vous avez 50 secondes pour terminer les 10 figures (+50 points).</p>
      
         <div className="centre"><Link to='classement/vitessetresse'>Classement</Link></div>
       </div>
@@ -274,7 +274,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         <div className="centre titreVitesse">🎨 <Link to='vitessecouleur'>Reconnaitre les couleurs</Link></div>
         <div className='centre'>Difficulté : <Rate disabled defaultValue={5} /></div>
         <p className="marge20">But du jeu : Reconnaitre la couleur dans laquelle est écrit un mot. La difficulté provient du fait  que le mot affiché est une couleur.
-          Par exemple si l'on écrit le mot "rouge" en vert. Le but est de reconnaitre la couleur verte. Rassurez-vous vous comprendrez très vite en jouant. Vous avez 40 s pour réaliser le meilleur score, vous gagnez un point par bonne réponse, chaque faute retranche 2 points à votre score.</p>
+          Par exemple si l'on écrit le mot "rouge" en vert. Le but est de reconnaitre la couleur verte et pas le mot rouge. Rassurez-vous vous comprendrez très vite en jouant. Vous avez 40 s pour réaliser le meilleur score, vous gagnez un point par bonne réponse, chaque faute retranche 2 points à votre score.</p>
        
         <div className="centre"><Link to='classement/vitessecouleur'>Classement</Link></div>
 

@@ -2106,5 +2106,110 @@ let donneesJeuxConcours =
         taille : 8,
         resultat : [1,0,1,0,0,1,0,0,1,0,1,0,0,1,0,0,1,0,1,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,1,0,0,1,0,0,1,0,1,0,0,1,0,0,1,0,1]
             }  
-    ]
+,
+{
+    id: 10400,
+    titre: "TRES_FACILE_1",
+    idConcours: 40,
+    qualifFaute: 0,
+    info:
+    {
+        cartes: [3, 5, 9, 10, 8, 2],
+        resultat: 336,
+        solution: ['8', 'x', '3', '=', '24', '9', '+', '5', '=', '14', '14', 'x', '24', '=', '336']
+    }
+
+},
+{
+    id: 10401,
+    titre: "TRES_FACILE_1",
+    idConcours: 40,
+    qualifFaute: 0,
+    info:
+    {
+        cartes: [4, 50, 3, 7, 8, 2],
+        resultat: 379,
+        solution: ['50', '+', '3', '=', '53', '53', 'x', '7', '=', '371', '371', '+', '8', '=', '379']
+    }
+
+},
+{
+    id: 10402,
+    titre: "TRES_FACILE_1",
+    idConcours: 40,
+    qualifFaute: 0,
+    info:
+    {
+        cartes: [6, 8, 5, 9, 2, 7],
+        resultat: 249,
+        solution: ['6', 'x', '8', '=', '48','48', 'x', '5', '=', '240', '240', '+', '9', '=', '249']
+    }
+
+},
+{
+    id: 10410,
+    titre: "FACILE_1",
+    idConcours: 41,
+    qualifFaute: 1,
+    info:
+    [
+        {
+            "enonce":"7 x 8 @ 54",
+            "choix":"<>=",
+            "reponse":">"
+         },
+         {
+            "enonce":"3 @ 23 - 21",
+            "choix":"<>=",
+            "reponse":">"
+         },
+         {
+            "enonce":"23 + 24 @ 47",
+            "choix":"<>=",
+            "reponse":"="
+         },
+        {
+           "enonce":"12 x 9 @ 112",
+           "choix":"<>=",
+           "reponse":"<"
+        },
+        {
+           "enonce":"4 @ 33 / 7",
+           "choix":"<>=",
+           "reponse":"<"
+        }
+     ]
+},  {
+    id: 10411,
+    titre: "FACILE_1",
+    idConcours: 41,
+    qualifFaute: 1,
+    info:
+    [
+        {
+            "enonce":"3 + 7 @ 12 - 3",
+            "choix":"><=",
+            "reponse":">"
+         }, {
+            "enonce":"33 x 3 @ 108 - 9",
+            "choix":"><=",
+            "reponse":"="
+         }, {
+            "enonce":"65 / 5 @ 13",
+            "choix":"><=",
+            "reponse":"="
+         }, {
+            "enonce":"25 / 4 @ 6",
+            "choix":"><=",
+            "reponse":">"
+         }, {
+            "enonce":"55 - 44 @ 5 + 7",
+            "choix":"><=",
+            "reponse":"<"
+         },
+     ]
+    }
+
+     ]
+
 export default donneesJeuxConcours;

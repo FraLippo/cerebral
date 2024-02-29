@@ -34,6 +34,12 @@ let donneesConcoursCalcul =
     liste: [{type : 'NOM_MATH', id : 10230, titre : "calcul"}, {type : 'NOM_PYRAMIDE', id : 10231, titre : "pyramide"}, {type : 'NOM_COMPTE', id : 10232, titre : "compte"}
 ]
 
+},{
+    id: 41,
+    titre: "DEFI_41",
+    liste: [{type : 'NOM_MATH', id : 10410, titre : "calcul"}, {type : 'NOM_MATH', id : 10411, titre : "calcul"}
+]
+
 },
 {
     id: 24,
@@ -61,6 +67,13 @@ let donneesConcoursCalcul =
     id: 11,
     titre: "DEFI_11",
     liste: [  {type : 'NOM_COMPTE', id : 10110, titre : "compte"}, {type : 'NOM_COMPTE', id : 10111, titre : "compte"}, {type : 'NOM_COMPTE', id : 10112, titre :"compte"}
+]
+
+},
+{
+    id: 40,
+    titre: "DEFI_40",
+    liste: [  {type : 'NOM_COMPTE', id : 10400, titre : "compte"}, {type : 'NOM_COMPTE', id : 10401, titre : "compte"}, {type : 'NOM_COMPTE', id : 10402, titre :"compte"}
 ]
 
 },

@@ -22,7 +22,7 @@
     text-align: center;
     margin: 20px auto;
     border-radius: 10px;
-     background-color: rgb(205, 202, 202);
+     background-color: #66d6ff;
     padding: 10px 0px;
     font-family: sans-serif;
 
@@ -1382,3 +1382,67 @@ path {
     }
   }
 
+  /* tresse */
+
+  .grilleTresse {
+    user-select: none;
+
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px)
+}
+
+.bordureTresse
+{
+    padding: 20px;
+    border-radius: 50%;
+    border : 1px solid black;
+}
+
+.vertTresse
+{
+    background-color: #72FFAF;
+}
+
+.orangeTresse
+{
+    background-color: #FFD800
+}
+
+.bleuTresse
+{
+    background-color: #70D6FF
+}
+.roseTresse
+{
+    background-color: #FF7FB6
+}
+.jeuTresse
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  
+}
+
+.brushTresse
+{ 
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+}
+
+@media screen and (max-width: 479px) {
+    .grilleTresse {
+        user-select: none;
+    
+        display: grid;
+        grid-template-columns: repeat(8, 40px);
+        grid-template-rows: repeat(8, 40px)
+    }
+}

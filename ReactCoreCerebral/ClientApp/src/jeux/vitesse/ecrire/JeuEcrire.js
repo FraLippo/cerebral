@@ -14,7 +14,7 @@ export default class JeuEcrire extends Component {
 
         this.no = 0;
         this.tabLettres = [];
-        this.lettres = creerDonnee(30);
+        this.lettres = creerDonnee(19);
 
         this.state = {
             tabLettres: this.lettres,

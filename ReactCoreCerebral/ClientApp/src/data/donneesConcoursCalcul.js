@@ -57,6 +57,13 @@ let donneesConcoursCalcul =
 ]
 
 },
+{
+    id: 11,
+    titre: "DEFI_11",
+    liste: [  {type : 'NOM_COMPTE', id : 10110, titre : "compte"}, {type : 'NOM_COMPTE', id : 10111, titre : "compte"}, {type : 'NOM_COMPTE', id : 10112, titre :"compte"}
+]
+
+},
 
 ];
 export  default donneesConcoursCalcul;

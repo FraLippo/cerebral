@@ -12,16 +12,22 @@ const itemsMenu = [
           </a>
       ),
       key: 'jeucognitif',
-      children: [
+      children: [ {
+              label: (  <a href="https://cerebral.evalquiz.com/defi">
+              Les défis de l'analyse
+              </a>
+          ),
+              key: 'defiCo',
+            },
         {
           label: (  <a href="https://concours.evalquiz.com/presentationcerebral">
-          Jeux de logique</a>
+          Les JO de la logique</a>
       ),
           key: 'logiqueCo',
         },
         {
           label: (  <a href="https://concours.evalquiz.com/presreflexion">
-          Jeux de réflexion</a>
+           Le royaume de la réflexion</a>
       ),
           key: 'reflexionCo',
         },
@@ -33,13 +39,7 @@ const itemsMenu = [
           ),
               key: 'coco',
             },
-            {
-              label: (  <a href="https://cerebral.evalquiz.com/defi">
-              Les défis
-              </a>
-          ),
-              key: 'defiCo',
-            },
+           
           
 
       ],
@@ -56,35 +56,43 @@ const itemsMenu = [
          
               {
                 label: (  <a href="https://concours.evalquiz.com/presmot">
-                Jeux de lettres de de mots
+                La joute des lettres de des mots
                 </a>
             ),
                 key: 'motsCo',
               },
               {
                 label: (  <a href="https://concours.evalquiz.com/presorthographe">
-                Jeux sur l'orthographe
+                Le défi de l'orthographe
                 </a>
             ),
                 key: 'orthographeCo',
               },
               {
                 label: (  <a href="https://concours.evalquiz.com/presvocabulaire">
-                Jeux sur le vocabulaire 
+                Les JO du vocabulaire 
                 </a>
             ),
+            
                 key: 'vocabulaireCo',
               },
+              {
+                label: (  <a href="https://concours.evalquiz.com/presconjugaison">
+                Le royaume de la conjugaison
+                </a>
+            ),
+                  key: 'conjugagaisonCo',
+              },  
              
               {
                 label: (  <a href="https://concours.evalquiz.com/presgeographie">
-                Jeux sur la géographie</a>
+                Le défi ultime des géographes </a>
             ),
                 key: 'geographieCo',
               },
               {
                 label: (  <a href="https://concours.evalquiz.com/presculture">
-                Jeux sur la culture générale</a>
+                Le grand jeu de la culture générale</a>
             ),
                 key: 'cultureCo',
               },

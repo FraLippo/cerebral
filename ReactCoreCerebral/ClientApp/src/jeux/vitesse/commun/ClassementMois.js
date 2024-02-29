@@ -101,6 +101,11 @@ export default class ClassementMois extends Component {
 
             <div>
                 <h1>Les résultats du mois  {this.nomMois === 'août' || this.nomMois === 'avril' || this.nomMois === 'octobre' ? "d'" + this.nomMois : 'de ' + this.nomMois}</h1>
+                <h2>Les 10 meilleurs du mois</h2>
+                <Row justify="center">
+                    <Col xs={24} sm={24} md={16}><Table pagination={{ defaultPageSize: 10, hideOnSinglePage: true }} columns={this.columns} dataSource={this.state.listePremiers} rowKey='cle' />
+                    </Col></Row>
+               
                 {this.state.afficheInfoJoueur &&
                     <React.Fragment>
                         <h2>Tes résultats {this.prenom.includes('@') ? this.prenom.split('@')[0] : this.prenom}</h2>
@@ -120,10 +125,7 @@ export default class ClassementMois extends Component {
                                     </tbody>
                                 </table></div>
                         </div></React.Fragment>}
-                <h2>Les 10 meilleurs du mois</h2>
-                <Row justify="center">
-                    <Col xs={24} sm={24} md={16}><Table pagination={{ defaultPageSize: 10, hideOnSinglePage: true }} columns={this.columns} dataSource={this.state.listePremiers} rowKey='cle' />
-                    </Col></Row>
+              
             </div>
             <p className="centre fontPetite" ><a href="https://evalquiz.com">evalquiz.com</a></p>
         </div>

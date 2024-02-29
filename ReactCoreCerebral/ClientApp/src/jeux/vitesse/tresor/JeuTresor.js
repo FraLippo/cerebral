@@ -4,7 +4,7 @@ import Resultat from '../commun/Resultat';
 import Grille from './Grille';
 import Croix from './Croix';
 import Directions from './Directions';
-import { Button, message } from 'antd';
+import { message } from 'antd';
 import Nombres from './Nombre';
 import CompteRebours from '../commun/CompteRebours';
 

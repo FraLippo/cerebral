@@ -76,10 +76,9 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <div className="titreClassement"><Link to='classementmois'><b>Mes résultats</b></Link></div>
      
           <h3>Les précédents gagnants</h3>
-      <p className='fontMoyenne'>👑 Félicitations aux précédents champions du mois : <b>Gwendal</b>, <b>Meneleus</b>, <b>Quentin</b> (2 fois),  <b>rvteo (2 fois)</b>, <b>inconnu583</b> vient à nouveau de remporter le concours du mois 👑</p>
-      <h3 className='centre'>🚩 Qui peut battre l'inconnu583 ? 📅</h3>
+      <p className='fontMoyenne'>👑 Félicitations aux précédents champions du mois : <b>Gwendal</b>, <b>Meneleus</b>, <b>Quentin</b> (2 fois),  <b>rvteo</b> (2 fois), <b>inconnu583</b> (2 fois), <b>waïra</b> vient de remporter le concours du mois avec un nouveau record (2498 points)👑</p>
+      <h3 className='centre'>🚩 Qui peut battre waïra ? 📅</h3>
 
-      <div className="centre"><img  className="img-responsive" src={record} width="360" height="202" alt="record du jeu"></img></div>
       <Ad></Ad>
       <h1>Nos jeux cognitifs</h1>
       <p>Nous vous proposons une série de tests simples et de petits jeux de réflexion pour faire travailler son cerveau en espérant améliorer ses capacités cognitives et son intelligence. Tous les jeux sont gratuits et ne nécessitent aucune inscription.</p>
@@ -88,7 +87,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
               <h2>Tests de la  mémoire</h2>
               <div className='jeuVitesse'>
               <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >🎩 <Link to='vitessememory'> Le jeu du memory  🆕</Link></div>
+        <div className="centre titreVitesse" >🎩 <Link to='vitessememory'> Le jeu du memory</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={1} /></div> 
           <p className="marge20">But du jeu : Trouver toutes les paires comme dans le classique jeu du Memory. Une différence avec le jeu classique : vous découvrez les paires à votre rythme. Elles ne disparaissent pas au bout d'un certain temps. Le temps alloué est de 100 secondes pour tenter de trouver toutes les paires, un bonus de 50 points est alloué si vous finissez le jeu (max 230 points).</p>
      
@@ -173,7 +172,13 @@ this.nomMois = moisEnFrancais[d.getMonth()];
 <h2>Tests de rapidité et de concentration</h2>
                 <div className='jeuVitesse'>
                 
-
+                <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >🎨 <Link to='vitessetresse'> Le jeu du peintre 🆕</Link></div>
+         <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
+          <p className="marge20">But du jeu : Vous devez refaire le dessin qui est affiché en cliquant sur les pinceaux de couleur. Les pinceaux colorient une ligne ou une colonne entière. Une nouvelle couleur efface les autres. Il suffit de trouver le bon ordre dans laquelle le dessin a été colorié. Vous avez 50 secondes pour terminer les 10 figures (+50 points).</p>
+     
+        <div className="centre"><Link to='classement/vitessetresse'>Classement</Link></div>
+      </div>
 
               
                 <div className="presentationJeu marge20">

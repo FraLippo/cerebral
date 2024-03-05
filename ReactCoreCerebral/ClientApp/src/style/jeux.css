@@ -2098,5 +2098,43 @@ background-position: center center;
          justify-content: center;
      
  } 
+  /* photo */
+  .reponsePhoto {
+
+     cursor: pointer;
+     padding: 10px 5px;
+     background-color: #6dc0a638;
+     margin: 2px;
+     border-radius: 5px;
+ }
+
+ @keyframes apparitionDroite {
+     0% {
+       transform: translateX(100%);
+       opacity: 0;
+     }
+     100% {
+       transform: translateX(0);
+       opacity: 1;
+     }
+   }
+   
+   .texte-animation {
+     animation: apparitionDroite 1s ease-out;
+   }
+
+   .pagePhoto {
+     margin-top: 20px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+}
+.affichePhoto
+{
+     margin : 40px 0px;
+}
+
+
 
 

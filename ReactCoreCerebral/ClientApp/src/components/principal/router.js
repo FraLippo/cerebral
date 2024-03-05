@@ -7,6 +7,7 @@ import PresentationTemps from './PresentationTemps';
 import { Menu } from 'antd';
 import { itemsMenu } from './menu';
 import PageFaute from '../commun/PageFaute';
+import JeuPhoto from '../../jeux/photo/JeuPhoto';
 
 
 const Calcul = React.lazy(() => import('./Calcul'));
@@ -32,6 +33,7 @@ const JeuxFamille = React.lazy(() => import('../../jeux/memoireFamille/JeuxFamll
 const JeuxMah = React.lazy(() => import('../../jeux/mahjong/JeuxMahJong'));
 const JeuxBingo = React.lazy(() => import('../../jeux/bingo/JeuxBingo'));
 const JeuxPyramide = React.lazy(() => import('../../jeux/pyramide/JeuxPyramide'));
+const JeuxPhoto = React.lazy(() => import('../../jeux/photo/JeuPhoto'));
 const DebutEtape = React.lazy(() => import('../../jeux/concours/DebutEtape'));
 // const Tableau = React.lazy(() => import('../../components/commun/Tableau'));
 const JeuxFubuki = React.lazy(() => import('../../jeux/fubuki/jeuxFubuki'));
@@ -79,7 +81,7 @@ const router = createBrowserRouter([
        
           {
             index : true,
-            element: <PresentationTemps />,
+            element: <Presentation />,
           },
           {
             path :"en",
@@ -123,6 +125,11 @@ const router = createBrowserRouter([
            {
             path:'jeux-bingo/:id',
             element: <JeuxBingo/>,
+            
+          },
+          {
+            path:'jeux-photo/:id',
+            element: <JeuPhoto/>,
             
           },
           {
@@ -199,6 +206,11 @@ const router = createBrowserRouter([
           {
             path: 'jeuxpuzzlerotation/:id',
             element: <JeuxPuzzleRotation/>,
+            
+          },
+          {
+            path: 'photo/:id',
+            element: <JeuxPhoto/>,
             
           },
           {

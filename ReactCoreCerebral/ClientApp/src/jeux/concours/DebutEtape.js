@@ -22,6 +22,7 @@ class DebutEtape extends Component {
         this.erreur = false;
         const no = parseInt(props.params.no);
         this.concours = donneesConcours.find(x => x.id === no);
+      
         if (this.concours == null) this.erreur = true;
         else {
 

@@ -1780,436 +1780,691 @@ let donneesJeuxConcours =
                 grille: [-1, -1, 1, -1, 6, -1, -1, 3, 6, -1, 1, 3, -1, 3, 4, -1, 3, 6, -1, 1, -1, 4, -1, -1, -1, 4, 0, -1, 3, 6, -1, 2, 6, 2, 3, 2, -1, 6, -1, 2, -1, 3, -1, -1, 6, 5, 2, -1, -1]
             }
         }
-    ,
-    {
-        id: 10340,
-        titre: "FACILE_1",
-        idConcours: 34,
-        qualifFaute: 1,
-        info:
-        [
-            {
-               "enonce":"12 x 6 = @@",
-               "choix":"04567982",
-               "reponse":"72"
-            },
-            {
-               "enonce":"324 - @@ = 299",
-               "choix":"12345798",
-               "reponse":"25"
-            },
-            {
-               "enonce":"13 + 6 = @@ - 10",
-               "choix":"0123456789",
-               "reponse":"29"
-            },
-            {
-               "enonce":"88 @ 11 x 8",
-               "choix":"<>=",
-               "reponse":"="
-            },
-            {
-               "enonce":"2 h 32 = @@@ min",
-               "choix":"0134567892",
-               "reponse":"152"
-            },
-            {
-               "enonce":"62 @ 8 = 27 x 2",
-               "choix":"+-x/",
-               "reponse":"-"
-            }
-         ]
-    },
-    {
-        id: 10341,
-        titre: "FACILE_1",
-        idConcours: 34,
-        qualifFaute: 1,
-        info:
-        [
-            {
-               "enonce":"333 / 3 = @@@",
-               "choix":"12451791",
-               "reponse":"111"
-            },
-            {
-               "enonce":"14 + 33 = @@ - 8",
-               "choix":"1234567985",
-               "reponse":"55"
-            },
-            {
-               "enonce":"19 = (4 x 3) + @",
-               "choix":"0384956789",
-               "reponse":"7"
-            },
-            {
-               "enonce":"14 x 3 @ 120 / 3",
-               "choix":"<>=",
-               "reponse":">"
-            },
-            {
-               "enonce":"1/4 litre = @@ cl",
-               "choix":"006452567,",
-               "reponse":"25"
-            },
-            {
-               "enonce":"65 - 62 @ 1 + 3",
-               "choix":"><=",
-               "reponse":"<"
-            }
-         ]
-    },
-    {
-        id: 10342,
-        titre: "FACILE_1",
-        idConcours: 34,
-        qualifFaute: 1,
-        info:
-        [
-            {
-               "enonce":"L'aire d'un carré est c x c, « côté fois côté ». Quelle est l'aire d'un carré de 6 cm de côté ?$@@",
-               "choix":"1234567890",
-               "reponse":"36"
-            },
-            {
-               "enonce":"L'aire d'un rectangle est L x l, « longueur fois largeur ». Quelle est l'aire d'un rectangle de 3 cm de longueur et 9 cm de largeur ? $@@",
-               "choix":"012345,06790",
-               "reponse":"27"
-            },
-            {
-               "enonce":"L'aire d'un triangle est (base x hauteur) / 2. Quelle est l'aire d'un triangle avec une base de 7 et une hauteur de 6 ?$@@",
-               "choix":"01234567890",
-               "reponse":"21"
-            },
-            {
-               "enonce":"Pour calculer le périmètre d’un triangle, il faut additionner la longueur des trois côtés qui le composent. Quel est le périmètre d'un triangle (en cm) avec des côtés de 2, 4 et 5,5 cm ?$@@@@",
-               "choix":"01234567481,",
-               "reponse":"11,5"
-            },
-            {
-               "enonce":"Le périmètre d'un rectangle est égal à la somme de la longueur et de la largeur multipliée par deux. Quel est le périmètre d'un rectangle (en cm) avec une largeur de 1,5 cm et une longueur de de 4 cm ? $@@",
-               "choix":"01234578901",
-               "reponse":"11"
-            },
-            {
-               "enonce":"Pour calculer le périmètre d’un polygone régulier, il faut multiplier la longueur d’un de ses côtés par le nombre de côtés qui le composent. Quel est le périmètre (en cm) d'un octogone de 1,5 cm ?$@@",
-               "choix":"0123456789",
-               "reponse":"12"
-            }
-         ]
-         
-    },
-    {
-        id: 10343,
-        titre: "FACILE_1",
-        idConcours: 34,
-        qualifFaute: 1,
-        info:
-        [
-
-            {
-               "enonce":"(5 + 7) @ 3 = 4",
-               "choix":"+-/x",
-               "reponse":"/"
-            },
-            {
-               "enonce":"102 - 55 = @@",
-               "choix":"12345798",
-               "reponse":"47"
-            },
-            {
-               "enonce":"15 + 9 @ 100/ 4",
-               "choix":"><=",
-               "reponse":"<"
-            },
-            {
-               "enonce":"82 min = 1 h @@ min",
-               "choix":"1122334455",
-               "reponse":"22"
-            },
-         {
-               "enonce":"Un paquet de 6 grandes bouteilles de jus de fruit coûte 12,60 €. Combien coûte une seule bouteille ? $@@@@ ",
-               "choix":"12345,67890",
-               "reponse":"2,10"
-            },
-            {
-               "enonce":"Si 3X - 6 = 33. Combien vaut X ? $@@",
-               "choix":"1234567890",
-               "reponse":"13"
-            }
-         ]
-    },
-    {
-        id: 10350,
-        titre: "FACILE_1",
-        idConcours: 35,
-        taille : 4,
-        temps : 2000 , 
-        jeu : [1,1,9,9,1,0,0,1,9,9,1,0,9,9,1,1]
-         
-    },
-    {
-        id: 10351,
-        titre: "FACILE_1",
-        idConcours: 35,
-        taille : 4,
-        temps : 1200, 
-        jeu : [9,1,1,9,1,9,9,0,1,0,0,1,0,0,9,9]
-         
-    },  {
-        id: 10352,
-        titre: "FACILE_1",
-        idConcours: 35,
-        taille : 4,
-        temps : 1200 ,
-        jeu : [0,0,9,9,9,1,1,0,9,9,9,9,1,0,0,1]
-         
-    },  {
-        id: 10353,
-        titre: "FACILE_1",
-        idConcours: 35,
-        taille : 6,
-        temps : 1800,
-         jeu : [0,1,0,0,9,9,9,9,1,1,0,9,1,1,9,1,9,0,1,9,9,9,1,0,0,0,9,9,1,1,1,1,0,1,9,9]
-         
-    }
-   , {
-        id: 10360,
-        titre: "FACILE_1",
-        idConcours: 36,
-        temps : 2000,
-        indiceX : [[0,0,4],[0,1,1],[0,0,1],[0,0,1]],
-        indiceY : [[0,0,4],[0,0,1],[0,0,2],[0,0,1]],
-        taille : 4,
-        resultat : [1,1,1,1,1,0,0,0,1,1,0,0,1,0,0,0]
-    }, {
-        id: 10361,
-        titre: "FACILE_1",
-        idConcours: 36,
-        temps : 1200,
-        indiceX : [[0,0,3],[0,1,1],[0,0,1],[0,0,4]],
-        indiceY : [[0,0,1],[0,0,4],[0,1,1],[0,2,1]],
-        taille : 4,
-        resultat : [0,0,0,1,1,1,1,1,1,0,0,1,1,1,0,1]
-         
-    }, {
-        id: 10362,
-        titre: "FACILE_1",
-        idConcours: 36,
-        temps : 1200,
-        indiceX : [[0,2,1],[0,2,1],[0,1,2],[0,1,2]],
-        indiceY : [[0,0,4],[0,0,2],[0,0,2],[0,0,4]],
-        taille : 4,
-        resultat : [1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1]
-         
-    },
-    {
-        id: 10363,
-        titre: "FACILE_1",
-        idConcours: 36,
-        temps : 2000,
-        indiceX : [[0,0,1],[0,1,2],[0,0,6],[0,1,2],[0,0,1],[0,0,1]],
-        indiceY : [[0,0,3],[0,0,1],[0,0,1],[0,0,3],[0,0,6],[0,0,1]],
-        taille : 6,
-        resultat : [0,1,1,1,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,1,1,0,0,1,1,1,1,1,1,0,0,1,0,0,0]  
-    },
-    {
-        id: 10370,
-        titre: "FACILE_1",
-        idConcours: 37,
-        taille : 4,
-        temps : 1300 , 
-        jeu : [9,1,1,9,9,0,9,1,1,9,9,1,1,1,9,0]
-    },
-    {
-        id: 10371,
-        titre: "FACILE_1",
-        idConcours: 37,
-        temps : 1500,
-        indiceX : [[0,0,2],[0,0,3],[0,0,1],[0,0,4]],
-        indiceY : [[0,1,1],[0,2,1],[0,1,1],[0,0,3]],
-        taille : 4,
-        resultat : [1,0,0,1,1,1,0,1,0,1,0,1,0,1,1,1]
-         
-    },
-    {
-        id: 10372,
-        titre: "FACILE_1",
-        idConcours: 37,
-        taille : 6,
-        temps : 2000 ,
-        jeu : [1,0,9,1,0,1,9,1,9,9,1,0,0,1,9,1,9,0,1,0,9,0,0,9,1,0,0,9,1,0,9,9,9,0,0,1]
-
-    },
-    {
-        id: 10373,
-        titre: "FACILE_1",
-        idConcours: 37,
-        temps : 2500,
-        indiceX : [[0,1,1],[0,1,1],[0,0,6],[0,0,2],[0,0,2],[0,0,4]],
-        indiceY : [[0,0,1],[0,3,1],[0,0,4],[0,0,4],[0,3,1],[0,0,1]],
-        taille : 6,
-        resultat : [0,0,1,0,0,0,1,1,1,0,0,1,0,0,1,1,1,1,0,0,1,1,1,1,1,1,1,0,0,1,0,0,1,0,0,0]
-        
-    },
-    {
-        id: 10380,
-        titre: "FACILE_1",
-        idConcours: 38,
-        taille : 6,
-        temps : 1100 ,
-        jeu : [0,1,9,9,0,1,9,1,1,9,1,9,1,0,1,0,9,9,9,0,0,1,0,1,9,1,9,1,1,0,9,9,9,0,0,1]
-         
-    },
-    {
-        id: 10381,
-        titre: "FACILE_1",
-        idConcours: 38,
-        taille : 6,
-        temps : 1100, 
-        jeu : [1,1,9,9,9,0,0,0,1,1,9,9,0,0,1,9,9,1,1,1,9,1,0,0,9,9,9,1,0,1,1,1,9,0,1,9]
-         
-    },  {
-        id: 10382,
-        titre: "FACILE_1",
-        idConcours: 38,
-        taille : 6,
-        temps : 1100,
-         jeu : [9,1,1,9,9,9,1,0,0,1,9,9,1,1,0,0,1,9,0,0,1,9,9,1,0,1,0,1,9,1,1,9,9,9,1,0]
-         
-    },
-    {
-        id: 10390,
-        titre: "FACILE_1",
-        idConcours: 39,
-        temps : 2200,
-        indiceX : [[0,4,1],[1,1,1],[0,0,8],[1,1,1],[1,1,1],[0,0,8],[1,1,1],[0,1,3]],
-        indiceY : [[0,1,1],[0,0,8],[1,1,1],[1,1,1],[0,0,8],[1,1,1],[0,0,8],[0,1,1]],
-        taille : 8,
-        resultat : [0,0,1,0,0,1,0,0,1,1,1,1,1,1,1,1,1,0,1,0,0,1,0,0,1,0,1,0,0,1,0,0,1,1,1,1,1,1,1,1,0,0,1,0,0,1,0,1,1,1,1,1,1,1,1,1,0,0,1,0,0,1,0,0]
-    },  {
-        id: 10391,
-        titre: "FACILE_1",
-        idConcours: 39,
-        temps : 2500,
-        indiceX : [[0,0,2],[0,1,2],[0,1,1],[0,0,8],[0,0,8],[0,1,1],[0,1,2],[0,0,3]],
-        indiceY : [[0,0,6],[0,0,2],[0,0,2],[0,0,2],[0,0,2],[1,2,1],[2,2,2],[0,0,7]],
-        taille : 8,
-        resultat : [0,1,1,1,1,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,1,0,0,1,1,0,0,1,1,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1]
-    },  {
-        id: 10392,
-        titre: "FACILE_1",
-        idConcours: 39,
-        temps : 3000,
-        indiceX : [[0,4,1],[0,1,1],[0,4,3],[0,0,1],[0,0,1],[0,3,4],[0,1,1],[0,1,4]],
-        indiceY : [[1,1,1],[1,1,1],[1,1,3],[0,0,3],[0,0,3],[0,6,1],[1,1,1],[1,1,1]],
-        taille : 8,
-        resultat : [1,0,1,0,0,1,0,0,1,0,1,0,0,1,0,0,1,0,1,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,1,0,0,1,0,0,1,0,1,0,0,1,0,0,1,0,1]
-            }  
-,
-{
-    id: 10400,
-    titre: "TRES_FACILE_1",
-    idConcours: 40,
-    qualifFaute: 0,
-    info:
-    {
-        cartes: [3, 5, 9, 10, 8, 2],
-        resultat: 336,
-        solution: ['8', 'x', '3', '=', '24', '9', '+', '5', '=', '14', '14', 'x', '24', '=', '336']
-    }
-
-},
-{
-    id: 10401,
-    titre: "TRES_FACILE_1",
-    idConcours: 40,
-    qualifFaute: 0,
-    info:
-    {
-        cartes: [4, 50, 3, 7, 8, 2],
-        resultat: 379,
-        solution: ['50', '+', '3', '=', '53', '53', 'x', '7', '=', '371', '371', '+', '8', '=', '379']
-    }
-
-},
-{
-    id: 10402,
-    titre: "TRES_FACILE_1",
-    idConcours: 40,
-    qualifFaute: 0,
-    info:
-    {
-        cartes: [6, 8, 5, 9, 2, 7],
-        resultat: 249,
-        solution: ['6', 'x', '8', '=', '48','48', 'x', '5', '=', '240', '240', '+', '9', '=', '249']
-    }
-
-},
-{
-    id: 10410,
-    titre: "FACILE_1",
-    idConcours: 41,
-    qualifFaute: 1,
-    info:
-    [
+        ,
         {
-            "enonce":"7 x 8 @ 54",
-            "choix":"<>=",
-            "reponse":">"
-         },
-         {
-            "enonce":"3 @ 23 - 21",
-            "choix":"<>=",
-            "reponse":">"
-         },
-         {
-            "enonce":"23 + 24 @ 47",
-            "choix":"<>=",
-            "reponse":"="
-         },
-        {
-           "enonce":"12 x 9 @ 112",
-           "choix":"<>=",
-           "reponse":"<"
+            id: 10340,
+            titre: "FACILE_1",
+            idConcours: 34,
+            qualifFaute: 1,
+            info:
+                [
+                    {
+                        "enonce": "12 x 6 = @@",
+                        "choix": "04567982",
+                        "reponse": "72"
+                    },
+                    {
+                        "enonce": "324 - @@ = 299",
+                        "choix": "12345798",
+                        "reponse": "25"
+                    },
+                    {
+                        "enonce": "13 + 6 = @@ - 10",
+                        "choix": "0123456789",
+                        "reponse": "29"
+                    },
+                    {
+                        "enonce": "88 @ 11 x 8",
+                        "choix": "<>=",
+                        "reponse": "="
+                    },
+                    {
+                        "enonce": "2 h 32 = @@@ min",
+                        "choix": "0134567892",
+                        "reponse": "152"
+                    },
+                    {
+                        "enonce": "62 @ 8 = 27 x 2",
+                        "choix": "+-x/",
+                        "reponse": "-"
+                    }
+                ]
         },
         {
-           "enonce":"4 @ 33 / 7",
-           "choix":"<>=",
-           "reponse":"<"
-        }
-     ]
-},  {
-    id: 10411,
-    titre: "FACILE_1",
-    idConcours: 41,
-    qualifFaute: 1,
-    info:
-    [
+            id: 10341,
+            titre: "FACILE_1",
+            idConcours: 34,
+            qualifFaute: 1,
+            info:
+                [
+                    {
+                        "enonce": "333 / 3 = @@@",
+                        "choix": "12451791",
+                        "reponse": "111"
+                    },
+                    {
+                        "enonce": "14 + 33 = @@ - 8",
+                        "choix": "1234567985",
+                        "reponse": "55"
+                    },
+                    {
+                        "enonce": "19 = (4 x 3) + @",
+                        "choix": "0384956789",
+                        "reponse": "7"
+                    },
+                    {
+                        "enonce": "14 x 3 @ 120 / 3",
+                        "choix": "<>=",
+                        "reponse": ">"
+                    },
+                    {
+                        "enonce": "1/4 litre = @@ cl",
+                        "choix": "006452567,",
+                        "reponse": "25"
+                    },
+                    {
+                        "enonce": "65 - 62 @ 1 + 3",
+                        "choix": "><=",
+                        "reponse": "<"
+                    }
+                ]
+        },
         {
-            "enonce":"3 + 7 @ 12 - 3",
-            "choix":"><=",
-            "reponse":">"
-         }, {
-            "enonce":"33 x 3 @ 108 - 9",
-            "choix":"><=",
-            "reponse":"="
-         }, {
-            "enonce":"65 / 5 @ 13",
-            "choix":"><=",
-            "reponse":"="
-         }, {
-            "enonce":"25 / 4 @ 6",
-            "choix":"><=",
-            "reponse":">"
-         }, {
-            "enonce":"55 - 44 @ 5 + 7",
-            "choix":"><=",
-            "reponse":"<"
-         },
-     ]
-    }
+            id: 10342,
+            titre: "FACILE_1",
+            idConcours: 34,
+            qualifFaute: 1,
+            info:
+                [
+                    {
+                        "enonce": "L'aire d'un carré est c x c, « côté fois côté ». Quelle est l'aire d'un carré de 6 cm de côté ?$@@",
+                        "choix": "1234567890",
+                        "reponse": "36"
+                    },
+                    {
+                        "enonce": "L'aire d'un rectangle est L x l, « longueur fois largeur ». Quelle est l'aire d'un rectangle de 3 cm de longueur et 9 cm de largeur ? $@@",
+                        "choix": "012345,06790",
+                        "reponse": "27"
+                    },
+                    {
+                        "enonce": "L'aire d'un triangle est (base x hauteur) / 2. Quelle est l'aire d'un triangle avec une base de 7 et une hauteur de 6 ?$@@",
+                        "choix": "01234567890",
+                        "reponse": "21"
+                    },
+                    {
+                        "enonce": "Pour calculer le périmètre d’un triangle, il faut additionner la longueur des trois côtés qui le composent. Quel est le périmètre d'un triangle (en cm) avec des côtés de 2, 4 et 5,5 cm ?$@@@@",
+                        "choix": "01234567481,",
+                        "reponse": "11,5"
+                    },
+                    {
+                        "enonce": "Le périmètre d'un rectangle est égal à la somme de la longueur et de la largeur multipliée par deux. Quel est le périmètre d'un rectangle (en cm) avec une largeur de 1,5 cm et une longueur de de 4 cm ? $@@",
+                        "choix": "01234578901",
+                        "reponse": "11"
+                    },
+                    {
+                        "enonce": "Pour calculer le périmètre d’un polygone régulier, il faut multiplier la longueur d’un de ses côtés par le nombre de côtés qui le composent. Quel est le périmètre (en cm) d'un octogone de 1,5 cm ?$@@",
+                        "choix": "0123456789",
+                        "reponse": "12"
+                    }
+                ]
 
-     ]
+        },
+        {
+            id: 10343,
+            titre: "FACILE_1",
+            idConcours: 34,
+            qualifFaute: 1,
+            info:
+                [
+
+                    {
+                        "enonce": "(5 + 7) @ 3 = 4",
+                        "choix": "+-/x",
+                        "reponse": "/"
+                    },
+                    {
+                        "enonce": "102 - 55 = @@",
+                        "choix": "12345798",
+                        "reponse": "47"
+                    },
+                    {
+                        "enonce": "15 + 9 @ 100/ 4",
+                        "choix": "><=",
+                        "reponse": "<"
+                    },
+                    {
+                        "enonce": "82 min = 1 h @@ min",
+                        "choix": "1122334455",
+                        "reponse": "22"
+                    },
+                    {
+                        "enonce": "Un paquet de 6 grandes bouteilles de jus de fruit coûte 12,60 €. Combien coûte une seule bouteille ? $@@@@ ",
+                        "choix": "12345,67890",
+                        "reponse": "2,10"
+                    },
+                    {
+                        "enonce": "Si 3X - 6 = 33. Combien vaut X ? $@@",
+                        "choix": "1234567890",
+                        "reponse": "13"
+                    }
+                ]
+        },
+        {
+            id: 10350,
+            titre: "FACILE_1",
+            idConcours: 35,
+            taille: 4,
+            temps: 2000,
+            jeu: [1, 1, 9, 9, 1, 0, 0, 1, 9, 9, 1, 0, 9, 9, 1, 1]
+
+        },
+        {
+            id: 10351,
+            titre: "FACILE_1",
+            idConcours: 35,
+            taille: 4,
+            temps: 1200,
+            jeu: [9, 1, 1, 9, 1, 9, 9, 0, 1, 0, 0, 1, 0, 0, 9, 9]
+
+        }, {
+            id: 10352,
+            titre: "FACILE_1",
+            idConcours: 35,
+            taille: 4,
+            temps: 1200,
+            jeu: [0, 0, 9, 9, 9, 1, 1, 0, 9, 9, 9, 9, 1, 0, 0, 1]
+
+        }, {
+            id: 10353,
+            titre: "FACILE_1",
+            idConcours: 35,
+            taille: 6,
+            temps: 1800,
+            jeu: [0, 1, 0, 0, 9, 9, 9, 9, 1, 1, 0, 9, 1, 1, 9, 1, 9, 0, 1, 9, 9, 9, 1, 0, 0, 0, 9, 9, 1, 1, 1, 1, 0, 1, 9, 9]
+
+        }
+        , {
+            id: 10360,
+            titre: "FACILE_1",
+            idConcours: 36,
+            temps: 2000,
+            indiceX: [[0, 0, 4], [0, 1, 1], [0, 0, 1], [0, 0, 1]],
+            indiceY: [[0, 0, 4], [0, 0, 1], [0, 0, 2], [0, 0, 1]],
+            taille: 4,
+            resultat: [1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0]
+        }, {
+            id: 10361,
+            titre: "FACILE_1",
+            idConcours: 36,
+            temps: 1200,
+            indiceX: [[0, 0, 3], [0, 1, 1], [0, 0, 1], [0, 0, 4]],
+            indiceY: [[0, 0, 1], [0, 0, 4], [0, 1, 1], [0, 2, 1]],
+            taille: 4,
+            resultat: [0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1]
+
+        }, {
+            id: 10362,
+            titre: "FACILE_1",
+            idConcours: 36,
+            temps: 1200,
+            indiceX: [[0, 2, 1], [0, 2, 1], [0, 1, 2], [0, 1, 2]],
+            indiceY: [[0, 0, 4], [0, 0, 2], [0, 0, 2], [0, 0, 4]],
+            taille: 4,
+            resultat: [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1]
+
+        },
+        {
+            id: 10363,
+            titre: "FACILE_1",
+            idConcours: 36,
+            temps: 2000,
+            indiceX: [[0, 0, 1], [0, 1, 2], [0, 0, 6], [0, 1, 2], [0, 0, 1], [0, 0, 1]],
+            indiceY: [[0, 0, 3], [0, 0, 1], [0, 0, 1], [0, 0, 3], [0, 0, 6], [0, 0, 1]],
+            taille: 6,
+            resultat: [0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0]
+        },
+        {
+            id: 10370,
+            titre: "FACILE_1",
+            idConcours: 37,
+            taille: 4,
+            temps: 1300,
+            jeu: [9, 1, 1, 9, 9, 0, 9, 1, 1, 9, 9, 1, 1, 1, 9, 0]
+        },
+        {
+            id: 10371,
+            titre: "FACILE_1",
+            idConcours: 37,
+            temps: 1500,
+            indiceX: [[0, 0, 2], [0, 0, 3], [0, 0, 1], [0, 0, 4]],
+            indiceY: [[0, 1, 1], [0, 2, 1], [0, 1, 1], [0, 0, 3]],
+            taille: 4,
+            resultat: [1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1]
+
+        },
+        {
+            id: 10372,
+            titre: "FACILE_1",
+            idConcours: 37,
+            taille: 6,
+            temps: 2000,
+            jeu: [1, 0, 9, 1, 0, 1, 9, 1, 9, 9, 1, 0, 0, 1, 9, 1, 9, 0, 1, 0, 9, 0, 0, 9, 1, 0, 0, 9, 1, 0, 9, 9, 9, 0, 0, 1]
+
+        },
+        {
+            id: 10373,
+            titre: "FACILE_1",
+            idConcours: 37,
+            temps: 2500,
+            indiceX: [[0, 1, 1], [0, 1, 1], [0, 0, 6], [0, 0, 2], [0, 0, 2], [0, 0, 4]],
+            indiceY: [[0, 0, 1], [0, 3, 1], [0, 0, 4], [0, 0, 4], [0, 3, 1], [0, 0, 1]],
+            taille: 6,
+            resultat: [0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0]
+
+        },
+        {
+            id: 10380,
+            titre: "FACILE_1",
+            idConcours: 38,
+            taille: 6,
+            temps: 1100,
+            jeu: [0, 1, 9, 9, 0, 1, 9, 1, 1, 9, 1, 9, 1, 0, 1, 0, 9, 9, 9, 0, 0, 1, 0, 1, 9, 1, 9, 1, 1, 0, 9, 9, 9, 0, 0, 1]
+
+        },
+        {
+            id: 10381,
+            titre: "FACILE_1",
+            idConcours: 38,
+            taille: 6,
+            temps: 1100,
+            jeu: [1, 1, 9, 9, 9, 0, 0, 0, 1, 1, 9, 9, 0, 0, 1, 9, 9, 1, 1, 1, 9, 1, 0, 0, 9, 9, 9, 1, 0, 1, 1, 1, 9, 0, 1, 9]
+
+        }, {
+            id: 10382,
+            titre: "FACILE_1",
+            idConcours: 38,
+            taille: 6,
+            temps: 1100,
+            jeu: [9, 1, 1, 9, 9, 9, 1, 0, 0, 1, 9, 9, 1, 1, 0, 0, 1, 9, 0, 0, 1, 9, 9, 1, 0, 1, 0, 1, 9, 1, 1, 9, 9, 9, 1, 0]
+
+        },
+        {
+            id: 10390,
+            titre: "FACILE_1",
+            idConcours: 39,
+            temps: 2200,
+            indiceX: [[0, 4, 1], [1, 1, 1], [0, 0, 8], [1, 1, 1], [1, 1, 1], [0, 0, 8], [1, 1, 1], [0, 1, 3]],
+            indiceY: [[0, 1, 1], [0, 0, 8], [1, 1, 1], [1, 1, 1], [0, 0, 8], [1, 1, 1], [0, 0, 8], [0, 1, 1]],
+            taille: 8,
+            resultat: [0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0]
+        }, {
+            id: 10391,
+            titre: "FACILE_1",
+            idConcours: 39,
+            temps: 2500,
+            indiceX: [[0, 0, 2], [0, 1, 2], [0, 1, 1], [0, 0, 8], [0, 0, 8], [0, 1, 1], [0, 1, 2], [0, 0, 3]],
+            indiceY: [[0, 0, 6], [0, 0, 2], [0, 0, 2], [0, 0, 2], [0, 0, 2], [1, 2, 1], [2, 2, 2], [0, 0, 7]],
+            taille: 8,
+            resultat: [0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1]
+        }, {
+            id: 10392,
+            titre: "FACILE_1",
+            idConcours: 39,
+            temps: 3000,
+            indiceX: [[0, 4, 1], [0, 1, 1], [0, 4, 3], [0, 0, 1], [0, 0, 1], [0, 3, 4], [0, 1, 1], [0, 1, 4]],
+            indiceY: [[1, 1, 1], [1, 1, 1], [1, 1, 3], [0, 0, 3], [0, 0, 3], [0, 6, 1], [1, 1, 1], [1, 1, 1]],
+            taille: 8,
+            resultat: [1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1]
+        }
+        ,
+        {
+            id: 10400,
+            titre: "TRES_FACILE_1",
+            idConcours: 40,
+            qualifFaute: 0,
+            info:
+            {
+                cartes: [3, 5, 9, 10, 8, 2],
+                resultat: 336,
+                solution: ['8', 'x', '3', '=', '24', '9', '+', '5', '=', '14', '14', 'x', '24', '=', '336']
+            }
+
+        },
+        {
+            id: 10401,
+            titre: "TRES_FACILE_1",
+            idConcours: 40,
+            qualifFaute: 0,
+            info:
+            {
+                cartes: [4, 50, 3, 7, 8, 2],
+                resultat: 379,
+                solution: ['50', '+', '3', '=', '53', '53', 'x', '7', '=', '371', '371', '+', '8', '=', '379']
+            }
+
+        },
+        {
+            id: 10402,
+            titre: "TRES_FACILE_1",
+            idConcours: 40,
+            qualifFaute: 0,
+            info:
+            {
+                cartes: [6, 8, 5, 9, 2, 7],
+                resultat: 249,
+                solution: ['6', 'x', '8', '=', '48', '48', 'x', '5', '=', '240', '240', '+', '9', '=', '249']
+            }
+
+        },
+        {
+            id: 10410,
+            titre: "FACILE_1",
+            idConcours: 41,
+            qualifFaute: 1,
+            info:
+                [
+                    {
+                        "enonce": "7 x 8 @ 54",
+                        "choix": "<>=",
+                        "reponse": ">"
+                    },
+                    {
+                        "enonce": "3 @ 23 - 21",
+                        "choix": "<>=",
+                        "reponse": ">"
+                    },
+                    {
+                        "enonce": "23 + 24 @ 47",
+                        "choix": "<>=",
+                        "reponse": "="
+                    },
+                    {
+                        "enonce": "12 x 9 @ 112",
+                        "choix": "<>=",
+                        "reponse": "<"
+                    },
+                    {
+                        "enonce": "4 @ 33 / 7",
+                        "choix": "<>=",
+                        "reponse": "<"
+                    }
+                ]
+        }, {
+            id: 10411,
+            titre: "FACILE_1",
+            idConcours: 41,
+            qualifFaute: 1,
+            info:
+                [
+                    {
+                        "enonce": "3 + 7 @ 12 - 3",
+                        "choix": "><=",
+                        "reponse": ">"
+                    }, {
+                        "enonce": "33 x 3 @ 108 - 9",
+                        "choix": "><=",
+                        "reponse": "="
+                    }, {
+                        "enonce": "65 / 5 @ 13",
+                        "choix": "><=",
+                        "reponse": "="
+                    }, {
+                        "enonce": "25 / 4 @ 6",
+                        "choix": "><=",
+                        "reponse": ">"
+                    }, {
+                        "enonce": "55 - 44 @ 5 + 7",
+                        "choix": "><=",
+                        "reponse": "<"
+                    },
+                ]
+        },
+        {
+            id: 10420,
+            titre: "FACILE_1",
+            idConcours: 42,
+            qualifFaute: 0,
+            info:
+            {
+                photo: 'jeuPhoto1.jpg',
+                questions: [{
+                    question: "La jeune femme tient un livre dans ses mains.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 0
+                },
+                {
+                    question: "La jeune femme porte une jupe.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 1
+                },
+                {
+                    question: "Les rayons des étagères sont de couleur",
+                    reponses: ["Bleue", "Blanche", "Rouge", "Marron"],
+                    bonneReponse: 1
+                }]
+
+
+            }
+        },
+        {
+            id: 10421,
+            titre: "FACILE_1",
+            idConcours: 42,
+            qualifFaute: 0,
+
+            info:
+            {
+                photo: 'jeuPhoto2.jpg',
+                questions: [{
+                    question: "La jeune femme a l'air très heureuse.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 1
+                },
+                {
+                    question: "Le couple se tient juste à côté d'une voiture.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 0
+                },
+                {
+                    question: "Le T-shirt du jeune homme est de couleur",
+                    reponses: ["Bleue", "Blanche", "Rouge", "Gris"],
+                    bonneReponse: 1
+                }]
+
+
+            }
+        },
+       
+        {
+            id: 10422,
+            titre: "FACILE_1",
+            idConcours: 42,
+            qualifFaute: 0,
+
+            info:
+            {
+                photo: 'jeuPhoto3.jpg',
+                questions: [{
+                    question: "La jeune femme est pieds nus.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 0
+                },
+                {
+                    question: "Le jeune homme a une cravate bleue.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 1
+                },
+                {
+                    question: "Les 2 personnes tiennent une coupe de champagne.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 0
+                }]
+
+
+            }
+        },
+        {
+            id: 10430,
+            titre: "FACILE_1",
+            idConcours: 43,
+            qualifFaute: 0,
+
+            info:
+            {
+                photo: 'jeuPhoto4.jpg',
+                questions: [{
+                    question: "Quelle heure est-il ?",
+                    reponses: ["10 h 10", "9 h 10", "8 h 10"],
+                    bonneReponse: 0
+                },
+                {
+                    question: "La mariée regarde le marié dans les yeux.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 1
+                },
+                {
+                    question: "Le marié porte une chemise blanche.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 0
+                }]
+
+
+            }
+        },
+        {
+            id: 10431,
+            titre: "FACILE_1",
+            idConcours: 43,
+            qualifFaute: 0,
+
+            info:
+            {
+                photo: 'jeuPhoto5.jpg',
+                questions: [{
+                    question: "Combien voit-on de jeunes femmes ?",
+                    reponses: ["1", "2", "3", "4"],
+                    bonneReponse: 2
+                },
+                {
+                    question: "Une des jeunes femmes porte une robe verte.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 0
+                },
+                {
+                    question: "Combien voit-on de chapeaux ?",
+                    reponses: ["1", "2", "3"],
+                    bonneReponse: 1
+                },
+                ]
+
+
+            }
+        },
+        {
+            id: 10432,
+            titre: "FACILE_1",
+            idConcours: 43,
+            qualifFaute: 0,
+
+            info:
+            {
+                photo: 'jeuPhoto6.jpg',
+                questions: [{
+                    question: "Le père de famille tient deux enfants dans ses bras.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 1
+                },
+                {
+                    question: "Toute la famille porte des chemises à carreaux.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 1
+                },
+                {
+                    question: "Il y a 2 personnes à droite du cheval et 2 personnes à gauche du cheval.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 0
+                }]
+
+
+            }
+        },
+        {
+            id: 10440,
+            titre: "FACILE_1",
+            idConcours: 44,
+            qualifFaute: 0,
+            info:
+            {
+                photo: 'jeuPhoto7.jpg',
+                questions: [{
+                    question: "Combien voit-on de petites cuillères dans les soucoupes ?",
+                    reponses: ["1", "2"],
+                    bonneReponse: 0
+                },
+                {
+                    question: "Combien voit-on de serviettes en papier dans les soucoupes ?",
+                    reponses: ["1", "2"],
+                    bonneReponse: 0
+                },
+                {
+                    question: "Combien voit-on de bracelet aux poignets des jeunes femmes ?",
+                    reponses: ["1", "2", "3", "4"],
+                    bonneReponse: 3
+                }]
+
+
+            }
+        },
+        {
+            id: 10441,
+            titre: "FACILE_1",
+            idConcours: 44,
+            qualifFaute: 0,
+
+            info:
+            {
+                photo: 'jeuPhoto8.jpg',
+                questions: [{
+                    question: "Le père tient un livre avec ses deux mains.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 0
+                },
+                {
+                    question: "Combien peut-on voir de coussins sur le canapé ?",
+                    reponses: ["0", "1", "2"],
+                    bonneReponse: 2
+                },
+                {
+                    question: "Personne dans la famille ne porte de chaussure.",
+                    reponses: ["Vrai", "Faux"],
+                    bonneReponse: 0
+                }]
+
+
+            }
+        },
+        {
+            id: 10442,
+            titre: "FACILE_1",
+            idConcours: 44,
+            qualifFaute: 0,
+
+            info:
+            {
+                photo: 'jeuPhoto9.jpg',
+                questions: [{
+                    question: "Quelle est la couleur principale du ballon ?",
+                    reponses: ["Blanc", "Noire", "Orange", "Jaune"],
+                    bonneReponse: 2
+                },
+                {
+                    question: "Quel est le numéro du joueur avec le maillot blanc au premier plan ?",
+                    reponses: ["9", "10", "14", "22"],
+                    bonneReponse: 2
+                },
+                {
+                    question: "Combien voit-on de footballeurs avec un maillot blanc ?",
+                    reponses: ["1", "2", "3", "4"],
+                    bonneReponse: 1
+                },
+                ]
+
+
+            }
+        }
+
+
+
+    ]
 
 export default donneesJeuxConcours;

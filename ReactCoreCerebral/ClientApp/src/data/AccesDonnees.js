@@ -20,6 +20,7 @@ import donneesConcoursCalcul from './donneesConcoursCalcul';
 import donneesConcoursMot from './donneesConcoursMot';
 import donneesJeuxBinero from './donneesJeuxBinero';
 import donneesJeuxPicross from './donneeesJeuxPicross';
+
 import { readLocalStorage } from '../components/commun/localStorage';
 
 
@@ -81,6 +82,7 @@ export default class AccesDonnees {
                 return donneesJeuxPicross;
             case 'binero':
                 return donneesJeuxBinero;
+              
             case 'deficalcul':
                 return donneesConcoursCalcul;
             case 'deficerebral':

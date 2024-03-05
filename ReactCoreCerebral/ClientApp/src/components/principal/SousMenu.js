@@ -105,6 +105,10 @@ export default class SousMenu extends Component {
                 this.nom = "picross";
                 this.lien = "NOM_PICROSS";
                 break;
+            case "photo":
+                this.nom = "photo";
+                this.lien = "NOM_PHOTO";
+                break;
             default:
                 break;
         }

@@ -1,6 +1,39 @@
 let donneesConcoursCerebral =
     [
         {
+            id: 42,
+            titre: "DEFI_42",
+
+            liste: [{ type: 'NOM_PHOTO', id: 10420, titre: "photo" },
+            { type: 'NOM_PHOTO', id: 10421, titre: "photo" },
+            { type: 'NOM_PHOTO', id: 10422, titre: "photo" },
+            ]
+
+
+        },
+        {
+            id: 43,
+            titre: "DEFI_43",
+
+            liste: [{ type: 'NOM_PHOTO', id: 10430, titre: "photo" },
+            { type: 'NOM_PHOTO', id: 10431, titre: "photo" },
+            { type: 'NOM_PHOTO', id: 10432, titre: "photo" },
+            ]
+
+
+        },
+        {
+            id: 44,
+            titre: "DEFI_44",
+
+            liste: [{ type: 'NOM_PHOTO', id: 10440, titre: "photo" },
+            { type: 'NOM_PHOTO', id: 10441, titre: "photo" },
+            { type: 'NOM_PHOTO', id: 10442, titre: "photo" },
+            ]
+
+
+        },
+        {
             id: 5,
             titre: "DEFI_5",
 

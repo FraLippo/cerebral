@@ -104,6 +104,7 @@ function creerEtape(liste)
 {
    let tabItem = [];
    let i;
+   console.log(liste);
   for (i = 0; i < liste.length; i++) {
 
        tabItem.push({ description: titreJeu(liste[i].titre)})

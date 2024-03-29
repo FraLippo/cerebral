@@ -64,13 +64,14 @@ function nomType(type) {
             return "Memory";
         case "vitessetresse":
             return "Jeu du peintre";
-
+            case "vitesseboogle":
+                return "Le boogle";
         default:
             return "";
     }
 }
 let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire",
     "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessepanneaux", "vitessetresor", "vitesseaddition", "vitesseforme", "vitessematch", "vitesserecensement", "vitessepanneauroutier",
-    "vitessecercle", "vitessenombre", "vitessememory", "vitessetresse"]
+    "vitessecercle", "vitessenombre", "vitessememory", "vitessetresse", "vitesseboogle"]
 
 export { verifierStatus, nomType, tabJeu };

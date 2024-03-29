@@ -75,8 +75,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
    
       <div className="titreClassement"><Link to='classementmois'><b>Mes résultats</b></Link></div>
      
-          <h3>Les précédents gagnants</h3>
-      <p className='fontMoyenne'>👑 Félicitations aux précédents champions du mois : <b>Gwendal</b>, <b>Meneleus</b>, <b>Quentin</b> (2 fois),  <b>rvteo</b> (2 fois), <b>inconnu583</b> (2 fois), <b>waïra</b> vient de remporter le concours du mois avec un nouveau record (2498 points)👑</p>
+          <h3>Les précédents champions</h3>
+      <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal</span> <span className='champVitesse'>Gwendal</span> <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin</span> <span className='champVitesse'>Quentin</span> <span className='champVitesse'>rvteo</span> <span className='champVitesse'>rvteo</span> <span className='champVitesse'>inconnu583</span> <span className='champVitesse'>inconnu583</span> <span className='champVitesse'>waïra</span> <span className='champVitesse'>waïra (champion en cours)</span> 👑</p>
       <h3 className='centre'>🚩 Qui peut battre waïra ? 📅</h3>
 
       <Ad></Ad>
@@ -89,7 +89,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
               <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >🎩 <Link to='vitessememory'> Le jeu du memory</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={1} /></div> 
-          <p className="marge20">But du jeu : Trouver toutes les paires comme dans le classique jeu du Memory. Une différence avec le jeu classique : vous découvrez les paires à votre rythme. Elles ne disparaissent pas au bout d'un certain temps. Le temps alloué est de 100 secondes pour tenter de trouver toutes les paires, un bonus de 50 points est alloué si vous finissez le jeu (max 230 points).</p>
+          <p className="marge20">But du jeu : Trouver toutes les paires comme dans le classique jeu du Memory. Une différence avec le jeu classique : vous découvrez les paires à votre rythme. Elles ne disparaissent pas au bout d'un certain temps. Le temps alloué est de 90 secondes pour tenter de trouver toutes les paires, un bonus de 50 points est alloué si vous finissez le jeu (max 230 points).</p>
      
         <div className="centre"><Link to='classement/vitessememory'>Classement</Link></div>
       </div>
@@ -127,7 +127,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       </div>
 
 
-                </div>  <h2>Tests de vocabulaire</h2>
+                </div>  <h2>Tests sur les lettres et les mots</h2>
                 <div className='jeuVitesse'>
               
                 <div className="presentationJeu marge20">
@@ -145,7 +145,14 @@ this.nomMois = moisEnFrancais[d.getMonth()];
      
         <div className="centre"><Link to='classement/vitessecercle'>Classement</Link></div>
       </div>
-                
+      <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >🖋️ <Link to='vitesseboogle'> Le Boogle 🆕</Link></div>
+         <div className='centre'>Difficulté : <Rate disabled defaultValue={3} /></div> 
+          <p className="marge20">But du jeu : Créer des mots à partir de lettres. La lettre centrale est obligatoire dans les mots. Les mots acceptés sont ceux du Scrabble. Chaque mot de 3 ou 4 lettres rapporte 3 ou 4 points. Les points sont ensuite doublés pour les mots plus longs. Si vous trouvez 6 mots en moins de 90 s vous obtenez un bonus de 20 points. </p>
+     
+        <div className="centre"><Link to='classement/vitesseboogle'>Classement</Link></div>
+      </div>
+    
                 
                 
                 </div>
@@ -173,7 +180,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
                 <div className='jeuVitesse'>
                 
                 <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >🎨 <Link to='vitessetresse'> Le jeu du peintre 🆕</Link></div>
+        <div className="centre titreVitesse" >🎨 <Link to='vitessetresse'> Le jeu du peintre</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
           <p className="marge20">But du jeu : Vous devez refaire le dessin qui est affiché en cliquant sur les pinceaux de couleur. Les pinceaux colorient une ligne ou une colonne entière. Une nouvelle couleur efface les autres. Il suffit de trouver le bon ordre dans lequelle le dessin a été colorié. Vous avez 50 secondes pour terminer les 10 figures (+50 points).</p>
      

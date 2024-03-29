@@ -138,7 +138,55 @@ let mots8Lettres = [
     "labourer",
     "saladier",
     "sanction",
-    "sandwich"
+    "sandwich",
+    "chausson",
+    "limonade",
+    "patinage",
+    "émission",
+    "médaille",
+    "élection",
+    "majorité",
+    "religion",
+    "province",
+    "latitude",
+    "ensemble",
+    "altitude",
+    "district",
+    "critique",
+    "empereur",
+    "occasion",
+    "anomalie",
+    "bataille",
+    "présence",
+    "chapelle",
+    "position",
+    "football",
+    "activité",
+    "ceinture",
+    "argument",
+    "sécurité",
+    "contrôle",
+    "électeur",
+    "exigence",
+    "exposant",
+    "équipier",
+    "paranoïa",
+    "pastille",
+    "patineur",
+    "pénombre",
+    "zoologie",
+    "zodiaque",
+    "illusion",
+    "hérisson",
+    "identité",
+    "hexagone",
+    "humanité",
+    "homicide"
+
+
+
+
+
 
 
 

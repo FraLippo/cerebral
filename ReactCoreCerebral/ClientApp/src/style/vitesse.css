@@ -7,7 +7,14 @@
   
 }
 
-
+.champVitesse
+{
+    background-color: #9afbd8;
+    border-radius: 5px;
+    border: 1px black solid;
+    padding: 3px;
+    margin: 3px;;
+}
 .titreVitesse {
     border-radius: 10px;
     background-color: #b5ecf5;
@@ -1446,3 +1453,63 @@ path {
         grid-template-rows: repeat(8, 40px)
     }
 }
+
+/* Boogle */
+
+
+.plateauBoo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+
+
+.casesBoo {
+    width: 315px;
+    height: 350px;
+    margin: auto;
+    position: relative;
+}
+
+
+
+.celluleLettreBoo
+{
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 600px) {
+   
+    
+.celluleLettreBoo
+{
+    font-size: 1em;
+}
+}
+
+svg:hover {
+    cursor: pointer;
+}
+
+.lettresBoo {
+    height: 30px;
+    color: purple;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+
+.msgInfoBoo {
+    height: 25px;
+}
+
+.animationLettreBoo {
+    animation: fadeInFromNone2 .5s linear forwards;
+
+}
+
+
+
+

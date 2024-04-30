@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { verifierStatus } from '../commun/utilitaire';
 import withRouter from '../../../components/commun/withRouter';
 import ButtonLink from '../../../components/commun/ButtonLink';
+import { Link } from 'react-router-dom';
 import Prenom from '../../../components/commun/Prenom';
 import Confetti from 'react-confetti';
 import { addFirstName, readFirstName } from '../../../components/commun/localStorage';
-
+import { lienAutresJeux, tabJeu, typeJeu } from '../commun/utilitaire';
 import { Helmet } from 'react-helmet';
 import Ad from '../../../components/commun/adSense';
 
@@ -115,13 +116,22 @@ class Resultat extends Component {
         }
     }
 
+    lienJeux()
+    {
+        let listeLiens = lienAutresJeux(this.props.typeExo);
+      // return tabJeu.map((nom,i) => <div>{nom} <span>{typeJeu[i]}</span></div>)
+       return listeLiens.tabListeJeux.map((jeu, i) => <div className='marge10 resultatLiens' key={i}><Link to={'/' + jeu.lien}>{jeu.nom}</Link></div>)
+
+    }
+
+
     render() {
 
 
         return <div>
             <Helmet>
-                <title>Résultat des exercices de conjugaison en anglais</title>
-                <meta name="description" content="Les résultats des exercices de conjugaison des verbes irréguliers en anglais." />
+                <title>Résultat des jeux cognitifs</title>
+                <meta name="description" content="Les résultats des jeux cognitifs " />
             </Helmet>
 
             <div className="couleurTitre centre fontMoyenne">Voici tes résultats {this.state.prenom}</div>
@@ -144,9 +154,10 @@ class Resultat extends Component {
                     <div>Ton classement de l'année : <b>{this.state.classement}</b></div>
 
                     <div className="marge20"><ButtonLink titre="Recommencer" href={'/' + this.props.typeExo}></ButtonLink></div>
+                    <div className="marge20"><ButtonLink titre="Voir tous tes résultats" href={'/classementmois'}></ButtonLink></div>
                     <div className="marge20"><ButtonLink titre="Retour à l'accueil" href={'/'}></ButtonLink></div>
-
-
+<h2>Autres jeux du même type</h2>
+{this.lienJeux()}
 
                 </div>  <Ad></Ad>
             </div>

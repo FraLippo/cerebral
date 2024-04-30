@@ -15,6 +15,11 @@
     padding: 3px;
     margin: 3px;;
 }
+
+.resultatLiens a
+{
+        text-decoration: none;
+}
 .titreVitesse {
     border-radius: 10px;
     background-color: #b5ecf5;
@@ -1551,7 +1556,7 @@ justify-content: center;
 }
 
 
-.caseOpAri:active, .caseNombreAri:active, .flecheAri:active
+.pointeurMath.caseOpAri:active, .pointeurMath.caseNombreAri:active
 {
 
         transform: translateY(2px);

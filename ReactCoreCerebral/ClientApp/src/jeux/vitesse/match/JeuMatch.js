@@ -3,7 +3,7 @@ import Grille from './Grille';
 import { message } from 'antd';
 import Resultat from '../commun/Resultat';
 import CompteRebours from '../commun/CompteRebours';
-
+import { Helmet } from 'react-helmet';
 export default class JeuMatch extends Component {
 
     constructor() {
@@ -98,6 +98,10 @@ export default class JeuMatch extends Component {
 
 
         return <React.Fragment>
+                        <Helmet>
+                    <title>Retrouvez les paires</title>
+                    <meta name="description" content="Un test très simple de rapidité et de dextérité où vous devez les paires d'éléments le plus rapidement possible." />
+                </Helmet>
             {!this.state.finJeu ? <div className="jeuMatch">
             <div className='titreJeu'>Le jeu des paires</div>
                 <div className="grilleMatch"><Grille tabGrille={this.state.tabGrille} clic={this.clic}></Grille></div>

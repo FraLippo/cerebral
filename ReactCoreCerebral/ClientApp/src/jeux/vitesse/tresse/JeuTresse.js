@@ -4,6 +4,7 @@ import Grille from './Grille';
 import { message } from 'antd';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat';
+import { Helmet } from 'react-helmet';
 
 const data = [['', 'vert', ''], ['', 'orange', ''],
  ['', 'vert', 'bleu'], ['', 'orange', ''],
@@ -157,6 +158,10 @@ export default class JeuTresse extends Component {
     render() {
         return (
             <React.Fragment>
+                <Helmet>
+                <title>Le jeu du peintre</title>
+                <meta name="description" content="Un test d'attention et de concentration où vous devez reconstituer les bonnes couleurs d'un dessin dans l'ordre." />
+            </Helmet>
                  {this.state.afficheResultat ?
                 <Resultat score={this.state.score} typeExo='vitessetresse'></Resultat> :
             <div><div className='jeuTresse'>
@@ -170,6 +175,7 @@ export default class JeuTresse extends Component {
               
                 </div>  <div className="centre marge10"><CompteRebours temps={50} finTimer={this.finTimer}></CompteRebours></div>
             <div className="centre fontMoyenne">Jeu : {this.state.noJeu} / {data.length / 2}</div>
+            <p>Clique sur les pinceaux dans l'ordre pour reconstituer le dessin à gauche.</p>
               </div>  }
 </React.Fragment>
         );

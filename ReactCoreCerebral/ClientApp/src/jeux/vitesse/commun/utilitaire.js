@@ -1,3 +1,5 @@
+import { tab } from "@testing-library/user-event/dist/tab";
+
 function verifierStatus(status) {
     if (status === 401) {
         alert("Désolé, vous devez être authentifié pour accèder à cette page.")
@@ -66,12 +68,38 @@ function nomType(type) {
             return "Jeu du peintre";
             case "vitesseboogle":
                 return "Le boogle";
+                case "vitessearithmetique":
+                    return "Les nombres en désordre";
         default:
             return "";
     }
 }
 let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire",
     "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessepanneaux", "vitessetresor", "vitesseaddition", "vitesseforme", "vitessematch", "vitesserecensement", "vitessepanneauroutier",
-    "vitessecercle", "vitessenombre", "vitessememory", "vitessetresse", "vitesseboogle"]
+    "vitessecercle", "vitessenombre", "vitessememory", "vitessetresse", "vitesseboogle", "vitessearithmetique"]
 
-export { verifierStatus, nomType, tabJeu };
+let typeJeu = ['m', 'r', 'l', 'r', 'r', 'r','r', 'r', 'm','c', 'c','r','r','r','r','r', 'm','r','r', 'r', 'l', 'r','m', 'r','l', 'c']
+
+function lienAutresJeux(jeu)
+{
+    console.log(tabJeu.length);
+    console.log(typeJeu.length);
+    let index = tabJeu.findIndex(x => x === jeu);
+    let tabListeJeux = [];
+    let type = '';
+    if (index !== -1)
+    {
+        type = typeJeu[index];
+        for (let i = 0; i < tabJeu.length; i++) {
+            if (typeJeu[i] === type)
+            {
+                tabListeJeux.push({lien : tabJeu[i], nom : nomType(tabJeu[i]) });
+            }
+            
+        }
+    }
+    console.log(tabListeJeux)
+    return {groupe : type === 'm' ? 'Mémoire' : type === 'l' ? 'Lettres et mots' : type === 'c' ? 'Calcul' : 'Réflexion', tabListeJeux  }
+}
+
+export { verifierStatus, nomType, tabJeu, lienAutresJeux, typeJeu };

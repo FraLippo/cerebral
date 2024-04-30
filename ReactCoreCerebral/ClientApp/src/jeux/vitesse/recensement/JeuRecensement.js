@@ -5,6 +5,7 @@ import Logique from './Logique';
 import { message } from 'antd';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat';
+import { Helmet } from 'react-helmet';
 
 export default class JeuRecensement extends Component
 {
@@ -223,6 +224,11 @@ export default class JeuRecensement extends Component
     render()
     {
     return <React.Fragment>
+         <Helmet>
+                <title>Le jeu du recensement</title>
+                <meta name="description" content="Exercez votre esprit logique avec notre jeu interactif de recherche d'éléments dans un tableau ! Parfait pour développer votre capacité de concentration." />
+
+            </Helmet>
        {this.state.afficheResultat ?  <Resultat score={this.score} typeExo='vitesserecensement'></Resultat>  : <React.Fragment>
         <div className="jeuMatch"><Grille tabGrille={this.state.tabGrille}></Grille>
         <div className={this.state.cssFade}>

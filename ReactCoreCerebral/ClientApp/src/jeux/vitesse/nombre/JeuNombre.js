@@ -93,7 +93,7 @@ export default class JeuNombre extends Component {
         return (<div>
             <Helmet>
                 <title>Se souvenir des nombres</title>
-                <meta name="description" content="Vous devez vous souvenir des nombres affichés" />
+                <meta name="description" content="Un jeu très facile où vous devez vous souvenir des nombres affichés et les reconstituer le plus rapidement possible." />
             </Helmet>
 
             {!this.state.finJeu ? <React.Fragment>

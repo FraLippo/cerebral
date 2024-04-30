@@ -163,7 +163,7 @@ export default class JeuTresor extends Component {
         return <div>
             <Helmet>
                 <title>Ramasser le trésor</title>
-                <meta name="description" content="Un jeu cognitif pour les enfants et les seniors. Donner les bonnes indications pour que votre personnage ramasse toutes les pièces d'or." />
+                <meta name="description" content="Un jeu amusant pour les enfants et les seniors. Donner les bonnes indications pour que votre personnage ramasse toutes les pièces d'or." />
             </Helmet>
             {this.state.afficheResultat ?
                 <Resultat score={this.score} typeExo='vitessetresor'></Resultat> :

@@ -96,7 +96,7 @@ export default class JeuChemin extends Component {
                     </div>
                     <div className="centre"> <Direction tabDep={this.state.tabDep}></Direction></div>
                     <div className="centre marge10"><CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours></div>
-
+<p>Indique la case d'arrivée en suivant les flèches à partir du château.</p>
                 </div>}
         </div>
     }

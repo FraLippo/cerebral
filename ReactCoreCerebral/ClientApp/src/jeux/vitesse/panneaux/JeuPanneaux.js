@@ -77,7 +77,7 @@ export default class JeuPanneaux extends Component {
         return <React.Fragment>
             <Helmet>
                 <title>Retrouver les panneaux routiers</title>
-                <meta name="description" content="Un jeu accessible à tous où vous devez être concentré pour trouver la tuile de mah-jong solitaire parmi une série de tuiles." />
+                <meta name="description" content="Testez vos connaissances en reconnaissance des panneaux routiers avec notre jeu interactif ! Apprenez à identifier et comprendre les panneaux de signalisation les plus courants pour une conduite plus sûre et responsable." />
 
             </Helmet>
             {this.state.afficheResultat ?

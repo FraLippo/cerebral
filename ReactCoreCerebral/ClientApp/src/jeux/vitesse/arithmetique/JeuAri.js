@@ -134,7 +134,7 @@ export default class JeuAri extends Component {
         let nouveauTabOperation = [...this.state.tabOperation];
         let place = nouveauTabOdre.findIndex(x => x === '');
         if (place !== 1) {
-            message.error('Choix érroné');
+            message.error('Choix erroné');
         }
         else {
 
@@ -167,16 +167,16 @@ export default class JeuAri extends Component {
         return <React.Fragment>
             {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitessearithmetique'></Resultat> : <div>
                 <Helmet>
-                    <title>Le  jeu de la grille de calcul mental</title>
-                    <meta name="description" content="Un jeu de calcul amusant et simple pour toute la famille, vous devez rapidement effectuer des opérations pour éliminer les mauvais résultats." />
+                    <title>Le  jeu des nombres en désordre</title>
+                    <meta name="description" content="Un jeu de calcul mental amusant où il suffit de reconstituer un calcul à partir des nombres et d'un opérateur. " />
                 </Helmet>
                 <div className='jeuMry'>
                     <Ordre tabOrdre={this.state.tabOrdre}></Ordre>
                     <div className='fontMoyenne'>Utilise les nombres et les opérateurs pour créer une opération correcte</div>
                     <Choix clicChoix={this.clicChoix} clicOperateur={this.clicOperateur} tabOperation={this.state.tabOperation} tabChoix={this.state.tabChoix}></Choix>
                     <div className='centre marge10'><Button onClick={this.clicReset}>Reset</Button></div>
-                    <div className="centre marge10"><CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours></div>
-
+                    <div className="centre marge10"><CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours></div>
+                    <div className="titreJeu">Nombres en désordre</div>
                 </div></div>}
         </React.Fragment>
     }

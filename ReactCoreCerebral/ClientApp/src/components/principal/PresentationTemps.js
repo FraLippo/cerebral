@@ -76,8 +76,9 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <div className="titreClassement"><Link to='classementmois'><b>Mes résultats</b></Link></div>
      
           <h3>Les précédents champions</h3>
-      <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal</span> <span className='champVitesse'>Gwendal</span> <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin</span> <span className='champVitesse'>Quentin</span> <span className='champVitesse'>rvteo</span> <span className='champVitesse'>rvteo</span> <span className='champVitesse'>inconnu583</span> <span className='champVitesse'>inconnu583</span> <span className='champVitesse'>waïra</span> <span className='champVitesse'>waïra (champion en cours)</span> 👑</p>
-      <h3 className='centre'>🚩 Qui peut battre waïra ? 📅</h3>
+      <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal</span> <span className='champVitesse'>Gwendal</span> <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin</span> <span className='champVitesse'>Quentin</span> <span className='champVitesse'>rvteo</span> <span className='champVitesse'>rvteo</span> <span className='champVitesse'>inconnu583</span> <span className='champVitesse'>inconnu583</span> <span className='champVitesse'>waïra</span> <span className='champVitesse'>waïra</span> 
+      <span className='champVitesse'>inconnu 583 (champion du mois)</span>👑</p>
+      <h3 className='centre'>🚩 Qui peut battre l'inconnu583 ? 📅</h3>
 
       <Ad></Ad>
       <h1>Nos jeux cognitifs</h1>
@@ -141,12 +142,12 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >⭕ <Link to='vitessecercle'> Cercles de mots</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={4} /></div> 
-          <p className="marge20">But du jeu : Retrouver des mots de 8 lettres à partir de lettres mélangées. Les lettres du mot sont placées autour d'un cercle. Vous devez indiquer la première lettre du mot puis un sens de rotation pour retrouver le mot caché. Chaque mot trouvé rapporte 10 points, -10 en cas d'erreur. Si vous trouvez les 6 mots en moins de 60 secondes vous avez un bonus de 50 points. Le score maximal est donc de (6 x 10) + 50 = 110.  </p>
+          <p className="marge20">But du jeu : Retrouver des mots de 8 lettres à partir de lettres mélangées. Les lettres du mot sont placées autour d'un cercle. Vous devez indiquer la première lettre du mot puis un sens de rotation pour retrouver le mot caché. Chaque mot trouvé rapporte 10 points, -10 en cas d'erreur. Si vous trouvez les 6 mots en moins de 55 secondes vous avez un bonus de 50 points. Le score maximal est donc de (6 x 10) + 50 = 110.  </p>
      
         <div className="centre"><Link to='classement/vitessecercle'>Classement</Link></div>
       </div>
       <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >🖋️ <Link to='vitesseboogle'> Le Boogle 🆕</Link></div>
+        <div className="centre titreVitesse" >🖋️ <Link to='vitesseboogle'> Le Boogle</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={3} /></div> 
           <p className="marge20">But du jeu : Créer des mots à partir de lettres. La lettre centrale est obligatoire dans les mots. Les mots acceptés sont ceux du Scrabble. Chaque mot de 3 ou 4 lettres rapporte 3 ou 4 points. Les points sont ensuite doublés pour les mots plus longs. Si vous trouvez 6 mots en moins de 90 s vous obtenez un bonus de 20 points. </p>
      
@@ -172,6 +173,13 @@ this.nomMois = moisEnFrancais[d.getMonth()];
 
     
         <div className="centre"><Link to='classement/vitessecalcul'>Classement</Link></div>
+      </div>
+      <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >🔀 <Link to='vitessearithmetique'> Nombres en désordre 🆕</Link></div>
+         <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
+          <p className="marge20">But du jeu : Retrouvez la bonne opération. Des nombres sont affichés dans le désordre vous devez les remettre en ordre pour reconstituer une opération. Le temps est de 60 semaines. Vous avez 60 secondes, chaque bonne réponse rapporte 6 points.  </p>
+     
+        <div className="centre"><Link to='classement/vitessearithmetique'>Classement</Link></div>
       </div>
 
      

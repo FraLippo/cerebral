@@ -70,7 +70,8 @@ export default class ClassementMois extends Component {
             classement : res.classement,
             score : res.scoreTotal,
             resultatsJeux : res.resultats,
-            afficheInfoJoueur : this.prenom !== 'inconnu'
+            afficheInfoJoueur : this.prenom !== 'inconnu',
+            nbJoueurs : res.nbJoueurs
 
 
         })
@@ -110,7 +111,7 @@ export default class ClassementMois extends Component {
                     <React.Fragment>
                         <h2>Tes résultats {this.prenom.includes('@') ? this.prenom.split('@')[0] : this.prenom}</h2>
                         <div className="centre">
-                            <p className='fontMoyenne'>Ton classement : {this.state.classement}</p>
+                            <p className='fontMoyenne'>Ton classement du mois : {this.state.classement} / {this.state.nbJoueurs}</p>
                             <div className="listeJeux">
                                 <table>
                                     <thead>

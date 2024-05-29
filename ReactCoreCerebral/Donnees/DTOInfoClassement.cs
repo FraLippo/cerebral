@@ -17,5 +17,7 @@ namespace ReactCoreCerebral.Donnees
         public int ScoreTotal { get; set; }
         public int Classement { get; set; }
 
+        public int NbJoueurs { get; set; }
+
     }
 }

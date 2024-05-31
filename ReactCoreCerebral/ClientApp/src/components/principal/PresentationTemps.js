@@ -77,8 +77,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
      
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal</span> <span className='champVitesse'>Gwendal</span> <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin</span> <span className='champVitesse'>Quentin</span> <span className='champVitesse'>rvteo</span> <span className='champVitesse'>rvteo</span> <span className='champVitesse'>inconnu583</span> <span className='champVitesse'>inconnu583</span> <span className='champVitesse'>waïra</span> <span className='champVitesse'>waïra</span> 
-      <span className='champVitesse'>inconnu 583 (champion du mois)</span>👑</p>
-      <h3 className='centre'>🚩 Qui peut battre l'inconnu583 ? 📅</h3>
+      <span className='champVitesse'>inconnu 583</span> <span className='champVitesse'>inconnu 583 (champion du mois)</span>👑</p>
+      <h3 className='centre'>🚩 L'inconnu583 a remporté le concours du mois devant plus de 280 participants. C'est déjà sa 4e victoire ! 📅</h3>
 
       <Ad></Ad>
       <h1>Nos jeux cognitifs</h1>
@@ -175,7 +175,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         <div className="centre"><Link to='classement/vitessecalcul'>Classement</Link></div>
       </div>
       <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >🔀 <Link to='vitessearithmetique'> Nombres en désordre 🆕</Link></div>
+        <div className="centre titreVitesse" >🔀 <Link to='vitessearithmetique'> Nombres en désordre</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
           <p className="marge20">But du jeu : Retrouvez la bonne opération. Des nombres sont affichés dans le désordre vous devez les remettre en ordre pour reconstituer une opération. Le temps est de 60 semaines. Vous avez 60 secondes, chaque bonne réponse rapporte 6 points.  </p>
      
@@ -185,8 +185,15 @@ this.nomMois = moisEnFrancais[d.getMonth()];
      
                 </div>
 <h2>Tests de rapidité et de concentration</h2>
+
                 <div className='jeuVitesse'>
-                
+                <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >🧩 <Link to='vitessecomplet'> Pièce du puzzle 🆕</Link></div>
+         <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
+          <p className="marge20">But du jeu : Retrouvez la bonne pièce du puzzle qui s'encastre parfaitement dans une autre pièce. Un bonus peut vous être accordé si vous réussissez à trouver 10 pièces.   </p>
+     
+        <div className="centre"><Link to='classement/vitessecomplet'>Classement</Link></div>
+      </div>
                 <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >🎨 <Link to='vitessetresse'> Le jeu du peintre</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 

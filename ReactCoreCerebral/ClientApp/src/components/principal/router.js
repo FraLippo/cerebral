@@ -70,6 +70,7 @@ const JeuNombre = React.lazy(() => import('../../jeux/vitesse/nombre/JeuNombre')
 const JeuMemory = React.lazy(() => import('../../jeux/vitesse/memory/JeuMemory'));
 const JeuTresse = React.lazy(() => import('../../jeux/vitesse/tresse/JeuTresse'));
 const JeuBoogle = React.lazy(() => import('../../jeux/vitesse/boogle/JeuBoogle'));
+const JeuComplet = React.lazy(() => import('../../jeux/vitesse/complet/JeuComplet'));
 
 
 const router = createBrowserRouter([
@@ -334,6 +335,11 @@ const router = createBrowserRouter([
           {
             path: 'vitessearithmetique',
             element: <JeuAri/>,
+            
+          },
+          {
+            path: 'vitessecomplet',
+            element: <JeuComplet/>,
             
           },
           {

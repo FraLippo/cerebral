@@ -29,7 +29,7 @@ export default function CreerLettres() {
     let tabMelange = melangerTableau(tabJeu.slice(1));
     tabMelange.splice(3,0, tabJeu[0])
 
-    console.log(tabMelange);
+
     return tabMelange;
 }
 

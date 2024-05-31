@@ -35,7 +35,7 @@ class FinEtape extends Component {
         this.tentative = 1;
 
         this.concours = donneesConcours.find(x => x.id === this.donneesJeu.idConcours);
-        console.log(this.concours);
+    
         if (this.concours == null) this.erreur = true;
         else {
             this.victoire = this.verificationVictoire();

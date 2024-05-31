@@ -18,7 +18,7 @@ export default class JeuMemory extends Component {
             tabGrille.push({ image: tabImage[index], etat: 'vide', numero: index % 2 === 1 ? index - 1 : index });
 
         }
-        console.log(tabGrille);
+     
         tabGrille = this.shuffleArray(tabGrille);
         this.state =
         {
@@ -42,7 +42,7 @@ export default class JeuMemory extends Component {
 
             let selections = nouveauTabGrille.filter(x => x.etat === 'selection');
             nouveauTabGrille[id].etat = 'selection';
-            console.log(selections.length);
+        
             if (selections.length === 1) {
                 if (selections[0].numero === nouveauTabGrille[id].numero) {
                     selections[0].etat = 'trouve';

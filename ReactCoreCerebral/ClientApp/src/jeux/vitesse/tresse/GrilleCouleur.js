@@ -38,7 +38,7 @@ export default class GrilleCouleur extends Component
     {
        
         const id = parseInt(event.currentTarget.id);
-         console.log(id);
+    
         this.props.clicH(id-10);
     }
   

@@ -51,8 +51,11 @@ export default class ChiffreLetttre extends Component {
                 <li><Link to={"/jeuxlettres/0/1/2"}>Le mot le plus long niveau intermédiaire contre l'ordinateur.</Link></li>
                 <li><Link to={"/jeuxlettres/0/1/3"}>Le mot le plus long niveau difficile contre l'ordinateur.</Link></li>
                 <li><Link to={"/jeuxlettres/0/1/4"}>Le mot le plus long niveau très difficile contre l'ordinateur.</Link></li>
+ </ul>
+ <h3>Le challenge des lettres et des mots</h3>
+                <p>Si vous aimez jouer avec les mots, n'hésitez pas à participer à notre <a href="https://concours.evalquiz.com/presmot">challenge des lettres et des mots</a> en 99 étapes avec des jeux comme les mots codés, les mots coupés, les mots cachés... </p>
                 {/* <li><Link to={"/jeuxlettres/0/1/5"}>Le mot le plus long niveau impossible contre l'ordinateur (mot de 9 lettres possibles).</Link></li> */}
-              </ul>
+             
               {/* <p>La fréquentation de ce site n'est pas suffisante pour trouver des joueurs en ligne. Vous devez inviter vos propres amis.
             Il suffit de leur envoyer ce lien <b>{process.env.REACT_APP_URL_JEUXLETTRES}/{this.gameNumber}/2/2 </b> <span className="copier" onClick={this.copier}>copier</span> par mail ou par messagerie.
             Ensuite vous devez attendre votre ou vos camarades de jeu (4 au maximum) ou revenir plus tard quand ils seront disponibles, un message est affiché dès qu'un autre joueur vient dans la partie.

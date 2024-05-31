@@ -56,7 +56,7 @@ export default class JeuTresse extends Component {
     construire = (tabGrilleVerif) => {
         let tabCouleur = [];
         for (let index = 0; index < data[this.noJeu].length; index++) {
-            console.log(data[this.noJeu][index] );
+         
             if (data[this.noJeu][index] !== '') {
                 tabCouleur.push({ orientation: 'H', couleur: data[this.noJeu][index], index })
             }
@@ -66,7 +66,7 @@ export default class JeuTresse extends Component {
                 tabCouleur.push({ orientation: 'V', couleur: data[this.noJeu+1][index], index })
             }
         }
-        console.log(tabCouleur);
+  
         tabCouleur = this.shuffleArray(tabCouleur);
 
         for (let i = 0; i < tabCouleur.length; i++) {
@@ -125,7 +125,7 @@ export default class JeuTresse extends Component {
 
     clicH = (id) => {
         if (this.state.tabGrilleH[id] === ''|| this.fin) return;
-        console.log(id);
+      
         let couleur = this.noCouleur(this.state.tabGrilleH[id]);
         let nouveauTabGrille = [...this.state.tabGrille];
 
@@ -133,7 +133,7 @@ export default class JeuTresse extends Component {
             nouveauTabGrille[(id + (index * 3))] = couleur;
 
         }
-        console.log(nouveauTabGrille);
+       
         this.setState({ tabGrille: nouveauTabGrille }, this.verifierFin)
     }
 

@@ -66,40 +66,38 @@ function nomType(type) {
             return "Memory";
         case "vitessetresse":
             return "Jeu du peintre";
-            case "vitesseboogle":
-                return "Le boogle";
-                case "vitessearithmetique":
-                    return "Les nombres en désordre";
+        case "vitesseboogle":
+            return "Le boogle";
+        case "vitessearithmetique":
+            return "Les nombres en désordre";
+        case "vitessecomplet":
+            return "Pièce puzzle";
         default:
             return "";
     }
 }
 let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire",
     "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessepanneaux", "vitessetresor", "vitesseaddition", "vitesseforme", "vitessematch", "vitesserecensement", "vitessepanneauroutier",
-    "vitessecercle", "vitessenombre", "vitessememory", "vitessetresse", "vitesseboogle", "vitessearithmetique"]
+    "vitessecercle", "vitessenombre", "vitessememory", "vitessetresse", "vitesseboogle", "vitessearithmetique", "vitessecomplet"]
 
-let typeJeu = ['m', 'r', 'l', 'r', 'r', 'r','r', 'r', 'm','c', 'c','r','r','r','r','r', 'm','r','r', 'r', 'l', 'r','m', 'r','l', 'c']
+let typeJeu = ['m', 'r', 'l', 'r', 'r', 'r', 'r', 'r', 'm', 'c', 'c', 'r', 'r', 'r', 'r', 'r', 'm', 'r', 'r', 'r', 'l', 'r', 'm', 'r', 'l', 'c', 'r']
 
-function lienAutresJeux(jeu)
-{
-    console.log(tabJeu.length);
-    console.log(typeJeu.length);
+function lienAutresJeux(jeu) {
+   
     let index = tabJeu.findIndex(x => x === jeu);
     let tabListeJeux = [];
     let type = '';
-    if (index !== -1)
-    {
+    if (index !== -1) {
         type = typeJeu[index];
         for (let i = 0; i < tabJeu.length; i++) {
-            if (typeJeu[i] === type)
-            {
-                tabListeJeux.push({lien : tabJeu[i], nom : nomType(tabJeu[i]) });
+            if (typeJeu[i] === type) {
+                tabListeJeux.push({ lien: tabJeu[i], nom: nomType(tabJeu[i]) });
             }
-            
+
         }
     }
-    console.log(tabListeJeux)
-    return {groupe : type === 'm' ? 'Mémoire' : type === 'l' ? 'Lettres et mots' : type === 'c' ? 'Calcul' : 'Réflexion', tabListeJeux  }
+
+    return { groupe: type === 'm' ? 'Mémoire' : type === 'l' ? 'Lettres et mots' : type === 'c' ? 'Calcul' : 'Réflexion', tabListeJeux }
 }
 
 export { verifierStatus, nomType, tabJeu, lienAutresJeux, typeJeu };

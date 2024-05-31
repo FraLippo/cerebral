@@ -15,7 +15,7 @@ class JeuPhoto extends Component {
         let logique = new Logique(this.id);
         this.donneesGlobal = logique.obtenirDonnee();
         this.donnee = logique.obtenirDonneeJeu();
-        console.log(this.donnee);
+     
         this.temps = 150;
         this.perdu = false;
         this.noQuestion = 0;

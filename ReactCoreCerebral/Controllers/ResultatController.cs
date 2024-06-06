@@ -42,7 +42,7 @@ namespace CerebralCore.Controllers
                        group d by Math.Floor((double)d.Duree.Value / (dureeMax * 100)) into tempsGroup
                        select new
                        {
-                           xTemps = (((dureeMax/2) + (tempsGroup.Key * dureeMax)) / 10).ToString(),
+                           xTemps = (((dureeMax / 2) + (tempsGroup.Key * dureeMax)) / 10).ToString(),
                            yNbJoueurs = tempsGroup.Count()
 
                        };
@@ -98,6 +98,30 @@ namespace CerebralCore.Controllers
                 x.noExo,
                 date = x.date.HasValue ? x.date.Value.ToString("f", french) : "Inconnu",
                 titre = string.IsNullOrEmpty(x.listeFautes) ? "" : x.listeFautes
+            });
+            return Ok(listeMeilleursSimple);
+        }
+
+
+        public async Task AjouterTableauMot(string prenom, string niveau)
+        {
+            //Horreur, Le listeFaute sert au niveau !
+            Resultat2019 result = new Resultat2019() { typeExo = "longmot", date = DateTime.Now, prenom = prenom, listeFautes = niveau };
+            _dbTableau.Resultat2019.Add(result);
+            await _dbTableau.SaveChangesAsync();
+
+        }
+
+        public IActionResult LireTableauMot()
+        {
+            CultureInfo french = CultureInfo.CreateSpecificCulture("fr-FR");
+            var listeMeilleurs = _dbTableau.Resultat2019.Where(x => x.nbFaute == 0 && x.typeExo == "longmot" && x.date != null && x.prenom != null).OrderByDescending(x => x.date).Take(8).ToList();
+            var listeMeilleursSimple = listeMeilleurs.Select(x => new
+            {
+                x.prenom,
+                x.noExo,
+                date = x.date.HasValue ? x.date.Value.ToString("f", french) : "Inconnu",
+                niveau = string.IsNullOrEmpty(x.listeFautes) ? "" : x.listeFautes
             });
             return Ok(listeMeilleursSimple);
         }

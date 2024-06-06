@@ -82,21 +82,72 @@ namespace CerebralCore.Donnees
             
             switch (niveau)
             {
+                case 0:
+                    longueur = R.Next(2, 3);
+                    break;
                 case 1:
-                    longueur = 3;
+                    longueur = R.Next(2, 3);
                     break;
                 case 2:
-                    longueur = R.Next(4, 6);
+                    longueur = R.Next(3, 4);
                     break;
                 case 3:
-                    longueur = R.Next(5, 7);
+                    longueur = R.Next(3, 4);
                     break;
                 case 4:
+                    longueur = R.Next(3, 4);
+                    break;
+               
+                case 5:
+                    longueur = R.Next(3, 5);
+                    break;
+                case 6:
+                    longueur = R.Next(3, 5);
+                    break;
+                case 7:
+                    longueur = R.Next(3, 5);
+                    break;
+                case 8:
+                    longueur = R.Next(3, 6);
+                    break;
+                case 9:
+                    longueur = R.Next(4, 6);
+                    break;
+                case 10:
+                    longueur = R.Next(4, 6);
+                    break;
+                case 11:
+                    longueur = R.Next(5, 6);
+                    break;
+                case 12:
+                    longueur = R.Next(3, 7);
+                    break;
+                case 13:
+                    longueur = R.Next(3, 7);
+                    break;
+                case 14:
+                    longueur = R.Next(4, 7);
+                    break;
+               
+                case 15:
+                    longueur = R.Next(4, 7);
+                    break;
+                case 16:
+                    longueur = R.Next(3, 8);
+                    break;
+                case 17:
+                    longueur = R.Next(5, 7);
+                    break;
+                case 18:
+                    longueur = R.Next(3, 8);
+                    break;
+                case 19:
                     longueur = R.Next(5, 9);
                     break;
-                case 5:
-                    longueur = R.Next(6, 10);
+                case 20:
+                    longueur = R.Next(7, 9);
                     break;
+                
                 default:
                     longueur = 4;
                     break;

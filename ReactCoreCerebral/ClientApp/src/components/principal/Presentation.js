@@ -58,15 +58,7 @@ export default class Presentation extends Component {
             <SousMenu type="defiCalcul" titre="NOM_DEFI_CALCUL"></SousMenu>
             </Col>
             </Row>
-            <Row gutter={8} className="espaceHaut">
-            <Col md={10}>
-              <h3>Des chiffres et des lettres</h3>
-              <p>Découvrez le jeu des chiffres et des lettres, une combinaison captivante de réflexion mathématique et de compétences linguistiques. Mettez votre esprit à l'épreuve en résolvant des calculs arithmétiques complexes et en formant des mots à partir d'un ensemble de lettres données. Ce jeu stimulant est parfait pour les amateurs de défis intellectuels à la recherche d'une expérience divertissante alliant mathématiques et mots.</p>
-              </Col>
-              <Col md={14}>
-            <SousMenu type="defiMot" titre="NOM_DEFI_MOT"></SousMenu>
-          </Col>
-        </Row>
+        
       </div>
 <Ad></Ad>
       

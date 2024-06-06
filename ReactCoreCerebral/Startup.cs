@@ -26,12 +26,8 @@ namespace ReactCoreCerebral
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSignalR();
             services.AddControllersWithViews();
             services.AddSingleton<IDictionnaire, Dictionnaire>();
-            services.AddSingleton<IDonneesJeu, DonneesJeu>();
-
-            services.AddHostedService<TempsService>();
             services.AddDbContext<CerebralContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("CerebralContext")));
             services.AddDbContext<TableauContext>(options =>
@@ -69,7 +65,7 @@ namespace ReactCoreCerebral
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
-                endpoints.MapHub<LettreHub>("/lettreHub");
+               
             });
 
             app.UseSpa(spa =>

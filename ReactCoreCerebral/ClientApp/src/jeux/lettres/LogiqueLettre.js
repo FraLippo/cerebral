@@ -1,26 +1,102 @@
-import donneesJeuxConcours from "../../data/donneesJeuxConcours"
 
 
+const listeNiveaux = [
+    {
+        titre : "débutante",
+        intervalle : "2 ou 3"
+    },
+    {
+        titre : "débutante",
+        intervalle : "2 ou 3"
+    },  {
+        titre : "novice",
+        intervalle : "3 ou 4"
+    },  {
+        titre : "novice",
+        intervalle : "3 ou 4"
+    },  {
+        titre : "novice",
+        intervalle : "3 ou 4"
+    },  {
+        titre : "amateur",
+        intervalle : "3 ou 5"
+    },  {
+        titre : "amateur",
+        intervalle : "3 ou 5"
+    },  {
+        titre : "amateur",
+        intervalle : "3 ou 5"
+    },  {
+        titre : "intermédiaire",
+        intervalle : "3 ou 6"
+    },  {
+        titre : "intermédiaire",
+        intervalle : "4 ou 6"
+    },  {
+        titre : "étourdie",
+        intervalle : "3 ou 7"
+    },  {
+        titre : "avancée",
+        intervalle : "5 ou 6"
+    },  {
+        titre : "inconstante",
+        intervalle : "3 ou 7"
+    },  {
+        titre : "inconstante",
+        intervalle : "3 ou 7"
+    },  {
+        titre : "confirmée",
+        intervalle : "4 ou 7"
+    },  {
+        titre : "confirmée",
+        intervalle : "4 ou 7"
+    },  {
+        titre : "déconcertante",
+        intervalle : "3 ou 8"
+    },  {
+        titre : "expérimentée",
+        intervalle : "5 ou 7"
+    },  {
+        titre : "stressée",
+        intervalle : "3 ou 8"
+    },
+    {
+        titre : "experte",
+        intervalle : "5 ou 9"
+    },
+    {
+        titre : "ultime",
+        intervalle : "6 ou 9"
+    },
+     
+  ];  
 export default class LogiqueLettre {
 
 
-    static findConcours(id)
-    {
-        this.jeu = donneesJeuxConcours.find(x => x.id === id);
-        return this.jeu.idConcours;
+  
+
+    static obtenirPrenom = () =>
+  {
+        const prenomsFeminins = [
+            "Camille","Léa","Manon","Chloé","Zoé","Julie","Emma","Sarah","Laura","Anaïs","Claire","Lucie","Marion","Élise","Sophie","Alice","Marie","Eva","Louise","Inès", "Maryam", "Sofia", "Lina", "Nour"
+        ];  
+        let nb = Math.floor(Math.random() * prenomsFeminins.length);
+        return prenomsFeminins[nb];
     }
 
-    static messageIntro = () =>
-    {
-        return [
-            {
-                id: 1,
-                de : "evalquiz.com",
-                contenu  : "Vous pouvez envoyer des messages aux autres joueurs lorsqu'ils sont connectés."
-                
-            }
-        ]
-    }
+    static obtenirNbNiveau = () =>
+        {
+  
+              return listeNiveaux.length;
+          }
+
+
+    static obtenirNiveau = (niveau) =>
+        {
+           
+             
+              return listeNiveaux[niveau];
+          }
 
     static  constructionEmplacement(position) {
 

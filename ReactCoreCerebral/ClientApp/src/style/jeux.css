@@ -1164,43 +1164,36 @@ background-position: center center;
 /* Jeu Les lettres (chiffres et lettres) */
 
 .grilleLettrePrincipal {
-     display: grid;
-     grid-template-columns: 100%;
-     grid-template-rows: 40px 80px 45px 45px 35px 1fr;
-     grid-template-areas: "titre""grilleLettres""vainqueur""manche""compteur""grilleAction"
+     display: flex;
+     align-items: center;
+     flex-direction: column;
 }
 
-.titreLettre {
-     grid-area: titre;
+.textePresentation
+{
+     padding: 5px;
+     border: 2px solid blue;
+     border-radius: 5px;
+     background-color: #6b0aa3;
+     color:white;
+     width: 360px;
+     height: 100px;
 }
 
-.vainqueur {
-     grid-area: vainqueur;
-     font-size: 1.8em;
-     color: indigo;
-     text-align: center;
-}
+
 
 .manche {
-     grid-area: manche;
+     height : 45px;
      text-align: center;
      font-size: 1.5em;
      color: black;
 }
 
-.compteur {
-     grid-area: compteur;
-     justify-self: center;
-     font-size: 1.5em;
-     color: purple;
+.backVictoire
+{
+     background-color: #b42aa9;
 }
 
-.grilleAction {
-     display: grid;
-     grid-template-columns: 5% 40% 5% 50%;
-     grid-template-rows: 100%;
-     grid-template-areas: "espaceVide1 grilleSaisie espaceVide2 grilleJoueurs";
-}
 
 .grilleLettres {
      grid-area: grilleLettres;
@@ -1211,9 +1204,7 @@ background-position: center center;
      grid-gap: 10px;
 }
 
-.espaceSaisie {
-     grid-area: grilleSaisie;
-}
+
 
 .grilleSaisieMot {
      display: grid;
@@ -1281,12 +1272,7 @@ background-position: center center;
 }
 
 @media screen and (max-width: 500px) {
-     .grilleAction {
-          display: grid;
-          grid-template-columns: 100%;
-          grid-template-rows: 1fr 1fr;
-          grid-template-areas: "grilleSaisie""grilleJoueurs";
-     }
+    
 
      .grilleLettres {
           grid-template-columns: repeat(9, 30px);
@@ -2135,3 +2121,8 @@ background-position: center center;
      margin : 40px 0px;
 }
 
+.hauteurCarte2 {
+     height: 150px;
+     background-color: #26e9ff;
+    box-shadow:  5px -5px #8bd6d6
+}

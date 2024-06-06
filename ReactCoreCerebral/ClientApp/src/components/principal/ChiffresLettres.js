@@ -6,10 +6,11 @@ import '../../style/jeux.css';
 import border from '../../images/border.png';
 import compte from '../../images/compte.webp';
 import motLong from '../../images/motLong.webp';
-
+import TableauMot from '../commun/TableauMot';
 import { Link } from 'react-router-dom';
 import { Card } from 'antd';
 import { Helmet } from 'react-helmet';
+
 
 
 export default class ChiffreLetttre extends Component {
@@ -41,19 +42,21 @@ export default class ChiffreLetttre extends Component {
             <p>Un jeu qui ressemble au jeu du mot le plus long de l'émission <b>"Des chiffres et des lettres"</b>.</p>
             <p>"Le Mot le Plus Long : Testez vos compétences en vocabulaire et remportez des défis passionnants ! Plongez dans une expérience de jeu linguistique captivante où votre talent pour les mots est mis à l'épreuve. Déjouez les lettres mélangées, formez le mot le plus étendu possible et révélez votre maîtrise des mots. Que vous soyez un passionné des jeux de lettres ou amateur de défis intellectuels, "Le Mot le Plus Long" vous offre une expérience unique qui stimulera votre esprit tout en vous divertissant.</p>
             <p>Le programme accepte tous les mots et les verbes conjugués. Dans l'esprit des mots acceptés on est plus proche du Scrabble que des chiffres et des lettres. </p>
-            <p>La partie se joue en 3 manches, si vous remportez la manche, c'est à dire si vous trouvez un mot plus long que celui de l'ordinateur, vous gagnez 3 points (6 points pour la dernière manche) plus le nombre de lettres du mot.</p>
+            <p>La partie se joue en 3 manches, si vous remportez la manche, c'est à dire si vous trouvez un mot plus long que celui de l'ordinateur, vous gagnez 2 points plus le nombre de lettres du mot.</p>
 
             <div className="centre"><img className="espaceHaut img-responsive" width="500" height="66" src={motLong} alt="le mot le plus long"></img></div>
 
             <div> <Card title={<span style={{ whiteSpace: 'normal' }}>Le mot le plus long</span>}>
               <ul>
-                <li><Link to={"/jeuxlettres/0/1/1"}>Le mot le plus long niveau facile contre l'ordinateur.</Link></li>
-                <li><Link to={"/jeuxlettres/0/1/2"}>Le mot le plus long niveau intermédiaire contre l'ordinateur.</Link></li>
-                <li><Link to={"/jeuxlettres/0/1/3"}>Le mot le plus long niveau difficile contre l'ordinateur.</Link></li>
-                <li><Link to={"/jeuxlettres/0/1/4"}>Le mot le plus long niveau très difficile contre l'ordinateur.</Link></li>
+                <li><Link to={"/jeuxlettres/0/1/1"}>Le mot le plus long niveau très facile contre l'ordinateur</Link></li>
+                <li><Link to={"/jeuxlettres/0/1/2"}>Le mot le plus long niveau facile contre l'ordinateur</Link></li>
+                <li><Link to={"/jeuxlettres/0/1/3"}>Le mot le plus long niveau intermédiaire contre l'ordinateur</Link></li>
+                <li><Link to={"/jeuxlettres/0/1/4"}>Le mot le plus long niveau difficile contre l'ordinateur</Link></li>
  </ul>
- <h3>Le challenge des lettres et des mots</h3>
-                <p>Si vous aimez jouer avec les mots, n'hésitez pas à participer à notre <a href="https://concours.evalquiz.com/presmot">challenge des lettres et des mots</a> en 99 étapes avec des jeux comme les mots codés, les mots coupés, les mots cachés... </p>
+ <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+ <TableauMot></TableauMot>
+ <h3>✏️ Le challenge des lettres et des mots 🔡</h3>
+                <p>Si vous aimez jouer avec les mots, n'hésitez pas à participer à notre <a href="https://concours.evalquiz.com/presmot">challenge des lettres et des mots 📚</a> en 99 étapes avec des jeux comme les mots codés, les mots coupés, les mots cachés... </p>
                 {/* <li><Link to={"/jeuxlettres/0/1/5"}>Le mot le plus long niveau impossible contre l'ordinateur (mot de 9 lettres possibles).</Link></li> */}
              
               {/* <p>La fréquentation de ce site n'est pas suffisante pour trouver des joueurs en ligne. Vous devez inviter vos propres amis.
@@ -68,6 +71,7 @@ export default class ChiffreLetttre extends Component {
           </Col>
         </Row>
         <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+
         <Row gutter={8} className="espaceHaut">
           <Col md={24}> 
           <h2>Le compte est bon</h2>

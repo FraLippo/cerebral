@@ -6,7 +6,6 @@ import '../../style/jeux.css';
 import border from '../../images/border.png';
 import presentation from '../../images/presentation.webp'
 import { Helmet } from 'react-helmet';
-import concours from '../../images/presentation.jpg';
 
 
 import Tableau from '../commun/Tableau';

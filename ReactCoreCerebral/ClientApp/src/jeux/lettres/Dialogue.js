@@ -104,7 +104,7 @@ export default class Dialogue extends Component {
             msg3 = "Bravo ! Tu as gagné la partie."
         }
         else if (this.props.info.resultatFinal === 'nul') {
-            msg3 = "Egalité. La partie n'a pas de vainqueur."
+            msg3 = "Égalité. La partie n'a pas de vainqueur."
         }
         else {
             msg3 = "Tu as perdu cette partie."

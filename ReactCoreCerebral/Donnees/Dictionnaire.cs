@@ -15,8 +15,8 @@ namespace CerebralCore.Donnees
         private HashSet<string> ListeMots;
 
         private char[] Voyelle = { 'a', 'e', 'i', 'o', 'u', 'y' };
-        private char[] VoyelleTirage = { 'a', 'e', 'i', 'o', 'u', 'e','a','i','o','u','e','y', 'a', 'e', 'i', 'o', 'u' };
-        private char[] ConsonneTirage = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z','r', 's', 'n', 'r','t' };
+        private char[] VoyelleTirage = { 'a', 'e', 'i', 'o', 'u', 'e','a','i','o','u','e','y', 'a', 'e', 'i', 'o', 'u','e' };
+        private char[] ConsonneTirage = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v','r', 's', 'n', 'r','t','l','r','s', 'd','c','m','p','t', 'x', 'z', 'q' };
         Random R = new Random();
         public Dictionnaire()
         {
@@ -83,69 +83,69 @@ namespace CerebralCore.Donnees
             switch (niveau)
             {
                 case 0:
-                    longueur = R.Next(2, 3);
+                    longueur = R.Next(2, 4);
                     break;
                 case 1:
-                    longueur = R.Next(2, 3);
+                    longueur = R.Next(2, 4);
                     break;
                 case 2:
-                    longueur = R.Next(3, 4);
+                    longueur = R.Next(3, 5);
                     break;
                 case 3:
-                    longueur = R.Next(3, 4);
+                    longueur = R.Next(3, 5);
                     break;
                 case 4:
-                    longueur = R.Next(3, 4);
+                    longueur = R.Next(3, 5);
                     break;
                
                 case 5:
-                    longueur = R.Next(3, 5);
-                    break;
-                case 6:
-                    longueur = R.Next(3, 5);
-                    break;
-                case 7:
-                    longueur = R.Next(3, 5);
-                    break;
-                case 8:
                     longueur = R.Next(3, 6);
                     break;
+                case 6:
+                    longueur = R.Next(3, 6);
+                    break;
+                case 7:
+                    longueur = R.Next(3, 6);
+                    break;
+                case 8:
+                    longueur = R.Next(3, 7);
+                    break;
                 case 9:
-                    longueur = R.Next(4, 6);
+                    longueur = R.Next(4, 7);
                     break;
                 case 10:
-                    longueur = R.Next(4, 6);
+                    longueur = R.Next(4, 7);
                     break;
                 case 11:
-                    longueur = R.Next(5, 6);
+                    longueur = R.Next(5, 7);
                     break;
                 case 12:
-                    longueur = R.Next(3, 7);
+                    longueur = R.Next(3, 8);
                     break;
                 case 13:
-                    longueur = R.Next(3, 7);
+                    longueur = R.Next(3, 9);
                     break;
                 case 14:
-                    longueur = R.Next(4, 7);
+                    longueur = R.Next(4, 8);
                     break;
                
                 case 15:
-                    longueur = R.Next(4, 7);
+                    longueur = R.Next(4, 8);
                     break;
                 case 16:
-                    longueur = R.Next(3, 8);
+                    longueur = R.Next(3, 9);
                     break;
                 case 17:
-                    longueur = R.Next(5, 7);
+                    longueur = R.Next(5, 8);
                     break;
                 case 18:
-                    longueur = R.Next(3, 8);
+                    longueur = R.Next(3, 9);
                     break;
                 case 19:
                     longueur = R.Next(5, 9);
                     break;
                 case 20:
-                    longueur = R.Next(7, 9);
+                    longueur = R.Next(5, 10);
                     break;
                 
                 default:

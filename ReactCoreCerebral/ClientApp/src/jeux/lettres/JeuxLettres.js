@@ -22,7 +22,9 @@ class JeuxLettres extends Component {
         super();
         let niveau = parseInt(props.params.niveau);
         this.niveau = niveau === 1 ? 0 : niveau === 2 ? 4 : niveau === 3 ? 8 : niveau === 4 ? 17 : 0;
-        this.temps = niveau <= 7 ? 20 : 30;
+     this.temps = 30;
+
+        console.log(this.temps);
         let prenom = LogiqueLettre.obtenirPrenom();
         this.prenom = readFirstName();
         let infoPartie = this.resetInfo(prenom);
@@ -95,7 +97,6 @@ class JeuxLettres extends Component {
                 this.motOrdinateur = res.mot;
                 this.motEnCours = '';
 
-
             });
 
     }
@@ -104,6 +105,7 @@ class JeuxLettres extends Component {
         console.log(LogiqueLettre.obtenirNbNiveau())
         if (suite && this.niveau < LogiqueLettre.obtenirNbNiveau() - 1) {
             this.niveau++;
+       
         }
         let infoPartie = { ...this.state.infoPartie };
         infoPartie.maj = false;
@@ -144,7 +146,7 @@ class JeuxLettres extends Component {
         const mot = this.state.tabLettresSaisies.join('');
         if (mot.length <= 1) {
             this.motEnCours = '';
-            this.changeMessage("Les mots doivent faire plus d'une lettre");
+            this.changeMessage("Les mots doivent faire plus d'une lettre.");
             return;
         }
         console.log(mot);

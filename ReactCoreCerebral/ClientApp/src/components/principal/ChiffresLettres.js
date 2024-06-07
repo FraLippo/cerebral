@@ -40,8 +40,8 @@ export default class ChiffreLetttre extends Component {
           <Col md={24}>
             <h2>Le mot le plus long</h2>
             <p>Un jeu qui ressemble au jeu du mot le plus long de l'émission <b>"Des chiffres et des lettres"</b>.</p>
-            <p>"Le Mot le Plus Long : Testez vos compétences en vocabulaire et remportez des défis passionnants ! Plongez dans une expérience de jeu linguistique captivante où votre talent pour les mots est mis à l'épreuve. Déjouez les lettres mélangées, formez le mot le plus étendu possible et révélez votre maîtrise des mots. Que vous soyez un passionné des jeux de lettres ou amateur de défis intellectuels, "Le Mot le Plus Long" vous offre une expérience unique qui stimulera votre esprit tout en vous divertissant.</p>
-            <p>Le programme accepte tous les mots et les verbes conjugués. Dans l'esprit des mots acceptés on est plus proche du Scrabble que des chiffres et des lettres. </p>
+            <p>"Le Mot le plus long : Testez vos compétences en vocabulaire et remportez des défis passionnants ! Plongez dans une expérience de jeu linguistique captivante où votre talent pour les mots est mis à l'épreuve. Déjouez les lettres mélangées, formez le mot le plus étendu possible et révélez votre maîtrise des mots. Que vous soyez un passionné des jeux de lettres ou amateur de défis intellectuels, "Le Mot le plus long" vous offre une expérience unique qui stimulera votre esprit tout en vous divertissant.</p>
+            <p>Le programme accepte tous les mots et les verbes conjugués. Dans l'esprit des mots acceptés on est plus proche du Scrabble que des chiffres et des lettres. Nous utilisons le dictionnaire officiel du Scrabble pour valider les mots. </p>
             <p>La partie se joue en 3 manches, si vous remportez la manche, c'est à dire si vous trouvez un mot plus long que celui de l'ordinateur, vous gagnez 2 points plus le nombre de lettres du mot.</p>
 
             <div className="centre"><img className="espaceHaut img-responsive" width="500" height="66" src={motLong} alt="le mot le plus long"></img></div>

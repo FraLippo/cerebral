@@ -35,7 +35,7 @@ class TableauMot extends Component {
       <div className="centre espaceTitreBas">
       
       <h1>Les meilleurs au jeu du Mot le plus long</h1>
-      <p>Les 8 derniers a avoir gagné une partie de niveau supérieur à 5. Le niveau va de 0 (débutant) à 21 (expert).</p>
+      <p>Les 8 derniers à avoir gagné une partie de niveau supérieur à 5. Le niveau va de 1 (débutant) à 20 (expert).</p>
             <div className="centre espaceTitreBas"><img src={borderHonneur} alt="bordure" width="100" height="41" ></img></div>
   </div>
       <Row gutter={[16, { xs: 8, sm: 16, md: 24, lg: 32 }]}>

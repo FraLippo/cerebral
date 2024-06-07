@@ -3,70 +3,70 @@
 const listeNiveaux = [
     {
         titre : "débutante",
-        intervalle : "2 ou 3"
+        intervalle : "2 et 3"
     },
     {
         titre : "débutante",
-        intervalle : "2 ou 3"
+        intervalle : "2 et 3"
     },  {
         titre : "novice",
-        intervalle : "3 ou 4"
+        intervalle : "3 et 4"
     },  {
         titre : "novice",
-        intervalle : "3 ou 4"
+        intervalle : "3 et 4"
     },  {
         titre : "novice",
-        intervalle : "3 ou 4"
+        intervalle : "3 et 4"
     },  {
         titre : "amateur",
-        intervalle : "3 ou 5"
+        intervalle : "3 et 5"
     },  {
         titre : "amateur",
-        intervalle : "3 ou 5"
+        intervalle : "3 et 5"
     },  {
         titre : "amateur",
-        intervalle : "3 ou 5"
+        intervalle : "3 et 5"
     },  {
         titre : "intermédiaire",
-        intervalle : "3 ou 6"
+        intervalle : "3 et 6"
     },  {
         titre : "intermédiaire",
-        intervalle : "4 ou 6"
+        intervalle : "4 et 6"
     },  {
         titre : "étourdie",
-        intervalle : "3 ou 7"
+        intervalle : "3 et 7"
     },  {
         titre : "avancée",
-        intervalle : "5 ou 6"
+        intervalle : "5 et 6"
     },  {
         titre : "inconstante",
-        intervalle : "3 ou 7"
+        intervalle : "3 et 7"
     },  {
         titre : "inconstante",
-        intervalle : "3 ou 7"
+        intervalle : "3 et 7"
     },  {
         titre : "confirmée",
-        intervalle : "4 ou 7"
+        intervalle : "4 et 7"
     },  {
         titre : "confirmée",
-        intervalle : "4 ou 7"
+        intervalle : "4 et 7"
     },  {
         titre : "déconcertante",
-        intervalle : "3 ou 8"
+        intervalle : "3 et 8"
     },  {
         titre : "expérimentée",
-        intervalle : "5 ou 7"
+        intervalle : "5 et 7"
     },  {
         titre : "stressée",
-        intervalle : "3 ou 8"
+        intervalle : "3 et 8"
     },
     {
         titre : "experte",
-        intervalle : "5 ou 9"
+        intervalle : "5 et 8"
     },
     {
         titre : "ultime",
-        intervalle : "6 ou 9"
+        intervalle : "5 et 9"
     },
      
   ];  

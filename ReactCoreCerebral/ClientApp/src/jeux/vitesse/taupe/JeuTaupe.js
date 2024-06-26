@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-import panneau1 from '../../../images/panneau1.jpg';
-import panneau2 from '../../../images/panneau2.jpg';
-import panneau3 from '../../../images/panneau3.jpg';
-import panneau4 from '../../../images/panneau4.jpg';
-import panneau5 from '../../../images/panneau5.jpg';
-import panneau6 from '../../../images/panneau6.jpg';
-import panneau7 from '../../../images/panneau7.jpg';
-import panneau8 from '../../../images/panneau8.jpg';
+import panneau1 from '../../../images/ecu.png';
+import panneau2 from '../../../images/lion.png';
+import panneau3 from '../../../images/koala.png';
+import panneau4 from '../../../images/oiseau.png';
+import panneau5 from '../../../images/lapin.png';
+import panneau6 from '../../../images/girafe.png';
+import panneau7 from '../../../images/rhino.png';
+import panneau8 from '../../../images/elephant.png';
 import CompteRebours from '../commun/CompteRebours';
+import { Modal } from 'antd';
 import Resultat from '../commun/Resultat';
 import { Helmet } from 'react-helmet';
+import Info from './Info';
 
 const NUMBER_OF_HOLES = 9;
 let intervalle = 1500;
-const tabCategorie = ['Danger', 'Obligation', 'Indication', 'Interdiction']
-document.addEventListener("visibilitychange", () => { window.location.href = "/" });
+
+//document.addEventListener("visibilitychange", () => { window.location.href = "/" });
 
 export default class JeuTaupe extends Component {
     constructor() {
@@ -23,43 +25,216 @@ export default class JeuTaupe extends Component {
             score: 0,
             moles: Array(NUMBER_OF_HOLES).fill(false),
             scores: Array(NUMBER_OF_HOLES).fill('vide'),
-            afficheResultat: false
+            afficheResultat: false,
+            afficheModal: true
         };
-        this.categorie = tabCategorie[Math.floor(Math.random() * 4)];
- 
+        this.tabJeuAnimaux = [1];
+        this.tabAnimaux = [];
+        this.serie = 1;
         this.tabTaupe = [];
         this.nb = 0;
         this.tabImages = [];
         this.timerMain = 0;
         this.timerTab = [];
+        this.tabTirage = [];
+        this.construireJeu();
+        this.fin = false;
         for (let index = 0; index < NUMBER_OF_HOLES; index++) {
             this.tabImages.push({ nb: 0, reussi: true });
 
         }
 
     }
+
+    melangerTableau(tableau) {
+
+        for (let i = tableau.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [tableau[i], tableau[j]] = [tableau[j], tableau[i]]; // Échange des éléments
+        }
+        return tableau;
+    }
+    constructionSerie1() {
+        let tabTirage = [];
+        let nb1 = Math.floor(Math.random() * 8);
+        for (let index = 0; index < 5; index++) {
+            tabTirage.push(nb1);
+
+        }
+        for (let index = 0; index < 5; index++) {
+            tabTirage.push(Math.floor(Math.random() * 8));
+        }
+        return { tirage: this.melangerTableau(tabTirage), bonnesReponses: [nb1] };
+
+    }
+
+    constructionSerie2() {
+        let bonnesReponses = [];
+        let ajout;
+        let nb = 0;
+        let tabTirage = [];
+        do {
+            ajout = false;
+            let random = Math.floor(Math.random() * 8);
+            if (bonnesReponses.findIndex(x => x === random) === -1) {
+                bonnesReponses.push(random);
+                ajout = true;
+                nb++;
+            }
+
+        } while (!(ajout && nb === 2));
+
+        for (let index = 0; index < 10; index++) {
+            if (index < 3) {
+                tabTirage.push(bonnesReponses[0]);
+            }
+            else if (index < 6) {
+                tabTirage.push(bonnesReponses[1]);
+            }
+            else {
+                tabTirage.push(Math.floor(Math.random() * 8));
+            }
+        }
+        console.log("2 Tab");
+        console.log(tabTirage);
+        return { tirage: this.melangerTableau(tabTirage), bonnesReponses };
+    }
+
+
+    constructionSerie3() {
+        let bonnesReponses = [];
+        let ajout;
+        let nb = 0;
+        let tabTirage = [];
+        do {
+            ajout = false;
+            let random = Math.floor(Math.random() * 8);
+            if (bonnesReponses.findIndex(x => x === random) === -1) {
+                bonnesReponses.push(random);
+                ajout = true;
+                nb++;
+            }
+        } while (!(ajout && nb === 3));
+
+        for (let index = 0; index < 10; index++) {
+            if (index < 2) {
+                tabTirage.push(bonnesReponses[0]);
+            }
+            else if (index < 4) {
+                tabTirage.push(bonnesReponses[1]);
+            }
+            else if (index < 6) {
+                tabTirage.push(bonnesReponses[2]);
+            }
+            else {
+                tabTirage.push(Math.floor(Math.random() * 8));
+            }
+        }
+        console.log("3 Tab");
+        console.log(tabTirage);
+        return { tirage: this.melangerTableau(tabTirage), bonnesReponses };
+
+
+
+
+    }
+
+    construireJeu = () => {
+
+        if (this.serie === 1) {
+            this.tabTirage = this.constructionSerie1();
+
+        }
+        else if (this.serie === 2) {
+            this.tabTirage = this.constructionSerie2();
+        }
+        else if (this.serie === 3) {
+            this.tabTirage = this.constructionSerie3();
+        }
+        this.constructionAnimaux();
+
+    }
+
+    reset() {
+        this.finTimer();
+        this.setState({
+            score: 0,
+            moles: Array(NUMBER_OF_HOLES).fill(false),
+            scores: Array(NUMBER_OF_HOLES).fill('vide'),
+            afficheResultat: false,
+            afficheModal: true
+        });
+
+        this.tabAnimaux = [];
+        this.tabTaupe = [];
+        this.nb = 0;
+        this.tabImages = [];
+        this.timerMain = 0;
+        this.timerTab = [];
+    
+        for (let index = 0; index < NUMBER_OF_HOLES; index++) {
+            this.tabImages.push({ nb: 0, reussi: true });
+
+        }
+    }
     testCategorie = (index) => {
-     
 
-        if (this.categorie === 'Danger' && (this.tabImages[index].nb == 0 || this.tabImages[index].nb == 1)) {
+
+        if (this.tabTirage.bonnesReponses.findIndex(x => x === this.tabImages[index].nb) !== -1) {
 
             return true
         }
-        if (this.categorie === 'Interdiction' && (this.tabImages[index].nb == 2 || this.tabImages[index].nb == 3)) {
-            return true
-        }
-        if (this.categorie === 'Obligation' && (this.tabImages[index].nb == 4 || this.tabImages[index].nb == 5)) {
-            return true
-        }
-        if (this.categorie === 'Indication' && (this.tabImages[index].nb == 6 || this.tabImages[index].nb == 7)) {
-            return true
-        }
-        return false;
+
     }
 
     componentDidMount() {
-        this.appearMole();
+
+
     }
+
+    callbackModal = () => {
+        this.reset();
+        this.setState({ afficheModal: false });
+        this.appearMole();
+
+    }
+    constructionAnimaux() {
+        this.tabAnimaux = [];
+        let nom = "";
+        for (let index = 0; index < this.tabTirage.bonnesReponses.length; index++) {
+
+            switch (this.tabTirage.bonnesReponses[index]) {
+                case 0:
+                    nom = "Les écureuils";
+                    break;
+                case 1:
+                    nom = "Les lions";
+                    break;
+                case 2:
+                    nom = "Les koalas";
+                    break;
+                case 3:
+                    nom = "Les oiseaux";
+                    break;
+                case 4:
+                    nom = "Les lapins";
+                    break;
+                case 5:
+                    nom = "Les girafes";
+                    break;
+                case 6:
+                    nom = "Les rhinocéros";
+                    break;
+                case 7:
+                    nom = "Les éléphants";
+                    break;
+            }
+            this.tabAnimaux.push(nom);
+
+        }
+        console.log(this.tabAnimaux);
+    }
+
     choisirImage(nb) {
 
 
@@ -99,10 +274,11 @@ export default class JeuTaupe extends Component {
 
 
         newMoles[randomHole] = true;
-        this.tabImages[randomHole].nb = Math.floor(Math.random() * 8);
-        if (this.testCategorie(randomHole)) {
-            this.tabImages[randomHole].reussi = false;
-        }
+
+        this.tabImages[randomHole].nb = this.tabTirage.tirage[this.nb];
+        // if (this.testCategorie(randomHole)) {
+        //     this.tabImages[randomHole].reussi = false;
+        // }
 
         this.tabTaupe.push(randomHole);
 
@@ -124,43 +300,77 @@ export default class JeuTaupe extends Component {
                     score = 0;
                 }
                 else {
-                    score = this.state.score -7;
+                    score = this.state.score - 7;
                 }
             }
+
+
+
+            if (this.tabTaupe.length=== 0) {
+
+                setTimeout(() => {
+                    if (this.serie < 4) {
+                        alert("reozr");
+                        this.construireJeu();
+
+                        this.setState({ afficheModal: true });
+                       
+                    }
+                    else {
+                        this.finTimer();
+                        alert('tt');
+                    }
+                }, 1000);
+            }
+
+
+
 
             this.setState({
                 moles: m,
                 score: score,
-                scores:newScores
+                scores: newScores
             });
+
         }, 2500);
+
         this.timerTab.push(t);
-      
+
 
     }
 
     appearMole = () => {
-        intervalle -= 35;
+        console.log(this.tabTirage);
+        if (this.serie < 4) {
+            if (this.nb < 4) {
+                this.showHole();
+                this.nb++;
+                this.timerMain = setTimeout(() => {
+                    this.appearMole();
+                }, intervalle);
+            }
+            else {
 
-        if (this.nb < 29) {
-            this.showHole();
-            this.nb++;
-            this.timerMain = setTimeout(() => {
-                this.appearMole();
-            }, intervalle);
+             
+                this.serie++;
+                intervalle -= 300;
+
+            }
         }
+
+
 
 
     }
     hitMole = index => {
-     
+
         const newScores = [...this.state.scores];
         if (this.state.moles[index]) {
 
             if (this.testCategorie(index)) {
 
                 newScores[index] = 'success';
-              
+
                 this.tabImages[index].reussi = true;
             }
             else {
@@ -181,7 +391,7 @@ export default class JeuTaupe extends Component {
             clearTimeout(t);
         }
         clearTimeout(this.timerMain);
-        this.setState({ afficheResultat: true });
+        // this.setState({ afficheResultat: true });
     }
 
     render() {
@@ -195,6 +405,7 @@ export default class JeuTaupe extends Component {
 
                 {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitessepanneaux'></Resultat> :
                     <React.Fragment>
+                        {this.state.afficheModal && <Info niveau={1} tabAnimaux={this.tabAnimaux} callbackModal={this.callbackModal} ></Info>}
                         <div className='titreJeu'>Les panneaux routiers</div>
                         <p>Score: {this.state.score}</p>
                         <div className="jeuTaupe">
@@ -205,14 +416,14 @@ export default class JeuTaupe extends Component {
                                         className={`hole ${this.state.scores[index] !== 'vide' ? (this.state.scores[index] === "success" ? "success" : "error") : ''}`}
                                         onClick={() => this.hitMole(index)}
                                     >
-                                        {mole && <img  onClick={() => this.hitMole(index)} key={index} src={this.choisirImage(this.tabImages[index].nb)} alt="panneau" className="mole-image" />}
+                                        {mole && <img onClick={() => this.hitMole(index)} key={index} src={this.choisirImage(this.tabImages[index].nb)} alt="panneau" className="mole-image" />}
 
                                     </div>
 
                                 ))}
 
                             </div><p className="centre">Cliquer sur tous les panneaux représentant {this.categorie === 'Danger' ? "un " : "une "}<b>{this.categorie}</b>.</ p>
-                            <div className="centre marge10"><CompteRebours temps={30} finTimer={this.finTimer}></CompteRebours></div>
+
 
                         </div></React.Fragment>}
             </div>

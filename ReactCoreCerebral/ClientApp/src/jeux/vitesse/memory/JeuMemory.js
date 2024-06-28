@@ -81,7 +81,7 @@ export default class JeuMemory extends Component {
             <div className="jeuMry">
             <Grille tabGrille={this.state.tabGrille} clic={this.clic}></Grille>
             <div className='marge20'>Score : {this.state.score}</div>
-           <CompteRebours finTimer={this.finTimer} temps={80}></CompteRebours>
+           <CompteRebours finTimer={this.finTimer} temps={70}></CompteRebours>
            <div className='marge20 titreJeu'>Le Memory</div>
            <p>Retrouve les paires cachées</p>
             </div>}

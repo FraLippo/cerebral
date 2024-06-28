@@ -77,8 +77,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
      
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal</span> <span className='champVitesse'>Gwendal</span> <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin</span> <span className='champVitesse'>Quentin</span> <span className='champVitesse'>rvteo</span> <span className='champVitesse'>rvteo</span> <span className='champVitesse'>inconnu583</span> <span className='champVitesse'>inconnu583</span> <span className='champVitesse'>waïra</span> <span className='champVitesse'>waïra</span> 
-      <span className='champVitesse'>inconnu 583</span> <span className='champVitesse'>inconnu 583 (champion du mois)</span>👑</p>
-      <h3 className='centre'>🚩 L'inconnu583 a remporté le concours du mois devant plus de 280 participants. C'est déjà sa 4e victoire ! 📅</h3>
+      <span className='champVitesse'>inconnu583</span><span className='champVitesse'>inconnu583</span> <span className='champVitesse'>inconnu583 (champion du mois)</span>👑</p>
+      <h3 className='centre'>🚩 L'inconnu583 a de nouveau remporté le concours du mois. C'est sa 5e victoire ! 📅</h3>
 
       <Ad></Ad>
       <h1>Nos jeux cognitifs</h1>
@@ -90,7 +90,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
               <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >🎩 <Link to='vitessememory'> Le jeu du memory</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={1} /></div> 
-          <p className="marge20">But du jeu : Trouver toutes les paires comme dans le classique jeu du Memory. Une différence avec le jeu classique : vous découvrez les paires à votre rythme. Elles ne disparaissent pas au bout d'un certain temps. Le temps alloué est de 80 secondes pour tenter de trouver toutes les paires, un bonus de 50 points est alloué si vous finissez le jeu (max 230 points).</p>
+          <p className="marge20">But du jeu : Trouver toutes les paires comme dans le classique jeu du Memory. Une différence avec le jeu classique : vous découvrez les paires à votre rythme. Elles ne disparaissent pas au bout d'un certain temps. Le temps alloué est de 70 secondes pour tenter de trouver toutes les paires, un bonus de 50 points est alloué si vous finissez le jeu (max 230 points).</p>
      
         <div className="centre"><Link to='classement/vitessememory'>Classement</Link></div>
       </div>
@@ -99,7 +99,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
                 <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >✅ <Link to='vitessenombre'> Mémoire des nombres</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
-          <p className="marge20">But du jeu : Mémoriser une série de chiffres pour pouvoir la restituer plus tard. La suite de chiffres augmente à chaque fois d'un chiffre jusqu'à 8 ensuite elle redescend pour revenir à 1 chiffre. Chaque nombre trouvé rapporte 5 points. Si vous réussissez à revenir à 1 chiffre en moins de 70 secondes vous obtenez un bonus de 50 points.</p>
+          <p className="marge20">But du jeu : Mémoriser une série de chiffres pour pouvoir la restituer plus tard. La suite de chiffres augmente à chaque fois d'un chiffre jusqu'à 8 ensuite elle redescend pour revenir à 1 chiffre. Chaque nombre trouvé rapporte 5 points. Si vous réussissez à revenir à 1 chiffre en moins de 75 secondes vous obtenez un bonus de 50 points.</p>
      
         <div className="centre"><Link to='classement/vitessenombre'>Classement</Link></div>
       </div>
@@ -188,7 +188,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
 
                 <div className='jeuVitesse'>
                 <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >🧩 <Link to='vitessecomplet'> Pièce du puzzle 🆕</Link></div>
+        <div className="centre titreVitesse" >🧩 <Link to='vitessecomplet'> Pièce du puzzle</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
           <p className="marge20">But du jeu : Retrouvez la bonne pièce du puzzle qui s'encastre parfaitement dans une autre pièce. Un bonus peut vous être accordé si vous réussissez à trouver 10 pièces.   </p>
      
@@ -245,12 +245,11 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       </div>
 
       <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >🛑<Link to='vitessepanneaux'> Les panneaux routiers</Link></div>
+        <div className="centre titreVitesse" >🛑<Link to='vitessezoo'> Le zoo 🆕</Link></div>
         <div className='centre'>Difficulté : <Rate disabled defaultValue={1} /></div>
-        <p className="marge20">But du jeu : Reconnaitre les types de panneaux routiers le plus rapidement possible avant qu'ils ne disparaissent.
-        Dans ce jeu on considère 4 types de panneaux routiers : Danger, Obligation, Interdiction et Obligation. Il faut se baser sur la forme et la couleur pour pouvoir facilement les distinguer. Vous pouvez trouver des informations utiles sur ce <a target='_blank' style={{all: 'revert'}} href="https://www.codedelaroute.fr/cours-code-auto/circulation/comprendre-la-signalisation/circulation-types-de-panneaux">site</a>. Le score maximum possible est de 58 points.</p>
+        <p className="marge20">But du jeu : Cliquer le plus vite possible sur les animaux qui apparaissent, 1 point pour chaque animal trouvé, -3 pour chaque erreur. Le but du jeu est d'arriver à faire un sans-faute avec un bonus de 40 points.Les icônes proviennent de Loritas Medina  <a href="https://thenounproject.com/browse/icons/term/bird/" target="_blank" title="Bird Icons">Noun Project</a> (CC BY 3.0)</p>
       
-        <div className="centre"><Link to='classement/vitessepanneaux'>Classement</Link></div>
+        <div className="centre"><Link to='classement/vitessezoo'>Classement</Link></div>
       </div>
 
 

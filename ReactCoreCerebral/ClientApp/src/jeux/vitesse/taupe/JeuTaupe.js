@@ -14,7 +14,7 @@ import { Helmet } from 'react-helmet';
 import Info from './Info';
 
 const NUMBER_OF_HOLES = 9;
-let intervalle = 1500;
+let intervalle = 1800;
 
 //document.addEventListener("visibilitychange", () => { window.location.href = "/" });
 
@@ -28,6 +28,7 @@ export default class JeuTaupe extends Component {
             afficheResultat: false,
             afficheModal: true
         };
+        this.nbAnimaux = 8;
         this.tabJeuAnimaux = [1];
         this.tabAnimaux = [];
         this.serie = 1;
@@ -37,6 +38,11 @@ export default class JeuTaupe extends Component {
         this.timerMain = 0;
         this.timerTab = [];
         this.tabTirage = [];
+        this.scoreEtape = 0;
+        this.scoreTotalEtape = 0;
+        this.resultatTotal = 0;
+        this.nbReussi = 0;
+
         this.construireJeu();
         this.fin = false;
         for (let index = 0; index < NUMBER_OF_HOLES; index++) {
@@ -57,13 +63,20 @@ export default class JeuTaupe extends Component {
     constructionSerie1() {
         let tabTirage = [];
         let nb1 = Math.floor(Math.random() * 8);
-        for (let index = 0; index < 5; index++) {
-            tabTirage.push(nb1);
 
+        for (let index = 0; index < this.nbAnimaux; index++) {
+            if (index < 5) {
+                tabTirage.push(nb1);
+            }
+            else {
+                tabTirage.push(Math.floor(Math.random() * 8));
+            }
         }
-        for (let index = 0; index < 5; index++) {
-            tabTirage.push(Math.floor(Math.random() * 8));
-        }
+        this.scoreTotalEtape = tabTirage.filter(x => x === nb1).length;
+
+        this.resultatTotal += this.scoreTotalEtape;
+
+
         return { tirage: this.melangerTableau(tabTirage), bonnesReponses: [nb1] };
 
     }
@@ -84,7 +97,7 @@ export default class JeuTaupe extends Component {
 
         } while (!(ajout && nb === 2));
 
-        for (let index = 0; index < 10; index++) {
+        for (let index = 0; index < this.nbAnimaux; index++) {
             if (index < 3) {
                 tabTirage.push(bonnesReponses[0]);
             }
@@ -95,8 +108,9 @@ export default class JeuTaupe extends Component {
                 tabTirage.push(Math.floor(Math.random() * 8));
             }
         }
-        console.log("2 Tab");
-        console.log(tabTirage);
+        this.scoreTotalEtape = tabTirage.filter(x => x === bonnesReponses[0] || x === bonnesReponses[1]).length;
+        this.resultatTotal += this.scoreTotalEtape;
+
         return { tirage: this.melangerTableau(tabTirage), bonnesReponses };
     }
 
@@ -116,7 +130,7 @@ export default class JeuTaupe extends Component {
             }
         } while (!(ajout && nb === 3));
 
-        for (let index = 0; index < 10; index++) {
+        for (let index = 0; index < this.nbAnimaux; index++) {
             if (index < 2) {
                 tabTirage.push(bonnesReponses[0]);
             }
@@ -130,8 +144,10 @@ export default class JeuTaupe extends Component {
                 tabTirage.push(Math.floor(Math.random() * 8));
             }
         }
-        console.log("3 Tab");
-        console.log(tabTirage);
+        this.scoreTotalEtape = tabTirage.filter(x => x === bonnesReponses[0] || x === bonnesReponses[1] || x === bonnesReponses[2]).length;
+
+        this.resultatTotal += this.scoreTotalEtape;
+
         return { tirage: this.melangerTableau(tabTirage), bonnesReponses };
 
 
@@ -142,7 +158,7 @@ export default class JeuTaupe extends Component {
     construireJeu = () => {
 
         if (this.serie === 1) {
-            this.tabTirage = this.constructionSerie1();
+        this.tabTirage = this.constructionSerie1();
 
         }
         else if (this.serie === 2) {
@@ -153,25 +169,26 @@ export default class JeuTaupe extends Component {
         }
         this.constructionAnimaux();
 
+
     }
 
     reset() {
         this.finTimer();
         this.setState({
-            score: 0,
             moles: Array(NUMBER_OF_HOLES).fill(false),
             scores: Array(NUMBER_OF_HOLES).fill('vide'),
             afficheResultat: false,
             afficheModal: true
         });
-
+    
         this.tabAnimaux = [];
         this.tabTaupe = [];
         this.nb = 0;
         this.tabImages = [];
         this.timerMain = 0;
         this.timerTab = [];
-    
+        this.message = "";
+        this.scoreEtape = 0;
         for (let index = 0; index < NUMBER_OF_HOLES; index++) {
             this.tabImages.push({ nb: 0, reussi: true });
 
@@ -232,7 +249,7 @@ export default class JeuTaupe extends Component {
             this.tabAnimaux.push(nom);
 
         }
-        console.log(this.tabAnimaux);
+
     }
 
     choisirImage(nb) {
@@ -285,50 +302,44 @@ export default class JeuTaupe extends Component {
         this.setState({ moles: newMoles });
 
         let t = setTimeout(() => {
-            let score = 1;
+
             const m = [...this.state.moles];
             let hole = this.tabTaupe.shift()
 
             m[hole] = false;
             const newScores = [...this.state.scores];
             newScores[hole] = 'vide';
-            if (this.tabImages[hole].reussi) {
-                score = this.state.score + 2
-            }
-            else {
-                if (this.state.score < 8) {
-                    score = 0;
-                }
-                else {
-                    score = this.state.score - 7;
-                }
-            }
+            // if (this.tabImages[hole].reussi) {
+            //     score = this.state.score + 2
+            // }
+            // else {
+            //     if (this.state.score < 8) {
+            //         score = 0;
+            //     }
+            //     else {
+            //         score = this.state.score - 7;
+            //     }
+            // }
 
 
 
-            if (this.tabTaupe.length=== 0) {
-
+            if (this.tabTaupe.length === 0) {
                 setTimeout(() => {
                     if (this.serie < 4) {
-                        alert("reozr");
+
                         this.construireJeu();
 
                         this.setState({ afficheModal: true });
-                       
+
                     }
                     else {
+
                         this.finTimer();
-                        alert('tt');
                     }
                 }, 1000);
             }
-
-
-
-
             this.setState({
                 moles: m,
-                score: score,
                 scores: newScores
             });
 
@@ -340,21 +351,20 @@ export default class JeuTaupe extends Component {
     }
 
     appearMole = () => {
-        console.log(this.tabTirage);
+
         if (this.serie < 4) {
-            if (this.nb < 4) {
+            if (this.nb < this.nbAnimaux) {
                 this.showHole();
                 this.nb++;
+
                 this.timerMain = setTimeout(() => {
                     this.appearMole();
                 }, intervalle);
             }
             else {
-
-             
+                this.nbAnimaux += 5;
                 this.serie++;
-                intervalle -= 300;
-
+                intervalle -= 550;
             }
         }
 
@@ -365,21 +375,40 @@ export default class JeuTaupe extends Component {
     hitMole = index => {
 
         const newScores = [...this.state.scores];
-        if (this.state.moles[index]) {
+        let score = 0;
 
+        // if (this.state.moles[index] && this.dernierIndex !== index) {
+        if (this.state.moles[index] && newScores[index] === 'vide') {
             if (this.testCategorie(index)) {
-
+                score = this.state.score + 1;
+                this.scoreEtape++;
+          
+                if (this.scoreEtape === this.scoreTotalEtape) {
+                    this.nbReussi++;
+                    this.message = "Bravo ! Score parfait"
+                }
+                else {
+                    this.message = "";
+                } 
+                if (score === this.resultatTotal && this.nbReussi === 3) {
+                    score += 50;
+                }
                 newScores[index] = 'success';
 
-                this.tabImages[index].reussi = true;
+
+                // this.tabImages[index].reussi = true;
             }
             else {
                 newScores[index] = 'error';
-                this.tabImages[index].reussi = false;
+                score = this.state.score - 3;
+                this.scoreEtape--;
+                // this.tabImages[index].reussi = false;
 
             }
+
             this.setState({
-                scores: newScores
+                scores: newScores,
+                score: score
 
             });
 
@@ -391,22 +420,22 @@ export default class JeuTaupe extends Component {
             clearTimeout(t);
         }
         clearTimeout(this.timerMain);
-        // this.setState({ afficheResultat: true });
+        this.setState({ afficheResultat: true });
     }
 
     render() {
         return (
             <div>
                 <Helmet>
-                    <title>Les panneaux routiers</title>
-                    <meta name="description" content="Un jeu pour s'amuser avec les panneaux routiers. Savez-vous reconnaitre le type d'un panneau routier en fonction de sa forme et de sa couleur ?" />
+                    <title>Les animaux du zoo</title>
+                    <meta name="description" content="Un petit jeu pour faire travailler sa mémoire et la reconnaissance visuelle. Arrivez-vous à sélectionner les bons animaux le plus vite possible  ?" />
 
                 </Helmet>
 
-                {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitessepanneaux'></Resultat> :
+                {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitessezoo'></Resultat> :
                     <React.Fragment>
-                        {this.state.afficheModal && <Info niveau={1} tabAnimaux={this.tabAnimaux} callbackModal={this.callbackModal} ></Info>}
-                        <div className='titreJeu'>Les panneaux routiers</div>
+                        {this.state.afficheModal && <Info msg={this.message} niveau={this.serie} tabAnimaux={this.tabAnimaux} callbackModal={this.callbackModal} ></Info>}
+                        <div className='titreJeu'>Les animaux du zoo</div>
                         <p>Score: {this.state.score}</p>
                         <div className="jeuTaupe">
                             <div className="game-board">
@@ -422,7 +451,7 @@ export default class JeuTaupe extends Component {
 
                                 ))}
 
-                            </div><p className="centre">Cliquer sur tous les panneaux représentant {this.categorie === 'Danger' ? "un " : "une "}<b>{this.categorie}</b>.</ p>
+                            </div>
 
 
                         </div></React.Fragment>}

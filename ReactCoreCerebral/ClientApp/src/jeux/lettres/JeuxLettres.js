@@ -24,7 +24,7 @@ class JeuxLettres extends Component {
         this.niveau = niveau === 1 ? 0 : niveau === 2 ? 4 : niveau === 3 ? 8 : niveau === 4 ? 17 : 0;
      this.temps = 30;
 
-        console.log(this.temps);
+    
         let prenom = LogiqueLettre.obtenirPrenom();
         this.prenom = readFirstName();
         let infoPartie = this.resetInfo(prenom);
@@ -56,8 +56,7 @@ class JeuxLettres extends Component {
     }
 
     resetInfo(prenom) {
-        console.log(LogiqueLettre.obtenirNbNiveau());
-        console.log(this.niveau);
+      
         return {
             adversaire: prenom,
             prenom: this.prenom == null ? '' : this.prenom.includes('@') ? this.prenom.split('@')[0].slice(0, 15)  : this.prenom.slice(0, 15),
@@ -93,7 +92,7 @@ class JeuxLettres extends Component {
 
                 });
                 this.changeMessage('');
-                console.log(res.mot);
+         
                 this.motOrdinateur = res.mot;
                 this.motEnCours = '';
 
@@ -102,7 +101,7 @@ class JeuxLettres extends Component {
     }
 
     continuer = (suite) => {
-        console.log(LogiqueLettre.obtenirNbNiveau())
+   
         if (suite && this.niveau < LogiqueLettre.obtenirNbNiveau() - 1) {
             this.niveau++;
        
@@ -149,7 +148,7 @@ class JeuxLettres extends Component {
             this.changeMessage("Les mots doivent faire plus d'une lettre.");
             return;
         }
-        console.log(mot);
+   
         this.motEnCours = mot;
 
         let url = new URL(process.env.REACT_APP_URL_VALIDITEMOT);

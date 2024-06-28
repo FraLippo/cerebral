@@ -413,7 +413,7 @@ const router = createBrowserRouter([
             
           },
           {
-            path: 'vitessepanneaux',
+            path: 'vitessezoo',
             element: <JeuTaupe/>,
             
           },

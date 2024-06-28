@@ -7,8 +7,7 @@ import panneau5 from '../../../images/lapin.png';
 import panneau6 from '../../../images/girafe.png';
 import panneau7 from '../../../images/rhino.png';
 import panneau8 from '../../../images/elephant.png';
-import CompteRebours from '../commun/CompteRebours';
-import { Modal } from 'antd';
+
 import Resultat from '../commun/Resultat';
 import { Helmet } from 'react-helmet';
 import Info from './Info';
@@ -16,7 +15,7 @@ import Info from './Info';
 const NUMBER_OF_HOLES = 9;
 let intervalle = 1800;
 
-//document.addEventListener("visibilitychange", () => { window.location.href = "/" });
+document.addEventListener("visibilitychange", () => { window.location.href = "/" });
 
 export default class JeuTaupe extends Component {
     constructor() {
@@ -50,6 +49,11 @@ export default class JeuTaupe extends Component {
 
         }
 
+    }
+
+    componentWillUnmount()
+    {
+        this.finTimer();
     }
 
     melangerTableau(tableau) {

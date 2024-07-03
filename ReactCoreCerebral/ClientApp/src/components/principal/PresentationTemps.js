@@ -243,14 +243,14 @@ this.nomMois = moisEnFrancais[d.getMonth()];
        
         <div className="centre"><Link to='classement/vitessetresor'>Classement</Link></div>
       </div>
-
+{/* 
       <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >🛑<Link to='vitessezoo'> Le zoo 🆕</Link></div>
         <div className='centre'>Difficulté : <Rate disabled defaultValue={1} /></div>
         <p className="marge20">But du jeu : Cliquer le plus vite possible sur les animaux qui apparaissent, 1 point pour chaque animal trouvé, -3 pour chaque erreur. Le but du jeu est d'arriver à faire un sans-faute avec un bonus de 40 points.Les icônes proviennent de Loritas Medina  <a href="https://thenounproject.com/browse/icons/term/bird/" target="_blank" title="Bird Icons">Noun Project</a> (CC BY 3.0)</p>
       
         <div className="centre"><Link to='classement/vitessezoo'>Classement</Link></div>
-      </div>
+      </div> */}
 
 
       <div className="presentationJeu marge20">

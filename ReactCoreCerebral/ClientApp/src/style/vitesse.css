@@ -721,12 +721,12 @@ width: 100%;
   } */
   .success {
    border-bottom: 5px solid green;
-    animation: fadeOut 0.5s ease-in forwards;
+    /* animation: fadeOut 0.5s ease-in forwards; */
   }
 
   .error {
     border-bottom: 5px solid red; 
-     animation: fadeOut 0.5s ease-in forwards;
+     /* animation: fadeOut 0.5s ease-in forwards; */
    }
 
   .mole-image {

@@ -295,7 +295,7 @@ export default class JeuTaupe extends Component {
 
 
         newMoles[randomHole] = true;
-
+        
         this.tabImages[randomHole].nb = this.tabTirage.tirage[this.nb];
         // if (this.testCategorie(randomHole)) {
         //     this.tabImages[randomHole].reussi = false;
@@ -313,6 +313,7 @@ export default class JeuTaupe extends Component {
             m[hole] = false;
             const newScores = [...this.state.scores];
             newScores[hole] = 'vide';
+            console.log(newScores);
             // if (this.tabImages[hole].reussi) {
             //     score = this.state.score + 2
             // }
@@ -340,7 +341,7 @@ export default class JeuTaupe extends Component {
 
                         this.finTimer();
                     }
-                }, 1000);
+                }, 200);
             }
             this.setState({
                 moles: m,

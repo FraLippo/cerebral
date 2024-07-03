@@ -101,7 +101,7 @@ class JeuxLettres extends Component {
     }
 
     continuer = (suite) => {
-   
+
         if (suite && this.niveau < LogiqueLettre.obtenirNbNiveau() - 1) {
             this.niveau++;
        

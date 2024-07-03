@@ -13,7 +13,26 @@ class TableauMot extends Component {
     this.state = { resultats: [] }
   }
 
-
+  nomNiveau(niveau) 
+  {
+    if (niveau < 5) {
+      return <span>Débutant</span>;
+  } else if (niveau < 8) {
+      return <span>Avancé</span>
+  }
+  else if (niveau < 12) {
+      return <span>Confirmé</span>
+  }
+  else if (niveau < 15) {
+      return <span>Expert</span>
+  }
+  else if (niveau < 19) {
+    return <span>Champion</span>
+}
+  else {
+      return <span>Légende &#127942;</span>
+  }
+  }
 
   componentDidMount() {
 
@@ -35,7 +54,7 @@ class TableauMot extends Component {
       <div className="centre espaceTitreBas">
       
       <h1>Les meilleurs au jeu du Mot le plus long</h1>
-      <p>Les 8 derniers à avoir gagné une partie de niveau supérieur à 5. Le niveau va de 1 (débutant) à 20 (expert).</p>
+      <p>Les 8 derniers à avoir gagné une partie de niveau avancé au moins.</p>
             <div className="centre espaceTitreBas"><img src={borderHonneur} alt="bordure" width="100" height="41" ></img></div>
   </div>
       <Row gutter={[16, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
@@ -45,7 +64,7 @@ class TableauMot extends Component {
             title={<span className="couleurHonneur">{info.prenom.includes('@') ? info.prenom.split('@')[0].slice(0, 15)  : info.prenom.slice(0, 15)}</span>}
           />
         
-          <p>Niveau {info.niveau}</p>
+          <p>Niveau {this.nomNiveau(info.niveau)}</p>
           <p>{info.date}</p>
         </Card> </Col>)}
       </Row>

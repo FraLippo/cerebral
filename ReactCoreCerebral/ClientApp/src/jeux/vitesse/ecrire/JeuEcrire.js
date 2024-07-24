@@ -35,14 +35,14 @@ export default class JeuEcrire extends Component {
             position++;
             this.setState({ position });
             if (nouveauTabLettres[this.state.position] === ' ') {
-                this.setState({ score: this.state.score + 2 });
+                this.setState({ score: this.state.score + 3 });
             }
         }
 
         if (position >= this.state.tabLettres.length - 1) {
             this.setState({
                 finJeu: true,
-                score: this.state.score + 52
+                score: this.state.score + 53
             });
         }
     }

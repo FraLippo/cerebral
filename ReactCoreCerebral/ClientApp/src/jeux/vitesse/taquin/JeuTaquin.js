@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./style.css"; // Assurez-vous de créer ce fichier pour les styles
-
+import "./style.css";
+import { message } from "antd";
+import { Helmet } from "react-helmet";
+import Resultat from "../commun/Resultat";
+import CompteRebours from "../commun/CompteRebours";
 
 const emojis = [
   "😀", "🚀", "🍕", "🌈", "🐶", "⚽", "🎸", "📚", "🌍", "🚴‍♂️", "🎨", "💡", "🏆", "✈️", "🧩"
@@ -29,7 +32,9 @@ const JeuTaquin = () => {
   const [tiles, setTiles] = useState([]);
   const [isSolved, setIsSolved] = useState(false);
   const [tabSolution, setTabSolution] = useState([]);
-  const [jeu, setJeu] = useState(2);
+  const [afficheResultat, setAfficheResultat] = useState(false);
+  const [jeu, setJeu] = useState(1);
+  const [score, setScore] = useState(0);
   useEffect(() => {
     resetGame();
   }, []);
@@ -37,7 +42,7 @@ const JeuTaquin = () => {
   const resetGame = () => {
 
     let tabEmoji = getRandomEmojis(4);
-    setTabSolution([tabEmoji]);
+    setTabSolution(tabEmoji);
     let initialTiles = [];
     do {
       initialTiles = getRandomEmojis(15).concat(null);
@@ -50,6 +55,21 @@ const JeuTaquin = () => {
     setTiles(shuffleArray(initialTiles));
     setIsSolved(false);
   };
+
+  const nouveauJeu = () => {
+    let nouveuJeu = jeu+1;
+    if (nouveuJeu < 3) {
+      setJeu(nouveuJeu);
+      resetGame();
+      setScore(score+50);
+    }
+    else
+    {
+      setScore(score+100);
+      setAfficheResultat(true);
+    }
+   
+  }
 
   const handleTileClick = (index) => {
     if (isSolved) return;
@@ -76,8 +96,7 @@ const JeuTaquin = () => {
 
       } else {
         const step = Math.abs(direction) === 2 || Math.abs(direction) === 8 ? direction / 2 : direction / 3;
-        console.log(step);
-        console.log(direction);
+
         // newTiles[emptyIndex] = newTiles[index + step];
         // newTiles[index + step] = newTiles[index + 2 * step];
         // newTiles[index + 2 * step] = newTiles[index];
@@ -101,16 +120,22 @@ const JeuTaquin = () => {
       }
       setTiles(newTiles);
       if (checkIfSolved(newTiles, tabSolution)) {
+        
+        message.success('Bravo ! Vous avez réussi.', nouveauJeu);
         setIsSolved(true);
+      
       }
     }
   };
 
+  const finTimer = () =>
+    {
+        setAfficheResultat(true);
+    }
+
+
   const checkIfSolved = (newTiles, newTabSolution) => {
-    // const solved = [...Array(15).keys()].map((x) => x + 1).concat(null);
-    console.log(jeu)
-    console.log(newTiles);
-    console.log(tabSolution);
+   
     if (jeu === 1) {
 
 
@@ -127,9 +152,10 @@ const JeuTaquin = () => {
       }
     }
     else {
+
       for (let index = 0; index < newTabSolution.length; index++) {
 
-
+        console.log(index);
         if (newTabSolution[0] === newTiles[index] && newTabSolution[1] === newTiles[index + 4] &&
           newTabSolution[2] === newTiles[index + 8] && newTabSolution[3] === newTiles[index + 12]
         ) {
@@ -142,9 +168,15 @@ const JeuTaquin = () => {
     return false;
   };
 
-  return (
+  return (<React.Fragment>
+    <Helmet>
+                <title>Le jeu du taquin 4x4</title>
+                <meta name="description" content="Découvrez notre jeu de taquin en ligne ! Améliorez vos compétences en résolution de puzzles tout en vous amusant avec ce classique jeu de casse-tête." />
+
+            </Helmet>
+       {afficheResultat ?  <Resultat score={score} typeExo='vitessetaquin'></Resultat>  :
     <div className="taquin">
-      <h1>Jeu de Taquin</h1>
+ 
       <div className="gridTaq">
         {tiles.map((tile, index) => (
           <div
@@ -160,10 +192,13 @@ const JeuTaquin = () => {
         <div>Tu dois créer <b>une colonne</b> avec les symboles ci-dessous dans l'ordre de bas en haut.</div>}
       <div> {tabSolution.map((emoji, index) => (<span className="emojiTaq" key={index + 500}>{emoji}</span>
       ))}</div>
-      {isSolved && <p>Félicitations, vous avez résolu le puzzle !</p>}
+      <div>Score : {score}</div>
+      {isSolved && <p>Félicitations, vous avez résolu le challenge {jeu} / 2 ! </p>}
+      <div className="marge20"> <CompteRebours temps={100} finTimer={finTimer}></CompteRebours></div>
       {/* <button onClick={resetGame}>Réinitialiser</button> */}
-    </div>
-  );
+      <h1>Le taquin</h1>
+    </div>}
+  </React.Fragment>);
 };
 
 export default JeuTaquin;

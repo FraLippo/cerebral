@@ -7,11 +7,11 @@ import border from '../../images/border.png';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import pres from '../../images/pres.png';
-import record from '../../images/record.png';
+
 import Podium from '../../jeux/vitesse/commun/Podium';
 import { verifierStatus } from '../../jeux/vitesse/commun/utilitaire';
 import { moisEnFrancais } from '../commun/utilitaire';
-import { Rate } from 'antd';
+import { Rate} from 'antd';
 
 export default class PresentationTemps extends Component {
 
@@ -74,11 +74,11 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <Podium tabPrenoms={this.state.tabPrenoms}></Podium>
    
       <div className="titreClassement"><Link to='classementmois'><b>Mes résultats</b></Link></div>
-     
+  
           <h3>Les précédents champions</h3>
-      <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal</span> <span className='champVitesse'>Gwendal</span> <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin</span> <span className='champVitesse'>Quentin</span> <span className='champVitesse'>rvteo</span> <span className='champVitesse'>rvteo</span> <span className='champVitesse'>inconnu583</span> <span className='champVitesse'>inconnu583</span> <span className='champVitesse'>waïra</span> <span className='champVitesse'>waïra</span> 
-      <span className='champVitesse'>inconnu583</span><span className='champVitesse'>inconnu583</span> <span className='champVitesse'>inconnu583 (champion du mois)</span>👑</p>
-      <h3 className='centre'>🚩 L'inconnu583 a de nouveau remporté le concours du mois. C'est sa 5e victoire ! 📅</h3>
+      <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
+       <span className='champVitesse'>inconnu583 x6 (champion du mois)</span>👑</p>
+      <h3 className='centre'>🚩 L'inconnu583 a de nouveau remporté le concours du mois. C'est sa 6e victoire ! 📅</h3>
 
       <Ad></Ad>
       <h1>Nos jeux cognitifs</h1>
@@ -90,7 +90,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
               <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >🎩 <Link to='vitessememory'> Le jeu du memory</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={1} /></div> 
-          <p className="marge20">But du jeu : Trouver toutes les paires comme dans le classique jeu du Memory. Une différence avec le jeu classique : vous découvrez les paires à votre rythme. Elles ne disparaissent pas au bout d'un certain temps. Le temps alloué est de 70 secondes pour tenter de trouver toutes les paires, un bonus de 50 points est alloué si vous finissez le jeu (max 230 points).</p>
+          <p className="marge20">But du jeu : Trouver toutes les paires comme dans le classique jeu du Memory. Une différence avec le jeu classique : vous découvrez les paires à votre rythme. Elles ne disparaissent pas au bout d'un certain temps. Le temps alloué est de 60 secondes pour tenter de trouver toutes les paires, un bonus de 50 points est alloué si vous finissez le jeu (max 230 points).</p>
      
         <div className="centre"><Link to='classement/vitessememory'>Classement</Link></div>
       </div>
@@ -187,6 +187,15 @@ this.nomMois = moisEnFrancais[d.getMonth()];
 <h2>Tests de rapidité et de concentration</h2>
 
                 <div className='jeuVitesse'>
+
+                <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >🔄 <Link to='vitessetaquin'> Le taquin 🆕</Link></div>
+         <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
+          <p className="marge20">But du jeu : Dans ce classique du jeu de réflexion, vous devez déplacer des tuiles pour créer une ligne puis une colonne. Vous avez 100 secondes pour construire la ligne et la colonne. 50 points vous sont donnés après la ligne et 100 points après la colonne.  </p>
+     
+        <div className="centre"><Link to='classement/vitessetaquin'>Classement</Link></div>
+      </div>
+
                 <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >🧩 <Link to='vitessecomplet'> Pièce du puzzle</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
@@ -256,7 +265,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >📠 <Link to='vitesseecrire'>La dactylographie</Link></div>
         <div className='centre'>Difficulté : <Rate disabled defaultValue={5} /></div>
-        <p className="marge20">But du jeu : Taper une série de mots le plus vite possible au clavier. Le temps alloué est de 30 secondes pour 30 mots. Chaque mot correctement saisi augmente votre score de 2 points, il n'y a pas de pénalité si vous ne tapez pas la bonne lettre. Si vous réussissez à écrire les 30 mots avant la fin du temps (belle performance) vous obtenez un bonus de 50 points !
+        <p className="marge20">But du jeu : Taper une série de mots le plus vite possible au clavier. Le temps alloué est de 30 secondes pour 19 mots. Chaque mot correctement saisi augmente votre score de 3 points, il n'y a pas de pénalité si vous ne tapez pas la bonne lettre. Si vous réussissez à écrire les 19 mots  vous obtenez un bonus de 50 points !
         Vous pouvez consulter ce <a target='_blank' style={{all: 'revert'}} href="https://fr.wikihow.com/apprendre-la-dactylographie">wiki</a> si vous désirez améliorer votre cadence de frappe. </p>
        
         <div className="centre"><Link to='classement/vitesseecrire'>Classement</Link></div>

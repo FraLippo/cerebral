@@ -72,15 +72,17 @@ function nomType(type) {
             return "Les nombres en désordre";
         case "vitessecomplet":
             return "Pièce puzzle";
+            case "vitessetaquin":
+                return "Le taquin";
         default:
             return "";
     }
 }
 let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire",
     "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessetresor", "vitesseaddition", "vitesseforme", "vitessematch", "vitesserecensement", "vitessepanneauroutier",
-    "vitessecercle", "vitessenombre", "vitessememory", "vitessetresse", "vitesseboogle", "vitessearithmetique", "vitessecomplet"]
+    "vitessecercle", "vitessenombre", "vitessememory", "vitessetresse", "vitesseboogle", "vitessearithmetique", "vitessecomplet", "vitessetaquin"]
 
-let typeJeu = ['m', 'r', 'l', 'r', 'r', 'r', 'r', 'r', 'm', 'c', 'c', 'r', 'r', 'r', 'r', 'm', 'r', 'r', 'r', 'l', 'r', 'm', 'r', 'l', 'c', 'r']
+let typeJeu = ['m', 'r', 'l', 'r', 'r', 'r', 'r', 'r', 'm', 'c', 'c', 'r', 'r', 'r', 'r', 'm', 'r', 'r', 'r', 'l', 'r', 'm', 'r', 'l', 'c', 'r', 'r']
 
 function lienAutresJeux(jeu) {
    

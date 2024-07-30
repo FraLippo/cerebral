@@ -98,7 +98,7 @@ export default class JeuBoogle extends Component {
                     let noTirage = this.state.noTirage + 1;
                     if (noTirage === NOTIRAGEMAX) {
                         this.fin = true;
-                        message.info("Bravo, vous avez réussi !", this.finJeu)
+                        message.info("Bravo, tu as réussi !", this.finJeu)
                     }
                     else {
                         this.setState({

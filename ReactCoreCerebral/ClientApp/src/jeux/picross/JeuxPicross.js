@@ -68,7 +68,7 @@ import withRouter from '../../components/commun/withRouter';
 
         if (nouveauTabJeu.toString() === this.resultat.toString()) {
             this.stop = true;
-            message.success('Bravo ! Vous avez réussi', 3, this.afficherResultat);
+            message.success('Bravo ! Tu as réussi', 3, this.afficherResultat);
         }
         this.setState({
             tabJeu: nouveauTabJeu,
@@ -92,7 +92,7 @@ import withRouter from '../../components/commun/withRouter';
             afficheRebours: !this.stop
 
         })
-        message.error("Perdu, vous avez dépassé le temps.", 2, this.afficherResultat);
+        message.error("Perdu, tu as dépassé le temps.", 2, this.afficherResultat);
     }
 
     abandon = () => {

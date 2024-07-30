@@ -130,7 +130,7 @@ class JeuxMemoryGame extends Component {
         if (this.state.nbFaute === 0) {
             this.fin = true;
             this.perdu = true;
-            message.error('Vous avez perdu', this.finJeu);
+            message.error('Tu as perdu', this.finJeu);
         }
         let tableauModifie = [...this.state.tableau];
         tableauModifie[this.no1].affiche = false;
@@ -198,7 +198,7 @@ class JeuxMemoryGame extends Component {
                       
                         if (tableauModifie.find(x => !x.trouve && x.contenu !== '-1' && x.contenu !== 'O' && x.contenu !== 'X') === undefined) {
                             this.fin = true;
-                            message.success('Bravo ! Vous avez gagné', this.finJeu)
+                            message.success('Bravo ! Tu as gagné', this.finJeu)
                         }  
                         if (this.double >= 2 && !this.fin)
                         {

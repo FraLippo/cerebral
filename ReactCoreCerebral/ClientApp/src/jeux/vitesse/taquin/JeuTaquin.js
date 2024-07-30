@@ -193,7 +193,7 @@ const JeuTaquin = () => {
       <div> {tabSolution.map((emoji, index) => (<span className="emojiTaq" key={index + 500}>{emoji}</span>
       ))}</div>
       <div>Score : {score}</div>
-      {isSolved && <p>Félicitations, vous avez résolu le challenge {jeu} / 2 ! </p>}
+      {isSolved && <p>Félicitations, tu as résolu le challenge {jeu} / 2 ! </p>}
       <div className="marge20"> <CompteRebours temps={90} finTimer={finTimer}></CompteRebours></div>
       {/* <button onClick={resetGame}>Réinitialiser</button> */}
       <h1>Le taquin</h1>

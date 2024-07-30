@@ -77,14 +77,14 @@ class JeuxSimon extends Component {
             nouvelleGrille[id] = 1;
 
             if (this.tabCase[this.noEnCours] !== id) {
-                message.error("Vous avez perdu", 2, this.fin);
+                message.error("Tu as perdu", 2, this.fin);
                 this.perdu = true;
                 this.finJeu = true;
             }
             this.setState({ tabGrille: nouvelleGrille });
             this.noEnCours++;
             if (this.noEnCours === this.tabCase.length && !this.perdu) {
-                message.success("Vous avez gagné", 2, this.fin);
+                message.success("Tu as gagné", 2, this.fin);
                 this.finJeu = true;
             }
         }

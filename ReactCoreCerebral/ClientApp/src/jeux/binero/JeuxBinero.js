@@ -106,7 +106,7 @@ import withRouter from '../../components/commun/withRouter';
 
         }
         if (trouve) {
-            message.success("Bravo, vous avez réussi", 2, this.afficheResultat);
+            message.success("Bravo, tu as réussi", 2, this.afficheResultat);
         } else {
             this.perdu = true;
             message.error("Perdu, ce n'est pas la bonne solution", 2, this.afficheResultat);

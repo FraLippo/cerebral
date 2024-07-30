@@ -121,7 +121,7 @@ const JeuTaquin = () => {
       setTiles(newTiles);
       if (checkIfSolved(newTiles, tabSolution)) {
         
-        message.success('Bravo ! Vous avez réussi.', nouveauJeu);
+        message.success('Bravo ! Tu as réussi.', nouveauJeu);
         setIsSolved(true);
       
       }
@@ -194,7 +194,7 @@ const JeuTaquin = () => {
       ))}</div>
       <div>Score : {score}</div>
       {isSolved && <p>Félicitations, vous avez résolu le challenge {jeu} / 2 ! </p>}
-      <div className="marge20"> <CompteRebours temps={100} finTimer={finTimer}></CompteRebours></div>
+      <div className="marge20"> <CompteRebours temps={90} finTimer={finTimer}></CompteRebours></div>
       {/* <button onClick={resetGame}>Réinitialiser</button> */}
       <h1>Le taquin</h1>
     </div>}

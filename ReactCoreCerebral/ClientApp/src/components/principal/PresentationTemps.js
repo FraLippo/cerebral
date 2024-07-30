@@ -191,7 +191,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
                 <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >🔄 <Link to='vitessetaquin'> Le taquin 🆕</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
-          <p className="marge20">But du jeu : Dans ce classique du jeu de réflexion, vous devez déplacer des tuiles pour créer une ligne puis une colonne. Vous avez 100 secondes pour construire la ligne et la colonne. 50 points vous sont donnés après la ligne et 100 points après la colonne.  </p>
+          <p className="marge20">But du jeu : Dans ce classique du jeu de réflexion, vous devez déplacer des tuiles pour créer une ligne puis une colonne. Vous avez 90 secondes pour construire la ligne et la colonne. 50 points vous sont donnés après la ligne et 100 points après la colonne.  </p>
      
         <div className="centre"><Link to='classement/vitessetaquin'>Classement</Link></div>
       </div>

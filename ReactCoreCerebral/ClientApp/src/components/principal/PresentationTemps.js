@@ -4,6 +4,7 @@ import { Row, Col } from 'antd';
 import Ad from '../commun/adSense';
 import '../../style/vitesse.css';
 import border from '../../images/border.png';
+import x6 from '../../images/x6.jpg';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import pres from '../../images/pres.png';
@@ -79,6 +80,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
        <span className='champVitesse'>inconnu583 x6 (champion du mois)</span>👑</p>
       <h3 className='centre'>🚩 L'inconnu583 a de nouveau remporté le concours du mois. C'est sa 6e victoire ! 📅</h3>
+      <div className="centre"><img src={x6} alt="bordure" width="360" height="360" ></img></div>
 
       <Ad></Ad>
       <h1>Nos jeux cognitifs</h1>

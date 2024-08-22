@@ -8,7 +8,11 @@ import x6 from '../../images/x6.jpg';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import pres from '../../images/pres.png';
-import fondmemoire from '../../images/fondmemoire.png'
+import fondmemoire from '../../images/fondmemoire.png';
+import fondcalcul from '../../images/fondcalcul.png';
+import fondlettres from '../../images/fondlettre.png';
+import fondplanification from '../../images/fondplanification.png';
+import fondrapidite from '../../images/fondrapidite.png';
 import Podium from '../../jeux/vitesse/commun/Podium';
 import { verifierStatus } from '../../jeux/vitesse/commun/utilitaire';
 import { moisEnFrancais } from '../commun/utilitaire';
@@ -84,13 +88,34 @@ this.nomMois = moisEnFrancais[d.getMonth()];
 
       <Ad></Ad>
       <div className='plateauCategorie'>
-        <div className='categorieVitesse'>
+      <Link to='test-memoire'> <div className='categorieVitesse'>
     <div className='titreCategorie'>Mémoire</div>
     <div className='imageCategorie'><img src={fondmemoire} alt="catégorie memoire"></img></div>
         </div>
+        </Link>
+        
+        
+        <Link to='test-calcul'>   <div className='categorieVitesse'>
+    <div className='titreCategorie'>Calcul</div>
+    <div className='imageCategorie'><img src={fondcalcul} alt="catégorie calcul"></img></div>
         </div>
-
-
+        </Link>
+        <Link to='test-lettres'><div className='categorieVitesse'>
+    <div className='titreCategorie'>Lettres et mots</div>
+    <div className='imageCategorie'><img src={fondlettres} alt="catégorie lettre"></img></div>   
+        </div>
+        </Link>
+        <Link to='test-planification'> <div className='categorieVitesse'>
+    <div className='titreCategorie'>Planification</div>
+    <div className='imageCategorie'><img src={fondplanification} alt="catégorie planification"></img></div>   
+        </div>
+      </Link>
+      <Link to='test-concentration'> <div className='categorieVitesse'>
+    <div className='titreCategorie'>Rapidité et concentration</div>
+    <div className='imageCategorie'><img src={fondrapidite} alt="catégorie rapidité"></img></div>   
+        </div>
+</Link>
+</div>
 
 
       <h1>Nos jeux cognitifs</h1>

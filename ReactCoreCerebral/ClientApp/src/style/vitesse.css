@@ -29,13 +29,30 @@
 
 .categorieVitesse
 {
+    margin: 10px;
     position: relative;
-    width: 350px;
+    width: 450px;
     height: 200px;
     background-color: #24dde7;;
     border-radius: 10px;
     box-shadow: rgb(0 0 0 / 62%) 19px 10px 36px -18px;
 
+}
+
+.categorieVitesse a
+{
+    color: black;
+}
+
+.categorieVitesse:hover
+{
+    cursor:pointer;
+
+
+}
+.categorieVitesse:active {
+
+    transform: translateY(2px);
 }
 
 .titreCategorie

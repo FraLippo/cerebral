@@ -73,6 +73,11 @@ const JeuTresse = React.lazy(() => import('../../jeux/vitesse/tresse/JeuTresse')
 const JeuBoogle = React.lazy(() => import('../../jeux/vitesse/boogle/JeuBoogle'));
 const JeuTaquin = React.lazy(() => import('../../jeux/vitesse/taquin/JeuTaquin'));
 const JeuComplet = React.lazy(() => import('../../jeux/vitesse/complet/JeuComplet'));
+const TestMemoire = React.lazy(() => import('./TestMemoire'));
+const TestCalcul = React.lazy(() => import('./TestCalcul'));
+const TestConcentration = React.lazy(() => import('./TestConcentration'));
+const TestPlanification = React.lazy(() => import('./TestPlanification'));
+const TestLettres = React.lazy(() => import('./TestLettres'));
 
 
 const router = createBrowserRouter([
@@ -95,6 +100,30 @@ const router = createBrowserRouter([
           {
             path :"defi",
             element: <Presentation />,
+          },
+          {
+            path :"test-memoire",
+            element: <TestMemoire />,
+          },
+          {
+            path :"test-concentration",
+            element: <TestConcentration />,
+          },
+          {
+            path :"test-calcul",
+            element: <TestCalcul />,
+          },
+          {
+            path :"test-lettres",
+            element: <TestLettres />,
+          },
+          {
+            path :"test-planification",
+            element: <TestPlanification />,
+          },
+          {
+            path :"test-concentration",
+            element: <TestConcentration />,
           },
           {
             path: 'binero/:id',

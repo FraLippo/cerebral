@@ -23,7 +23,8 @@ export default class JeuMemory extends Component {
         this.state =
         {
             score : 0,
-            tabGrille
+            tabGrille,
+            afficheResultat : false
         }
     }
 

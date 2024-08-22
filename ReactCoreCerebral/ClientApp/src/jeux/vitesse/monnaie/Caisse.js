@@ -55,11 +55,15 @@ export default class Caisse extends Component {
         }
     }
 
+    clicPiece = (event) => {
+        const id = parseInt(event.target.id);
+        this.props.clicPiece(id);
 
+    }
     render() {
         return <React.Fragment>
 
-            {this.props.tabPiece.map((no, i) => <img className='pieceMonnaie' key={i} src={this.nomImage(no)} alt="piece"></img>)}
+            {this.props.tabPiece.map((no, i) => <img className='pieceMonnaie' onClick={this.clicPiece} key={i+this.props.type} id={i+this.props.type}  src={this.nomImage(no)} alt="piece"></img>)}
 
         </React.Fragment>
 

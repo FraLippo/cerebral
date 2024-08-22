@@ -8,7 +8,7 @@ import x6 from '../../images/x6.jpg';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import pres from '../../images/pres.png';
-
+import fondmemoire from '../../images/fondmemoire.png'
 import Podium from '../../jeux/vitesse/commun/Podium';
 import { verifierStatus } from '../../jeux/vitesse/commun/utilitaire';
 import { moisEnFrancais } from '../commun/utilitaire';
@@ -74,15 +74,25 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <p>Le podium montre les 3 premiers du mois en cours, le podium peut changer à tout moment, tous les résultats des jeux de rapidité sur cette page sont pris en compte.</p>
       <Podium tabPrenoms={this.state.tabPrenoms}></Podium>
    
-      <div className="titreClassement"><Link to='classementmois'><b>Mes résultats</b></Link></div>
+      <div className="titreClassement"><Link to='classementmois'><b>Résultats détaillés</b></Link></div>
   
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
-       <span className='champVitesse'>inconnu583 x6 (champion du mois)</span>👑</p>
-      <h3 className='centre'>🚩 L'inconnu583 a de nouveau remporté le concours du mois. C'est sa 6e victoire ! 📅</h3>
-      <div className="centre"><img src={x6} alt="bordure" width="360" height="360" ></img></div>
+       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 (champion du mois)</span>👑</p>
+      <h3 className='centre'>🚩 Première victoire pour Lili55 ! 📅</h3>
+     
 
       <Ad></Ad>
+      <div className='plateauCategorie'>
+        <div className='categorieVitesse'>
+    <div className='titreCategorie'>Mémoire</div>
+    <div className='imageCategorie'><img src={fondmemoire} alt="catégorie memoire"></img></div>
+        </div>
+        </div>
+
+
+
+
       <h1>Nos jeux cognitifs</h1>
       <p>Nous vous proposons une série de tests simples et de petits jeux de réflexion pour faire travailler son cerveau en espérant améliorer ses capacités cognitives et son intelligence. Tous les jeux sont gratuits et ne nécessitent aucune inscription.</p>
           <p>Chaque série de tests stimule une partie du cerveau différente : la mémoire, la capacité de concentration, la vitesse de réaction, le discernement des couleurs et des formes...</p>
@@ -183,6 +193,13 @@ this.nomMois = moisEnFrancais[d.getMonth()];
      
         <div className="centre"><Link to='classement/vitessearithmetique'>Classement</Link></div>
       </div>
+      <div className="presentationJeu marge20">
+        <div className="centre titreVitesse" >💵 <Link to='vitessemonnaie'> La monnaie 🆕</Link></div>
+         <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
+          <p className="marge20">But du jeu : Tu dois rendre la monnaie au client en cliquant sur les pièces pour faire l'appoint. Tu dois gérer le maximum de clients en 60 s. Tu gagnes des points à chaque client content.   </p>
+     
+        <div className="centre"><Link to='classement/vitessemonnaie'>Classement</Link></div>
+      </div>
 
      
                 </div>
@@ -191,7 +208,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
                 <div className='jeuVitesse'>
 
                 <div className="presentationJeu marge20">
-        <div className="centre titreVitesse" >🔄 <Link to='vitessetaquin'> Le taquin 🆕</Link></div>
+        <div className="centre titreVitesse" >🔄 <Link to='vitessetaquin'> Le taquin</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={2} /></div> 
           <p className="marge20">But du jeu : Dans ce classique du jeu de réflexion, tu dois déplacer des tuiles pour créer une ligne puis une colonne. Tu as 90 secondes pour construire la ligne et la colonne. 50 points te sont donnés après la ligne et 100 points après la colonne.  </p>
      

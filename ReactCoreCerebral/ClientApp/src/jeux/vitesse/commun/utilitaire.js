@@ -74,15 +74,17 @@ function nomType(type) {
             return "Pièce puzzle";
             case "vitessetaquin":
                 return "Le taquin";
+                case "vitessemonnaie":
+                    return "La monnaie";
         default:
             return "";
     }
 }
 let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire",
     "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessetresor", "vitesseaddition", "vitesseforme", "vitessematch", "vitesserecensement", "vitessepanneauroutier",
-    "vitessecercle", "vitessenombre", "vitessememory", "vitessetresse", "vitesseboogle", "vitessearithmetique", "vitessecomplet", "vitessetaquin"]
+    "vitessecercle", "vitessenombre", "vitessememory", "vitessetresse", "vitesseboogle", "vitessearithmetique", "vitessecomplet", "vitessetaquin", "vitessemonnaie"]
 
-let typeJeu = ['m', 'r', 'l', 'r', 'r', 'r', 'r', 'r', 'm', 'c', 'c', 'r', 'r', 'r', 'r', 'm', 'r', 'r', 'r', 'l', 'r', 'm', 'r', 'l', 'c', 'r', 'r']
+let typeJeu = ['m', 'r', 'l', 'r', 'r', 'r', 'r', 'r', 'm', 'c', 'c', 'r', 'r', 'r', 'r', 'm', 'r', 'r', 'r', 'l', 'r', 'm', 'r', 'l', 'c', 'r', 'r', 'c']
 
 function lienAutresJeux(jeu) {
    

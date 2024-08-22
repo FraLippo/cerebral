@@ -42,7 +42,7 @@ namespace ReactCoreCerebral.Controllers
             }
             else
             {
-                Resultat2019 newResultat = new() { typeExo = typeExo, date = DateTime.Now, prenom = prenom, nbFaute = score, noExo = 999 };
+                Resultat2019 newResultat = new() { typeExo = typeExo, date = DateTime.Now, prenom = prenom, nbFaute = score, noExo = 999,  };
                 _dbTableau.Resultat2019.Add(newResultat);
             }
             await _dbTableau.SaveChangesAsync();

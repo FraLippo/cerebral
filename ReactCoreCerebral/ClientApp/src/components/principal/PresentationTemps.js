@@ -127,7 +127,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
               <div className="presentationJeu marge20">
         <div className="centre titreVitesse" >🎩 <Link to='vitessememory'> Le jeu du memory</Link></div>
          <div className='centre'>Difficulté : <Rate disabled defaultValue={1} /></div> 
-          <p className="marge20">But du jeu : Trouver toutes les paires comme dans le classique jeu du Memory. Une différence avec le jeu classique : tu découvres les paires à ton rythme. Elles ne disparaissent pas au bout d'un certain temps. Le temps alloué est de 60 secondes pour tenter de trouver toutes les paires, un bonus de 50 points est alloué si tu finis le jeu (max 230 points).</p>
+          <p className="marge20">But du jeu : Trouver toutes les paires comme dans le classique jeu du Memory. Une différence avec le jeu classique : tu découvres les paires à ton rythme. Elles ne disparaissent pas au bout d'un certain temps. Le temps alloué est de 60 secondes pour tenter de trouver toutes les paires, un bonus de 30 points est alloué si tu finis le jeu.</p>
      
         <div className="centre"><Link to='classement/vitessememory'>Classement</Link></div>
       </div>

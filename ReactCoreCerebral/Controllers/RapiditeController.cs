@@ -23,16 +23,16 @@ namespace ReactCoreCerebral.Controllers
         }
 
 
-        public async Task<IActionResult> Resultat(string typeExo, int score, string prenom)
+        public async Task<IActionResult> Resultat(string typeExo, int score, string prenom, string categorie)
         {
             var ancienResultat = _dbTableau.Resultat2019.FirstOrDefault(x => x.prenom == prenom && x.typeExo == typeExo);
             var ancienScore = 0;
-             DateTime now = DateTime.Now;
-                var startDate = new DateTime(now.Year, now.Month, 1);
-                var endDate = startDate.AddMonths(1);
+            DateTime now = DateTime.Now;
+            var startDate = new DateTime(now.Year, now.Month, 1);
+            var endDate = startDate.AddMonths(1);
             if (ancienResultat != null)
             {
-              
+
                 ancienScore = ancienResultat.nbFaute;
                 if (score > ancienResultat.nbFaute || !(ancienResultat.date >= startDate && ancienResultat.date < endDate))
                 {
@@ -42,7 +42,7 @@ namespace ReactCoreCerebral.Controllers
             }
             else
             {
-                Resultat2019 newResultat = new() { typeExo = typeExo, date = DateTime.Now, prenom = prenom, nbFaute = score, noExo = 999,  };
+                Resultat2019 newResultat = new() { typeExo = typeExo, date = DateTime.Now, prenom = prenom, nbFaute = score, noExo = 999, listeFautes = categorie };
                 _dbTableau.Resultat2019.Add(newResultat);
             }
             await _dbTableau.SaveChangesAsync();
@@ -54,6 +54,43 @@ namespace ReactCoreCerebral.Controllers
 
 
             return Ok(new { classement, nbJoueurs, moyenne, ancien, prenom });
+        }
+
+        public DTOCategorie Categorie(string prenom, string categorie)
+        {
+            DTOCategorie resultCategorie = new();
+            DateTime now = DateTime.Now;
+            var startDate = new DateTime(now.Year, now.Month, 1);
+            var endDate = startDate.AddMonths(1);
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("fr-FR");
+            var classement =
+                             (from sc in _dbTableau.Resultat2019
+                              where sc.noExo == 999 && sc.date >= startDate && sc.date < endDate && sc.listeFautes == categorie
+                              group sc by sc.prenom into grouping
+                              select new DTOClassement
+                              {
+                                  Cle = 0,
+                                  Prenom = grouping.Key,
+                                  Score = grouping.Sum(x => x.nbFaute),
+                                  Position = 0
+
+                              }).OrderByDescending(x => x.Score).Take(3).ToList();
+            for (int i = 0; i < classement.Count; i++)
+            {
+                classement[i].Cle = i;
+            }
+            resultCategorie.ClassementCategorie = classement;
+
+            if (prenom != "")
+            {
+                var classementJoueur = _dbTableau.Resultat2019.Where(x => x.listeFautes == categorie && x.prenom == prenom && x.date >= startDate && x.date < endDate)
+                .ToDictionary(x => x.typeExo, x => x.nbFaute);
+                resultCategorie.ResultatsJoueur = classementJoueur;
+
+            }
+
+
+            return resultCategorie;
         }
 
         public IEnumerable<DTOClassementScore> Classement(string typeExo)
@@ -101,8 +138,8 @@ namespace ReactCoreCerebral.Controllers
             {
                 if (scorePrecedent != classement[i].Score)
                 {
-                    position = i+1;
-                  
+                    position = i + 1;
+
                 }
                 classement[i].Position = position;
 
@@ -111,14 +148,14 @@ namespace ReactCoreCerebral.Controllers
                     positionJoueur = position;
                     scoreJoueur = classement[i].Score;
                 }
-           
-                scorePrecedent = classement[i].Score;   
+
+                scorePrecedent = classement[i].Score;
                 classement[i].Cle = i;
             }
 
-            var classementsJoueur = _dbTableau.Resultat2019.Where(x => x.noExo == 999 && x.date >= startDate && x.date < endDate && x.prenom == prenom).Select( x => new DTOResultatJoueur() { NomJeu = x.typeExo, Score = x.nbFaute}).ToList();
+            var classementsJoueur = _dbTableau.Resultat2019.Where(x => x.noExo == 999 && x.date >= startDate && x.date < endDate && x.prenom == prenom).Select(x => new DTOResultatJoueur() { NomJeu = x.typeExo, Score = x.nbFaute }).ToList();
 
-            DTOInfoClassement DTOInfoJoueur = new() { ClassementJoueurs = classement.Take(10), NbJoueurs = classement.Count,  Classement = positionJoueur, Resultats = classementsJoueur, ScoreTotal = scoreJoueur };                      
+            DTOInfoClassement DTOInfoJoueur = new() { ClassementJoueurs = classement.Take(10), NbJoueurs = classement.Count, Classement = positionJoueur, Resultats = classementsJoueur, ScoreTotal = scoreJoueur };
             return DTOInfoJoueur;
         }
 
@@ -141,14 +178,14 @@ namespace ReactCoreCerebral.Controllers
                                   Position = 0
 
                               }).OrderByDescending(x => x.Score).Take(3).Select(x => x.Prenom).ToList();
-         
-            
-                for (int i = classement.Count; i < 3; i++)
-                {
-                    classement.Add("?");
-                }
-            
-           
+
+
+            for (int i = classement.Count; i < 3; i++)
+            {
+                classement.Add("?");
+            }
+
+
 
             return classement;
         }

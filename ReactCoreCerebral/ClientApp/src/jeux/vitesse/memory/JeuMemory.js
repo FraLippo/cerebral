@@ -48,7 +48,7 @@ export default class JeuMemory extends Component {
                 if (selections[0].numero === nouveauTabGrille[id].numero) {
                     selections[0].etat = 'trouve';
                     nouveauTabGrille[id].etat = 'trouve';
-                    score += 10;
+                    score += 5;
                 }
               
             }
@@ -58,7 +58,7 @@ export default class JeuMemory extends Component {
             }
             if (nouveauTabGrille.find(x => x.etat !== 'trouve') == null)
             {
-                score += 50;
+                score += 30;
                 message.success("Bravo, terminé", 2, this.finTimer)
             }
             this.setState({ tabGrille: nouveauTabGrille, score });

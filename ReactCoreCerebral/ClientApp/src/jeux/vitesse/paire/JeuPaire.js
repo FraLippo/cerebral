@@ -58,7 +58,7 @@ class JeuPaire extends Component {
     clickBoutonMeme = () => {
         if (this.precedent === this.state.numero)
         {
-            this.setState({score : this.state.score + 1,
+            this.setState({score : this.state.score + 2,
             reponse : "Correct"});
         }
         else
@@ -72,7 +72,7 @@ class JeuPaire extends Component {
     clickBoutonDifferent = () => {
         if (this.precedent !== this.state.numero)
         {
-            this.setState({score : this.state.score + 1,
+            this.setState({score : this.state.score + 2,
             reponse : "Correct"});
         }
         else

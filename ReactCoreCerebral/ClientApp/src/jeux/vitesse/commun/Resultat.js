@@ -58,6 +58,11 @@ class Resultat extends Component {
 
     }
 
+    trouveCategorie(nom)
+    {
+        let i = tabJeu.findIndex(x => x === nom);
+        return typeJeu[i];
+    }
 
 
     async envoyerMessage(prenom) {
@@ -66,6 +71,7 @@ class Resultat extends Component {
         data.append('typeExo', this.props.typeExo);
         data.append('score', this.props.score);
         data.append('prenom', prenom);
+        data.append('categorie', this.trouveCategorie(this.props.typeExo));
 
         const reponse = await fetch(url, {
             method: "POST",

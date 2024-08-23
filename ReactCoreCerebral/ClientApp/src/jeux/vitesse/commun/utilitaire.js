@@ -80,11 +80,16 @@ function nomType(type) {
             return "";
     }
 }
-let tabJeu = ["vitessememoire", "vitessenotes", "vitesselettres", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitessepaire",
-    "vitessecalcul", "vitesseoperation", "vitessechemin", "vitesseecrire", "vitessetresor", "vitesseaddition", "vitesseforme", "vitessematch", "vitesserecensement", "vitessepanneauroutier",
-    "vitessecercle", "vitessenombre", "vitessememory", "vitessetresse", "vitesseboogle", "vitessearithmetique", "vitessecomplet", "vitessetaquin", "vitessemonnaie"]
 
-let typeJeu = ['m', 'r', 'l', 'r', 'r', 'r', 'r', 'r', 'm', 'c', 'c', 'r', 'r', 'r', 'r', 'm', 'r', 'r', 'r', 'l', 'r', 'm', 'r', 'l', 'c', 'r', 'r', 'c']
+
+let tabJeu = ["vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus","vitesserecensement","vitessematch", "vitessecomplet",
+"vitessecercle","vitesselettres", "vitesseboogle",
+"vitessechemin","vitessetresor", "vitessetresse","vitessetaquin",
+"vitesseoperation", "vitesseaddition","vitessecalcul","vitessearithmetique", "vitessemonnaie",
+"vitesseecrire","vitessenotes","vitessepanneauroutier",
+"vitessememoire","vitesseforme","vitessenombre","vitessememory","vitessepaire"]
+
+let typeJeu = ['r','r','r','r','r','r','r','r','l','l','l','p','p','p','p','c','c','c','c','c','d','d','d','m','m','m','m','m']
 
 function lienAutresJeux(jeu) {
    

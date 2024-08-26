@@ -376,9 +376,6 @@ this.nomMois = moisEnFrancais[d.getMonth()];
        
         <div className="centre"><Link to='classement/vitesseordre'>Classement</Link></div>
       </div>
-
-    
-    
     </div>
     <h2>Pourquoi pratiquer des jeux cognitifs ?</h2>
     <p>En participant régulièrement à des jeux cognitifs, tu améliores ton cerveau de manière amusante et stimulante. Ces activités contribuent à renforcer la mémoire, à améliorer la concentration et à affiner la résolution de problèmes. Que ce soit des puzzles, des énigmes ou des jeux de mémoire, chaque défi offre une opportunité d'explorer de nouvelles façons de penser.</p>

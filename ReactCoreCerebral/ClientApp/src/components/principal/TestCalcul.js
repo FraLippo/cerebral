@@ -1,14 +1,9 @@
-import SousMenu from './SousMenu';
+import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
-import { Row, Col } from 'antd';
+import GraphiqueRapidite from '../commun/GraphiquesRapidité';
 import Ad from '../commun/adSense';
 import '../../style/jeux.css';
-import border from '../../images/border.png';
-import esp from '../../images/esp.webp';
-import imagePre from '../../images/imagePre.webp';
-import dessin from '../../images/dessin.webp';
-import memory from '../../images/memory.webp';
-import simon from '../../images/simon.webp';
+
 
 import { Helmet } from 'react-helmet';
 
@@ -18,23 +13,66 @@ export default class TestCalcul extends Component {
   constructor()
   {
     super();
+    this.prenom = '';
+    this.state =
+    {
+        resultatsJoueur : [],
+       
+    }
   }
 
+  recupererResultatJoueur = (prenom, resultats)=>
+  {
+    this.prenom = prenom;
+    this.setState({
+        resultatsJoueur : resultats
+       
+    });
+  }
   render() {
     return <div>
          <Helmet>
-            <title>Jeu cérébral : la mémoire </title>
-            <meta name="description" content="Des jeux simples et amusants de sport cérébral axés sur la mémoire. Ces jeux sont disponibles pour les seniors et les juniors, ils sont tous gratuits."/>
-        </Helmet>
-      <div className="titre centre couleurTitre">Sport cérébral</div>
-      <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
-      <h2 className="titre couleurTitre centre">Les tests de la mémoire</h2>
-      <p>Entraînez votre cerveau et stimulez votre mémoire avec une sélection captivante de jeux de mémoire gratuits en ligne pour les adultes ou les enfants. Testez vos capacités de rappel, votre concentration et votre capacité à mémoriser des informations tout en vous amusant. 
+            <title>Tests de calcul mental</title>
+            <meta name="description" content="Améliorez vos compétences en calcul mental avec nos tests interactifs. Évaluez votre rapidité et précision en mathématiques à travers une série d'exercices stimulants conçus pour affiner votre agilité numérique et renforcer vos capacités cognitives." />
+            </Helmet>
 
-Plongez dans un monde d'énigmes et de défis conçus pour exercer votre mémoire à court terme et à long terme. Découvrez des jeux de cartes où vous devez retrouver des paires identiques ou des jeux de séquences où vous devez mémoriser et reproduire des modèles.</p>
+      <h1 className="titre couleurTitre centre">Les tests de calcul mental</h1>
+      <p>Évaluez et perfectionnez vos compétences en mathématique avec nos tests de calcul mental stimulants, conçus pour améliorer votre rapidité et précision en calculs numériques.</p> 
+      <GraphiqueRapidite categorie='c' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
 
-<p>Les jeux de mémoire ne sont pas seulement amusants, mais ils sont également bénéfiques pour votre développement cognitif. Ils améliorent votre concentration, votre capacité de rétention et votre vitesse de traitement de l'information. En jouant régulièrement, vous pouvez renforcer votre mémoire et votre capacité d'apprentissage, ce qui peut être utile dans de nombreux aspects de la vie quotidienne.</p>
+   
+      <div className='jeuVitesse marge20'>
+                <div className="lienJeuRapidité presentationJeu marge20">
+        <div className="centre titreVitesse">➕ <Link to='/vitesseoperation'>Les 4 opérations</Link></div>
+        <p className="marge20">But du jeu : Le plus simple des jeux de calcul mental, calculer le plus vite possible le résultat d'une simple opération. Les 4 opérateurs sont utilisés. Tu as 90 secondes pour réaliser le meilleur score. Chaque bonne réponse rapporte 1 point.</p>
+        <p className='centre'>{this.state.resultatsJoueur["vitesseoperation"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesseoperation"]:"Pas encore de résultat" }</p>
 
+        <div className="centre"><Link to='/classement/vitesseoperation'>Classement</Link></div>
+ </div>
+        <div className="lienJeuRapidité presentationJeu marge20">
+        <div className="centre titreVitesse">🟰 <Link to='/vitessecalcul'>La grille de calcul</Link></div>
+        <p className="marge20">But du jeu : On te donne 9 petits calculs (des additions et des soustractions) dans une grille, tu dois pointer les cases qui sont supérieures ou inférieures à un résultat donné. Tu as 60 secondes pour réaliser le meilleur score, +1 par bonne réponse, -1 en cas de mauvaise réponse.</p>
+
+        <p className='centre'>{this.state.resultatsJoueur["vitessecalcul"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessecalcul"]:"Pas encore de résultat" }</p>
+
+        <div className="centre"><Link to='/classement/vitessecalcul'>Classement</Link></div>
+      </div>
+      <div className="lienJeuRapidité presentationJeu marge20">
+        <div className="centre titreVitesse" >🔀 <Link to='/vitessearithmetique'> Nombres en désordre</Link></div>
+          <p className="marge20">But du jeu : Retrouve la bonne opération. Des nombres sont affichés dans le désordre tu dois les remettre en ordre pour reconstituer une opération. Tu as 60 secondes, chaque bonne réponse rapporte 6 points.  </p>
+          <p className='centre'>{this.state.resultatsJoueur["vitessearithmetique"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessearithmetique"]:"Pas encore de résultat" }</p>
+
+        <div className="centre"><Link to='/classement/vitessearithmetique'>Classement</Link></div>
+      </div>
+      <div className="lienJeuRapidité presentationJeu marge20">
+        <div className="centre titreVitesse" >💵 <Link to='/vitessemonnaie'> La monnaie 🆕</Link></div>
+          <p className="marge20">But du jeu : Tu dois rendre la monnaie au client en cliquant sur les pièces pour faire l'appoint. Tu dois gérer le maximum de clients en 60 s. Tu gagnes des points à chaque client content.   </p>
+          <p className='centre'>{this.state.resultatsJoueur["vitessemonnaie"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessemonnaie"]:"Pas encore de résultat" }</p>
+
+        <div className="centre"><Link to='/classement/vitessemonnaie'>Classement</Link></div>
+      </div>
+
+     </div>
        </div>
   }
 }

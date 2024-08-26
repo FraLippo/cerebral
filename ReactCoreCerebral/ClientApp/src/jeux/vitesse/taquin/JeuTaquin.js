@@ -61,11 +61,11 @@ const JeuTaquin = () => {
     if (nouveuJeu < 3) {
       setJeu(nouveuJeu);
       resetGame();
-      setScore(score+50);
+      setScore(score+40);
     }
     else
     {
-      setScore(score+100);
+      setScore(score+70);
       setAfficheResultat(true);
     }
    

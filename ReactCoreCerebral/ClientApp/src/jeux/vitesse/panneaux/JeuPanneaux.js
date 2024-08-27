@@ -30,7 +30,7 @@ export default class JeuPanneaux extends Component {
     {
         if (this.noQuestion == this.state.tabPanneaux.length)
         {
-            this.setState({afficheResultat : true, score : this.state.score + 50})
+            this.setState({afficheResultat : true, score : this.state.score + 20})
         }
     }
 

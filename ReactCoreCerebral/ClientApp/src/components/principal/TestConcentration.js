@@ -147,6 +147,9 @@ export default class TesConcentration extends Component {
 <p><b>eux de réaction rapide</b> : Dans ces jeux, vous devez réagir rapidement à des changements ou des stimuli, comme appuyer sur un bouton dès qu'une lumière s'allume. Ils affinent votre réactivité et votre capacité à rester alerte.</p>
 <p><b>Jeux de réflexion</b> : Des jeux comme les échecs ou les jeux de stratégie nécessitent une concentration intense pour anticiper les mouvements de l'adversaire et planifier vos actions. Ils développent votre capacité à rester concentré sur des objectifs à long terme.</p>
 <p>Chaque type de jeu de concentration cible une compétence cognitive différente, ce qui vous permet de choisir ceux qui correspondent le mieux à vos besoins ou à vos envies du moment. Que vous cherchiez à renforcer votre attention aux détails, à améliorer votre mémoire, ou simplement à rester mentalement alerte, ces jeux offrent une façon amusante et efficace d'y parvenir.</p>
+   
+<a href="/"><div className='autresCategories centre'>Les autres catégories</div></a>
+
        </div>
   }
 }

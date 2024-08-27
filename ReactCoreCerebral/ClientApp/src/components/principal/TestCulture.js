@@ -46,7 +46,7 @@ export default class TestCulture extends Component {
               <div className="lienJeuRapidité presentationJeu marge20">
            <Link to='/vitessepanneauroutier'>   <div className="centre titreVitesse" >🚦Le code de la route</div>
    
-          <p className="marge20">But du jeu : Une grille est affichée avec des panneaux routiers, il suffit de retrouver le panneau routier indiqué par la question. Tu as 120 secondes pour essayer de trouver tous les panneaux. Tu gagnes 2 points par panneau trouvé, -4 points en cas d'erreur. Si tu termines la grille, bonus de 50 points ! Le maximum est de (36 x 2) + 50 = 122 points. </p>
+          <p className="marge20">But du jeu : Une grille est affichée avec des panneaux routiers, il suffit de retrouver le panneau routier indiqué par la question. Tu as 120 secondes pour essayer de trouver tous les panneaux. Tu gagnes 2 points par panneau trouvé, -4 points en cas d'erreur. Si tu termines la grille, bonus de 20 points ! Le maximum est de (36 x 2) + 20 = 92 points. </p>
      </Link>
      <p className='centre'>{this.state.resultatsJoueur["vitessepanneauroutier"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessepanneauroutier"]:"Pas encore de résultat" }</p>
 
@@ -80,7 +80,8 @@ export default class TestCulture extends Component {
 <p><b>Test du code de la route</b> : Idéal pour tester si vos connaissances sur le code de la route sont toujours à jour.
 <p></p>Ces tests variés vous permettent de développer des compétences pratiques et utiles au quotidien, tout en vous offrant un moyen interactif et engageant d’évaluer vos progrès. Que ce soit pour la musique, la dactylographie ou la conduite, vous trouverez ici de quoi vous entraîner et vous perfectionner.</p>
        <Ad></Ad>       
-        
+
+       <a href="/"><div className='autresCategories centre'>Les autres catégories</div></a> 
        </div>
   }
 }

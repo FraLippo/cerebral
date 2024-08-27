@@ -157,6 +157,7 @@ export default class JeuBoogle extends Component {
                     </div>
                     <div className='centre'><CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours></div>
                     <div className="centre titreJeu">Le jeu du Boogle</div>
+                    <p>Trouve un mot de plus de 2 lettres avec les lettres présentes sur le plateau de jeu. La lettre au centre doit obligatoirement être présente dans le mot. On peut réutiliser la même lettre plusieurs fois. Plus le mot est long, plus tu marques des points.</p>
                 </div>
             }
 

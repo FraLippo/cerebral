@@ -126,10 +126,7 @@ const router = createBrowserRouter([
             path :"test-planification",
             element: <TestPlanification />,
           },
-          {
-            path :"test-concentration",
-            element: <TestConcentration />,
-          },
+         
           {
             path: 'binero/:id',
             element: <JeuxBinero/>,

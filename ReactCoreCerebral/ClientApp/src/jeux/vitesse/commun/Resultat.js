@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Prenom from '../../../components/commun/Prenom';
 import Confetti from 'react-confetti';
 import { addFirstName, readFirstName } from '../../../components/commun/localStorage';
-import { lienAutresJeux, tabJeu, typeJeu } from '../commun/utilitaire';
+import { lienAutresJeux, tabJeu, typeJeu, lienVersCategorie } from '../commun/utilitaire';
 import { Helmet } from 'react-helmet';
 import Ad from '../../../components/commun/adSense';
 
@@ -20,7 +20,8 @@ class Resultat extends Component {
             prenomVisible: false,
             ancien: 0,
             moyenne: 0,
-            nbJoueurs: 0
+            nbJoueurs: 0,
+        
         }
 
     }
@@ -160,9 +161,11 @@ class Resultat extends Component {
                     <div>Ton classement de l'année : <b>{this.state.classement}</b></div>
 
                     <div className="marge20"><ButtonLink titre="Recommencer" href={'/' + this.props.typeExo}></ButtonLink></div>
-                    <div className="marge20"><ButtonLink titre="Voir tous tes résultats" href={'/classementmois'}></ButtonLink></div>
+                    <div className="marge20"><span className="margeDroit"><ButtonLink titre="Classement général" href={'/classementmois'}></ButtonLink></span>
+                    <ButtonLink titre="Retour à la catégorie" href={'/' + lienVersCategorie(this.props.typeExo)}></ButtonLink></div>
+
                     <div className="marge20"><ButtonLink titre="Retour à l'accueil" href={'/'}></ButtonLink></div>
-<h2>Autres jeux du même type</h2>
+<h2>Autres jeux de la même catégorie</h2>
 {this.lienJeux()}
 
                 </div>  <Ad></Ad>

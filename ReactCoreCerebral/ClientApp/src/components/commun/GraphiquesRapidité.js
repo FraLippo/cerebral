@@ -32,31 +32,26 @@ export default class GraphiqueRapidite extends Component {
 
             this.max = 500;
             message = 'Ta capacité de mémorisation est : '
-        } else if (this.props.categorie === 'l')
-        {
+        } else if (this.props.categorie === 'l') {
             this.max = 250;
             message = 'Ton habilité verbale est ';
         }
-        else if (this.props.categorie === 'p')
-            {
-                this.max = 250;
-                message = 'Ta capacité de planification est ';
-            }
-            else if (this.props.categorie === 'c')
-                {
-                    this.max = 250;
-                    message = 'Ta capacité de calcul est ';
-                }
-                else if (this.props.categorie === 'r')
-                    {
-                        this.max = 650;
-                        message = 'Ta capacité de concentration est ';
-                    }
-                    else if (this.props.categorie === 'd')
-                        {
-                            this.max = 650;
-                            message = 'Ton aptitude culturelle est ';
-                        }
+        else if (this.props.categorie === 'p') {
+            this.max = 250;
+            message = 'Ta capacité de planification est ';
+        }
+        else if (this.props.categorie === 'c') {
+            this.max = 260;
+            message = 'Ta capacité de calcul est ';
+        }
+        else if (this.props.categorie === 'r') {
+            this.max = 650;
+            message = 'Ta capacité de concentration est ';
+        }
+        else if (this.props.categorie === 'd') {
+            this.max = 150;
+            message = 'Ton aptitude culturelle est ';
+        }
         this.setState({
             message
         });
@@ -120,33 +115,34 @@ export default class GraphiqueRapidite extends Component {
         if (this.state.pourcent < 25) return 'Faible';
         else if (this.state.pourcent < 50) return 'Satisfaisante';
         else if (this.state.pourcent < 75) return 'Bonne';
-        else if (this.state.pourcent <= 100) return 'Excellente';
+        else if (this.state.pourcent < 100) return 'Excellente';
+        else if (this.state.pourcent = 100) return 'Exceptionnelle';
     }
 
     render() {
         return <div>
             <div className='centre'>Tu dois participer à tous les jeux sur cette page pour avoir une évaluation correcte.</div>
             <div className='plateauMonnaie marge20'>
-            <Progress
-                type="circle"
-                percent={this.state.pourcent}
-                showInfo={false}
-                trailColor="rgba(0, 0, 0, 0.06)"
-                strokeColor="#ff8d25"
-                strokeWidth={20}
-            />
+                <Progress
+                    type="circle"
+                    percent={this.state.pourcent}
+                    showInfo={false}
+                    trailColor="rgba(0, 0, 0, 0.06)"
+                    strokeColor="#ff8d25"
+                    strokeWidth={20}
+                />
             </div>
 
             <div className='centre'>
-            <div className='fontMoyenne'>{this.state.message}  </div>
-              <div className='fontMoyenne'><b>{this.msgResultat()}</b> </div>
-                     <div className="centre marge20"><img src={border} alt="bordure" width="100" height="41" ></img></div>
+                <div className='fontMoyenne'>{this.state.message}  </div>
+                <div className='fontMoyenne'><b>{this.msgResultat()}</b> </div>
+                <div className="centre marge20"><img src={border} alt="bordure" width="100" height="41" ></img></div>
 
-           
-            <Podium tabPrenoms={this.state.tabPrenoms}></Podium>
-         <div className='centre'></div>
-            Le podium du mois en cours
-         </div>
+
+                <Podium tabPrenoms={this.state.tabPrenoms}></Podium>
+                <div className='centre'></div>
+                Le podium du mois en cours pour cette catégorie
+            </div>
 
 
 

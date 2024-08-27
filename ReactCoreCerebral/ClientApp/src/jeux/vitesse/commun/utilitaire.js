@@ -1,4 +1,5 @@
 import { tab } from "@testing-library/user-event/dist/tab";
+import { type } from "@testing-library/user-event/dist/type";
 
 function verifierStatus(status) {
     if (status === 401) {
@@ -82,14 +83,39 @@ function nomType(type) {
 }
 
 
-let tabJeu = ["vitesseaddition","vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus","vitesserecensement","vitessematch", "vitessecomplet",
-"vitessecercle","vitesselettres", "vitesseboogle",
+let tabJeu = ["vitesseaddition","vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus","vitesserecensement"
+    ,"vitessematch", "vitessecomplet",
+     "vitessecercle","vitesselettres", "vitesseboogle",
 "vitessechemin","vitessetresor", "vitessetresse","vitessetaquin",
-"vitesseoperation", ,"vitessecalcul","vitessearithmetique", "vitessemonnaie",
+"vitesseoperation" ,"vitessecalcul","vitessearithmetique", "vitessemonnaie",
 "vitesseecrire","vitessenotes","vitessepanneauroutier",
 "vitessememoire","vitesseforme","vitessenombre","vitessememory","vitessepaire"]
 
 let typeJeu = ['r','r','r','r','r','r','r','r','r','l','l','l','p','p','p','p','c','c','c','c','d','d','d','m','m','m','m','m']
+
+let tabCategorie = ["test-memoire", "test-concentration","test-calcul","test-lettres", "test-culture", "test-planification"]
+
+function lienVersCategorie(nomJeu)
+{
+   
+    let index = tabJeu.findIndex(x => x === nomJeu);
+    let type = typeJeu[index];
+    switch(type)
+    {
+        case 'm':
+            return tabCategorie[0];
+            case 'r':
+            return tabCategorie[1];
+            case 'c':
+            return tabCategorie[2];
+            case 'l':
+            return tabCategorie[3];
+            case 'd':
+            return tabCategorie[4];
+            case 'p':
+            return tabCategorie[5];
+    }
+}
 
 function lienAutresJeux(jeu) {
    
@@ -109,4 +135,4 @@ function lienAutresJeux(jeu) {
     return { groupe: type === 'm' ? 'Mémoire' : type === 'l' ? 'Lettres et mots' : type === 'c' ? 'Calcul' : 'Réflexion', tabListeJeux }
 }
 
-export { verifierStatus, nomType, tabJeu, lienAutresJeux, typeJeu };
+export { verifierStatus, nomType, tabJeu, lienAutresJeux, typeJeu, lienVersCategorie };

@@ -47,7 +47,16 @@ export default class GraphiqueRapidite extends Component {
                     this.max = 250;
                     message = 'Ta capacité de calcul est ';
                 }
-    
+                else if (this.props.categorie === 'r')
+                    {
+                        this.max = 650;
+                        message = 'Ta capacité de concentration est ';
+                    }
+                    else if (this.props.categorie === 'd')
+                        {
+                            this.max = 650;
+                            message = 'Ton aptitude culturelle est ';
+                        }
         this.setState({
             message
         });
@@ -110,7 +119,7 @@ export default class GraphiqueRapidite extends Component {
     msgResultat() {
         if (this.state.pourcent < 25) return 'Faible';
         else if (this.state.pourcent < 50) return 'Satisfaisante';
-        else if (this.state.pourcent < 75) return 'Très bonne';
+        else if (this.state.pourcent < 75) return 'Bonne';
         else if (this.state.pourcent <= 100) return 'Excellente';
     }
 

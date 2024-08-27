@@ -118,7 +118,7 @@ export class Game {
             }
             place += 3;
         }
-        this.score += 5; 
+        this.score += 8; 
         return true;
     }
 

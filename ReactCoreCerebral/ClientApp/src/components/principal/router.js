@@ -78,6 +78,7 @@ const TestCalcul = React.lazy(() => import('./TestCalcul'));
 const TestConcentration = React.lazy(() => import('./TestConcentration'));
 const TestPlanification = React.lazy(() => import('./TestPlanification'));
 const TestLettres = React.lazy(() => import('./TestLettres'));
+const TestCulture = React.lazy(() => import('./TestCulture'));
 
 
 const router = createBrowserRouter([
@@ -116,6 +117,10 @@ const router = createBrowserRouter([
           {
             path :"test-lettres",
             element: <TestLettres />,
+          },
+          {
+            path :"test-culture",
+            element: <TestCulture />,
           },
           {
             path :"test-planification",

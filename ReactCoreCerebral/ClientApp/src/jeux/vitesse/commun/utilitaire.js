@@ -82,14 +82,14 @@ function nomType(type) {
 }
 
 
-let tabJeu = ["vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus","vitesserecensement","vitessematch", "vitessecomplet",
+let tabJeu = ["vitesseaddition","vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus","vitesserecensement","vitessematch", "vitessecomplet",
 "vitessecercle","vitesselettres", "vitesseboogle",
 "vitessechemin","vitessetresor", "vitessetresse","vitessetaquin",
-"vitesseoperation", "vitesseaddition","vitessecalcul","vitessearithmetique", "vitessemonnaie",
+"vitesseoperation", ,"vitessecalcul","vitessearithmetique", "vitessemonnaie",
 "vitesseecrire","vitessenotes","vitessepanneauroutier",
 "vitessememoire","vitesseforme","vitessenombre","vitessememory","vitessepaire"]
 
-let typeJeu = ['r','r','r','r','r','r','r','r','l','l','l','p','p','p','p','c','c','c','c','c','d','d','d','m','m','m','m','m']
+let typeJeu = ['r','r','r','r','r','r','r','r','r','l','l','l','p','p','p','p','c','c','c','c','d','d','d','m','m','m','m','m']
 
 function lienAutresJeux(jeu) {
    

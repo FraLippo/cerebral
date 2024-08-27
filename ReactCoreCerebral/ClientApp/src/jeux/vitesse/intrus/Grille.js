@@ -16,6 +16,6 @@ export default class Grille extends Component
     {
         return <div className="grilleCalMen">{this.props.tabGrille.map((no, i) =>
              <div  onClick={this.clicImage} key={i} id={i} style={Logique.constructionEmplacement(i, this.props.taille)}>
-                <img  src={Logique.obtenirImage(this.props.type,no)}  alt={"jeu intrus" + i} ></img></div>)}</div>
+                <img className='noInteraction'  src={Logique.obtenirImage(this.props.type,no)}  alt={"jeu intrus" + i} ></img></div>)}</div>
     }
 }

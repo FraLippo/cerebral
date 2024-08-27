@@ -45,7 +45,7 @@ export default class TestPlanification extends Component {
 
 <div className="lienJeuRapidité presentationJeu marge20">
  <Link to='/vitessetaquin'><div className="centre titreVitesse" >🔄 Le taquin</div>
-<p className="marge20">But du jeu : Dans ce classique du jeu de réflexion, tu dois déplacer des tuiles pour créer une ligne puis une colonne. Tu as 90 secondes pour construire la ligne et la colonne. 50 points te sont donnés après la ligne et 100 points après la colonne.  </p>
+<p className="marge20">But du jeu : Dans ce classique du jeu de réflexion, tu dois déplacer des tuiles pour créer une ligne puis une colonne. Tu as 90 secondes pour construire la ligne et la colonne. 40 points te sont donnés après la ligne et 70 points après la colonne.  </p>
 </Link>
 <p className='centre'>{this.state.resultatsJoueur["vitessetaquin"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessetaquin"]:"Pas encore de résultat" }</p>
 

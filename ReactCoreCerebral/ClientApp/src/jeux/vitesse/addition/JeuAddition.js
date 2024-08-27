@@ -81,7 +81,7 @@ export default class JeuAddition extends Component {
         if (index === this.state.tabJoueur.length) {
             this.nbCases++;
             message.success('Bravo 👍',.5, this.jeuSuivant);
-            this.setState({score : this.state.score + (this.nbCases*3)})
+            this.setState({score : this.state.score + (this.nbCases*2)})
         }
         else {
             message.error('Pas la bonne solution',.8, this.jeuSuivant);

@@ -73,6 +73,7 @@ export default class TestCalcul extends Component {
       </div>
 
      </div>
+     <Ad></Ad>
        </div>
   }
 }

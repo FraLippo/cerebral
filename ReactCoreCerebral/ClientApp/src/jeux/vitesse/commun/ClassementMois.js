@@ -4,7 +4,7 @@ import { Table, Row, Col } from 'antd';
 import { readFirstName } from '../../../components/commun/localStorage';
 import { moisEnFrancais } from '../../../components/commun/utilitaire';
 import { nomType, tabJeu } from './utilitaire';
-
+import { Helmet } from 'react-helmet';
 
 export default class ClassementMois extends Component {
 
@@ -98,7 +98,12 @@ export default class ClassementMois extends Component {
     }
 
     render() {
-        return <div className="marge20">
+        return <React.Fragment>
+             <Helmet>
+                <title>Le classement du mois des jeux cognitifs</title>
+                <meta name="description" content="Le classement du mois des 10 meilleurs à nos jeux cognitifs. Venez tester nos jeux et tests pour entrer dans le classement. " />
+            </Helmet>
+        <div className="marge20">
 
             <div>
                 <h1>Les résultats du mois  {this.nomMois === 'août' || this.nomMois === 'avril' || this.nomMois === 'octobre' ? "d'" + this.nomMois : 'de ' + this.nomMois}</h1>
@@ -129,6 +134,6 @@ export default class ClassementMois extends Component {
               
             </div>
             <p className="centre fontPetite" ><a href="https://evalquiz.com">evalquiz.com</a></p>
-        </div>
+        </div></React.Fragment>
     }
 }

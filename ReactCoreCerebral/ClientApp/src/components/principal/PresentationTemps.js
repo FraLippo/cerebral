@@ -70,7 +70,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         <Col md={24}>
         <h2>Développez votre intelligence avec les jeux cognitifs</h2>
         <p>À l'ère numérique actuelle, où nos esprits sont constamment sollicités par une multitude d'informations, la pratique de jeux cognitifs apparait comme une stratégie intelligente pour stimuler et développer notre cerveau. Ces jeux, conçus pour engager activement les processus mentaux, offrent bien plus qu'une simple distraction ludique.</p>
-          <Ad></Ad>
+        
           <div className="centre"><img src={border} alt="bordure" width="100" height="41" ></img></div>
 
         </Col>
@@ -87,7 +87,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <h3 className='centre'>🚩 Première victoire pour Lili55 ! 📅</h3>
      
 
-      <Ad></Ad>
+      
       <div className='plateauCategorie'>
       <Link to='test-memoire'> <div className='categorieVitesse'>
     <div className='titreCategorie'>Mémoire</div>
@@ -134,19 +134,20 @@ this.nomMois = moisEnFrancais[d.getMonth()];
 
 <p>De plus, les jeux cognitifs favorisent le développement des compétences cognitives essentielles telles que la logique, la créativité et la flexibilité mentale. En confrontant votre esprit à des situations variées, tu entraînes ta capacité à penser de manière critique et à trouver des solutions innovantes.</p>
 <p>L'avantage de ces jeux ne se limite pas à l'amélioration des compétences cognitives. Des études ont montré que l'engagement régulier dans des activités cognitives peut contribuer à ralentir le déclin cognitif lié à l'âge et à promouvoir la santé mentale globale.</p>
-<Ad></Ad>
+
       <h2>Nos autres jeux</h2>
       <p>Dans nos défis tu peux trouver des autres séries de petits jeux cérebraux.</p>
       <div  className="margeHaut defiVitesse">
         <div  className="carteVitesse">
           <h3>Les défis de la logique</h3>
           <ul>
-            <li> <span><Link className="espaceVitesseUl" to="/defi/14">Défi puzzle - difficile</Link></span></li>
+          
             <li> <span><Link to="/defi/35">Défi Binero - facile</Link></span></li>
             <li> <span><Link to="/defi/36">Défi Picross - facile </Link></span></li>
             <li> <span><Link to="/defi/37">Défi Binero et Picross</Link></span></li>
             <li> <span><Link to="/defi/38">Défi Binero - moyen</Link></span></li>
-            <li> <span><Link to="/defi/39">Défi Picross - difficile</Link></span></li>
+            <li> <span><Link to="/defi/39">Défi Picross - difficile</Link></span></li> 
+             <li> <span><Link className="espaceVitesseUl" to="/defi/14">Défi puzzle - difficile</Link></span></li>
           </ul>
         </div>
         <div className="carteVitesse">

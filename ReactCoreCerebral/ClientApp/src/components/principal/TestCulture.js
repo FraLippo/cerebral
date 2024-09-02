@@ -65,7 +65,7 @@ export default class TestCulture extends Component {
     <div className="lienJeuRapidité presentationJeu marge20">
     <Link to='/vitessenotes'><div className="centre titreVitesse" >♬ L'oreille musicale</div>
    
-        <p className="marge20">But du jeu : Retrouver une note inconnue. L'ordinateur joue une note inconnue représentée par un point d'interrogation. Tu dois retrouver à quelle note elle correspond, simplement avec votre oreille. Tu peux réécouter les notes autant de fois que tu le désires. Vous n'avez pas besoin de connaissance musicale pour jouer, seule ton oreille est mise à contribution. Tout le monde a la capacité de reconnaitre les notes par contre certains doivent s'entrainer plus que d'autres.  Chaque note trouvée rapporte 7 points. Le temps alloué est de 90 secondes.</p>
+        <p className="marge20">But du jeu : Retrouver une note inconnue. L'ordinateur joue une note inconnue représentée par un point d'interrogation. Tu dois retrouver à quelle note elle correspond, simplement avec ton oreille. Tu peux réécouter les notes autant de fois que tu le désires. Tu n'as pas besoin de connaissance musicale pour jouer, seule ton oreille est mise à contribution. Tout le monde a la capacité de reconnaitre les notes par contre certains doivent s'entrainer plus que d'autres.  Chaque note trouvée rapporte 7 points. Le temps alloué est de 90 secondes.</p>
         </Link>
         <p className='centre'>{this.state.resultatsJoueur["vitessenotes"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessenotes"]:"Pas encore de résultat" }</p>
 
@@ -81,7 +81,7 @@ export default class TestCulture extends Component {
 <p></p>Ces tests variés vous permettent de développer des compétences pratiques et utiles au quotidien, tout en vous offrant un moyen interactif et engageant d’évaluer vos progrès. Que ce soit pour la musique, la dactylographie ou la conduite, vous trouverez ici de quoi vous entraîner et vous perfectionner.</p>
        <Ad></Ad>       
 
-       <a href="/"><div className='autresCategories centre'>Les autres catégories</div></a> 
+       <div className='autreVitesse centre'> <a href="/">Les autres catégories</a> </div>
        </div>
   }
 }

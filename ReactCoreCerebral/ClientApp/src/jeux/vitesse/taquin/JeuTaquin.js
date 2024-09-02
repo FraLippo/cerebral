@@ -155,7 +155,7 @@ const JeuTaquin = () => {
 
       for (let index = 0; index < newTabSolution.length; index++) {
 
-        console.log(index);
+     
         if (newTabSolution[0] === newTiles[index] && newTabSolution[1] === newTiles[index + 4] &&
           newTabSolution[2] === newTiles[index + 8] && newTabSolution[3] === newTiles[index + 12]
         ) {

@@ -232,6 +232,9 @@
 .autreVitesse a:hover,
 .autreVitesse a:active {
     color: #094fe6;
+    text-decoration: none;
+    font-size: 1.2em;
+    
     
 }
 
@@ -240,6 +243,8 @@
 .carteVitesse a:hover,
 .carteVitesse a:active {
     color: #094fe6;
+    text-decoration: none;
+    font-size: 1.2em;
 }
 
  .presentationJeu a,

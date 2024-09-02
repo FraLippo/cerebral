@@ -117,7 +117,7 @@ export default class JeuMonnaie extends Component {
                 {   this.fin = false;
                     this.noPartie++;
                     let perso = this.tabPerso[this.noPartie % 3];
-                    console.log(this.noPartie % 3);
+                
                     let message = this.construireTexteJeu();
                     let nouveauTabRendu = [];
                 

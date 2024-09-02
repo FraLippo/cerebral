@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {verifierStatus} from './utilitaire';
 import { Table, Row, Col } from 'antd';
-
+import { Helmet } from 'react-helmet';
 
 export default class ClassementScore extends Component {
 
@@ -64,14 +64,19 @@ export default class ClassementScore extends Component {
 
     render()
     {
-        return <div className="marge20">
+        return <React.Fragment>
+             <Helmet>
+                <title>Le classement du mois pour un jeu cognitif</title>
+                <meta name="description" content="Le classement du mois des 10 meilleurs pour un jeu cognitif. Nos tests permettent d'évaluer les fonctions cognitives comme la mémoire, la concentration... " />
+            </Helmet>
+        <div className="marge20">
            
         <div> <Row justify="center">
         <Col xs={24} sm={24} md={16}><Table    pagination={{ defaultPageSize: 10, hideOnSinglePage: true }} columns={this.columns} dataSource={this.state.listePremiers} rowKey='cle' /></Col></Row>
 </div>
    
             </div>
-            
+            </React.Fragment> 
           
     }
 }

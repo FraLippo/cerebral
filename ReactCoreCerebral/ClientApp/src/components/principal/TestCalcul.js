@@ -75,7 +75,7 @@ export default class TestCalcul extends Component {
      </div>
      <p>Les tests de calcul mental sont essentiels pour maintenir et améliorer vos capacités cognitives. Ils stimulent votre cerveau en renforçant la rapidité et la précision de vos calculs, tout en améliorant votre mémoire et votre concentration. En pratiquant régulièrement, vous développez une agilité mentale qui vous sera utile dans de nombreuses situations quotidiennes, que ce soit pour gérer vos finances, résoudre des problèmes rapidement, ou simplement garder votre esprit vif et alerte. Ces exercices sont un moyen efficace et ludique de renforcer vos compétences en mathématiques et de préserver votre acuité intellectuelle.</p>
      <Ad></Ad>
-     <a href="/"><div className='autresCategories centre'>Les autres catégories</div></a>
+     <div className='autreVitesse centre'> <a href="/">Les autres catégories</a> </div>
 
        </div>
   }

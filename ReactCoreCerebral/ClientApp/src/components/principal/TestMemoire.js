@@ -98,7 +98,7 @@ export default class TestMemoire extends Component {
 <p><b>Mémoire prospective</b> : Ce type de mémoire est dédié à la gestion des tâches futures, comme se rappeler de prendre un rendez-vous ou de faire une course plus tard.</p>
 
 <Ad></Ad>
-<a href="/"><div className='autresCategories centre'>Les autres catégories</div></a>
-       </div>
+<div className='autreVitesse centre'> <a href="/">Les autres catégories</a> </div>
+</div>
   }
 }

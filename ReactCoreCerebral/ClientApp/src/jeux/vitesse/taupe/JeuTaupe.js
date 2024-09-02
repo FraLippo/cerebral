@@ -313,7 +313,7 @@ export default class JeuTaupe extends Component {
             m[hole] = false;
             const newScores = [...this.state.scores];
             newScores[hole] = 'vide';
-            console.log(newScores);
+        
             // if (this.tabImages[hole].reussi) {
             //     score = this.state.score + 2
             // }

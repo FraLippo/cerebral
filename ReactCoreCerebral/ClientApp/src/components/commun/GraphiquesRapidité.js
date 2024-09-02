@@ -27,7 +27,7 @@ export default class GraphiqueRapidite extends Component {
 
     infoCatégorie() {
         let message = '';
-        console.log(this.props.categorie);
+       
         if (this.props.categorie === 'm') {
 
             this.max = 500;
@@ -94,8 +94,8 @@ export default class GraphiqueRapidite extends Component {
             let pourcent = (sum / this.max) * 100;
             if (pourcent > 100) pourcent = 100;
 
-            console.log(sum);
-            console.log(tabPrenoms);
+          
+        
             this.props.recupererResultatJoueur(prenom, res.resultatsJoueur);
             this.setState({
                 tabPrenoms,
@@ -134,6 +134,7 @@ export default class GraphiqueRapidite extends Component {
             </div>
 
             <div className='centre'>
+                {this.prenom !== '' && !this.prenom.includes('inconnu')&& <div className='fontMoyenne rougeV'>{this.prenom}</div>}
                 <div className='fontMoyenne'>{this.state.message}  </div>
                 <div className='fontMoyenne'><b>{this.msgResultat()}</b> </div>
                 <div className="centre marge20"><img src={border} alt="bordure" width="100" height="41" ></img></div>

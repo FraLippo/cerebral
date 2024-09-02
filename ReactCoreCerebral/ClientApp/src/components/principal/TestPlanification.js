@@ -89,7 +89,7 @@ export default class TestPlanification extends Component {
 <h2>Les tests de planification</h2>
       <p>La planification est une compétence essentielle qui nous aide à organiser et à anticiper les actions nécessaires pour atteindre nos objectifs. Cela implique de savoir quelles étapes suivre, dans quel ordre, et comment utiliser nos ressources efficacement. Chacun a une capacité de planification différente, influencée par des facteurs comme la flexibilité du cerveau et les connexions neuronales. Si notre capacité à planifier est altérée, des tâches quotidiennes comme organiser un événement ou suivre des instructions peuvent devenir plus difficiles. Heureusement, cette compétence peut être améliorée grâce à nos exercices mentaux et de bonnes habitudes. </p>
      <Ad></Ad>
-     <a href="/"><div className='autresCategories centre'>Les autres catégories</div></a>
+     <div className='autreVitesse centre'> <a href="/">Les autres catégories</a> </div>
 
       </div>
   }

@@ -95,7 +95,7 @@ class JeuSolitaire extends Component {
                 <div className="espaceJeuMah"><div className="joueurMah"><GrilleJoueur grille={this.state.grille} taille={5} clickImage={this.clickImage}></GrilleJoueur></div>
                     <div className="infoFamille">
                         <h1 className="couleurTitre espaceHaut">La tuile solitaire</h1>
-                        <p>Cliquer sur la tuile solitaire</p>
+                        <p>Clique sur la tuile solitaire</p>
                         <div className="centre"><CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours>
 
                         </div>

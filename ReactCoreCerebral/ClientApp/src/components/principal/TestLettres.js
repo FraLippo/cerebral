@@ -84,7 +84,7 @@ export default class TestLettres extends Component {
 <p><b>Réduction du stress</b> : Les jeux sur les mots offrent un moyen agréable de se détendre et de s’évader, en vous concentrant sur des défis amusants qui détournent votre esprit des préoccupations quotidiennes.</p>
               
        <Ad></Ad>       
-       <a href="/"><div className='autresCategories centre'>Les autres catégories</div></a>
+       <div className='autreVitesse centre'> <a href="/">Les autres catégories</a> </div>
 
        </div>
   }

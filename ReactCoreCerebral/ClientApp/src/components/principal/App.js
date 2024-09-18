@@ -8,13 +8,13 @@ import ReactGA4 from "react-ga4";
 import intl from 'react-intl-universal';
 
 // common locale data
-require('intl/locale-data/jsonp/en.js');
-require('intl/locale-data/jsonp/fr.js');
+// require('intl/locale-data/jsonp/en.js');
+//require('intl/locale-data/jsonp/fr.js');
 
 
 const locales = {
   "fr-FR": require('./locales/fr-FR.json'),
-  "en-US": require('./locales/en-US.json'),
+  // "en-US": require('./locales/en-US.json'),
 };
 
 
@@ -37,16 +37,16 @@ class App extends Component {
   }
   determineLang = () =>
   {
-    let en = /\/en$/;
-    let brain = /brain|terms/;
-    if (en.test(window.location.pathname) || brain.test(window.location.pathname))
-    {
-      return "en-US";
-    }
-    else
-    {
+    // let en = /\/en$/;
+    // let brain = /brain|terms/;
+    // if (en.test(window.location.pathname) || brain.test(window.location.pathname))
+    // {
+    //   return "en-US";
+    // }
+    // else
+    // {
       return "fr-FR";
-    }
+    // }
   }
 
   loadLocales = ()=> {
@@ -67,6 +67,7 @@ class App extends Component {
           <title>{intl.get('TITRE_PRINCIPAL')}</title>
           <meta name="description" content={intl.get('META_PRINCIPAL')}/>
         </Helmet>
+      
         <ConfigProvider
     theme={{
       token: {
@@ -78,9 +79,10 @@ class App extends Component {
         }}
     }}
   >
-  
+ 
         <Suspense fallback={<div>En cours de chargement...</div>}>
-          <RouterProvider router={router} >
+          <RouterProvider router={router} >  
+           
             </RouterProvider>
             </Suspense>
 

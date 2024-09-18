@@ -1,22 +1,22 @@
 
 import React from 'react';
 import {ScrollRestoration, createBrowserRouter, Outlet } from "react-router-dom";
-import Presentation from './Presentation';
+
 import PresentationTemps from './PresentationTemps';
 
 import { Menu } from 'antd';
 import { itemsMenu } from './menu';
 import PageFaute from '../commun/PageFaute';
-import JeuPhoto from '../../jeux/photo/JeuPhoto';
 
 
+const Presentation = React.lazy(() => import('./Presentation'));
 const Calcul = React.lazy(() => import('./Calcul'));
 const Puzzle = React.lazy(() => import('./Puzzle'));
 const Logique = React.lazy(() => import('./Logique'));
 const Memoire = React.lazy(() => import('./Memoire'));
 const ChiffresLettres = React.lazy(() => import('./ChiffresLettres'));
-const TermService = React.lazy(() => import('./TermService'));
-const PresentationEN = React.lazy(() => import('./Presentationanglais'));
+//const TermService = React.lazy(() => import('./TermService'));
+// const PresentationEN = React.lazy(() => import('./Presentationanglais'));
 
 
 
@@ -34,6 +34,7 @@ const JeuxMah = React.lazy(() => import('../../jeux/mahjong/JeuxMahJong'));
 const JeuxBingo = React.lazy(() => import('../../jeux/bingo/JeuxBingo'));
 const JeuxPyramide = React.lazy(() => import('../../jeux/pyramide/JeuxPyramide'));
 const JeuxPhoto = React.lazy(() => import('../../jeux/photo/JeuPhoto'));
+
 const DebutEtape = React.lazy(() => import('../../jeux/concours/DebutEtape'));
 // const Tableau = React.lazy(() => import('../../components/commun/Tableau'));
 const JeuxFubuki = React.lazy(() => import('../../jeux/fubuki/jeuxFubuki'));
@@ -84,7 +85,11 @@ const TestCulture = React.lazy(() => import('./TestCulture'));
 const router = createBrowserRouter([
     {
       path: '/',
-      element: <div><ScrollRestoration></ScrollRestoration>
+      element: <div><ScrollRestoration
+      getKey={(location) => {
+        return location.pathname;
+      }}
+      ></ScrollRestoration>
       <div className='menuHaut'><Menu items={itemsMenu} mode="horizontal"></Menu></div>
       <div className='margeEcran'><Outlet></Outlet></div></div>,
       errorElement : <PageFaute></PageFaute>,
@@ -96,7 +101,7 @@ const router = createBrowserRouter([
           },
           {
             path :"en",
-            element: <PresentationEN />,
+            element: <PageFaute />,
           },
           {
             path :"defi",
@@ -153,11 +158,11 @@ const router = createBrowserRouter([
             element: <ChiffresLettres/>,
             
           },
-          {
-            path: 'terms-of-service',
-            element: <TermService/>,
+          // {
+          //   path: 'terms-of-service',
+          //   element: <TermService/>,
             
-          },
+          // },
            {
             path:'jeux-bingo/:id',
             element: <JeuxBingo/>,
@@ -165,12 +170,12 @@ const router = createBrowserRouter([
           },
           {
             path:'jeux-photo/:id',
-            element: <JeuPhoto/>,
+            element: <JeuxPhoto/>,
             
           },
           {
             path:'brain-game-bingo/:id',
-            element: <JeuxBingo/>,
+            element: <PageFaute/>
             
           },
           {
@@ -180,7 +185,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-numbers/:id',
-            element: <JeuxCompte/>,
+            element: <PageFaute/>
             
           },
           {
@@ -195,7 +200,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-drawing/:id',
-            element: <JeuxDessin/>,
+            element: <PageFaute/>
             
           },
           {
@@ -205,7 +210,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-cards/:id',
-            element: <JeuxEsp/>,
+            element: <PageFaute/>
             
           },
           {
@@ -215,7 +220,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-puzzle/:id',
-            element: <JeuxPuzzle/>,
+            element: <PageFaute/>
             
           },
           {
@@ -226,7 +231,7 @@ const router = createBrowserRouter([
            
           {
             path: 'brain-game-sorting/:id',
-            element: <JeuxTri/>,
+            element: <PageFaute/>
             
           },
           {
@@ -236,7 +241,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-sequence/:id',
-            element: <JeuxSuite/>,
+            element: <PageFaute/>
             
           },
           {
@@ -251,7 +256,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-rotate/:id',
-            element: <JeuxPuzzleRotation/>,
+            element: <PageFaute/>
             
           },
           {
@@ -261,7 +266,7 @@ const router = createBrowserRouter([
           },
               {
             path: 'brain-game-family/:id',
-            element: <JeuxFamille/>,
+            element: <PageFaute/>
             
           },
           {
@@ -271,7 +276,7 @@ const router = createBrowserRouter([
           },
               {
             path: 'brain-game-solo/:id',
-            element: <JeuxMah/>,
+            element: <PageFaute/>
             
           },
           {
@@ -281,7 +286,7 @@ const router = createBrowserRouter([
           },
                 {
             path: 'brain-game-pyramid/:id',
-            element: <JeuxPyramide/>,
+            element: <PageFaute/>
             
           },
           {
@@ -291,7 +296,7 @@ const router = createBrowserRouter([
           },
                 {
             path: 'brain-game-fubuki/:id',
-            element: <JeuxFubuki/>,
+            element: <PageFaute/>
             
           },
           {
@@ -322,7 +327,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-order/:id',
-            element: <JeuxOrdre/>,
+            element: <PageFaute/>
             
           },
           {
@@ -332,7 +337,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-challenge/:no',
-            element: <DebutEtape/>,
+            element: <PageFaute/>
             
           },
           {

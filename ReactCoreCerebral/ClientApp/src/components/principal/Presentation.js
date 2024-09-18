@@ -60,7 +60,7 @@ export default class Presentation extends Component {
         
       </div>
 <Ad></Ad>
-      
+        <Tableau></Tableau> 
 <h1 className="titre centre">Tous les tests</h1>
     <Row className="margeHaut">
     <Col xs={24} sm={12}><Link to="/calcul-mental"><div className="tuile">Calcul mental</div></Link></Col>
@@ -68,15 +68,16 @@ export default class Presentation extends Component {
     <Col xs={24} sm={12}><Link to="/logique"><div className="tuile">Logique</div></Link></Col>
     <Col xs={24} sm={12}><Link to="/memoire"><div className="tuile">Mémoire</div></Link></Col>
     <Col xs={24} sm={12}><Link to="/chiffres-lettres"><div className="tuile">Des chiffres et des lettres</div></Link></Col>
+    <Col xs={24} sm={12}><Link to="/"><div className="tuile">Le tournoi du mois</div></Link></Col>
     </Row>
 
 
 
       <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
-      <div className="centre"><img className="img-responsive" width="1000" height="396" src={presentation} alt="presentation"></img></div>
-    <Tableau></Tableau>
+ 
     
-      
+            <div className="centre"><img className="img-responsive" width="1000" height="396" src={presentation} alt="presentation"></img></div>
+
       <p>Vous pouvez nous contacter si vous avez des remarques ou des propositions en consultant la page des <a href="https://evalquiz.com/home/faq">mentions légales.</a></p>
     </div>
   }

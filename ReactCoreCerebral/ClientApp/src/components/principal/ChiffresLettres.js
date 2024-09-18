@@ -5,12 +5,12 @@ import Ad from '../commun/adSense';
 import '../../style/jeux.css';
 import border from '../../images/border.png';
 import compte from '../../images/compte.webp';
-import motLong from '../../images/motLong.webp';
+
 import TableauMot from '../commun/TableauMot';
 import { Link } from 'react-router-dom';
 import { Card } from 'antd';
 import { Helmet } from 'react-helmet';
-
+import genscrable from '../../images/genscrable.png'
 
 
 export default class ChiffreLetttre extends Component {
@@ -28,12 +28,12 @@ export default class ChiffreLetttre extends Component {
             <title>Sport cérébral : Des chiffres et des lettres</title>
             <meta name="description" content='Retrouvez le classique des jeux télévisés "Des chiffres et Des lettres" dans une version revisitée. Les jeux sont gratuits et ne nécessitent pas une inscription au préalable. '/>
         </Helmet>
-<div className="titre centre couleurTitre">Jeux d'entrainement cérébral</div>
-<div className='centre'>evalquiz.com : le site numéro 1 du divertissement intelligent</div>
+
+
 
     
         <h1 className="titre couleurTitre centre">Des chiffres et des lettres</h1>
-   
+   <div className='centre fontPetite'>evalquiz.com : le site numéro 1 du divertissement intelligent</div>
     
         <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
         <Row gutter={8} className="espaceHaut">
@@ -44,7 +44,6 @@ export default class ChiffreLetttre extends Component {
             <p>Le programme accepte tous les mots et les verbes conjugués. Dans l'esprit des mots acceptés on est plus proche du Scrabble que des chiffres et des lettres. Nous utilisons le dictionnaire officiel du Scrabble pour valider les mots. </p>
             <p>La partie se joue en 3 manches, si vous remportez la manche, c'est à dire si vous trouvez un mot plus long que celui de l'ordinateur, vous gagnez 2 points plus le nombre de lettres du mot.</p>
 
-            <div className="centre"><img className="espaceHaut img-responsive" width="500" height="66" src={motLong} alt="le mot le plus long"></img></div>
 
             <div> <Card title={<span style={{ whiteSpace: 'normal' }}>Le mot le plus long</span>}>
               <ul>
@@ -52,21 +51,19 @@ export default class ChiffreLetttre extends Component {
                 <li><Link to={"/jeuxlettres/0/1/2"}>Le mot le plus long niveau facile contre l'ordinateur</Link></li>
                 <li><Link to={"/jeuxlettres/0/1/3"}>Le mot le plus long niveau intermédiaire contre l'ordinateur</Link></li>
                 <li><Link to={"/jeuxlettres/0/1/4"}>Le mot le plus long niveau difficile contre l'ordinateur</Link></li>
- </ul>
- <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+ </ul> </Card>
+ <p>Vous aimez le Mot le plus long ? Pourquoi ne pas essayer notre nouveau jeu : le Scrable Solitaire</p>
+ <div className='plateauCategorie'>
+ <a href='https:///concours.evalquiz.com/mots-scrable'> <div className='categorieGeneral'>
+    <div className='titreCategorie'>Scrabble Solitaire</div>
+    <div className='imageCategorie'><img src={genscrable} alt="jeu scrable solitaire"></img></div>
+        </div>
+        </a>            
+ </div>  
  <TableauMot></TableauMot>
- <h3>✏️ Le challenge des lettres et des mots 🔡</h3>
-                <p>Si vous aimez jouer avec les mots, n'hésitez pas à participer à notre <a href="https://concours.evalquiz.com/presmot">challenge des lettres et des mots 📚</a> en 99 étapes avec des jeux comme les mots codés, les mots coupés, les mots cachés... </p>
-                {/* <li><Link to={"/jeuxlettres/0/1/5"}>Le mot le plus long niveau impossible contre l'ordinateur (mot de 9 lettres possibles).</Link></li> */}
+          
              
-              {/* <p>La fréquentation de ce site n'est pas suffisante pour trouver des joueurs en ligne. Vous devez inviter vos propres amis.
-            Il suffit de leur envoyer ce lien <b>{process.env.REACT_APP_URL_JEUXLETTRES}/{this.gameNumber}/2/2 </b> <span className="copier" onClick={this.copier}>copier</span> par mail ou par messagerie.
-            Ensuite vous devez attendre votre ou vos camarades de jeu (4 au maximum) ou revenir plus tard quand ils seront disponibles, un message est affiché dès qu'un autre joueur vient dans la partie.
-            Le lien vers votre salle de jeu ne change pas, vous pouvez venir jouer quand vous le souhaitez, il suffit de se synchroniser avec vos amis pour jouer en même temps.</p>
-              <ul>
-                <li><Link to={"/jeuxlettres/" + this.gameNumber + "/2/2"}>Jouer au mot le plus long niveau avec vos amis en ligne.</Link></li>
-              </ul> */}
-            </Card>
+           
             </div>
           </Col>
         </Row>

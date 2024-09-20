@@ -1856,5 +1856,222 @@ justify-content: center;
 }
 
 
+/* bonneteau */
+.plateauBon
+{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;  
+}
+.containerBon {
+    position: relative;
+    width: 360px;
+    height: 360px;
+    margin-bottom: 20px;
+  }
+  
+  .cardBon {
+    position: absolute;
+    width: 50px;
+    height: 75px;
+    border: 2px solid #000;
+    border-radius: 10px;
+  }
+  
+  .card4Bon {
+    top:100px;
+    left: 50px;
+    background-color: lightblue;
+  }
+  
+  .card2Bon {
+    left: 250px;
+    top: 100px;
+    background-color: lightblue;
+ 
+  }
 
+  .card1Bon {
+    top: 0px;
+    left: 150px;
+    background-color: lightblue;
+  }
+  
+  .card3Bon {
+    left: 150px;
+    top : 200px;
+    background-color: lightblue;
+  
+  }
+  
+  
+
+ 
+  @keyframes move1-diag-left {
+    from { top : 0px;
+        left: 150px; }
+    to { top : 100px;
+        left: 50px; }
+  }
+ @keyframes move1-diag-right {
+    from { top : 0px;
+        left: 150px; }
+    to { top : 100px;
+        left: 250px; }
+  }
+  @keyframes move1-down {
+    from { top : 0px;
+        left: 150px; }
+    to { top : 200px;
+        left: 150px; }
+  }
+
+ 
+  @keyframes move2-left {
+    from { left: 250px; }
+    to { left: 50px; }
+  }
+
+  @keyframes move2-up {
+    from { top : 100px;
+        left: 250px; }
+    to { top : 0px;
+        left: 150px; }
+  }
+  @keyframes move2-down {
+    from { top : 100px;
+        left: 250px; }
+    to { top : 200px;
+        left: 150px; }
+  }
+  
+
+  @keyframes move3-up {
+    from { top : 200px;
+        left: 150px; }
+    to { top : 0px;
+        left: 150px; }
+  }
+
+  @keyframes move3-diag-right {
+    from { top : 200px;
+        left: 150px; }
+    to { top : 100px;
+        left: 250px; }
+  }
+  @keyframes move3-diag-left {
+    from { top : 200px;
+        left: 150x; }
+    to { top : 100px;
+        left: 50px; }
+  }
+
+  @keyframes move4-right {
+    from { left: 50px; }
+    to { left: 250px; }
+  }
+
+  @keyframes move4-up {
+    from { top : 100px;
+        left: 150x; }
+    to { top : 0px;
+        left: 150px; }
+  }
+
+  @keyframes move4-down {
+    from { top : 100px;
+        left: 150x; }
+    to { top : 200px;
+        left: 150px; }
+  }
+
+
+  .moving-move1-diag-left {
+    animation: move1-diag-left 2s forwards;
+  }
+  .moving-move1-diag-right {
+    animation: move1-diag-right 2s forwards;
+  }
+  .moving-move1-down {
+    animation: move1-down 2s forwards;
+  }
+  .moving-move2-left {
+    animation: move2-left 2s forwards;
+  }
+  .moving-move2-up {
+    animation: move2-up 2s forwards;
+  }
+  .moving-move2-down {
+    animation: move2-down 2s forwards;
+  }
+  .moving-move3-diag-left {
+    animation: move3-diag-left 2s forwards;
+  }
+  .moving-move3-up {
+    animation: move3-up 2s forwards;
+  }
+  .moving-move3-diag-right {
+    animation: move3-diag-right 2s forwards;
+  }
+  .moving-move4-right {
+    animation: move4-right 2s forwards;
+  }
+  .moving-move4-up {
+    animation: move4-up 2s forwards;
+  }
+  .moving-move4-down {
+    animation: move4-down 2s forwards;
+  }
+
+  .cardBon {
+    position: absolute;
+    width: 50px;
+    height: 75px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    transform-style: preserve-3d; /* Permet la transformation 3D des enfants */
+    transition: transform 0.8s; /* Durée de l'animation */
+  }
+
+.flippedBon  {
+  transform: rotateY(180deg); /* Pivote la carte pour montrer l'autre face */
+}
+
+.card-frontBon, .card-backBon {
+    position: absolute;
+    width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Cache la face arrière quand elle est derrière */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+  border-radius: 10px;
+}
+
+.card-frontBon {
+  background-color: lightblue;
+}
+
+.card-backBon {
+  background-color: lightcoral;
+  transform: rotateY(180deg); /* La face arrière est retournée à 180° */
+}
+ 
+
+
+.cardTest {
+
+    width: 50px;
+    height: 75px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: lightcoral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
 

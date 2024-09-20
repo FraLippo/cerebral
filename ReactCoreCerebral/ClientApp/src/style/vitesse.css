@@ -2024,6 +2024,44 @@ justify-content: center;
     animation: move4-down 2s forwards;
   }
 
+  
+  .moving-move1-diag-left-f {
+    animation: move1-diag-left .3s forwards;
+  }
+  .moving-move1-diag-right-f {
+    animation: move1-diag-right .3s forwards;
+  }
+  .moving-move1-down-f {
+    animation: move1-down .3s forwards;
+  }
+  .moving-move2-left-f {
+    animation: move2-left .3s forwards;
+  }
+  .moving-move2-up-f {
+    animation: move2-up .3s forwards;
+  }
+  .moving-move2-down-f {
+    animation: move2-down .4s forwards;
+  }
+  .moving-move3-diag-left-f {
+    animation: move3-diag-left .5s forwards;
+  }
+  .moving-move3-up-f {
+    animation: move3-up .4s forwards;
+  }
+  .moving-move3-diag-right-f {
+    animation: move3-diag-right .2s forwards;
+  }
+  .moving-move4-right-f {
+    animation: move4-right .2s forwards;
+  }
+  .moving-move4-up-f {
+    animation: move4-up .2s forwards;
+  }
+  .moving-move4-down-f {
+    animation: move4-down .2s forwards;
+  }
+
   .cardBon {
     position: absolute;
     width: 50px;
@@ -2074,4 +2112,6 @@ justify-content: center;
     align-items: center;
 
   }
+
+
 

@@ -5,10 +5,10 @@ const NIVEAU2 = 5;
 export default class JeuBonneteau extends Component {
     constructor(props) {
         super(props);
-       
+
         this.tabContenu = [];
 
-       
+
         this.state = {
             flipped: '',
             isSwapping: false,
@@ -25,40 +25,53 @@ export default class JeuBonneteau extends Component {
             contenu2: '',
             contenu3: '',
             contenu4: '',
-            niveau : 1,
-            etat: 'debut'
+            niveau: 1,
+            etat: 'debut',
+            typeNiveau: 2,
+            carteATrouver: ''
         };
+        this.tabNiveau = [['⚪', '⬜'], ['⚪'], ['⚪']['⚪']];
+        this.carteEncours = 0;
         this.animationsCompleted = 0;
+        this.tabContenu = [];
+        this.niveau = 0;
         this.tabMouv = [['moving-move1-diag-left', '', '', 'moving-move4-up'],
         ['moving-move1-diag-right', 'moving-move2-up', '', ''],
         ['moving-move1-down', '', 'moving-move3-up', ''],
         ['', 'moving-move2-left', '', 'moving-move4-right'],
         ['', 'moving-move2-down', 'moving-move3-diag-right', ''],
         ['', '', 'moving-move3-diag-left', 'moving-move4-down'],
-        ]
-        this.mouvement = 3;
+        ];
+        // this.tabMouv = [['moving-move1-diag-left-f', '', '', 'moving-move4-up-f'],
+        // ['moving-move1-diag-right-f', 'moving-move2-up-f', '', ''],
+        // ['moving-move1-down-f', '', 'moving-move3-up-f', ''],
+        // ['', 'moving-move2-left-f', '', 'moving-move4-right-f'],
+        // ['', 'moving-move2-down-f', 'moving-move3-diag-right-f', ''],
+        // ['', '', 'moving-move3-diag-left-f', 'moving-move4-down-f'],
+        // ];
+        this.nivMouv = 3;
+        this.mouvement = this.nivMouv;
 
     }
- componentDidMount()
- {
-    this.placerPion();
- }
+    componentDidMount() {
+        this.placerPion();
+    }
     placerPion() {
-        let nbPion = 1;
-        let tabPion = ['⚪', '⬜']
-        let tabJeu = [ '✖', '✖', '✖', '✖'];
-        if (this.niveau < NIVEAU2) nbPion = 2;
+        console.log(this.tabNiveau);
+        let nbPion = this.tabNiveau[this.niveau].length;
+
+        let tabJeu = ['✖', '✖', '✖', '✖'];
+
         let i = 0;
         do {
             let x = Math.floor(Math.random() * tabJeu.length);
-            console.log(x);
+
             if (tabJeu[x] === '✖') {
-                tabJeu[x] = tabPion[i];
+                tabJeu[x] = this.tabNiveau[this.niveau][i];
                 i++;
             }
         } while (i < nbPion)
         this.tabContenu = tabJeu;
-    console.log(this.tabContenu)
         this.setState({
             flipped1: ' flippedBon',
             flipped2: ' flippedBon',
@@ -69,7 +82,7 @@ export default class JeuBonneteau extends Component {
             contenu3: this.tabContenu[2],
             contenu4: this.tabContenu[3],
         });
-      
+
     }
     swapTab = (no) => {
         let arr = this.tabMouv[no];
@@ -77,17 +90,17 @@ export default class JeuBonneteau extends Component {
             .map((item, index) => item !== '' ? index : -1)
             .filter(index => index !== -1);
 
-        console.log(nonEmptyIndexes);
+
         let temp = this.tabContenu[nonEmptyIndexes[0]];
         this.tabContenu[nonEmptyIndexes[0]] = this.tabContenu[nonEmptyIndexes[1]];
         this.tabContenu[nonEmptyIndexes[1]] = temp;
-        console.log(this.tabContenu);
+
 
     }
 
     swapCards = () => {
         if (this.state.isSwapping) return; // Éviter de déclencher l'animation plusieurs fois
-        console.log(this.tabMouv[0][0])
+
         const x = Math.floor(Math.random() * 6);
         this.swapTab(x);
         this.setState({
@@ -107,21 +120,36 @@ export default class JeuBonneteau extends Component {
 
     }
 
-    testFin = () =>
-    {
+    testFin = () => {
+        let carte = this.tabNiveau[this.niveau][0];
+        if (this.tabNiveau[this.niveau].length > 1) {
+            let x = Math.floor(Math.random() * this.tabNiveau[this.niveau].length)
+            carte = this.tabNiveau[this.niveau][x];
+        }
         this.setState(() => ({
-            etat: 'fin'
-          }));
+            etat: 'fin',
+            carteATrouver: carte
+        }));
     }
 
-    nouveauJeu = () =>
-    {
-       
-        this.mouvement = 3;
+    nouveauJeu = () => {
         this.setState({
-            etat: 'debut',
+            flipped1: '',
+            flipped2: '',
+            flipped3: '',
+            flipped4: '',
+            niveau: this.state.pause + 1
+
         })
-        this.placerPion();
+        setTimeout(() => {
+            this.mouvement = this.nivMouv;
+            this.setState({
+                etat: 'debut',
+
+            })
+            this.placerPion();
+        }, 1000);
+
 
     }
 
@@ -129,7 +157,7 @@ export default class JeuBonneteau extends Component {
 
     handleAnimationEnd = (event) => {
         this.animationsCompleted += 1;
-        console.log(this.animationsCompleted)
+
         // Quand les deux animations sont terminées
         if (this.animationsCompleted === 2) {
             this.setState(() => ({
@@ -141,16 +169,15 @@ export default class JeuBonneteau extends Component {
             }));
             setTimeout(() => {
                 this.mouvement--;
-                console.log(this.mouvement)
+
                 if (this.mouvement !== 0) {
                     this.swapCards();
                 }
-                else
-                {
+                else {
                     this.testFin();
-                   
+
                 }
-            }, 500)
+            }, 20)
 
             this.animationsCompleted = 0; // Réinitialiser le compteur d'animations
         }
@@ -158,18 +185,22 @@ export default class JeuBonneteau extends Component {
 
     clicCarte = (event) => {
         const id = parseInt(event.currentTarget.id);
-        console.log(this.tabContenu);
-        console.log(id)
+
+        console.log(this.state['flipped' + id])
+        if (this.state.etat !== 'fin' || this.state['flipped' + id] === ' flippedBon') return;
+
         this.setState((prevState) => ({
             ['flipped' + id]: prevState['flipped' + id] === '' ? ' flippedBon' : '',
             ['contenu' + id]: this.tabContenu[id - 1]
         }));
 
-        if (this.tabContenu[id - 1] === '⚪' || this.tabContenu[id - 1] === '⚪')
-        {
-            message.success("Bravo", 1,this.nouveauJeu);
+        if (this.tabContenu[id - 1] === this.state.carteATrouver) {
+
+            message.success("Bravo", 1, this.nouveauJeu);
+
+
         }
-        
+
     }
 
     memoriser = () => {
@@ -178,7 +209,7 @@ export default class JeuBonneteau extends Component {
             flipped2: '',
             flipped3: '',
             flipped4: '',
-            etat : 'jeu'
+            etat: 'jeu'
         }));
         this.swapCards();
 
@@ -189,6 +220,7 @@ export default class JeuBonneteau extends Component {
         return <React.Fragment>
 
             <div className="plateauBon">
+
                 <div className="containerBon">
                     <div className={"card1Bon cardBon " + this.state.anim1 + this.state.flipped1} id="1" onClick={this.clicCarte} onAnimationEnd={this.handleAnimationEnd}>
                         <div className="card-frontBon"></div>
@@ -209,19 +241,24 @@ export default class JeuBonneteau extends Component {
                         <div className="card-frontBon"></div>
                         <div className="card-backBon">{this.state.contenu4}</div>
                     </div>
-                </div> 
-                
-                  
-                  {this.state.etat === 'debut' && <React.Fragment>
-                   <div><Button onClick={this.memoriser}>J'ai mémorisé</Button></div>
-                 <React.Fragment>{this.state.niveau < NIVEAU2 ? <React.Fragment><div>Mémorise l'emplacement de la carte</div>
-                <div className="cardTest">⚪</div></React.Fragment>: <div></div>}</React.Fragment></React.Fragment>}
-                {this.state.etat === 'fin' &&  <React.Fragment><div>Clique sur la carte</div>
-                <div className="cardTest">⚪</div></React.Fragment> }
+                </div>
+
+
+                {this.state.etat === 'debut' && <React.Fragment>
+                    <div><Button onClick={this.memoriser}>J'ai mémorisé</Button></div>
+
+                    {this.state.typeNiveau === 1 && <React.Fragment><div>Mémorise l'emplacement de la carte</div>
+                        <div className="cardTest">⚪</div></React.Fragment>}
+                    {this.state.typeNiveau === 2 && <React.Fragment><div>Mémorise l'emplacement des cartes</div>
+                        <div className="cardTest">⚪</div>  <div className="cardTest">⬜</div></React.Fragment>}
+                </React.Fragment>}
+                {this.state.etat === 'fin' && <React.Fragment>
+                    <React.Fragment><div>Clique sur la carte</div>
+                        <div className="cardTest">{this.state.carteATrouver}</div></React.Fragment> </React.Fragment>}
             </div>
-            <button onClick={this.swapCards}>Échanger les cartes</button>
-          
-          
+
+
+
 
         </React.Fragment>
     }

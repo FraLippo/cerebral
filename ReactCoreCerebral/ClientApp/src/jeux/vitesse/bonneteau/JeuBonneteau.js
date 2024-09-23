@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, message } from 'antd';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat';
+import { Helmet } from 'react-helmet';
 const NIVEAU2 = 5;
 export default class JeuBonneteau extends Component {
     constructor(props) {

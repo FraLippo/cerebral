@@ -65,7 +65,7 @@ export default class TestCalcul extends Component {
         <div className="centre"><Link to='/classement/vitessearithmetique'>Classement</Link></div>
       </div>
       <div className="lienJeuRapidité presentationJeu marge20">
-       <Link to='/vitessemonnaie'>  <div className="centre titreVitesse" >💵 La monnaie 🆕</div>
+       <Link to='/vitessemonnaie'>  <div className="centre titreVitesse" >💵 La monnaie</div>
           <p className="marge20">But du jeu : Tu dois rendre la monnaie au client en cliquant sur les pièces pour faire l'appoint. Tu dois gérer le maximum de clients en 60 secondes. Tu gagnes des points à chaque client content.   </p>
        </Link>   <p className='centre'>{this.state.resultatsJoueur["vitessemonnaie"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessemonnaie"]:"Pas encore de résultat" }</p>
 

@@ -84,7 +84,7 @@ export default function JeuBurger() {
           <div className="msgBurger">
             <p>Prépare le burger ci-dessous en glissant les ingrédients dans la colonne du centre. L'ordre doit être respecté.</p>
             <Ingredients tabListe={tabListe}></Ingredients>
-            <div className="centre marge10"><CompteRebours temps={60} finTimer={finTimer}></CompteRebours></div>
+            <div className="centre marge10"><CompteRebours temps={50} finTimer={finTimer}></CompteRebours></div>
             </div>
         </div> </React.Fragment>}</React.Fragment>
     )

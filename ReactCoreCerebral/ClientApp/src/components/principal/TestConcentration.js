@@ -41,7 +41,14 @@ export default class TesConcentration extends Component {
     <p>Plongez dans nos jeux de concentration captivants et découvrez le plaisir de renforcer votre attention tout en vous amusant !</p>
     <GraphiqueRapidite categorie='r' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
     <div className='jeuVitesse'>
+    <div className="lienJeuRapidité presentationJeu marge20">
+     <Link to='/vitessebonneteau'>   <div className="centre titreVitesse" >🎩 Le bonneteau</div>
+       
+          <p className="marge20">But du jeu : Retrouve la carte cachée après plusieurs permutations de 4 cartes. Tu as 90 secondes pour découvrir le maximum de cartes. Le score augmente en fonction du niveau.   </p>
+        </Link>  <p className='centre'>{this.state.resultatsJoueur["vitessebonneteau"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessebonneteau"]:"Pas encore de résultat" }</p>
 
+        <div className="centre"><Link to='/classement/vitessebonneteau'>Classement</Link></div>
+      </div>
            
 
                 <div className="lienJeuRapidité presentationJeu marge20">
@@ -78,7 +85,7 @@ export default class TesConcentration extends Component {
       
       <div className="lienJeuRapidité presentationJeu marge20">
        <Link to='/vitesseaddition'> <div className="centre titreVitesse" >⊕ L'addition XOR</div>
-         <p className="marge20">But du jeu : Faire la somme de deux grilles dans une troisième grille. L'addition se fait case par case comme une addition normale sauf que si tu additionnes deux cases bleues le résultat est une case blanche. Le terme XOR (ou exclusif) désigne un opérateur logique en informatique. Pour ceux qui veulent en savoir plus sur <a target='_blank' style={{all: 'revert'}} href="https://www.techno-science.net/definition/6742.html">l'opérateur XOR</a>. Si tu termines une grille tu gagnes 2 points par bonne réponse. Le temps alloué est de 90 secondes. </p>
+         <p className="marge20">But du jeu : Faire la somme de deux grilles dans une troisième grille. L'addition se fait case par case comme une addition normale sauf que si tu additionnes deux cases bleues le résultat est une case blanche. Le terme XOR (ou exclusif) désigne un opérateur logique en informatique. Si tu termines une grille tu gagnes 2 points par bonne réponse. Le temps alloué est de 90 secondes. </p>
       </Link>   <p className='centre'>{this.state.resultatsJoueur["vitesseaddition"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesseaddition"]:"Pas encore de résultat" }</p>
 
         <div className="centre"><Link to='/classement/vitesseaddition'>Classement</Link></div>
@@ -88,7 +95,7 @@ export default class TesConcentration extends Component {
       <div className="lienJeuRapidité presentationJeu marge20">
         <Link to='/vitesseburger'><div className="centre titreVitesse">🍔 Préparer des burgers</div>
 
-        <p className="marge20">But du jeu : Créer des burger en plaçant les ingrédients de la recette dans l'ordre. Chaque burger créé rapporte 8 points. Le temps alloué pour obtenir le meilleur score est de 60 secondes.</p>
+        <p className="marge20">But du jeu : Créer des burger en plaçant les ingrédients de la recette dans l'ordre. Chaque burger créé rapporte 8 points. Le temps alloué pour obtenir le meilleur score est de 50 secondes.</p>
       </Link>  <p className='centre'>{this.state.resultatsJoueur["vitesseburger"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesseburger"]:"Pas encore de résultat" }</p>
 
         <div className="centre"><Link to='/classement/vitesseburger'>Classement</Link></div>

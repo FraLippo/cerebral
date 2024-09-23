@@ -1867,7 +1867,7 @@ justify-content: center;
 .containerBon {
     position: relative;
     width: 360px;
-    height: 360px;
+    height: 300px;
     margin-bottom: 20px;
   }
   
@@ -2029,37 +2029,37 @@ justify-content: center;
     animation: move1-diag-left .3s forwards;
   }
   .moving-move1-diag-right-f {
-    animation: move1-diag-right .3s forwards;
+    animation: move1-diag-right .5s forwards;
   }
   .moving-move1-down-f {
-    animation: move1-down .3s forwards;
+    animation: move1-down .6s forwards;
   }
   .moving-move2-left-f {
-    animation: move2-left .3s forwards;
+    animation: move2-left .5s forwards;
   }
   .moving-move2-up-f {
-    animation: move2-up .3s forwards;
+    animation: move2-up .4s forwards;
   }
   .moving-move2-down-f {
-    animation: move2-down .4s forwards;
+    animation: move2-down .6s forwards;
   }
   .moving-move3-diag-left-f {
-    animation: move3-diag-left .5s forwards;
+    animation: move3-diag-left .4s forwards;
   }
   .moving-move3-up-f {
     animation: move3-up .4s forwards;
   }
   .moving-move3-diag-right-f {
-    animation: move3-diag-right .2s forwards;
+    animation: move3-diag-right .5s forwards;
   }
   .moving-move4-right-f {
-    animation: move4-right .2s forwards;
+    animation: move4-right .4s forwards;
   }
   .moving-move4-up-f {
-    animation: move4-up .2s forwards;
+    animation: move4-up .4s forwards;
   }
   .moving-move4-down-f {
-    animation: move4-down .2s forwards;
+    animation: move4-down .3s forwards;
   }
 
   .cardBon {
@@ -2094,19 +2094,19 @@ justify-content: center;
 }
 
 .card-backBon {
-  background-color: lightcoral;
+  background-color:#ffdd1d;
   transform: rotateY(180deg); /* La face arrière est retournée à 180° */
 }
  
 
 
 .cardTest {
-
+    font-size: 24px;
     width: 50px;
     height: 75px;
     border: 2px solid #000;
     border-radius: 10px;
-    background-color: lightcoral;
+    background-color: #ffdd1d;
     display: flex;
     justify-content: center;
     align-items: center;

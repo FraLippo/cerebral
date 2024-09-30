@@ -1988,40 +1988,40 @@ justify-content: center;
 
 
   .moving-move1-diag-left {
-    animation: move1-diag-left 2s forwards;
+    animation: move1-diag-left 1.5s forwards;
   }
   .moving-move1-diag-right {
-    animation: move1-diag-right 2s forwards;
+    animation: move1-diag-right 1.5s forwards;
   }
   .moving-move1-down {
-    animation: move1-down 2s forwards;
+    animation: move1-down 1.5s forwards;
   }
   .moving-move2-left {
-    animation: move2-left 2s forwards;
+    animation: move2-left 1.5s forwards;
   }
   .moving-move2-up {
-    animation: move2-up 2s forwards;
+    animation: move2-up 1.5s forwards;
   }
   .moving-move2-down {
-    animation: move2-down 2s forwards;
+    animation: move2-down 1.5s forwards;
   }
   .moving-move3-diag-left {
-    animation: move3-diag-left 2s forwards;
+    animation: move3-diag-left 1.5s forwards;
   }
   .moving-move3-up {
-    animation: move3-up 2s forwards;
+    animation: move3-up 1.5s forwards;
   }
   .moving-move3-diag-right {
-    animation: move3-diag-right 2s forwards;
+    animation: move3-diag-right 1.5s forwards;
   }
   .moving-move4-right {
-    animation: move4-right 2s forwards;
+    animation: move4-right 1.5s forwards;
   }
   .moving-move4-up {
-    animation: move4-up 2s forwards;
+    animation: move4-up 1.5s forwards;
   }
   .moving-move4-down {
-    animation: move4-down 2s forwards;
+    animation: move4-down 1.5s forwards;
   }
 
   

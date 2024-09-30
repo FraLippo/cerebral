@@ -34,8 +34,8 @@ export default class JeuBonneteau extends Component {
             finJeu: false
         };
         this.fin = false;
-        this.tabNiveau = [['⚪'], ['⚪'], ['⚪', '⬜'], ['⚪', '⬜'], ['⚪'], ['⚪'],['⚪'], ['⚪', '⬜'], ['⚪', '⬜'], ['⚪', '⬜'], ['⚪', '⬜'], ['⚪', '⬜'], ['⚪', '⬜']];
-        this.tabDepNiveau = [3, 4, 3, 4, 4, 5,7, 4, 5, 6, 7, 8, 9]
+        this.tabNiveau = [['⚪'], ['⚪'], ['⚪', '⬜'], ['⚪', '⬜'], ['⚪'], ['⚪'], ['⚪', '⬜'], ['⚪', '⬜'], ['⚪', '⬜'], ['⚪', '⬜'], ['⚪', '⬜'], ['⚪', '⬜']];
+        this.tabDepNiveau = [3, 4, 3, 4, 6, 7, 4, 5, 6, 7, 8, 9,10,11]
         this.carteEncours = 0;
         this.animationsCompleted = 0;
         this.tabContenu = [];

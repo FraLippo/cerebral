@@ -73,52 +73,52 @@ function nomType(type) {
             return "Les nombres en désordre";
         case "vitessecomplet":
             return "Pièce puzzle";
-            case "vitessetaquin":
-                return "Le taquin";
-                case "vitessemonnaie":
-                    return "La monnaie";
+        case "vitessetaquin":
+            return "Le taquin";
+        case "vitessemonnaie":
+            return "La monnaie";
+        case "vitessebonneteau":
+            return "Le bonneteau";
         default:
             return "";
     }
 }
 
 
-let tabJeu = ["vitesseaddition","vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus","vitesserecensement"
-    ,"vitessematch", "vitessecomplet","vitessebonneteau",
-     "vitessecercle","vitesselettres", "vitesseboogle",
-"vitessechemin","vitessetresor", "vitessetresse","vitessetaquin",
-"vitesseoperation" ,"vitessecalcul","vitessearithmetique", "vitessemonnaie",
-"vitesseecrire","vitessenotes","vitessepanneauroutier",
-"vitessememoire","vitesseforme","vitessenombre","vitessememory","vitessepaire"]
+let tabJeu = ["vitesseaddition", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitesserecensement"
+    , "vitessematch", "vitessecomplet", "vitessebonneteau",
+    "vitessecercle", "vitesselettres", "vitesseboogle",
+    "vitessechemin", "vitessetresor", "vitessetresse", "vitessetaquin",
+    "vitesseoperation", "vitessecalcul", "vitessearithmetique", "vitessemonnaie",
+    "vitesseecrire", "vitessenotes", "vitessepanneauroutier",
+    "vitessememoire", "vitesseforme", "vitessenombre", "vitessememory", "vitessepaire"]
 
-let typeJeu = ['r','r','r','r','r','r','r','r','r', 'r','l','l','l','p','p','p','p','c','c','c','c','d','d','d','m','m','m','m','m']
+let typeJeu = ['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm']
 
-let tabCategorie = ["test-memoire", "test-concentration","test-calcul","test-lettres", "test-culture", "test-planification"]
+let tabCategorie = ["test-memoire", "test-concentration", "test-calcul", "test-lettres", "test-culture", "test-planification"]
 
-function lienVersCategorie(nomJeu)
-{
-   
+function lienVersCategorie(nomJeu) {
+
     let index = tabJeu.findIndex(x => x === nomJeu);
     let type = typeJeu[index];
-    switch(type)
-    {
+    switch (type) {
         case 'm':
             return tabCategorie[0];
-            case 'r':
+        case 'r':
             return tabCategorie[1];
-            case 'c':
+        case 'c':
             return tabCategorie[2];
-            case 'l':
+        case 'l':
             return tabCategorie[3];
-            case 'd':
+        case 'd':
             return tabCategorie[4];
-            case 'p':
+        case 'p':
             return tabCategorie[5];
     }
 }
 
 function lienAutresJeux(jeu) {
-   
+
     let index = tabJeu.findIndex(x => x === jeu);
     let tabListeJeux = [];
     let type = '';

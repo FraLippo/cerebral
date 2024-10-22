@@ -7,7 +7,7 @@ import PresentationTemps from './PresentationTemps';
 import { Menu } from 'antd';
 import { itemsMenu } from './menu';
 import PageFaute from '../commun/PageFaute';
-
+import CreationGrilleRobot from '../../jeux/vitesse/robot/CreationGrilleRobot';
 
 const Presentation = React.lazy(() => import('./Presentation'));
 const Calcul = React.lazy(() => import('./Calcul'));
@@ -77,6 +77,7 @@ const JeuBonneteau = React.lazy(() => import('../../jeux/vitesse/bonneteau/JeuBo
 const JeuRobot = React.lazy(() => import('../../jeux/vitesse/robot/JeuRobot'));
 const JeuComplet = React.lazy(() => import('../../jeux/vitesse/complet/JeuComplet'));
 const TestMemoire = React.lazy(() => import('./TestMemoire'));
+
 const TestCalcul = React.lazy(() => import('./TestCalcul'));
 const TestConcentration = React.lazy(() => import('./TestConcentration'));
 const TestPlanification = React.lazy(() => import('./TestPlanification'));
@@ -99,7 +100,7 @@ const router = createBrowserRouter([
        
           {
             index : true,
-            element: <JeuRobot />,
+            element: <CreationGrilleRobot />,
           },
           {
             path :"en",

@@ -2165,10 +2165,64 @@ svg:hover {
 {
     border: 2px solid #a29ae1;
 }
+
+.caseGrilleRobotPlein
+{
+    background-color: #04AA6D;
+}
 .caseRobot {
     display: flex;
     align-items: center;
     justify-content: center;
+
+}
+
+.bordRobot
+{  margin: 5px;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
+
+
+}
+
+.bordRobotPlein
+{  
+    border : 1px solid blue;
+    box-shadow:5px 8px 4px 0px #0080ff66;
+    background-color: #24dde7;
+}
+
+.bordRobotVide
+{  
+    border : 1px solid rgb(220, 14, 113);
+    box-shadow:5px 8px 4px 0px #0080ff66;
+ 
+}
+
+.bordRobotActif
+{  
+    border : 3px solid rgb(220, 14, 113);
+
+ 
+}
+
+
+.bordRobot:active
+{
+        transform: translateY(2px);
+}
+
+.directionsRobots {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   width: 400px;
+   min-height: 60px;
+   align-items: flex-start;
 
 }
 

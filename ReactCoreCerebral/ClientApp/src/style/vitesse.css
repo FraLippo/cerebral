@@ -2163,7 +2163,7 @@ svg:hover {
 
 .caseGrilleRobot
 {
-    border: 2px solid #a29ae1;
+    background-color:#cab7f7
 }
 
 .caseGrilleRobotPlein
@@ -2211,7 +2211,7 @@ svg:hover {
 }
 
 
-.bordRobot:active
+.jeuVitesse .bordRobot:active
 {
         transform: translateY(2px);
 }

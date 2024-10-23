@@ -1,59 +1,132 @@
 import React, { Component } from 'react';
 import Grille from './Grille';
 import Vaisseau from './Vaisseau';
-import { Button } from 'antd';
+import { Button, message } from 'antd';
 import Directions from './Directions'
+import Drapeaux from './Drapeaux';
+import { tabDonnees } from './data';
+import Resultat from '../commun/Resultat';
 
-
+const NBJEUXTOTAL = 3;
 export default class JeuRobot extends Component {
 
     constructor() {
         super();
         let tabGrille = [[0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1],
         [0, 0, , 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0]]
-        this.positionDepart = { x: 3, y: 3 };
+        this.fin = false;
+        this.noJeu = 0;
+        this.niveauxJeux = this.creerNiveaux();
+        console.log(this.niveauxJeux);
         this.state = {
-            tabGrille,
-            position: this.positionDepart,
-            rotationVaisseau: 1,
-            tabDirections: []
+            tabGrille: this.niveauxJeux[this.noJeu].tabGrille,
+            position: this.niveauxJeux[this.noJeu].positionDepart,
+            rotationVaisseau: this.niveauxJeux[this.noJeu].rotation,
+            tabDrapeaux: this.niveauxJeux[this.noJeu].tabDrapeaux,
+            tabDirections: [],
+            afficheResultat: false,
+            score : 0
 
         }
         this.depEnCours = 0;
     }
 
+    creerNiveaux() {
+        let tabRange = [{ min: 0, max: 2 }, { min: 2, max: 4 }];
+        let tabNiveau = [];
+        for (let index = 0; index < NBJEUXTOTAL; index++) {
+            let range = 0;
+            if (index > 1) range = 1;
+            let { min, max } = { ...tabRange[range] }
+            let nbHasard = 0;
+            do {
+                nbHasard = Math.floor((Math.random() * max) + min);
+            } while (tabNiveau.findIndex(x => x === nbHasard) !== -1);
+            tabNiveau[index] = nbHasard;
+        }
+        let tabNiveauComplet = [];
+        for (let j = 0; j < NBJEUXTOTAL; j++) {
+            tabNiveauComplet.push(tabDonnees[tabNiveau[j]]);
+        }
+
+        return tabNiveauComplet;
+
+
+    }
+    prochainNiveau = () => {
+        this.fin = false;
+        this.depEnCours = 0;
+        this.noJeu++;
+        if (this.noJeu >= NBJEUXTOTAL)
+        {
+            this.setState({afficheResultat : true});
+        }
+        else
+        {
+        this.setState({
+            tabGrille: this.niveauxJeux[this.noJeu].tabGrille,
+            position: this.niveauxJeux[this.noJeu].positionDepart,
+            rotationVaisseau: this.niveauxJeux[this.noJeu].rotation,
+            tabDrapeaux: this.niveauxJeux[this.noJeu].tabDrapeaux,
+            tabDirections: []
+
+        });
+    }
+
+    }
+
+    verifierDrapeaux = () => {
+
+        let index = this.state.tabDrapeaux.findIndex(coord => coord.x === this.state.position.x && coord.y === this.state.position.y)
+        if (index !== -1) {
+            let nouveauTabDrapeaux = [...this.state.tabDrapeaux];
+            nouveauTabDrapeaux.splice(index, 1);
+            this.setState({ tabDrapeaux: nouveauTabDrapeaux,
+                score : this.state.score + 20
+             });
+            if (nouveauTabDrapeaux.length === 0) {
+                this.fin = true;
+                message.success("Bravo, tu as réussi", this.prochainNiveau);
+            }
+        }
+    }
+
     avanceDroite = () => {
+        this.verifierDrapeaux();
+
         window.setTimeout(() => {
-            if (this.state.position.x + 1 < this.state.tabGrille[0].length && this.state.tabGrille[this.state.position.y][this.state.position.x + 1] === 1) {
-       
+            if (this.state.position.x + 1 < this.state.tabGrille[0].length && this.state.tabGrille[this.state.position.x + 1][this.state.position.y] === 1) {
+
                 this.setState({
                     position: { x: this.state.position.x + 1, y: this.state.position.y }
                 }, this.avanceDroite())
             }
             else {
-                this.finMouvement();
+                this.mouvement();
             }
         }, 125)
     }
 
     avanceGauche = () => {
+        this.verifierDrapeaux();
         window.setTimeout(() => {
-            if (this.state.position.x - 1 >= 0 && this.state.tabGrille[this.state.position.y][this.state.position.x - 1] === 1) {
-       
+            if (this.state.position.x - 1 >= 0 && this.state.tabGrille[this.state.position.x - 1][this.state.position.y] === 1) {
+
                 this.setState({
                     position: { x: this.state.position.x - 1, y: this.state.position.y }
                 }, this.avanceGauche())
             }
             else {
-                this.finMouvement();
+                this.mouvement();
             }
         }, 125)
     }
 
     avanceBas = () => {
+        this.verifierDrapeaux();
         window.setTimeout(() => {
-            if (this.state.position.y - 1 >= 0 && this.state.tabGrille[this.state.position.y - 1][this.state.position.x] === 1) {
-      
+            if (this.state.position.y - 1 >= 0 && this.state.tabGrille[this.state.position.x][this.state.position.y - 1] === 1) {
+
                 this.setState({
                     position: {
                         x: this.state.position.x, y: this.state.position.y - 1
@@ -61,14 +134,15 @@ export default class JeuRobot extends Component {
                 }, this.avanceBas())
             }
             else {
-                this.finMouvement();
+                this.mouvement();
             }
         }, 125)
     }
     avanceHaut = () => {
+        this.verifierDrapeaux();
         window.setTimeout(() => {
-            if (this.state.position.y + 1 < this.state.tabGrille.length && this.state.tabGrille[this.state.position.y + 1][this.state.position.x] === 1) {
-        
+            if (this.state.position.y + 1 < this.state.tabGrille.length && this.state.tabGrille[this.state.position.x][this.state.position.y + 1] === 1) {
+
                 this.setState({
                     position: {
                         x: this.state.position.x, y: this.state.position.y + 1
@@ -76,28 +150,30 @@ export default class JeuRobot extends Component {
                 }, this.avanceHaut())
             }
             else {
-                this.finMouvement();
+                this.mouvement();
             }
         }, 125)
     }
 
     clic = () => {
-       this.finMouvement();
+        if (this.depEnCours > 0) return;
+        this.mouvement();
     }
-    finMouvement = () => {
+    mouvement = () => {
+        this.verifierDrapeaux();
         if (this.depEnCours < this.state.tabDirections.length) {
             let nouveauTabDirections = [...this.state.tabDirections];
             let dep = nouveauTabDirections[this.depEnCours].no;
-       
+
             for (let index = 0; index < nouveauTabDirections.length; index++) {
-            nouveauTabDirections[index].etat = 'repos'
-         }
-         console.log(nouveauTabDirections)
-          nouveauTabDirections[this.depEnCours].etat = 'actif';
-        
-          this.setState({tabDirections: nouveauTabDirections});
-       
-          if (dep === 1) {
+                nouveauTabDirections[index].etat = 'repos'
+            }
+
+            nouveauTabDirections[this.depEnCours].etat = 'actif';
+
+            this.setState({ tabDirections: nouveauTabDirections });
+
+            if (dep === 1) {
                 if (this.state.rotationVaisseau === 1) {
                     this.avanceDroite();
                 }
@@ -117,8 +193,15 @@ export default class JeuRobot extends Component {
             if (dep === 3) {
                 this.tourneAntiHoraire();
             }
-           
-     this.depEnCours++;
+
+            this.depEnCours++;
+        }
+        else {
+            if (!this.fin) {
+                message.error("Erreur. Tu peux recommencer.");
+                this.depEnCours = 0;
+                
+            }
         }
     }
     tourneHoraire = () => {
@@ -126,7 +209,7 @@ export default class JeuRobot extends Component {
             rotationVaisseau: this.state.rotationVaisseau === 3 ? 0 : this.state.rotationVaisseau + 1
         });
         window.setTimeout(() => {
-            this.finMouvement();
+            this.mouvement();
         }, 200);
 
     }
@@ -136,38 +219,49 @@ export default class JeuRobot extends Component {
             rotationVaisseau: this.state.rotationVaisseau === 0 ? 3 : this.state.rotationVaisseau - 1
         })
         window.setTimeout(() => {
-            this.finMouvement();
+            this.mouvement();
         }, 200);
     }
 
     ajoutDirection = (no) => {
+        if (this.depEnCours > 0) return;
         let nouveauTabDirections = [...this.state.tabDirections];
-        nouveauTabDirections.push({etat : 'repos' , no});
+        nouveauTabDirections.push({ etat: 'repos', no });
         this.setState({ tabDirections: nouveauTabDirections });
 
     }
 
-    reset = () =>
-    {
-        this.setState({ tabDirections: [],
-            position :this.positionDepart
-         });
-         this.depEnCours = 0;
+
+    reset = () => {
+        if (this.depEnCours > 0) return;
+        this.fin = false;
+       
+        this.setState({
+            tabDirections: [],
+            position: this.niveauxJeux[this.noJeu].positionDepart,
+            rotationVaisseau: this.niveauxJeux[this.noJeu].rotation,
+            tabDrapeaux: this.niveauxJeux[this.noJeu].tabDrapeaux,
+
+        });
+        this.depEnCours = 0;
     }
 
     render() {
-        return <div><h1>Le jeu du robot</h1>
+        return <div>
+            {this.state.afficheResultat ?
+                <Resultat score={this.state.score} typeExo='vitesserobot'></Resultat> :
             <div className='centreGrilleRobot'>
                 <div className='grilleRobot'>
                     <Grille tabGrille={this.state.tabGrille}></Grille>
                     <Vaisseau position={this.state.position} rotationVaisseau={this.state.rotationVaisseau}></Vaisseau>
+                    <Drapeaux tabDrapeaux={this.state.tabDrapeaux}></Drapeaux>
                 </div>
+                <div className="espaceHaut"><Button type="primary" onClick={this.clic}>Départ</Button></div>
                 <Directions ajoutDirection={this.ajoutDirection} reset={this.reset} tabDirections={this.state.tabDirections}></Directions>
-                <Button onClick={this.clic}>Départ</Button>
-                <Button onClick={this.tourneHoraire}>Fait tourner horaire</Button>
-                <Button onClick={this.tourneAntiHoraire}>Fait tourner antihoraire</Button>
+<div className='espaceHaut'>Score : {this.state.score}</div>
+<h1>Le jeu du robot</h1>
             </div>
-
+    }
         </div>
     }
 }

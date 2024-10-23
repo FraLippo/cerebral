@@ -33,7 +33,7 @@ export default class Vaisseau extends Component
     
     render()
     {
-        return <div className='caseRobot' style={constructionEmplacement(this.props.position.y, this.props.position.x)}><img src={this.rotationVaisseau()} alt="vaisseau"></img></div>
+        return <div className='caseRobot' style={constructionEmplacement(this.props.position.x, this.props.position.y)}><img src={this.rotationVaisseau()} alt="vaisseau"></img></div>
       
     }
 }

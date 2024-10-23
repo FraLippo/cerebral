@@ -21,7 +21,7 @@ export default class Directions extends Component
     choixImage(no,key, etat)
     {
         let couleur = 'bordRobot bordRobotVide';
-        console.log(etat);
+
         if (etat === 'actif')
         {
             couleur = 'bordRobot bordRobotActif';
@@ -47,7 +47,7 @@ export default class Directions extends Component
         <div onClick={() => this.clic(2)} className='bordRobot bordRobotPlein'><img src={flecheHeure} alt='fleche rotation horaire'></img></div>
         <div onClick={() => this.clic(3)} className='bordRobot bordRobotPlein'><img src={flecheAntiHeure} alt='fleche rotation antihoraire'></img></div>
     </div>
-    <Button type="primary"  onClick={this.reset}>Reset</Button>
+    <Button className="espaceHaut"  onClick={this.reset}>Recommencer</Button>
     </div> 
 
     }

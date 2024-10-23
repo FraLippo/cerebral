@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { constructionEmplacement } from './utilitaire';
 import drapeauRobot from '../../../images/drapeauRobot.png';
 import { Button } from 'antd';
+import vaisseauD from '../../../images/vaisseauD.png';
+import vaisseauG from '../../../images/vaisseauG.png';
+import vaisseauB from '../../../images/vaisseauB.png';
+import vaisseauH from '../../../images/vaisseauH.png';
+import { json } from 'react-router-dom';
 
 export default class CreationGrilleRobot extends Component {
 
@@ -9,14 +14,11 @@ export default class CreationGrilleRobot extends Component {
         super();
         let tabGrille = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
-
-        this.positionDepart = { x: 3, y: 3 };
         this.state = {
             tabGrille,
             etat: 'grille',
-            tabDrapeau: []
-
-
+            tabDrapeau: [],
+            positionDepart: { x: -1, y: -1, r:1 }
         }
     }
 
@@ -31,7 +33,6 @@ export default class CreationGrilleRobot extends Component {
             let trouve = null;
             console.log(nouveauTabDrapeau)
             for (let index = 0; index < nouveauTabDrapeau.length; index++) {
-                console.log(nouveauTabDrapeau[index])
                 if (nouveauTabDrapeau[index].x === x && nouveauTabDrapeau[index].y === y) {
                     trouve = index;
                 }
@@ -44,6 +45,21 @@ export default class CreationGrilleRobot extends Component {
             }
             this.setState({ tabDrapeau: nouveauTabDrapeau });
         }
+  
+        if (this.state.etat === 'vaisseau') {
+        
+       
+            if (x === -2 && y === -2) {
+                let r = this.state.positionDepart.r === 3 ? 0 : this.state.positionDepart.r+1;
+                console.log(r);
+                this.setState({ positionDepart: { x: this.state.positionDepart.x, y : this.state.positionDepart.y,r } })
+            }
+            else
+            {
+                this.setState({ positionDepart: { x, y,r :1 } })
+            }
+        }
+
     }
 
     ajouterDrapeau = () => {
@@ -55,6 +71,35 @@ export default class CreationGrilleRobot extends Component {
 
     }
 
+    ajouterVaisseau = () => {
+        this.setState({ etat: 'vaisseau' });
+    }
+
+    rotationVaisseau()
+    {
+        switch (this.state.positionDepart.r)
+        {
+            case 0 :
+                return vaisseauH;
+            case 1:
+                return vaisseauD;
+                case 2 :
+                return vaisseauB;
+            case 3:
+                return vaisseauG;
+            
+        }
+    }
+
+    creerDonnees()
+    {
+        return '{</br>tabGrille : ' +  JSON.stringify(this.state.tabGrille) + ',</br>'+ 
+        'tabDrapeaux : ' + JSON.stringify(this.state.tabDrapeau) + ',</br>' +
+        'positionDepart : {x : ' + this.state.positionDepart.x + ',y : ' + this.state.positionDepart.y + '},</br>'+
+        'rotation : ' + this.state.positionDepart.r + '</br>' +
+        '}';
+    }
+
     render() {
         return <div className='centreGrilleRobot'>
             <div className='grilleRobot'>
@@ -64,11 +109,13 @@ export default class CreationGrilleRobot extends Component {
                 }
 
                 {this.state.tabDrapeau.map((info, i) => <div onClick={() => this.clic(info.x, info.y)} key={i + 400} style={constructionEmplacement(info.x, info.y)}><img src={drapeauRobot} alt="drapeauRobot"></img></div>)}
-
+                {this.state.positionDepart.x !== -1 && <div className='caseRobot' onClick={() => this.clic(-2,-2)} style={constructionEmplacement(this.state.positionDepart.x, this.state.positionDepart.y)}><img src={this.rotationVaisseau()} alt="vaisseau"></img></div>}
             </div>
             <Button onClick={this.ajouterDrapeau}>Ajouter Drapeau</Button>
+            <Button onClick={this.ajouterVaisseau}>Ajouter Vaisseau</Button>
             <Button onClick={this.creerGrille}>Créer grille</Button>
             <p>{this.state.etat}</p>
+            <p dangerouslySetInnerHTML={{__html: this.creerDonnees()}}></p>
         </div>
     }
 }

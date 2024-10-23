@@ -77,6 +77,7 @@ const JeuBonneteau = React.lazy(() => import('../../jeux/vitesse/bonneteau/JeuBo
 const JeuRobot = React.lazy(() => import('../../jeux/vitesse/robot/JeuRobot'));
 const JeuComplet = React.lazy(() => import('../../jeux/vitesse/complet/JeuComplet'));
 const TestMemoire = React.lazy(() => import('./TestMemoire'));
+const JeuCreationRobot = React.lazy(() => import('./../../jeux/vitesse/robot/CreationGrilleRobot'));
 
 const TestCalcul = React.lazy(() => import('./TestCalcul'));
 const TestConcentration = React.lazy(() => import('./TestConcentration'));
@@ -100,11 +101,15 @@ const router = createBrowserRouter([
        
           {
             index : true,
-            element: <CreationGrilleRobot />,
+            element: <JeuRobot />,
           },
           {
             path :"en",
             element: <PageFaute />,
+          },
+          {
+            path :"c",
+            element: <JeuCreationRobot />,
           },
           {
             path :"defi",

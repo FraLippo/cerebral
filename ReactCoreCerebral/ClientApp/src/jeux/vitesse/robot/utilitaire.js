@@ -3,10 +3,10 @@ function constructionEmplacement(x, y) {
 
        
     return {   
-        gridRowStart: x+1,
-        gridRowEnd: x+1,
-        gridColumnStart: y+1,
-        gridColumnEnd: y+2,
+        gridRowStart: y+1,
+        gridRowEnd: y+1,
+        gridColumnStart: x+1,
+        gridColumnEnd: x+1,
     
     }
 }

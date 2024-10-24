@@ -43,6 +43,15 @@ export default class TestPlanification extends Component {
 
       <div className='jeuVitesse marge20'>
 
+      <div className="lienJeuRapidité presentationJeu marge20">
+<Link to='/vitessefusee'><div className="centre titreVitesse" >🚀 La fusée</div>
+
+<p className="marge20">But du jeu : Donner des instructions à une fusée pour qu'elle ramasse tous les drapeaux sur le plateau de jeu. Tu peux donner des instructions à la fusée avant son départ. La flèche ⬆️ permet de faire avancer la fusée dans la direction du nez de la fusée. Les autres flèches permettent de tourner la fusée d'un quart de tour. À chaque fois que la fusée rencontre un obstacle, elle s'arrête et tu peux la faire tourner. 70 points de bonus si tu réussis les 4 niveaux en 90 s. </p>
+ </Link>
+ <p className='centre'>{this.state.resultatsJoueur["vitessefusee"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessefusee"]:"Pas encore de résultat" }</p>
+
+<div className="centre"><Link to='/classement/vitessefusee'>Classement</Link></div>
+</div>
 <div className="lienJeuRapidité presentationJeu marge20">
  <Link to='/vitessetaquin'><div className="centre titreVitesse" >🔄 Le taquin</div>
 <p className="marge20">But du jeu : Dans ce classique du jeu de réflexion, tu dois déplacer des tuiles pour créer une ligne puis une colonne. Tu as 90 secondes pour construire la ligne et la colonne. 40 points te sont donnés après la ligne et 70 points après la colonne.  </p>

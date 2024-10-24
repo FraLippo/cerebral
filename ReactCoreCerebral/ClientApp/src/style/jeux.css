@@ -214,7 +214,7 @@ body{
 
 body {
      touch-action: manipulation;
-     /* user-select: none; */
+     user-select: none; 
 }
 
 .bordureTitre {

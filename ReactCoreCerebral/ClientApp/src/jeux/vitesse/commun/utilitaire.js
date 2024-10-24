@@ -79,6 +79,8 @@ function nomType(type) {
             return "La monnaie";
         case "vitessebonneteau":
             return "Le bonneteau";
+            case "vitessefusee":
+                return "La fusée";
         default:
             return "";
     }
@@ -88,12 +90,12 @@ function nomType(type) {
 let tabJeu = ["vitesseaddition", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitesserecensement"
     , "vitessematch", "vitessecomplet", "vitessebonneteau",
     "vitessecercle", "vitesselettres", "vitesseboogle",
-    "vitessechemin", "vitessetresor", "vitessetresse", "vitessetaquin",
+    "vitessechemin", "vitessetresor", "vitessetresse", "vitessetaquin","vitessefusee",
     "vitesseoperation", "vitessecalcul", "vitessearithmetique", "vitessemonnaie",
     "vitesseecrire", "vitessenotes", "vitessepanneauroutier",
     "vitessememoire", "vitesseforme", "vitessenombre", "vitessememory", "vitessepaire"]
 
-let typeJeu = ['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm']
+let typeJeu = ['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l', 'l', 'l', 'p','p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm']
 
 let tabCategorie = ["test-memoire", "test-concentration", "test-calcul", "test-lettres", "test-culture", "test-planification"]
 

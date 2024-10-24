@@ -6,8 +6,11 @@ import Directions from './Directions'
 import Drapeaux from './Drapeaux';
 import { tabDonnees } from './data';
 import Resultat from '../commun/Resultat';
+import CompteRebours from '../commun/CompteRebours';
+import { Helmet } from 'react-helmet';
 
-const NBJEUXTOTAL = 3;
+
+const NBJEUXTOTAL = 5;
 export default class JeuRobot extends Component {
 
     constructor() {
@@ -32,7 +35,24 @@ export default class JeuRobot extends Component {
     }
 
     creerNiveaux() {
-        let tabRange = [{ min: 0, max: 2 }, { min: 2, max: 4 }];
+        let tabRange = [{ min: 0, max: 12 }, { min: 12, max: 14 }];
+        let tabNiveauComplet = [];
+        // let { min, max } = { ...tabRange[1] }
+        // let m0 = 100, m1 = 0;
+        // for (let index = 0; index < 1000; index++) {
+        //       let nbHasard = Math.floor((Math.random() * max) + min);
+        //     if (nbHasard < m0)
+        //     {
+        //         m0 = nbHasard
+        //     }
+        //     if (nbHasard > m1)
+        //     {
+        //         m1 = nbHasard
+        //     }
+
+        // }
+    //   console.log("MAx " + m1);
+    //   console.log("Min " + m0);
         let tabNiveau = [];
         for (let index = 0; index < NBJEUXTOTAL; index++) {
             let range = 0;
@@ -44,11 +64,12 @@ export default class JeuRobot extends Component {
             } while (tabNiveau.findIndex(x => x === nbHasard) !== -1);
             tabNiveau[index] = nbHasard;
         }
-        let tabNiveauComplet = [];
-        for (let j = 0; j < NBJEUXTOTAL; j++) {
-            tabNiveauComplet.push(tabDonnees[tabNiveau[j]]);
+       
+      for (let j = 0; j < NBJEUXTOTAL; j++) {
+             tabNiveauComplet.push(tabDonnees[tabNiveau[j]]);
+    //        tabNiveauComplet.push(tabDonnees[25]);
         }
-
+        console.log(tabNiveauComplet);
         return tabNiveauComplet;
 
 
@@ -59,6 +80,10 @@ export default class JeuRobot extends Component {
         this.noJeu++;
         if (this.noJeu >= NBJEUXTOTAL)
         {
+            this.setState({
+               score : this.state.score + 70
+    
+            });
             this.setState({afficheResultat : true});
         }
         else
@@ -157,7 +182,9 @@ export default class JeuRobot extends Component {
 
     clic = () => {
         if (this.depEnCours > 0) return;
-        this.mouvement();
+       
+       this.mouvement();
+    
     }
     mouvement = () => {
         this.verifierDrapeaux();
@@ -198,7 +225,7 @@ export default class JeuRobot extends Component {
         }
         else {
             if (!this.fin) {
-                message.error("Erreur. Tu peux recommencer.");
+                message.error("Erreur. Tu peux recommencer.", this.reset);
                 this.depEnCours = 0;
                 
             }
@@ -246,11 +273,21 @@ export default class JeuRobot extends Component {
         this.depEnCours = 0;
     }
 
+    finTimer = () =>
+        {
+            this.setState({afficheResultat : true});
+        }
+
     render() {
         return <div>
+            <Helmet>
+                <title>Le jeu de la fusée</title>
+                <meta name="description" content="Donne des instructions à une fusée dans un labyrinthe pour qu'il rammase tous les drapeaux." />
+
+            </Helmet>
             {this.state.afficheResultat ?
-                <Resultat score={this.state.score} typeExo='vitesserobot'></Resultat> :
-            <div className='centreGrilleRobot'>
+                <Resultat score={this.state.score} typeExo='vitessefusee'></Resultat> :
+            <div className='centreGrilleRobot noInteraction'>
                 <div className='grilleRobot'>
                     <Grille tabGrille={this.state.tabGrille}></Grille>
                     <Vaisseau position={this.state.position} rotationVaisseau={this.state.rotationVaisseau}></Vaisseau>
@@ -259,7 +296,9 @@ export default class JeuRobot extends Component {
                 <div className="espaceHaut"><Button type="primary" onClick={this.clic}>Départ</Button></div>
                 <Directions ajoutDirection={this.ajoutDirection} reset={this.reset} tabDirections={this.state.tabDirections}></Directions>
 <div className='espaceHaut'>Score : {this.state.score}</div>
-<h1>Le jeu du robot</h1>
+<div className="marge20"> <CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours></div>
+<h1>Le jeu de la fusée</h1>
+<p>La fusée doit récupérer les drapeaux. Tu peux donner des instructions à la fusée avant son départ. La flèche ⬆️ permet de faire avancer la fusée dans la direction du nez de la fusée. Les autres flèches permettent de tourner la fusée d'un quart de tour. À chaque fois que la fusée rencontre un obstacle, elle s'arrête et tu peux la faire tourner.</p>
             </div>
     }
         </div>

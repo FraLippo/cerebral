@@ -83,11 +83,11 @@ this.nomMois = moisEnFrancais[d.getMonth()];
   
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
-       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x2</span>👑</p>
-      <h3 className='centre'>🚩 Deuxième victoire consécutive pour Lili55 ! 📅</h3>
-      <div className='centre'>Pour la première fois, nous dépassons les 500 participants dans le mois.</div>
+       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x3</span>👑</p>
+      <h3 className='centre'>🚩 Troisième victoire consécutive pour Lili55 ! 📅</h3>
+      <div className='centre'>Pour la première fois, nous dépassons les 600 participants dans le mois.</div>
      
-
+    <p className='centre'><a href="https://forms.gle/JuRf8zCTCQ7r5iVs7">Donnez votre avis sur les prochains jeux.</a></p>
       
       <div className='plateauCategorie'>
       <Link to='test-memoire'> <div className='categorieVitesse'>

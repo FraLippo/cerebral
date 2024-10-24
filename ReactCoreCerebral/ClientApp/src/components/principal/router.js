@@ -101,7 +101,7 @@ const router = createBrowserRouter([
        
           {
             index : true,
-            element: <JeuRobot />,
+            element: <PresentationTemps />,
           },
           {
             path :"en",
@@ -369,7 +369,7 @@ const router = createBrowserRouter([
             
           },
           {
-            path: 'vitesserobot',
+            path: 'vitessefusee',
             element: <JeuRobot/>,
             
           },

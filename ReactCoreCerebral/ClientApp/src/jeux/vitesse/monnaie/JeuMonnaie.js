@@ -20,7 +20,6 @@ export default class JeuMonnaie extends Component {
         this.plein = 0;
         let message = this.construireTexteJeu();
         this.tabPerso = [pers1, pers2, pers3]
-        this.score = 0;
         this.fin = false;
         this.state =
         {
@@ -28,7 +27,8 @@ export default class JeuMonnaie extends Component {
             tabRendu,
             message,
             perso : this.tabPerso[0],
-            afficheResultat : false
+            afficheResultat : false,
+            score : 0
         }
     }
 
@@ -57,13 +57,19 @@ export default class JeuMonnaie extends Component {
 
     construireTexteFin(resultat, difference)
     {
+      
         if (resultat)
         {
-            this.score += (this.noPartie+1) * 8;
+            let ajoutScore = 20;
+            if (this.noPartie > 3) ajoutScore = 30;
+
+            this.setState({score : this.state.score + ajoutScore})
              return "<div>Merci</div><p className='fontMoyenne'>Bonne journée</p>"
         }
         else 
-        {  if (this.score >= 10) this.score -=10;
+        { 
+            this.setState({score : this.state.score > 10 ? this.state.score - 10 : 0})
+         
             if (difference < 0)
             {
                 return "<div>Vous vous êtes trompé.</div><p>Comme je suis honnête, je vous rends les " +  Math.abs(difference) + " € en trop.</p>"
@@ -126,14 +132,14 @@ export default class JeuMonnaie extends Component {
                         perso
                     });
                    
-                }, resultat ? 1400 : 5000);
+                }, resultat ? 1000 : 4000);
             
         }
 
 
     render() {
         return <React.Fragment>
-           {this.state.afficheResultat ? <Resultat score={this.score} typeExo='vitessemonnaie'></Resultat>:
+           {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitessemonnaie'></Resultat>:
            <div className='plateauMonnaie'>
         <div className='jeuMonnaie'>
             <div className='persoMonnaie'>
@@ -151,12 +157,13 @@ export default class JeuMonnaie extends Component {
      <Caisse type={0} tabPiece={this.state.tabCaisse} clicPiece={this.clicPiece}> </Caisse>
      
      </div><div  className='margeEcran'><Button type="primary" className="margeDroit" onClick={this.rendre}>Rendre la monnaie</Button ><Button type="primary" onClick={this.recommencer}>Recommencer</Button></div>
-     <div className="centre"><CompteRebours finTimer={this.finTimer} temps={60}></CompteRebours></div>
+   
            <div>Rendu monnaie</div>
            <div className='noInteractionMonnaie'>
            <Caisse type={100} tabPiece={this.state.tabRendu}> </Caisse>
            </div>
-
+  <div className='centre'>Score : {this.state.score}</div>
+     <div className="centre"><CompteRebours finTimer={this.finTimer} temps={60}></CompteRebours></div>
            </div>
     }
         </React.Fragment>

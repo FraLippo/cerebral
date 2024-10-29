@@ -226,6 +226,7 @@ export default class JeuRobot extends Component {
         else {
             if (!this.fin) {
                 message.error("Erreur. Tu peux recommencer.", this.reset);
+                this.fin = true;
                 this.depEnCours = 0;
                 
             }
@@ -251,7 +252,8 @@ export default class JeuRobot extends Component {
     }
 
     ajoutDirection = (no) => {
-        if (this.depEnCours > 0) return;
+        console.log(this.fin);
+        if (this.depEnCours > 0 || this.fin) return;
         let nouveauTabDirections = [...this.state.tabDirections];
         nouveauTabDirections.push({ etat: 'repos', no });
         this.setState({ tabDirections: nouveauTabDirections });

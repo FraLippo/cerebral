@@ -41,7 +41,14 @@ export default class TestLettres extends Component {
       <p>Découvrez notre série de jeux de mots fascinants et stimulants pour mettre à l'épreuve votre vocabulaire, améliorer votre agilité verbale et vous amuser tout en enrichissant votre langue ! </p>
       <GraphiqueRapidite categorie='l' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
       <div className='jeuVitesse marge20'>
-              
+      <div className="lienJeuRapidité presentationJeu marge20">
+      <Link to='/vitessechasse'><div className="centre titreVitesse" >📯 La chasse aux mots</div>
+      <p className="marge20">But du jeu : Trouver des mots à partir des lettres disséminées dans une grille. Terminer une grille rapporte un bonus de 30 points. Plus le mot est long, plus tu gagnes de points. Le temps alloué est de 90 secondes. </p>
+     </Link>
+     <p className='centre'>{this.state.resultatsJoueur["vitessechasse"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessechasse"]:"Pas encore de résultat" }</p>
+
+      <div className="centre"><Link to='/classement/vitessechasse'>Classement</Link></div>
+    </div>
               <div className="lienJeuRapidité presentationJeu marge20">
       <Link to='/vitesselettres'><div className="centre titreVitesse" >✍ Les lettres manquantes</div>
       <p className="marge20">But du jeu : Retrouver les lettres manquantes dans les mots. Les lettres sont cachées sous des carrés de couleur. L'ordre pour retrouver les lettres associées aux couleurs est toujours le même : bleu, rouge et jaune. Chaque bonne réponse rapporte 3 point puis 4 points quand il y a 2 lettres à retrouver. Chaque mauvaise réponse te fait perdre 1 point, le fait de passer te coûte 2 points. Le temps alloué est de 2 minutes. </p>
@@ -61,7 +68,7 @@ export default class TestLettres extends Component {
     </div>
     <div className="lienJeuRapidité presentationJeu marge20">
       <Link to='/vitesseboogle'> <div className="centre titreVitesse" >🖋️ Le Boogle</div>
-        <p className="marge20">But du jeu : Créer des mots à partir de lettres. La lettre centrale est obligatoire dans les mots. Les mots acceptés sont ceux du Scrabble. Chaque mot de 3 ou 4 lettres rapporte 3 ou 4 points. Les points sont ensuite doublés pour les mots plus longs. Si te trouves 6 mots en moins de 90 s tu obtiens un bonus de 20 points. </p>
+        <p className="marge20">But du jeu : Créer des mots à partir de lettres. La lettre centrale est obligatoire dans les mots. Les mots acceptés sont ceux du Scrabble. Il faut créer des mots de plus de 4 lettres. Les points sont doublés pour les mots les plus longs. Si tu trouves 9 mots en moins de 90 s, tu obtiens un bonus de 40 points. </p>
    </Link>
    <p className='centre'>{this.state.resultatsJoueur["vitesseboogle"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesseboogle"]:"Pas encore de résultat" }</p>
 

@@ -2234,6 +2234,118 @@ svg:hover {
     }
 }
 
+/* chasse */
+
+
+/* Chasse */
+
+.espaceJeu {
+    display: flex;
+    user-select: none;
+    flex-direction: row;
+}
+
+
+.espaceJeuChasse {
+    width: 50%;
+
+}
+
+.espaceGrilleChasse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.espaceInfoChasse {
+    width: 40%
+}
+
+.grilleChasse {
+    margin: 10px auto;
+    font-size: 1.2em;
+    display: grid;
+}
+
+.grilleChasse4 {
+    grid-template-columns: repeat(4, 65px);
+    grid-template-rows: repeat(4, 65px);
+}
+
+.caseCouleurChasse4 {
+    animation: fadeInFromNone 1s linear forwards;
+    border: 2px #e412a2 solid;
+}
+
+
+.lettreAide4 {
+    width: 65px;
+    height: 65px;
+}
+
+.utilise {
+    visibility: hidden;
+}
+
+.nonUtilise {
+    background: white;
+}
+
+.enCours {
+    background-color: #e4caea;
+}
+
+.lettresChasse {
+    margin-top: 50px;
+    height: 40px;
+    line-height: 40px;
+    color: purple;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #f4f3f3;
+}
+
+.msgInfoChasse {
+    height: 40px;
+}
+
+.aideChasse {
+    animation: fadeInFromNone 2s linear forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.caseChasse {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1000px) {
+    .espaceJeu {
+        flex-direction: column;
+    }
+
+    .espaceJeuChasse {
+        width: 100%;
+
+    }
+
+    .espaceInfoChasse {
+        width: 100%
+    }
+
+    .lettresChasse {
+        margin-top: 10px;
+    }
+}
 
   
  

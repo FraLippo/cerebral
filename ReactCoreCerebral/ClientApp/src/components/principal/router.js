@@ -75,6 +75,7 @@ const JeuBoogle = React.lazy(() => import('../../jeux/vitesse/boogle/JeuBoogle')
 const JeuTaquin = React.lazy(() => import('../../jeux/vitesse/taquin/JeuTaquin'));
 const JeuBonneteau = React.lazy(() => import('../../jeux/vitesse/bonneteau/JeuBonneteau'));
 const JeuRobot = React.lazy(() => import('../../jeux/vitesse/robot/JeuRobot'));
+const JeuChasse = React.lazy(() => import('../../jeux/vitesse/chasse/JeuChasse'));
 const JeuComplet = React.lazy(() => import('../../jeux/vitesse/complet/JeuComplet'));
 const TestMemoire = React.lazy(() => import('./TestMemoire'));
 const JeuCreationRobot = React.lazy(() => import('./../../jeux/vitesse/robot/CreationGrilleRobot'));
@@ -107,10 +108,10 @@ const router = createBrowserRouter([
             path :"en",
             element: <PageFaute />,
           },
-          {
-            path :"c",
-            element: <JeuCreationRobot />,
-          },
+          // {
+          //   path :"c",
+          //   element: <JeuCreationRobot />,
+          // },
           {
             path :"defi",
             element: <Presentation />,
@@ -346,6 +347,11 @@ const router = createBrowserRouter([
           {
             path: 'brain-challenge/:no',
             element: <PageFaute/>
+            
+          },
+          {
+            path: 'vitessechasse',
+            element: <JeuChasse/>,
             
           },
           {

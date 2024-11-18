@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet';
 import Resultat from '../commun/Resultat';
 
 
-const NOTIRAGEMAX = 6;
+const NOTIRAGEMAX = 9;
 
 export default class JeuBoogle extends Component {
 
@@ -56,7 +56,7 @@ export default class JeuBoogle extends Component {
 
     calculScore = (mot) => {
         let score = this.state.score;
-        if (mot.length <= 4) {
+        if (mot.length <= 5) {
             score += mot.length;
         }
         else {
@@ -69,8 +69,8 @@ export default class JeuBoogle extends Component {
 
     envoyerMessage = () => {
         if (this.fin) return;
-        if (this.state.lettresEnCours.length <= 2) {
-            this.setState({ msgInfo: "Les mots doivent avoir plus de 2 lettres." });
+        if (this.state.lettresEnCours.length <= 4) {
+            this.setState({ msgInfo: "Les mots doivent avoir plus de 4 lettres." });
             return;
         }
         if (this.state.lettresEnCours.find(l => l === this.state.tabLettres[3].lettre) === undefined) {
@@ -98,7 +98,9 @@ export default class JeuBoogle extends Component {
                     let noTirage = this.state.noTirage + 1;
                     if (noTirage === NOTIRAGEMAX) {
                         this.fin = true;
-                        message.info("Bravo, tu as réussi !", this.finJeu)
+                        this.setState({ score : this.state.score + 40 });
+
+                        message.info("Bravo, tu as réussi ! (+40 points)", this.finJeu)
                     }
                     else {
                         this.setState({
@@ -157,7 +159,7 @@ export default class JeuBoogle extends Component {
                     </div>
                     <div className='centre'><CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours></div>
                     <div className="centre titreJeu">Le jeu du Boogle</div>
-                    <p>Trouve un mot de plus de 2 lettres avec les lettres présentes sur le plateau de jeu. La lettre au centre doit obligatoirement être présente dans le mot. On peut réutiliser la même lettre plusieurs fois. Plus le mot est long, plus tu marques des points.</p>
+                    <p>Trouve un mot de plus de 4 lettres avec les lettres présentes sur le plateau de jeu. La lettre au centre doit obligatoirement être présente dans le mot. On peut réutiliser la même lettre plusieurs fois. Plus le mot est long, plus tu marques des points.</p>
                 </div>
             }
 

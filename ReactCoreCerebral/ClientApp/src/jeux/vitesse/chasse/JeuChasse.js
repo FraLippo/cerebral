@@ -160,18 +160,22 @@ export default class JeuChasse extends Component {
     reset = () => {
         let nouveauTabLettres = [...this.state.tabLettres];
         let nouveauTabAide = [...this.state.tabAide];
-
+        console.log(this.state.score)
         this.setState({
             tabLettres: this.remiseAZero(nouveauTabLettres),
             tabAide: this.remiseAZero(nouveauTabAide),
             lettresEnCours: [],
-            msgInfo: ''
+            msgInfo: '',
+         
         })
     }
 
 
 
     abandon = () => {
+        this.setState({
+            score : this.state.score <= 10 ? 0 : this.state.score - 10
+        })
         this.creerNouveauxTableaux();
     }
 

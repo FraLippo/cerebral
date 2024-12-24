@@ -123,4 +123,38 @@ export default class Logique {
 
         return gridHelp;
     }
+
+    static findSunkBoat(grid) {
+        let flatGrid = grid
+            .slice(0, GRID_SIZE)
+            .flatMap((row, rowIndex) => 
+                row.slice(0, GRID_SIZE)
+                    .map((cell, colIndex) => ({cell, row: rowIndex, col: colIndex}))
+            );
+      
+        // Find all ship start positions
+        const shipStarts = flatGrid.filter(({cell}) => cell.isStart);
+        
+        // Group hit cells by ship
+        const sunkShips = shipStarts.filter(({cell, row, col}) => {
+            const shipCells = [];
+            for(let i = 0; i < cell.shipSize; i++) {
+                const checkPos = cell.isHorizontal 
+                    ? {row: row, col: col + i}
+                    : {row: row + i, col: col};
+                
+                const cellAtPos = flatGrid.find(pos => 
+                    pos.row === checkPos.row && pos.col === checkPos.col
+                );
+                
+                shipCells.push(cellAtPos);
+            }
+    
+            // Check if all cells of this ship are hit
+
+            return shipCells.every(pos => pos.cell.state === 1);
+        });
+
+        return sunkShips;
+    }
 }

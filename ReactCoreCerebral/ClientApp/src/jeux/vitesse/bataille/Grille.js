@@ -43,7 +43,7 @@ export default class Grille extends Component {
 
     render() {
         return <div className='grilleNav'>{this.props.tabBataille.map((ligne, i) => ligne.map((info, j) =>
-            <div onClick={this.clic} key={(i * 10) + j} id={(i * 10) + j} className={(j === GRID_SIZE || i === GRID_SIZE) ? 'caseIndiceNav' : info.ship === 1 ? this.choixNavire(info) : 'caseNav'} >{j === GRID_SIZE ^ i === GRID_SIZE ? info.ship : (info.state === 1 ? '🔥' : info.state === 2 ? '❌' : '')}</div>))}
+            <div onClick={this.clic} key={(i * 10) + j} id={(i * 10) + j} className={(j === GRID_SIZE || i === GRID_SIZE) ? 'caseIndiceNav' : info.ship === 1 ? this.choixNavire(info) : 'caseNav'} >{j === GRID_SIZE ^ i === GRID_SIZE ? info.ship :  info.state === 2 ? '❌' : ''}</div>))}
         </div>
     }
 }

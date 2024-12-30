@@ -83,10 +83,10 @@ this.nomMois = moisEnFrancais[d.getMonth()];
   
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
-       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x4</span>👑</p>
-      <h3 className='centre'>🚩 Quatrième victoire consécutive pour Lili55 en novembre ! 📅</h3>
-      <p className="centre">Qui sera le dernier gagnant de 2024 ?</p>
-     
+       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x5</span>👑</p>
+      <h3 className='centre'>🚩 Lili55 a remporté le concours de l'année 2024 avec une nouvelle victoire en décembre ! 📅</h3>
+      <p className="centre">Qui sera le premier gagnant de 2025 ?</p>
+      <div className="centre"><img src={x6} width="200" height="200" alt="vainqueur 2024"></img></div>
      
       
       <div className='plateauCategorie'>

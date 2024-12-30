@@ -42,7 +42,15 @@ export default class TestPlanification extends Component {
       <GraphiqueRapidite categorie='p' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
 
       <div className='jeuVitesse marge20'>
+      <div className="lienJeuRapidité presentationJeu marge20">
+<Link to='/vitessebataille'><div className="centre titreVitesse" >🚢 La bataille navale</div>
 
+<p className="marge20">But du jeu : Retrouver tous les bateaux dans une grille. 2 indices pour vous aider. 1) Le nombre de cases où se trouvent les bateaux sur une ligne ou une colonne est indiqué sur les côtés. 2) Le fait que les bateaux ne peuvent pas se toucher (même en diagonale). Vous pouvez tirer 3 coups dans l'eau. Le temps alloué est de 3 min. 50 points de bonus si vous finissez une grille. Il y a une part de chance dans ce jeu.</p>
+ </Link>
+ <p className='centre'>{this.state.resultatsJoueur["vitessebataille"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessebataille"]:"Pas encore de résultat" }</p>
+
+<div className="centre"><Link to='/classement/vitessebataille'>Classement</Link></div>
+</div>
       <div className="lienJeuRapidité presentationJeu marge20">
 <Link to='/vitessefusee'><div className="centre titreVitesse" >🚀 La fusée</div>
 

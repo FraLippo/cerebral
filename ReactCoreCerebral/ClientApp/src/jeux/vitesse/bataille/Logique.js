@@ -157,4 +157,6 @@ export default class Logique {
 
         return sunkShips;
     }
+
+
 }

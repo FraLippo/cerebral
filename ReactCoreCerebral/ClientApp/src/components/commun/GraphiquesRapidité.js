@@ -37,7 +37,7 @@ export default class GraphiqueRapidite extends Component {
             message = 'Ton habilité verbale est ';
         }
         else if (this.props.categorie === 'p') {
-            this.max = 450;
+            this.max = 550;
             message = 'Ta capacité de planification est ';
         }
         else if (this.props.categorie === 'c') {

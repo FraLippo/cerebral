@@ -30,6 +30,11 @@ import building3 from '../../../images/building3.jpg';
 import building4 from '../../../images/building4.jpg';
 import building5 from '../../../images/building5.jpg';
 
+import mand1 from '../../../images/mand1.jpg';
+import mand2 from '../../../images/mand2.jpg';
+import mand3 from '../../../images/mand3.jpg';
+import mand4 from '../../../images/mand4.jpg';
+import mand5 from '../../../images/mand5.jpg';
 
 import vert from '../../../images/vert.jpg';
 import rouge from '../../../images/rouge.jpg';
@@ -101,19 +106,30 @@ export default class Logique {
                 case 4: return collier5;
             }
         }
+        else if (type === "manda") {
+            switch (no) {
+                case 0: return mand1;
+                case 1: return mand2;
+                case 2: return mand3;
+                case 3: return mand4;
+                case 4: return mand5;
+            }
+        }
 
     }
 
     static typeImage(noPartie){
-        while (noPartie > 4){
-            noPartie = noPartie - 5;
+        while (noPartie > 5){
+            noPartie = noPartie - 6;
         }
         switch (noPartie) {
             case 0: return "ballet";
             case 1: return "collier";
-            case 2: return "building";
-            case 3: return "fusee";
-            case 4: return "bouquet";
+             case 2: return "manda";
+            case 3: return "building";
+            case 4: return "fusee";
+            case 5: return "bouquet";
+           
         }
 
     }

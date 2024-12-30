@@ -103,7 +103,7 @@ const router = createBrowserRouter([
        
           {
             index : true,
-            element: <JeuBataille />,
+            element: <PresentationTemps />,
           },
           {
             path :"en",

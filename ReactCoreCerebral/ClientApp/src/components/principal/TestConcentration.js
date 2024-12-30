@@ -95,7 +95,7 @@ export default class TesConcentration extends Component {
       <div className="lienJeuRapidité presentationJeu marge20">
         <Link to='/vitesseburger'><div className="centre titreVitesse">🍔 Préparer des burgers</div>
 
-        <p className="marge20">But du jeu : Créer des burger en plaçant les ingrédients de la recette dans l'ordre. Chaque burger créé rapporte 8 points. Le temps alloué pour obtenir le meilleur score est de 50 secondes.</p>
+        <p className="marge20">But du jeu : Créer des burger en plaçant les ingrédients de la recette dans l'ordre. Chaque burger créé rapporte 8 points. Le temps alloué pour obtenir le meilleur score est de 40 secondes.</p>
       </Link>  <p className='centre'>{this.state.resultatsJoueur["vitesseburger"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesseburger"]:"Pas encore de résultat" }</p>
 
         <div className="centre"><Link to='/classement/vitesseburger'>Classement</Link></div>

@@ -51,7 +51,7 @@ export default class TestLettres extends Component {
     </div>
               <div className="lienJeuRapidité presentationJeu marge20">
       <Link to='/vitesselettres'><div className="centre titreVitesse" >✍ Les lettres manquantes</div>
-      <p className="marge20">But du jeu : Retrouver les lettres manquantes dans les mots. Les lettres sont cachées sous des carrés de couleur. L'ordre pour retrouver les lettres associées aux couleurs est toujours le même : bleu, rouge et jaune. Chaque bonne réponse rapporte 3 point puis 4 points quand il y a 2 lettres à retrouver. Chaque mauvaise réponse te fait perdre 1 point, le fait de passer te coûte 2 points. Le temps alloué est de 2 minutes. </p>
+      <p className="marge20">But du jeu : Retrouver les lettres manquantes dans les mots. Les lettres sont cachées sous des carrés de couleur. L'ordre pour retrouver les lettres associées aux couleurs est toujours le même : bleu, rouge et jaune. Chaque bonne réponse rapporte 3 point puis 4 points quand il y a 2 lettres à retrouver. Chaque mauvaise réponse te fait perdre 1 point, le fait de passer te coûte 2 points. Le temps alloué est de 80 secondes. </p>
      </Link>
      <p className='centre'>{this.state.resultatsJoueur["vitesselettres"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesselettres"]:"Pas encore de résultat" }</p>
 
@@ -68,13 +68,17 @@ export default class TestLettres extends Component {
     </div>
     <div className="lienJeuRapidité presentationJeu marge20">
       <Link to='/vitesseboogle'> <div className="centre titreVitesse" >🖋️ Le Boogle</div>
-        <p className="marge20">But du jeu : Créer des mots à partir de lettres. La lettre centrale est obligatoire dans les mots. Les mots acceptés sont ceux du Scrabble. Il faut créer des mots de plus de 4 lettres. Les points sont doublés pour les mots les plus longs. Si tu trouves 9 mots en moins de 90 s, tu obtiens un bonus de 40 points. </p>
+        <p className="marge20">But du jeu : Créer des mots à partir de lettres. La lettre centrale est obligatoire dans les mots. Les mots acceptés sont ceux du Scrabble. Il faut créer des mots de plus de 3 lettres. Les points sont doublés pour les mots les plus longs. Si tu trouves 9 mots en moins de 90 s, tu obtiens un bonus de 40 points. </p>
    </Link>
    <p className='centre'>{this.state.resultatsJoueur["vitesseboogle"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesseboogle"]:"Pas encore de résultat" }</p>
 
       <div className="centre"><Link to='/classement/vitesseboogle'>Classement</Link></div>
     </div>
       </div> 
+<h2>Nos autres jeux de mots</h2>
+<p>Vous aimez les jeux de mots et de lettres, n'hésitez pas à essayer nos autres jeux.</p>
+<div className='fontMoyenne centre'><a href="https://concours.evalquiz.com/mots-scrable">Le Scrabble solitaire</a></div>
+<div className='fontMoyenne centre'><a href="https://cerebral.evalquiz.com/chiffres-lettres">Le mot le plus long</a></div>
   <h2>Les jeux de mots</h2>
   <p>Les jeux sur les mots ne sont pas seulement divertissants, ils offrent également de nombreux avantages cognitifs et éducatifs. En engageant votre esprit dans des activités ludiques telles que les mots croisés, les anagrammes et les jeux de mots, vous stimulez plusieurs aspects de votre intelligence linguistique et cognitive.</p>
 

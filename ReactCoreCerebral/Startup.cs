@@ -2,6 +2,7 @@ using CerebralCore.Donnees;
 using CerebralCore.Hub;
 using CerebralCore.Models;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 
 using Microsoft.EntityFrameworkCore;
 using ReactCoreCerebral.Models;
+using ReactCoreCerebral.Donnees;
 
 namespace ReactCoreCerebral
 {
@@ -26,8 +28,20 @@ namespace ReactCoreCerebral
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("https://brain-games.evalquiz.com", "http://localhost:5173")
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+                });
+            });
+
+            // Vos services existants...
             services.AddControllersWithViews();
             services.AddSingleton<IDictionnaire, Dictionnaire>();
+            services.AddSingleton<IDictionaryEnglish, DictionaryEnglish>();
             services.AddDbContext<CerebralContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("CerebralContext")));
             services.AddDbContext<TableauContext>(options =>
@@ -58,8 +72,9 @@ namespace ReactCoreCerebral
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
+            app.UseCors();
             app.UseRouting();
-
+ 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

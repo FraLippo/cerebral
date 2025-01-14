@@ -5,6 +5,7 @@ import { readFirstName } from '../../../components/commun/localStorage';
 import { moisEnFrancais } from '../../../components/commun/utilitaire';
 import { nomType, tabJeu } from './utilitaire';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 export default class ClassementMois extends Component {
 
@@ -38,7 +39,7 @@ export default class ClassementMois extends Component {
                dataIndex: 'prenom',
                key: 'prenom',
                render: (prenom) => {
-                   return prenom.includes('@') ? prenom.split('@')[0] : prenom;
+                   return  <span className={prenom.includes('§') ? "bleuV": "mauve" }>{prenom.includes('@') ? prenom.split('@')[0] : prenom}</span>;
                }
 
            },
@@ -94,7 +95,7 @@ export default class ClassementMois extends Component {
             score = resultat.score
         }
 
-        return <tr key={i}><td>{nomJeu}</td><td>{score}</td><td><a href={lien}>Jouer</a></td></tr>
+        return <tr key={i}><td>{nomJeu}</td><td>{score}</td><td><Link to={lien}>Jouer</Link></td></tr>
     }
 
     render() {

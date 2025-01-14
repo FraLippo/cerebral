@@ -138,7 +138,7 @@ function lienAutresJeux(jeu) {
         }
     }
 
-    return { groupe: type === 'm' ? 'Mémoire' : type === 'l' ? 'Lettres et mots' : type === 'c' ? 'Calcul' : 'Réflexion', tabListeJeux }
+    return { groupe: type === 'm' ? 'Mémoire' : type === 'l' ? 'Lettres et mots' : type === 'c' ? 'Calcul'  : 'Réflexion', tabListeJeux }
 }
 
 export { verifierStatus, nomType, tabJeu, lienAutresJeux, typeJeu, lienVersCategorie };

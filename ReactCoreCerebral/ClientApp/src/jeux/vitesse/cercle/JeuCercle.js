@@ -6,7 +6,7 @@ import { message } from 'antd';
 import Logique from './Logique';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat';
-
+import { Helmet } from 'react-helmet';
 
 export default class JeuCercle extends Component {
 
@@ -133,7 +133,12 @@ export default class JeuCercle extends Component {
 
   render() {
 
-    return <div> {this.state.finJeu ?
+    return <div>
+       <Helmet>
+                <title>Les cercles de mots</title>
+                <meta name="description" content="Un jeu simple et facile pour les amateurs de jeux de lettres, il suffit de retrouver un mot caché autour d'un cercle." />
+            </Helmet>
+       {this.state.finJeu ?
       <Resultat score={this.score} typeExo='vitessecercle'></Resultat> : 
       <div> <div className="plateauCercle">
       {this.state.tabLettresCamemberts.map((infoCamembert, i) =>

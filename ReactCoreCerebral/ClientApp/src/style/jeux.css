@@ -22,7 +22,9 @@ body{
    
  }
  
- 
+ .mauve{
+     color:#c12664;
+ }
 
  .categorieGeneral
  {
@@ -95,12 +97,14 @@ body{
 
 
  .rotationVic
- {
- 
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-      animation-name: rotating-text-2;
- }
+{
+
+   animation: rotateWord 3s ease-in-out infinite;
+   animation-delay: 1s;
+   transform-origin: center center;
+   display: inline-block;
+    
+}
  .rotationEspace
  {
       height: 65px;
@@ -108,17 +112,17 @@ body{
       color: blue;
  }
  
- @keyframes rotating-text-2 {
-      0% {
-        transform: translateY(100%);
-       
-      }
-      100% {
-        transform: translateY(0);
-      
-      }
- 
-    }
+ @keyframes rotateWord {
+     0% {
+       transform: rotate3d(0, 1, 0, 00deg);
+     }
+     80% { /* Complete rotation by 80% of animation time */
+       transform: rotate3d(0, 1, 0, 360deg);
+   }
+   100% { /* Pause for remaining 20% of animation time */
+       transform: rotate3d(0, 1, 0, 360deg);
+   }
+   }
 
 
 

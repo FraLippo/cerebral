@@ -96,7 +96,7 @@ class JeuSolitaire extends Component {
                     <div className="infoFamille">
                         <h1 className="couleurTitre espaceHaut">La tuile solitaire</h1>
                         <p>Clique sur la tuile solitaire</p>
-                        <div className="centre"><CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours>
+                        <div className="centre"><CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours>
 
                         </div>
                     </div></div>}</div>

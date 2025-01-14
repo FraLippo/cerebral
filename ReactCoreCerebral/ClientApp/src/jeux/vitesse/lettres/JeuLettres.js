@@ -125,7 +125,7 @@ export default class JeuLettres extends Component {
                 <div className="marge20"><Reponse tabLettres={this.alphabet} clicReponse={this.clicReponse}></Reponse></div>
                 <div className="marge20"><Button onClick={this.passer}>Passer</Button></div>
                 <div>Passer te fait perdre 2 points</div>
-                <div className="centre marge10"><CompteRebours temps={120} finTimer={this.finTimer}></CompteRebours></div>
+                <div className="centre marge10"><CompteRebours temps={80} finTimer={this.finTimer}></CompteRebours></div>
 
             </div>
     }

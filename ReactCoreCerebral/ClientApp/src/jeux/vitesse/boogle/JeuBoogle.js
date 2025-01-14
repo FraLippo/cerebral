@@ -69,8 +69,8 @@ export default class JeuBoogle extends Component {
 
     envoyerMessage = () => {
         if (this.fin) return;
-        if (this.state.lettresEnCours.length <= 4) {
-            this.setState({ msgInfo: "Les mots doivent avoir plus de 4 lettres." });
+        if (this.state.lettresEnCours.length <= 3) {
+            this.setState({ msgInfo: "Les mots doivent avoir plus de 3 lettres." });
             return;
         }
         if (this.state.lettresEnCours.find(l => l === this.state.tabLettres[3].lettre) === undefined) {
@@ -135,8 +135,8 @@ export default class JeuBoogle extends Component {
     render() {
         return <div>
             <Helmet>
-                <title>Jeu de lettres : Le jeu des 6 mots</title>
-                <meta name="description" content="Un jeu de lettres en ligne facile, gratuit, sans inscription, où vous devez trouver 6 mots avec 7 lettres. Pour les amateurs de jeux de lettres de type Motus, Boogle, Slam..." />
+                <title>Jeu de lettres : Le jeu des 9 mots</title>
+                <meta name="description" content="Un jeu de lettres en ligne facile, gratuit, sans inscription, où vous devez trouver 9 mots avec 7 lettres. Pour les amateurs de jeux de lettres de type Motus, Boogle, Slam..." />
             </Helmet>
             {this.state.finJeu ?
                 <Resultat score={this.state.score} typeExo='vitesseboogle'></Resultat> :
@@ -159,7 +159,7 @@ export default class JeuBoogle extends Component {
                     </div>
                     <div className='centre'><CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours></div>
                     <div className="centre titreJeu">Le jeu du Boogle</div>
-                    <p>Trouve un mot de plus de 4 lettres avec les lettres présentes sur le plateau de jeu. La lettre au centre doit obligatoirement être présente dans le mot. On peut réutiliser la même lettre plusieurs fois. Plus le mot est long, plus tu marques des points.</p>
+                    <p>Trouve un mot de plus de 3 lettres avec les lettres présentes sur le plateau de jeu. La lettre au centre doit obligatoirement être présente dans le mot. On peut réutiliser la même lettre plusieurs fois. Plus le mot est long, plus tu marques des points.</p>
                 </div>
             }
 

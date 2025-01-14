@@ -12,12 +12,15 @@ namespace ReactCoreCerebral.Controllers
         private CerebralContext _db;
         private TableauContext _dbTableau;
         private readonly IDictionnaire LesMots;
+        private readonly IDictionaryEnglish Words;
 
-        public MotController(CerebralContext db, TableauContext dbTableau, IDictionnaire lesMots)
+        public MotController(CerebralContext db, TableauContext dbTableau, IDictionnaire lesMots, IDictionaryEnglish words)
         {
             _db = db;
             _dbTableau = dbTableau;
             LesMots = lesMots;
+            Words = words;
+
         }
 
         public DTOMotLettres ConstructionManche(int niveau)
@@ -30,6 +33,15 @@ namespace ReactCoreCerebral.Controllers
         public IActionResult VerifierMot(string mot)
         {
             var verif = LesMots.VerifierMot(mot);
+            var resultat = verif != null;
+            return Ok(new { resultat });
+
+        }
+
+
+        public IActionResult CheckWords(string mot)
+        {
+            var verif = Words.VerifierMot(mot);
             var resultat = verif != null;
             return Ok(new { resultat });
 

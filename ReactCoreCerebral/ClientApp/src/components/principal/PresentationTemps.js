@@ -135,7 +135,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
 
 <p>De plus, les jeux cognitifs favorisent le développement des compétences cognitives essentielles telles que la logique, la créativité et la flexibilité mentale. En confrontant votre esprit à des situations variées, tu entraînes ta capacité à penser de manière critique et à trouver des solutions innovantes.</p>
 <p>L'avantage de ces jeux ne se limite pas à l'amélioration des compétences cognitives. Des études ont montré que l'engagement régulier dans des activités cognitives peut contribuer à ralentir le déclin cognitif lié à l'âge et à promouvoir la santé mentale globale.</p>
-
+<p>Ces jeux sont aussi disponibles en anglais <a href="https://brain-games.evalquiz.com">brain-games.evalquiz.com</a></p>
       <h2>Nos autres jeux</h2>
       <p>Dans nos défis tu peux trouver des autres séries de petits jeux cérebraux.</p>
       <div  className="margeHaut defiVitesse">

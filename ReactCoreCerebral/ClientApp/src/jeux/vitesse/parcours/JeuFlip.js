@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import parcours from '../../../images/parcours.png'
 
 const NUMBER_OF_PIPES = 4; // Nombre de pipes à afficher
-const PIPE_SPACING = 200; // Distance entre chaque pipe
 
-export default function JeuParcours({nbPipes ,jeuReussi}) {
-    const gameWidth = 400;
+
+export default function JeuParcours({nbPipes ,jeuReussi, espacePipe}) {
+    const gameWidth = 360;
     const gameHeight = 400;
     const birdSize = 30;
     const pipeWidth = 60;
@@ -13,7 +13,7 @@ export default function JeuParcours({nbPipes ,jeuReussi}) {
     const gravity = 0.5;
     const jumpStrength = -8;
     const moveSpeed = 5;
-    
+    const PIPE_SPACING = espacePipe; // Distance entre chaque pipe
 
     const [birdY, setBirdY] = useState(150);
     const [birdX, setBirdX] = useState(50);
@@ -54,7 +54,7 @@ export default function JeuParcours({nbPipes ,jeuReussi}) {
                     (birdY < pipe.height || birdY > pipe.height + pipeGap)
                 ) {
                       setIsGameOver(true);
-                      restartGame();
+                     restartGame();
                 }
             });
 
@@ -130,7 +130,7 @@ export default function JeuParcours({nbPipes ,jeuReussi}) {
                 textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
                 fontWeight: 'bold'
             }}>
-                Pipes passés: {pipesPassed}/{nbPipes}
+                Tuyaux passés : {pipesPassed}/{nbPipes}
             </div>
             
             {/* Message de fin */}

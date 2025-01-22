@@ -25,11 +25,12 @@ export default class JeuAlz extends Component {
             score :0
         };
         this.noPartie = 0;
-        this.tabPartie = [{  nbElements: 3 }, { nbElements: 4 }, {nbElements: 5 }]
+        this.tabPartie = [{  nbElements: 3, espacePipe : 280 }, { nbElements: 4, espacePipe : 200 }, {nbElements: 5, espacePipe : 180 }]
         this.erreur = 0;
         this.erreurTotal = 0;
         this.stop = false;
         this.nbPipes = 3;
+        this.espacePipe = 280;
 
     }
    
@@ -103,32 +104,47 @@ export default class JeuAlz extends Component {
                 }
             }
             this.erreur = this.state.tabMots.length - trouve;
+            score += 7 * trouve;
             this.stop = true;
             if (this.erreur === 0) {
                 message.success("Bravo", 2, this.nouvellePartie);
-                score += 7;
+            
             }
             else {
-                message.error("Perdu, fautes : " + this.erreur, 2, this.nouvellePartie);
+                console.log(this.erreur);
+                message.error(this.erreur +  (this.erreur == 1 ? " faute" : " fautes"), 2, this.nouvellePartie);
             }
         }
-        this.setState({ tabChoix: nouveauChoix });
+        this.setState({ tabChoix: nouveauChoix,
+            score
+         });
     }
     nouvellePartie = () => {
         this.noPartie++;
       
-        this.nbPipes = this.tabPartie[this.noPartie].nbElements;
+       
         this.erreurTotal += this.erreur;
         if (this.noPartie === this.tabPartie.length)
         {
-            this.setState({score : this.state.score + 40,
+            if (this.state.score > 83)
+            {
+                this.setState({score : this.state.score + 50,
+                    afficheResultat : true
+                });
+            }
+            else
+            {
+                 this.setState({
                 afficheResultat : true
             });
+            }
+           
         }
         else
         {
             this.stop = false;
-           
+            this.nbPipes = this.tabPartie[this.noPartie].nbElements;
+            this.espacePipe = this.tabPartie[this.noPartie].espacePipe;
             this.erreur = 0;
             this.setState({ tabMots: this.tirageDonnees(),
                 tabChoix: new Array(this.tabPartie[this.noPartie].nbElements).fill("vide"),
@@ -146,14 +162,14 @@ export default class JeuAlz extends Component {
        
         return <div>
              <Helmet>
-                    <title>Test mémoire de long terme</title>
-                    <meta name="description" content="Un jeu de mémorisation pour évaluer son âge mental. Retenez une liste de mots pour ensuite pouvoir choisir les dessins correspondants." />
-                </Helmet>
+                    <title>Jeu mémoire de long terme</title>
+                    <meta name="description" content="Testez vos capacités cognitives avec notre jeu de mémoire inspiré des tests d'Alzheimer. Améliorez votre mémoire tout en vous amusant et évaluez vos performances cérébrales." />
+                    </Helmet>
              {this.state.afficheResultat ?  <Resultat score={this.state.score} typeExo='vitessealz'></Resultat> :
         <div> <div className='titreJeu'>Mémoire de long terme</div> 
         {this.state.afficheEtat === 'liste' ? <div><Mots finMots={this.finMots}  tabMots={this.state.tabMots}></Mots> </div>:
           
-          this.state.afficheEtat === 'flip' ?  <JeuParcours jeuReussi={this.jeuReussi} nbPipes={this.nbPipes}></JeuParcours> :<div><div className="margeHaut10 centre fontMoyenne">Choisir les images qui correspondent aux mots que tu as retenus. L'ordre n'a aucune importance.</div>
+          this.state.afficheEtat === 'flip' ?  <JeuParcours jeuReussi={this.jeuReussi} espacePipe={this.espacePipe} nbPipes={this.nbPipes}></JeuParcours> :<div><div className="margeHaut10 centre fontMoyenne">Choisir les images qui correspondent aux mots que tu as retenus. L'ordre n'a aucune importance.</div>
             <Choix tabChoix={this.state.tabChoix} ></Choix>
            
             <Images tabImages={this.state.tabImages} choixImage={this.choixImage}></Images>
@@ -162,7 +178,7 @@ export default class JeuAlz extends Component {
         </div>}
         </div>}
         <div className='centre'>
-          <div className="marge20"> <CompteRebours temps={30} finTimer={this.finTimer}></CompteRebours></div>
+          <div className="marge20"> <CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours></div>
                <div className="marge20">Score : {this.state.score}</div></div>
         </div>
     }

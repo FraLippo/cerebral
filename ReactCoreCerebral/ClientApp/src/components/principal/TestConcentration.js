@@ -35,6 +35,10 @@ export default class TesConcentration extends Component {
          <Helmet>
          <title>Tests de concentration</title>
             <meta name="description" content="Renforcez votre attention avec nos tests de concentration interactifs. Mesurez et améliorez votre capacité à rester concentré sur des tâches spécifiques grâce à des exercices stimulants conçus pour optimiser vos performances cognitives." />
+            <link rel="alternate" hreflang="en" href="https://brain-games.evalquiz.com/concentration-games" />
+<link rel="alternate" hreflang="fr" href="https://cerebral.evalquiz.com/test-concentration" />
+<link rel="alternate" hreflang="x-default" href="https://cerebral.evalquiz.com/test-concentration" />
+       
         </Helmet>
 
       <h1 className="titre couleurTitre centre">Les tests de concentration</h1>

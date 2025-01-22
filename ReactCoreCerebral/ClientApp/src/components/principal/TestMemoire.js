@@ -33,14 +33,28 @@ export default class TestMemoire extends Component {
   render() {
     return <div>
          <Helmet>
-            <title>les tests de la mémoire </title>
+            <title>Les tests de la mémoire </title>
             <meta name="description" content="Évaluez et améliorez votre mémoire avec une gamme de tests interactifs. Découvrez des évaluations des différents types de mémoire pour mieux comprendre et renforcer vos capacités cognitives."></meta>
+
+            <link rel="alternate" hreflang="en" href="https://brain-games.evalquiz.com/memory-games" />
+<link rel="alternate" hreflang="fr" href="https://cerebral.evalquiz.com/test-memoire" />
+<link rel="alternate" hreflang="x-default" href="https://cerebral.evalquiz.com/test-memoire" />
             </Helmet>
-      <h1 className="titre couleurTitre centre">Bilan mémoire : testez vos performances</h1>
+      <h1 className="titre couleurTitre centre">Bilan mémoire : testez votre mémoire</h1>
      <p>Évaluez vos capacités de mémorisation à travers une série de jeux interactifs conçus pour faire un bilan complet de votre mémoire.</p>
 <GraphiqueRapidite categorie='m' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
 
 <div className='jeuVitesse marge20'>
+
+<div className="lienJeuRapidité presentationJeu marge20">
+      <Link  to='/vitessealz'> <div className="centre titreVitesse" >🎗️  La mémoire longue</div>    
+          <p className="marge20">But du jeu : Se souvenir des mots affichés. À la différence des autres tests, on ne vous demande pas de vous souvenir de la liste de mots tout de suite, vous devez jouer à un petit jeu avant de restituer la liste. Ce jeu de mémoire est inspiré d'un test d'Alzheimer, le test des 5 mots, mais dans une version ludique. 7 points par mot, bonus de 50 points si vous trouvez les 12 mots. </p>
+ </Link>
+     <p className='centre'>{this.state.resultatsJoueur["vitessealz"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessealz"]:"Pas encore de résultat" }</p>
+        <div className="centre"><Link to='/classement/vitessealz'>Classement</Link></div>
+      </div>
+
+
               <div className="lienJeuRapidité presentationJeu marge20">
       <Link  to='/vitessememory'> <div className="centre titreVitesse" >🎩  Le jeu du memory</div>    
           <p className="marge20">But du jeu : Trouver toutes les paires comme dans le classique jeu du Memory. Une différence avec le jeu classique : tu découvres les paires à ton rythme. Elles ne disparaissent pas au bout d'un certain temps. Le temps alloué est de 60 secondes pour tenter de trouver toutes les paires, un bonus de 30 points est alloué si tu finis le jeu.</p>

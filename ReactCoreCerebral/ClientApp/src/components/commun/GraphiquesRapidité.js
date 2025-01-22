@@ -30,7 +30,7 @@ export default class GraphiqueRapidite extends Component {
        
         if (this.props.categorie === 'm') {
 
-            this.max = 500;
+            this.max = 560;
             message = 'Ta capacité de mémorisation est : '
         } else if (this.props.categorie === 'l') {
             this.max = 400;
@@ -49,7 +49,7 @@ export default class GraphiqueRapidite extends Component {
             message = 'Ta capacité de concentration est ';
         }
         else if (this.props.categorie === 'd') {
-            this.max = 150;
+            this.max = 100;
             message = 'Ton aptitude culturelle est ';
         }
         this.setState({

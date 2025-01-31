@@ -137,7 +137,7 @@ export default class GraphiqueRapidite extends Component {
                 {this.prenom !== '' && !this.prenom.includes('inconnu')&& <div className='fontMoyenne rougeV'>{this.prenom}</div>}
                 <div className='fontMoyenne'>{this.state.message}  </div>
                 <div className='fontMoyenne'><b>{this.msgResultat()}</b> </div>
-                <div className="centre marge20"><img src={border} alt="bordure" width="100" height="41" ></img></div>
+                <div className="centre marge20"><img src={border} alt="bordure" width="100" height="20" ></img></div>
 
 
                 <Podium tabPrenoms={this.state.tabPrenoms}></Podium>

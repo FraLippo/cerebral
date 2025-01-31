@@ -36,7 +36,7 @@ class Tableau extends Component {
       
       <h1>{intl.get('TABLEAU_TITRE')}</h1>
       <p>{intl.get('TABLEAU_MSG')}</p>
-            <div className="centre espaceTitreBas"><img src={borderHonneur} alt="bordure" width="100" height="41" ></img></div>
+            <div className="centre espaceTitreBas"><img src={borderHonneur} alt="bordure" width="100" height="32" ></img></div>
   </div>
       <Row gutter={[16, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
         {this.state.resultats.map((info, i) => <Col key={i} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 12 }}  xl={{ span: 6 }}><Card className="hauteurCarte">

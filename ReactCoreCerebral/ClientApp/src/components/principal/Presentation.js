@@ -25,14 +25,9 @@ export default class Presentation extends Component {
         </Helmet>
       <h1 className="titre centre couleurTitre">Sport cérébral et jeux de réflexion</h1>
       <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
-      <div className="centre"><img src={border} width="100" height="41" alt="bordure"></img></div>
- 
-      <div>
-   
-     
-      <div className="centre espaceHaut"><img src={border} alt="bordure"  width="100" height="41"></img></div>
+  
      <h1 className="titre couleurTitre centre">Les défis</h1>
-        <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
+        <div className="centre"><img src={border} alt="bordure"  width="100" ></img></div>
         <p>Un défi est un ensemble de petits jeux et tests, toutes vos compétences et votre agilité seront nécessaires pour arriver au bout de ces défis.</p>
             <p>Si vous arrivez à terminer un défi à la première tentative votre prénom sera inscrit sur notre tableau honneur.</p>
          <Row gutter={8} className="espaceHaut">
@@ -58,7 +53,7 @@ export default class Presentation extends Component {
             </Col>
             </Row>
         
-      </div>
+   
 <Ad></Ad>
         <Tableau></Tableau> 
 <h1 className="titre centre">Tous les tests</h1>
@@ -73,7 +68,7 @@ export default class Presentation extends Component {
 
 
 
-      <div className="centre"><img src={border} alt="bordure"  width="100" height="41"></img></div>
+      <div className="centre"><img src={border} alt="bordure"  width="100" height="20"></img></div>
  
     
             <div className="centre"><img className="img-responsive" width="1000" height="396" src={presentation} alt="presentation"></img></div>

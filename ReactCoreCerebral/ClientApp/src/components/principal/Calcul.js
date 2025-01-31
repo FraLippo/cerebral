@@ -33,7 +33,7 @@ export default class Logique extends Component {
 
 <p>Les jeux de calcul mental sont non seulement divertissants, mais aussi bénéfiques pour votre développement cognitif. Ils améliorent votre capacité de concentration, votre mémoire de travail et votre résolution de problèmes. En jouant régulièrement, vous constaterez une amélioration de vos compétences mathématiques et une plus grande confiance envers les chiffres.</p>
 
-        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+        <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
 
 
         <Row gutter={8} className="espaceHaut">
@@ -53,7 +53,7 @@ export default class Logique extends Component {
         </Row>
         
        <Ad></Ad>
-        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+        <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
         <Row gutter={8} className="espaceHaut">
 
           <Col md={10}>
@@ -67,7 +67,7 @@ export default class Logique extends Component {
             <SousMenu type="pyramide" titre="PYRAMIDE_TITLE"></SousMenu>
           </Col>
         </Row>
-        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+        <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
         <Row gutter={8} className="espaceHaut">
 
           <Col md={10}>

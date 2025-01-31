@@ -30,7 +30,7 @@ export default class Puzzle extends Component {
 
     
         <h2 className="titre couleurTitre centre">Les puzzles</h2>
-            <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+            <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
         <Row gutter={8} className="espaceHaut">
 
           <Col md={10}>
@@ -47,7 +47,7 @@ export default class Puzzle extends Component {
         </Row>
         
        <Ad></Ad>
-            <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+            <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h1>Puzzle : remettre en ordre une image</h1>

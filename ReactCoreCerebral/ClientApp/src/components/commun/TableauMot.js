@@ -55,7 +55,7 @@ class TableauMot extends Component {
       
       <h1>Les meilleurs au jeu du Mot le plus long</h1>
       <p>Les 8 derniers à avoir gagné une partie de niveau avancé au moins.</p>
-            <div className="centre espaceTitreBas"><img src={borderHonneur} alt="bordure" width="100" height="41" ></img></div>
+            <div className="centre espaceTitreBas"><img src={borderHonneur} alt="bordure" width="100" height="32" ></img></div>
   </div>
       <Row gutter={[16, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
         {this.state.resultats.map((info, i) => <Col key={i} xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 12 }}  xl={{ span: 6 }}><Card className="hauteurCarte2">

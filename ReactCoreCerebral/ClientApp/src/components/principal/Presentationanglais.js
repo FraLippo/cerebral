@@ -33,7 +33,7 @@ export default class PresentationEN extends Component {
 
 
       <h1 className="titre centre">Brain games</h1>
-      <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+      <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
       <Row gutter={8} className="espaceHaut">
         <Col md={24}>
           <p>Train your brain by practising a set of simple exercises and small games to improve your cognitive abilities and intelligence.
@@ -47,7 +47,7 @@ export default class PresentationEN extends Component {
 
       <div>
         <h1 className="titre couleurTitre centre">The challenges</h1>
-        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+        <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
         <Row gutter={8} className="espaceHaut">
 
           <Col md={10}>
@@ -66,7 +66,7 @@ export default class PresentationEN extends Component {
 
 
       <h1 className="titre couleurTitre centre">The puzzles</h1>
-      <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+      <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
       <Row gutter={8} className="espaceHaut">
 
         <Col md={10}>
@@ -97,7 +97,7 @@ export default class PresentationEN extends Component {
 
 
       <h1 className="titre couleurTitre centre">The logic</h1>
-      <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+      <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
       <Row gutter={8} className="espaceHaut">
         <Col md={10}>
           <h2>The count is good</h2>
@@ -221,7 +221,7 @@ export default class PresentationEN extends Component {
 
       
         <h1 className="titre couleurTitre centre">The memory</h1>
-        <Row className="centre"><img src={border} alt="bordure" width="100" height="41"></img></Row>
+        <Row className="centre"><img src={border} alt="bordure" width="100" height="20"></img></Row>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Memorize cards</h2>

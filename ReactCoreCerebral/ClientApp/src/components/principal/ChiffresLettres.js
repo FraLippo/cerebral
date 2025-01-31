@@ -35,7 +35,7 @@ export default class ChiffreLetttre extends Component {
         <h1 className="titre couleurTitre centre">Des chiffres et des lettres</h1>
    <div className='centre fontPetite'>evalquiz.com : le site numéro 1 du divertissement intelligent</div>
     
-        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+        <div className="centre marge10"><img src={border} alt="bordure" width="100" height="20"></img></div>
         <Row gutter={8} className="espaceHaut">
           <Col md={24}>
             <h2>Le mot le plus long</h2>
@@ -67,7 +67,7 @@ export default class ChiffreLetttre extends Component {
             </div>
           </Col>
         </Row>
-        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+        <div className="centre marge10"><img src={border} alt="bordure" width="100" height="20"></img></div>
 
         <Row gutter={8} className="espaceHaut">
           <Col md={24}> 

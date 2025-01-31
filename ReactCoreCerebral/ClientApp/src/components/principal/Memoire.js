@@ -36,7 +36,7 @@ Plongez dans un monde d'énigmes et de défis conçus pour exercer votre mémoir
 <p>Les jeux de mémoire ne sont pas seulement amusants, mais ils sont également bénéfiques pour votre développement cognitif. Ils améliorent votre concentration, votre capacité de rétention et votre vitesse de traitement de l'information. En jouant régulièrement, vous pouvez renforcer votre mémoire et votre capacité d'apprentissage, ce qui peut être utile dans de nombreux aspects de la vie quotidienne.</p>
 
         
-            <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+            <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
             <Ad></Ad>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
@@ -53,7 +53,7 @@ Plongez dans un monde d'énigmes et de défis conçus pour exercer votre mémoir
             <SousMenu type="memoryGame" titre="MEMORY_TITLE"></SousMenu>
           </Col>
         </Row>
-            <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+            <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
   <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Le jeu de Simon</h2>
@@ -67,7 +67,7 @@ Plongez dans un monde d'énigmes et de défis conçus pour exercer votre mémoir
             <SousMenu type="simon" titre="SIMON_TITLE"></SousMenu>
           </Col>
         </Row>
-            <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+            <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Mémoriser des cartes</h2>
@@ -80,7 +80,7 @@ Plongez dans un monde d'énigmes et de défis conçus pour exercer votre mémoir
             <SousMenu type="esp" titre="ESP_TITLE"></SousMenu>
           </Col>
         </Row>
-            <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+            <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Mémoriser un dessin</h2>
@@ -93,7 +93,7 @@ Plongez dans un monde d'énigmes et de défis conçus pour exercer votre mémoir
             <SousMenu type="memoireDessin" titre="DESSIN_TITLE"></SousMenu>
           </Col>
         </Row>
-            <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+            <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Se souvenir de l'image précédente</h2>

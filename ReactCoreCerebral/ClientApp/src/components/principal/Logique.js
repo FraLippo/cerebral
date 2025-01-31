@@ -31,7 +31,7 @@ export default class Logique extends Component {
       <div className="titre centre couleurTitre">Sport cérébral</div>
       <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
       <h2 className="titre couleurTitre centre">Les tests de logique</h2>
-        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+        <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
 
 
         <Row gutter={8} className="espaceHaut">
@@ -49,7 +49,7 @@ export default class Logique extends Component {
           </Col>
         </Row>
 
-        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+        <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
 
 
         <Row gutter={8} className="espaceHaut">
@@ -66,7 +66,7 @@ export default class Logique extends Component {
             <div className="centre"><img className="img-responsive" width="300" height="295" src={bingo} alt="le jeu du bingo"></img></div>
           </Col>
         </Row>
-        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+        <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Retrouvez la tuile solitaire</h2>
@@ -78,7 +78,7 @@ export default class Logique extends Component {
             <SousMenu type="mahJong" titre="MAH_TITLE"></SousMenu>
           </Col>
         </Row>
-        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+        <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
 
         <Ad></Ad>
         <Row gutter={8} className="espaceHaut">
@@ -93,7 +93,7 @@ export default class Logique extends Component {
             <SousMenu type="tri" titre="TRI_TITLE"></SousMenu>
           </Col>
         </Row>
-        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+        <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
 
       <Row gutter={8} className="espaceHaut">
         <Col md={10}>
@@ -107,7 +107,7 @@ export default class Logique extends Component {
           <SousMenu type="memoireFamille" titre="FAMILLE_TITLE"></SousMenu>
         </Col>
       </Row>
-        <div className="centre"><img src={border} alt="bordure" width="100" height="41"></img></div>
+        <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
 
   
   </div>

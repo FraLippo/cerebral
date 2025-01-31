@@ -6,7 +6,7 @@ import Caisse from './Caisse';
 import { Button } from 'antd';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat';
-
+import { Helmet } from 'react-helmet';
 
 export default class JeuMonnaie extends Component {
 
@@ -139,6 +139,11 @@ export default class JeuMonnaie extends Component {
 
     render() {
         return <React.Fragment>
+            <Helmet>
+
+            <meta name="description" content="Améliorez votre rapidité en calcul mental avec notre jeu de rendu de monnaie ! Testez vos réflexes et devenez un expert en mathématiques."></meta>
+            <title>Rendu de Monnaie - Jeu de Calcul Mental</title>
+            </Helmet>
            {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitessemonnaie'></Resultat>:
            <div className='plateauMonnaie'>
         <div className='jeuMonnaie'>

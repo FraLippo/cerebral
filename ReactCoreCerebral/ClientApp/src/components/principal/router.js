@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {ScrollRestoration, createBrowserRouter, Outlet } from "react-router-dom";
 
 import PresentationTemps from './PresentationTemps';
@@ -88,7 +88,12 @@ const TestPlanification = React.lazy(() => import('./TestPlanification'));
 const TestLettres = React.lazy(() => import('./TestLettres'));
 const TestCulture = React.lazy(() => import('./TestCulture'));
 
-
+const EnRedirect = () => {
+  useEffect(() => {
+      window.location.href = 'https://brain-games.evalquiz.com';
+  }, []);
+  return null;
+}; 
 const router = createBrowserRouter([
     {
       path: '/',
@@ -107,9 +112,11 @@ const router = createBrowserRouter([
             element: <PresentationTemps />,
           },
           {
-            path :"en",
-            element: <PageFaute />,
-          },
+           
+          path: "en",
+          element: <EnRedirect />
+          
+        },
           // {
           //   path :"c",
           //   element: <JeuCreationRobot />,
@@ -186,7 +193,7 @@ const router = createBrowserRouter([
           },
           {
             path:'brain-game-bingo/:id',
-            element: <PageFaute/>
+            element: <EnRedirect />
             
           },
           {
@@ -196,7 +203,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-numbers/:id',
-            element: <PageFaute/>
+            element: <EnRedirect />
             
           },
           {
@@ -211,7 +218,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-drawing/:id',
-            element: <PageFaute/>
+            element: <EnRedirect />
             
           },
           {
@@ -221,7 +228,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-cards/:id',
-            element: <PageFaute/>
+            element: <EnRedirect />
             
           },
           {
@@ -231,7 +238,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-puzzle/:id',
-            element: <PageFaute/>
+            element: <EnRedirect />
             
           },
           {
@@ -242,7 +249,7 @@ const router = createBrowserRouter([
            
           {
             path: 'brain-game-sorting/:id',
-            element: <PageFaute/>
+            element: <EnRedirect />
             
           },
           {
@@ -252,7 +259,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-sequence/:id',
-            element: <PageFaute/>
+            element: <EnRedirect />
             
           },
           {
@@ -267,7 +274,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-rotate/:id',
-            element: <PageFaute/>
+            element: <EnRedirect />
             
           },
           {
@@ -277,7 +284,7 @@ const router = createBrowserRouter([
           },
               {
             path: 'brain-game-family/:id',
-            element: <PageFaute/>
+            element: <EnRedirect />
             
           },
           {
@@ -287,7 +294,7 @@ const router = createBrowserRouter([
           },
               {
             path: 'brain-game-solo/:id',
-            element: <PageFaute/>
+            element: <EnRedirect />
             
           },
           {
@@ -297,7 +304,7 @@ const router = createBrowserRouter([
           },
                 {
             path: 'brain-game-pyramid/:id',
-            element: <PageFaute/>
+            element:<EnRedirect />
             
           },
           {
@@ -307,7 +314,7 @@ const router = createBrowserRouter([
           },
                 {
             path: 'brain-game-fubuki/:id',
-            element: <PageFaute/>
+            element: <EnRedirect />
             
           },
           {
@@ -338,7 +345,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-game-order/:id',
-            element: <PageFaute/>
+            element: <EnRedirect />
             
           },
           {
@@ -348,7 +355,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'brain-challenge/:no',
-            element: <PageFaute/>
+            element: <EnRedirect />
             
           },
           {

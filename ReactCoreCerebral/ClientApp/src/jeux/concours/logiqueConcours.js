@@ -92,7 +92,7 @@ function imageJeu(titre) {
             break;
 
     }
-    return <div className="centre"><img className="img-responsive" width="150" src={image} alt="titre"></img></div>
+    return <div className="centre"><img className="img-responsive" width="100" src={image} alt="titre"></img></div>
 }
 
 function titreJeu(titre) {

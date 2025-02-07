@@ -98,10 +98,10 @@ let tabJeu = ["vitesseaddition", "vitesseburger", "vitessecouleur", "vitessesoli
     "vitessecercle", "vitesselettres", "vitesseboogle", "vitessechasse",
     "vitessechemin", "vitessetresor", "vitessetresse", "vitessetaquin", "vitessefusee", "vitessebataille",
     "vitesseoperation", "vitessecalcul", "vitessearithmetique", "vitessemonnaie",
-    "vitesseecrire", "vitessenotes",
+    "vitesseecrire", "vitessenotes", "vitessepanneauroutier",
     "vitessememoire", "vitesseforme", "vitessenombre", "vitessememory", "vitessepaire", "vitessealz"]
 
-let typeJeu = ['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'd', 'd', 'm', 'm', 'm', 'm', 'm', 'm']
+let typeJeu = ['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm', 'm']
 
 let tabCategorie = ["test-memoire", "test-concentration", "test-calcul", "test-lettres", "test-culture", "test-planification"]
 

@@ -63,7 +63,9 @@ import C12 from './fichiers/C12.png';
 import C64d1 from './fichiers/C64d1.png';
 import B1430 from './fichiers/B1430.png';
 import B25 from './fichiers/B25.png';
-
+import B52 from './fichiers/B52.png';
+import B56 from './fichiers/B56.png';
+import M11d from './fichiers/M11d.png';
 
 const tabPanneaux =
     [
@@ -327,7 +329,19 @@ const tabPanneaux =
         {
             id: B25,
             nom: "Vitesse minimale obligatoire à 30km/h"
-        }
+        },
+        {
+            id: B52,
+            nom: "Entrée dans une zone de rencontre"
+        },
+        {
+            id: B56,
+            nom: "Entrée de zone de circulation restreinte (ZFE)."
+        },
+        {
+            id: M11d,
+            nom: "Panonceau utilisé pour indiquer les caractéristiques de la limitation d'accès (Crit'air). Ne peut être utilisé qu'avec un panneau de zone à circulation restreinte."
+        },
     ]
 
 function listePanneaux() {

@@ -2527,8 +2527,16 @@ svg:hover {
     border: 1px pink solid;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 410px) {
     .iconeMots {
         margin: 5px;
     }
+
+    .game-container {
+        position: relative;
+        margin: 50px 0px;
+        border: none;
+
+      }
+      
 }

@@ -9,7 +9,7 @@ export default function JeuParcours({nbPipes ,jeuReussi, espacePipe}) {
     const gameHeight = 400;
     const birdSize = 30;
     const pipeWidth = 60;
-    const pipeGap = 120;
+    const pipeGap = 130;
     const gravity = 0.5;
     const jumpStrength = -8;
     const moveSpeed = 5;
@@ -118,6 +118,7 @@ export default function JeuParcours({nbPipes ,jeuReussi, espacePipe}) {
     };
 
     return (
+        <React.Fragment>
         <div className="game-container" onMouseDown={handleMouseDown} style={{ position: 'relative' }}>
             <div style={{
                 position: 'absolute',
@@ -161,5 +162,7 @@ export default function JeuParcours({nbPipes ,jeuReussi, espacePipe}) {
                 </div>
             ))}
         </div>
+        <div className='centre margeHaut'>Clique sur le bouton gauche ou tape sur l'écran de ton smartphone pour faire rebondir le ballon jaune et passer entre les tuyaux.</div>
+        </React.Fragment>
     );
 };

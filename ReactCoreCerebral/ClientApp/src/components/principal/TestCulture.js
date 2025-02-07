@@ -45,15 +45,15 @@ export default class TestCulture extends Component {
       <GraphiqueRapidite categorie='d' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
       <div className='jeuVitesse marge20'>
               
-              {/* <div className="lienJeuRapidité presentationJeu marge20">
+              <div className="lienJeuRapidité presentationJeu marge20">
            <Link to='/vitessepanneauroutier'>   <div className="centre titreVitesse" >🚦Le code de la route</div>
    
-          <p className="marge20">But du jeu : Une grille est affichée avec des panneaux routiers, il suffit de retrouver le panneau routier indiqué par la question. Tu as 120 secondes pour essayer de trouver tous les panneaux. Tu gagnes 2 points par panneau trouvé, -4 points en cas d'erreur. Si tu termines la grille, bonus de 20 points ! Le maximum est de (36 x 2) + 20 = 92 points. </p>
+          <p className="marge20">But du jeu : Une grille est affichée avec des panneaux routiers, il suffit de retrouver le panneau routier indiqué par la question. Tu as 120 secondes pour essayer de trouver tous les panneaux. Tu gagnes 2 points par panneau trouvé, -4 points en cas d'erreur. Si tu termines la grille, bonus de 20 points ! Le maximum est de (36 x 2) + 20 = 92 points. (<b>Nouveau</b> : ajout des derniers panneaux routiers) </p>
      </Link>
      <p className='centre'>{this.state.resultatsJoueur["vitessepanneauroutier"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessepanneauroutier"]:"Pas encore de résultat" }</p>
 
         <div className="centre"><Link to='/classement/vitessepanneauroutier'>Classement</Link></div>
-    </div> */}
+    </div>
 
     <div className="lienJeuRapidité presentationJeu marge20">
    <Link to='/vitesseecrire'> <div className="centre titreVitesse" >📠 La dactylographie</div>   

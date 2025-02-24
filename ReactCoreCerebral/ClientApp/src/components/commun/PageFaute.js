@@ -1,15 +1,14 @@
 
 
-import { useRouteError } from "react-router-dom";
+import React from 'react';
 
-function pageFaute() {
+function PageFaute() {
 
-  return (
-    <div>
+  return <div>
       <h1>Désolé, nous avons rencontré un problème.</h1>
       <div><a href="https://cerebral.evalquiz.com">Retour à l'accueil</a></div>
     </div>
-  );
+  
 }
 
-export default {pageFaute}
+export default PageFaute;

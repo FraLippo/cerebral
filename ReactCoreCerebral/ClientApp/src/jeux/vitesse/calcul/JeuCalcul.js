@@ -16,6 +16,7 @@ export default class JeuCalcul extends Component
           this.logique = new Logique();
         this.nbDecouverte= 0;
         this.nbMax=15;
+        this.fin = false;
         this.state = {
             tabGrille : [],
             taille : 0,
@@ -26,7 +27,8 @@ export default class JeuCalcul extends Component
  
     }
 
-    niveauSuivant = () => {  
+    niveauSuivant = () => { 
+        this.fin = false; 
         this.nbDecouverte= 0;
          this.logique.construireTableaux(this.nbMax,10);
         let tabGrille = this.logique.contruireChainesOperations();
@@ -43,27 +45,33 @@ export default class JeuCalcul extends Component
         this.niveauSuivant();
     }
 
+ 
+
     clic = (no) => {
+        if (this.fin) return;
         let score = this.state.score;
         if (this.state.tabGrille[no].toString().length < 4) return;
         let nouveauTabGrille = [...this.state.tabGrille];
         if (this.logique.verifierResultat(no))
         {
+            nouveauTabGrille[no].calcul = this.logique.tabOperation[no].resultat;
+            nouveauTabGrille[no].etat = "ok";
             this.nbDecouverte++;
-            nouveauTabGrille[no] = "";
             score+=3;
 
         }
         else
         {
-            nouveauTabGrille[no] = this.logique.tabOperation[no].resultat;
+            nouveauTabGrille[no].calcul = this.logique.tabOperation[no].resultat;
+            nouveauTabGrille[no].etat = "ko";
             message.error("Mauvaise réponse");
             score-=2;
         }
         if (this.nbDecouverte === 2)
         {
             this.setState({ score});
-            this.niveauSuivant();
+            this.fin = true;
+           window.setTimeout(() => this.niveauSuivant(), 500);
         }
         else
         {
@@ -85,7 +93,8 @@ return <React.Fragment>
                 <title>Le  jeu de la grille de calcul mental</title>
                 <meta name="description" content="Un jeu de calcul amusant et simple pour toute la famille, vous devez rapidement effectuer des opérations pour éliminer les mauvais résultats." />
             </Helmet>
-    {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitessecalcul'></Resultat>:<div><div className="centreGrilleCalMen"><Grille clic={this.clic} taille={3} tabGrille={this.state.tabGrille}></Grille></div>
+    {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitessecalcul'></Resultat>:<div><div className="centreGrilleCalMen">
+        <Grille clic={this.clic} taille={3} tabGrille={this.state.tabGrille}></Grille></div>
 <div className="centre fontMoyenne messageCalMen">{this.state.message}</div>
 <div className="centre marge20">Score: {this.state.score}</div>
 <div className="centre"><CompteRebours finTimer={this.finTimer} temps={60}></CompteRebours></div>

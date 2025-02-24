@@ -15,7 +15,7 @@ export default class Grille extends Component
     
     render()
     {
-    return <div className="grilleCalMen">{this.props.tabGrille.map((calcul, i) => 
-    <div id={i} key={i} className="caseCalMen" style={Logique.constructionEmplacement(i, this.props.taille)} onClick={this.clic}>{calcul}</div>)}</div>
+    return <div className="grilleCalMen">{this.props.tabGrille.map((operation, i) => 
+    <div id={i} key={i} className={operation.etat === 'initial' ? 'caseCalMen' : operation.etat === 'ko' ? 'caseCalMen caseCalRed' : 'caseCalMen caseCalGreen'}  style={Logique.constructionEmplacement(i, this.props.taille)} onClick={this.clic}>{operation.calcul}</div>)}</div>
     }
 }

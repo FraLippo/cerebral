@@ -376,6 +376,24 @@
     border: 2px solid #a29ae1
 }
 
+.caseCalRed {    
+
+    background-color: #ff8383;
+    animation: shakeWrong 0.5s ease-in-out;
+}
+
+@keyframes shakeWrong {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-10px); }
+    40% { transform: translateX(10px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+}
+
+.caseCalGreen {    
+
+    background-color: #9be69b;
+}   
 .messageCalMen {
     color: #146613
 }
@@ -2539,4 +2557,43 @@ svg:hover {
 
       }
       
+}
+
+/* langue */
+
+.caseLangue {
+    width: 126px;
+    height: 58px;
+    border-radius: 5px;
+    border: 2px solid rgb(239, 106, 235);
+    font-size: 1.2em;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 5px 7px 10px 1px rgb(0 0 0 / 20%);
+}
+
+.caseLangueSelection {
+    background-color: rgb(239, 106, 235);
+    color: white;
+}
+
+.casePays {
+    width: 106px;
+    height: 48px;
+    border-radius: 5px;
+    border: 2px solid blue;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 5px 7px 10px 1px rgb(0 0 0 / 20%);
+}
+
+.casePaysSelection {
+    background-color: blue;
+    color: white;
 }

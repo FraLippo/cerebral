@@ -8,6 +8,7 @@ import { Menu } from 'antd';
 import { itemsMenu } from './menu';
 import PageFaute from '../commun/PageFaute';
 import CreationGrilleRobot from '../../jeux/vitesse/robot/CreationGrilleRobot';
+import JeuLangue from '../../jeux/vitesse/langue/JeuLangue';
 
 const Presentation = React.lazy(() => import('./Presentation'));
 const Calcul = React.lazy(() => import('./Calcul'));
@@ -19,7 +20,7 @@ const ChiffresLettres = React.lazy(() => import('./ChiffresLettres'));
 // const PresentationEN = React.lazy(() => import('./Presentationanglais'));
 
 
-
+const JeuxLangue = React.lazy(() => import('../../jeux/vitesse/langue/JeuLangue'));
  const JeuxLettres = React.lazy(() => import('../../jeux/lettres/JeuxLettres'));
 const JeuxOrdre = React.lazy(() => import('../../jeux/ordre/JeuxOrdre'));
 const JeuxPuzzle = React.lazy(() => import('../../jeux/puzzle/JeuxPuzzle'));
@@ -106,10 +107,9 @@ const router = createBrowserRouter([
       <div className='margeEcran'><Outlet></Outlet></div></div>,
       errorElement : <PageFaute></PageFaute>,
       children: [
-       
           {
             index : true,
-            element: <PresentationTemps />,
+            element: <JeuLangue />,
           },
           {
            
@@ -396,6 +396,11 @@ const router = createBrowserRouter([
           {
             path: 'vitessebonneteau',
             element: <JeuBonneteau/>,
+            
+          },
+          {
+            path: 'vitesselangue',
+            element: <JeuLangue/>,
             
           },
           {

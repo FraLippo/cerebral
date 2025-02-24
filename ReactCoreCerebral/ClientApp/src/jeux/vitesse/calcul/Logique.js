@@ -112,7 +112,7 @@ melangerTableau()
 contruireChainesOperations(){
     let tabOperationsChaine = [];
     for (let index = 0; index < this.tabOperation.length; index++) {
-        tabOperationsChaine.push(this.tabOperation[index].nombre1 + " " + this.tabOperation[index].signe + " " + this.tabOperation[index].nombre2);
+        tabOperationsChaine.push({ calcul : (this.tabOperation[index].nombre1 + " " + this.tabOperation[index].signe + " " + this.tabOperation[index].nombre2), etat : 'initial' });
     }
     return tabOperationsChaine;
 }

@@ -61,7 +61,7 @@ let formulePolitesse =
                     {
 
                         reponse: "excusez-moi",
-                        formule: "perdón",
+                        formule: "lo siento",
                         son: ""
                     }
                 ]
@@ -73,7 +73,7 @@ let formulePolitesse =
                     {
 
                         reponse: "bonjour",
-                        formule: "hallo",
+                        formule: "guten tag",
                         son: ""
                     },
                     {
@@ -91,7 +91,7 @@ let formulePolitesse =
                     {
 
                         reponse: "au revoir",
-                        formule: "auf Wiedersehen",
+                        formule: "auf wiedersehen",
                         son: ""
                     },
                     {
@@ -143,7 +143,7 @@ let formulePolitesse =
                     {
 
                         reponse: "bonjour",
-                        formule: "olá",
+                        formule: "bom dia",
                         son: ""
                     },
                     {

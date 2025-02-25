@@ -2561,6 +2561,16 @@ svg:hover {
 
 /* langue */
 
+.plateauLangue {
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+
 .caseLangue {
     width: 126px;
     height: 58px;
@@ -2596,4 +2606,127 @@ svg:hover {
 .casePaysSelection {
     background-color: blue;
     color: white;
+}
+
+.bouton1PlayCode {
+    border: 0;
+    background: transparent;
+    box-sizing: border-box;
+    width: 0;
+
+    border-color: transparent transparent transparent #e64646;
+    transition: 100ms all ease;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 25px 0 25px 50px;
+}
+
+.paused1Code {
+    border-style: double;
+    border-width: 0px 0 0px 50px;
+    height: 50px;
+
+}
+
+.audioOrto {
+    height: 52px;
+}
+
+.bouton1PlayCode:active {
+    transform: translate(2px, 2px);
+}
+
+@keyframes departLangue {
+    0% {
+      transform: translateX(100%);
+    
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+@keyframes finLangue {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+     
+    }
+  }
+
+  .questionLangue
+  {
+    text-align: center;
+    font-size: 1.8em;
+    height: 80px;
+  }
+  .departLangue {
+
+    animation: departLangue .5s ease-in-out forwards;
+  }
+ .finLangue {
+
+    animation: finLangue .5s ease-in-out forwards;;
+  }
+
+ 
+.tableauLangue td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tableauLangue tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.tableauLangue tr:hover {
+    background-color: #f2f2f2;
+}
+
+.tableauLangue tbody tr:last-child td {
+    border-bottom: none;
+}
+.tableauLangue {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tableauLangue th {
+    background-color: #4a90e2;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+    .tableauLangue {
+        width: 100%;
+        margin: 10px 0;
+        font-size: 0.9em;
+    }
+
+    .tableauLangue th {
+        padding: 8px 4px;
+    }
+
+    .tableauLangue td {
+        padding: 8px 4px;
+    }
+
+   
+}
+
+/* Pour les très petits écrans */
+@media screen and (max-width: 400px) {
+    .tableauLangue {
+        font-size: 0.8em;
+    }
 }

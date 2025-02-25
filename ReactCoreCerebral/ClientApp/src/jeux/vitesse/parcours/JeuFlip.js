@@ -9,7 +9,7 @@ export default function JeuParcours({nbPipes ,jeuReussi, espacePipe}) {
     const gameHeight = 400;
     const birdSize = 30;
     const pipeWidth = 60;
-    const pipeGap = 130;
+    const pipeGap = 140;
     const gravity = 0.5;
     const jumpStrength = -8;
     const moveSpeed = 5;

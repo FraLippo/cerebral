@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Case from './Case';
-import formulePolitesse from './data';
+import {formulePolitesse, tabLangueDepart, tabPolitesseDepart} from './data';
 import { message } from 'antd';
 import Audio from './Audio';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat';
+import { Helmet } from 'react-helmet';
 
 export default class JeuLangue extends Component {
 
@@ -15,8 +16,7 @@ export default class JeuLangue extends Component {
         this.selPolitesse = false;
         this.noQuestion = 0;
 
-        this.tabLangueDepart = ["anglais", "espagnol", "allemand", "italien", "portugais", "russe", "chinois", "japonais", "arabe"];
-        this.tabPolitesseDepart = ["bonjour", "merci", "s'il vous plaît", "au revoir", "excusez-moi"];
+      
         this.tabAleatoire = this.tirageAleatoire(11);
         this.score = 0;
         this.fin = false;
@@ -34,9 +34,8 @@ export default class JeuLangue extends Component {
         let i = 0;
         let tabNbAleatoire = [];
         while (i < max) {
-            let nbL = Math.floor(Math.random() * this.tabLangueDepart.length);
-            let nbP = Math.floor(Math.random() * this.tabPolitesseDepart.length);
-            let nb = nbL * 10 + nbP;
+            let nb = Math.floor(Math.random() * formulePolitesse.length);
+
             if (tabNbAleatoire.indexOf(nb) === -1) {
                 tabNbAleatoire.push(nb);
                 i++;
@@ -48,8 +47,8 @@ export default class JeuLangue extends Component {
     }
 
     creerTableaux() {
-        let tabLangue = this.tabLangueDepart.map((langue, i) => { return { id: i, langue: langue, etat: 'initial' } });
-        let tabPolitesse = this.tabPolitesseDepart.map((politesse, i) => { return { id: i + 100, formule: politesse, etat: 'initial' } });
+        let tabLangue = tabLangueDepart.map((langue, i) => { return { id: i, langue: langue, etat: 'initial' } });
+        let tabPolitesse = tabPolitesseDepart.map((politesse, i) => { return { id: i + 100, formule: politesse, etat: 'initial' } });
         return { tabLangue, tabPolitesse };
     }
 
@@ -58,10 +57,10 @@ export default class JeuLangue extends Component {
     }
 
     choixQuestion() {
-        this.noLangue = Math.floor(this.tabAleatoire[this.noQuestion] / 10);
-        let noPolitesse = this.tabAleatoire[this.noQuestion] % 10;
+  
 
-        let question = formulePolitesse[this.noLangue].langue[noPolitesse];
+        let question = formulePolitesse[this.tabAleatoire[this.noQuestion]];
+        this.noLangue = Math.floor(this.tabAleatoire[this.noQuestion] / 5);
         return { question, no: this.tabAleatoire[this.noQuestion] };
     }
 
@@ -69,7 +68,7 @@ export default class JeuLangue extends Component {
     nouvelleQuestion = () => {
         console.log(this.noQuestion);
         if (this.noQuestion === 10) {
-            if (this.score === 70) {
+            if (this.score === 90) {
                 message.success('Bravo ! bonus de 30 points', 2);
                 this.score += 30;
             }
@@ -118,7 +117,7 @@ export default class JeuLangue extends Component {
             let noPolitesse = tabPolitesse.findIndex((politesse) => politesse.etat === 'selection');
             let noLangue = tabLangue.findIndex((langue) => langue.etat === 'selection');
             this.fin = true;
-            let reponse = { langue: this.tabLangueDepart[this.noLangue], politesse: this.state.question.reponse, formule: this.state.question.formule };
+            let reponse = { langue: tabLangueDepart[this.noLangue], politesse: this.state.question.reponse, formule: this.state.question.formule };
            if (noLangue === this.noLangue && tabPolitesse[noPolitesse].formule === this.state.question.reponse) {
                 message.success('Bonne réponse', 2, this.nouvelleQuestion);
                 this.score += 9;
@@ -126,7 +125,7 @@ export default class JeuLangue extends Component {
             }
            else {
               message.error('Dommage', 3, this.nouvelleQuestion);
-               if (score >= 3) this.score -= 3;
+               if (this.score >= 3) this.score -= 3;
                reponse = { ...reponse, resultat: '❌' };
            }
 
@@ -141,11 +140,16 @@ export default class JeuLangue extends Component {
 
     render() {
         return <div>
+            <Helmet>
+            
+            <title>Jeu de reconnaissance des formules de politesse</title>
+            <meta name="description" content="Améliore tes compétences linguistiques avec ce jeu interactif ! Devine et apprends les formules de politesse dans différentes langues tout en t'amusant."></meta>
+                        </Helmet>
             {this.state.afficheResultat ? <Resultat score={this.score} typeExo='vitesselangue'></Resultat> :
                 <React.Fragment>
                     <div className="questionLangue">
                         <div className={this.state.animation === 'depart' ? 'departLangue' : 'finLangue'}>
-                            {this.state.no >= 40 ? <Audio numero={this.state.no}></Audio> : this.state.question.formule}
+                            {this.state.no >= 20 ? <Audio numero={this.state.no}></Audio> : this.state.question.formule}
                         </div></div>
                     <Case tabLangue={this.state.tabLangue} tabPolitesse={this.state.tabPolitesse} clic={this.clic}></Case>
                     <table className="tableauLangue">
@@ -170,7 +174,7 @@ export default class JeuLangue extends Component {
                             )}
                         </tbody>
                     </table>
-                    <div className="centre"> <CompteRebours temps={70} finTimer={this.finTimer}></CompteRebours></div>
+                    <div className="centre"> <CompteRebours temps={80} finTimer={this.finTimer}></CompteRebours></div>
                 </React.Fragment>}
         </div>
     }

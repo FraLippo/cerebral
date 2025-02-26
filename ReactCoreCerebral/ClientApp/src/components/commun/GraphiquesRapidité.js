@@ -49,7 +49,7 @@ export default class GraphiqueRapidite extends Component {
             message = 'Ta capacité de concentration est ';
         }
         else if (this.props.categorie === 'd') {
-            this.max = 150;
+            this.max = 220;
             message = 'Ton aptitude culturelle est ';
         }
         this.setState({

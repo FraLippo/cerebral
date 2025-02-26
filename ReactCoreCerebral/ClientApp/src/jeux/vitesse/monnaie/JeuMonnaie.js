@@ -61,8 +61,6 @@ export default class JeuMonnaie extends Component {
         if (resultat)
         {
             let ajoutScore = 20;
-            if (this.noPartie > 3) ajoutScore = 30;
-
             this.setState({score : this.state.score + ajoutScore})
              return "<div>Merci</div><p className='fontMoyenne'>Bonne journée</p>"
         }

@@ -54,7 +54,14 @@ export default class TestCulture extends Component {
 
         <div className="centre"><Link to='/classement/vitessepanneauroutier'>Classement</Link></div>
     </div>
+    <div className="lienJeuRapidité presentationJeu marge20">
+   <Link to='/vitesselangue'> <div className="centre titreVitesse" >👋 La politesse</div>   
+        <p className="marge20">But du jeu : Identifier 5 mots de politesse dans différentes langues. Clique sur le lecteur (le triangle) pour démarrer l'audio s'il ne commence pas automatiquement. Tu as 80 secondes pour essayer de trouver 10 mots. Tu gagnes 9 points par mot trouvé, -3 points en cas d'erreur. Tu peux consulter tous les mots de politesse du jeu sur cette <Link to='/politesse-langues'>page</Link>.</p>
+     </Link>  
+     <p className='centre'>{this.state.resultatsJoueur["vitesselangue"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesselangue"]:"Pas encore de résultat" }</p>
 
+        <div className="centre"><Link to='/classement/vitesselangue'>Classement</Link></div>
+    </div>
     <div className="lienJeuRapidité presentationJeu marge20">
    <Link to='/vitesseecrire'> <div className="centre titreVitesse" >📠 La dactylographie</div>   
         <p className="marge20">But du jeu : Taper une série de mots le plus vite possible au clavier. Le temps alloué est de 30 secondes pour 19 mots. Chaque mot correctement saisi augmente votre score de 3 points, il n'y a pas de pénalité si tu ne tapes pas la bonne lettre. Si tu réussis à écrire les 19 mots tu obtiens un bonus de 50 points !

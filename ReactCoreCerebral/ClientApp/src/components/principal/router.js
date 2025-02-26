@@ -15,6 +15,7 @@ const Calcul = React.lazy(() => import('./Calcul'));
 const Puzzle = React.lazy(() => import('./Puzzle'));
 const Logique = React.lazy(() => import('./Logique'));
 const Memoire = React.lazy(() => import('./Memoire'));
+const Langues = React.lazy(() => import('./Langues'));
 const ChiffresLettres = React.lazy(() => import('./ChiffresLettres'));
 //const TermService = React.lazy(() => import('./TermService'));
 // const PresentationEN = React.lazy(() => import('./Presentationanglais'));
@@ -109,7 +110,7 @@ const router = createBrowserRouter([
       children: [
           {
             index : true,
-            element: <JeuLangue />,
+            element: <PresentationTemps />,
           },
           {
            
@@ -165,6 +166,11 @@ const router = createBrowserRouter([
           {
             path: 'puzzle/',
             element: <Puzzle/>,
+          },
+          {
+            path: 'politesse-langues/',
+            element: <Langues/>,
+            
           },
           {
             path: 'memoire/',

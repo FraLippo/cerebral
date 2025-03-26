@@ -2738,3 +2738,99 @@ svg:hover {
         font-size: 0.8em;
     }
 }
+
+/* coupe */
+
+.jeuPrincipalCoupe
+{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center
+}
+
+.espaceGrilleCoupe {
+    width : 50%
+}
+
+.espaceListeCoupe
+{
+    width: 50%;
+}
+.grilleCoupe
+{
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+
+
+.caseCoupe {
+    font-size: 1.3em;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(6, 243, 113);
+}
+
+.listeCoupe
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.caseListeCoupe
+{
+    font-size: 1.3em;
+    margin: 0px 1px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.caseListePleinCoupe
+{
+    background-color: orange;
+}
+
+.caseListeCoupeGroupe1
+{
+    background-color: #c9d2cf;
+}
+
+
+.caseListeCoupeGroupe2
+{
+    background-color: #919a97;
+}
+
+.caseListeCoupeGroupe3
+{
+    background-color: #515a57;
+}
+
+.listeMotCoupe
+{
+    display: flex;
+    flex-direction: row;
+    margin-top : 10px;
+}
+
+.caseListeCoupeSel
+{
+    border: 1px solid red;
+    box-shadow: 5px 7px 4px 1px #c4c4e4;
+}
+

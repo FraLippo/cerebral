@@ -78,11 +78,13 @@ const JeuTaquin = React.lazy(() => import('../../jeux/vitesse/taquin/JeuTaquin')
 const JeuBonneteau = React.lazy(() => import('../../jeux/vitesse/bonneteau/JeuBonneteau'));
 const JeuRobot = React.lazy(() => import('../../jeux/vitesse/robot/JeuRobot'));
 const JeuChasse = React.lazy(() => import('../../jeux/vitesse/chasse/JeuChasse'));
+const JeuCoupe = React.lazy(() => import('../../jeux/vitesse/coupe/JeuCoupe.js'));
 const JeuComplet = React.lazy(() => import('../../jeux/vitesse/complet/JeuComplet'));
 const JeuBataille = React.lazy(() => import('../../jeux/vitesse/bataille/JeuBataille'));
 const JeuAlz = React.lazy(() => import('../../jeux/vitesse/parcours/JeuAlz'));
 const TestMemoire = React.lazy(() => import('./TestMemoire'));
-const JeuCreationRobot = React.lazy(() => import('./../../jeux/vitesse/robot/CreationGrilleRobot'));
+
+//const JeuCreationRobot = React.lazy(() => import('./../../jeux/vitesse/robot/CreationGrilleRobot'));
 
 const TestCalcul = React.lazy(() => import('./TestCalcul'));
 const TestConcentration = React.lazy(() => import('./TestConcentration'));
@@ -110,7 +112,7 @@ const router = createBrowserRouter([
       children: [
           {
             index : true,
-            element: <PresentationTemps />,
+            element: <JeuCoupe />,
           },
           {
            
@@ -372,6 +374,11 @@ const router = createBrowserRouter([
           {
             path: 'vitessecouleur',
             element: <JeuCouleur/>,
+            
+          },
+          {
+            path: 'vitessecoupe',
+            element: <JeuCoupe/>,
             
           },
           {

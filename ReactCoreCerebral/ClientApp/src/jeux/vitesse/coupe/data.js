@@ -1,5 +1,5 @@
 let mots = [
-"aviation"
+"aviation", "dentiste", "évidence","vraiment", "aéroplane"
 
 ]
 

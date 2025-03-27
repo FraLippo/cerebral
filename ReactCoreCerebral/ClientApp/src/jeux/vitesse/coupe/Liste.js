@@ -22,13 +22,23 @@ export default class Liste extends Component
         {
       
             return <div key={key} onClick={() => this.clic(id)} className={
-                `caseListeCoupe ${info.groupe === 1 ? 'caseListeCoupeGroupe1' :info.groupe === 2 ?'caseListeCoupeGroupe2' : 'caseListeCoupeGroupe3'}  ${info.etat === 'selection' ? 'caseListeCoupeSel': ''}`}></div>
+                `caseListeCoupe ${info.groupe === 1 ? 'caseListeCoupeGroupe1' :info.groupe === 2 ?'caseListeCoupeGroupe2' : 'caseListeCoupeGroupe3'}  ${info.etat === 'selection' ? 'caseListeCoupeSel': ''}`}>
+                
+                </div>
         }
+        else if (info.etat === 'enjeu' )
+            {
+          
+                return <div key={key} onClick={() => this.clic(id)} className={
+                    `caseListeCoupe ${info.groupe === 1 ? 'caseListeCoupeGroupe1' :info.groupe === 2 ?'caseListeCoupeGroupe2' : 'caseListeCoupeGroupe3'}`}>
+                    {info.lettreEnCours}
+                    </div>
+            }
     }
     render()
     {
            return <div>
-            {this.props.tabListe.map((mot,i) => <div key={i+100} className='listeMotCoupe'>{mot.map((info,j) => this.afficheLettre(info,i*10+j, (((i+1) * 200) + j)))}</div>)}
+            {this.props.tabListe.map((mot,i) => <div  key={i+100} className={` ${this.props.tabVictoire[i] ? 'listeMotCoupe fadeOutCoupe': 'listeMotCoupe'}`}>{mot.map((info,j) => this.afficheLettre(info,i*10+j, (((i+1) * 200) + j)))}</div>)}
            </div> 
     }
 }

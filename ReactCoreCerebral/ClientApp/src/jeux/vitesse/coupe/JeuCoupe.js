@@ -3,7 +3,9 @@ import Grille from './Grille';
 import Liste from './Liste';
 import Logique from './Logique';
 import { message } from 'antd';
-
+import CompteRebours from '../commun/CompteRebours';
+import Resultat from '../commun/Resultat';
+import { Helmet } from 'react-helmet';
 
 export default class JeuCoupe extends Component {
 
@@ -11,7 +13,8 @@ export default class JeuCoupe extends Component {
     constructor() {
         super();
         this.logique = new Logique();
-        this.logique.construireListeMots();
+        this.noJeu = 1;
+        this.logique.construireListeMots(this.noJeu);
         this.etatEnCours = {
             etatGrille: 'nul',
             noCaseGrille: -1,
@@ -22,8 +25,10 @@ export default class JeuCoupe extends Component {
         this.state = {
             tabGrille: [],
             tabListe: [],
-            tabVictoire: []
+            tabVictoire: [],
+            score : 0
         }
+        this.fin = -1;
     }
 
 
@@ -43,13 +48,13 @@ export default class JeuCoupe extends Component {
         let tabGrille = [];
         for (let index = 0; index < this.logique.listeDonneesJeu.length; index++) {
             tabGrille.push(...this.logique.listeDonneesJeu[index].mots);
-
         }
 
-        return tabGrille;
+        return this.logique.shuffleArray(tabGrille);
     }
 
     construireListe() {
+
         let tabListe = [];
         for (let index = 0; index < this.logique.listeDonneesJeu.length; index++) {
             tabListe.push(this.logique.listeDonneesJeu[index].lettres);
@@ -67,24 +72,46 @@ export default class JeuCoupe extends Component {
         this.etatEnCours.noCaseGrille = -1;
     }
 
+    nouveauJeu = () => {
+
+        this.noJeu++;
+        this.fin = -1;
+        this.logique.construireListeMots(this.noJeu);
+        this.etatEnCoursA0();
+        this.construireJeu();
+    }
+
 
     verfierVictoire = (tabListe) => {
-   
+
         let finLettres = tabListe[this.etatEnCours.noMot].filter(x => x.lettreEnCours === '' && x.etat !== 'affiche');
-       
+
         if (finLettres.length === 0) {
-            let motAVerifier = tabListe[this.etatEnCours.noMot].every(x => x.lettreEnCours === x.reponse);
-       
+            let motAVerifier = false;
+            let i = 0;
+            let tabLettresEnCours = tabListe[this.etatEnCours.noMot].map(x => { return x.lettreEnCours });
+            console.log(tabLettresEnCours);
+            do {
+                motAVerifier = tabListe[i].every((x, j) => tabLettresEnCours[j] === x.reponse);
+                console.log(tabListe[i]);
+                console.log(motAVerifier)
+                i++;
+            } while (!motAVerifier && i < tabListe.length);
             if (motAVerifier) {
+                console.log(motAVerifier);
                 let tabVictoire = [...this.state.tabVictoire];
                 tabVictoire[this.etatEnCours.noMot] = true;
-                this.setState({ tabVictoire });
-                let finJeu = tabVictoire.every(x => x.victoire);
-                if (finJeu)
-                {
-                     message.success('Fin Jeu !!');
-                }
+                this.fin = this.etatEnCours.noMot;
                
+                this.setState({ tabVictoire });
+                console.log(tabVictoire);
+                let finJeu = tabVictoire.every(x => x === true);
+                console.log(finJeu);
+                if (finJeu) {
+                 
+                    message.success('Super !', this.nouveauJeu);
+                }
+
                 return true;
             } else {
                 message.error("Ce n'est pas le mot attendu.");
@@ -96,6 +123,7 @@ export default class JeuCoupe extends Component {
     }
 
     clicListe = (noMot, noLettre) => {
+        if (this.fin === noMot) return;
         let nouveauTabListe = [...this.state.tabListe];
         let nouveauTabGrille = [...this.state.tabGrille];
         let noGroupe = this.state.tabListe[noMot][noLettre].groupe;
@@ -106,8 +134,8 @@ export default class JeuCoupe extends Component {
 
             let casesGroupe = nouveauTabListe[noMot].filter(x => x.groupe === noGroupe);
 
-          let mot = casesGroupe.map(mot => { return mot.lettreEnCours }).join('');
-    
+            let mot = casesGroupe.map(mot => { return mot.lettreEnCours }).join('');
+
             let motGrille = nouveauTabGrille.filter(x => x.syllabe === mot && x.etat === 'enjeu');
             if (motGrille.length > 0) {
 
@@ -195,11 +223,11 @@ export default class JeuCoupe extends Component {
 
 
         if (nouveauTabGrille[noCase].etat === 'enjeu') {
- 
+
             return;
         }
         if (this.etatEnCours.etatListe === 'nul' && (this.etatEnCours.etatGrille === 'nul' || (this.etatEnCours.etatGrille === 'selection' && this.etatEnCours.noCaseGrille !== noCase))) {
-           
+
             let casesSel = nouveauTabGrille.filter(x => x.etat === 'selection');
             for (let index = 0; index < casesSel.length; index++) {
                 casesSel[index].etat = 'nul';
@@ -253,16 +281,32 @@ export default class JeuCoupe extends Component {
         });
     }
 
+    finTimer = () => {
+        this.setState({finJeu : true});
+    }
+  
+
     render() {
-        return (
-            <div className="jeuPrincipalCoupe">
+        return (<div>
+            <Helmet>
+                <title>Les mots coupés</title>
+                <meta name="description" content="Un jeu simple d'entrainement cérébral." />
+            </Helmet>
+            {this.state.finJeu ?
+                <Resultat score={this.state.score} typeExo='vitessecoupe'></Resultat> :
+            <div><div className="jeuPrincipalCoupe">
                 <div className="espaceGrilleCoupe">
                     <Grille tabGrille={this.state.tabGrille} clicGrille={this.clicGrille} />
                 </div>
                 <div className="espaceListeCoupe">
                     <Liste tabListe={this.state.tabListe} clicListe={this.clicListe} tabVictoire={this.state.tabVictoire}></Liste>
-                </div>
-
+                 
+                 
+                </div>   </div>  
+                 <div className="centre marge10"><CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours></div>
+                    <div className="centre  marge10">Score : {this.state.score}</div>
+<div className="titre titreCouleur">Les mots coupés</div>
+            </div>}
             </div>
         )
     }

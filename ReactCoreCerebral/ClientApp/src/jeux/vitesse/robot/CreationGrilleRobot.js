@@ -31,7 +31,7 @@ export default class CreationGrilleRobot extends Component {
         if (this.state.etat === 'drapeau') {
             let nouveauTabDrapeau = [...this.state.tabDrapeau];
             let trouve = null;
-            console.log(nouveauTabDrapeau)
+
             for (let index = 0; index < nouveauTabDrapeau.length; index++) {
                 if (nouveauTabDrapeau[index].x === x && nouveauTabDrapeau[index].y === y) {
                     trouve = index;
@@ -51,7 +51,6 @@ export default class CreationGrilleRobot extends Component {
        
             if (x === -2 && y === -2) {
                 let r = this.state.positionDepart.r === 3 ? 0 : this.state.positionDepart.r+1;
-                console.log(r);
                 this.setState({ positionDepart: { x: this.state.positionDepart.x, y : this.state.positionDepart.y,r } })
             }
             else

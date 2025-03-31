@@ -20,7 +20,6 @@ export default class JeuRobot extends Component {
         this.fin = false;
         this.noJeu = 0;
         this.niveauxJeux = this.creerNiveaux();
-        console.log(this.niveauxJeux);
         this.state = {
             tabGrille: this.niveauxJeux[this.noJeu].tabGrille,
             position: this.niveauxJeux[this.noJeu].positionDepart,
@@ -69,7 +68,7 @@ export default class JeuRobot extends Component {
              tabNiveauComplet.push(tabDonnees[tabNiveau[j]]);
     //        tabNiveauComplet.push(tabDonnees[25]);
         }
-        console.log(tabNiveauComplet);
+
         return tabNiveauComplet;
 
 
@@ -252,7 +251,7 @@ export default class JeuRobot extends Component {
     }
 
     ajoutDirection = (no) => {
-        console.log(this.fin);
+ 
         if (this.depEnCours > 0 || this.fin) return;
         let nouveauTabDirections = [...this.state.tabDirections];
         nouveauTabDirections.push({ etat: 'repos', no });

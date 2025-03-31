@@ -90,31 +90,32 @@ export default class JeuCoupe extends Component {
             let motAVerifier = false;
             let i = 0;
             let tabLettresEnCours = tabListe[this.etatEnCours.noMot].map(x => { return x.lettreEnCours });
-            console.log(tabLettresEnCours);
+      
             do {
                 motAVerifier = tabListe[i].every((x, j) => tabLettresEnCours[j] === x.reponse);
-                console.log(tabListe[i]);
-                console.log(motAVerifier)
+  
                 i++;
             } while (!motAVerifier && i < tabListe.length);
             if (motAVerifier) {
-                console.log(motAVerifier);
+           
                 let tabVictoire = [...this.state.tabVictoire];
                 tabVictoire[this.etatEnCours.noMot] = true;
                 this.fin = this.etatEnCours.noMot;
                
-                this.setState({ tabVictoire });
-                console.log(tabVictoire);
+                this.setState({ tabVictoire, score : this.state.score + 4 });
+          
                 let finJeu = tabVictoire.every(x => x === true);
-                console.log(finJeu);
+           
                 if (finJeu) {
                  
-                    message.success('Super !', this.nouveauJeu);
+                    message.success('Super !',1, this.nouveauJeu);
                 }
 
                 return true;
             } else {
+            
                 message.error("Ce n'est pas le mot attendu.");
+                this.setState({ score : this.state.score - 2 });
                 return false;
             }
         }
@@ -290,7 +291,7 @@ export default class JeuCoupe extends Component {
         return (<div>
             <Helmet>
                 <title>Les mots coupés</title>
-                <meta name="description" content="Un jeu simple d'entrainement cérébral." />
+                <meta name="description" content="Testez votre agilité avec Les mots coupés ! Assemblez des fragments pour reformer les bons mots et relevez le défi. Jouez dès maintenant ! ✂️🔡🎮" />
             </Helmet>
             {this.state.finJeu ?
                 <Resultat score={this.state.score} typeExo='vitessecoupe'></Resultat> :
@@ -303,7 +304,7 @@ export default class JeuCoupe extends Component {
                  
                  
                 </div>   </div>  
-                 <div className="centre marge10"><CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours></div>
+                 <div className="centre marge10"><CompteRebours temps={100} finTimer={this.finTimer}></CompteRebours></div>
                     <div className="centre  marge10">Score : {this.state.score}</div>
 <div className="titre titreCouleur">Les mots coupés</div>
             </div>}

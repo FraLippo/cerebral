@@ -42,7 +42,6 @@ export default class JeuLangue extends Component {
             }
 
         }
-        console.log(tabNbAleatoire);
         return tabNbAleatoire;
     }
 
@@ -66,7 +65,7 @@ export default class JeuLangue extends Component {
 
 
     nouvelleQuestion = () => {
-        console.log(this.noQuestion);
+   
         if (this.noQuestion === 10) {
             if (this.score === 90) {
                 message.success('Bravo ! bonus de 30 points', 2);

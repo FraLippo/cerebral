@@ -112,7 +112,7 @@ const router = createBrowserRouter([
       children: [
           {
             index : true,
-            element: <JeuCoupe />,
+            element: <PresentationTemps />,
           },
           {
            

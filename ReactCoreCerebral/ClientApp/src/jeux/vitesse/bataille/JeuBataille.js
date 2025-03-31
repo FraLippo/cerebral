@@ -28,7 +28,7 @@ export default class JeuBataille extends Component {
     this.fin = false;
     let tabBataille = [];
         tabBataille = Logique.generateGridWithHelp();
-   console.log(tabBataille);
+
     this.setState({
         tabBataille,
         tabNavires : JSON.parse(JSON.stringify(SHIPS)),
@@ -70,7 +70,7 @@ let nouveauTabNavires = [...this.state.tabNavires]
  }
 const somme = this.state.tabNavires.reduce((acc, current) => acc + current[1], 0);
 
- console.log(somme);
+
  if (somme === 0)
     {
         message.success('Bravo, grille terminée', this.regenerate);

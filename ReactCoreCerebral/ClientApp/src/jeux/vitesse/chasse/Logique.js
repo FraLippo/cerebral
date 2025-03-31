@@ -35,7 +35,6 @@ function create16LettersArray() {
     result.push('E');
     result.push('E');
     result = [...generateLetterArray(result, 8, 'consonne')];
-    console.log(result)
     return result.sort(() => Math.random() - 0.5);
 }
 

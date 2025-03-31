@@ -160,7 +160,7 @@ export default class JeuChasse extends Component {
     reset = () => {
         let nouveauTabLettres = [...this.state.tabLettres];
         let nouveauTabAide = [...this.state.tabAide];
-        console.log(this.state.score)
+   
         this.setState({
             tabLettres: this.remiseAZero(nouveauTabLettres),
             tabAide: this.remiseAZero(nouveauTabAide),

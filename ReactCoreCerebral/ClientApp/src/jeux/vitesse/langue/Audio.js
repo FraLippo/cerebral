@@ -16,7 +16,7 @@ export default class Audio extends Component {
     }
     componentDidMount() {
 
-        console.log('play');
+   
         let promise = this.audio.current.play();
 
         // if (promise !== undefined) {
@@ -37,7 +37,7 @@ export default class Audio extends Component {
     }
 
     componentWillUnmount() {
-    console.log('fin');
+
     }
 
     finAudio = () => {

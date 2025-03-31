@@ -10,6 +10,7 @@ export default class Logique {
         this.listeMots = mots;
       
         this.listeDonneesJeu = [];
+   
     }
 
     shuffleArray(array) {
@@ -24,21 +25,21 @@ export default class Logique {
         // Créer un Set pour garantir l'unicité des indices
         const indices = new Set();
         const max = this.listeMots.length;
-        let nbMots = niveau === 1 ? 8 : niveau === 2 ? 5 : 4;
+        let nbMots = niveau === 1 ? 8 : niveau === 2 ? 6 : 4;
 
         // Sélectionner 5 indices uniques
         while (indices.size < nbMots) {
             indices.add(Math.floor(Math.random() * max));
         }
         let tabListeMot = [...indices].map(index => { return this.listeMots[index] });
-        console.log(tabListeMot);
+
         if (niveau === 1) {
             this.listeDonneesJeu = [this.couperMot(2, tabListeMot[0], 3, 3), this.couperMot(2, tabListeMot[1], 4, 4), this.couperMot(2, tabListeMot[2], 3, 3), this.couperMot(2, tabListeMot[3], 4, 4), this.couperMot(2, tabListeMot[4], 5, 5),
             this.couperMot(2, tabListeMot[5], 5, 5), this.couperMot(2, tabListeMot[6], 5, 5), this.couperMot(3, tabListeMot[7], 3, 6)];
 
         }
         if (niveau === 2) {
-            this.listeDonneesJeu = [this.couperMot(3, tabListeMot[0], 3, 6), this.couperMot(3, tabListeMot[1], 3, 6), this.couperMot(3, tabListeMot[2], 3, 6), this.couperMot(3, tabListeMot[3], 3, 6), this.couperMot(2, tabListeMot[4], 3, 6)];
+            this.listeDonneesJeu = [this.couperMot(2, tabListeMot[0], 5, 5), this.couperMot(2, tabListeMot[1], 5, 5), this.couperMot(3, tabListeMot[2], 3, 6), this.couperMot(3, tabListeMot[3], 3, 6), this.couperMot(3, tabListeMot[4], 3, 6), this.couperMot(2, tabListeMot[5], 3, 6)];
 
         }
         if (niveau === 3) {
@@ -54,7 +55,6 @@ export default class Logique {
     }
 
     couperMot(nbCoupure, mot, debut, fin, affiche = true) {
-        console.log(mot);
         let tabLettres = [];
         let tabMots = [];
         let syllabe1 = mot.substring(0, debut);

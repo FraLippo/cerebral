@@ -60,8 +60,9 @@ let mots = [
  "discussion", "distribution", "document", "domination",  "exception", "expérience", "explication", "expression", "fabricant", "féliciter", 
  "formation", "fréquence", "habitation", "imaginaire", "importance", "information", "innovation", "inspiration", "institution", "intelligence", "intention", "intéressant", "invitation"
  , "journaliste", "laboratoire", "localiser", "magistrat", "manifeste", "mélancolie", "mouvement", "négociation", "observation", "organisation",
- "médaillon", "médiateur", "médiation",  "méditation","mercenaire", "merveille",  "naissance", "navigation", "nébuleuse", "nécessaire", "négation"
-      ];
+ "médaillon", "médiateur", "médiation",  "méditation","mercenaire", "merveille",  "naissance", "navigation", "nébuleuse", "nécessaire", "négation",
+ "vêtement", "visiteur", "vitamine", "vivacité", "volaille", "voltiger", "vignette", "vignoble", "vinaigre", "saucisse", "régiment","réglisse","régulier",
+"rustique", "ridicule", "rigolade","rallonge"   ];
 
 
 

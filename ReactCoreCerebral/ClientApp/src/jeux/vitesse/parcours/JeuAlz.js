@@ -111,7 +111,6 @@ export default class JeuAlz extends Component {
             
             }
             else {
-                console.log(this.erreur);
                 message.error(this.erreur +  (this.erreur == 1 ? " faute" : " fautes"), 2, this.nouvellePartie);
             }
         }

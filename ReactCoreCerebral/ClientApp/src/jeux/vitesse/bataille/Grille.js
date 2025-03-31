@@ -34,8 +34,7 @@ export default class Grille extends Component {
     clic = (event) => {
 
         const id = parseInt(event.currentTarget.id);
-        console.log(id)
-        console.log((Math.floor(id / (GRID_SIZE + 1))))
+     
         this.props.clicGrille({ y: (Math.floor(id / (GRID_SIZE + 1))), x: id - (Math.floor(id / (GRID_SIZE + 1)) * 10) });
 
     }

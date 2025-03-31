@@ -85,10 +85,12 @@ function nomType(type) {
             return "La chasse des mots";
         case "vitessebataille":
             return "La bataille navale";
-            case "vitessealz":
-                return "Mémoire longue";
-                case "vitesselangue":
-                    return "La politesse";
+        case "vitessealz":
+            return "Mémoire longue";
+        case "vitesselangue":
+            return "La politesse";
+        case "vitessecoupe":
+            return "Les mots coupés";
         default:
             return "";
     }
@@ -97,13 +99,13 @@ function nomType(type) {
 
 let tabJeu = ["vitesseaddition", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitesserecensement"
     , "vitessematch", "vitessecomplet", "vitessebonneteau",
-    "vitessecercle", "vitesselettres", "vitesseboogle", "vitessechasse",
+    "vitessecercle", "vitesselettres", "vitesseboogle", "vitessechasse", "vitessecoupe",
     "vitessechemin", "vitessetresor", "vitessetresse", "vitessetaquin", "vitessefusee", "vitessebataille",
     "vitesseoperation", "vitessecalcul", "vitessearithmetique", "vitessemonnaie",
     "vitesseecrire", "vitessenotes", "vitessepanneauroutier", "vitesselangue",
     "vitessememoire", "vitesseforme", "vitessenombre", "vitessememory", "vitessepaire", "vitessealz"]
 
-let typeJeu = ['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c','d', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm', 'm']
+let typeJeu = ['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l', 'l', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm', 'm']
 
 let tabCategorie = ["test-memoire", "test-concentration", "test-calcul", "test-lettres", "test-culture", "test-planification"]
 
@@ -142,7 +144,7 @@ function lienAutresJeux(jeu) {
         }
     }
 
-    return { groupe: type === 'm' ? 'Mémoire' : type === 'l' ? 'Lettres et mots' : type === 'c' ? 'Calcul'  : 'Réflexion', tabListeJeux }
+    return { groupe: type === 'm' ? 'Mémoire' : type === 'l' ? 'Lettres et mots' : type === 'c' ? 'Calcul' : 'Réflexion', tabListeJeux }
 }
 
 export { verifierStatus, nomType, tabJeu, lienAutresJeux, typeJeu, lienVersCategorie };

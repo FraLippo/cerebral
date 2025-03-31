@@ -47,6 +47,16 @@ export default class TestLettres extends Component {
       <GraphiqueRapidite categorie='l' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
       <div className='jeuVitesse marge20'>
       <div className="lienJeuRapidité presentationJeu marge20">
+      <Link to='/vitessecoupe'><div className="centre titreVitesse" >✂️ Les mots coupés</div>
+      <p className="marge20">But du jeu : Le classique jeu des mots coupés où il faut reconstituer les mots qui sont coupés en plusieurs syllabes. Vous avez 100 s pour reconstituer le plus grand nombre de mots. +4 points par bonne réponse, -2 par mauvaise réponse. Attention, nous ne validons pas tous les mots, même ceux qui sont correctes grammaticalement, il faut trouver le mot attendu.  </p>
+     </Link>
+     <p className='centre'>{this.state.resultatsJoueur["vitessecoupe"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessecoupe"]:"Pas encore de résultat" }</p>
+
+      <div className="centre"><Link to='/classement/vitessecoupe'>Classement</Link></div>
+    </div>
+
+
+      <div className="lienJeuRapidité presentationJeu marge20">
       <Link to='/vitessechasse'><div className="centre titreVitesse" >📯 La chasse aux mots</div>
       <p className="marge20">But du jeu : Trouver des mots à partir des lettres disséminées dans une grille. Terminer une grille rapporte un bonus de 30 points. Plus le mot est long, plus tu gagnes de points. Le temps alloué est de 90 secondes. </p>
      </Link>

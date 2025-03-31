@@ -84,7 +84,6 @@ export default class JeuBonneteau extends Component {
         } while (i < nbPion)
         this.tabContenu = tabJeu;
         this.mouvement = this.tabDepNiveau[this.niveau];
-        console.log(this.mouvement);
         this.setState({
             flipped1: ' flippedBon',
             flipped2: ' flippedBon',
@@ -201,7 +200,6 @@ export default class JeuBonneteau extends Component {
     clicCarte = (event) => {
         const id = parseInt(event.currentTarget.id);
 
-        console.log(this.state['flipped' + id])
         if (this.state.etat !== 'fin' || this.state['flipped' + id] === ' flippedBon' || this.fin) return;
     
         let score = -5 - Math.floor(this.niveau * 1.5) ;
@@ -211,7 +209,7 @@ export default class JeuBonneteau extends Component {
             this.fin = true;
             message.success("Bravo", 1, this.nouveauJeu);
         }
-        console.log(score);
+
         this.setState((prevState) => ({
             ['flipped' + id]: prevState['flipped' + id] === '' ? ' flippedBon' : '',
             ['contenu' + id]: this.tabContenu[id - 1],

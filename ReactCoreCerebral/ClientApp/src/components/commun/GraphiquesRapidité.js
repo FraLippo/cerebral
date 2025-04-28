@@ -45,7 +45,7 @@ export default class GraphiqueRapidite extends Component {
             message = 'Ta capacité de calcul est ';
         }
         else if (this.props.categorie === 'r') {
-            this.max = 750;
+            this.max = 820;
             message = 'Ta capacité de concentration est ';
         }
         else if (this.props.categorie === 'd') {

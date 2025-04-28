@@ -82,6 +82,7 @@ const JeuCoupe = React.lazy(() => import('../../jeux/vitesse/coupe/JeuCoupe.js')
 const JeuComplet = React.lazy(() => import('../../jeux/vitesse/complet/JeuComplet'));
 const JeuBataille = React.lazy(() => import('../../jeux/vitesse/bataille/JeuBataille'));
 const JeuAlz = React.lazy(() => import('../../jeux/vitesse/parcours/JeuAlz'));
+const JeuBinero = React.lazy(() => import('../../jeux/vitesse/binero/JeuBinero'));
 const TestMemoire = React.lazy(() => import('./TestMemoire'));
 
 //const JeuCreationRobot = React.lazy(() => import('./../../jeux/vitesse/robot/CreationGrilleRobot'));
@@ -91,6 +92,7 @@ const TestConcentration = React.lazy(() => import('./TestConcentration'));
 const TestPlanification = React.lazy(() => import('./TestPlanification'));
 const TestLettres = React.lazy(() => import('./TestLettres'));
 const TestCulture = React.lazy(() => import('./TestCulture'));
+const Binero = React.lazy(() => import('./Binero'));
 
 const EnRedirect = () => {
   useEffect(() => {
@@ -149,10 +151,13 @@ const router = createBrowserRouter([
             element: <TestCulture />,
           },
           {
+            path :"regles-binero",
+            element: <Binero />,
+          },
+          {
             path :"test-planification",
             element: <TestPlanification />,
-          },
-         
+          },         
           {
             path: 'binero/:id',
             element: <JeuxBinero/>,
@@ -204,6 +209,7 @@ const router = createBrowserRouter([
             element: <EnRedirect />
             
           },
+
           {
             path: 'jeuxcompte/:id',
             element: <JeuxCompte/>,
@@ -389,6 +395,11 @@ const router = createBrowserRouter([
           {
             path: 'vitessetresse',
             element: <JeuTresse/>,
+            
+          },
+          {
+            path: 'vitessebinero',
+            element: <JeuBinero/>,
             
           },
           {

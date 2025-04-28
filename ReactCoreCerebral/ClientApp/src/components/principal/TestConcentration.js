@@ -45,6 +45,22 @@ export default class TesConcentration extends Component {
     <p>Plongez dans nos jeux de concentration captivants et découvrez le plaisir de renforcer votre attention tout en vous amusant !</p>
     <GraphiqueRapidite categorie='r' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
     <div className='jeuVitesse'>
+
+    <div className="lienJeuRapidité presentationJeu marge20">
+     <Link to='/vitessebinero'>   <div className="centre titreVitesse" >0️⃣ Le binero</div>
+       
+          <p className="marge20">But du jeu : Compléter une grille du jeu Binero. Le jeu est aussi connu sous le nom Takuzu ou Binoxxo. Il faut valider une grille pour obtenir des points, -10 points par grille non validée.</p>
+        </Link> 
+        
+        <p>Si tu ne connais pas le jeu, tu peux retrouver <Link to='/regles-binero'>l'ensemble des règles</Link> pour compléter les grilles.</p>
+         <p className='centre'>{this.state.resultatsJoueur["vitessebinero"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessebinero"]:"Pas encore de résultat" }</p>
+
+        <div className="centre"><Link to='/classement/vitessebinero'>Classement</Link></div>
+      </div>
+
+
+
+
     <div className="lienJeuRapidité presentationJeu marge20">
      <Link to='/vitessebonneteau'>   <div className="centre titreVitesse" >🎩 Le bonneteau</div>
        

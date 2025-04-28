@@ -2965,3 +2965,21 @@ svg:hover {
 }
 
 
+/* Binero */
+
+.jeuBino {
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    align-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+
+}
+
+
+.caseBineroErreur
+{
+    background-color: red;
+}
+

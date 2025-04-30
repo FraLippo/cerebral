@@ -49,7 +49,7 @@ export default class TesConcentration extends Component {
     <div className="lienJeuRapidité presentationJeu marge20">
      <Link to='/vitessebinero'>   <div className="centre titreVitesse" >0️⃣ Le binero</div>
        
-          <p className="marge20">But du jeu : Compléter une grille du jeu Binero. Le jeu est aussi connu sous le nom Takuzu ou Binoxxo. Il faut valider une grille pour obtenir des points, -10 points par grille non validée.</p>
+          <p className="marge20">But du jeu : Compléter une grille du jeu Binero. Le jeu est aussi connu sous le nom Takuzu ou Binoxxo. Il faut valider une grille pour obtenir des points, -10 points par grille non validée. Peut-on réussir plus de 72 points ?</p>
         </Link> 
         
         <p>Si tu ne connais pas le jeu, tu peux retrouver <Link to='/regles-binero'>l'ensemble des règles</Link> pour compléter les grilles.</p>

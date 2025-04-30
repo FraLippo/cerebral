@@ -12,7 +12,7 @@ export default class Logique {
         do {
             grille = this.creerGrilleValide();
             tentative++;
-            console.log(tentative);
+        
         } while (!grille && tentative < this.maxTentatives);
 
         if (!grille) {

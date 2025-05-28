@@ -2893,8 +2893,6 @@ svg:hover {
 }
 
 
-
-
 @media screen and (max-width: 1000px) {
 
     .jeuPrincipalCoupe
@@ -2972,7 +2970,6 @@ svg:hover {
     flex-direction: column;
     user-select: none;
     align-content: center;
-    align-content: center;
     flex-wrap: wrap;
 
 }
@@ -2983,3 +2980,87 @@ svg:hover {
     background-color: red;
 }
 
+/* MaitreMot */
+.jeumaitre {
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    align-content: center;
+    flex-wrap: wrap;
+
+}
+
+.lignemaitre
+{
+      display: flex;
+    flex-direction: row;
+
+    flex-wrap: wrap;
+}
+
+
+
+.grillemaitre
+{
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+
+.casenormalm {
+    width: 62px;
+    height: 62px;
+    border: 2px solid #d3d6da;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: white;
+    margin: 2px;
+}
+
+.casemalplacem {
+    background-color: #c9b458;
+    color: white;
+    border-color: #c9b458;
+    animation: flipIn 0.5s;
+}
+
+.casebienplacem {
+    background-color: #6aaa64;
+    color: white;
+    border-color: #6aaa64;
+    animation: flipIn 0.5s;
+}
+
+@keyframes flipIn {
+    0% {
+        transform: rotateX(0);
+    }
+    50% {
+        transform: rotateX(-90deg);
+    }
+    100% {
+        transform: rotateX(0);
+    }
+}
+
+/* Responsive design pour mobile */
+@media (max-width: 600px) {
+    .casenormalm {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+    }
+    
+    .lignemaitre {
+        gap: 3px;
+        margin-bottom: 3px;
+    }
+}

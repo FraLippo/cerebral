@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Logique from './Logique'
-
+import Grille from './Grille';
 
 export default class JeuMaitremot extends Component
 {
@@ -10,15 +10,28 @@ export default class JeuMaitremot extends Component
     {
         super(props);
         let l = new Logique();
-        
-      l.construireNouveauJeu();
+      for (let index = 0; index <5000; index++) {
+            l.construireNouveauJeu();
         l.constructionListeReponse();
+        
+      }
+       
+        let t = l.tabListeMots;
+
+        this.state = {
+          tabListeReponse : t
+
+        }
+       
+   
+
     }
     
 
     
     render()
     {
-    return <div></div>
+    return <div className='jeumaitre'>
+      <div className='grillemaitre'><Grille tabListeReponse={this.state.tabListeReponse}></Grille></div></div>
     }
 }

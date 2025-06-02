@@ -7,8 +7,47 @@ export default class Logique {
         this.tabMotsIndices = [];
         this.reponseReference = [];
         this.tabListeMots = [];
+        this.reponseAleatoire = [];
+       
+        // const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
+        // const stats = {};
 
+        // alphabet.forEach(lettre => {
+        //     let count = 0;
+
+        //     data.forEach(mot => {
+        //         const occurrences = [...mot].filter(l => l === lettre).length;
+        //         if (occurrences >= 2) {
+        //             count++;
+        //         }
+        //     });
+
+        //     stats[lettre] = count;
+        // });
+
+        // Affiche les résultats
+     //   console.log("Nombre de mots avec une lettre doublée :");
+      //  console.table(stats);
+
+        // const motsAvecDeuxV = data.filter(mot => {
+        //     const matches = mot.match(/v/gi); // 'g' pour global, 'i' pour insensible à la casse
+        //     return matches && matches.length === 2;
+        // });
+        // const motsNonDoublons = data.filter((mot, _, arr) =>
+        //     arr.filter(m => m === mot).length === 1
+        // );
+        // console.log(motsAvecDeuxV);
+      //  console.log(motsNonDoublons);
+//       const motsAvec3LettresIdentiques = data.filter(mot => {
+//   const compteur = {};
+
+//   for (const lettre of mot) {
+//     compteur[lettre] = (compteur[lettre] || 0) + 1;
+//   }
+
+//   return Object.values(compteur).some(count => count === 3);
+// });
     }
 
     filtrerMotsAvecLettres(mots, lettres) {
@@ -17,14 +56,15 @@ export default class Logique {
 
     construireNouveauJeu() {
         this.tabListeMots = [];
-       // let x = { tabMot: this.motVersTableau('RIGOLER'), mot: 'RIGOLER' };
-           this.motATrouver = this.chercherMotHasard();
-    
+        // let x = { tabMot: this.motVersTableau('RIGOLER'), mot: 'RIGOLER' };
+        this.motATrouver = this.chercherMotHasard();
+
         this.reponseReference = this.motVersTableau(this.motATrouver.mot);
         this.tabMotsIndices = [];
     }
 
     motVersTableau(mot) {
+
         let lettres = mot.split('').map(lettre => lettre.toUpperCase());
         const tab = lettres.map((l, i) => {
             return {
@@ -39,132 +79,115 @@ export default class Logique {
         const lettresRejet = ['X', 'Y', 'Z', 'K', 'W', 'Q']
         let mots = data;
         mots = this.filtrerMotsAvecLettres(mots, lettresRejet);
-
+     
         const index = Math.floor(Math.random() * mots.length);
 
 
-        console.log("mot a trouver " + mots[index]);
+
+ 
         return { tabMot: this.motVersTableau(mots[index]), mot: mots[index] };
     }
 
-    motEstCorrect(mot) {
-        let nb = 0;
 
 
-        let idexm = this.tabListeMots.find(x => mot === x.map(x => { return x.lettre }).join(''));
-        if (idexm != null) {
-    
-            return false;
-        }
-        if (mot == null)
-        {
-            console.log(mot);
-            console.log(this.motATrouver.mot)
-        }
-        //Mot correct s'il ne contient pas plus de 2 lettres bien placées
-        for (let index = 0; index < this.motATrouver.mot.length; index++) {
+    constructionTypeReponse() {
+        let nbTrouve = 0;
 
-          
-            if (this.motATrouver.mot[index] === mot[index]) {
-                nb++
+        this.reponseAleatoire = JSON.parse(JSON.stringify(this.motATrouver.tabMot)).map(x => {
+            x.etat = 'malplace';
+            return x;
+        });
+        let placeIndices = 3;
+        while (nbTrouve < 2) {
+            let nb = Math.floor(Math.random() * (4));
+            if (this.reponseAleatoire[nb].etat === 'malplace') {
+                nbTrouve++;
+                this.reponseAleatoire[nb].etat = 'bienplace'
             }
-
         }
 
-        return nb < 3
+        //on compte les doublons
+        const compteur = {};
+        for (const item of this.reponseAleatoire) {
+            compteur[item.lettre] = (compteur[item.lettre] || 0) + 1;
+        }
+
+        for (const item of this.reponseAleatoire) {
+            //On cherche des mots avec 2 lettres identiques
+            if (compteur[item.lettre] > 1) {
+                item.etat = item.etat + '2';
+
+            }
+            compteur[item.lettre] = 0;
+        }
+        // console.log(this.reponseAleatoire.map(x => { return x.etat }).join(''));
+        // console.log(this.reponseAleatoire.map(x => { return x.lettre }).join(''));
+    //    console.log(this.reponseAleatoire.map(x => { return x.pos }).join(''));
     }
 
-    constructionListeReponse() { //On construit les lettres bien placées
-        let nbHasard = Math.floor(Math.random() * this.motATrouver.tabMot.length);
-        let motTrouves = [];
-        // boucle lettres bien placées
-        let nb = 0;
-        do {
-
-            this.chercherMotAvecLettres(nbHasard, "bienplace");
-            motTrouves = this.reponseReference.filter(x => x.etat !== 'trouve');
-            nbHasard = Math.floor(Math.random() * motTrouves.length);
-
-            nbHasard = motTrouves[nbHasard].pos;
-            nb++;
-
-        } while (nb < 2)
-        //boucle lettres mal placées
-        let lettresAModifier = this.reponseReference.filter(x => x.etat === 'init');
-    
-        nb = 0;
-        // console.log("init xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-        // console.log(lettresAModifier)
-        while (nb < 4 && lettresAModifier.length > 0) {
-            this.chercherMotAvecLettres(lettresAModifier[0].pos, "malplace");
-            lettresAModifier = this.reponseReference.filter(x => x.etat === 'init');
-            nb++;
-        }
-
-        //Secours. On recommence pour les doublons en cas de problème
-        if (lettresAModifier.length > 0) {
-         //   console.log('MAYDAYMAYDAYMAYDAYMAYDAYMAYDAYMAYDAYMAYDAYMAYDAYMAYDAYMAYDAYMAYDAYMAYDAYMAYDAY')
-            nb = 0;
-            do {
-                this.chercherMotAvecLettres(lettresAModifier[0].pos, "bienplace");
+    constructionListeReponse() {
+       
+        let lettresAModifier = [];
+       
+            this.constructionTypeReponse();
+            for (let index = 0; index < this.reponseAleatoire.length; index++) {
+                this.chercherMotAvecLettres(this.reponseAleatoire[index]);
                 lettresAModifier = this.reponseReference.filter(x => x.etat === 'init');
-                nb++;
-
-            } while (nb < 3 && lettresAModifier.length !== 0)
-        }
-
-        if (lettresAModifier.length > 0)
-        {
-            console.log("kkkkkkkkKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK")
-            this.construireNouveauJeu();
-            this.constructionListeReponse();
-        }
-        // console.log("reference fin");
-        // console.log(this.reponseReference)
-        // for (let index = 0; index < this.tabListeMots.length; index++) {
-        //     console.log(this.tabListeMots[index].map(x => { return x.lettre }).join(''));
-        // }
-
+                if (lettresAModifier.length === 0) break;
+            }
+         
+         return lettresAModifier.length === 0;
 
     }
 
 
-    chercherMotAvecLettres(nb, type) {
-        let lettrePlacee = this.motATrouver.tabMot[nb];
+
+    chercherMotAvecLettres(lettrePlacee) {
+
         let motsAvecLettre = [];
-        if (type === 'bienplace') {
-            motsAvecLettre = data.filter(mot => mot[nb] === lettrePlacee.lettre);
-            if (motsAvecLettre.length < 2) return;
+      
+        if (lettrePlacee.etat === 'bienplace') {
+            motsAvecLettre = data.filter(mot => mot[lettrePlacee.pos] === lettrePlacee.lettre);
         }
-        else {
+        else if (lettrePlacee.etat === 'malplace') {
             motsAvecLettre = data.filter(mot =>
                 mot.includes(lettrePlacee.lettre) && mot[lettrePlacee.pos] !== lettrePlacee.lettre
             );
-            if (motsAvecLettre.length < 2) return;
+        }
+        else if (lettrePlacee.etat === 'bienplace2' || lettrePlacee.etat === 'malplace2') {
+            const motsAvecDeux = data.filter(mot => {
+                const regex = new RegExp(lettrePlacee.lettre, 'gi'); // 'g' pour global, 'i' pour insensible à la casse
+                const matches = mot.match(regex);
+                return matches && matches.length === 2;
+            });
+
+            if (lettrePlacee.etat === 'bienplace2') {
+                motsAvecLettre = motsAvecDeux.filter(mot => mot[lettrePlacee.pos] === lettrePlacee.lettre);
+
+
+            }
+            else {
+                motsAvecLettre = motsAvecDeux;
+            }
+
+        }
+        if (motsAvecLettre.length < 3) {
+            console.log("___________________________________________________________")
+            return;
         }
         let index = motsAvecLettre.indexOf(this.motATrouver.mot);
-
+ 
         if (index !== -1) {
+
             motsAvecLettre.splice(index, 1); // supprime 1 élément à l’index trouvé
         }
 
+
         let motCorrect = {};
 
-        for (let index = 0; index < 3; index++) {
-
-            let nbHasard = Math.floor(Math.random() * motsAvecLettre.length);
-            motCorrect = motsAvecLettre[nbHasard];
-            if (motCorrect == null)
-            {
-                console.log(nbHasard);
-                console.log(lettrePlacee);
-            }
-            if (this.motEstCorrect(motCorrect)) {
-                break;
-            }
-        }
-
-
+        let nbHasard = Math.floor(Math.random() * motsAvecLettre.length);
+        motCorrect = motsAvecLettre[nbHasard];
+ 
         motCorrect = this.motVersTableau(motCorrect);
         this.construireTabIndices(motCorrect);
 
@@ -197,6 +220,7 @@ export default class Logique {
                 tabReference.etat = 'trouve';
 
             }
+
             tabMot.correspondance = 0;
         }
         let tabPosition = JSON.parse(JSON.stringify(tabReference.filter(x => x.etat === 'init')));

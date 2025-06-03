@@ -2994,8 +2994,9 @@ svg:hover {
 {
       display: flex;
     flex-direction: row;
-
     flex-wrap: wrap;
+         gap: 3px;
+        margin-bottom: 3px;
 }
 
 
@@ -3012,8 +3013,8 @@ svg:hover {
 
 
 .casenormalm {
-    width: 62px;
-    height: 62px;
+    width: 60px;
+    height: 60px;
     border: 2px solid #d3d6da;
     font-size: 2rem;
     font-weight: bold;
@@ -3022,7 +3023,7 @@ svg:hover {
     align-items: center;
     text-transform: uppercase;
     background-color: white;
-    margin: 2px;
+
 }
 
 .casemalplacem {
@@ -3031,18 +3032,14 @@ svg:hover {
   background-color: red;         /* cercle rouge */
   color: white;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 50px;
   text-align: center;
   border-radius: 50%; 
     animation: flipIn 0.5s;
 }
 
 .casebienplacem {
- width: 62px;
-    height: 62px;
- 
-    font-size: 2rem;
+ width: 60px;
+    height: 60px;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -3051,6 +3048,17 @@ svg:hover {
     color: white;
     border-color: #020e01;
     animation: flipIn 0.5s;
+}
+
+.erreurm
+{
+    background-color: #de3668;
+    animation: flipIn 0.5s;
+
+}
+.grisem
+{
+    background-color: #d4dbf3;
 }
 
 @keyframes flipIn {
@@ -3067,14 +3075,26 @@ svg:hover {
 
 /* Responsive design pour mobile */
 @media (max-width: 600px) {
+  .grillemaitre
+{
+    width: 335px;
+   
+}
+.casebienplacem {
+ width: 42px;
+    height: 42px;
+}
+
     .casenormalm {
-        width: 45px;
-        height: 45px;
+        width: 42px;
+        height: 42px;
         font-size: 1.5rem;
     }
-    
-    .lignemaitre {
-        gap: 3px;
-        margin-bottom: 3px;
+
+    .casemalplacem {
+   width: 30px;
+  height: 30px;
     }
+    
+   
 }

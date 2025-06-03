@@ -115,7 +115,7 @@ const router = createBrowserRouter([
       children: [
           {
             index : true,
-            element: <JeuMaitreMot />,
+            element: <PresentationTemps />,
           },
           {
            
@@ -409,7 +409,7 @@ const router = createBrowserRouter([
             
           },
             {
-            path: 'vitessemaitremot',
+            path: 'vitessemotus',
             element: <JeuMaitreMot/>,
             
           },

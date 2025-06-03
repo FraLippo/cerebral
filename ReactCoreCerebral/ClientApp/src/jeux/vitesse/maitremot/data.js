@@ -317,7 +317,6 @@ let mots =
     "RELATIF",
     "FEUILLE",
     "FICHIER",
-    "OFFRANT",
     "PROFOND",
     "SUFFIXE",
     "PLAFOND",

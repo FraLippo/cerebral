@@ -8,6 +8,7 @@ export default class Logique {
         this.reponseReference = [];
         this.tabListeMots = [];
         this.reponseAleatoire = [];
+    
        
         // const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
@@ -82,9 +83,6 @@ export default class Logique {
      
         const index = Math.floor(Math.random() * mots.length);
 
-
-
- 
         return { tabMot: this.motVersTableau(mots[index]), mot: mots[index] };
     }
 
@@ -187,7 +185,7 @@ export default class Logique {
 
         let nbHasard = Math.floor(Math.random() * motsAvecLettre.length);
         motCorrect = motsAvecLettre[nbHasard];
- 
+        
         motCorrect = this.motVersTableau(motCorrect);
         this.construireTabIndices(motCorrect);
 
@@ -198,7 +196,7 @@ export default class Logique {
         for (let index = 0; index < tabMot.length; index++) {
             if (tabMot[index].etat !== 'init') {
                 if (tabMot[index].etat === 'trouve') {
-                    this.reponseReference[index].etat = 'trouvé';
+                    this.reponseReference[index].etat = 'trouve';
                 }
                 if (tabMot[index].etat === 'mauvais' && this.reponseReference[tabMot[index].correspondance].etat === 'init') {
 
@@ -216,15 +214,17 @@ export default class Logique {
 
         for (let i = 0; i < tabMot.length; i++) {
             if (tabMot[i].lettre === tabReference[i].lettre) {
+                
                 tabMot[i].etat = 'trouve';
-                tabReference.etat = 'trouve';
+                tabReference[i].etat = 'trouve';
 
             }
 
             tabMot.correspondance = 0;
         }
+           
         let tabPosition = JSON.parse(JSON.stringify(tabReference.filter(x => x.etat === 'init')));
-
+ 
         for (let j = 0; j < tabMot.length; j++) {
             if (tabMot[j].etat !== 'trouve') {
                 if (tabPosition.length > 0) {

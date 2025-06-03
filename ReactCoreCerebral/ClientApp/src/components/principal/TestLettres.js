@@ -46,6 +46,17 @@ export default class TestLettres extends Component {
       <p>Découvrez notre série de jeux de mots fascinants et stimulants pour mettre à l'épreuve votre vocabulaire, améliorer votre agilité verbale et vous amuser tout en enrichissant votre langue ! </p>
       <GraphiqueRapidite categorie='l' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
       <div className='jeuVitesse marge20'>
+
+ <div className="lienJeuRapidité presentationJeu marge20">
+      <Link to='/vitessemotus'><div className="centre titreVitesse" >Ⓜ️ Motus</div>
+      <p className="marge20">But du jeu : Retrouver le mot caché en remettant les lettres dans l'ordre, ce jeu est inspiré de Motus, Wordle ou Tusmo. Les lettres bleues sont bien placées, les lettres dans les cercles rouges sont mal placées. Il suffit de cliquer sur les lettres pour les remettre dans l'ordre. Le niveau de difficulté est très variable suivant les mots, la difficulté n'augmente pas.  </p>
+     </Link>
+     <p className='centre'>{this.state.resultatsJoueur["vitessemotus"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessemotus"]:"Pas encore de résultat" }</p>
+
+      <div className="centre"><Link to='/classement/vitessemotus'>Classement</Link></div>
+    </div>
+
+
       <div className="lienJeuRapidité presentationJeu marge20">
       <Link to='/vitessecoupe'><div className="centre titreVitesse" >✂️ Les mots coupés</div>
       <p className="marge20">But du jeu : Le classique jeu des mots coupés où il faut reconstituer les mots qui sont coupés en plusieurs syllabes. Vous avez 100 s pour reconstituer le plus grand nombre de mots. +4 points par bonne réponse, -2 par mauvaise réponse. Attention, nous ne validons pas tous les mots, même ceux qui sont correctes grammaticalement, il faut trouver le mot attendu.  </p>

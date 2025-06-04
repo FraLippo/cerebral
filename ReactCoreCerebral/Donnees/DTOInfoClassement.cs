@@ -8,6 +8,7 @@ namespace ReactCoreCerebral.Donnees
     {
         public string NomJeu { get; set; }
         public int Score { get; set; }
+        public string Categorie { get; set; }
 
     }
     public class DTOInfoClassement

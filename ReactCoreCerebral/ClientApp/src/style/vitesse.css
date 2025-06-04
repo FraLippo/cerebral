@@ -3061,6 +3061,13 @@ svg:hover {
     background-color: #d4dbf3;
 }
 
+.listem
+{
+    margin : 10px auto;
+    width: 360px;
+}
+
+
 @keyframes flipIn {
     0% {
         transform: rotateX(0);

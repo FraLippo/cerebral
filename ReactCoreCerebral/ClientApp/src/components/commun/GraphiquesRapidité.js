@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { verifierStatus } from '../../jeux/vitesse/commun/utilitaire';
+import { verifierStatus, obtenirInfoCategorie, creerMsgResultat } from '../../jeux/vitesse/commun/utilitaire';
 import { readFirstName } from '../commun/localStorage';
 import Podium from '../../jeux/vitesse/commun/Podium';
 import { Progress } from 'antd';
@@ -26,34 +26,12 @@ export default class GraphiqueRapidite extends Component {
 
 
     infoCatégorie() {
-        let message = '';
-       
-        if (this.props.categorie === 'm') {
-
-            this.max = 560;
-            message = 'Ta capacité de mémorisation est : '
-        } else if (this.props.categorie === 'l') {
-            this.max = 530;
-            message = 'Ton habilité verbale est ';
-        }
-        else if (this.props.categorie === 'p') {
-            this.max = 550;
-            message = 'Ta capacité de planification est ';
-        }
-        else if (this.props.categorie === 'c') {
-            this.max = 320;
-            message = 'Ta capacité de calcul est ';
-        }
-        else if (this.props.categorie === 'r') {
-            this.max = 820;
-            message = 'Ta capacité de concentration est ';
-        }
-        else if (this.props.categorie === 'd') {
-            this.max = 220;
-            message = 'Ton aptitude culturelle est ';
-        }
+   
+        const r = obtenirInfoCategorie(this.props.categorie)
+        this.max = r.max;
+        
         this.setState({
-            message
+            message : r.message
         });
 
     }
@@ -111,13 +89,6 @@ export default class GraphiqueRapidite extends Component {
 
     }
 
-    msgResultat() {
-        if (this.state.pourcent < 25) return 'Faible';
-        else if (this.state.pourcent < 50) return 'Satisfaisante';
-        else if (this.state.pourcent < 75) return 'Bonne';
-        else if (this.state.pourcent < 100) return 'Excellente';
-        else if (this.state.pourcent = 100) return 'Exceptionnelle';
-    }
 
     render() {
         return <div>
@@ -136,7 +107,7 @@ export default class GraphiqueRapidite extends Component {
             <div className='centre'>
                 {this.prenom !== '' && !this.prenom.includes('inconnu')&& <div className='fontMoyenne rougeV'>{this.prenom}</div>}
                 <div className='fontMoyenne'>{this.state.message}  </div>
-                <div className='fontMoyenne'><b>{this.msgResultat()}</b> </div>
+                <div className='fontMoyenne'><b>{creerMsgResultat(this.state.pourcent)}</b> </div>
                 <div className="centre marge20"><img src={border} alt="bordure" width="100" height="20" ></img></div>
 
 

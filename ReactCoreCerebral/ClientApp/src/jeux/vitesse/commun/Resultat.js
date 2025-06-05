@@ -162,7 +162,7 @@ class Resultat extends Component {
 
                     <div className="marge20"><ButtonLink titre="Recommencer" href={'/' + this.props.typeExo}></ButtonLink></div>
                     <div className="marge20"><span className="margeDroit"><ButtonLink titre="Classement général" href={'/classementmois'}></ButtonLink></span>
-                    <ButtonLink titre="Retour à la catégorie" href={'/' + lienVersCategorie(this.props.typeExo)}></ButtonLink></div>
+                    <ButtonLink titre="Retour à la catégorie" href={'/' + lienVersCategorie(this.props.typeExo, "lien")}></ButtonLink></div>
 
                     <div className="marge20"><ButtonLink titre="Retour à l'accueil" href={'/'}></ButtonLink></div>
 <h2>Autres jeux de la même catégorie</h2>

@@ -112,24 +112,39 @@ let tabJeu = ["vitesseaddition", "vitesseburger", "vitessecouleur", "vitessesoli
 let typeJeu = ['r','r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l', 'l', 'l', 'l', 'l','l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm', 'm']
 
 let tabCategorie = ["test-memoire", "test-concentration", "test-calcul", "test-lettres", "test-culture", "test-planification"]
+let tabCategorie2 = ["memoire", "concentration", "calcul", "vocabulaire", "culture", "planification"]
 
-function lienVersCategorie(nomJeu) {
 
-    let index = tabJeu.findIndex(x => x === nomJeu);
-    let type = typeJeu[index];
+
+function lienVersCategorie(nomJeu, utilisation) {
+    let categorie = [];
+    let type = '';
+    if (utilisation === 'lien')
+    {
+        categorie = tabCategorie;   
+         let index = tabJeu.findIndex(x => x === nomJeu);   
+         type = typeJeu[index];
+    }
+    else
+    {
+        categorie = tabCategorie2;
+        type = nomJeu;
+    }
+
+ 
     switch (type) {
         case 'm':
-            return tabCategorie[0];
+            return categorie[0];
         case 'r':
-            return tabCategorie[1];
+            return categorie[1];
         case 'c':
-            return tabCategorie[2];
+            return categorie[2];
         case 'l':
-            return tabCategorie[3];
+            return categorie[3];
         case 'd':
-            return tabCategorie[4];
+            return categorie[4];
         case 'p':
-            return tabCategorie[5];
+            return categorie[5];
     }
 }
 
@@ -151,4 +166,58 @@ function lienAutresJeux(jeu) {
     return { groupe: type === 'm' ? 'Mémoire' : type === 'l' ? 'Lettres et mots' : type === 'c' ? 'Calcul' : 'Réflexion', tabListeJeux }
 }
 
-export { verifierStatus, nomType, tabJeu, lienAutresJeux, typeJeu, lienVersCategorie };
+
+function obtenirInfoCategorie(categorie)
+{
+
+        if (categorie === 'm') {
+
+            return {
+                max : 560,
+            message : 'Ta capacité de mémorisation est '
+            }
+        } else if (categorie === 'l') {
+             return {
+                max : 530,
+            message : 'Ton aptitude verbale est '
+            }
+        }
+        else if (categorie === 'p') {
+             return {
+                max : 535,
+            message : 'Ta capacité de planification est '
+            }
+          
+        }
+        else if (categorie === 'c') {
+                  return {
+                max : 350,
+            message : 'Ta capacité de calcul est '
+            }
+          
+        }
+        else if (categorie === 'r') {
+             return {
+                max : 820,
+            message : 'Ta capacité de concentration est '
+            }
+           
+        }
+        else if (categorie === 'd') {
+             return {
+                max : 220,
+            message : 'Ton aptitude culturelle est '
+            }
+          
+        }
+    }
+
+function    creerMsgResultat(pourcentage) {
+        if (pourcentage < 25) return 'faible';
+        else if (pourcentage < 50) return 'satisfaisante';
+        else if (pourcentage < 75) return 'bonne';
+        else if (pourcentage< 100) return 'excellente';
+        else if (pourcentage = 100) return 'exceptionnelle';
+    }
+
+export { verifierStatus, nomType, tabJeu, lienAutresJeux, typeJeu, lienVersCategorie, obtenirInfoCategorie, creerMsgResultat };

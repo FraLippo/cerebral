@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
-using Microsoft.EntityFrameworkCore;
-using ReactCoreCerebral.Models;
 using ReactCoreCerebral.Donnees;
+using ReactCoreCerebral.Models;
+using ReactCoreCerebral.Services;
 
 namespace ReactCoreCerebral
 {
@@ -42,6 +42,7 @@ namespace ReactCoreCerebral
             services.AddControllersWithViews();
             services.AddSingleton<IDictionnaire, Dictionnaire>();
             services.AddSingleton<IDictionaryEnglish, DictionaryEnglish>();
+            services.AddHttpClient<OpenAiService>();
             services.AddDbContext<CerebralContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("CerebralContext")));
             services.AddDbContext<TableauContext>(options =>

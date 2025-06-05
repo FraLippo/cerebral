@@ -13,7 +13,7 @@ const data = [
 ];
 
 const RadarV = (props) => {
-
+  console.log(props.tabScoreCategorie);
   const config = {
     data: props.tabScoreCategorie,
     xField: 'categorie',

@@ -4,6 +4,7 @@ import { Table, Row, Col } from 'antd';
 import { readFirstName } from '../../../components/commun/localStorage';
 import { moisEnFrancais } from '../../../components/commun/utilitaire';
 import { lienVersCategorie, obtenirInfoCategorie, creerMsgResultat } from '../commun/utilitaire';
+import { lienVersCategorie, obtenirInfoCategorie, creerMsgResultat } from '../commun/utilitaire';
 import { nomType, tabJeu } from './utilitaire';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';

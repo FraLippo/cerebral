@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { verifierStatus } from './utilitaire';
 import { Table, Row, Col } from 'antd';
-import { readFirstName } from '../../../components/commun/localStorage';
+import { addFirstName, readFirstName } from '../../../components/commun/localStorage';
 import { moisEnFrancais } from '../../../components/commun/utilitaire';
-import { lienVersCategorie, obtenirInfoCategorie, creerMsgResultat } from '../commun/utilitaire';
 import { lienVersCategorie, obtenirInfoCategorie, creerMsgResultat } from '../commun/utilitaire';
 import { nomType, tabJeu } from './utilitaire';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Radar from './RadarV';
 import ModalGpt from '../../../components/commun/ModalGpt';
+import ia1 from '../../../images/ia1.png';
+import ia2 from '../../../images/ia2.png';
 
 export default class ClassementMois extends Component {
 
@@ -18,11 +19,13 @@ export default class ClassementMois extends Component {
         super(props);
 
         this.prenom = readFirstName();
+       
         const d = new Date();
         this.nomMois = moisEnFrancais[d.getMonth()];
-        if (this.prenom === null) {
+        if (this.prenom == null) {
             this.prenom = 'inconnu';
-        }
+        } 
+        console.log(this.prenom)
         this.state =
         {
             listePremiers: [],
@@ -76,7 +79,7 @@ export default class ClassementMois extends Component {
             return {
                 categorie: lienVersCategorie(x, "legende"),
                 score: 0,
-                msg: obtenirInfoCategorie(x).message + 'inconnu.'
+                msg: obtenirInfoCategorie(x).message + 'inconnue.'
 
             }
         });
@@ -94,10 +97,14 @@ export default class ClassementMois extends Component {
         for (let index = 0; index < listeModifiee.length; index++) {
             let indexScore = tabScoreCategorie.findIndex(x => x.categorie === listeModifiee[index].categorie);
             if (indexScore !== -1) {
-                tabScoreCategorie[indexScore].score = listeModifiee[index].score;
+         
+                tabScoreCategorie[indexScore].score = listeModifiee[index].score;  
+               tabScoreCategorie[indexScore].msg = tabScoreCategorie[indexScore].msg.slice(0, -9) + creerMsgResultat(parseInt(tabScoreCategorie[indexScore].score)) + '.';
+                console.log("cc");
+                console.log(tabScoreCategorie[indexScore].score)
+                console.log(tabScoreCategorie[indexScore].msg);
             }
 
-            tabScoreCategorie[indexScore].msg = tabScoreCategorie[indexScore].msg.slice(0, -8) + creerMsgResultat(tabScoreCategorie[index].score + '.');
 
         }
         return tabScoreCategorie;
@@ -116,7 +123,8 @@ export default class ClassementMois extends Component {
             const res = await reponse.json();
 
             let disabled = !(res.resultats.length === tabJeu.length);
-        
+            console.log(this.prenom !== 'inconnu');
+            console.log(this.prenom);
             this.setState({
                 listePremiers: res.classementJoueurs,
                 classement: res.classement,
@@ -168,28 +176,33 @@ export default class ClassementMois extends Component {
                 <div>
                     <h1>Les résultats du mois  {this.nomMois === 'août' || this.nomMois === 'avril' || this.nomMois === 'octobre' ? "d'" + this.nomMois : 'de ' + this.nomMois}</h1>
                     <div className='centre margeHaut10'><div>Il ne faut pas tenir compte des résultats avant d'avoir joué un maximum de jeux.</div><div>Tu as un mois, du 1er au 30, pour améliorer tes scores dans tous les jeux. À chaque début de mois, les résultats sont remis à 0.</div></div>
-                  
+                      <h2>Les 10 meilleurs du mois</h2>
+                    <Row justify="center">
+                        <Col xs={24} sm={24} md={16}><Table pagination={{ defaultPageSize: 10, hideOnSinglePage: true }} columns={this.columns} dataSource={this.state.listePremiers} rowKey='cle' />
+                        </Col></Row>
 
                     {this.state.afficheInfoJoueur &&
                         <React.Fragment>
                             <h2>Tes résultats {this.prenom.includes('@') ? this.prenom.split('@')[0] : this.prenom}</h2>
-                            <Radar tabScoreCategorie={this.state.tabScoreCategorie}></Radar>
+                                                            <p className='centre fontMoyenne margeHaut10'><b>Ton classement du mois :</b> {this.state.classement} / {this.state.nbJoueurs}</p>
+
+                           <div><Radar tabScoreCategorie={this.state.tabScoreCategorie}></Radar></div>
                             <div><ul className='listem' >{this.state.tabScoreCategorie.map((info, i) => <li key={i + 10000}>{info.msg}</li>)}</ul></div>
                          
                          
-                         <p className='fontMoyenne centre couleurHonneur margeHaut10'>Quels métiers sont faits pour toi ? Découvre-le grâce à ChatGpt ! (nouveau)</p>
-                <p className='centre'>{!this.state.disabled ? <span>Bravo, tu as terminé tous les jeux possibles, tu peux toujours améliorer ton score, ChatGpt te proposera d'autres métiers si tu augmentes ton score de 200 points</span> : <span>Tu as terminé {this.state.nbJeux} {this.state.nbJeux > 2 ? 'jeu' : 'jeux'} sur {this.state.nbJeuxTotal} possibles.</span>}</p>
-                    <p className='centre'>Si tu termines tous les jeux, Chatgpt pourra analyser tes résultats et te donner une liste de métiers qui correspondent à tes compétences. Il ne s'agit pas, bien sûr, d'un résultat scientifique et nous ne contrôlons absolument pas ce que dit ChatGpt.  😊</p>
-       <ModalGpt disabled={this.state.disabled} tabScoreCategorie={this.state.tabScoreCategorie} ></ModalGpt>
+                         <p className='fontMoyenne centre couleurHonneur margeHaut10'>Quels métiers sont faits pour toi ? Découvre-le grâce à ChatGPT ! (nouveau)</p>
+              <div className="texteImageIa"> <img src={ia1} width="150" height="225" alt="chercheuse"></img><div>ou</div>
+               <img src={ia2} width="150" height="225" alt="artiste de rue"></img>
+              </div>
+              
+                <p className='centre'>{!this.state.disabled ? <span>Bravo, tu as terminé tous les jeux possibles, tu peux toujours améliorer ton score, ChatGPT te proposera d'autres métiers si tu augmentes ton score de 200 points.</span> : <span>Tu as terminé {this.state.nbJeux} {this.state.nbJeux > 2 ? 'jeu' : 'jeux'} sur {this.state.nbJeuxTotal} possibles.</span>}</p>
+                    <p className='centre'>Si tu termines tous les jeux, ChatGPT pourra analyser tes résultats et te donner une liste de métiers qui correspondent à tes compétences. Il ne s'agit pas, bien sûr, d'un résultat scientifique et nous ne contrôlons absolument pas ce que dit ChatGPT.  😊</p>
+       <ModalGpt disabled={this.state.disabled} tabScoreCategorie={this.state.tabScoreCategorie} prenom={this.prenom} score={this.state.scoreTotal} ></ModalGpt>
                         
 
-                          <h2>Les 10 meilleurs du mois</h2>
-                    <Row justify="center">
-                        <Col xs={24} sm={24} md={16}><Table pagination={{ defaultPageSize: 10, hideOnSinglePage: true }} columns={this.columns} dataSource={this.state.listePremiers} rowKey='cle' />
-                        </Col></Row>
+                      
                         
                             <div className="centre">
-                                <p className='fontMoyenne margeHaut10'><b>Ton classement du mois :</b> {this.state.classement} / {this.state.nbJoueurs}</p>
                <h2>La liste de tous nos jeux cognitifs</h2>
                                 <div className="listeJeux">
                                     <table>
@@ -197,7 +210,7 @@ export default class ClassementMois extends Component {
                                             <tr>
 
                                                 <th>Nom du jeu</th>
-                                                <th>Score</th>
+                                                <th>Ton score</th>
                                                 <th>Action</th>
                                             </tr></thead>
                                         <tbody>{tabJeu.map((jeu, i) => this.construireJeu(jeu, i))}

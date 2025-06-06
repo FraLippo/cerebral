@@ -14,6 +14,7 @@ namespace ReactCoreCerebral.Models
         }
 
         public DbSet<Resultat2019> Resultat2019 { get; set; }
+        public DbSet<ReponseIA> ReponseIA { get; set; }
 
     }
 }

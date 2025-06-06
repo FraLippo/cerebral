@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ReactCoreCerebral.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace CerebralCore.Models
         }
 
         public DbSet<Resultat> Resultats { get; set; }
+    
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

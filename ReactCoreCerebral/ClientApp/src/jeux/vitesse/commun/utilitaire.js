@@ -173,18 +173,18 @@ function obtenirInfoCategorie(categorie)
         if (categorie === 'm') {
 
             return {
-                max : 560,
+                max : 550,
             message : 'Ta capacité de mémorisation est '
             }
         } else if (categorie === 'l') {
              return {
-                max : 530,
+                max : 600,
             message : 'Ton aptitude verbale est '
             }
         }
         else if (categorie === 'p') {
              return {
-                max : 535,
+                max : 700,
             message : 'Ta capacité de planification est '
             }
           
@@ -205,7 +205,7 @@ function obtenirInfoCategorie(categorie)
         }
         else if (categorie === 'd') {
              return {
-                max : 220,
+                max : 280,
             message : 'Ton aptitude culturelle est '
             }
           

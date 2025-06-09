@@ -45,7 +45,7 @@ export default class TestCulture extends Component {
       <GraphiqueRapidite categorie='d' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
       <div className='jeuVitesse marge20'>
               
-              <div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessepanneauroutier"] != null ? "dejaFaitCognito" : ""}`}>
            <Link to='/vitessepanneauroutier'>   <div className="centre titreVitesse" >🚦Le code de la route</div>
    
           <p className="marge20">But du jeu : Une grille est affichée avec des panneaux routiers, il suffit de retrouver le panneau routier indiqué par la question. Tu as 120 secondes pour essayer de trouver tous les panneaux. Tu gagnes 2 points par panneau trouvé, -4 points en cas d'erreur. Si tu termines la grille, bonus de 20 points ! Le maximum est de (36 x 2) + 20 = 92 points. (<b>Nouveau</b> : ajout des derniers panneaux routiers) </p>
@@ -54,7 +54,7 @@ export default class TestCulture extends Component {
 
         <div className="centre"><Link to='/classement/vitessepanneauroutier'>Classement</Link></div>
     </div>
-    <div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesselangue"] != null ? "dejaFaitCognito" : ""}`}>
    <Link to='/vitesselangue'> <div className="centre titreVitesse" >👋 La politesse</div>   
         <p className="marge20">But du jeu : Identifier 5 mots de politesse dans différentes langues. Clique sur le lecteur (le triangle) pour démarrer l'audio s'il ne commence pas automatiquement. Tu as 80 secondes pour essayer de trouver 10 mots. Tu gagnes 9 points par mot trouvé, -3 points en cas d'erreur. </p>
      </Link> 
@@ -63,7 +63,7 @@ export default class TestCulture extends Component {
 
         <div className="centre"><Link to='/classement/vitesselangue'>Classement</Link></div>
     </div>
-    <div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseecrire"] != null ? "dejaFaitCognito" : ""}`}>
    <Link to='/vitesseecrire'> <div className="centre titreVitesse" >📠 La dactylographie</div>   
         <p className="marge20">But du jeu : Taper une série de mots le plus vite possible au clavier. Le temps alloué est de 30 secondes pour 19 mots. Chaque mot correctement saisi augmente votre score de 3 points, il n'y a pas de pénalité si tu ne tapes pas la bonne lettre. Si tu réussis à écrire les 19 mots tu obtiens un bonus de 50 points !
        </p>
@@ -73,7 +73,7 @@ export default class TestCulture extends Component {
 
         <div className="centre"><Link to='/classement/vitesseecrire'>Classement</Link></div>
     </div>
-    <div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessenotes"] != null ? "dejaFaitCognito" : ""}`}>
     <Link to='/vitessenotes'><div className="centre titreVitesse" >♬ L'oreille musicale</div>
    
         <p className="marge20">But du jeu : Retrouver une note inconnue. L'ordinateur joue une note inconnue représentée par un point d'interrogation. Tu dois retrouver à quelle note elle correspond, simplement avec ton oreille. Tu peux réécouter les notes autant de fois que tu le désires. Tu n'as pas besoin de connaissance musicale pour jouer, seule ton oreille est mise à contribution. Tout le monde a la capacité de reconnaitre les notes par contre certains doivent s'entrainer plus que d'autres.  Chaque note trouvée rapporte 7 points. Le temps alloué est de 90 secondes.</p>

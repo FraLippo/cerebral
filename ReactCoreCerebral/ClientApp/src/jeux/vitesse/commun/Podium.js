@@ -5,8 +5,29 @@ import coupe from '../../../images/coupe.png';
 
 export default function Podium(props)
 {
-    return <div className="centrePodium"><div className="placePrenomPodium">{props.tabPrenoms.length > 2 && <div className="prenomPodium">{props.tabPrenoms[2].includes('@') ? props.tabPrenoms[2].split('@')[0].slice(0,10) : props.tabPrenoms[2].slice(0,10)}</div>}
-    <div className="placePodium place3Podium">3</div></div><div className="placePrenomPodium">{props.tabPrenoms.length >= 1 &&<div  className="prenomPodium"><img src={coupe} alt="coupe"></img><div>{props.tabPrenoms[0].includes('@') ? props.tabPrenoms[0].split('@')[0].slice(0,10) : props.tabPrenoms[0].slice(0,10)}</div><div></div></div>}
-    <div className="placePodium place1Podium">1</div></div><div className="placePrenomPodium">{props.tabPrenoms.length >= 2 &&<div  className="prenomPodium">{props.tabPrenoms[1].includes('@') ? props.tabPrenoms[1].split('@')[0].slice(0,10) : props.tabPrenoms[1].slice(0,10)}</div>}
+    for (let index = 0; index < props.tabPodium.length; index++) {
+        const element = props.tabPodium[index];
+        if (element != null)
+        { if (element.prenom.includes('@'))
+        {
+            element.prenom =element.prenom.split('@')[0].slice(0,10);
+        }
+        else
+        {
+            element.prenom = element.prenom.slice(0,10);
+        }
+        
+        }
+        
+    }
+    return <div className="centrePodium"><div className="placePrenomPodium">{props.tabPodium.length > 2 &&<React.Fragment><div className="prenomPodium">{props.tabPodium[2].prenom}</div>
+     <div><small>({props.tabPodium[2].score != null && props.tabPodium[2].score} pts)</small></div></React.Fragment>}
+    <div className="placePodium place3Podium">3</div></div>
+    <div className="placePrenomPodium">{props.tabPodium.length >= 1 &&<React.Fragment><div  className="prenomPodium"><img src={coupe} alt="coupe"></img><div>{props.tabPodium[0].prenom}</div></div>
+    <div><small>({props.tabPodium[0].score != null && props.tabPodium[0].score} pts)</small></div></React.Fragment>}
+
+    <div className="placePodium place1Podium">1</div></div>
+    <div className="placePrenomPodium">{props.tabPodium.length >= 2 &&<React.Fragment><div  className="prenomPodium">{props.tabPodium[1].prenom}</div>
+        <div><small>({props.tabPodium[1].score != null && props.tabPodium[1].score} pts)</small></div></React.Fragment>}
     <div className="placePodium place2Podium">2</div></div></div>
 }

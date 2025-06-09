@@ -46,7 +46,7 @@ export default class TestMemoire extends Component {
 
 <div className='jeuVitesse marge20'>
 
-<div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessealz"] != null ? "dejaFaitCognito" : ""}`}>
       <Link  to='/vitessealz'> <div className="centre titreVitesse" >🎗️  La mémoire longue</div>    
           <p className="marge20">But du jeu : Se souvenir des mots affichés. À la différence des autres tests, on ne vous demande pas de vous souvenir de la liste de mots tout de suite, vous devez jouer à un petit jeu avant de restituer la liste. Ce jeu de mémoire est inspiré d'un test d'Alzheimer, le test des 5 mots, mais dans une version ludique. 7 points par mot, bonus de 50 points si vous trouvez les 12 mots. </p>
  </Link>
@@ -55,7 +55,7 @@ export default class TestMemoire extends Component {
       </div>
 
 
-              <div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessememory"] != null ? "dejaFaitCognito" : ""}`}>
       <Link  to='/vitessememory'> <div className="centre titreVitesse" >🎩  Le jeu du memory</div>    
           <p className="marge20">But du jeu : Trouver toutes les paires comme dans le classique jeu du Memory. Une différence avec le jeu classique : tu découvres les paires à ton rythme. Elles ne disparaissent pas au bout d'un certain temps. Le temps alloué est de 60 secondes pour tenter de trouver toutes les paires, un bonus de 30 points est alloué si tu finis le jeu.</p>
  </Link>
@@ -64,7 +64,7 @@ export default class TestMemoire extends Component {
       </div>
 
 
-                <div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessenombre"] != null ? "dejaFaitCognito" : ""}`}>
       <Link to='/vitessenombre'><div className="centre titreVitesse" >✅  Mémoire des nombres</div>
 
           <p className="marge20">But du jeu : Mémoriser une série de chiffres pour pouvoir la restituer plus tard. La suite de chiffres augmente à chaque fois d'un chiffre jusqu'à 8 ensuite elle redescend pour revenir à 1 chiffre. Chaque nombre trouvé rapporte 5 points. Si tu réussis à revenir à 1 chiffre en moins de 75 secondes tu obtiens un bonus de 50 points.</p>
@@ -74,7 +74,7 @@ export default class TestMemoire extends Component {
         <div className="centre"><Link to='/classement/vitessenombre'>Classement</Link></div>
       </div>
 
-      <div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseforme"] != null ? "dejaFaitCognito" : ""}`}>
      <Link to='/vitesseforme'><div className="centre titreVitesse" >🔺 Mémoire des formes</div>
            <p className="marge20">But du jeu : Se souvenir des formes et de la couleur des éléments présentés sur des cartes. Une fois les cartes mémorisées, elles sont retournées puis c'est à toi de les retrouver. Chaque bonne réponse rapporte 2 points puis 4 points, une mauvaise réponse te fait perdre 3 points. Le temps alloué est de 60 secondes.</p>
         </Link>    
@@ -83,7 +83,7 @@ export default class TestMemoire extends Component {
         <div className="centre "><Link to='/classement/vitesseforme'>Classement</Link></div>
       </div>
 
-      <div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessememoire"] != null ? "dejaFaitCognito" : ""}`}>
        <Link to='/vitessememoire'> <div className="centre titreVitesse" >🔵 Se souvenir des cercles</div>
    
         <p className="marge20">But du jeu : On te montre un certain nombre de cercles dans une grille, tu dois mémoriser leurs emplacements et reproduire ce que tu viens de voir dans une nouvelle grille. Le temps alloué est de 90 secondes, chaque cercle trouvé rapporte 1 point, il n'y a pas de pénalité en cas d'erreur.</p>
@@ -91,7 +91,7 @@ export default class TestMemoire extends Component {
 
         <div className="centre"><Link to='/classement/vitessememoire'>Classement</Link></div>
       </div>
-      <div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessepaire"] != null ? "dejaFaitCognito" : ""}`}>
       <Link to='/vitessepaire'>  <div className="centre titreVitesse">🐈‍⬛ L'animal précédent</div>
   
         <p className="marge20">But du jeu : On te montre une suite d'images d'animaux, tu dois indiquer si l'animal que tu as vu juste avant est le même que l'animal affiché. Tu as 30 secondes pour obtenir le meilleur score, +2 points par bonne réponse, -3 points par mauvaise réponse.</p>

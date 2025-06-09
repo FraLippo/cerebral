@@ -155,12 +155,13 @@
     margin: 20px auto;
     border-radius: 10px;
     background-color: #66d6ff;
-    padding: 10px 0px;
+    padding: 10px 5px;
     font-family: sans-serif;
 
     width: 200px;
     border: 2px black solid;
     text-decoration: none;
+       box-shadow:rgb(196 73 73) 0px 3px 9px 0px;
 }
 
 .titreClassement a {
@@ -222,6 +223,11 @@
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.3) 15px -1px 36px -18px;
 }
+
+.dejaFaitCognito {
+    background-color: #24dde72e;
+}
+
 
 @media screen and (max-width: 800px) {
     .presentationJeu {
@@ -1694,7 +1700,7 @@ svg:hover {
     }
 
     to {
-        -webkit-transform: rotate(180deg)
+        -webkit-transform: rotate(90deg)
     }
 }
 

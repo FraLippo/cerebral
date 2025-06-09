@@ -17,7 +17,7 @@ import fondrapidite from '../../images/fondrapidite.png';
 import Podium from '../../jeux/vitesse/commun/Podium';
 import { verifierStatus } from '../../jeux/vitesse/commun/utilitaire';
 import { moisEnFrancais } from '../commun/utilitaire';
-import { Rate} from 'antd';
+import metiers from '../../images/metiers.jpg';
 
 export default class PresentationTemps extends Component {
 
@@ -30,7 +30,7 @@ export default class PresentationTemps extends Component {
   const d = new Date();
 this.nomMois = moisEnFrancais[d.getMonth()];
     this.state={
-      tabPrenoms :['','','']
+      tabPodium :[]
     }
   }
   async componentDidMount() { 
@@ -45,7 +45,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
     if(reponse.ok) {
         const res = await reponse.json();
         this.setState({
-        tabPrenoms : res
+        tabPodium : res
     })
     }
     else 
@@ -69,19 +69,19 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <h1 className="titre centre couleurTitre">Sport cérébral et jeux cognitifs</h1>
       <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
       <div className="centre"><img src={pres} width="200" height="176" alt="fleur"></img></div>
-      <Row gutter={8} className="espaceHaut">
-        <Col md={24}>
-        <h2>Développez votre intelligence avec les jeux cognitifs</h2>
+      <div gutter={8} className="espaceHaut">
+       
+        <h2>Développe ton intelligence avec les jeux cognitifs</h2>
         <p>À l'ère numérique actuelle, où nos esprits sont constamment sollicités par une multitude d'informations, la pratique de jeux cognitifs apparait comme une stratégie intelligente pour stimuler et développer notre cerveau. Ces jeux, conçus pour engager activement les processus mentaux, offrent bien plus qu'une simple distraction ludique.</p>
-      
-
-        </Col>
-      </Row>
+      <h2>Détermine ton avenir professionnel ! (nouveau)</h2>
+      <p>Plus besoin d'orientation, nous pouvons désormais déterminer les métiers qui te conviennent le mieux. À partir des résultats de nos tests, ChatGPT te donne désormais les métiers pour lesquels tu es le plus qualifié. Seras-tu chercheur ou artiste de rue ?</p>
+          <div className="centre"><img src={metiers} width="360" height="240" alt="liste des métiers"></img></div>
+    </div>
       <h2>Le podium du mois  {this.nomMois === 'août' || this.nomMois === 'avril' || this.nomMois === 'octobre' ? "d'" + this.nomMois : 'de ' + this.nomMois} </h2>
       <p>Le podium montre les 3 premiers du mois en cours, le podium peut changer à tout moment, tous les résultats des jeux de rapidité sur cette page sont pris en compte.</p>
-      <Podium tabPrenoms={this.state.tabPrenoms}></Podium>
+      <Podium tabPodium={this.state.tabPodium}></Podium>
    
-      <div className="titreClassement"><Link to='classementmois'><b>Résultats détaillés</b></Link></div>
+      <div className="titreClassement"><Link to='classementmois'><b>Analyse de tes résultats</b></Link></div>
   
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>

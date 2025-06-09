@@ -85,7 +85,7 @@ export default class ClassementMois extends Component {
         });
 
         const listeModifiee = Object.entries(sommeScores).map(([categorie, score]) => {
-
+            console.log("categorie : " + lienVersCategorie(categorie, "legende") + " score : " + score);
             return {
                 categorie: lienVersCategorie(categorie, "legende"),
                 score: Math.min(100, Math.ceil((score / obtenirInfoCategorie(categorie).max) * 100))
@@ -100,9 +100,7 @@ export default class ClassementMois extends Component {
          
                 tabScoreCategorie[indexScore].score = listeModifiee[index].score;  
                tabScoreCategorie[indexScore].msg = tabScoreCategorie[indexScore].msg.slice(0, -9) + creerMsgResultat(parseInt(tabScoreCategorie[indexScore].score)) + '.';
-                console.log("cc");
-                console.log(tabScoreCategorie[indexScore].score)
-                console.log(tabScoreCategorie[indexScore].msg);
+           
             }
 
 
@@ -195,8 +193,8 @@ export default class ClassementMois extends Component {
                <img src={ia2} width="150" height="225" alt="artiste de rue"></img>
               </div>
               
-                <p className='centre'>{!this.state.disabled ? <span>Bravo, tu as terminé tous les jeux possibles, tu peux toujours améliorer ton score, ChatGPT te proposera d'autres métiers si tu augmentes ton score de 200 points.</span> : <span>Tu as terminé {this.state.nbJeux} {this.state.nbJeux > 2 ? 'jeu' : 'jeux'} sur {this.state.nbJeuxTotal} possibles.</span>}</p>
-                    <p className='centre'>Si tu termines tous les jeux, ChatGPT pourra analyser tes résultats et te donner une liste de métiers qui correspondent à tes compétences. Il ne s'agit pas, bien sûr, d'un résultat scientifique et nous ne contrôlons absolument pas ce que dit ChatGPT.  😊</p>
+                <div className='centre espaceHaut espaceTitreBas'>{!this.state.disabled ? <span>Bravo, tu as terminé tous les jeux possibles, tu peux toujours améliorer ton score pour gagner le concours du mois, ChatGPT te proposera d'autres métiers si tu augmentes ton score de 200 points.</span> :<div> <div>Tu as terminé {this.state.nbJeux} {this.state.nbJeux > 2 ? 'jeu' : 'jeux'} sur {this.state.nbJeuxTotal} possibles.</div>
+                    <p className='centre '>Si tu termines tous les jeux, ChatGPT pourra analyser tes résultats et te donner une liste de métiers qui correspondent à tes compétences. Il ne s'agit pas, bien sûr, d'un résultat scientifique et nous ne contrôlons absolument pas ce que dit ChatGPT.  😊</p></div>}</div>
        <ModalGpt disabled={this.state.disabled} tabScoreCategorie={this.state.tabScoreCategorie} prenom={this.prenom} score={this.state.scoreTotal} ></ModalGpt>
                         
 

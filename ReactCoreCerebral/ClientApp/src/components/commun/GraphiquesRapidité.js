@@ -15,7 +15,7 @@ export default class GraphiqueRapidite extends Component {
         this.state =
         {
             resultatsJoueur: [],
-            tabPrenoms: [],
+            tabPodium: [],
             pourcent: 0,
             message: ''
 
@@ -64,7 +64,8 @@ export default class GraphiqueRapidite extends Component {
         if (reponse.ok) {
             const res = await reponse.json();
 
-            let tabPrenoms = res.classementCategorie.map(x => x.prenom);
+            let tabPodium = res.classementCategorie;
+            
             const sum = Object.values(res.resultatsJoueur).reduce((accumulator, currentValue) => {
                 return accumulator + currentValue;
             }, 0);
@@ -76,7 +77,7 @@ export default class GraphiqueRapidite extends Component {
         
             this.props.recupererResultatJoueur(prenom, res.resultatsJoueur);
             this.setState({
-                tabPrenoms,
+                tabPodium,
                 pourcent
 
             })
@@ -111,7 +112,7 @@ export default class GraphiqueRapidite extends Component {
                 <div className="centre marge20"><img src={border} alt="bordure" width="100" height="20" ></img></div>
 
 
-                <Podium tabPrenoms={this.state.tabPrenoms}></Podium>
+                <Podium tabPodium={this.state.tabPodium} ></Podium>
                 <div className='centre'></div>
                 Le podium du mois en cours pour cette catégorie
             </div>

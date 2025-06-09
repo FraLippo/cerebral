@@ -68,7 +68,7 @@ namespace ReactCoreCerebral.Controllers
                     reponse = resultatUser.TexteIA;
                 }
             }
-            maj = true;
+         
             if (maj)
             {
                 reponse = await _openAiService.EnvoyerMessageAsync(input.Message);

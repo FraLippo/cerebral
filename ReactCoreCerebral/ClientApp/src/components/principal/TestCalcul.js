@@ -46,14 +46,14 @@ export default class TestCalcul extends Component {
 
    
       <div className='jeuVitesse marge20'>
-                <div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseoperation"] != null ? "dejaFaitCognito" : ""}`}>
     <Link to='/vitesseoperation'>    <div className="centre titreVitesse">➕ Les 4 opérations</div>
         <p className="marge20">But du jeu : Le plus simple des jeux de calcul mental, calculer le plus vite possible le résultat d'une simple opération. Les 4 opérateurs sont utilisés. Tu as 90 secondes pour réaliser le meilleur score. Chaque bonne réponse rapporte 1 point.</p>
       </Link>  <p className='centre'>{this.state.resultatsJoueur["vitesseoperation"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesseoperation"]:"Pas encore de résultat" }</p>
 
         <div className="centre"><Link to='/classement/vitesseoperation'>Classement</Link></div>
  </div>
-        <div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessecalcul"] != null ? "dejaFaitCognito" : ""}`}>
       <Link to='/vitessecalcul '> <div className="centre titreVitesse">🟰 La grille de calcul</div>
         <p className="marge20">But du jeu : On te donne 9 petits calculs (des additions et des soustractions) dans une grille, tu dois pointer les cases qui sont supérieures ou inférieures à un résultat donné. Tu as 60 secondes pour réaliser le meilleur score, +1 par bonne réponse, -1 en cas de mauvaise réponse.</p>
 </Link>
@@ -61,14 +61,14 @@ export default class TestCalcul extends Component {
 
         <div className="centre"><Link to='/classement/vitessecalcul'>Classement</Link></div>
       </div>
-      <div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessearithmetique"] != null ? "dejaFaitCognito" : ""}`}>
        <Link to='/vitessearithmetique'> <div className="centre titreVitesse" >🔀  Nombres en désordre</div>
           <p className="marge20">But du jeu : Retrouve la bonne opération. Des nombres sont affichés dans le désordre tu dois les remettre en ordre pour reconstituer une opération. Tu as 60 secondes, chaque bonne réponse rapporte 6 points.  </p>
        </Link>   <p className='centre'>{this.state.resultatsJoueur["vitessearithmetique"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessearithmetique"]:"Pas encore de résultat" }</p>
 
         <div className="centre"><Link to='/classement/vitessearithmetique'>Classement</Link></div>
       </div>
-      <div className="lienJeuRapidité presentationJeu marge20">
+                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessemonnaie"] != null ? "dejaFaitCognito" : ""}`}>
        <Link to='/vitessemonnaie'>  <div className="centre titreVitesse" >💵 La monnaie</div>
           <p className="marge20">But du jeu : Tu dois rendre la monnaie au client en cliquant sur les pièces pour faire l'appoint. Tu dois gérer le maximum de clients en 60 secondes. Tu gagnes des points à chaque client content.   </p>
        </Link>   <p className='centre'>{this.state.resultatsJoueur["vitessemonnaie"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessemonnaie"]:"Pas encore de résultat" }</p>

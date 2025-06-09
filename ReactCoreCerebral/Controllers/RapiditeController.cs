@@ -159,7 +159,7 @@ namespace ReactCoreCerebral.Controllers
             return DTOInfoJoueur;
         }
 
-        public IEnumerable<String> ClassementPodium()
+        public IEnumerable<DTOPodium> ClassementPodium()
         {
             DateTime now = DateTime.Now;
             var startDate = new DateTime(now.Year, now.Month, 1);
@@ -177,12 +177,12 @@ namespace ReactCoreCerebral.Controllers
                                   Score = grouping.Sum(x => x.nbFaute),
                                   Position = 0
 
-                              }).OrderByDescending(x => x.Score).Take(3).Select(x => x.Prenom).ToList();
+                              }).OrderByDescending(x => x.Score).Take(3).Select(x => new DTOPodium{ Prenom = x.Prenom, Score = x.Score}).ToList();
 
 
             for (int i = classement.Count; i < 3; i++)
             {
-                classement.Add("?");
+                classement.Add(new DTOPodium{ Prenom = "?", Score = 0 });
             }
 
 

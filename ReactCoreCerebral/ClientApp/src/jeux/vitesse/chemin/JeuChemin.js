@@ -59,7 +59,7 @@ export default class JeuChemin extends Component {
         if (this.last === id) {
             this.etape++;
             message.success('Excellent ! 👍', .5, this.init);
-            score+=3;
+            score+=5;
         }
         else {
             message.error("Ce n'est pas la bonne case", 1.5, this.init);

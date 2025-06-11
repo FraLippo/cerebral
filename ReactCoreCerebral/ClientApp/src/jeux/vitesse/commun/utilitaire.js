@@ -184,7 +184,7 @@ function obtenirInfoCategorie(categorie)
         }
         else if (categorie === 'p') {
              return {
-                max : 700,
+                max : 650,
             message : 'Ta capacité de planification est '
             }
           
@@ -213,8 +213,7 @@ function obtenirInfoCategorie(categorie)
     }
 
 function    creerMsgResultat(pourcentage) {
-    console.log(pourcentage);
-    console.log('pourcentage')
+  
         if (pourcentage < 25) return 'faible';
         else if (pourcentage < 50) return 'satisfaisante';
         else if (pourcentage < 75) return 'bonne';

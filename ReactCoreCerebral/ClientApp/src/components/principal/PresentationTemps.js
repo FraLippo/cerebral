@@ -18,6 +18,7 @@ import Podium from '../../jeux/vitesse/commun/Podium';
 import { verifierStatus } from '../../jeux/vitesse/commun/utilitaire';
 import { moisEnFrancais } from '../commun/utilitaire';
 import metiers from '../../images/metiers.jpg';
+import presete from '../../images/presete.png';
 
 export default class PresentationTemps extends Component {
 
@@ -68,7 +69,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       </Helmet>
       <h1 className="titre centre couleurTitre">Sport cérébral et jeux cognitifs</h1>
       <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
-      <div className="centre"><img src={pres} width="200" height="176" alt="fleur"></img></div>
+      <div className="centre"><img src={presete} width="200" height="173" alt="fleur"></img></div>
       <div gutter={8} className="espaceHaut">
        
         <h2>Développe ton intelligence avec les jeux cognitifs</h2>
@@ -81,11 +82,12 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <p>Le podium montre les 3 premiers du mois en cours, le podium peut changer à tout moment, tous les résultats des jeux de rapidité sur cette page sont pris en compte.</p>
       <Podium tabPodium={this.state.tabPodium}></Podium>
    
-      <div className="titreClassement"><Link to='classementmois'><b>Analyse de tes résultats</b></Link></div>
+      <div className="titreClassement"><Link to='classementmois'><div><b>Analyse de tes résultats</b></div>
+      <div>Découvre ton futur métier</div></Link></div>
   
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
-       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55</span>👑</p>
+       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x3</span>👑</p>
       <div className='centre'><b>🚩Lili55 a de nouveau retrouvé la première classe de notre classement du mois. Bravo ! Qui pourra battre de nouveau Lili55 ? 📅</b></div>
       <p className="centre">La lutte pour la première place est aussi intense pour nos autres jeux : le<a href="https://concours.evalquiz.com/yam-presentation"> Yams</a>, le <a href="https://concours.evalquiz.com/mots-scrable">Scrabble solitaire</a> et le <a href="https://cerebral.evalquiz.com/chiffres-lettres">Mot le plus long</a></p>
    

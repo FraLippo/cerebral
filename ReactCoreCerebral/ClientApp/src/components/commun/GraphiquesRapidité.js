@@ -26,12 +26,12 @@ export default class GraphiqueRapidite extends Component {
 
 
     infoCatégorie() {
-   
+
         const r = obtenirInfoCategorie(this.props.categorie)
         this.max = r.max;
-        
+
         this.setState({
-            message : r.message
+            message: r.message
         });
 
     }
@@ -44,6 +44,16 @@ export default class GraphiqueRapidite extends Component {
             this.prenom = prenom.includes('@') ? prenom.split('@')[0] : prenom;
         }
         this.envoyerMessage(prenom);
+    }
+
+    getFractions(value) {
+        return [
+            value,
+            Math.round(value * 3 / 4),
+            Math.round(value * 1 / 2),
+            Math.round(value * 1 / 4),
+           0
+        ];
     }
 
 
@@ -65,20 +75,32 @@ export default class GraphiqueRapidite extends Component {
             const res = await reponse.json();
 
             let tabPodium = res.classementCategorie;
-            
+
             const sum = Object.values(res.resultatsJoueur).reduce((accumulator, currentValue) => {
                 return accumulator + currentValue;
             }, 0);
 
             let pourcent = (sum / this.max) * 100;
             if (pourcent > 100) pourcent = 100;
+            let tabQuart = this.getFractions(this.max);
+            let difference = 0;
+            console.log(tabQuart)
+            for (let i = 0; i < tabQuart.length-1; i++) {
+               console.log(tabQuart[i+1]);
+                if (sum < tabQuart[i] && sum >= tabQuart[i+1]) {
+                    
+                    difference = tabQuart[i] - sum;
+                    console.log(difference)
+                    break;
+                }
 
-          
-        
+            }
+
             this.props.recupererResultatJoueur(prenom, res.resultatsJoueur);
             this.setState({
                 tabPodium,
-                pourcent
+                pourcent,
+                difference
 
             })
 
@@ -106,9 +128,10 @@ export default class GraphiqueRapidite extends Component {
             </div>
 
             <div className='centre'>
-                {this.prenom !== '' && !this.prenom.includes('inconnu')&& <div className='fontMoyenne rougeV'>{this.prenom}</div>}
+                {this.prenom !== '' && !this.prenom.includes('inconnu') && <div className='fontMoyenne rougeV'>{this.prenom}</div>}
                 <div className='fontMoyenne'>{this.state.message}  </div>
                 <div className='fontMoyenne'><b>{creerMsgResultat(this.state.pourcent)}</b> </div>
+                {this.state.pourcent !== 100 && <div className="marge20">Tu dois marquer {this.state.difference} points pour atteindre le niveau suivant.</div>}
                 <div className="centre marge20"><img src={border} alt="bordure" width="100" height="20" ></img></div>
 
 

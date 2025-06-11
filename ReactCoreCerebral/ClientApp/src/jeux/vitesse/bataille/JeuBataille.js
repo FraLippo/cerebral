@@ -33,7 +33,7 @@ export default class JeuBataille extends Component {
         tabBataille,
         tabNavires : JSON.parse(JSON.stringify(SHIPS)),
         erreurs : 4,
-        score : this.state.score + 50
+        score : this.state.score + 30
         
    })
    }

@@ -21,7 +21,7 @@ export default class ModalGpt extends Component {
           loading: true});
 
         let message = `Voici les résultats d'une personne à des tests cognitifs (sur 100) : mémoire (${this.props.tabScoreCategorie[0].score}), calcul (${this.props.tabScoreCategorie[2].score}), planification (${this.props.tabScoreCategorie[5].score}), aptitude verbale (${this.props.tabScoreCategorie[3].score}), concentration (${this.props.tabScoreCategorie[1].score}), culture (${this.props.tabScoreCategorie[4].score}). Peux-tu me proposer 3 ou 4 idées de métiers qui lui conviendraient ? Pour chaque métier, ajoute une courte description. Le ton doit rester assez positif et joyeux en utlisant le tu (toi). Réponds uniquement avec un extrait HTML (sans balises <html>, <body>, ni CSS).`
-        console.log(message);
+    
         const reponse = await fetch(process.env.REACT_APP_URL_MESSAGEGPT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

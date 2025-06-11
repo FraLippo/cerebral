@@ -25,7 +25,7 @@ export default class ClassementMois extends Component {
         if (this.prenom == null) {
             this.prenom = 'inconnu';
         } 
-        console.log(this.prenom)
+ 
         this.state =
         {
             listePremiers: [],
@@ -85,15 +85,14 @@ export default class ClassementMois extends Component {
         });
 
         const listeModifiee = Object.entries(sommeScores).map(([categorie, score]) => {
-            console.log("categorie : " + lienVersCategorie(categorie, "legende") + " score : " + score);
+      
             return {
                 categorie: lienVersCategorie(categorie, "legende"),
                 score: Math.min(100, Math.ceil((score / obtenirInfoCategorie(categorie).max) * 100))
             };
         });
 
-        console.log(listeModifiee);
-        console.log(tabScoreCategorie);
+  
         for (let index = 0; index < listeModifiee.length; index++) {
             let indexScore = tabScoreCategorie.findIndex(x => x.categorie === listeModifiee[index].categorie);
             if (indexScore !== -1) {
@@ -121,8 +120,7 @@ export default class ClassementMois extends Component {
             const res = await reponse.json();
 
             let disabled = !(res.resultats.length === tabJeu.length);
-            console.log(this.prenom !== 'inconnu');
-            console.log(this.prenom);
+       
             this.setState({
                 listePremiers: res.classementJoueurs,
                 classement: res.classement,
@@ -173,7 +171,7 @@ export default class ClassementMois extends Component {
                
                 <div>
                     <h1>Les résultats du mois  {this.nomMois === 'août' || this.nomMois === 'avril' || this.nomMois === 'octobre' ? "d'" + this.nomMois : 'de ' + this.nomMois}</h1>
-                    <div className='centre margeHaut10'><div>Il ne faut pas tenir compte des résultats avant d'avoir joué un maximum de jeux.</div><div>Tu as un mois, du 1er au 30, pour améliorer tes scores dans tous les jeux. À chaque début de mois, les résultats sont remis à 0.</div></div>
+                    <div className='centre margeHaut10'><div>Il ne faut pas tenir compte de tes résultats avant d'avoir joué un maximum de jeux.</div><div>Tu as un mois, du 1er au 30, pour améliorer tes scores dans tous les jeux. À chaque début de mois, les résultats sont remis à 0.</div></div>
                       <h2>Les 10 meilleurs du mois</h2>
                     <Row justify="center">
                         <Col xs={24} sm={24} md={16}><Table pagination={{ defaultPageSize: 10, hideOnSinglePage: true }} columns={this.columns} dataSource={this.state.listePremiers} rowKey='cle' />
@@ -188,7 +186,7 @@ export default class ClassementMois extends Component {
                             <div><ul className='listem' >{this.state.tabScoreCategorie.map((info, i) => <li key={i + 10000}>{info.msg}</li>)}</ul></div>
                          
                          
-                         <p className='fontMoyenne centre couleurHonneur margeHaut10'>Quels métiers sont faits pour toi ? Découvre-le grâce à ChatGPT ! (nouveau)</p>
+                         <p className='fontMoyenne centre couleurHonneur margeHaut10'>Quels métiers sont faits pour toi ? Découvre-les grâce à ChatGPT ! (nouveau)</p>
               <div className="texteImageIa"> <img src={ia1} width="150" height="225" alt="chercheuse"></img><div>ou</div>
                <img src={ia2} width="150" height="225" alt="artiste de rue"></img>
               </div>

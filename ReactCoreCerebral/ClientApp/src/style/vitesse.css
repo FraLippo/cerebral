@@ -3129,6 +3129,11 @@ svg:hover {
 
 /* mah */
 .centreGrilleMah {
+    background: linear-gradient(120deg, #fceabb, #f8b500);
+  /* jaune sable → doré chaud */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 
     width: 100%;
 
@@ -3149,7 +3154,9 @@ svg:hover {
 }
 .caseSelectionMah 
 {
-    outline: 4px solid black;
+    border-radius: 5px;
+    box-shadow: rgb(196 73 73) 1px 1px 9px 4px;
+     transform: translateX(-3px);
 }
 
 .caseConMah {
@@ -3163,7 +3170,7 @@ svg:hover {
 @media screen and (max-width: 725px) {
 
     .centreGrilleMah {
-        height: 100vh;
+        margin-top: 80px;
     }
 
     .grilleMah {

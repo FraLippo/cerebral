@@ -28,6 +28,9 @@ export default class ConstructionGrille extends Component
 
     afficherTab= () =>
     {
+        let tab1 = this.state.grille.filter(x => x!== 0);
+        if (tab1.length % 2 !== 0) alert("Le nombre n'est pas pair.");
+        if (tab1.length > 52) alert("Trop de tuiles !") 
         let resultat = JSON.stringify(this.state.grille);
 
         this.setState({

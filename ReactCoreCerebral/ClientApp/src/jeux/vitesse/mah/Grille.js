@@ -21,7 +21,7 @@ export default class Grille extends Component
     render()
     {
         return <div className="grilleMah">{this.props.tabTuiles.map((info, i) =>
-             <div className={info.etat === 'initial' ? '' : 'caseSelectionMah'} onClick={() => this.props.clicTuile(i)} style={this.constructionEmplacement(info.pos, this.props.taille)} key={i}><img className='caseMah' src={info.img} alt='tuile mah jong'></img>
+           info.etat !== 'trouve' &&  <div className={info.etat === 'initial' ? '' : 'caseSelectionMah'} onClick={() => this.props.clicTuile(i)} style={this.constructionEmplacement(info.pos, this.props.taille)} key={i}><img draggable="false" className='caseMah' src={info.img} alt='tuile mah jong'></img>
                 </div>)}
                </div>
     }

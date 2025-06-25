@@ -78,6 +78,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <p>Plus besoin d'orientation, nous pouvons désormais déterminer les métiers qui te conviennent le mieux. À partir des résultats de nos tests, ChatGPT te donne désormais les métiers pour lesquels tu es le plus qualifié. Seras-tu chercheur ou artiste de rue ?</p>
           <div className="centre"><img src={metiers} width="360" height="240" alt="liste des métiers"></img></div>
     </div>
+    <p className="centre fontMoyenne">Pratique un jeu par jour pendant un mois, c'est bon pour le cerveau, et à la fin, on te dit tout de ton avenir professionnel !</p>
+    <p className="centre">Les résultats des premiers participants : Lilli55 sera <b>chercheur en neurosciences</b>, Pantx sera <b>consultant en stratégie</b>, marc sera <b>aide-soignant</b>, Pirouette sera <b>commis de cuisine</b>. Et toi ? </p>
       <h2>Le podium du mois  {this.nomMois === 'août' || this.nomMois === 'avril' || this.nomMois === 'octobre' ? "d'" + this.nomMois : 'de ' + this.nomMois} </h2>
       <p>Le podium montre les 3 premiers du mois en cours, le podium peut changer à tout moment, tous les résultats des jeux de rapidité sur cette page sont pris en compte.</p>
       <Podium tabPodium={this.state.tabPodium}></Podium>
@@ -87,8 +89,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
   
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
-       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x3</span>👑</p>
-      <div className='centre'><b>🚩Lili55 a de nouveau retrouvé la première classe de notre classement du mois. Bravo ! Qui pourra battre de nouveau Lili55 ? 📅</b></div>
+       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x8+7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x4</span>👑</p>
+      <div className='centre'><b>🚩 Encore une victoire pour Lilli55. Bravo ! Qui pourra battre Lili55 ? 📅</b></div>
       <p className="centre">La lutte pour la première place est aussi intense pour nos autres jeux : le<a href="https://concours.evalquiz.com/yam-presentation"> Yams</a>, le <a href="https://concours.evalquiz.com/mots-scrable">Scrabble solitaire</a> et le <a href="https://cerebral.evalquiz.com/chiffres-lettres">Mot le plus long</a></p>
    
      

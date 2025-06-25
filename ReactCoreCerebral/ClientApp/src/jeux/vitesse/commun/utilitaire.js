@@ -200,7 +200,7 @@ function obtenirInfoCategorie(categorie)
         }
         else if (categorie === 'r') {
              return {
-                max : 820,
+                max : 900,
             message : 'Ta capacité de concentration est '
             }
            

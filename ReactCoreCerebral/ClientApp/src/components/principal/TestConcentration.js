@@ -45,6 +45,16 @@ export default class TesConcentration extends Component {
     <p>Plongez dans nos jeux de concentration captivants et découvrez le plaisir de renforcer votre attention tout en vous amusant !</p>
     <GraphiqueRapidite categorie='r' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
     <div className='jeuVitesse'>
+ <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessemah"] != null ? "dejaFaitCognito" : ""}`}>
+     <Link to='/vitessemah'>   <div className="centre titreVitesse" >0️🀄 Le mahjong solitaire</div>
+       
+          <p className="marge20">But du jeu : Retrouver toutes les paires des tuiles du mahjong. Vous pouvez sélectionner une tuile s'il y a un espace disponible à gauche <b>ou</b> à droite. Si vous voyez que le jeu est bloqué (plus aucune paire n'est possible), vous pouvez changer de grille sans pénalité sauf si vous avez oublié des paires. </p>
+        </Link> 
+        
+         <p className='centre'>{this.state.resultatsJoueur["vitessemah"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessemah"]:"Pas encore de résultat" }</p>
+
+        <div className="centre"><Link to='/classement/vitessemah'>Classement</Link></div>
+      </div>
 
                 <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessebinero"] != null ? "dejaFaitCognito" : ""}`}>
      <Link to='/vitessebinero'>   <div className="centre titreVitesse" >0️⃣ Le binero</div>

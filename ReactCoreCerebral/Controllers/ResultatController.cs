@@ -5,9 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using CerebralCore.Models;
 using Microsoft.AspNetCore.Mvc;
+using ReactCoreCerebral.Donnees;
 using ReactCoreCerebral.Models;
 
-namespace CerebralCore.Controllers
+namespace ReactCerebralCore.Controllers
 {
     public class ResultatController : Controller
     {
@@ -114,6 +115,7 @@ namespace CerebralCore.Controllers
 
         public IActionResult LireTableauMot()
         {
+            //Tableau honneur
             CultureInfo french = CultureInfo.CreateSpecificCulture("fr-FR");
             var listeMeilleurs = _dbTableau.Resultat2019.Where(x => x.nbFaute == 0 && x.typeExo == "longmot" && x.date != null && x.prenom != null).OrderByDescending(x => x.date).Take(8).ToList();
             var listeMeilleursSimple = listeMeilleurs.Select(x => new
@@ -123,7 +125,41 @@ namespace CerebralCore.Controllers
                 date = x.date.HasValue ? x.date.Value.ToString("f", french) : "Inconnu",
                 niveau = string.IsNullOrEmpty(x.listeFautes) ? "" : x.listeFautes
             });
-            return Ok(listeMeilleursSimple);
+
+            //Concours du mois
+            DateTime now = DateTime.Now;
+            var startDate = new DateTime(now.Year, now.Month, 1);
+            var endDate = startDate.AddMonths(1);
+          
+            
+            var classement = (
+       from sc in _dbTableau.Resultat2019
+       where sc.nbFaute == 0
+          && sc.typeExo == "longmot"
+          && sc.date != null
+          && sc.date >= startDate
+          && sc.date < endDate
+       group sc by sc.prenom into grouping
+       select new
+       {
+           Prenom = grouping.Key,
+           Fautes = grouping.Select(x => x.listeFautes)
+       }
+   ).ToList() // passage en LINQ to Objects
+   .Select(g => new DTOClassementMot
+   {
+       Prenom = g.Prenom,
+       Score = g.Fautes.Select(f => (int)Math.Pow(int.Parse(f) / 5, 2)).Sum()
+   })
+   .OrderByDescending(x => x.Score)
+   .Take(20)
+   .ToList();
+            var i = 0;
+            classement.ForEach(x => x.Cle = i++);
+            var resultClassement = classement.ToList();
+
+
+            return Ok(new { honneur = listeMeilleursSimple, classement });
         }
     }
 }

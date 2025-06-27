@@ -36,8 +36,7 @@ export default class ChiffreLetttre extends Component {
    <div className='centre fontPetite'>evalquiz.com : le site numéro 1 du divertissement intelligent</div>
     
         <div className="centre marge10"><img src={border} alt="bordure" width="100" height="20"></img></div>
-        <Row gutter={8} className="espaceHaut">
-          <Col md={24}>
+       
             <h2>Le mot le plus long</h2>
             <p>Un jeu qui ressemble au jeu du mot le plus long de l'émission <b>"Des chiffres et des lettres"</b>.</p>
             <p>"Le Mot le plus long : Testez vos compétences en vocabulaire et remportez des défis passionnants ! Plongez dans une expérience de jeu linguistique captivante où votre talent pour les mots est mis à l'épreuve. Déjouez les lettres mélangées, formez le mot le plus étendu possible et révélez votre maîtrise des mots. Que vous soyez un passionné des jeux de lettres ou amateur de défis intellectuels, "Le Mot le plus long" vous offre une expérience unique qui stimulera votre esprit tout en vous divertissant.</p>
@@ -45,28 +44,22 @@ export default class ChiffreLetttre extends Component {
             <p>La partie se joue en 3 manches, si vous remportez la manche, c'est à dire si vous trouvez un mot plus long que celui de l'ordinateur, vous gagnez 2 points plus le nombre de lettres du mot.</p>
 
 
-            <div> <Card title={<span style={{ whiteSpace: 'normal' }}>Le mot le plus long</span>}>
-              <ul>
-                <li><Link to={"/jeuxlettres/0/1/1"}>Le mot le plus long niveau très facile contre l'ordinateur</Link></li>
-                <li><Link to={"/jeuxlettres/0/1/2"}>Le mot le plus long niveau facile contre l'ordinateur</Link></li>
-                <li><Link to={"/jeuxlettres/0/1/3"}>Le mot le plus long niveau intermédiaire contre l'ordinateur</Link></li>
-                <li><Link to={"/jeuxlettres/0/1/4"}>Le mot le plus long niveau difficile contre l'ordinateur</Link></li>
- </ul> </Card>
- <p>Vous aimez le Mot le plus long ? Pourquoi ne pas essayer notre nouveau jeu : le Scrable Solitaire</p>
- <div className='plateauCategorie'>
- <a href='https:///concours.evalquiz.com/mots-scrable'> <div className='categorieGeneral'>
-    <div className='titreCategorie'>Scrabble Solitaire</div>
-    <div className='imageCategorie'><img src={genscrable} alt="jeu scrable solitaire"></img></div>
-        </div>
+            <h3 className='centre'>Le jeu du mot le plus long contre l'ordinateur</h3>
+             <div className='fontMoyenne'>
+                <div className="boutonLienLettres "><Link to={"/jeuxlettres/0/1/1"}>Niveau très facile</Link></div>
+                <div className="boutonLienLettres"><Link to={"/jeuxlettres/0/1/2"}>Niveau facile</Link></div>
+                <div className="boutonLienLettres"><Link to={"/jeuxlettres/0/1/3"}>Niveau intermédiaire</Link></div>
+    </div>            <div className="boutonLienLettres"><Link to={"/jeuxlettres/0/1/4"}>Niveau difficile</Link></div>
+
+
+ <div className='boutonLienLettres boutonLienSuite marge20'>
+ <a href='https:///concours.evalquiz.com/mots-scrable'>Autre jeu de lettres : Scrabble solitaire
         </a>            
  </div>  
  <TableauMot></TableauMot>
           
-             
-           
-            </div>
-          </Col>
-        </Row>
+   
+    
         <div className="centre marge10"><img src={border} alt="bordure" width="100" height="20"></img></div>
 
         <Row gutter={8} className="espaceHaut">

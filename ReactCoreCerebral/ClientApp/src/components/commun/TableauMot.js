@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import withRouter from './withRouter';
-import { Row, Col, Card, Avatar } from 'antd';
+import { Row, Col, Card, Avatar, Table } from 'antd';
 import borderHonneur from '../../images/borderHonneur.png';
 import laurier from '../../images/laurier.png';
 
@@ -10,7 +10,35 @@ class TableauMot extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { resultats: [] }
+    this.state = { resultats: [],
+      classement : []
+     }
+      this.columns = [
+            {
+                title: 'Rang',
+                dataIndex: 'cle',
+                key: 'cle',
+
+            },
+            {
+                title: 'Prénom',
+                dataIndex: 'prenom',
+                key: 'prenom',
+                render: (prenom) => {
+                    return <span>{prenom.includes('@') ? prenom.split('@')[0] : prenom}</span>;
+                }
+
+            },
+            {
+                title: 'Score',
+                dataIndex: 'score',
+                key: 'score',
+            }
+
+        ]
+
+
+    
   }
 
   nomNiveau(niveau) 
@@ -43,7 +71,9 @@ class TableauMot extends Component {
       body: data
     }).then(res => res.json())
       .then(res => {
-        this.setState({ resultats: res });
+        this.setState({ resultats: res.honneur,
+          classement : res.classement
+         });
       }
       );
 
@@ -51,8 +81,12 @@ class TableauMot extends Component {
   }
   render() {
     return <div className="espaceHaut" >
-      <div className="centre espaceTitreBas">
-      
+      <div className="espaceTitreBas">
+      <h2>Le classement du mois</h2>
+<p>Le classement commence à partir du 1er du mois et se termine à la fin du mois. Toutes les parties présentes sur le tableau d'honneur sont comptabilisées. Plus le niveau est difficile, plus vous marquez de points. Le compteur est remis à 0 en début de mois. Le classement affiche les 20 meilleurs. Nous avons supprimé tous les anciens résultats. Qui sera le grand vainqueur du mois de juillet ? </p>
+                   <Row justify="center">
+                        <Col xs={24} sm={24} md={16}><Table pagination={{ defaultPageSize: 10, hideOnSinglePage: true }} columns={this.columns} dataSource={this.state.classement} rowKey='cle' />
+                        </Col></Row>
       <h1>Les meilleurs au jeu du Mot le plus long</h1>
       <p>Les 8 derniers à avoir gagné une partie de niveau avancé au moins.</p>
             <div className="centre espaceTitreBas"><img src={borderHonneur} alt="bordure" width="100" height="32" ></img></div>

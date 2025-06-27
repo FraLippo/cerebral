@@ -10,9 +10,30 @@ body{
    'Noto Color Emoji';
  }
 
+.boutonLienLettres {
+    background-color: #7252ff;
+    padding: 5px;
+    margin: 5px  auto;
+     text-align: center;
+    width: 300px;
+}
 
+.boutonLienLettres a {
+    color: white;
+    text-decoration: none;
+}
 
+.boutonLienLettres {
+    background-color: #7252ff;
+    padding: 5px;
+    margin: 5px  auto;
+     text-align: center;
+    width: 300px;
+}
 
+.boutonLienSuite {
+  background-color: #152fb2;
+}
  .plateauCategorie
  {
      display: flex;

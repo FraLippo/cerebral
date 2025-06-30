@@ -79,7 +79,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
           <div className="centre"><img src={metiers} width="360" height="240" alt="liste des métiers"></img></div>
     </div>
     <p className="centre fontMoyenne">Pratique un jeu par jour pendant un mois, c'est bon pour le cerveau, et à la fin, on te dit tout de ton avenir professionnel !</p>
-    <p className="centre">Les résultats des premiers participants : Lilli55 sera <b>chercheur en neurosciences</b>, Pantx sera <b>consultant en stratégie</b>, marc sera <b>aide-soignant</b>, Pirouette sera <b>commis de cuisine</b>. Et toi ? </p>
+    <p className="centre">Les résultats des premiers participants : Lilli55 sera <b>chercheur(se) en neurosciences</b>, Pantx sera <b>consultant(e) en stratégie</b>, marc sera <b>aide-soignant</b>, Pirouette sera <b>commis de cuisine</b>. Et toi ? </p>
       <h2>Le podium du mois  {this.nomMois === 'août' || this.nomMois === 'avril' || this.nomMois === 'octobre' ? "d'" + this.nomMois : 'de ' + this.nomMois} </h2>
       <p>Le podium montre les 3 premiers du mois en cours, le podium peut changer à tout moment, tous les résultats des jeux de rapidité sur cette page sont pris en compte.</p>
       <Podium tabPodium={this.state.tabPodium}></Podium>

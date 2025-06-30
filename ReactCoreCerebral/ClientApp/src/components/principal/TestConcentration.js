@@ -46,7 +46,7 @@ export default class TesConcentration extends Component {
     <GraphiqueRapidite categorie='r' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
     <div className='jeuVitesse'>
  <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessemah"] != null ? "dejaFaitCognito" : ""}`}>
-     <Link to='/vitessemah'>   <div className="centre titreVitesse" >0️🀄 Le mahjong solitaire</div>
+     <Link to='/vitessemah'>   <div className="centre titreVitesse" >🀄 Le mahjong solitaire</div>
        
           <p className="marge20">But du jeu : Retrouver toutes les paires des tuiles du mahjong. Vous pouvez sélectionner une tuile s'il y a un espace disponible à gauche <b>ou</b> à droite. Si vous voyez que le jeu est bloqué (plus aucune paire n'est possible), vous pouvez changer de grille sans pénalité sauf si vous avez oublié des paires. </p>
         </Link> 

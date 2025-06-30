@@ -154,7 +154,7 @@ namespace ReactCerebralCore.Controllers
    .OrderByDescending(x => x.Score)
    .Take(20)
    .ToList();
-            var i = 0;
+            var i = 1;
             classement.ForEach(x => x.Cle = i++);
             var resultClassement = classement.ToList();
 

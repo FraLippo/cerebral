@@ -171,6 +171,7 @@ export default class ClassementMois extends Component {
                
                 <div>
                     <h1>Les résultats du mois  {this.nomMois === 'août' || this.nomMois === 'avril' || this.nomMois === 'octobre' ? "d'" + this.nomMois : 'de ' + this.nomMois}</h1>
+                    {!this.state.afficheInfoJoueur && <div className="centre margeHaut10"><strong>Pas encore de résultats car tu n'as participé à aucun jeu.</strong></div>}
                     <div className='centre margeHaut10'><div>Il ne faut pas tenir compte de tes résultats avant d'avoir joué un maximum de jeux.</div><div>Tu as un mois, du 1er au 30, pour améliorer tes scores dans tous les jeux. À chaque début de mois, les résultats sont remis à 0.</div></div>
                       <h2>Les 10 meilleurs du mois</h2>
                     <Row justify="center">

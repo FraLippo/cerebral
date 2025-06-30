@@ -170,7 +170,7 @@ export default class Logique {
 
         }
         if (motsAvecLettre.length < 3) {
-            console.log("___________________________________________________________")
+        
             return;
         }
         let index = motsAvecLettre.indexOf(this.motATrouver.mot);

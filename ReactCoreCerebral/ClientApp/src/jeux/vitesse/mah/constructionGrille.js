@@ -9,7 +9,7 @@ export default class ConstructionGrille extends Component
     {
        super();
         let grille = new Array(96).fill(0);
-        console.log(grille);
+       
         this.state ={
             grille,
             resultat : '' 

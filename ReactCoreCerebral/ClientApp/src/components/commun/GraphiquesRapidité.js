@@ -84,13 +84,13 @@ export default class GraphiqueRapidite extends Component {
             if (pourcent > 100) pourcent = 100;
             let tabQuart = this.getFractions(this.max);
             let difference = 0;
-            console.log(tabQuart)
+         
             for (let i = 0; i < tabQuart.length-1; i++) {
-               console.log(tabQuart[i+1]);
+              
                 if (sum < tabQuart[i] && sum >= tabQuart[i+1]) {
                     
                     difference = tabQuart[i] - sum;
-                    console.log(difference)
+                  
                     break;
                 }
 

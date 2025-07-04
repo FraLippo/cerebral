@@ -1,5 +1,4 @@
-import { tab } from "@testing-library/user-event/dist/tab";
-import { type } from "@testing-library/user-event/dist/type";
+
 
 function verifierStatus(status) {
     if (status === 401) {

@@ -25,6 +25,7 @@ namespace ReactCoreCerebral.Controllers
 
         public async Task<IActionResult> Resultat(string typeExo, int score, string prenom, string categorie)
         {
+            prenom ??= "inconnuX"; // Pour éviter les nulls dans la base de données
             var ancienResultat = _dbTableau.Resultat2019.FirstOrDefault(x => x.prenom == prenom && x.typeExo == typeExo);
             var ancienScore = 0;
             DateTime now = DateTime.Now;
@@ -58,6 +59,7 @@ namespace ReactCoreCerebral.Controllers
 
         public DTOCategorie Categorie(string prenom, string categorie)
         {
+            prenom ??= "inconnuX"; // Pour éviter les nulls dans la base de données
             DTOCategorie resultCategorie = new();
             DateTime now = DateTime.Now;
             var startDate = new DateTime(now.Year, now.Month, 1);
@@ -112,6 +114,7 @@ namespace ReactCoreCerebral.Controllers
 
         public DTOInfoClassement ClassementMois(string prenom)
         {
+            prenom ??= "inconnuX"; // Pour éviter les nulls dans la base de données
             DateTime now = DateTime.Now;
             var startDate = new DateTime(now.Year, now.Month, 1);
             var endDate = startDate.AddMonths(1);

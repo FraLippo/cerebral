@@ -3179,3 +3179,61 @@ svg:hover {
     }
 }
 
+/*fractions */
+.jeuFrac {
+    background: linear-gradient(120deg, #717171, #110d02);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.caseCouleurFrac {
+    background-color: #04AA6D;
+
+}
+
+.grilleFrac {
+  display: grid;
+  grid-template-columns: repeat(8, 40px);
+  grid-auto-rows: 40px;
+    gap: 0;
+}
+.caseFrac {
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+
+}
+
+
+.caseFracAnim {
+    --radius: 0%;
+    background: radial-gradient(
+        circle at 50% 50%,
+        #f39c12 var(--radius),
+        #3498db 100%
+    );
+    animation: fillCenter 0.3s forwards ease-out;
+}
+
+@keyframes fillCenter {
+    0% {
+        --radius: 0%;
+    }
+    100% {
+        --radius: 150%;
+    }
+}
+
+.texteFrac
+{
+    color: white;
+    font-size: 1.2em;
+}
+
+.fractionFrac
+{
+    vertical-align: sub;
+    font-size: 1.5em;
+}

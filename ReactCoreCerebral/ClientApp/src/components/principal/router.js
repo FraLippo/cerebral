@@ -7,8 +7,8 @@ import PresentationTemps from './PresentationTemps';
 import { Menu } from 'antd';
 import { itemsMenu } from './menu';
 import PageFaute from '../commun/PageFaute';
-import CreationGrilleRobot from '../../jeux/vitesse/robot/CreationGrilleRobot';
-import JeuLangue from '../../jeux/vitesse/langue/JeuLangue';
+// import CreationGrilleRobot from '../../jeux/vitesse/robot/CreationGrilleRobot';
+
 
 const Presentation = React.lazy(() => import('./Presentation'));
 const Calcul = React.lazy(() => import('./Calcul'));
@@ -20,8 +20,8 @@ const ChiffresLettres = React.lazy(() => import('./ChiffresLettres'));
 //const TermService = React.lazy(() => import('./TermService'));
 // const PresentationEN = React.lazy(() => import('./Presentationanglais'));
 
-
-const JeuxLangue = React.lazy(() => import('../../jeux/vitesse/langue/JeuLangue'));
+const JeuFraction = React.lazy(() => import('../../jeux/vitesse/fraction/JeuFraction'));
+const JeuLangue = React.lazy(() => import('../../jeux/vitesse/langue/JeuLangue'));
  const JeuxLettres = React.lazy(() => import('../../jeux/lettres/JeuxLettres'));
 const JeuxOrdre = React.lazy(() => import('../../jeux/ordre/JeuxOrdre'));
 const JeuxPuzzle = React.lazy(() => import('../../jeux/puzzle/JeuxPuzzle'));
@@ -117,7 +117,7 @@ const router = createBrowserRouter([
       children: [
           {
             index : true,
-            element: <PresentationTemps />,
+            element: <JeuFraction />,
           },
            {
             path : 'cg',
@@ -377,6 +377,11 @@ const router = createBrowserRouter([
           {
             path: 'brain-challenge/:no',
             element: <EnRedirect />
+            
+          },
+           {
+            path: 'vitessefraction',
+            element: <JeuFraction/>,
             
           },
           {

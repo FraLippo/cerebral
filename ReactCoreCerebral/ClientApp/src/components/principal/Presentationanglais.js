@@ -1,5 +1,5 @@
 import SousMenu from './SousMenu';
-import React, { Component } from 'react';
+import  { Component } from 'react';
 import { Row, Col } from 'antd';
 import Ad from '../commun/adSense';
 import '../../style/jeux.css';

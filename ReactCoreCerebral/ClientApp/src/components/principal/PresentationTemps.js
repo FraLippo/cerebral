@@ -1,13 +1,9 @@
-import SousMenu from './SousMenu';
-import React, { Component } from 'react';
-import { Row, Col } from 'antd';
+
+import { Component } from 'react';
 import Ad from '../commun/adSense';
 import '../../style/vitesse.css';
-import border from '../../images/border.png';
-import x6 from '../../images/x6.jpg';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import pres from '../../images/pres.png';
 import fondmemoire from '../../images/fondmemoire.png';
 import fondcalcul from '../../images/fondcalcul.png';
 import fondlettres from '../../images/fondlettre.png';

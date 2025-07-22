@@ -1,5 +1,5 @@
 import '../../style/jeux.css';
-import React, { Component, Suspense } from 'react';
+import { Component, Suspense } from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { ConfigProvider} from 'antd';
 import {router} from './router'
@@ -76,6 +76,7 @@ class App extends Component {
       components: {
         Menu: {
           colorItemBg: '#afe4e2',
+     
         }}
     }}
   >

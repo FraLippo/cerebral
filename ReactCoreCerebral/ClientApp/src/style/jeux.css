@@ -1,6 +1,11 @@
 
 
-
+.ant-menu-item, .ant-menu-submenu-title {
+  min-height: 32px !important;
+  line-height: 32px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
 
 
 
@@ -161,6 +166,7 @@ body{
  .menuHaut
  {
      margin : -8px -8px 0px -8px;
+    
  }
 
 .ulStyle

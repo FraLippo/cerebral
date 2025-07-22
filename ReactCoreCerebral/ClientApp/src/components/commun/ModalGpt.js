@@ -27,7 +27,7 @@ export default class ModalGpt extends Component {
 - aptitude verbale (${this.props.tabScoreCategorie[3].score})
 - concentration (${this.props.tabScoreCategorie[1].score})
 - culture générale (${this.props.tabScoreCategorie[4].score})
-Peux-tu me proposer 4 idées de métiers qui pourraient lui convenir, en incluant  3 métiers intellectuels et 1 métier dans la restauration ?
+Peux-tu me proposer 4 idées de métiers qui pourraient lui convenir, en incluant 3 métiers intellectuels et 1 métier plus manuel ou technique ?
 Pour chaque métier, ajoute une courte description engageante, en utilisant le tutoiement (tu/toi) et un ton positif et encourageant.
 **Réponds uniquement avec un extrait HTML, sans <html>, <body>, ni CSS.**`
     

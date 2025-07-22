@@ -85,7 +85,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
   
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
-       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x4</span>👑</p>
+       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x5</span>👑</p>
       <div className='centre'><b>🚩 Encore une victoire pour Lilli55. Bravo ! Qui pourra battre Lili55 ? 📅</b></div>
       <p className="centre">La lutte pour la première place est aussi intense pour nos autres jeux : le<a href="https://concours.evalquiz.com/yam-presentation"> Yams</a>, le <a href="https://concours.evalquiz.com/mots-scrable">Scrabble solitaire</a> et le <a href="https://cerebral.evalquiz.com/chiffres-lettres">Mot le plus long</a></p>
    

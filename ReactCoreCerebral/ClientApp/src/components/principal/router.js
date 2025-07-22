@@ -111,13 +111,13 @@ const router = createBrowserRouter([
         return location.pathname;
       }}
       ></ScrollRestoration>
-      <div className='menuHaut'><Menu items={itemsMenu} mode="horizontal"></Menu></div>
+      <div className='menuHaut'><Menu items={itemsMenu} mode="horizontal" style={{lineHeight : '32 px'}}></Menu></div>
       <div className='margeEcran'><Outlet></Outlet></div></div>,
       errorElement : <PageFaute></PageFaute>,
       children: [
           {
             index : true,
-            element: <JeuFraction />,
+            element: <PresentationTemps />,
           },
            {
             path : 'cg',

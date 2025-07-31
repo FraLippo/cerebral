@@ -1,4 +1,19 @@
 
+.bandeauLien
+{
+     background-color: #bdd9f3;
+     border-radius: 5px;
+     padding: 5px 0px;
+
+}
+
+.badgeV
+{
+     background-color: #7be36f;
+     padding: 1px 5px;
+     margin: 0px 5px;
+     border-radius: 5px;
+}
 
 .ant-menu-item, .ant-menu-submenu-title {
   min-height: 32px !important;

@@ -103,9 +103,12 @@ export default class TestLettres extends Component {
       </div> 
 <h2>Nos autres jeux de mots</h2>
 <p>Vous aimez les jeux de mots et de lettres, n'hésitez pas à essayer nos autres jeux.</p>
-<div className='fontMoyenne centre'><a href="https://concours.evalquiz.com/mots-scrable">Le Scrabble solitaire</a></div>
-<div className='fontMoyenne centre'><a href="https://cerebral.evalquiz.com/chiffres-lettres">Le mot le plus long</a></div>
-  <h2>Les jeux de mots</h2>
+<div className="bandeauLien">
+  <div className='boutonLienLettres fontMoyenne centre'><a href="https://concours.evalquiz.com/pres-mots-places">Les mots placés (nouveau)</a></div>
+<div className='boutonLienLettres fontMoyenne centre'><a href="https://concours.evalquiz.com/mots-scrable">Le Scrabble solitaire</a></div>
+<div className='boutonLienLettres fontMoyenne centre'><Link to="/chiffres-lettres">Le mot le plus long</Link></div>
+</div> 
+ <h2>Les jeux de mots</h2>
   <p>Les jeux sur les mots ne sont pas seulement divertissants, ils offrent également de nombreux avantages cognitifs et éducatifs. En engageant votre esprit dans des activités ludiques telles que les mots croisés, les anagrammes et les jeux de mots, vous stimulez plusieurs aspects de votre intelligence linguistique et cognitive.</p>
 
 <p><b>Enrichissement du vocabulaire</b> : En jouant avec les mots, vous découvrez de nouveaux termes et expressions, ce qui enrichit votre vocabulaire et améliore votre compréhension de la langue.</p>

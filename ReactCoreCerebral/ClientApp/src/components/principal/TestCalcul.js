@@ -48,7 +48,7 @@ export default class TestCalcul extends Component {
       <div className='jeuVitesse marge20'>
                   <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessefraction"] != null ? "dejaFaitCognito" : ""}`}>
     <Link to='/vitessefraction'>    <div className="centre titreVitesse">➗ Les fractions</div>
-        <p className="marge20">But du jeu : colorier un certain nombre de cases dans une figure. Exemple : si la figure contient 15 carrés et que l'objectif est de colorier les 2/3 des carrés, tu dois colorier (15 / 3) x 2 = 5 x 2 = 10 carrés en orange. Vous devez réussir 9 calculs pour obtenir un bonus de 60 points. </p>
+        <p className="marge20">But du jeu : colorier un certain nombre de cases dans une figure. Exemple : si la figure contient 15 carrés et que l'objectif est de colorier les 2/3 des carrés, tu dois colorier (15 / 3) x 2 = 5 x 2 = 10 carrés en orange. Tu dois réussir 9 calculs pour obtenir un bonus de 60 points. </p>
       </Link>  <p className='centre'>{this.state.resultatsJoueur["vitessefraction"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessefraction"]:"Pas encore de résultat" }</p>
 
         <div className="centre"><Link to='/classement/vitessefraction'>Classement</Link></div>

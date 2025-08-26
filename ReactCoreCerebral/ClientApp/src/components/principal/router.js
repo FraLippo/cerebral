@@ -83,6 +83,7 @@ const JeuComplet = React.lazy(() => import('../../jeux/vitesse/complet/JeuComple
 const JeuBataille = React.lazy(() => import('../../jeux/vitesse/bataille/JeuBataille'));
 const JeuAlz = React.lazy(() => import('../../jeux/vitesse/parcours/JeuAlz'));
 const JeuBinero = React.lazy(() => import('../../jeux/vitesse/binero/JeuBinero'));
+const JeuDoigt = React.lazy(() => import('../../jeux/vitesse/doigt/JeuDoigt'));
 const JeuMaitreMot = React.lazy(() => import('../../jeux/vitesse/maitremot/JeuMaitremot'));
 const JeuMah = React.lazy(() => import('../../jeux/vitesse/mah/JeuMah.js'));
 const ConstructionJeuMah = React.lazy(() => import('../../jeux/vitesse/mah/constructionGrille.js'));
@@ -117,7 +118,7 @@ const router = createBrowserRouter([
       children: [
           {
             index : true,
-            element: <PresentationTemps />,
+            element: <JeuDoigt />,
           },
            {
             path : 'cg',

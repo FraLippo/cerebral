@@ -90,7 +90,7 @@ export default class JeuCalcul extends Component
     {
 return <React.Fragment>
     <Helmet>
-                <title>Le  jeu de la grille de calcul mental</title>
+                <title>Le jeu de la grille de calcul mental</title>
                 <meta name="description" content="Un jeu de calcul amusant et simple pour toute la famille, vous devez rapidement effectuer des opérations pour éliminer les mauvais résultats." />
             </Helmet>
     {this.state.afficheResultat ? <Resultat score={this.state.score} typeExo='vitessecalcul'></Resultat>:<div><div className="centreGrilleCalMen">

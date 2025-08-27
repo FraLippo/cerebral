@@ -1,107 +1,177 @@
 import React, { Component } from 'react';
 import { message } from 'antd';
-import { creerListeMessage } from './Logique';
+import { creerQuestion } from './Logique';
+import Resultat from '../commun/Resultat.js';
+import CompteRebours from '../commun/CompteRebours';
 
 export default class JeuDoigt extends Component {
     constructor(props) {
         super(props);
-        this.tabQuestions = creerListeMessage();
-        this.noQuestion = 0;
+        this.questionEnCours = null;
+        this.noQuestion = -1;
         this.state = {
             mouseX: 0,
             mouseY: 0,
-            tempsHors: 0,
             enJeu: false,
             compteARebours: 3,
             jeuCommence: false,
-            tremblementActif: false,
-            question : this.tabQuestions[this.noQuestion].msg
+            question: '',
+            messageErreur: '',
+            nombreErreur: 0,
+            bonneReponse: 0,
+            finJeu: false
         };
-        this.tempsQuestion = 0;
-        this.erreur = false;
 
-        this.rayon = 40;
+        this.erreur = false;
+        this.score = 0;
+        this.rayon = 80;
         this.vitesseX = 1;
         this.vitesseY = 1;
-        
+        this.distance = 0;
+
         this.canvasRef = React.createRef();
-        this.dernierTemps = 0;
         this.animationFrame = null;
-    
+        this.interval = null; // Ajouter cette ligne
+
     }
 
     demarrerCompteARebours = () => {
-          // Dessiner le cercle initial
-    const canvas = this.canvasRef.current;
-    this.x = canvas.width / 2;
-    this.y = canvas.height / 4;
-    this.dessiner();
-      
-        const interval = setInterval(() => {
+        const canvas = this.canvasRef.current;
+        this.x = canvas.width / 2;
+        this.y = canvas.height / 4;
+        this.dessiner();
+        this.interval = setInterval(() => {
             this.setState(prev => ({
                 compteARebours: prev.compteARebours - 1
             }), () => {
                 if (this.state.compteARebours === 0) {
-                    clearInterval(interval);
-                    this.setState({ jeuCommence: true }, () => this.demarrerJeu());
-                
+                    clearInterval(this.interval);
+                    this.setState({ jeuCommence: true}, () => this.demarrerJeu());
                 }
             });
         }, 1000);
     }
 
-      handleKeyDown = (event) => {  alert('t')
-    if (event.code === "Space" || event.key === " ") {
-      
-      event.preventDefault(); // Empêche le scroll par défaut
-       if (!this.tabQuestions[this.noQuestion].resultat)
-       {
-    
-        this.changerQuestion();
-       }
-       
+    gestionClicsOuEspace() {
+        if (this.questionEnCours.resultat) {
+            this.erreur = true;
+            cancelAnimationFrame(this.animationFrame);
+            if (!this.estFinErreur()) {
+                this.setState({
+                    enJeu: false,
+                    messageErreur: "Il ne fallait pas appuyer sur espace ou sur le bouton bleu."
+                }, () => this.nouveauDepart())
+            }
+        }
+        else {
+            this.ajouterBonneReponse();
+            this.distance = 0;
+            this.changerQuestion();
+        }
+
     }
-  };
 
-  changerQuestion = () =>
-{ 
-       this.tempsQuestion = setTimeout(() => this.changerQuestion(), 5000);
-    this.noQuestion++;
-    this.setState({
-        question : this.tabQuestions[this.noQuestion].msg
-    })
-}
+    clicDoigt = () => {
+        this.gestionClicsOuEspace();
+    }
+
+    handleKeyDown = (event) => {
+        if (event.code === "Space" || event.key === " ") {
+
+            event.preventDefault(); // Empêche le scroll par défaut
+
+            this.gestionClicsOuEspace();
+
+        }
+    };
+
+    testerQuestion = () => {
+        return this.questionEnCours.resultat;
+
+    }
+    changerQuestion = () => {
+
+        this.questionEnCours = creerQuestion();
+        this.setState({
+            question: this.questionEnCours.msg
+        })
 
 
+
+    }
+    estFinErreur = () => {
+
+        if (this.state.nombreErreur + 1 === 5) {
+            this.finJeu();
+            this.setState({
+                finJeu: true
+            })
+            return true;
+        } else {
+            this.setState({
+                nombreErreur: this.state.nombreErreur + 1
+            })
+             this.score = 0;
+            return false;
+        }
+    }
+    ajouterBonneReponse = () => {
+        if (this.state.bonneReponse + 1 === 12) {
+            this.finJeu();
+            this.setState({
+                finJeu: true
+            })
+        } else {
+            this.score += 10;
+            this.setState({
+                bonneReponse: this.state.bonneReponse + 1
+            })
+        }
+    }
+    finJeu = () => {
+        if (this.interval) {
+            clearInterval(this.interval);
+
+        }
+        const canvas = this.canvasRef.current;
+
+        canvas.removeEventListener('mousemove', this.suivreSouris);
+        canvas.removeEventListener('touchmove', this.suivreDoigt, { passive: false });
+        window.removeEventListener("keydown", this.handleKeyDown);
+        cancelAnimationFrame(this.animationFrame);
+
+    }
 
     componentDidMount() {
         const canvas = this.canvasRef.current;
         canvas.width = canvas.clientWidth;
         canvas.height = canvas.clientHeight;
-            window.addEventListener('mousemove', this.suivreSouris);
-            window.addEventListener('touchmove', this.suivreDoigt);
-            window.addEventListener("keydown", this.handleKeyDown);
-            // Démarrer le compte à rebours
-           this.demarrerCompteARebours();
- 
+        canvas.addEventListener('mousemove', this.suivreSouris);
+        canvas.addEventListener('touchmove', this.suivreDoigt, { passive: false });
+
+        window.addEventListener("keydown", this.handleKeyDown);
+        // Démarrer le compte à rebours
+        this.demarrerCompteARebours();
+
     }
 
     componentWillUnmount() {
-        
-        window.removeEventListener('mousemove', this.suivreSouris);
-        window.removeEventListener('touchmove', this.suivreDoigt);
-        window.removeEventListener("keydown", this.handleKeyDown);
-        clearTimeout(this.tempsQuestion);
-        cancelAnimationFrame(this.animationFrame);
+
+        this.finJeu();
     }
 
+
     suivreSouris = (e) => {
+        e.preventDefault();
+
         const rect = this.canvasRef.current.getBoundingClientRect();
         this.setState({
             mouseX: e.clientX - rect.left,
             mouseY: e.clientY - rect.top
         });
     }
+
+
 
     suivreDoigt = (e) => {
         e.preventDefault();
@@ -114,52 +184,49 @@ export default class JeuDoigt extends Component {
     }
 
     demarrerJeu = () => {
-        this.tempsQuestion = setTimeout(() => this.changerQuestion(), 5000);
-          const canvas = this.canvasRef.current;
-         
+        this.changerQuestion();
+        const canvas = this.canvasRef.current;
+
         this.x = canvas.width / 2;
         this.y = canvas.height / 4;
-        this.dernierTemps = Date.now();
-        this.setState({ enJeu: true, tempsHors: 0 }, this.boucleJeu);
+
+        this.setState({ enJeu: true }, this.boucleJeu);
     }
 
     boucleJeu = () => {
-        const maintenant = Date.now();
-        const deltaTemps = maintenant - this.dernierTemps;
-        this.dernierTemps = maintenant;
 
-        this.mettreAJourPosition(deltaTemps);
+        this.mettreAJourPosition();
         this.dessiner();
 
-        if (this.state.enJeu) {
+        if (this.state.enJeu && !this.erreur) {
             this.animationFrame = requestAnimationFrame(this.boucleJeu);
         }
     }
 
-    nouveauDepart = () =>
-    {
-          this.erreur = false;
-               this.dernierTemps = 0;
+    nouveauDepart = () => {
+   
+        this.distance = 0;
+        this.erreur = false;
         this.setState({
+            question: '',
             mouseX: 0,
             mouseY: 0,
-            tempsHors: 0,
             enJeu: false,
             compteARebours: 3,
             jeuCommence: false,
-            tremblementActif: false
+       
         }, this.demarrerCompteARebours)
-      
+
     }
 
 
-    mettreAJourPosition = (deltaTemps) => {
+    mettreAJourPosition = () => {
         const canvas = this.canvasRef.current;
-        
+
         // Mise à jour de la position
         this.x += this.vitesseX;
         this.y += this.vitesseY;
-
+        this.distance += (Math.abs(this.vitesseX) + Math.abs(this.vitesseY));
         // Rebonds sur les bords
         if (this.x <= this.rayon || this.x >= canvas.width - this.rayon) {
             this.vitesseX = -this.vitesseX * (0.8 + Math.random() * 0.4);
@@ -169,42 +236,41 @@ export default class JeuDoigt extends Component {
             this.vitesseY = -this.vitesseY * (0.8 + Math.random() * 0.4);
             this.y = this.y <= this.rayon ? this.rayon : canvas.height - this.rayon;
         }
+        let resultatQuestion = true;
 
+        if (this.distance > 500) {
+            resultatQuestion = this.testerQuestion();
+            if (resultatQuestion) {
+                this.changerQuestion();
+                this.ajouterBonneReponse();
+            }
+            this.distance = 0;
+        }
         // Vérifier si la souris est hors du cercle
         const distance = Math.sqrt(
-            Math.pow(this.state.mouseX - this.x, 2) + 
+            Math.pow(this.state.mouseX - this.x, 2) +
             Math.pow(this.state.mouseY - this.y, 2)
         );
-        
-        if (distance > this.rayon) {
-            
-            this.setState(state => ({
-                tempsHors: state.tempsHors + deltaTemps / 1000,
-                tremblementActif: true,
-                enJeu: false
-            }));
-               cancelAnimationFrame(this.animationFrame);
-               if (!this.erreur)
-               {
-             
-               this.erreur = true;
-               }
-       
-        } 
+        const rayonDetection = this.rayon * 1.1;
+        if (distance > rayonDetection || !resultatQuestion) {
+          
+            cancelAnimationFrame(this.animationFrame);
+            this.erreur = true;
+            if (!this.estFinErreur()) {
+                this.setState(state => ({
+                 
+                    enJeu: false,
+                    messageErreur: !resultatQuestion ? "Tu n'a pas appuyé sur espace ou sur le bouton bleu." : "Tu es sorti du cercle."
+                }), () => { this.nouveauDepart() });
+               
+            }
+
+
+
+
+        }
     }
 
-    // demarrerTremblement = () => {
-    //     if (!this.state.tremblementActif) return;
-        
-    //     const container = this.canvasRef.current.parentElement;
-    //     container.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
-        
-    //     setTimeout(() => {
-    //         if (this.state.tremblementActif) {
-    //             container.style.transform = 'none';
-    //         }
-    //     }, 50);
-    // }
 
     dessiner = () => {
         const canvas = this.canvasRef.current;
@@ -221,58 +287,43 @@ export default class JeuDoigt extends Component {
         ctx.closePath();
     }
 
-    arreterJeu = () => {
-        this.setState({ enJeu: false });
-        cancelAnimationFrame(this.animationFrame);
-        message.success(`Temps hors cible : ${this.state.tempsHors.toFixed(2)} secondes`);
+    finTimer = () => {
+        this.finJeu();
+        this.setState({
+            finJeu: true
+        });
     }
-
     render() {
-      
+        return (<React.Fragment>
+            {this.state.finJeu ? <Resultat score={this.score} typeExo='vitessemulti'></Resultat> :
+                <div>
+                    <div className='centre'>
+                        <div>Erreurs : {this.state.nombreErreur} / 5
+                            <span className="margeGauche10">Bonnes réponses : {this.state.bonneReponse} / 12</span></div>
+                        <div className="margeMenu">Tape sur le bouton bleu (smartphone) ou tape sur la barre d'espace (PC) si l'affirmation est FAUSSE.</div>
+                        <div className="questionDoigt" onPointerDown={this.clicDoigt}><b>{this.state.question}</b></div>
 
-        return (
-            <React.Fragment>
-                <div className='centre'>
-                       <div>Appuie sur le mot (smartphone) ou tape sur la barre espace (PC) si l'affirmation est VRAIE.</div>
-                    <div>{this.state.question}</div>
-                 
-                </div>
-            <div className={this.state.tremblementActif ? 'erreurDoigt' : undefined} >
-                <canvas
-                    ref={this.canvasRef}
-                    style={{
-                        width: '100%',
-                        height: '400px',
-                        border: '2px solid #333'
-                    }}
-                />
-                   {this.state.jeuCommence && (
-                    <div style={{ margin: '20px' }}>
-                        <p>Temps hors cible : {this.state.tempsHors.toFixed(2)} secondes</p>
-                        <button onClick={this.arreterJeu}>Arrêter le jeu</button>
+                    </div  >
+                    <div style={{ position: 'relative' }}>
+                        {!this.state.jeuCommence &&
+
+
+                            <div className="compte-rebours" >
+                                <p className='rougeV' ><b>{this.state.messageErreur}</b></p>
+                                <p>Place ton doigt ou la souris au centre du cercle et suis les mouvements du cercle.</p>
+                                <div>Le jeu commence dans</div>
+                                <div style={{ fontSize: '32px', fontWeight: 'bold' }}>{this.state.compteARebours}</div>
+                            </div>
+                        }
+                        <div>
+                            <canvas className="canvasDoigt"  ref={this.canvasRef}></canvas>
+                                
+
+                        </div>
                     </div>
-                )}
-            </div>
-         
-            {!this.state.jeuCommence &&
-            
-               <div className="compte-rebours" style={{ 
-                    textAlign: 'center',
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    background: 'rgba(255, 255, 255, 0.9)',
-                    padding: '20px',
-                    borderRadius: '10px'
-                }}>
-                    <p>Place ton doigt ou la souris au centre du cercle et suis les mouvements</p>
-                    <h2>Le jeu commence dans</h2>
-                    <h1 style={{ fontSize: '48px' }}>{this.state.compteARebours}</h1>
-                </div>
-            }
-            
-            </React.Fragment>
-        );
+                    <div className="centre marge10"><CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours></div>
+                    <div className='centre titreJeu'>Multitâche</div>
+                </div>}
+        </React.Fragment>);
     }
 }

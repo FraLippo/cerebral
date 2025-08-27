@@ -1,20 +1,19 @@
 import {mots} from '../lettres/data'
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUV'.split('');
 const actions = [contient, neContientPas, commencePar, neCommencePasPar, finitPar, neFinitPasPar];
-function creerListeMessage()
+function creerQuestion()
 {  
-    let tabQuestions = [];
-    for (let index = 0; index < 10; index++) {
+
+
     const resultat = !!Math.floor(Math.random()*2);
     const mot = mots[Math.floor(Math.random()*mots.length)];
     const noAction = Math.floor(Math.random()*actions.length);
 
-    tabQuestions.push(actions[noAction](mot, resultat))
-        
-    }
-    console.log(tabQuestions);
-    return tabQuestions;
+    return actions[noAction](mot, resultat);
+ 
 }
+
+
 
 function contient(mot, resultat)
 {
@@ -115,4 +114,4 @@ function neFinitPasPar(mot, resultat)
     return {msg : `La dernière lettre de ${mot} n'est pas un ${r.lettre}` , resultat : !r.resultat};
 }
 
-export {creerListeMessage}
+export {creerQuestion}

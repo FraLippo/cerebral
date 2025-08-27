@@ -3130,10 +3130,10 @@ svg:hover {
 /* mah */
 .centreGrilleMah {
     background: linear-gradient(120deg, #fceabb, #f8b500);
-  /* jaune sable → doré chaud */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+    /* jaune sable → doré chaud */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 
     width: 100%;
 
@@ -3152,11 +3152,11 @@ svg:hover {
     grid-template-rows: repeat(8, minmax(0, min(75px, calc(30vw * 75 / 56))));
     /* max 75px et ratio conservé */
 }
-.caseSelectionMah 
-{
+
+.caseSelectionMah {
     border-radius: 5px;
     box-shadow: rgb(196 73 73) 1px 1px 9px 4px;
-     transform: translateX(-3px);
+    transform: translateX(-3px);
 }
 
 .caseConMah {
@@ -3167,6 +3167,7 @@ svg:hover {
 .caseMah {
     max-width: 100%;
 }
+
 @media screen and (max-width: 725px) {
 
     .centreGrilleMah {
@@ -3194,26 +3195,25 @@ svg:hover {
 }
 
 .grilleFrac {
-  display: grid;
-  grid-template-columns: repeat(8, 40px);
-  grid-auto-rows: 40px;
+    display: grid;
+    grid-template-columns: repeat(8, 40px);
+    grid-auto-rows: 40px;
     gap: 0;
 }
+
 .caseFrac {
-  width: 40px;
-  height: 40px;
-  box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
 
 }
 
 
 .caseFracAnim {
     --radius: 0%;
-    background: radial-gradient(
-        circle at 50% 50%,
-        #f39c12 var(--radius),
-        #3498db 100%
-    );
+    background: radial-gradient(circle at 50% 50%,
+            #f39c12 var(--radius),
+            #3498db 100%);
     animation: fillCenter 0.3s forwards ease-out;
 }
 
@@ -3221,19 +3221,18 @@ svg:hover {
     0% {
         --radius: 0%;
     }
+
     100% {
         --radius: 150%;
     }
 }
 
-.texteFrac
-{
+.texteFrac {
     color: white;
     font-size: 1.2em;
 }
 
-.fractionFrac
-{
+.fractionFrac {
     vertical-align: sub;
     font-size: 1.5em;
 }
@@ -3245,8 +3244,66 @@ svg:hover {
 }
 
 @keyframes shake-doigt {
-    0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(-2px, 2px); }
-    50% { transform: translate(2px, -2px); }
-    75% { transform: translate(-2px, -2px); }
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-2px, 2px);
+    }
+
+    50% {
+        transform: translate(2px, -2px);
+    }
+
+    75% {
+        transform: translate(-2px, -2px);
+    }
+}
+
+.compte-rebours {
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+}
+
+.questionDoigt {
+    margin: 15px 0px;
+    background-color: #152fb2;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 26px;
+    box-shadow: rgb(62 106 171) 7px 5px 9px 1px
+}
+
+.canvasDoigt {
+    width: 100%;
+    height: 400px;
+    border: 2px solid #333;
+    cursor: crosshair;
+    touch-action: none;
+    background-color: #d2edca;
+
+}
+
+
+.questionDoigt:active {
+
+    transform: translateY(2px);
+}
+
+@media screen and (max-width: 725px) {
+    .questionDoigt {
+
+        height: 40px;
+    }
 }

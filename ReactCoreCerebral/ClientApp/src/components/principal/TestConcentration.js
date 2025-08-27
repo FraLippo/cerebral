@@ -45,6 +45,19 @@ export default class TesConcentration extends Component {
     <p>Plongez dans nos jeux de concentration captivants et découvrez le plaisir de renforcer votre attention tout en vous amusant !</p>
     <GraphiqueRapidite categorie='r' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
     <div className='jeuVitesse'>
+
+ <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessemulti"] != null ? "dejaFaitCognito" : ""}`}>
+     <Link to='/vitessemulti'>   <div className="centre titreVitesse" >💻 Multitâche</div>
+       
+          <p className="marge20">But du jeu : être capable d'effectuer 2 actions en même temps. Tu dois suivre le déplacement d'un cercle avec le doigt ou la souris et répondre à des questions en même temps. Tu as besoin des 2 mains. Tu dois utiliser la barre d'espace (PC) ou taper sur le bandeau/bouton bleu (smartphone) pour indiquer si l'affirmation est fausse. 10 points par bonne réponse. On revient à 0 en cas d'erreur. Score maximum 110 points. </p>
+        </Link> 
+        
+         <p className='centre'>{this.state.resultatsJoueur["vitessemulti"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessemulti"]:"Pas encore de résultat" }</p>
+
+        <div className="centre"><Link to='/classement/vitessemulti'>Classement</Link></div>
+      </div>
+
+
  <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessemah"] != null ? "dejaFaitCognito" : ""}`}>
      <Link to='/vitessemah'>   <div className="centre titreVitesse" >🀄 Le mahjong solitaire</div>
        

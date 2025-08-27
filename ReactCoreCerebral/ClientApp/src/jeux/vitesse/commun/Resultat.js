@@ -146,7 +146,7 @@ class Resultat extends Component {
             <div className='centre fontMoyenne'>
                 {this.state.classement === 1 && <div>
                     <Confetti></Confetti>
-                    <div>Fantastique <b>{this.state.prenom} ! </b>tu es le meilleur</div>
+                    <div>Fantastique <b>{this.state.prenom} ! </b>tu es le meilleur.</div>
                     <div>Tu es le champion incontesté de ce jeu !</div>
 
                 </div>}

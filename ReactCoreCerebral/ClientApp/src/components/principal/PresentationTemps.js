@@ -14,7 +14,7 @@ import Podium from '../../jeux/vitesse/commun/Podium';
 import { verifierStatus } from '../../jeux/vitesse/commun/utilitaire';
 import { moisEnFrancais } from '../commun/utilitaire';
 import metiers from '../../images/metiers.jpg';
-import presete from '../../images/presete.png';
+import presete from '../../images/automne.png';
 
 export default class PresentationTemps extends Component {
 
@@ -65,7 +65,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       </Helmet>
       <h1 className="titre centre couleurTitre">Sport cérébral et jeux cognitifs</h1>
       <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
-      <div className="centre"><img src={presete} width="200" height="173" alt="fleur"></img></div>
+      <div className="centre"><img src={presete} width="200" height="140" alt="fleur"></img></div>
       <div gutter={8} className="espaceHaut">
        
         <h2>Développe ton intelligence avec les jeux cognitifs</h2>

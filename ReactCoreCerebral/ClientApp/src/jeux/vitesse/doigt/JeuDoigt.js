@@ -3,6 +3,7 @@ import { message } from 'antd';
 import { creerQuestion } from './Logique';
 import Resultat from '../commun/Resultat.js';
 import CompteRebours from '../commun/CompteRebours';
+import { Helmet } from 'react-helmet';
 
 export default class JeuDoigt extends Component {
     constructor(props) {
@@ -295,6 +296,10 @@ export default class JeuDoigt extends Component {
     }
     render() {
         return (<React.Fragment>
+              <Helmet>
+         <title>Test Psycho-Moteur : Suivez la balle et répondez aux questions</title>
+<meta name="description" content="Évaluez vos réflexes et votre coordination avec ce test psycho-moteur ludique : suivez une balle en mouvement avec votre doigt tout en répondant à des questions en temps réel." />  
+        </Helmet>
             {this.state.finJeu ? <Resultat score={this.score} typeExo='vitessemulti'></Resultat> :
                 <div>
                     <div className='centre'>

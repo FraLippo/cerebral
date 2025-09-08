@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Ad from '../commun/adSense';
 import '../../style/jeux.css';
+import gencache from '../../images/gencache.png'
+import gencroise from '../../images/gencroise.png';
+import genscrable from '../../images/genscrable.png'
+import genmots from '../../images/genmots.png'
 
 
 import { Helmet } from 'react-helmet';
@@ -103,11 +107,31 @@ export default class TestLettres extends Component {
       </div> 
 <h2>Nos autres jeux de mots</h2>
 <p>Vous aimez les jeux de mots et de lettres, n'hésitez pas à essayer nos autres jeux.</p>
-<div className="bandeauLien">
-  <div className='boutonLienLettres fontMoyenne centre'><a href="https://concours.evalquiz.com/pres-mots-places">Les mots placés (nouveau)</a></div>
-<div className='boutonLienLettres fontMoyenne centre'><a href="https://concours.evalquiz.com/mots-scrable">Le Scrabble solitaire</a></div>
-<div className='boutonLienLettres fontMoyenne centre'><Link to="/chiffres-lettres">Le mot le plus long</Link></div>
-</div> 
+            <div className='plateauCategorie'>
+        
+         <a href='https://concours.evalquiz.com/pres-mots-places'>   <div className='categorieVitesse'>
+    <div className='titreCategorie'>Les mots placés</div>
+    <div className='imageCategorie'><img src={gencroise} alt="jeu mots places"></img></div>
+        </div>
+        </a>
+          <a href='https://concours.evalquiz.com/mots-scrable'>   <div className='categorieVitesse'>
+    <div className='titreCategorie'>Le scrabble solitaire</div>
+    <div className='imageCategorie'><img src={genscrable} alt="jeu scrabble solitaire"></img></div>
+        </div>
+        </a><a href='https://concours.evalquiz.com/pres-mots-caches'>   <div className='categorieVitesse'>
+    <div className='titreCategorie'>Les mots cachés</div>
+    <div className='imageCategorie'><img src={gencache} alt="jeu mots caches"></img></div>
+        </div>
+      
+        </a> 
+            <Link to='/chiffres-lettres'>  
+            <div className='categorieVitesse'>
+    <div className='titreCategorie'>Le mot le plus long</div>
+    <div className='imageCategorie'><img src={genmots} alt="jeu mot le plus long"></img></div>
+        </div>
+        </Link>
+        </div>
+ 
  <h2>Les jeux de mots</h2>
   <p>Les jeux sur les mots ne sont pas seulement divertissants, ils offrent également de nombreux avantages cognitifs et éducatifs. En engageant votre esprit dans des activités ludiques telles que les mots croisés, les anagrammes et les jeux de mots, vous stimulez plusieurs aspects de votre intelligence linguistique et cognitive.</p>
 

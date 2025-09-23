@@ -51,10 +51,17 @@ export default class ChiffreLetttre extends Component {
                 <div className="boutonLienLettres"><Link to={"/jeuxlettres/0/1/3"}>Niveau intermédiaire</Link></div>
              <div className="boutonLienLettres"><Link to={"/jeuxlettres/0/1/4"}>Niveau difficile</Link></div>
   </div> 
-<div className='bandeauLien marge20'>
+  <h3>Autres jeux de lettres</h3>
+<div className='bandeauLien'>
  <div className='boutonLienLettres'>
-<a href="https://concours.evalquiz.com/pres-mots-places">Les mots placés (nouveau jeu)</a>
- </div>           
+<a href="https://concours.evalquiz.com/pres-mots-places">Les mots placés</a>
+ </div>   
+ </div>
+ <div className='bandeauLien'>
+ <div className='boutonLienLettres'>
+
+<a href="https://concours.evalquiz.com/pres-mots-caches">Les mots cachés <b>(nouveau jeu)</b></a>
+ </div>          
  </div>  
  <TableauMot></TableauMot>
           

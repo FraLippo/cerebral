@@ -3307,3 +3307,52 @@ svg:hover {
         height: 40px;
     }
 }
+
+/* tourneur */
+.grid-container {
+  display: flex;
+  flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.grid {
+  display: inline-grid;
+  border: 2px solid #333;
+  margin-top: 15px;
+}
+
+.cell {
+  border: 1px solid #ccc;
+  background-color: white;
+  transition: background-color 0.5s ease;
+}
+
+.cell.highlighted {
+  background-color: lightgreen;
+}
+
+.control-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  background-color: #0078d7;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.control-btn:hover {
+  background-color: #005ea0;
+}
+
+.cell.highlighted {
+  box-shadow: 0 0 8px #ffd54f;
+}
+.cell.clickable {
+  outline: 2px solid #ff9800;
+}

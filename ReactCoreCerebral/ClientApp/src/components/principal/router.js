@@ -120,7 +120,7 @@ const router = createBrowserRouter([
       children: [
           {
             index : true,
-            element: <JeuTourneur />,
+            element: <PresentationTemps />,
           },
           //  {
           //   path : 'aa',
@@ -405,6 +405,11 @@ const router = createBrowserRouter([
           {
             path: 'vitessecouleur',
             element: <JeuCouleur/>,
+            
+          },
+          {
+            path: 'vitesseloup',
+            element: <JeuTourneur/>,
             
           },
           {

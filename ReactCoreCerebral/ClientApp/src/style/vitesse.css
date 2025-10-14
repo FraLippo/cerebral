@@ -3309,7 +3309,7 @@ svg:hover {
 }
 
 /* tourneur */
-.grid-container {
+.grid-tourneur {
   display: flex;
   flex-direction: column;
     align-content: center;
@@ -3318,21 +3318,19 @@ svg:hover {
   margin-top: 30px;
 }
 
-.grid {
-  display: inline-grid;
-  border: 2px solid #333;
-  margin-top: 15px;
+.countdown-tourneur
+{
+    width: 360px;
+    padding: 5px;
 }
 
-.cell {
+.cell-tourneur {
   border: 1px solid #ccc;
   background-color: white;
   transition: background-color 0.5s ease;
 }
 
-.cell.highlighted {
-  background-color: lightgreen;
-}
+
 
 .control-btn {
   margin-top: 10px;
@@ -3350,9 +3348,3 @@ svg:hover {
   background-color: #005ea0;
 }
 
-.cell.highlighted {
-  box-shadow: 0 0 8px #ffd54f;
-}
-.cell.clickable {
-  outline: 2px solid #ff9800;
-}

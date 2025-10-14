@@ -100,6 +100,8 @@ function nomType(type) {
             return "Les fractions";
              case "vitessemulti":
             return "Multitâche";
+               case "vitesseloup":
+            return "Attrape le loup";
         default:
             return "";
     }
@@ -112,9 +114,9 @@ let tabJeu = ["vitesseaddition", "vitesseburger", "vitessecouleur", "vitessesoli
     "vitessechemin", "vitessetresor", "vitessetresse", "vitessetaquin", "vitessefusee", "vitessebataille",
     "vitesseoperation", "vitessecalcul", "vitessearithmetique", "vitessemonnaie","vitessefraction",
     "vitesseecrire", "vitessenotes", "vitessepanneauroutier", "vitesselangue",
-    "vitessememoire", "vitesseforme", "vitessenombre", "vitessememory", "vitessepaire", "vitessealz"]
+    "vitessememoire", "vitesseforme", "vitessenombre", "vitessememory", "vitessepaire", "vitessealz", "vitesseloup"]
 
-let typeJeu = ['r','r','r', 'r', 'r', 'r', 'r', 'r', 'r','r', 'r', 'r', 'r', 'l', 'l', 'l', 'l', 'l','l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c','c', 'd', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm', 'm']
+let typeJeu = ['r','r','r', 'r', 'r', 'r', 'r', 'r', 'r','r', 'r', 'r', 'r', 'l', 'l', 'l', 'l', 'l','l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c','c', 'd', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm', 'm', 'm']
 
 let tabCategorie = ["test-memoire", "test-concentration", "test-calcul", "test-lettres", "test-culture", "test-planification"]
 let tabCategorie2 = ["memoire", "concentration", "calcul", "vocabulaire", "culture", "planification"]

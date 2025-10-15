@@ -14,7 +14,7 @@ export default class Tourneur extends Component {
     super(props);
     this.levels = [{ col: 5, trees: 2, time: 3000 }, { col: 6, trees: 4, time: 2900 }, { col: 7, trees: 4, time: 2800 },
     { col: 8, trees: 5, time: 2600 }, { col: 8, trees: 6, time: 2400 }, { col: 9, trees: 8, time: 2200 }, { col: 10, trees: 10, time: 2000 },
-    { col: 10, trees: 12, time: 1800 }, { col: 8, trees: 14, time: 1400 }, { col: 10, trees: 25, time: 1300 }
+    { col: 10, trees: 12, time: 1800 }, { col: 8, trees: 14, time: 1600 }, { col: 8, trees: 25, time: 1400 }
     ]
     this.nbGame = 0;
     this.nbTrees = this.levels[0].trees;
@@ -43,6 +43,7 @@ export default class Tourneur extends Component {
     this.count = 0;
     this.fin = false;
     this.endTimer = false;
+     this.preloadImage = new Image();
   }
 
   reset = () => {
@@ -71,6 +72,7 @@ export default class Tourneur extends Component {
 
     }, () => { this.addTrees(); this.startRunning(); })
     this.fin = false;
+   
   }
   handleResize = () => {
     this.setState({ cellSize: this.getCellSize() });
@@ -100,6 +102,8 @@ export default class Tourneur extends Component {
 
   }
   componentDidMount() {
+   
+  this.preloadImage.src = sphero; 
     this.addTrees();
     window.addEventListener("resize", this.handleResize);
 
@@ -182,7 +186,7 @@ export default class Tourneur extends Component {
     }
     // Avancer dans la séquence et déplacer le joueur (le déplacement sera visible)
     const nextProgress = playerProgress + 1;
-    console.log(nextProgress);
+
     this.setState({
       playerRow: r,
       playerCol: c,
@@ -328,7 +332,7 @@ export default class Tourneur extends Component {
                   )}
 
                   <div style={circleStyle}><img style={loupStyle} src={loup} alt="loup"></img></div>
-                  {this.state.playerProgress !== 0 && <div style={playerStyle}><img style={spheroStyle} src={sphero} alt="robot"></img> </div>}
+                  {this.state.playerProgress !== 0 && <div style={playerStyle}><img style={spheroStyle} src={this.preloadImage.src} alt="robot"></img> </div>}
                   {trees.map((info, i) => <div key={i} style={{
                     position: "absolute", top: `${info.row * cellSize + cellSize * 0.1}px`,
                     left: `${info.col * cellSize + cellSize * 0.1}px`, zIndex: '5', pointerEvents: 'none'
@@ -356,7 +360,7 @@ export default class Tourneur extends Component {
                 >
                   {sonActive ? "🔊" : "🔇"}
                 </button>
-                   <div className="centre marge10"><CompteRebours temps={10} finTimer={this.finTimer}></CompteRebours></div>
+                   <div className="centre marge10"><CompteRebours temps={110} finTimer={this.finTimer}></CompteRebours></div>
               </div>
             </div>}</React.Fragment>
         );

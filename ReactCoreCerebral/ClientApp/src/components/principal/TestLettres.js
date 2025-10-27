@@ -7,6 +7,7 @@ import gencache from '../../images/gencache.png'
 import gencroise from '../../images/gencroise.png';
 import genscrable from '../../images/genscrable.png'
 import genmots from '../../images/genmots.png'
+import gen1 from '../../images/automne.png'
 
 
 import { Helmet } from 'react-helmet';
@@ -108,7 +109,11 @@ export default class TestLettres extends Component {
 <h2>Nos autres jeux de mots</h2>
 <p>Vous aimez les jeux de mots et de lettres, n'hésitez pas à essayer nos autres jeux.</p>
             <div className='plateauCategorie'>
-        
+        <a href='https://concours.evalquiz.com/pres-mots-codes'>   <div className='categorieVitesse'>
+    <div className='titreCategorie'>Les mots codés</div>
+    <div className='imageCategorie'><img src={gen1} alt="jeu mots codés"></img></div>
+        </div>
+        </a>
          <a href='https://concours.evalquiz.com/pres-mots-places'>   <div className='categorieVitesse'>
     <div className='titreCategorie'>Les mots placés</div>
     <div className='imageCategorie'><img src={gencroise} alt="jeu mots places"></img></div>

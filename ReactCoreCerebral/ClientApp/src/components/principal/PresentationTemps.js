@@ -70,7 +70,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
        
         <h2>Développe ton intelligence avec les jeux cognitifs</h2>
         <p>À l'ère numérique actuelle, où nos esprits sont constamment sollicités par une multitude d'informations, la pratique de jeux cognitifs apparait comme une stratégie intelligente pour stimuler et développer notre cerveau. Ces jeux, conçus pour engager activement les processus mentaux, offrent bien plus qu'une simple distraction ludique.</p>
-      <h2>Détermine ton avenir professionnel ! (nouveau)</h2>
+      <h2>Détermine ton avenir professionnel !</h2>
       <p>Plus besoin d'orientation, nous pouvons désormais déterminer les métiers qui te conviennent le mieux. À partir des résultats de nos tests, ChatGPT te donne désormais les métiers pour lesquels tu es le plus qualifié. Seras-tu chercheur ou artiste de rue ?</p>
           <div className="centre"><img src={metiers} width="360" height="240" alt="liste des métiers"></img></div>
     </div>
@@ -85,7 +85,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
   
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
-       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x7</span>👑</p>
+       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x8</span>👑</p>
       <div className='centre'><b>🚩 Nouvelle victoire pour Lili55 ! Bravo ! Qui pourra battre Lili55 ? 📅</b></div>
    
      

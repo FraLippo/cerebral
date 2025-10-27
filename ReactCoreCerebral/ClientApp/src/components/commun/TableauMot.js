@@ -84,7 +84,7 @@ class TableauMot extends Component {
       <div className="espaceTitreBas">
       <h2>Le classement du mois</h2>
 <p>Le classement commence à partir du 1er du mois et se termine à la fin du mois. Toutes les parties présentes sur le tableau d'honneur sont comptabilisées. Plus le niveau est difficile, plus vous marquez de points. Le compteur est remis à 0 en début de mois. Le classement affiche les 20 meilleurs.</p>
-    <p>Les précédents gagnants : <span className='badgeV'>mivanche x1</span><span className='badgeV'>libellule x2</span></p>
+    <p>Les précédents gagnants : <span className='badgeV'>mivanche x1</span><span className='badgeV'>libellule x3</span> <span>nouvelle victoire pour libellule !</span></p>
                    <Row justify="center">
                         <Col xs={24} sm={24} md={16}><Table pagination={{ defaultPageSize: 10, hideOnSinglePage: true }} columns={this.columns} dataSource={this.state.classement} rowKey='cle' />
                         </Col></Row>

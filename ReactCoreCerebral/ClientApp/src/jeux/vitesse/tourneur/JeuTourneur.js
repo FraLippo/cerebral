@@ -68,7 +68,7 @@ export default class Tourneur extends Component {
       gameWon: false,
       countdown: 5,
       level: 0,
-      nbGame : this.state.nbGame+1
+      nbGame : this.state.gameWon ? this.state.nbGame+1 : this.state.nbGame
 
     }, () => { this.addTrees(); this.startRunning(); })
     this.fin = false;

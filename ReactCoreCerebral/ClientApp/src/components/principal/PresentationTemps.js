@@ -72,7 +72,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         <p>À l'ère numérique actuelle, où nos esprits sont constamment sollicités par une multitude d'informations, la pratique de jeux cognitifs apparait comme une stratégie intelligente pour stimuler et développer notre cerveau. Ces jeux, conçus pour engager activement les processus mentaux, offrent bien plus qu'une simple distraction ludique.</p>
       <h2>Détermine ton avenir professionnel !</h2>
       <p>Plus besoin d'orientation, nous pouvons désormais déterminer les métiers qui te conviennent le mieux. À partir des résultats de nos tests, ChatGPT te donne désormais les métiers pour lesquels tu es le plus qualifié. Seras-tu chercheur ou artiste de rue ?</p>
-          <div className="centre"><img src={metiers} width="360" height="240" alt="liste des métiers"></img></div>
+          <div className="centre"><img src={metiers} width="300" height="200" alt="liste des métiers"></img></div>
     </div>
     <p className="centre fontMoyenne">Pratique un jeu par jour pendant un mois, c'est bon pour le cerveau, et à la fin, on te dit tout de ton avenir professionnel !</p>
     <p className="centre">Les résultats des premiers participants : Lilli55 sera <b>chercheur(se) en neurosciences</b>, Pantx sera <b>consultant(e) en stratégie</b>, marc sera <b>aide-soignant</b>, Pirouette sera <b>commis de cuisine</b>. Et toi ? </p>

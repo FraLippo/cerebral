@@ -1,6 +1,6 @@
 
 
-
+const NBPIONS = 15;
 
 export default class Logique {
 
@@ -8,7 +8,7 @@ export default class Logique {
     tirageNombre() {
         let tab = [];
         let i = 0;
-        while (i < 10) {
+        while (i < NBPIONS) {
             let valeur = Math.floor(Math.random() * 100) + 1;
             if (tab.indexOf(valeur) === -1) {
                 tab.push(valeur);
@@ -24,8 +24,8 @@ export default class Logique {
     tirageEmplacement() {
         let tab = [];
         let i = 0;
-        while (i < 10) {
-            let x = Math.floor(Math.random() * 10) + 1;
+        while (i < NBPIONS) {
+            let x = Math.floor(Math.random() * 8) + 1;
             let y = Math.floor(Math.random() * 8) + 1;
             let emplacement = { x, y };
             if (tab.findIndex(function (point) {
@@ -41,20 +41,20 @@ export default class Logique {
     tirageCouleur() {
         let tab = [];
         let i = 0;
-        while (i < 10) {
+        while (i < NBPIONS) {
             let couleur = Math.floor(Math.random() * 3);
             switch (couleur) {
                 case 0:
-                    couleur = "rouge";
+                    couleur = "rougeor";
                     break;
                 case 1:
-                    couleur = "vert";
+                    couleur = "vertor";
                     break;
                 case 2:
-                    couleur = "jaune";
+                    couleur = "jauneor";
                     break;
                 default:
-                    couleur = "jaune";
+                    couleur = "jauneor";
                     break;
 
             }
@@ -67,20 +67,46 @@ export default class Logique {
     tirageForme() {
         let tab = [];
         let i = 0;
-        while (i < 10) {
+        while (i < NBPIONS) {
             let forme = Math.floor(Math.random() * 2);
             switch (forme) {
                 case 0:
-                    forme = "cercle";
+                    forme = "cercleor";
                     break;
                 case 1:
-                    forme = "carre";
+                    forme = "carreor";
                     break;
                 default:
-                    forme = "cercle";
+                    forme = "cercleor";
                     break;
             }
             tab.push(forme);
+            i++;
+        }
+        return tab;
+    }
+
+     tirageTaille() {
+        let tab = [];
+        let i = 0;
+        let taille = '';
+        while (i < NBPIONS) {
+            let nb = Math.floor(Math.random() * 3);
+            switch (nb) {
+                case 0:
+                    taille = "petitor";
+                    break;
+                case 1:
+                    taille = "normalor";
+                    break;
+                case 2:
+                    taille = "grandor";
+                    break;
+                     default:
+                    taille = "grandor";
+                    break;
+            }
+            tab.push(taille);
             i++;
         }
         return tab;
@@ -91,6 +117,7 @@ export default class Logique {
         let tabEmplacement = this.tirageEmplacement();
         let tabCouleur = this.tirageCouleur();
         let tabForme = this.tirageForme();
+           let tabTaille= this.tirageTaille();
 
         let tabDonnees = [];
         for (let i = 0; i < nbPion; i++) {
@@ -101,7 +128,8 @@ export default class Logique {
                 couleur: tabCouleur[i],
                 valeur: tabNombre[i],
                 ordre: i,
-                emplacement: -1
+                emplacement: -1,
+                taille : tabTaille[i]
             };
             tabDonnees.push(donnee);
         }

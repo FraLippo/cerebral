@@ -25,12 +25,9 @@ class Classement extends Component {
                 <meta name="description" content="Le classement des 20 premiers pour tous les jeux d'entrainement cérébral." />
 
             </Helmet>
-
-            <h1>Le classement du mois  {this.nomMois === 'août' || this.nomMois === 'avril' || this.nomMois === 'octobre' ? "d'" + this.nomMois : 'de ' + this.nomMois} </h1>
-            <p>Classement des 20 meilleurs scores du mois en cours pour le jeu  <b>{nomType(this.type)}</b>. Le classement repart à 0 en début de chaque mois.</p>
-            <div className="marge20 centre"><ButtonLink titre="Retour à l'accueil" href={'/'}></ButtonLink></div>
-            <Ad></Ad>
+    
             <ClassementScore typeExo={this.type}></ClassementScore>
+            <Ad></Ad>
         </div>
 
     }

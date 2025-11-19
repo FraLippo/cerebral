@@ -92,6 +92,39 @@ class JeuPaire extends Component {
     finTimer = () => {
         this.setState({afficheResultat : true});
     }
+
+    // Ajout du handler clavier
+    handleKeyDown = (e) => {
+        // ne rien faire si on affiche le résultat
+        if (this.state.afficheResultat) return;
+
+        // Espace => Suivant
+        if (e.code === 'Space' || e.key === ' ') {
+            e.preventDefault();
+            this.clickBoutonSuivant();
+            return;
+        }
+
+        // M => Le même
+        if (e.key === 'm' || e.key === 'M') {
+            this.clickBoutonMeme();
+            return;
+        }
+
+        // D => Différent
+        if (e.key === 'd' || e.key === 'D') {
+            this.clickBoutonDifferent();
+            return;
+        }
+    }
+
+    componentDidMount() {
+        window.addEventListener('keydown', this.handleKeyDown);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('keydown', this.handleKeyDown);
+    }
   
     render() {
         return <div>
@@ -107,7 +140,7 @@ class JeuPaire extends Component {
                    {this.state.debut ? <React.Fragment> <div className="boutonSuite">
                         <Button  className="fontMoyenne" size="large" type="primary" onClick={this.clickBoutonSuivant}>Suivant</Button>
                      </div> 
-                      <div className="texteSuite"><p>Mémorise l'animal puis clique sur le bouton "Suivant".</p>
+                      <div className="texteSuite"><p>Mémorise l'animal puis clique sur le bouton "Suivant" ou appuie sur la barre d'espace.</p>
                       </div> </React.Fragment> :
                      <React.Fragment>
                     <div className="boutonSuite">
@@ -115,6 +148,7 @@ class JeuPaire extends Component {
                         <Button className="fontMoyenne margeGauche10" size="large"  type="primary" onClick={this.clickBoutonDifferent}>Différent</Button>
                     </div>
                     <div className="texteSuite"><p>Clique sur le bouton "Le même" si l'animal est le même que l'animal précédent. Clique sur "Différent" si les deux animaux sont différents.</p>
+                    <p>Tu peux aussi utiliser les touches du clavier 'm' pour Même et 'd' pour Différent.</p>
                     </div>
                     </React.Fragment>}
                     

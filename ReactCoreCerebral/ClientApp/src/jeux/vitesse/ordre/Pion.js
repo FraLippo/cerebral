@@ -1,31 +1,22 @@
 import React, { Component } from 'react';
 
-import '../../../style/jeux.css';
 
 export default class Pion extends Component {
 
 
 
     rechercherCouleur() {
-        switch (this.props.donnee.couleur) {
-            case "rouge":
-                return " rouge";
-            case "vert":
-                return " vert";
-            case "jaune":
-                return " jaune";
-            default:
-                return " jaune";
-        }
+       return this.props.donnee.couleur
+        
     }
     rechercherForme() {
-        switch (this.props.donnee.forme) {
-            case "cercle":
-                return " cercle";        
-            default:
-                return "";
-        }
+        return this.props.donnee.forme
 
+    }
+
+     rechercherTaille() {
+        return this.props.donnee.taille;
+        
     }
 
     clickPion = () =>
@@ -54,7 +45,7 @@ export default class Pion extends Component {
             zIndex : 5
         }
 
-        return <div className={"pion" + this.rechercherCouleur() + this.rechercherForme()}  
+        return <div className={"pionOr" + " " +  this.rechercherCouleur() + " " + this.rechercherForme() + " "+ this.rechercherTaille()}  
         style ={this.props.donnee.emplacement === -1 ? 
             stylePourGrille 
      :        stylePourTableau} 

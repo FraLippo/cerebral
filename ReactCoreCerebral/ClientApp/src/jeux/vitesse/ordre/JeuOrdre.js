@@ -55,14 +55,13 @@ class JeuOrdre extends Component {
         }
     }
 
-    nouveauJeu = () => {
+ nouveauJeu = () => {
         if (this.fin===true) return;
         this.stop = false;
         let score= this.state.score+ this.tabPion.length;
         this.tabPion = [];
-      
         
-        if (this.nombrePion < 10) {
+        if (this.nombrePion < 15) {
             this.nombrePion++;
         }
         this.setState({
@@ -73,6 +72,7 @@ class JeuOrdre extends Component {
 
         });
     }
+
 
     reset = () => {
         this.setState({ boutonSupprimer: true });
@@ -118,9 +118,11 @@ class JeuOrdre extends Component {
 
             </Helmet>
 
-            {!this.state.finJeu ? <React.Fragment><div className="fontMoyenne couleurTitre margeEcran ">Remettre les nombres dans l'ordre</div><div className="jeuOrdre"><div className="centre">
-                {this.state.afficheRebours && <CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours>}</div><div className="containerOrdre">{this.state.donnees.map((el, i) => <Pion key={el.ordre} donnee={el} click={this.clickPion} test={this.state.test}></Pion>)}
-                    <div className="ligneGrise"></div>  </div>  {this.state.boutonSupprimer && <div className='centre'><Bouton click={this.clickBouton}></Bouton></div>}</div>
+            {!this.state.finJeu ? <React.Fragment><div className="jeuOrdre"><div className="containerOr">{this.state.donnees.map((el, i) => <Pion key={el.ordre} donnee={el} click={this.clickPion} test={this.state.test}></Pion>)}
+                    <div className="ligneGriseOr"></div>  </div>  {this.state.boutonSupprimer && <div className='centre'><Bouton click={this.clickBouton}></Bouton></div>}</div>
+          <div className="centre marge20">
+                {this.state.afficheRebours && <CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours>}</div>
+           <div className="centre titreJeu">Remettre les nombres dans l'ordre</div>
             </React.Fragment> : <Resultat score={this.state.score} typeExo='vitesseordre'></Resultat>}
         </div>)
     }

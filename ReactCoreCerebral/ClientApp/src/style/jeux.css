@@ -340,9 +340,7 @@ ul li {
      max-width: 100%;
 }
 
-.margePrincipale {
-     padding: 0px 25px;
-}
+
 
 .centre {
      text-align: center;
@@ -396,9 +394,7 @@ ul li {
 
 
 @media  (min-width : 430px) and (max-width: 570px) {
-     .margePrincipale {
-          padding: 0px 5px;
-     }
+   
 
      .containerOrdre{
           margin: 5px auto;
@@ -422,9 +418,7 @@ ul li {
 
 
 @media screen and (max-width: 430px) {
-     .margePrincipale {
-          padding: 0px 10px;
-     }
+  
 
      .containerOrdre {
           margin: 5px auto;

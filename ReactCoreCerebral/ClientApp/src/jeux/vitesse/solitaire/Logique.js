@@ -1,14 +1,22 @@
-import mah1 from '../../../images/mah1.png';
-import mah2 from '../../../images/mah2.png';
-import mah3 from '../../../images/mah3.png';
-import mah4 from '../../../images/mah4.png';
-import mah5 from '../../../images/mah5.png';
-import mah6 from '../../../images/mah6.png';
-import mah7 from '../../../images/mah7.png';
-import mah8 from '../../../images/mah8.png';
-import mah9 from '../../../images/mah9.png';
+// import mah1 from '../../../images/mah1.png';
+// import mah2 from '../../../images/mah2.png';
+// import mah3 from '../../../images/mah3.png';
+// import mah4 from '../../../images/mah4.png';
+// import mah5 from '../../../images/mah5.png';
+// import mah6 from '../../../images/mah6.png';
+// import mah7 from '../../../images/mah7.png';
+// import mah8 from '../../../images/mah8.png';
+// import mah9 from '../../../images/mah9.png';
 
-
+import mah1 from '../../../images/mah/ma4.png'
+import mah2 from '../../../images/mah/ma5.png'
+import mah3 from '../../../images/mah/ma7.png'
+import mah4 from '../../../images/mah/ma9.png'
+import mah5 from '../../../images/mah/ma10.png'
+import mah6 from '../../../images/mah/ma11.png'
+import mah7 from '../../../images/mah/ma12.png'
+import mah8 from '../../../images/mah/ma20.png'
+import mah9 from '../../../images/mah/ma14.png'
 export default class Logique {
     constructor() {
         this.grilleEnCours = 0;

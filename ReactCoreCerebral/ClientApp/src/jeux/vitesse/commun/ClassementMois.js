@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { verifierStatus } from './utilitaire';
 import { Table, Row, Col } from 'antd';
-import { addFirstName, readFirstName } from '../../../components/commun/localStorage';
+import {readFirstName } from '../../../components/commun/localStorage';
 import { moisEnFrancais } from '../../../components/commun/utilitaire';
 import { lienVersCategorie, obtenirInfoCategorie, creerMsgResultat } from '../commun/utilitaire';
 import { nomType, tabJeu } from './utilitaire';

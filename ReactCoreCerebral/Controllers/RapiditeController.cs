@@ -83,11 +83,29 @@ namespace ReactCoreCerebral.Controllers
             }
             resultCategorie.ClassementCategorie = classement;
 
-            if (prenom != "")
+            if (prenom != "" && prenom != "inconnuX")
             {
-                var classementJoueur = _dbTableau.Resultat2019.Where(x => x.listeFautes == categorie && x.prenom == prenom && x.date >= startDate && x.date < endDate)
+                //Liste de tous les scores par jeu de la catégorie
+                var resultatsJoueur = _dbTableau.Resultat2019.Where(x => x.listeFautes == categorie && x.prenom == prenom && x.date >= startDate && x.date < endDate)
                 .ToDictionary(x => x.typeExo, x => x.nbFaute);
-                resultCategorie.ResultatsJoueur = classementJoueur;
+                resultCategorie.ResultatsJoueur = resultatsJoueur;
+
+                //score du joueur dans la catégorie 
+                var totalJoueur = resultatsJoueur.Values.Sum();
+                resultCategorie.ScoreJoueur = totalJoueur;
+
+                //classement du joueur dans la catégorie
+                var joueursDevant =
+     (from sc in _dbTableau.Resultat2019
+      where sc.listeFautes == categorie
+         && sc.date >= startDate
+         && sc.date < endDate
+      group sc by sc.prenom into g
+      where g.Sum(x => x.nbFaute) > totalJoueur
+      select g.Key).Count();
+                resultCategorie.ClassementJoueur = joueursDevant + 1;
+
+
 
             }
 
@@ -95,8 +113,9 @@ namespace ReactCoreCerebral.Controllers
             return resultCategorie;
         }
 
-        public IEnumerable<DTOClassementScore> Classement(string typeExo)
+        public DTOClassementPosition Classement(string typeExo, string prenom)
         {
+         
             DateTime now = DateTime.Now;
             var startDate = new DateTime(now.Year, now.Month, 1);
             var endDate = startDate.AddMonths(1);
@@ -107,9 +126,14 @@ namespace ReactCoreCerebral.Controllers
             {
                 classement[i].Cle = i;
             }
+            var score = _dbTableau.Resultat2019.Where(x => x.typeExo == typeExo && x.date >= startDate && x.date < endDate && x.prenom == prenom).Select(x => x.nbFaute).FirstOrDefault();
+
+            var position = _dbTableau.Resultat2019.Where(x => x.typeExo == typeExo && x.date >= startDate && x.date < endDate && x.nbFaute > score).Count() + 1;
+            var classementPosition = new DTOClassementPosition() { ClassementScores = classement, Position = position, Score = score };
 
 
-            return classement;
+
+            return classementPosition;
         }
 
         public DTOInfoClassement ClassementMois(string prenom)
@@ -180,12 +204,12 @@ namespace ReactCoreCerebral.Controllers
                                   Score = grouping.Sum(x => x.nbFaute),
                                   Position = 0
 
-                              }).OrderByDescending(x => x.Score).Take(3).Select(x => new DTOPodium{ Prenom = x.Prenom, Score = x.Score}).ToList();
+                              }).OrderByDescending(x => x.Score).Take(3).Select(x => new DTOPodium { Prenom = x.Prenom, Score = x.Score }).ToList();
 
 
             for (int i = classement.Count; i < 3; i++)
             {
-                classement.Add(new DTOPodium{ Prenom = "?", Score = 0 });
+                classement.Add(new DTOPodium { Prenom = "?", Score = 0 });
             }
 
 

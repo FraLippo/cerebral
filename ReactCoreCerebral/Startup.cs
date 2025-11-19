@@ -32,7 +32,7 @@ namespace ReactCoreCerebral
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.WithOrigins("https://brain-games.evalquiz.com", "http://localhost:5173")
+                    builder.WithOrigins("https://brain-games.evalquiz.com", "http://localhost:5173", "https://localhost:7170")
                            .AllowAnyHeader()
                            .AllowAnyMethod();
                 });

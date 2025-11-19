@@ -7,5 +7,7 @@ namespace ReactCoreCerebral.Donnees
     {
         public IEnumerable<DTOClassement> ClassementCategorie { get; set; }
        public IDictionary<string,int> ResultatsJoueur { get; set; }
+        public int ScoreJoueur { get; set; }
+        public int ClassementJoueur { get; set; }
     }
 }

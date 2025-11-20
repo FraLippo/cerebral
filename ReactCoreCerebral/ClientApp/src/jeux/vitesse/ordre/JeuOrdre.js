@@ -18,7 +18,7 @@ import { Helmet } from 'react-helmet';
 class JeuOrdre extends Component {
     constructor(props) {
         super(props);
-        this.nombrePion = 6;
+        this.nombrePion = 5;
 
         this.donneeLogique = new Logique();
 
@@ -61,7 +61,7 @@ class JeuOrdre extends Component {
         let score= this.state.score+ this.tabPion.length;
         this.tabPion = [];
         
-        if (this.nombrePion < 15) {
+        if (this.nombrePion < 9) {
             this.nombrePion++;
         }
         this.setState({
@@ -95,7 +95,11 @@ class JeuOrdre extends Component {
             this.tabPion = [...this.tabPion, ordre];
             this.setState({ donnees: donneeActualise });
             this.setState({ boutonSupprimer: true });
-            this.afficherMessage(this.donneeLogique.EstCorrect(this.tabPion, this.state.donnees))
+            this.afficherMessage(this.donneeLogique.EstCorrect(this.tabPion, this.state.donnees));
+                  
+
+            
+            
         }
     }
 

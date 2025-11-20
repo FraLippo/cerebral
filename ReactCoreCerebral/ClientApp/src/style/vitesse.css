@@ -6,6 +6,31 @@
 
 }
 
+.categorieAutres {
+    margin: 10px;
+    position: relative;
+    height: 100px;
+    background-color: #e2d6dd;
+
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 62%) 19px 10px 36px -18px;
+
+}
+.titreAutres
+{
+    width: 200px;
+    position: absolute;
+    left: 10%;
+    top: 20px;
+    font-size: 1.6em;
+    font-weight: bold;
+
+
+}
+
+
+
+
 
 .illusion-btn {
   padding: 10px 20px;
@@ -71,7 +96,6 @@
     width: 450px;
     height: 200px;
     background-color: #24dde7;
-    ;
     border-radius: 10px;
     box-shadow: rgb(0 0 0 / 62%) 19px 10px 36px -18px;
 
@@ -299,6 +323,9 @@
 .vertV {
     color: green;
 }
+.orangeV {
+  color: orange;
+}
 
 .roseV {
     color: pink;
@@ -316,20 +343,27 @@
 }
 
 .caseCouleur {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 180px;
-    height: 180px;
-    border: 3px solid black;
-    border-radius: 5px;
-    font-size: 3em;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 160px;
+  border: 3px solid black;
+  border-radius: 5px;
+  font-size: 2.8em;
 }
 
+.caseCouleur0 {
+  background-color: #f5c5c5;
+}
+
+.caseCouleur1 {
+  background-color: #c2bfd7;
+}
 .caseCouleur2 {
-    background-color: #933f3f;
+  background-color: #d1eed1;
 }
+
 
 .compteReboursVitesse {
     float: right;
@@ -3360,7 +3394,7 @@ svg:hover {
   color: white;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s;
+
 }
 
 .control-btn:hover {
@@ -3381,7 +3415,7 @@ svg:hover {
 .containerOr {
   margin: 5px auto;
   display: grid;
-  grid-template-columns: repeat(8, 50px);
+  grid-template-columns: repeat(9, 50px);
   grid-template-rows: repeat(8, 50px);
   align-items: center;
   justify-items: center;
@@ -3406,8 +3440,8 @@ svg:hover {
   .containerOr {
        margin: 5px auto;
        display: grid;
-       grid-template-columns: repeat(8, minmax(40px, 1fr));
-       grid-template-rows: repeat(8, minmax(40px, 1fr));
+       grid-template-columns: repeat(9, minmax(35px, 1fr));
+       grid-template-rows: repeat(8, minmax(35px, 1fr));
        align-items: center;
        justify-items: center;
        grid-column-gap: 2px;
@@ -3415,8 +3449,8 @@ svg:hover {
   }
 
   .pionOr {
-       height: 40px;
-       width: 40px;
+       height: 35px;
+       width: 35px;
        text-align: center;
     
        font-weight: bold;
@@ -3461,7 +3495,7 @@ svg:hover {
   font-size: 1.2em;
 }
 .grandor {
-  font-size: 1.8em;
+  font-size: 1.7em;
 }
 
 

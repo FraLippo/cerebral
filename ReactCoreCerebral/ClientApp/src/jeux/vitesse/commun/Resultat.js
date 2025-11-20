@@ -158,7 +158,6 @@ class Resultat extends Component {
                     <div>{this.messageEncouragement()}</div>
 
                     <div>La moyenne des autres joueurs sur l'année : {this.state.moyenne}</div>
-                    <div>Ton classement de l'année : <b>{this.state.classement}</b></div>
 
                     <div className="marge20"><ButtonLink titre="Recommencer" href={'/' + this.props.typeExo}></ButtonLink></div>
                     <div className="marge20"><span className="margeDroit"><ButtonLink titre="Classement général" href={'/classementmois'}></ButtonLink></span>

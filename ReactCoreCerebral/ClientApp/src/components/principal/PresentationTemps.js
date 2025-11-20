@@ -10,6 +10,8 @@ import fondlettres from '../../images/fondlettre.png';
 import fondplanification from '../../images/fondplanification.png';
 import fondculture from '../../images/fondculture.png';
 import fondrapidite from '../../images/fondrapidite.png';
+import fondcerveau from '../../images/fondcerveau.png';
+import genscrable from '../../images/genscrable.png'
 import Podium from '../../jeux/vitesse/commun/Podium';
 import { verifierStatus } from '../../jeux/vitesse/commun/utilitaire';
 import { moisEnFrancais } from '../commun/utilitaire';
@@ -72,7 +74,6 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         <p>À l'ère numérique actuelle, où nos esprits sont constamment sollicités par une multitude d'informations, la pratique de jeux cognitifs apparait comme une stratégie intelligente pour stimuler et développer notre cerveau. Ces jeux, conçus pour engager activement les processus mentaux, offrent bien plus qu'une simple distraction ludique.</p>
       <h2>Détermine ton avenir professionnel !</h2>
       <p>Plus besoin d'orientation, nous pouvons désormais déterminer les métiers qui te conviennent le mieux. À partir des résultats de nos tests, ChatGPT te donne désormais les métiers pour lesquels tu es le plus qualifié. Seras-tu chercheur ou artiste de rue ?</p>
-          <div className="centre"><img src={metiers} width="300" height="200" alt="liste des métiers"></img></div>
     </div>
     <p className="centre fontMoyenne">Pratique un jeu par jour pendant un mois, c'est bon pour le cerveau, et à la fin, on te dit tout de ton avenir professionnel !</p>
     <p className="centre">Les résultats des premiers participants : Lilli55 sera <b>chercheur(se) en neurosciences</b>, Pantx sera <b>consultant(e) en stratégie</b>, marc sera <b>aide-soignant</b>, Pirouette sera <b>commis de cuisine</b>. Et toi ? </p>
@@ -125,6 +126,19 @@ this.nomMois = moisEnFrancais[d.getMonth()];
 </Link>
 </div>
 
+      <div>
+        <h2>Nos autres jeux de réflexion</h2>
+<Link to='/defi'> <div className='categorieAutres'>
+    <div className='titreAutres'>Les défis cérébraux</div>
+        <div className='imageCategorie'><img src={fondcerveau} alt="catégorie autres jeux"></img></div>   
+ </div>
+</Link>
+<a href='https://concours.evalquiz.com/pres-jeux-du-jour'> <div className='categorieAutres'>
+    <div className='titreAutres'>Autres jeux sur les mots</div>
+        <div className='imageCategorie'><img src={genscrable} width={105} height={100} alt="catégorie jeux de lettres et de mots"></img></div>   
+ </div>
+</a>
+</div>
 
       <h1>Nos jeux cognitifs</h1>
       <p>Nous vous proposons une série de tests simples et de petits jeux de réflexion pour faire travailler son cerveau en espérant améliorer ses capacités cognitives et son intelligence. Tous les jeux sont gratuits et ne nécessitent aucune inscription.</p>
@@ -137,39 +151,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
 <p>De plus, les jeux cognitifs favorisent le développement des compétences cognitives essentielles telles que la logique, la créativité et la flexibilité mentale. En confrontant votre esprit à des situations variées, tu entraînes ta capacité à penser de manière critique et à trouver des solutions innovantes.</p>
 <p>L'avantage de ces jeux ne se limite pas à l'amélioration des compétences cognitives. Des études ont montré que l'engagement régulier dans des activités cognitives peut contribuer à ralentir le déclin cognitif lié à l'âge et à promouvoir la santé mentale globale.</p>
 <p>Ces jeux sont aussi disponibles en anglais <a href="https://brain-games.evalquiz.com">brain-games.evalquiz.com</a></p>
-      <h2>Nos autres jeux</h2>
-      <p>Dans nos défis tu peux trouver des autres séries de petits jeux cérebraux.</p>
-      <div  className="margeHaut defiVitesse">
-        <div  className="carteVitesse">
-          <h3>Les défis de la logique</h3>
-          <ul>
-          
-            <li> <span><Link to="/defi/35">Défi Binero - facile</Link></span></li>
-            <li> <span><Link to="/defi/36">Défi Picross - facile </Link></span></li>
-            <li> <span><Link to="/defi/37">Défi Binero et Picross</Link></span></li>
-            <li> <span><Link to="/defi/38">Défi Binero - moyen</Link></span></li>
-            <li> <span><Link to="/defi/39">Défi Picross - difficile</Link></span></li> 
-             <li> <span><Link className="espaceVitesseUl" to="/defi/14">Défi puzzle - difficile</Link></span></li>
-          </ul>
-        </div>
-        <div className="carteVitesse">
-          <h3>Les défis du calcul mental</h3>
-          <ul>
-            <li> <span><Link to="/defi/19">Défi calcul - facile</Link></span></li>
-            <li> <span><Link to="/defi/20">Défi calcul - intermédiaire</Link></span></li>
-            <li> <span><Link to="/defi/21">Défi calcul mental rapide - facile</Link></span></li>
-            <li> <span><Link to="/defi/22">Défi calcul mental rapide - intermédiaire</Link></span></li>
-            <li> <span><Link to="/defi/23">Pour les amateurs de maths mentales - facile</Link></span></li>
-            <li> <span><Link to="/defi/24">Pour les amateurs de maths mentales - intermédiaire</Link></span></li>
-            <li> <span><Link to="/defi/34">Exercices de calcul mental - intermédiaire</Link></span></li>
-            <li> <span><Link to="/defi/11">Défi compte est bon - simple</Link></span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="margeHaut ">
-        <div className="fontMoyenne centre autreVitesse"><Link to="/defi">Tous les autres défis et jeux cérébraux</Link></div>
-    </div>
+    
     <Ad></Ad>
     <p>Notre X (twitter) : <a href="https://x.com/evalquiz">evalquiz</a></p>
           <p>Vous pouvez nous contacter si vous avez des remarques ou des propositions en consultant la page des <a href="https://evalquiz.com/home/faq">mentions légales.</a></p>

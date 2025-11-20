@@ -25,7 +25,7 @@ export default class Logique {
         let tab = [];
         let i = 0;
         while (i < NBPIONS) {
-            let x = Math.floor(Math.random() * 8) + 1;
+            let x = Math.floor(Math.random() * 9) + 1;
             let y = Math.floor(Math.random() * 8) + 1;
             let emplacement = { x, y };
             if (tab.findIndex(function (point) {

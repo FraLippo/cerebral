@@ -1,4 +1,3 @@
-
 .bandeauLien
 {
      background-color: #bdd9f3;
@@ -1089,44 +1088,64 @@ background-position: center center;
 }
 
 .rotation1 {
+     -webkit-transform: rotate(0deg);
+     transform: rotate(0deg);
      animation: spin1 .2s linear;
      animation-fill-mode: forwards;
+     -webkit-transform: scale(1.01, 1.01);
      transform: scale(1.01, 1.01);
 }
 
 .rotation2 {
+     -webkit-transform: rotate(90deg);
+     transform: rotate(90deg);
      animation: spin2 .2s linear;
      animation-fill-mode: forwards;
+     -webkit-transform: scale(1.01, 1.01);
      transform: scale(1.01, 1.01);
 }
 
 .rotation3 {
+     -webkit-transform: rotate(180deg);
+     transform: rotate(180deg);
      animation: spin3 .2s linear;
      animation-fill-mode: forwards;
+     -webkit-transform: scale(1.01, 1.01);
      transform: scale(1.01, 1.01);
 }
 
 .rotation4 {
+     -webkit-transform: rotate(270deg);
+     transform: rotate(270deg);
      animation: spin4 .2s linear;
      animation-fill-mode: forwards;
+     -webkit-transform: scale(1.01, 1.01);
      transform: scale(1.01, 1.01);
 }
 
 .end {
      -webkit-backface-visibility: hidden;
+     backface-visibility: hidden;
      -webkit-transform: translateZ(0) scale(1.0, 1.0);
+     transform: translateZ(0) scale(1.0, 1.0);
 }
 
 .rotationDepart1 {
+     -webkit-transform: scale(1.01, 1.01) rotate(90deg);
      transform: scale(1.01, 1.01) rotate(90deg);
      -webkit-backface-visibility: hidden;
+     backface-visibility: hidden;
+     -webkit-transform-origin: center center;
+     transform-origin: center center;
 }
 
 .rotationDepart2 {
+     -webkit-transform: scale(1.01, 1.01) rotate(180deg);
      transform: scale(1.01, 1.01) rotate(180deg);
 }
 
 .rotationDepart3 {
+     -webkit-transform: scale(1.01, 1.01) rotate(270deg);
      transform: scale(1.01, 1.01) rotate(270deg);
 }
 

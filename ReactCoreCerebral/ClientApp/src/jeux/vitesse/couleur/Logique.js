@@ -10,7 +10,7 @@ export default class Logique {
             case 3:
                 return 'vertV';
             case 4:
-                return 'roseV';
+                return 'orangeV';
             case 5:
                 return 'violetV';
             default:
@@ -33,7 +33,7 @@ export default class Logique {
             case 3:
                 return 'Vert';
             case 4:
-                return 'Rose';
+                return 'Orange';
             case 5:
                 return 'Violet';
             default:

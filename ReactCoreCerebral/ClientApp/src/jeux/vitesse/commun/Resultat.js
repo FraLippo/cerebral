@@ -109,15 +109,15 @@ class Resultat extends Component {
             }
             else {
                 let pourcent = 100 - ((this.props.score * 100) / this.state.ancien);
-         
+                let msg = "Ton meilleur score précédent : " + this.state.ancien;
                 if (pourcent === 0) {
-                    return <div ><div>Ton meilleur score ce mois : {this.state.ancien}</div><div className='rotationEspace'>Tu as égalé ton meilleur score sur ce jeu.</div></div>
+                    return <div ><div>{msg}</div><div className='rotationEspace'>Tu as égalé ton meilleur score sur ce jeu.</div></div>
                 }
                 if (pourcent <= 20) {
-                    return <div ><div>Ton meilleur score ce mois : {this.state.ancien}</div><div className='rotationEspace'>Tu n'es vraiment pas passer loin de battre ton record sur ce jeu.</div></div>
+                    return <div ><div>{msg}</div><div className='rotationEspace'>Tu n'es vraiment pas passer loin de battre ton record sur ce jeu.</div></div>
                 }
                 else {
-                    return <div><div>Ton meilleur score ce mois : {this.state.ancien}</div> <div className='rotationEspace'>Tu peux recommencer pour améliorer ton score.</div></div>
+                    return <div><div>{msg}</div> <div className='rotationEspace'>Tu peux recommencer pour améliorer ton score.</div></div>
                 }
             }
         }
@@ -157,7 +157,8 @@ class Resultat extends Component {
 
                     <div>{this.messageEncouragement()}</div>
 
-                    <div>La moyenne des autres joueurs sur l'année : {this.state.moyenne}</div>
+                    <div>La moyenne des autres joueurs : {this.state.moyenne}</div>
+                     <div>Nombre de joueurs total : {this.state.nbJoueurs}</div>
 
                     <div className="marge20"><ButtonLink titre="Recommencer" href={'/' + this.props.typeExo}></ButtonLink></div>
                     <div className="marge20"><span className="margeDroit"><ButtonLink titre="Classement général" href={'/classementmois'}></ButtonLink></span>

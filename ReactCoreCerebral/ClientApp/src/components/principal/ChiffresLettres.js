@@ -8,9 +8,9 @@ import compte from '../../images/compte.webp';
 
 import TableauMot from '../commun/TableauMot';
 import { Link } from 'react-router-dom';
-import { Card } from 'antd';
+
 import { Helmet } from 'react-helmet';
-import genscrable from '../../images/genscrable.png'
+
 
 
 export default class ChiffreLetttre extends Component {

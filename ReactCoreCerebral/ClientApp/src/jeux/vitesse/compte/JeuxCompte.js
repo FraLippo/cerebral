@@ -9,7 +9,7 @@ import ElementSolution from './ElementSolution';
 import Logique from './Logique';
 import {Helmet } from 'react-helmet';
 import CompteRebours from '../commun/CompteRebours';
-import { finJeu } from '../forme/Logique';
+
 
 
 class JeuxCompte extends Component {
@@ -27,7 +27,7 @@ class JeuxCompte extends Component {
             finJeu : false,
             resultat : 0
         };
-  
+        this.score = 0;
         this.perdu = false;
         this.logiqueCompte = new LogiqueCompte();
         message.config({
@@ -85,6 +85,7 @@ class JeuxCompte extends Component {
             if (retour === this.state.resultat)
             {
                this.messageFin('Bravo, tu as réussi');
+               this.score += 15;
                return true;
               
             }
@@ -206,8 +207,8 @@ class JeuxCompte extends Component {
 
         return <div>
             <Helmet>
-          <title>{'META_COMPTE'}</title>
-          <meta name="description" content={'META_COMPTE'} />
+          <title>Le compte est bon — Jeu de calcul mental</title>
+          <meta name="description" content="Teste ton talent en calcul mental, combine 6 cartes avec les opérateurs + - x ÷ pour atteindre la cible. Prêt à relever le défi ?" />
                 </Helmet>
             
             
@@ -220,10 +221,10 @@ class JeuxCompte extends Component {
 
          
       
-            <div className="boutonsCompte espaceHautBas">
-             <Button className="reset" type="primary" onClick={this.clickRecommencer}>Recommencer à 0</Button>
+            <div className="boutonsCompte">
+             <Button className="reset" type="primary" onClick={this.clickRecommencer}>Recommencer à 0</Button>          <CompteRebours finTimer={this.finTimer} temps={80}></CompteRebours>
              </div>
-                 <div className="centre"><CompteRebours finTimer={this.finTimer} temps={60}></CompteRebours></div>
+     
             
             
             <div className="grilleCalcul">{this.state.tableauResultats.map(
@@ -231,7 +232,7 @@ class JeuxCompte extends Component {
                 </div>
                 </div>
                 :
-              <Resultat score={0} typeExo='vitessecompte'></Resultat> 
+              <Resultat score={this.score} typeExo='vitessecompte'></Resultat> 
             }
         
   

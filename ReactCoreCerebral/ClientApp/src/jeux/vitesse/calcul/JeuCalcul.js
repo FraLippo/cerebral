@@ -50,7 +50,8 @@ export default class JeuCalcul extends Component
     clic = (no) => {
         if (this.fin) return;
         let score = this.state.score;
-        if (this.state.tabGrille[no].toString().length < 4) return;
+        if (this.state.tabGrille[no].toString().length < 4 || this.state.tabGrille[no].etat === 'ok') return;
+
         let nouveauTabGrille = [...this.state.tabGrille];
         if (this.logique.verifierResultat(no))
         {

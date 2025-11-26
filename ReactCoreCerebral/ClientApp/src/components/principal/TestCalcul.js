@@ -46,6 +46,15 @@ export default class TestCalcul extends Component {
 
    
       <div className='jeuVitesse marge20'>
+
+         <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessecompte"] != null ? "dejaFaitCognito" : ""}`}>
+    <Link to='/vitessecompte'>    <div className="centre titreVitesse">🎯 Le compte est bon</div>
+        <p className="marge20">But du jeu : Réussir à trouver un résultat à partir de 6 nombres et des 4 opérations. Il y a toujours une solution, les solutions sont de type (a + b) x c, mais peu importe le moyen d'arriver aux résultats. Tu peux reprendre le résultat d'une opération pour construire un nouveau calcul. Tu as 80 s et tu marques 15 points par calcul correct.</p>
+      </Link>  <p className='centre'>{this.state.resultatsJoueur["vitessecompte"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessecompte"]:"Pas encore de résultat" }</p>
+
+        <div className="centre"><Link to='/classement/vitessecompte'>Classement</Link></div>
+ </div>
+
                   <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessefraction"] != null ? "dejaFaitCognito" : ""}`}>
     <Link to='/vitessefraction'>    <div className="centre titreVitesse">➗ Les fractions</div>
         <p className="marge20">But du jeu : colorier un certain nombre de cases dans une figure. Exemple : si la figure contient 15 carrés et que l'objectif est de colorier les 2/3 des carrés, tu dois colorier (15 / 3) x 2 = 5 x 2 = 10 carrés en orange. Tu dois réussir 9 calculs pour obtenir un bonus de 60 points. </p>

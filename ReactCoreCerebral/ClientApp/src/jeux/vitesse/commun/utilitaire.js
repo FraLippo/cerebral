@@ -102,6 +102,8 @@ function nomType(type) {
             return "Multitâche";
                case "vitesseloup":
             return "Attrape le loup";
+             case "vitessecompte":
+            return "Le compte est bon";
         default:
             return "";
     }
@@ -112,11 +114,11 @@ let tabJeu = ["vitesseaddition", "vitesseburger", "vitessecouleur", "vitessesoli
     , "vitessematch", "vitessecomplet", "vitessebonneteau","vitessebinero","vitessemah","vitessemulti",
     "vitessecercle", "vitesselettres", "vitesseboogle", "vitessechasse", "vitessecoupe","vitessemotus",
     "vitessechemin", "vitessetresor", "vitessetresse", "vitessetaquin", "vitessefusee", "vitessebataille",
-    "vitesseoperation", "vitessecalcul", "vitessearithmetique", "vitessemonnaie","vitessefraction",
+    "vitesseoperation", "vitessecalcul", "vitessearithmetique", "vitessemonnaie","vitessefraction","vitessecompte",
     "vitesseecrire", "vitessenotes", "vitessepanneauroutier", "vitesselangue",
     "vitessememoire", "vitesseforme", "vitessenombre", "vitessememory", "vitessepaire", "vitessealz", "vitesseloup"]
 
-let typeJeu = ['r','r','r', 'r', 'r', 'r', 'r', 'r', 'r','r', 'r', 'r', 'r', 'l', 'l', 'l', 'l', 'l','l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c','c', 'd', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm', 'm', 'm']
+let typeJeu = ['r','r','r', 'r', 'r', 'r', 'r', 'r', 'r','r', 'r', 'r', 'r', 'l', 'l', 'l', 'l', 'l','l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c','c', 'c', 'd', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm', 'm', 'm']
 
 let tabCategorie = ["test-memoire", "test-concentration", "test-calcul", "test-lettres", "test-culture", "test-planification"]
 let tabCategorie2 = ["memoire", "concentration", "calcul", "vocabulaire", "culture", "planification"]
@@ -198,7 +200,7 @@ function obtenirInfoCategorie(categorie)
         }
         else if (categorie === 'c') {
                   return {
-                max : 380,
+                max : 470,
             message : 'Ta capacité de calcul est '
             }
           

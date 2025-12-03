@@ -25,7 +25,7 @@ export default class Presentation extends Component {
         </Helmet>
       <h1 className="titre centre couleurTitre">Sport cérébral et jeux de réflexion</h1>
       <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
-  
+  <Ad></Ad>
      <h1 className="titre couleurTitre centre">Les défis</h1>
         <div className="centre"><img src={border} alt="bordure"  width="100" ></img></div>
         <p>Un défi est un ensemble de petits jeux et tests, toutes vos compétences et votre agilité seront nécessaires pour arriver au bout de ces défis.</p>

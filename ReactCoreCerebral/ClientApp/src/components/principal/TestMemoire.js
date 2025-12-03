@@ -43,7 +43,7 @@ export default class TestMemoire extends Component {
       <h1 className="titre couleurTitre centre">Bilan mémoire : testez votre mémoire</h1>
      <p>Évaluez vos capacités de mémorisation à travers une série de jeux interactifs conçus pour faire un bilan complet de votre mémoire.</p>
 <GraphiqueRapidite categorie='m' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
-
+<Ad></Ad>
 <div className='jeuVitesse marge20'>
              <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseloup"] != null ? "dejaFaitCognito" : ""}`}>
       <Link  to='/vitesseloup'> <div className="centre titreVitesse" >🐺  Attrape le loup</div>    

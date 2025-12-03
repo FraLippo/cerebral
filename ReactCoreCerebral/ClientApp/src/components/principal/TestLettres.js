@@ -50,6 +50,7 @@ export default class TestLettres extends Component {
       <h1 className="titre couleurTitre centre">Jouer avec les mots</h1>
       <p>Découvrez notre série de jeux de mots fascinants et stimulants pour mettre à l'épreuve votre vocabulaire, améliorer votre agilité verbale et vous amuser tout en enrichissant votre langue ! </p>
       <GraphiqueRapidite categorie='l' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
+      <Ad></Ad>
       <div className='jeuVitesse marge20'>
 
                 <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessemotus"] != null ? "dejaFaitCognito" : ""}`}>

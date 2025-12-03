@@ -44,7 +44,7 @@ export default class TestCalcul extends Component {
       <p>Évaluez et perfectionnez vos compétences en mathématiques avec nos tests de calcul mental stimulants, conçus pour améliorer votre rapidité et précision en calculs numériques.</p> 
       <GraphiqueRapidite categorie='c' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
 
-   
+   <Ad></Ad>
       <div className='jeuVitesse marge20'>
 
          <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessecompte"] != null ? "dejaFaitCognito" : ""}`}>

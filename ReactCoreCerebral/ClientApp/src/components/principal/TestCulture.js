@@ -43,6 +43,7 @@ export default class TestCulture extends Component {
       <h1 className="titre couleurTitre centre">Tests divers sur la culture</h1>
       <p>Testez et améliorez vos compétences pratiques avec nos exercices interactifs de reconnaissance des notes musicales, de dactylographie, et de code de la route. </p>
       <GraphiqueRapidite categorie='d' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
+      <Ad></Ad>
       <div className='jeuVitesse marge20'>
               
                 <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessepanneauroutier"] != null ? "dejaFaitCognito" : ""}`}>

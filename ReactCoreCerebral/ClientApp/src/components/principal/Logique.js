@@ -33,7 +33,7 @@ export default class Logique extends Component {
       <h2 className="titre couleurTitre centre">Les tests de logique</h2>
         <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
 
-
+<Ad></Ad>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>
             <h2>Remettre les éléments dans l'ordre</h2>

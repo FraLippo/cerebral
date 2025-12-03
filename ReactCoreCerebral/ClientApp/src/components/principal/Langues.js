@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {formulePolitesse, tabLangueDepart} from '../../jeux/vitesse/langue/data';
 import {Link} from 'react-router-dom';
+import Ad from '../commun/adSense';
 export default class Langues extends Component
 {
 
@@ -13,7 +14,9 @@ export default class Langues extends Component
             <h1 className="titre centre">Formules de politesse dans différentes langues</h1>
             <p>Voici une liste de formules de politesse dans différentes langues. Cliquez sur le bouton audio pour écouter la prononciation. Le but du jeu <Link to='/vitesselangue'>La politesse</Link> est d'identifier 5 mots de politesse dans différentes langues. </p>
             <p>Si vous pensez qu'une expression n'est pas conforme ou mal utilisée, vous pouvez nous contacter sur <a href="https://x.com/evalquiz">X</a>. Nous sommes ouverts au débat car il nous a fallu faire des choix. Il faut aussi comprendre le excusez-moi comme un désolé. Por favor est le même mot en espagnol et en portugais. Dans notre jeu, la version portugaise est en audio, tandis que l'espagnol est écrite. </p>
-           <table className="tableauLangue">
+       
+       <Ad></Ad>  
+         <table className="tableauLangue">
                 <thead>
                     <tr>
                         <th>Langue</th>

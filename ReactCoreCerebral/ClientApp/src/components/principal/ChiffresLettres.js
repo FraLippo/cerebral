@@ -43,7 +43,7 @@ export default class ChiffreLetttre extends Component {
             <p>Le programme accepte tous les mots et les verbes conjugués. Dans l'esprit des mots acceptés on est plus proche du Scrabble que des chiffres et des lettres. Nous utilisons le dictionnaire officiel du Scrabble pour valider les mots. </p>
             <p>La partie se joue en 3 manches, si vous remportez la manche, c'est à dire si vous trouvez un mot plus long que celui de l'ordinateur, vous gagnez 2 points plus le nombre de lettres du mot.</p>
 
-
+<Ad></Ad>
             <h3 className='centre'>Le jeu du mot le plus long contre l'ordinateur</h3>
              <div className='fontMoyenne'>
                 <div className="boutonLienLettres "><Link to={"/jeuxlettres/0/1/1"}>Niveau très facile</Link></div>
@@ -60,7 +60,7 @@ export default class ChiffreLetttre extends Component {
          
  </div>  
  <TableauMot></TableauMot>
-          
+       <Ad></Ad>    
    
     
         <div className="centre marge10"><img src={border} alt="bordure" width="100" height="20"></img></div>

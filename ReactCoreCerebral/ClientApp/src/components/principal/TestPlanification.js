@@ -44,7 +44,7 @@ export default class TestPlanification extends Component {
       <p>Développez votre esprit stratégique et améliorez vos compétences en planification avec nos jeux stimulants et captivants !</p>
 
       <GraphiqueRapidite categorie='p' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
-
+    <Ad></Ad>
       <div className='jeuVitesse marge20'>
                 <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessebataille"] != null ? "dejaFaitCognito" : ""}`}>
 <Link to='/vitessebataille'><div className="centre titreVitesse" >🚢 La bataille navale</div>

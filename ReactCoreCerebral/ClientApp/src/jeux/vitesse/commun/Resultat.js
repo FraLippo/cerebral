@@ -159,7 +159,7 @@ class Resultat extends Component {
 
                     <div>La moyenne des autres joueurs : {this.state.moyenne}</div>
                      <div>Nombre de joueurs total : {this.state.nbJoueurs}</div>
-
+ <Ad></Ad>
                     <div className="marge20"><ButtonLink titre="Recommencer" href={'/' + this.props.typeExo}></ButtonLink></div>
                     <div className="marge20"><span className="margeDroit"><ButtonLink titre="Classement général" href={'/classementmois'}></ButtonLink></span>
                     <ButtonLink titre="Retour à la catégorie" href={'/' + lienVersCategorie(this.props.typeExo, "lien")}></ButtonLink></div>
@@ -168,7 +168,7 @@ class Resultat extends Component {
 <h2>Autres jeux de la même catégorie</h2>
 {this.lienJeux()}
 
-                </div>  <Ad></Ad>
+                </div> 
             </div>
         </div>
     }

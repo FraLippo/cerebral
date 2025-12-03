@@ -68,6 +68,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <h1 className="titre centre couleurTitre">Sport cérébral et jeux cognitifs</h1>
       <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
       <div className="centre"><img src={presete} width="200" height="140" alt="fleur"></img></div>
+      <Ad></Ad>
       <div gutter={8} className="espaceHaut">
        
         <h2>Développe ton intelligence avec les jeux cognitifs</h2>
@@ -125,7 +126,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         </div>
 </Link>
 </div>
-
+<Ad></Ad>
       <div>
         <h2>Nos autres jeux de réflexion</h2>
 <Link to='/defi'> <div className='categorieAutres'>

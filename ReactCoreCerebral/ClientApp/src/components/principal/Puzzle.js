@@ -28,7 +28,7 @@ export default class Puzzle extends Component {
 <div className="titre centre couleurTitre">Jeux d'entrainement cérébral</div>
 <div className='centre'>evalquiz.com : le site numéro 1 du divertissement intelligent</div>
 
-    
+    <Ad></Ad>
         <h2 className="titre couleurTitre centre">Les puzzles</h2>
             <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
         <Row gutter={8} className="espaceHaut">

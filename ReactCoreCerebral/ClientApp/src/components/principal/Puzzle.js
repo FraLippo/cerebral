@@ -46,7 +46,7 @@ export default class Puzzle extends Component {
           </Col>
         </Row>
         
-       <Ad></Ad>
+
             <div className="centre"><img src={border} alt="bordure" width="100" height="20"></img></div>
         <Row gutter={8} className="espaceHaut">
           <Col md={10}>

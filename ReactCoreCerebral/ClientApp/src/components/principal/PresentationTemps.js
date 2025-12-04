@@ -126,7 +126,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         </div>
 </Link>
 </div>
-<Ad></Ad>
+
       <div>
         <h2>Nos autres jeux de réflexion</h2>
 <Link to='/defi'> <div className='categorieAutres'>
@@ -140,7 +140,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
  </div>
 </a>
 </div>
-
+<Ad></Ad>
       <h1>Nos jeux cognitifs</h1>
       <p>Nous vous proposons une série de tests simples et de petits jeux de réflexion pour faire travailler son cerveau en espérant améliorer ses capacités cognitives et son intelligence. Tous les jeux sont gratuits et ne nécessitent aucune inscription.</p>
           <p>Chaque série de tests stimule une partie du cerveau différente : la mémoire, la capacité de concentration, la vitesse de réaction, le discernement des couleurs et des formes...</p>
@@ -153,7 +153,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
 <p>L'avantage de ces jeux ne se limite pas à l'amélioration des compétences cognitives. Des études ont montré que l'engagement régulier dans des activités cognitives peut contribuer à ralentir le déclin cognitif lié à l'âge et à promouvoir la santé mentale globale.</p>
 <p>Ces jeux sont aussi disponibles en anglais <a href="https://brain-games.evalquiz.com">brain-games.evalquiz.com</a></p>
     
-    <Ad></Ad>
+
     <p>Notre X (twitter) : <a href="https://x.com/evalquiz">evalquiz</a></p>
           <p>Vous pouvez nous contacter si vous avez des remarques ou des propositions en consultant la page des <a href="https://evalquiz.com/home/faq">mentions légales.</a></p>
     </div>

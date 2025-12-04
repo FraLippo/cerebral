@@ -108,7 +108,7 @@ Plongez dans un monde d'énigmes et de défis conçus pour exercer votre mémoir
         </Row>
  
       <div className="centre"><img src={border} alt="bordure"></img></div>
-      <Ad></Ad>
+
         </div>
   }
 }

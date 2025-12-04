@@ -13,9 +13,16 @@ export default class Ad extends Component {
   }
 
   render() {
-    // 2. Le style doit être un objet JS
-    const adStyle = {
-      display: 'block'
+  
+const adStyle = {
+      display: 'block',
+      
+      // 1. Définir une largeur maximale pour que le centrage fonctionne
+      width: '100%',         // Prend toute la largeur disponible du parent
+      maxWidth: '728px',     // Limite la largeur sur les grands écrans (tablettes/desktop)
+      
+      // 2. Centrage horizontal simple
+      margin: '20px auto',   // 20px de marge haut/bas, auto pour centrer gauche/droite
     };
 
     return (

@@ -91,7 +91,7 @@ export default class TestCulture extends Component {
 <p><b>Test de dactylographie</b> : La vitesse et la précision au clavier sont au cœur de ce test qui vise à améliorer vos compétences en dactylographie. Que vous cherchiez à taper plus rapidement ou à perfectionner votre technique, cet exercice est fait pour vous.</p>
 <p><b>Test du code de la route</b> : Idéal pour tester si vos connaissances sur le code de la route sont toujours à jour.</p>
 <p>Ces tests variés vous permettent de développer des compétences pratiques et utiles au quotidien, tout en vous offrant un moyen interactif et engageant d'évaluer vos progrès. Que ce soit pour la musique, la dactylographie ou la conduite, vous trouverez ici de quoi vous entraîner et vous perfectionner.</p>
-       <Ad></Ad>       
+        
 
        <div className='autreVitesse centre'> <a href="/">Les autres catégories</a> </div>
        </div>

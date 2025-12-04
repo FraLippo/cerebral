@@ -82,7 +82,7 @@ export default class Logique extends Component {
           </Col>
         </Row>
 
-        <Ad></Ad>
+  
          </div>
   }
 }

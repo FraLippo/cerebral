@@ -185,7 +185,7 @@ export default class TesConcentration extends Component {
       </div>
 
     </div>
-<Ad></Ad>
+
 <h2>Les différents types de tests de rapidité et de concentration</h2>
 
 <p>Les jeux de concentration sont un excellent moyen de stimuler votre esprit tout en vous divertissant. Ils sont conçus pour améliorer différentes facettes de votre attention et de vos capacités cognitives. Voici les principaux types de jeux de concentration que vous pouvez explorer :</p>

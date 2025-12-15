@@ -136,16 +136,16 @@ namespace CerebralCore.Donnees
                     longueur = R.Next(3, 9);
                     break;
                 case 17:
-                    longueur = R.Next(5, 8);
+                    longueur = R.Next(6, 9);
                     break;
                 case 18:
-                    longueur = R.Next(3, 9);
+                    longueur = R.Next(4, 10);
                     break;
                 case 19:
-                    longueur = R.Next(5, 9);
+                    longueur = R.Next(5, 10);
                     break;
                 case 20:
-                    longueur = R.Next(5, 10);
+                    longueur = R.Next(6, 10);
                     break;
                 
                 default:

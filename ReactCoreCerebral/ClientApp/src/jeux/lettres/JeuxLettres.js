@@ -21,8 +21,8 @@ class JeuxLettres extends Component {
     constructor(props) {
         super();
         let niveau = parseInt(props.params.niveau);
-        this.niveau = niveau === 1 ? 0 : niveau === 2 ? 4 : niveau === 3 ? 8 : niveau === 4 ? 17 : 0;
-     this.temps = 30;
+        this.niveau = niveau === 1 ? 0 : niveau === 2 ? 4 : niveau === 3 ? 8 : niveau === 4 ? 20 : 0;
+     this.temps = 40;
 
     
         let prenom = LogiqueLettre.obtenirPrenom();
@@ -167,6 +167,7 @@ class JeuxLettres extends Component {
                 else {
 
                     this.changeMessage("Tu as trouvé un mot de " + this.motEnCours.length + " lettres.");
+                    this.finTimer();
 
                 }
             });

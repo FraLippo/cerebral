@@ -55,18 +55,18 @@ const listeNiveaux = [
         intervalle : "3 et 8"
     },  {
         titre : "expérimentée",
-        intervalle : "5 et 7"
+        intervalle : "6 et 9"
     },  {
         titre : "stressée",
-        intervalle : "3 et 8"
+        intervalle : "4 et 9"
     },
     {
         titre : "experte",
-        intervalle : "5 et 8"
+        intervalle : "5 et 9"
     },
     {
         titre : "ultime",
-        intervalle : "5 et 9"
+        intervalle : "6 et 9"
     },
      
   ];  
@@ -78,7 +78,7 @@ export default class LogiqueLettre {
     static obtenirPrenom = () =>
   {
         const prenomsFeminins = [
-            "Camille","Léa","Manon","Chloé","Zoé","Julie","Emma","Sarah","Laura","Anaïs","Claire","Lucie","Marion","Élise","Sophie","Alice","Marie","Eva","Louise","Inès", "Maryam", "Sofia", "Lina", "Nour"
+            "Flo","Marie34","Manon","Élisabeth","Régine","Thana","Emma","Martine","Isabelle","Anaïs","Josiane","Lucie","Caro","Élise","Marie-Claude","Estelle","Marie","Kathleen","Louise","Inès", "Nounou", "Lola", "Lina", "Nour"
         ];  
         let nb = Math.floor(Math.random() * prenomsFeminins.length);
         return prenomsFeminins[nb];

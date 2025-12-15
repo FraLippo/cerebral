@@ -108,7 +108,8 @@ namespace ReactCerebralCore.Controllers
         public async Task AjouterTableauMot(string prenom, string niveau)
         {
             prenom ??= "inconnuX"; // Pour éviter les nulls dans la base de données
-            
+            niveau ??= "0";
+
             //Horreur, Le listeFaute sert au niveau !
             Resultat2019 result = new Resultat2019() { typeExo = "longmot", date = DateTime.Now, prenom = prenom, listeFautes = niveau };
             _dbTableau.Resultat2019.Add(result);

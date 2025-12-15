@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import '../../style/jeux.css';
 
 
@@ -27,6 +26,7 @@ export default class CompteRebours extends Component {
     }
     componentWillUnmount() {
         clearInterval(this.timer);
+    
     }
     finTimer = () =>
     {

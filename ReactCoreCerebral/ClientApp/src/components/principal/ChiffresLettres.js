@@ -43,13 +43,18 @@ export default class ChiffreLetttre extends Component {
             <p>Le programme accepte tous les mots et les verbes conjugués. Dans l'esprit des mots acceptés on est plus proche du Scrabble que des chiffres et des lettres. Nous utilisons le dictionnaire officiel du Scrabble pour valider les mots. </p>
             <p>La partie se joue en 3 manches, si vous remportez la manche, c'est à dire si vous trouvez un mot plus long que celui de l'ordinateur, vous gagnez 2 points plus le nombre de lettres du mot.</p>
 
-
+            <h2>🔄 Nouvelle version</h2>
+            <ul>
+                <li>Arrêt du compte à rebours après un mot correct (sur la demande d'une joueuse)</li>
+                <li>Augmentation de la difficulté du dernier niveau</li>
+                <li>Passage de 30 à 40 s</li>
+            </ul>
             <h3 className='centre'>Le jeu du mot le plus long contre l'ordinateur</h3>
              <div className='fontMoyenne'>
                 <div className="boutonLienLettres "><Link to={"/jeuxlettres/0/1/1"}>Niveau très facile</Link></div>
                 <div className="boutonLienLettres"><Link to={"/jeuxlettres/0/1/2"}>Niveau facile</Link></div>
-                <div className="boutonLienLettres"><Link to={"/jeuxlettres/0/1/3"}>Niveau intermédiaire</Link></div>
-             <div className="boutonLienLettres"><Link to={"/jeuxlettres/0/1/4"}>Niveau difficile</Link></div>
+                <div className="boutonLienLettres"><Link to={"/jeuxlettres/0/1/3"}>Niveau difficile</Link></div>
+             <div className="boutonLienLettres"><Link to={"/jeuxlettres/0/1/4"}>Niveau très difficile</Link></div>
   </div> 
 <div className='bandeauLien marge20'>
  <div className='boutonLienLettres' style={{backgroundColor : '#de2020'}}>

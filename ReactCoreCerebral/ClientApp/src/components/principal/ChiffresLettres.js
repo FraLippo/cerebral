@@ -43,12 +43,7 @@ export default class ChiffreLetttre extends Component {
             <p>Le programme accepte tous les mots et les verbes conjugués. Dans l'esprit des mots acceptés on est plus proche du Scrabble que des chiffres et des lettres. Nous utilisons le dictionnaire officiel du Scrabble pour valider les mots. </p>
             <p>La partie se joue en 3 manches, si vous remportez la manche, c'est à dire si vous trouvez un mot plus long que celui de l'ordinateur, vous gagnez 2 points plus le nombre de lettres du mot.</p>
 
-            <h2>🔄 Nouvelle version</h2>
-            <ul>
-                <li>Arrêt du compte à rebours après un mot correct (sur la demande d'une joueuse)</li>
-                <li>Augmentation de la difficulté du dernier niveau</li>
-                <li>Passage de 30 à 40 s</li>
-            </ul>
+           
             <h3 className='centre'>Le jeu du mot le plus long contre l'ordinateur</h3>
              <div className='fontMoyenne'>
                 <div className="boutonLienLettres "><Link to={"/jeuxlettres/0/1/1"}>Niveau très facile</Link></div>
@@ -61,9 +56,9 @@ export default class ChiffreLetttre extends Component {
 <a href="https://concours.evalquiz.com/pres-jeux-du-jour">🔹Nos autres jeux sur les mots</a>
  </div>   
  </div>
- <div className='bandeauLien'>
-         
- </div>  
+  <p className='centre fontMoyenne'>Un petit questionnaire pour donner votre avis, merci de le remplir, il n'y a que quelques questions.</p>
+             <div className='centre fontMoyenne'><a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qV7CdWGDWmA5XLwmArF3UGwuYlJYA4Kz4ZdNjSpIWAmxkw/viewform?usp=header">Le questionnaire</a></div>
+ 
    <Ad></Ad>  
  <TableauMot></TableauMot>
      

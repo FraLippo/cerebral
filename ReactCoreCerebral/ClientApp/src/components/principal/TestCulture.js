@@ -45,6 +45,15 @@ export default class TestCulture extends Component {
       <GraphiqueRapidite categorie='d' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
       <Ad></Ad>
       <div className='jeuVitesse marge20'>
+                    <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessebar"] != null ? "dejaFaitCognito" : ""}`}>
+           <Link to='/vitessebar'>   <div className="centre titreVitesse" >🥁 Boite à rhytme</div>
+   
+          <p className="marge20">But du jeu : La grille de séquence d'une boite à rhytme est affiché, pour gagner, il suffit de reproduire le motif en rhytme, en appuyant sur les boutons (kick = grosse caire, snare = caisse claire, hi-hat = charleston), 20 points par grille complétée, bonus +30 si 4 grilles complétées. </p>
+     </Link>
+     <p className='centre'>{this.state.resultatsJoueur["vitessebar"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessebar"]:"Pas encore de résultat" }</p>
+
+        <div className="centre"><Link to='/classement/vitessebar'>Classement</Link></div>
+    </div>
               
                 <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessepanneauroutier"] != null ? "dejaFaitCognito" : ""}`}>
            <Link to='/vitessepanneauroutier'>   <div className="centre titreVitesse" >🚦Le code de la route</div>

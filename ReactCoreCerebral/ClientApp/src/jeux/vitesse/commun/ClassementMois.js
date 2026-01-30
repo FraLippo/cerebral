@@ -74,7 +74,7 @@ export default class ClassementMois extends Component {
             acc[item.categorie] += item.score;
             return acc;
         }, {});
-
+           
         let tabScoreCategorie = ['m', 'r', 'c', 'l', 'd', 'p'].map(x => {
             return {
                 categorie: lienVersCategorie(x, "legende"),

@@ -46,9 +46,9 @@ export default class TestCulture extends Component {
       <Ad></Ad>
       <div className='jeuVitesse marge20'>
                     <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessebar"] != null ? "dejaFaitCognito" : ""}`}>
-           <Link to='/vitessebar'>   <div className="centre titreVitesse" >🥁 Boite à rhytme</div>
+           <Link to='/vitessebar'>   <div className="centre titreVitesse" >🥁 Boite à rythmes</div>
    
-          <p className="marge20">But du jeu : La grille de séquence d'une boite à rhytme est affiché, pour gagner, il suffit de reproduire le motif en rhytme, en appuyant sur les boutons (kick = grosse caire, snare = caisse claire, hi-hat = charleston), 20 points par grille complétée, bonus +30 si 4 grilles complétées. </p>
+          <p className="marge20">La grille de séquence d'une boîte à rythmes est affichée à l'écran. Pour gagner, vous devez reproduire fidèlement le motif rythmique en appuyant sur les bons boutons au bon moment : kick (grosse caisse), snare (caisse claire) et hi-hat (charleston). Chaque grille complétée rapporte 20 points. +30 pour 4 grilles réussies. La précision est essentielle : pour que cela sonne comme de la musique, aucun décalage n'est permis… la musique ne pardonne pas l'approximation, contrairement à notre jeu 😉. </p>
      </Link>
      <p className='centre'>{this.state.resultatsJoueur["vitessebar"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessebar"]:"Pas encore de résultat" }</p>
 
@@ -58,7 +58,7 @@ export default class TestCulture extends Component {
                 <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessepanneauroutier"] != null ? "dejaFaitCognito" : ""}`}>
            <Link to='/vitessepanneauroutier'>   <div className="centre titreVitesse" >🚦Le code de la route</div>
    
-          <p className="marge20">But du jeu : Une grille est affichée avec des panneaux routiers, il suffit de retrouver le panneau routier indiqué par la question. Tu as 120 secondes pour essayer de trouver tous les panneaux. Tu gagnes 2 points par panneau trouvé, -4 points en cas d'erreur. Si tu termines la grille, bonus de 20 points ! Le maximum est de (36 x 2) + 20 = 92 points. (<b>Nouveau</b> : ajout des derniers panneaux routiers) </p>
+          <p className="marge20">But du jeu : Une grille est affichée avec des panneaux routiers, il suffit de retrouver le panneau routier indiqué par la question. Tu as 120 secondes pour essayer de trouver tous les panneaux. Tu gagnes 2 points par panneau trouvé, -4 points en cas d'erreur. Si tu termines la grille, bonus de 20 points ! Le maximum est de (36 x 2) + 20 = 92 points. </p>
      </Link>
      <p className='centre'>{this.state.resultatsJoueur["vitessepanneauroutier"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessepanneauroutier"]:"Pas encore de résultat" }</p>
 

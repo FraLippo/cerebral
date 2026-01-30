@@ -56,9 +56,7 @@ export default class ChiffreLetttre extends Component {
 <a href="https://concours.evalquiz.com/pres-jeux-du-jour">🔹Nos autres jeux sur les mots</a>
  </div>   
  </div>
-  <p className='centre fontMoyenne'>Un petit questionnaire pour donner votre avis, merci de le remplir, il n'y a que quelques questions.</p>
-             <div className='centre fontMoyenne'><a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qV7CdWGDWmA5XLwmArF3UGwuYlJYA4Kz4ZdNjSpIWAmxkw/viewform?usp=header">Le questionnaire</a></div>
- 
+  
    <Ad></Ad>  
  <TableauMot></TableauMot>
      

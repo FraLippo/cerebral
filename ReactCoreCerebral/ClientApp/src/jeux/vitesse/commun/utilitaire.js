@@ -90,22 +90,22 @@ function nomType(type) {
             return "La politesse";
         case "vitessecoupe":
             return "Les mots coupés";
-            case "vitessebinero":
+        case "vitessebinero":
             return "Binero";
-             case "vitessemotus":
+        case "vitessemotus":
             return "Motus";
-              case "vitessemah":
+        case "vitessemah":
             return "Mahjong solitaire";
-             case "vitessefraction":
+        case "vitessefraction":
             return "Les fractions";
-             case "vitessemulti":
+        case "vitessemulti":
             return "Multitâche";
-               case "vitesseloup":
+        case "vitesseloup":
             return "Attrape le loup";
-             case "vitessecompte":
+        case "vitessecompte":
             return "Le compte est bon";
-              case "vitessebar":
-            return "Boite à rhytme";
+        case "vitessebar":
+            return "Boite à rythmes";
         default:
             return "";
     }
@@ -113,14 +113,14 @@ function nomType(type) {
 
 
 let tabJeu = ["vitesseaddition", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitesserecensement"
-    , "vitessematch", "vitessecomplet", "vitessebonneteau","vitessebinero","vitessemah","vitessemulti",
-    "vitessecercle", "vitesselettres", "vitesseboogle", "vitessechasse", "vitessecoupe","vitessemotus",
+    , "vitessematch", "vitessecomplet", "vitessebonneteau", "vitessebinero", "vitessemah", "vitessemulti",
+    "vitessecercle", "vitesselettres", "vitesseboogle", "vitessechasse", "vitessecoupe", "vitessemotus",
     "vitessechemin", "vitessetresor", "vitessetresse", "vitessetaquin", "vitessefusee", "vitessebataille",
-    "vitesseoperation", "vitessecalcul", "vitessearithmetique", "vitessemonnaie","vitessefraction","vitessecompte",
-    "vitesseecrire", "vitessenotes", "vitessepanneauroutier", "vitesselangue","vitessebar",
+    "vitesseoperation", "vitessecalcul", "vitessearithmetique", "vitessemonnaie", "vitessefraction", "vitessecompte",
+    "vitesseecrire", "vitessenotes", "vitessepanneauroutier", "vitesselangue", "vitessebar",
     "vitessememoire", "vitesseforme", "vitessenombre", "vitessememory", "vitessepaire", "vitessealz", "vitesseloup"]
 
-let typeJeu = ['r','r','r', 'r', 'r', 'r', 'r', 'r', 'r','r', 'r', 'r', 'r', 'l', 'l', 'l', 'l', 'l','l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c','c', 'c', 'd', 'd', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm', 'm', 'm']
+let typeJeu = ['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l', 'l', 'l', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm', 'm', 'm']
 
 let tabCategorie = ["test-memoire", "test-concentration", "test-calcul", "test-lettres", "test-culture", "test-planification"]
 let tabCategorie2 = ["memoire", "concentration", "calcul", "vocabulaire", "culture", "planification"]
@@ -130,19 +130,18 @@ let tabCategorie2 = ["memoire", "concentration", "calcul", "vocabulaire", "cultu
 function lienVersCategorie(nomJeu, utilisation) {
     let categorie = [];
     let type = '';
-    if (utilisation === 'lien')
-    {
-        categorie = tabCategorie;   
-         let index = tabJeu.findIndex(x => x === nomJeu);   
-         type = typeJeu[index];
+
+    if (utilisation === 'lien') {
+        categorie = tabCategorie;
+        let index = tabJeu.findIndex(x => x === nomJeu);
+        type = typeJeu[index];
     }
-    else
-    {
+    else {
         categorie = tabCategorie2;
         type = nomJeu;
     }
 
- 
+
     switch (type) {
         case 'm':
             return categorie[0];
@@ -178,58 +177,57 @@ function lienAutresJeux(jeu) {
 }
 
 
-function obtenirInfoCategorie(categorie)
-{
+function obtenirInfoCategorie(categorie) {
 
-        if (categorie === 'm') {
+    if (categorie === 'm') {
 
-            return {
-                max : 550,
-            message : 'Ta capacité de mémorisation est '
-            }
-        } else if (categorie === 'l') {
-             return {
-                max : 600,
-            message : 'Ton aptitude verbale est '
-            }
+        return {
+            max: 550,
+            message: 'Ta capacité de mémorisation est '
         }
-        else if (categorie === 'p') {
-             return {
-                max : 650,
-            message : 'Ta capacité de planification est '
-            }
-          
-        }
-        else if (categorie === 'c') {
-                  return {
-                max : 470,
-            message : 'Ta capacité de calcul est '
-            }
-          
-        }
-        else if (categorie === 'r') {
-             return {
-                max : 960,
-            message : 'Ta capacité de concentration est '
-            }
-           
-        }
-        else if (categorie === 'd') {
-             return {
-                max : 350,
-            message : 'Ton aptitude culturelle est '
-            }
-          
+    } else if (categorie === 'l') {
+        return {
+            max: 600,
+            message: 'Ton aptitude verbale est '
         }
     }
+    else if (categorie === 'p') {
+        return {
+            max: 650,
+            message: 'Ta capacité de planification est '
+        }
 
-function    creerMsgResultat(pourcentage) {
-  
-        if (pourcentage < 25) return 'faible';
-        else if (pourcentage < 50) return 'satisfaisante';
-        else if (pourcentage < 75) return 'bonne';
-        else if (pourcentage< 100) return 'excellente';
-        else if (pourcentage = 100) return 'exceptionnelle';
     }
+    else if (categorie === 'c') {
+        return {
+            max: 470,
+            message: 'Ta capacité de calcul est '
+        }
+
+    }
+    else if (categorie === 'r') {
+        return {
+            max: 960,
+            message: 'Ta capacité de concentration est '
+        }
+
+    }
+    else if (categorie === 'd') {
+        return {
+            max: 380,
+            message: 'Ton aptitude culturelle est '
+        }
+
+    }
+}
+
+function creerMsgResultat(pourcentage) {
+
+    if (pourcentage < 25) return 'faible';
+    else if (pourcentage < 50) return 'satisfaisante';
+    else if (pourcentage < 75) return 'bonne';
+    else if (pourcentage < 100) return 'excellente';
+    else if (pourcentage = 100) return 'exceptionnelle';
+}
 
 export { verifierStatus, nomType, tabJeu, lienAutresJeux, typeJeu, lienVersCategorie, obtenirInfoCategorie, creerMsgResultat };

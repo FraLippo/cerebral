@@ -87,8 +87,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
   
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
-       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x10</span>👑</p>
-      <div className='centre'><b>🚩 Lili55 a survolé l'année 2025. Bravo ! 📅</b></div>
+       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x11</span>👑</p>
+      <div className='centre'><b>🚩 Lili55 a de nouveau remporté le concours. Bravo ! 📅</b></div>
    
      
       
@@ -154,7 +154,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
 <p>Ces jeux sont aussi disponibles en anglais <a href="https://brain-games.evalquiz.com">brain-games.evalquiz.com</a></p>
     
 
-    <p>Notre X (twitter) : <a href="https://x.com/evalquiz">evalquiz</a></p>
+
           <p>Vous pouvez nous contacter si vous avez des remarques ou des propositions en consultant la page des <a href="https://evalquiz.com/home/faq">mentions légales.</a></p>
     </div>
   }

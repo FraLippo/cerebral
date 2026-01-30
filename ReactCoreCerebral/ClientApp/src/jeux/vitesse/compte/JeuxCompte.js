@@ -119,7 +119,7 @@ class JeuxCompte extends Component {
        if (this.ajouterResultatTestFin(nouveauTabResultat))
        {
         tabAffichage = tabAffichage.map((() =>  ({valeur : 0,affichage: false})))
-          console.log(tabAffichage)
+        
        }
         
         this.setState({

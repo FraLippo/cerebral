@@ -41,7 +41,7 @@ export default class PresentationEN extends Component {
           <p>Each series of tests stimulates a different part of the brain: memory, concentration capacity, reaction speed, discernment of colours and shapes...</p>
           <p>These brain games are easy to understand and can be played by adults, seniors or kids.</p>
           <p>The games are by no means scientific exercises. They are mostly small fun games that are used to evaluate one's abilities in relation to others. At the end of each game you get your ranking and your position in relation to the other players.</p>
-          <p>If you have any questions, you can contact us on <a href="https://twitter.com/evalquiz">Twitter</a>.</p>
+    
         </Col>
       </Row>
 

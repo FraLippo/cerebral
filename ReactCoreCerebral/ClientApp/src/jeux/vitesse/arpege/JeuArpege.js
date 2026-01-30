@@ -41,7 +41,7 @@ class JeuArpege extends Component {
 
         });
       
-        console.log(dataLevels);
+   
         return dataLevels;
     }
     findArpeggio = () => {
@@ -55,6 +55,7 @@ class JeuArpege extends Component {
         // advance to next game and reset runtime state
         this.gameNb++;
         if (this.gameNb === this.dataLevels.length) {
+            this.unmountAll();
             this.score += 30;
             this.setState({endGame : true});
             return;
@@ -292,6 +293,7 @@ class JeuArpege extends Component {
     };
 
     startMetronome = () => {
+    
         if (this.metronomeIntervalId) return;
         const msPerBeat = (60 / this.state.bpm) * 1000; // quarter notes
         // If sequence is playing, rely on playStep to trigger metronome accents
@@ -307,6 +309,7 @@ class JeuArpege extends Component {
     };
 
     stopMetronome = () => {
+     
         if (this.metronomeIntervalId) {
             clearInterval(this.metronomeIntervalId);
             this.metronomeIntervalId = null;
@@ -340,6 +343,7 @@ class JeuArpege extends Component {
         }, duration);
     };
     finTimer = () => {
+      this.unmountAll();
         this.setState({endGame : true});
     }
   

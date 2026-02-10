@@ -5,7 +5,7 @@
 const defaultArp = {
     facile:
         [{
-            bpm: 90,
+            bpm: 60,
             notes: [
                 { note: 'c', place: 1 },
                 { note: 'g', place: 3 },
@@ -19,7 +19,7 @@ const defaultArp = {
             ]
         },
         {
-            bpm: 100,
+            bpm: 60,
             notes: [
                 { note: 'c', place: 1 },
                 { note: 'g', place: 3 },
@@ -34,7 +34,7 @@ const defaultArp = {
             ]
         },
         {
-            bpm: 90,
+            bpm: 60,
             notes: [
                 { note: 'c', place: 1 },
                 { note: 'g', place: 3 },
@@ -54,7 +54,7 @@ const defaultArp = {
 
     moyen:
         [{
-            bpm: 90,
+            bpm: 60,
             notes: [
                 { note: 'c', place: 1 },
                 { note: 'g', place: 3 },
@@ -70,7 +70,7 @@ const defaultArp = {
             ]
         },
         {
-            bpm: 90,
+            bpm: 60,
             notes: [
                 { note: 'c', place: 1 },
                 { note: 'g', place: 3 },
@@ -87,7 +87,7 @@ const defaultArp = {
             ]
         },
         {
-            bpm: 90,
+            bpm: 60,
             notes: [
                 { note: 'c', place: 1 },
                 { note: 'g', place: 3 },
@@ -106,7 +106,7 @@ const defaultArp = {
         ],
     difficile:
         [{
-            bpm: 90,
+            bpm: 60,
             notes: [
                 { note: 'c', place: 1 },
                 { note: 'e', place: 2 },
@@ -125,7 +125,7 @@ const defaultArp = {
             ]
         },
         {
-            bpm: 90,
+            bpm: 60,
             notes: [
                 { note: 'c', place: 1 },
                 { note: 'c', place: 3 },
@@ -141,7 +141,7 @@ const defaultArp = {
             ]
         },
         {
-            bpm: 100,
+            bpm: 60,
             notes: [
                 { note: 'c', place: 1 },
                 { note: 'e', place: 2 },
@@ -160,7 +160,7 @@ const defaultArp = {
         ],
     hard:
         [{
-            bpm: 100,
+            bpm: 80,
             notes: [
                 { note: 'c', place: 1 },
                 { note: 'e', place: 2 },
@@ -180,7 +180,7 @@ const defaultArp = {
             ]
         },
         {
-            bpm: 120,
+            bpm: 80,
             notes: [
                 { note: 'c', place: 1 },
                 { note: 'g', place: 2 },
@@ -200,7 +200,7 @@ const defaultArp = {
             ]
         },
         {
-            bpm: 90,
+            bpm: 80,
             notes: [
                 { note: 'c', place: 1 },
                 { note: 'e', place: 2 },

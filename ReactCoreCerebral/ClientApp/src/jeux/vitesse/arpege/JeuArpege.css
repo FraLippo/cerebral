@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     background: #f3f7fb;
-    padding: 20px;
+    padding: 5px;
 }
 
 .sequencer-box {
@@ -158,3 +158,58 @@
     background: linear-gradient(#f8f8f8, #eaeaea);
 }
 .piano-key + .piano-key { margin-left: 10px; }
+
+.drum-pad-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px 0; /* réduit au minimum */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(0,0,0,0.12);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+}
+
+/* Pads plus petits mais toujours confortables */
+.drum-pad {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    background: radial-gradient(circle at 30% 30%, #555, #222);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.35), inset 0 2px 4px rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.05s ease;
+}
+
+/* Effet pression */
+.drum-pad:active {
+    transform: scale(0.92);
+}
+
+/* Kick légèrement plus grand */
+.kick {
+    width: 80px;
+    height: 80px;
+}
+
+/* Optimisation mobile */
+@media (max-width: 600px) {
+    .drum-pad {
+        width: 60px;
+        height: 60px;
+        font-size: 13px;
+    }
+    .kick {
+        width: 70px;
+        height: 70px;
+    }
+}

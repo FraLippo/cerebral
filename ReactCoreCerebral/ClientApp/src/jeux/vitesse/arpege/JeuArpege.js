@@ -191,6 +191,11 @@ class JeuArpege extends Component {
         }
 
         const now = this.audioContext.currentTime;
+        // quantize start time to nearest step according to BPM (eighth notes)
+        const stepDur = (60 / (this.state && this.state.bpm ? this.state.bpm : 120)) / 2; // seconds per step
+        let quantStart = Math.round(now / stepDur) * stepDur;
+        // ensure scheduled time is not slightly in the past
+        if (quantStart <= now + 0.005) quantStart += stepDur;
 
         // Prefer sample playback of preloaded buffers for minimal latency and consistent sound
         const buffer = (this.buffers && this.buffers[row]) ? this.buffers[row] : null;
@@ -200,7 +205,7 @@ class JeuArpege extends Component {
                 src.buffer = buffer;
                 // small per-trigger gain to avoid clicks and allow overlapping voices
                 const g = this.audioContext.createGain();
-                const startTime = this.audioContext.currentTime + 0.001;
+                const startTime = quantStart;
                 g.gain.setValueAtTime(0.0001, startTime);
                 g.gain.linearRampToValueAtTime(0.9, startTime + 0.006);
                 // connect and start
@@ -222,14 +227,14 @@ class JeuArpege extends Component {
         const gain = this.audioContext.createGain();
         osc.type = 'sine';
         osc.frequency.value = freqs[row] || 261.63;
-        const now2 = this.audioContext.currentTime;
-        gain.gain.setValueAtTime(0.0001, now2);
-        gain.gain.linearRampToValueAtTime(0.6, now2 + 0.005);
-        gain.gain.linearRampToValueAtTime(0.0001, now2 + 0.18);
+        const startNow = quantStart;
+        gain.gain.setValueAtTime(0.0001, startNow);
+        gain.gain.linearRampToValueAtTime(0.6, startNow + 0.005);
+        gain.gain.linearRampToValueAtTime(0.0001, startNow + 0.18);
         osc.connect(gain);
         gain.connect(this.fxBus);
-        osc.start(now2);
-        osc.stop(now2 + 0.18 + 0.02);
+        osc.start(startNow);
+        osc.stop(startNow + 0.18 + 0.02);
     };
 
 
@@ -586,11 +591,14 @@ class JeuArpege extends Component {
 
 
                     <div className="live-controls" style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                        <div style={{ display: 'flex', gap: 12, alignItems: 'center', justifyContent: 'center' }}>
+                     {this.state.isMobile ?
+                     <div className="drum-pad-bar"> <button className="drum-pad kick" onClick={() => this.handleLiveNoteByRow(0)}>Kick</button> <button className="drum-pad hihat" onClick={() => this.handleLiveNoteByRow(1)}>Hi‑Hat</button> <button className="drum-pad snare" onClick={() => this.handleLiveNoteByRow(2)}>Snare</button> </div>
+                     :
+                         <div style={{ display: 'flex', gap: 12, alignItems: 'center', justifyContent: 'center' }}>
                             <button className="btn pad-btn piano-key" onClick={() => this.handleLiveNoteByRow(0)}>Kick (F)</button>
                             <button className="btn pad-btn piano-key" onClick={() => this.handleLiveNoteByRow(1)}>Hi-Hat (G)</button>
                             <button className="btn pad-btn piano-key" onClick={() => this.handleLiveNoteByRow(2)}>Snare (H)</button>
-                        </div>
+                        </div> }
                         {!this.state.isMobile && <div style={{ textAlign: 'center', color: '#475569' }}>Cliquez sur les boutons ou utilisez les touches <strong>f / g / h</strong> du clavier.</div>}
 
                     </div>

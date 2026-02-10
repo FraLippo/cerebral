@@ -118,7 +118,7 @@ export default class GraphiqueRapidite extends Component {
 
     render() {
         return <div>
-             <h1 className='centre'>{`Resultats ${lienVersCategorie(this.props.categorie, 'nom')}`}</h1>
+             <h1 className='centre'>{`Résultats ${lienVersCategorie(this.props.categorie, 'nom')}`}</h1>
             {this.state.scoreJoueur === 0  && <div className='centre'>Tu n'as participé à aucun jeu dans cette catégorie.</div>}  
             <div className='centre'>Tu dois participer à tous les jeux sur cette page pour avoir une évaluation correcte.</div>
             <div className='plateauMonnaie marge20'>

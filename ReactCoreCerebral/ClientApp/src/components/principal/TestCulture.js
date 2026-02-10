@@ -33,7 +33,7 @@ export default class TestCulture extends Component {
   render() {
     return <div>
          <Helmet>
-            <title>Tests divers de culture</title>
+            <title>Tests divers sur la culture (musique, langue, code de la route)</title>
             <meta name="description" content="Améliorez vos compétences pratiques avec des tests interactifs de reconnaissance des notes musicales, de dactylographie, et de code de la route." />
             <link rel="alternate" hreflang="en" href="https://brain-games.evalquiz.com/culture-games" />
 <link rel="alternate" hreflang="fr" href="https://cerebral.evalquiz.com/test-culture" />
@@ -41,7 +41,7 @@ export default class TestCulture extends Component {
 </Helmet>
   
       <h1 className="titre couleurTitre centre">Tests divers sur la culture</h1>
-      <p>Testez et améliorez vos compétences pratiques avec nos exercices interactifs de reconnaissance des notes musicales, de dactylographie, et de code de la route. </p>
+      <p className='centre'>Teste et améliore tes compétences pratiques avec nos exercices interactifs de reconnaissance des notes musicales, de dactylographie, et de code de la route. </p>
       <GraphiqueRapidite categorie='d' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
       <Ad></Ad>
       <div className='jeuVitesse marge20'>

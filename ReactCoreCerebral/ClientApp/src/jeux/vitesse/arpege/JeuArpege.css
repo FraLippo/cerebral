@@ -102,11 +102,15 @@
     }
     .pad {
         padding-top: 0; /* remove square padding */
-        aspect-ratio: 2 / .3; /* rectangular keys */
+        aspect-ratio: 2 / .4; /* rectangular keys */
         border-radius: 8px;
     }
     .pad-label { font-size: 0.9rem; }
     .piano-key { width: 72px; height: 46px; padding: 8px 12px; }
+
+    .sequencer-grid {
+    gap: 6px;
+}
 }
 
 .controls {
@@ -164,7 +168,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 8px 0; /* réduit au minimum */
+    padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -172,6 +176,7 @@
     backdrop-filter: blur(4px);
     z-index: 9999;
 }
+
 
 /* Pads plus petits mais toujours confortables */
 .drum-pad {
@@ -202,7 +207,7 @@
 }
 
 /* Optimisation mobile */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .drum-pad {
         width: 60px;
         height: 60px;

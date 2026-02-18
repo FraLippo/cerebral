@@ -1,0 +1,53 @@
+.game-wrapper {
+  position: relative;
+  width: 320px;
+  height: 640px; /* include hidden rows (8 rows * 80px) */
+  margin: 0 auto;
+}
+
+.background-image {
+  position: absolute;
+  width: 320px;
+  height: 480px; /* only visible rows */
+  top: 160px; /* push down by hiddenRows * cellSize (2 * 80) */
+  opacity: 0.3; /* léger effet fantôme */
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 3px solid #333;
+  border-right: 3px solid #333;
+  border-bottom: 3px solid #333;
+  border-top: none;
+}
+ .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100v;
+    background-color: #f4f4f4;
+  }
+
+.game-message {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 50;
+}
+.game-message.error {
+  background: rgba(200,40,40,0.95);
+}
+.game-message.success {
+  background: rgba(40,180,80,0.95);
+}
+.game-message.info {
+  background: rgba(60,120,200,0.95);
+}

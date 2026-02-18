@@ -19,7 +19,7 @@ const Langues = React.lazy(() => import('./Langues'));
 const ChiffresLettres = React.lazy(() => import('./ChiffresLettres'));
 //const TermService = React.lazy(() => import('./TermService'));
 // const PresentationEN = React.lazy(() => import('./Presentationanglais'));
-
+const JeuTetris = React.lazy(() => import('../../jeux/vitesse/tetris/JeuTetris'));
 const JeuFraction = React.lazy(() => import('../../jeux/vitesse/fraction/JeuFraction'));
 const JeuLangue = React.lazy(() => import('../../jeux/vitesse/langue/JeuLangue'));
  const JeuxLettres = React.lazy(() => import('../../jeux/lettres/JeuxLettres'));
@@ -123,7 +123,7 @@ const router = createBrowserRouter([
       children: [
           {
             index : true,
-            element: <PresentationTemps />,
+            element: <JeuTetris />,
           },
          
           {

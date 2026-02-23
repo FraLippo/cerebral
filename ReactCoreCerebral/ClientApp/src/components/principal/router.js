@@ -123,7 +123,7 @@ const router = createBrowserRouter([
       children: [
           {
             index : true,
-            element: <JeuTetris />,
+            element: <PresentationTemps />,
           },
          
           {
@@ -450,6 +450,11 @@ const router = createBrowserRouter([
             {
             path: 'vitessemotus',
             element: <JeuMaitreMot/>,
+            
+          },
+          {
+            path: 'vitessetetris',
+            element: <JeuTetris/>,
             
           },
           {

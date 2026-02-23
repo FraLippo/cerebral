@@ -45,6 +45,15 @@ export default class TestCulture extends Component {
       <GraphiqueRapidite categorie='d' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
       <Ad></Ad>
       <div className='jeuVitesse marge20'>
+        <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessetetris"] != null ? "dejaFaitCognito" : ""}`}>
+           <Link to='/vitessetetris'>   <div className="centre titreVitesse" >🥁 Tetris artistique</div>
+   
+          <p className="marge20">La grille de séquence d'une boîte à rythmes est affichée à l'écran. Pour gagner, vous devez reproduire fidèlement le motif rythmique en appuyant sur les bons boutons au bon moment : kick (grosse caisse), snare (caisse claire) et hi-hat (charleston). Chaque grille complétée rapporte 20 points. +30 pour 4 grilles réussies. La précision est essentielle : pour que cela sonne comme de la musique, aucun décalage n'est permis… la musique ne pardonne pas l'approximation, contrairement à notre jeu 😉. </p>
+     </Link>
+     <p className='centre'>{this.state.resultatsJoueur["vitessetetris"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessetetris"]:"Pas encore de résultat" }</p>
+
+        <div className="centre"><Link to='/classement/vitessetetris'>Classement</Link></div>
+    </div>
                     <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessebar"] != null ? "dejaFaitCognito" : ""}`}>
            <Link to='/vitessebar'>   <div className="centre titreVitesse" >🥁 Boite à rythmes</div>
    

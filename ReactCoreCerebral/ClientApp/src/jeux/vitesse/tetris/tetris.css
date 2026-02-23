@@ -3,33 +3,43 @@
   width: 320px;
   height: 640px; /* include hidden rows (8 rows * 80px) */
   margin: 0 auto;
+ background-color: black;
+  box-sizing: border-box;
+  /* move visual border here so canvas drawing area isn't affected by extra border width */
+  border-left: 3px solid yellow;
+  border-right: 3px solid yellow;
+  border-bottom: 3px solid yellow;
+  overflow: hidden;
 }
 
 .background-image {
   position: absolute;
-  width: 320px;
-  height: 480px; /* only visible rows */
+  width: 100%;
+  height: auto; /* controlled by inline style from JS */
   top: 160px; /* push down by hiddenRows * cellSize (2 * 80) */
-  opacity: 0.3; /* léger effet fantôme */
+  opacity: 0.7; /* léger effet fantôme */
 }
 
 .canvas {
   position: absolute;
   top: 0;
   left: 0;
-  border-left: 3px solid #333;
-  border-right: 3px solid #333;
-  border-bottom: 3px solid #333;
-  border-top: none;
+  border: none;
+  box-sizing: border-box;
 }
- .container {
+  .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100v;
-    background-color: #f4f4f4;
+    height: 100%;
+    background-color: transparent;
   }
-
+.texteTitre
+{
+  font-size: .8em;
+  color: black;
+  text-align: center;
+}
 .game-message {
   position: absolute;
   left: 50%;

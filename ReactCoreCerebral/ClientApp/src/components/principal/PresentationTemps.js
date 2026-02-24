@@ -102,7 +102,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         
         <Link to='test-calcul'>   <div className='categorieVitesse'>
     <div className='titreCategorie'>Calcul</div>
-    <div className='imageCategorie'><img src={fondcalcul} alt="catégorie calcul"></img></div>
+                <div className='imageCategorie'><img src={fondcalcul} alt="catégorie calcul21lmù
+'"></img></div>
         </div>
         </Link>
         <Link to='test-lettres'><div className='categorieVitesse'>

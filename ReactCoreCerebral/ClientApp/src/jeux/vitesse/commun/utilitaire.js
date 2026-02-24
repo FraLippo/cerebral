@@ -107,7 +107,7 @@ function nomType(type) {
         case "vitessebar":
             return "Boite à rythmes";
          case "vitessetetris":
-            return "Tetris art";
+            return "Tetris Musée";
         default:
             return "";
     }

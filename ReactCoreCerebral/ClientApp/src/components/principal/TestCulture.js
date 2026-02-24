@@ -46,9 +46,9 @@ export default class TestCulture extends Component {
       <Ad></Ad>
       <div className='jeuVitesse marge20'>
         <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessetetris"] != null ? "dejaFaitCognito" : ""}`}>
-           <Link to='/vitessetetris'>   <div className="centre titreVitesse" >🥁 Tetris artistique</div>
+           <Link to='/vitessetetris'>   <div className="centre titreVitesse" >🏛️ Tetris Musée</div>
    
-          <p className="marge20">La grille de séquence d'une boîte à rythmes est affichée à l'écran. Pour gagner, vous devez reproduire fidèlement le motif rythmique en appuyant sur les bons boutons au bon moment : kick (grosse caisse), snare (caisse claire) et hi-hat (charleston). Chaque grille complétée rapporte 20 points. +30 pour 4 grilles réussies. La précision est essentielle : pour que cela sonne comme de la musique, aucun décalage n'est permis… la musique ne pardonne pas l'approximation, contrairement à notre jeu 😉. </p>
+          <p className="marge20">Dans ce jeu, tu dois reconstituer une image à partir des fragments d'image qui tombent du haut de l'écran. Le principe est le même que le jeu Tetris. Sur PC, il faut utiliser les touches directionnelles pour déplacer les pièces. Sur smartphone, on déplace les pièces en glissant le doigt vers la gauche ou la droite sur l'espace de jeu, un appui sur l'écran (tap) fait tomber l'image plus vite. Le score maximum est de 100 (2 x 25 + 50).   </p>
      </Link>
      <p className='centre'>{this.state.resultatsJoueur["vitessetetris"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessetetris"]:"Pas encore de résultat" }</p>
 
@@ -57,7 +57,7 @@ export default class TestCulture extends Component {
                     <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessebar"] != null ? "dejaFaitCognito" : ""}`}>
            <Link to='/vitessebar'>   <div className="centre titreVitesse" >🥁 Boite à rythmes</div>
    
-          <p className="marge20">La grille de séquence d'une boîte à rythmes est affichée à l'écran. Pour gagner, vous devez reproduire fidèlement le motif rythmique en appuyant sur les bons boutons au bon moment : kick (grosse caisse), snare (caisse claire) et hi-hat (charleston). Chaque grille complétée rapporte 20 points. +30 pour 4 grilles réussies. La précision est essentielle : pour que cela sonne comme de la musique, aucun décalage n'est permis… la musique ne pardonne pas l'approximation, contrairement à notre jeu 😉. </p>
+          <p className="marge20">La grille de séquence d'une boîte à rythmes est affichée à l'écran. Pour gagner, tu dois reproduire fidèlement le motif rythmique en appuyant sur les bons boutons au bon moment : kick (grosse caisse), snare (caisse claire) et hi-hat (charleston). Chaque grille complétée rapporte 20 points. +30 pour 4 grilles réussies. La précision est essentielle : pour que cela sonne comme de la musique, aucun décalage n'est permis… la musique ne pardonne pas l'approximation, contrairement à notre jeu 😉. </p>
      </Link>
      <p className='centre'>{this.state.resultatsJoueur["vitessebar"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessebar"]:"Pas encore de résultat" }</p>
 

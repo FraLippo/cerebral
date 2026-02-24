@@ -45,7 +45,8 @@ class JeuArpege extends Component {
         return dataLevels;
     }
     findArpeggio = () => {
-        const arp = this.dataLevels[this.gameNb];
+        let arp = this.dataLevels[this.gameNb];
+   
         if (arp.notes && Array.isArray(arp.notes) && arp.notes.length) {
             this.loadArpeggio(arp.notes);
         }

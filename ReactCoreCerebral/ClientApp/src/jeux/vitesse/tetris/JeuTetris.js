@@ -476,7 +476,7 @@ endGame()
       if (this.level === 2)
       {
         this.endGame();
-          this.setState({afficheResultat : true, score: this.state.score + 55});
+          this.setState({afficheResultat : true, score: this.state.score + 50});
       }
       else
       {
@@ -604,40 +604,40 @@ endGame()
       // only accept a down press if we're not ignoring held key from previous piece
       if (!this.ignoreDownUntilKeyUp && this.axisLock !== 'horizontal') this.keyState.down = true;
     }
-    if (e.key === ' ' || e.key === 'Spacebar') {
-      // hard drop
-      if (this.currentPiece) {
-        const internalRows = this.rows + this.hiddenRows;
-        let r = this.currentPiece.row + 1;
-        while (r < internalRows && !this.grid[r][this.currentPiece.col]) r++;
-        const targetRow = r - 1;
-        if (targetRow < this.hiddenRows) {
-          // avoid duplicate handling if already locking or suppressed
-          if (this.locking || this.suppressSpawn) return;
-          this.locking = true;
-          // piece would land above visible area -> treat as incorrect placement
-          const errDuration = 1200;
-          message.error('Mauvaise position', .5);
-          this.suppressSpawn = true;
-          if (this.restartTimeoutId) {
-            clearTimeout(this.restartTimeoutId);
-            this.restartTimeoutId = null;
-          }
-          if (this.animationId) {
-            cancelAnimationFrame(this.animationId);
-            this.animationId = null;
-          }
-          this.currentPiece = null;
-          this.restartTimeoutId = setTimeout(() => {
-            this.restartTimeoutId = null;
-            this.restartGame();
-          }, errDuration);
-          return;
-        }
-        this.lockPiece(targetRow, this.currentPiece.col, this.currentPiece.srcRow, this.currentPiece.srcCol);
-        if (!this.suppressSpawn) this.spawnPiece();
-      }
-    }
+    // if (e.key === ' ' || e.key === 'Spacebar') {
+    //   // hard drop
+    //   if (this.currentPiece) {
+    //     const internalRows = this.rows + this.hiddenRows;
+    //     let r = this.currentPiece.row + 1;
+    //     while (r < internalRows && !this.grid[r][this.currentPiece.col]) r++;
+    //     const targetRow = r - 1;
+    //     if (targetRow < this.hiddenRows) {
+    //       // avoid duplicate handling if already locking or suppressed
+    //       if (this.locking || this.suppressSpawn) return;
+    //       this.locking = true;
+    //       // piece would land above visible area -> treat as incorrect placement
+    //       const errDuration = 1200;
+    //       message.error('Mauvaise position', .5);
+    //       this.suppressSpawn = true;
+    //       if (this.restartTimeoutId) {
+    //         clearTimeout(this.restartTimeoutId);
+    //         this.restartTimeoutId = null;
+    //       }
+    //       if (this.animationId) {
+    //         cancelAnimationFrame(this.animationId);
+    //         this.animationId = null;
+    //       }
+    //       this.currentPiece = null;
+    //       this.restartTimeoutId = setTimeout(() => {
+    //         this.restartTimeoutId = null;
+    //         this.restartGame();
+    //       }, errDuration);
+    //       return;
+    //     }
+    //     this.lockPiece(targetRow, this.currentPiece.col, this.currentPiece.srcRow, this.currentPiece.srcCol);
+    //     if (!this.suppressSpawn) this.spawnPiece();
+    //   }
+    // }
   }
 
   handleKeyUp(e) {
@@ -845,8 +845,8 @@ endGame()
   render() {
     return (<React.Fragment>
      <Helmet>
-                    <title>Le tetris de la culture</title>
-                    <meta name="description" content="Un tetris culturel où le but est de reconstituer des tableaux connus." />
+                    <title>Tetris Musée</title>
+                    <meta name="description" content="Un tetris culturel où le but est de reconstituer des tableaux célèbres." />
     
                 </Helmet>
                 {this.state.afficheResultat ?

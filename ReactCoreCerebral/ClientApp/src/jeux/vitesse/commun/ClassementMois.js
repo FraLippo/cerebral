@@ -187,15 +187,13 @@ export default class ClassementMois extends Component {
                             <div><ul className='listem' >{this.state.tabScoreCategorie.map((info, i) => <li key={i + 10000}>{info.msg}</li>)}</ul></div>
                          
                          
-                         <p className='fontMoyenne centre couleurHonneur margeHaut10'>Quelle est ta véritable personnalité ? Découvre-le grâce à ChatGPT !</p>
-              <div className="texteImageIa"> <img src={ia1} width="150" height="225" alt="chercheuse"></img><div>ou</div>
-               <img src={ia2} width="150" height="225" alt="artiste de rue"></img>
-              </div>
+                         <p className='fontMoyenne centre couleurHonneur margeHaut10'><strong>Quelle est ta véritable personnalité ? Découvre-le grâce à ChatGPT !</strong></p>
+  
               
-                <div className='centre espaceHaut espaceTitreBas'>{!this.state.disabled ? <span>Bravo, tu as terminé tous les jeux possibles, tu peux toujours améliorer ton score pour gagner le concours du mois, ChatGPT te proposera d'autres métiers si tu augmentes ton score de 200 points.</span> :<div> <div>Tu as terminé {this.state.nbJeux} {this.state.nbJeux > 2 ? 'jeu' : 'jeux'} sur {this.state.nbJeuxTotal} possibles.</div>
-                    <p className='centre '>Si tu termines tous les jeux, ChatGPT pourra analyser tes résultats et te donner une liste de traits qui déterminent ta personnalité. Il ne s'agit pas, bien sûr, d'un résultat scientifique et nous ne contrôlons absolument pas ce que dit ChatGPT.  😊</p></div>}</div>
-       <ModalGpt disabled={this.state.disabled} tabScoreCategorie={this.state.tabScoreCategorie} prenom={this.prenom} score={this.state.scoreTotal} ></ModalGpt>
-                        
+                <ModalGpt disabled={this.state.disabled} tabScoreCategorie={this.state.tabScoreCategorie} prenom={this.prenom} score={this.state.scoreTotal} ></ModalGpt>
+                       <div className='centre espaceHaut espaceTitreBas'>{!this.state.disabled ? <span>Bravo, tu as terminé tous les jeux possibles, tu peux toujours améliorer ton score pour gagner le concours du mois, ChatGPT te proposera d'autres métiers si tu augmentes ton score de 200 points.</span> :<div> <div>Tu as terminé <strong>{this.state.nbJeux}</strong> {this.state.nbJeux > 2 ? 'jeux' : 'jeu'} sur {this.state.nbJeuxTotal} possibles. Tu dois tout terminer pour l'analyse de tes résultats.</div>
+                    <p className='centre'>Si tu termines tous les jeux, ChatGPT analysera tes résultats et te proposera une liste de traits amusants qui reflètent ta personnalité de joueur. Ce n'est évidemment pas scientifique, et le contenu généré dépend entièrement de ChatGPT… mais c'est toujours surprenant, fun et souvent très juste ! 😊</p></div>}</div>
+        
 
                       
                         

@@ -107,17 +107,31 @@ export default class TestMemoire extends Component {
         <div className="centre"><Link to='/classement/vitessepaire'>Classement</Link></div>
       </div>
 </div>
-<h2>Tests de la mémoire gratuits</h2>
-<p>Les tests de mémoire sont des outils essentiels pour évaluer les différentes facettes de nos capacités cognitives. Ils permettent de mesurer comment notre cerveau enregistre, stocke et rappelle les informations, fournissant ainsi un aperçu précieux de notre santé mentale et de nos fonctions cognitives.</p>
-<h2>Les différents types de mémoire</h2>
-<p><b>Mémoire sensorielle</b> : Première étape du traitement de l'information, la mémoire sensorielle capture brièvement les sensations perçues par nos sens (comme une image ou un son) pendant une fraction de seconde. C'est grâce à elle que nous pouvons intégrer ces informations dans des processus cognitifs plus complexes.</p>
+<div>
+  <h2>Des tests de mémoire gratuits en ligne, simples et rapides</h2>
+  <p>
+    Nos tests de mémoire gratuits en ligne sont spécialement pensés pour tous ceux qui souhaitent entretenir leur cerveau en douceur. Chaque exercice est court, facile à comprendre et peut être réalisé en quelques minutes seulement. C'est une manière agréable et rapide de stimuler la <strong>mémoire</strong> et la <strong>concentration</strong> au quotidien.
+  </p>
 
-<p><b>Mémoire à court terme (ou mémoire de travail)</b> : Ce type de mémoire retient une quantité limitée d'informations pendant une courte durée, généralement quelques secondes à quelques minutes. Elle est essentielle pour les tâches cognitives immédiates, comme se souvenir d'un numéro de téléphone juste le temps de le composer.</p>
+  <h3>Des exercices variés pour faire travailler votre mémoire</h3>
+  <p>
+    Les jeux proposés sollicitent plusieurs formes de mémoire essentielles&nbsp;: mémoire visuelle, mémoire des chiffres, mémoire des mots ou encore mémoire de travail. Vous pouvez mémoriser des déplacements, retenir des listes, retrouver des formes ou repérer des positions dans une grille. Ces activités simples renforcent la capacité à rester concentré et à rappeler les informations plus facilement.
+  </p>
 
-<p><b>Mémoire à long terme </b>: Elle stocke des informations sur une période prolongée.</p>
+  <h3>Une stimulation cognitive accessible à tous</h3>
+  <p>
+    Quelques minutes par jour suffisent pour garder l'esprit actif. Les tests sont rapides, bienveillants et ne demandent aucun prérequis. Ils conviennent parfaitement aux seniors qui souhaitent entretenir leur mémoire, améliorer leur concentration ou simplement prendre un moment pour stimuler leur cerveau de manière ludique.
+  </p>
 
-<p><b>Mémoire prospective</b> : Ce type de mémoire est dédié à la gestion des tâches futures, comme se rappeler de prendre un rendez-vous ou de faire une course plus tard.</p>
+  <h3>Jouez gratuitement, sans inscription</h3>
+  <p>
+    Tous nos tests de mémoire sont entièrement gratuits et disponibles en ligne. Vous pouvez jouer à votre rythme, suivre vos scores et constater vos progrès au fil du temps. L'objectif n'est pas la performance, mais le plaisir de faire travailler votre mémoire dans un environnement simple et motivant.
+  </p>
 
+  <p>
+    Ces exercices constituent une activité cognitive efficace, rapide et agréable pour garder l'esprit en forme jour après jour.
+  </p>
+</div>
 
 <div className='autreVitesse centre'> <a href="/">Les autres catégories</a> </div>
 </div>

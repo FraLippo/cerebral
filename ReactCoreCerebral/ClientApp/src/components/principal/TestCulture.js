@@ -103,13 +103,58 @@ export default class TestCulture extends Component {
    
     </div>
       </div> 
-      <p>Les tests que nous proposons couvrent des compétences pratiques essentielles et variées, allant de la reconnaissance des notes musicales à la maîtrise de la dactylographie, en passant par les connaissances du code de la route.</p>
+     <div>
+  <h2 className="couleurTitre">Entraînez votre cerveau avec nos mini-jeux de culture et de logique</h2>
 
-<p><b>Test de reconnaissance de notes musicales</b> : Ce test est conçu pour évaluer et améliorer votre capacité à identifier les notes.</p>
-<p><b>Test de dactylographie</b> : La vitesse et la précision au clavier sont au cœur de ce test qui vise à améliorer vos compétences en dactylographie. Que vous cherchiez à taper plus rapidement ou à perfectionner votre technique, cet exercice est fait pour vous.</p>
-<p><b>Test du code de la route</b> : Idéal pour tester si vos connaissances sur le code de la route sont toujours à jour.</p>
-<p>Ces tests variés vous permettent de développer des compétences pratiques et utiles au quotidien, tout en vous offrant un moyen interactif et engageant d'évaluer vos progrès. Que ce soit pour la musique, la dactylographie ou la conduite, vous trouverez ici de quoi vous entraîner et vous perfectionner.</p>
-        
+  <p>
+    Envie de stimuler votre cerveau quelques minutes par jour ? Cette page rassemble plusieurs mini-jeux rapides et accessibles qui font travailler la mémoire, la logique, la perception, la concentration et la culture générale. Chaque jeu est court, ludique et idéal pour progresser à votre rythme.
+  </p>
+
+  <h3>Tetris Musée - Reconstituez un tableau célèbre</h3>
+  <p>
+    Assemblez les fragments qui tombent pour reformer une œuvre d'art. Ce jeu entraîne la <strong>perception visuelle</strong>, la <strong>mémoire spatiale</strong> et la <strong>concentration</strong>, tout en vous faisant découvrir ou redécouvrir des tableaux célèbres.
+  </p>
+
+  <h3>Reconnaissance des notes musicales</h3>
+  <p>
+    Écoutez une note et choisissez la bonne parmi plusieurs propositions. Vous améliorez ainsi votre <strong>oreille musicale</strong>, votre <strong>mémoire auditive</strong> et votre <strong>attention aux détails</strong>.
+  </p>
+
+  <h3>Test de dactylographie</h3>
+  <p>
+    Tapez une série de mots le plus vite possible. Ce test est parfait pour développer votre <strong>rapidité de frappe</strong>, votre <strong>précision au clavier</strong> et votre <strong>coordination</strong>.
+  </p>
+
+  <h3>Test du code de la route</h3>
+  <p>
+    Retrouvez un maximum de panneaux routiers en un temps limité. Vous révisez vos connaissances tout en travaillant votre <strong>reconnaissance visuelle rapide</strong> et vos <strong>réflexes</strong>.
+  </p>
+
+  <h3>Mots de politesse en langues étrangères</h3>
+  <p> Écoutez un mot de politesse et choisissez sa signification. Ce jeu renforce votre <strong>culture générale</strong>, votre <strong>mémoire auditive</strong> et votre curiosité pour les langues.
+  </p>
+
+  <h3>Boîte à rythmes</h3>
+  <p>Reproduisez un motif rythmique en appuyant au bon moment. Vous entraînez votre <strong>coordination</strong>, votre <strong>précision</strong> et votre <strong>sens du rythme</strong>.
+  </p>
+
+  <h2>Les bénéfices de ces jeux cérébraux</h2>
+  <p>
+    En jouant régulièrement à ces mini-jeux, vous pouvez&nbsp;:
+  </p>
+  <ul>
+    <li>stimuler votre <strong>mémoire</strong> et votre <strong>concentration</strong> ;</li>
+    <li>améliorer votre <strong>rapidité de réflexion</strong> ;</li>
+    <li>développer votre <strong>logique</strong> et votre <strong>perception visuelle</strong> ;</li>
+    <li>entretenir vos <strong>capacités cognitives</strong> au quotidien ;</li>
+    <li>apprendre et réviser en vous amusant, sans pression.</li>
+  </ul>
+
+  <p>
+    Chaque jeu est gratuit, simple d'accès et idéal pour une pause intelligente. Jouez,
+    comparez vos scores et suivez vos progrès mois après mois.
+  </p>
+</div>
 
        <div className='autreVitesse centre'> <a href="/">Les autres catégories</a> </div>
        </div>

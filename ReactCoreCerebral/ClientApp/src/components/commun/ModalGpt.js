@@ -38,9 +38,9 @@ export default class ModalGpt extends Component {
 - aptitude verbale (${this.props.tabScoreCategorie[3].score})
 - concentration (${this.props.tabScoreCategorie[1].score})
 - culture générale (${this.props.tabScoreCategorie[4].score})
-Analyse les résultats et crée 4 traits de personnalité.
-Pour les bon scores adopte un ton très positif et motivant.
-Pour les mauvais scores adopte un ton franc, piquant, avec humour, mais constructif.
+Analyse les résultats et décris 4 tempéraments cognitifs du joueur (ex : impulsif, méthodique, intuitif, observateur).
+Pour les bons scores, adopte un ton enthousiaste et valorisant.
+Pour les mauvais scores, fais de l'humour franc, un peu piquant, mais toujours constructif.
 Utilise le tutoiement. **Réponds uniquement avec un extrait HTML, sans <html>, <body>, ni CSS.**`
     
         const reponse = await fetch(process.env.REACT_APP_URL_MESSAGEGPT, {
@@ -88,6 +88,7 @@ Utilise le tutoiement. **Réponds uniquement avec un extrait HTML, sans <html>, 
         return (
             <>
                 <div className='centre'><Button type="primary"
+                style={{ fontSize: "24px", padding: "20px 40px", height: "auto" }}
                 disabled={this.props.disabled}
                 onClick={this.envoiMessageGPT}   
                 loading={this.state.loading}

@@ -13,8 +13,8 @@ export default class Tourneur extends Component {
   constructor(props) {
     super(props);
     this.levels = [{ col: 5, trees: 2, time: 3000 }, { col: 6, trees: 4, time: 2900 }, { col: 7, trees: 4, time: 2800 },
-    { col: 8, trees: 5, time: 2600 }, { col: 8, trees: 6, time: 2400 }, { col: 9, trees: 8, time: 2200 }, { col: 10, trees: 10, time: 2000 },
-    { col: 10, trees: 12, time: 1800 }, { col: 8, trees: 14, time: 1600 }, { col: 8, trees: 25, time: 1400 }
+    { col: 7, trees: 6, time: 2600 }, { col: 7, trees: 8, time: 2400 }, { col: 7, trees: 8, time: 2200 }, { col: 8, trees: 12, time: 2000 },
+    { col: 8, trees: 14, time: 1800 }, { col: 8, trees: 16, time: 1600 }, { col: 8, trees: 25, time: 1400 }
     ]
     this.nbGame = 0;
     this.nbTrees = this.levels[0].trees;

@@ -192,8 +192,8 @@
     background-color: #66d6ff;
     padding: 10px 5px;
     font-family: sans-serif;
-
-    width: 200px;
+    font-size: 1.3em;
+    width: 300px;
     border: 2px black solid;
     text-decoration: none;
     box-shadow: rgb(196 73 73) 0px 3px 9px 0px;

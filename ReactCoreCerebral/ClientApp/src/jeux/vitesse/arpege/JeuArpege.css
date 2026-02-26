@@ -90,7 +90,13 @@
 .pad.live-hit { background: linear-gradient(180deg,#86efac,#16a34a); box-shadow: 0 6px 18px rgba(16,185,129,0.16); color: #064e3b; }
 .pad-label { position: absolute; inset: 0; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.95rem; }
 
-
+.live-controls
+{
+    margin-top: 12px; 
+    display: flex;
+     flex-direction: column;
+    gap: 8px; 
+}
 
 .controls {
     display: flex;
@@ -209,10 +215,13 @@
 .sequencer-wrapper {
     padding: 0px;
 }
-
+.live-controls
+{
+    margin-top: 2px; 
+}
 .controls {
 
-    margin-top: 2px;
+    margin-top: 0px;
 }
     .drum-pad {
         width: 60px;

@@ -41,7 +41,7 @@ export default class TestCalcul extends Component {
             </Helmet>
 
       <h1 className="titre couleurTitre centre">Les tests de calcul mental</h1>
-      <p>Évaluez et perfectionnez vos compétences en mathématiques avec nos tests de calcul mental stimulants, conçus pour améliorer votre rapidité et précision en calculs numériques.</p> 
+      <p className='centre'>Évaluez et perfectionnez vos compétences en mathématiques avec nos tests de calcul mental stimulants, conçus pour améliorer votre rapidité et précision en calculs numériques.</p> 
       <GraphiqueRapidite categorie='c' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
 
    <Ad></Ad>

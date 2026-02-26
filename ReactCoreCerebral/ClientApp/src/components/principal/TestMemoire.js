@@ -41,7 +41,7 @@ export default class TestMemoire extends Component {
 <link rel="alternate" hreflang="x-default" href="https://cerebral.evalquiz.com/test-memoire" />
             </Helmet>
       <h1 className="titre couleurTitre centre">Bilan mémoire : testez votre mémoire</h1>
-     <p>Évaluez vos capacités de mémorisation à travers une série de jeux interactifs conçus pour faire un bilan complet de votre mémoire.</p>
+     <p className='centre'>Évaluez vos capacités de mémorisation à travers une série de jeux interactifs conçus pour faire un bilan complet de votre mémoire.</p>
 <GraphiqueRapidite categorie='m' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
 <Ad></Ad>
 <div className='jeuVitesse marge20'>

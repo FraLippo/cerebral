@@ -591,7 +591,7 @@ class JeuArpege extends Component {
 
 
 
-                    <div className="live-controls" style={{ marginTop: 12, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                    <div className="live-controls">
                      {this.state.isMobile ?
                      <div className="drum-pad-bar"> <button className="drum-pad kick" onClick={() => this.handleLiveNoteByRow(0)}>Kick</button> <button className="drum-pad hihat" onClick={() => this.handleLiveNoteByRow(1)}>Hi‑Hat</button> <button className="drum-pad snare" onClick={() => this.handleLiveNoteByRow(2)}>Snare</button> </div>
                      :

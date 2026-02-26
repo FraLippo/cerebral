@@ -42,7 +42,7 @@ export default class TesConcentration extends Component {
         </Helmet>
 
       <h1 className="titre couleurTitre centre">Les tests de concentration</h1>
-    <p>Plongez dans nos jeux de concentration captivants et découvrez le plaisir de renforcer votre attention tout en vous amusant !</p>
+    <p className='centre'>Plongez dans nos jeux de concentration captivants et découvrez le plaisir de renforcer votre attention tout en vous amusant !</p>
     <GraphiqueRapidite categorie='r' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
   <Ad></Ad>
     <div className='jeuVitesse'>

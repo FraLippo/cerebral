@@ -87,8 +87,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
   
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
-       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x11</span>👑</p>
-      <div className='centre'><b>🚩 Lili55 a de nouveau remporté le concours. Bravo ! 📅</b></div>
+       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x11</span><span className='champVitesse'>Soso x1</span>👑</p>
+      <div className='centre'><b>🚩 Première victoire pour Soso. Bravo ! 📅</b></div>
    
      
       
@@ -217,8 +217,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
 
     <h3>Comment vous contacter ?</h3>
     <p>
-        Vous pouvez nous écrire via la page des mentions légales si vous avez des remarques, idées ou suggestions
-        d'amélioration.
+        Vous pouvez nous écrire via <a href="https://evalquiz.com/home/faq">la page des mentions légales</a> si vous avez des remarques, idées ou suggestions d'amélioration.
     </p>
 </div>
    </div>

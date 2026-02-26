@@ -41,7 +41,7 @@ export default class TestPlanification extends Component {
                </Helmet>
 
       <h1 className="titre couleurTitre centre">Les tests de planification</h1>
-      <p>Développez votre esprit stratégique et améliorez vos compétences en planification avec nos jeux stimulants et captivants !</p>
+      <p className='centre'>Développez votre esprit stratégique et améliorez vos compétences en planification avec nos jeux stimulants et captivants !</p>
 
       <GraphiqueRapidite categorie='p' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
     <Ad></Ad>

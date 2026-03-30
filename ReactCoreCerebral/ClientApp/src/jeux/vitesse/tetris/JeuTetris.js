@@ -102,7 +102,7 @@ export default class JeuTetris extends Component {
  
       this.infoGame.push(randomData);
     }
-    console.log(this.infoGame);
+
  }
 
 componentDidMount() {
@@ -410,7 +410,6 @@ endGame()
     // srcRow is image-row (0..rows-1); convert placed row to image-row by subtracting hiddenRows
     const placedImageRow = row - this.hiddenRows;
     const correct = srcRow === placedImageRow && srcCol === col;
-    console.log(correct);
     this.grid[row][col] = { srcRow, srcCol, correct };
     // ensure down is not stuck for the next piece
     this.keyState.down = false;
@@ -837,6 +836,11 @@ endGame()
   }
       finTimer = () =>
         {
+          // Si une pièce est en cours de chute ou de verrouillage, attendre qu'elle soit placée
+          if (this.currentPiece || this.locking) {
+            setTimeout(this.finTimer, 100);
+            return;
+          }
           this.endGame();
             this.setState({afficheResultat : true});
         }

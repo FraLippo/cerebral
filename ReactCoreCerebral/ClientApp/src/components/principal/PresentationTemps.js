@@ -87,8 +87,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
   
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
-       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x11</span><span className='champVitesse'>Soso x1</span>👑</p>
-      <div className='centre'><b>🚩 Première victoire pour Soso. Bravo ! 📅</b></div>
+       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x11</span><span className='champVitesse'>Soso x1</span><span className='champVitesse'>LoloLaReine x1</span>👑</p>
+      <div className='centre'><b>🚩LoloLaReine est la reine du mois pour la première fois ! 📅</b></div>
    
      
       

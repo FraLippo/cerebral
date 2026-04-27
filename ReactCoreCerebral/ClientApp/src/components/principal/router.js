@@ -89,6 +89,7 @@ const JeuMah = React.lazy(() => import('../../jeux/vitesse/mah/JeuMah.js'));
 const JeuTourneur = React.lazy(() => import('../../jeux/vitesse/tourneur/JeuTourneur.js'));
 const JeuCompteBon = React.lazy(() => import('../../jeux/vitesse/compte/JeuxCompte.js'));
 const JeuArpege = React.lazy(() => import('../../jeux/vitesse/arpege/JeuArpege.js'));
+const JeuDessinV = React.lazy(() => import('../../jeux/vitesse/dessin/JeuDessin.js'));
 
 
 //const ConstructionJeuMah = React.lazy(() => import('../../jeux/vitesse/mah/constructionGrille.js'));
@@ -385,6 +386,11 @@ const router = createBrowserRouter([
            {
             path: 'vitessefraction',
             element: <JeuFraction/>,
+            
+          },
+           {
+            path: 'vitessedessin',
+            element: <JeuDessinV/>,
             
           },
           {

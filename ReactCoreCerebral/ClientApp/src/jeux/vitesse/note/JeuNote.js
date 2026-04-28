@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 
 import Clavier from './Clavier';
 import NotesInconnues from './NotesInconnues';
+import SuiteNotes from './SuiteNotes';
 import { Button, message } from 'antd';
 import { ElectricPiano } from "smplr";
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat.js';
-
+import cp80 from "./photos/cp80.jpg";
+import ep200 from "./photos/ep200.jpg";
+import hohner from "./photos/hohner.jpg"
 import { Helmet } from 'react-helmet';
 
 export default class JeuNote extends Component {
@@ -14,7 +17,7 @@ export default class JeuNote extends Component {
         super(props);
 
         this.nbPartie = 1;
-        this.type = 1;
+
         this.fin = false;
         this.piano = null;
         this.score = 0;
@@ -34,17 +37,31 @@ export default class JeuNote extends Component {
         this.state = {
             tabNotes: tabNotes,
             tabNotesInconnues: [],
-            finJeu: false
+            suiteInconnues: [],
+            suiteReponse: [],
+            nombreNotes: 1,
+            finJeu: false,
+            typePiano: 1
         }
-   
+
 
     }
 
     choisirNote() {
-        let tabNoteX = [];
-        let nombre = Math.floor(Math.random() * this.state.tabNotes.length);
-        tabNoteX.push(this.state.tabNotes[nombre].note);
-        this.setState({ tabNotesInconnues: tabNoteX })
+        let suite = [];
+        for (let i = 0; i < this.state.nombreNotes; i++) {
+            let nombre = Math.floor(Math.random() * this.state.tabNotes.length);
+            suite.push(this.state.tabNotes[nombre].note);
+        }
+        this.setState({ suiteInconnues: suite, suiteReponse: [] })
+    }
+
+    jouerSuite = () => {
+        this.state.suiteInconnues.forEach((note, index) => {
+            setTimeout(() => {
+                this.joueNote(note);
+            }, index * 300);
+        });
     }
     async componentDidMount() {
         //  const instruments = getElectricPianoNames(); // => ["CP80", "PianetT", "WurlitzerEP200"]
@@ -60,22 +77,25 @@ export default class JeuNote extends Component {
         });
 
         this.piano1.loaded().then(() => {
-          
+
         });
         this.piano2.loaded().then(() => {
-         
+
         });
         this.piano3.loaded().then(() => {
-       
+
         });
         this.choisirNote();
-
-
+        setTimeout(() => {
+            this.jouerSuite();
+        }, 500);
 
     }
-    joueNote = (nom,type) => {
-        if (this.fin) return;
-        switch (type) {
+
+    joueNote = (nom) => {
+
+
+        switch (this.state.typePiano) {
             case 1:
                 this.piano1.start({ note: nom, duration: .2 });
                 break;
@@ -86,20 +106,16 @@ export default class JeuNote extends Component {
                 this.piano3.start({ note: nom, duration: .2 });
                 break;
         }
+    
 
     }
     reset = () => {
         this.fin = false;
         let nouveauTabNote = this.state.tabNotes.map(element => { return { note: element.note, nom: element.nom, noteEnCours: 0 } })
         this.choisirNote();
-        if (this.nbPartie > 7) {
-            this.type = 3;
-        }
-        else if (this.nbPartie > 5) {
-            this.type = 2;
-        }
-   
-   
+
+
+
         this.setState({
             tabNotes: nouveauTabNote,
 
@@ -111,12 +127,12 @@ export default class JeuNote extends Component {
 
     }
     clicBouton = () => {
-
-        this.joueNote(this.state.tabNotesInconnues[0], this.type);
+        this.jouerSuite();
     }
 
 
     clicNote = (id) => {
+        if (this.fin) return;
         let nouveauTabNote = [...this.state.tabNotes];
         let index = nouveauTabNote.findIndex(x => x.noteEnCours === 1);
         if (index === -1) {
@@ -126,44 +142,125 @@ export default class JeuNote extends Component {
             nouveauTabNote[index].noteEnCours = 0;
             nouveauTabNote[id].noteEnCours = 1;
         }
-        this.joueNote(nouveauTabNote[id].note, this.type);
+        this.joueNote(nouveauTabNote[id].note);
         this.setState({
             tabNotes: nouveauTabNote
         })
     }
 
-    clickReponse = () => {
+    ajouterNoteReponse = () => {
         if (this.fin) return;
-        let victoire;
         let nouveauTabNote = [...this.state.tabNotes];
         let index = this.state.tabNotes.findIndex(x => x.noteEnCours === 1);
-        let indexBonneNote = nouveauTabNote.findIndex(x => x.note === this.state.tabNotesInconnues[0]);
+
         if (index === -1) {
-            victoire = false;
+            message.error('Sélectionne une note');
+            return;
         }
-        else {
-            if (this.state.tabNotes[index].note === this.state.tabNotesInconnues[0]) {
-                victoire = true;
-            }
-        }
-        if (victoire) {
-            message.success('👍 Super', this.reset);
-            this.score += 7;
-            this.nbPartie++;
-        }
-        else {
-            message.error('Erreur', this.reset);
-            nouveauTabNote[indexBonneNote].noteEnCours = 2;
-      
+
+        let noteSelectionnee = this.state.tabNotes[index].note;
+        let nouvelleReponse = [...this.state.suiteReponse, noteSelectionnee];
+
+        // Réinitialiser la sélection
+        nouveauTabNote[index].noteEnCours = 0;
+        this.setState({
+            tabNotes: nouveauTabNote,
+            suiteReponse: nouvelleReponse
+        })
+    }
+
+
+    supprimerDerniere = () => {
+        if (this.state.suiteReponse.length > 0) {
+            let nouvelleReponse = this.state.suiteReponse.slice(0, -1);
             this.setState({
-                tabNotes: nouveauTabNote
+                suiteReponse: nouvelleReponse
             })
         }
+    }
+
+    rejouerSequence = () => {
+        this.state.suiteReponse.forEach((note, index) => {
+            setTimeout(() => {
+                this.joueNote(note);
+            }, index * 300);
+        });
+    }
+
+    validerSequence = () => {
+        if (this.fin) return;
+
+        // Vérifier que toutes les notes correspondent
+        let correctCount = 0;
+        for (let i = 0; i < this.state.suiteReponse.length; i++) {
+            if (this.state.suiteReponse[i] === this.state.suiteInconnues[i]) {
+                correctCount++;
+            }
+        }
+
+        if (correctCount !== this.state.suiteInconnues.length) {
+            message.error(`Erreur. ${correctCount} note${correctCount > 1 ? 's' : ''} correcte${correctCount > 1 ? 's' : ''} sur ${this.state.suiteInconnues.length}`);
+            this.fin = true;
+            let nouveauTabNote = [...this.state.tabNotes];
+            // Marquer TOUTES les notes correctes de la séquence en rose
+            for (let i = 0; i < this.state.suiteInconnues.length; i++) {
+                let indexBonneNote = nouveauTabNote.findIndex(x => x.note === this.state.suiteInconnues[i]);
+                nouveauTabNote[indexBonneNote].noteEnCours = 2;
+            }
+            this.setState({
+                tabNotes: nouveauTabNote
+            });
+
+            // Recommencer le niveau après 2 secondes
+            setTimeout(() => {
+                let nouveauTabNote = this.state.tabNotes.map(element => { return { note: element.note, nom: element.nom, noteEnCours: 0 } })
+
+                this.fin = false;
+                this.setState({
+                    tabNotes: nouveauTabNote,
+                    suiteReponse: []
+                }, () => {
+                    this.choisirNote();
+                    setTimeout(() => {
+                        this.jouerSuite();
+                    }, 500);
+                });
+            }, 2000);
+            return;
+        }
+
+
+        message.success('👍 Super');
+        this.score += 12 * this.state.nombreNotes;
+        this.nbPartie++;
         this.fin = true;
 
+        // Augmenter la difficulté
+        setTimeout(() => {
+            let nextNombre = this.state.nombreNotes + 1;
+            let nouveauTabNote = this.state.tabNotes.map(element => { return { note: element.note, nom: element.nom, noteEnCours: 0 } })
+            let type = 1;
+            if (this.nbPartie > 1) {
+                type = 2;
+            }
+            else if (this.nbPartie > 2) {
+                type = 3;
+            }
+
+            this.fin = false;
+            this.setState({
+                tabNotes: nouveauTabNote,
+                nombreNotes: nextNombre,
+                typePiano: type
+            }, () => {
+                this.choisirNote();
+                setTimeout(() => {
+                    this.jouerSuite();
+                }, 500);
+            });
+        }, 1000);
     }
-    finTimer = () =>
-    {
+    finTimer = () => {
         this.setState({
             finJeu: true
         });
@@ -173,24 +270,45 @@ export default class JeuNote extends Component {
     render() {
         return (
             <div>
-            <Helmet>
+                <Helmet>
                     <title>L'oreille musicale</title>
-                    <meta name="description" content="Un jeu pour tester votre oreille musicale, arriverez-vous à reconnaitre la note jouée ? Un jeu pour tous même sans connaitre la musique." />
+                    <meta name="description" content="Un jeu pour tester votre oreille musicale, arriverez-vous à reconnaitre les notes jouées ? Un jeu pour tous même sans connaitre la musique." />
                 </Helmet>
-             { this.state.finJeu ? <Resultat score={this.score} typeExo='vitessenotes'></Resultat> :
-               <React.Fragment> 
-                <div className="fontMoyenne couleurTitre">L'oreille musicale</div>
-               <div className="jeuNote">
-                   
-                    <NotesInconnues tabNotesInconnues={this.state.tabNotesInconnues} clicBouton={this.clicBouton} ></NotesInconnues>
-                    <p>Cliquer sur le point d'interrogation pour entendre la note inconnue.</p>
-                    <Clavier clicNote={this.clicNote} tabNotes={this.state.tabNotes}></Clavier>
-                    <p>Sélectionner la note qui correspond au point d'interrogation puis valider. Pas besoin de connaitre la musique, il suffit de se fier à son oreille.</p>
-                    <Button onClick={this.clickReponse}>Je valide la réponse</Button>  
-                    <div className="centre marge10"><CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours></div>
-                    </div></React.Fragment>
-                    }
-                 
+                {this.state.finJeu ? <Resultat score={this.score} typeExo='vitessenotes'></Resultat> :
+                    <React.Fragment>
+                        <div className="fontMoyenne couleurTitre">L'oreille musicale</div>
+                        <div className="jeuNote">
+                            <p>Clique sur le cercle ci-dessous pour entendre la séquence de notes à retrouver.</p>
+                            <NotesInconnues tabNotesInconnues={this.state.suiteInconnues} clicBouton={this.clicBouton} ></NotesInconnues>
+
+                            <SuiteNotes
+                                sequence={this.state.suiteReponse}
+                                rejouerSequence={this.rejouerSequence}
+                                supprimerDerniere={this.supprimerDerniere}
+                                validerSequence={this.validerSequence}
+                                disabledReplay={this.state.suiteReponse.length === 0}
+                                disabledValider={this.state.suiteReponse.length !== this.state.suiteInconnues.length}
+                            />
+                            <Clavier clicNote={this.clicNote} tabNotes={this.state.tabNotes}></Clavier>
+                            <p>Sélectionne les notes de la suite une par une et clique sur "Ajouter à la séquence" après chaque note.</p>
+                            <Button onClick={this.ajouterNoteReponse}>Ajouter à la séquence</Button>
+                            <div className="centre marge10"><CompteRebours temps={120} finTimer={this.finTimer}></CompteRebours></div>
+                        </div>
+                        {this.state.typePiano === 2 ?
+                            <div className='centre'><img src={cp80} alt="clavier cp80 yamaha"></img>
+                                <div className='infoNote'>Les sons proviennent du CP-80 de chez Yamaha, sorti en 1976. Instrument utilisé par Phil Collins, Joe Jackson et Genesis, parmi beaucoup d'autres.</div>
+                            </div> :
+                            this.state.typePiano === 3 ?
+                                <div className='centre'><img src={ep200} alt="wurlitzer ep 200"></img>
+                                    <div className='infoNote'>Les sons proviennent d'un piano électrique Wurlitzer. Ce piano est un élément caractéristique du son du groupe Supertramp.</div>
+                                </div> :
+                                <div className='centre'><img src={hohner} alt="Pianet Hohner"></img>
+                                    <div className='infoNote'>Les sons proviennent d'un Pianet, une série de pianos électriques construits par la compagnie Hohner. Il est utilisé dans la superbe chanson This Guy's in Love with You. </div>
+                                </div>}
+                                <p className='centre'>Pardon pour les oreilles délicates : les intervalles sont tirés au sort, et parfois… ça pique un peu.</p>
+                    </React.Fragment>
+                }
+
 
             </div>
         );

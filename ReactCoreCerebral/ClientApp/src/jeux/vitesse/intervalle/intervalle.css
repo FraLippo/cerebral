@@ -1,0 +1,36 @@
+.slider
+{
+    height: 200px;
+}
+
+.container {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+          }
+
+          .regle {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 10px;
+          }
+
+          .graduation {
+            position: relative;
+            width: 1px;
+            height: 10px;
+            background: black;
+          }
+
+          .graduation span {
+            position: absolute;
+            top: 12px;
+            transform: translateX(-50%);
+          }
+
+          .slider {
+            width: 100%;
+            margin-top: 20px;
+          }

@@ -90,7 +90,7 @@ const JeuTourneur = React.lazy(() => import('../../jeux/vitesse/tourneur/JeuTour
 const JeuCompteBon = React.lazy(() => import('../../jeux/vitesse/compte/JeuxCompte.js'));
 const JeuArpege = React.lazy(() => import('../../jeux/vitesse/arpege/JeuArpege.js'));
 const JeuDessinV = React.lazy(() => import('../../jeux/vitesse/dessin/JeuDessin.js'));
-
+const JeuIntervalle = React.lazy(() => import('../../jeux/vitesse/intervalle/JeuIntervalle.js'));
 
 //const ConstructionJeuMah = React.lazy(() => import('../../jeux/vitesse/mah/constructionGrille.js'));
 const TestMemoire = React.lazy(() => import('./TestMemoire'));
@@ -124,7 +124,7 @@ const router = createBrowserRouter([
       children: [
           {
             index : true,
-            element: <PresentationTemps />,
+            element: <JeuIntervalle />,
           },
          
           {

@@ -2,6 +2,7 @@ import GraphiqueRapidite from '../commun/GraphiquesRapidité';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Ad from '../commun/adSense';
+import michael from '../../images/michael.jpg'
 import '../../style/jeux.css';
 
 
@@ -45,6 +46,15 @@ export default class TestCulture extends Component {
       <GraphiqueRapidite categorie='d' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
       <Ad></Ad>
       <div className='jeuVitesse marge20'>
+           <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseintervalle"] != null ? "dejaFaitCognito" : ""}`}>
+           <Link to='/vitesseintervalle'>   <div className="centre titreVitesse" >👂 L'oreille absolue</div>
+   
+<p className="marge20">Tu dois retrouver la hauteur d'une note de musique jouée au hasard par l'ordinateur. Pour cela, tu dois déplacer un curseur pour ajuster la hauteur de ta note et retrouver la note de référence. Tu dois comparer en permanence ta note à celle de l'ordinateur afin de trouver la bonne hauteur. Si tu y parviens, tu remportes 80 points (ce qui est quasiment impossible, même pour un spécialiste).
+</p>     </Link>
+     <p className='centre'>{this.state.resultatsJoueur["vitesseintervalle"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesseintervalle"]:"Pas encore de résultat" }</p>
+
+        <div className="centre"><Link to='/classement/vitesseintervalle'>Classement</Link></div>
+    </div>
         <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessetetris"] != null ? "dejaFaitCognito" : ""}`}>
            <Link to='/vitessetetris'>   <div className="centre titreVitesse" >🏛️ Tetris Musée</div>
    
@@ -95,7 +105,7 @@ export default class TestCulture extends Component {
                 <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessenotes"] != null ? "dejaFaitCognito" : ""}`}>
     <Link to='/vitessenotes'><div className="centre titreVitesse" >♬ L'oreille musicale</div>
    
-        <p className="marge20">But du jeu : Retrouver une note inconnue. L'ordinateur joue une note inconnue représentée par un point d'interrogation. Tu dois retrouver à quelle note elle correspond, simplement avec ton oreille. Tu peux réécouter les notes autant de fois que tu le désires. Tu n'as pas besoin de connaissance musicale pour jouer, seule ton oreille est mise à contribution. Tout le monde a la capacité de reconnaitre les notes par contre certains doivent s'entrainer plus que d'autres.  Chaque note trouvée rapporte 7 points. Le temps alloué est de 90 secondes.</p>
+        <p className="marge20">But du jeu : retrouver des notes inconnues. L'ordinateur joue une note. Tu dois trouver à quelle note elle correspond sur le clavier d'un piano, uniquement avec ton oreille. Tu peux réécouter les notes autant de fois que tu le souhaites. À chaque bonne réponse, l'ordinateur ajoute une note à la séquence. Tu dois donc retrouver 2 notes, puis 3 notes, etc. </p>
         </Link>
         <p className='centre'>{this.state.resultatsJoueur["vitessenotes"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessenotes"]:"Pas encore de résultat" }</p>
 
@@ -117,7 +127,7 @@ export default class TestCulture extends Component {
 
   <h3>Reconnaissance des notes musicales</h3>
   <p>
-    Écoutez une note et choisissez la bonne parmi plusieurs propositions. Vous améliorez ainsi votre <strong>oreille musicale</strong>, votre <strong>mémoire auditive</strong> et votre <strong>attention aux détails</strong>.
+    Écoutez une note et retrouvez-la sur le clavier d'un piano. Vous améliorez ainsi votre <strong>oreille musicale</strong>, votre <strong>mémoire auditive</strong> et votre <strong>attention aux détails</strong>.
   </p>
 
   <h3>Test de dactylographie</h3>
@@ -135,8 +145,14 @@ export default class TestCulture extends Component {
   </p>
 
   <h3>Boîte à rythmes</h3>
-  <p>Reproduisez un motif rythmique en appuyant au bon moment. Vous entraînez votre <strong>coordination</strong>, votre <strong>précision</strong> et votre <strong>sens du rythme</strong>.
-  </p>
+  <p>Reproduisez un motif rythmique en appuyant au bon moment. Vous entraînez votre <strong>coordination</strong>, votre <strong>précision</strong> et votre <strong>sens du rythme</strong>.  </p>
+ <p>Nous avons ajouté quelques motifs rythmiques des meilleures chansons de Michael Jackson (Beat It, Bad, Billie Jean) pour la sortie du film. </p>
+ <div className="centre"><img src={michael} alt="Affiche du film Michael Jackson"></img></div>
+
+  <h3>Le test de l'oreille absolue</h3>
+
+ <p>Un test très rapide pour savoir si vous possédez l'oreille absolue. L'oreille absolue permet de reconnaître immédiatement la hauteur de n’importe quelle note de musique. Ce test est aussi un excellent exercice pour celles et ceux qui veulent entraîner leur oreille.</p>
+
 
   <h2>Les bénéfices de ces jeux cérébraux</h2>
   <p>

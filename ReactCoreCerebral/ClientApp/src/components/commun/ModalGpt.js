@@ -38,7 +38,9 @@ export default class ModalGpt extends Component {
 - aptitude verbale (${this.props.tabScoreCategorie[3].score})
 - concentration (${this.props.tabScoreCategorie[1].score})
 - culture générale (${this.props.tabScoreCategorie[4].score})
-Analyse les résultats et décris 4 tempéraments cognitifs du joueur (ex : impulsif, méthodique, intuitif, observateur).
+1.Propose 4 métiers adaptés au profil cognitif du joueur.
+Pour chaque métier explique brièvement pourquoi il correspond à ses points forts/faiblesses.
+2. Donne 1 ou 2 pistes d'amélioration pour élargir ses possibilités professionnelles.
 Pour les bons scores, adopte un ton enthousiaste et valorisant.
 Pour les mauvais scores, fais de l'humour franc, un peu piquant, mais toujours constructif.
 Utilise le tutoiement. **Réponds uniquement avec un extrait HTML, sans <html>, <body>, ni CSS.**`

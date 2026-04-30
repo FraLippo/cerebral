@@ -110,6 +110,8 @@ function nomType(type) {
             return "Tetris Musée";
            case "vitessedessin":
             return "Lignes brisées";
+             case "vitesseintervalle":
+            return "L'oreille absolue";
         default:
             return "";
     }
@@ -121,10 +123,10 @@ let tabJeu = ["vitesseaddition", "vitesseburger", "vitessecouleur", "vitessesoli
     "vitessecercle", "vitesselettres", "vitesseboogle", "vitessechasse", "vitessecoupe", "vitessemotus",
     "vitessechemin", "vitessetresor", "vitessetresse", "vitessetaquin", "vitessefusee", "vitessebataille",
     "vitesseoperation", "vitessecalcul", "vitessearithmetique", "vitessemonnaie", "vitessefraction", "vitessecompte",
-    "vitesseecrire", "vitessenotes", "vitessepanneauroutier", "vitesselangue", "vitessebar","vitessetetris",
+    "vitesseecrire", "vitessenotes", "vitessepanneauroutier", "vitesselangue", "vitessebar","vitessetetris","vitesseintervalle",
     "vitessememoire", "vitesseforme", "vitessenombre", "vitessememory", "vitessepaire", "vitessealz", "vitesseloup", "vitessedessin"]
 
-let typeJeu = ['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l', 'l', 'l', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'd', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm']
+let typeJeu = ['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l', 'l', 'l', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'd','d', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm']
 
 let tabCategorie = ["test-memoire", "test-concentration", "test-calcul", "test-lettres", "test-culture", "test-planification"]
 let tabCategorie2 = ["memoire", "concentration", "calcul", "vocabulaire", "culture", "planification"]
@@ -186,7 +188,7 @@ function obtenirInfoCategorie(categorie) {
     if (categorie === 'm') {
 
         return {
-            max: 550,
+            max: 620,
             message: 'Ta capacité de mémorisation est '
         }
     } else if (categorie === 'l') {
@@ -218,7 +220,7 @@ function obtenirInfoCategorie(categorie) {
     }
     else if (categorie === 'd') {
         return {
-            max: 450,
+            max: 550,
             message: 'Ton aptitude culturelle est '
         }
 

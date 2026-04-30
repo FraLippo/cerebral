@@ -762,6 +762,8 @@ endGame()
           return;
         }
         this.lockPiece(targetRow, this.currentPiece.col, this.currentPiece.srcRow, this.currentPiece.srcCol);
+        // Force render to show the piece in its final position before victory message
+        this.renderGame();
         if (!this.suppressSpawn) this.spawnPiece();
       }
     }

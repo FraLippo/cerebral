@@ -45,7 +45,7 @@ export default class TestMemoire extends Component {
       <div className='jeuVitesse marge20'>
         <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessedessin"] != null ? "dejaFaitCognito" : ""}`}>
           <Link to='/vitessedessin'> <div className="centre titreVitesse" >🖼️  Lignes brisées</div>
-            <p className="marge20">But du jeu : Mémorise une ligne brisée puis reconstitue la ligne en cliquant sur les points présents. Le départ se fait toujours en haut à gauche. Tu ne peux sélectionner que des points adjacents. 20 points par dessin reconstitué.  </p>
+            <p className="marge20">But du jeu : Mémorise une ligne brisée puis reconstitue la ligne en cliquant sur les points présents. Le départ se fait toujours en haut à gauche. Tu ne peux sélectionner que des points adjacents. 12 points par dessin reconstitué.  </p>
           </Link>
           <p className='centre'>{this.state.resultatsJoueur["vitessedessin"] != null ? "Ton score : " + this.state.resultatsJoueur["vitessedessin"] : "Pas encore de résultat"}</p>
           <div className="centre"><Link to='/classement/vitessedessin'>Classement</Link></div>

@@ -13,27 +13,40 @@ export default function JeuDessin() {
   const [finJeu, setFinJeu] = useState(false);
     const [score, setScore] = useState(0);
   const buildPoints = () => {
-    let drawPoints = [{ id: `${0}-${0}`, col: 0, row: 0 }];
-    while (drawPoints.length < 8 + gameNumber.current ) {
-      const lastPoint = drawPoints[drawPoints.length - 1];
-      const possibleMoves = [
-        { row: lastPoint.row + 1, col: lastPoint.col },
-        { row: lastPoint.row - 1, col: lastPoint.col },
-        { row: lastPoint.row, col: lastPoint.col + 1 },
-        { row: lastPoint.row, col: lastPoint.col - 1 },
-        { row: lastPoint.row + 1, col: lastPoint.col + 1 },
-        { row: lastPoint.row + 1, col: lastPoint.col - 1 },
-        { row: lastPoint.row - 1, col: lastPoint.col + 1 },
-        { row: lastPoint.row - 1, col: lastPoint.col + 1 }
-      ].filter(p => p.row >= 0 && p.row < GRID_SIZE && p.col >= 0 && p.col < GRID_SIZE)
-        .filter(p => drawPoints.findIndex(x => x.id === `${p.col}-${p.row}`) === -1);
-      if (possibleMoves.length === 0) {
-        break;
+    const targetLength = 6 + gameNumber.current;
+    const maxAttempts = 1000;
+
+    for (let attempt = 0; attempt < maxAttempts; attempt++) {
+      let drawPoints = [{ id: `0-0`, col: 0, row: 0 }];
+      while (drawPoints.length < targetLength) {
+        const lastPoint = drawPoints[drawPoints.length - 1];
+        const possibleMoves = [
+          { row: lastPoint.row + 1, col: lastPoint.col },
+          { row: lastPoint.row - 1, col: lastPoint.col },
+          { row: lastPoint.row, col: lastPoint.col + 1 },
+          { row: lastPoint.row, col: lastPoint.col - 1 },
+          { row: lastPoint.row + 1, col: lastPoint.col + 1 },
+          { row: lastPoint.row + 1, col: lastPoint.col - 1 },
+          { row: lastPoint.row - 1, col: lastPoint.col + 1 },
+          { row: lastPoint.row - 1, col: lastPoint.col - 1 }
+        ].filter(p => p.row >= 0 && p.row < GRID_SIZE && p.col >= 0 && p.col < GRID_SIZE)
+          .filter(p => drawPoints.findIndex(x => x.id === `${p.col}-${p.row}`) === -1);
+
+        if (possibleMoves.length === 0) {
+          break;
+        }
+
+        const nextPoint = possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
+        drawPoints.push({ id: `${nextPoint.col}-${nextPoint.row}`, col: nextPoint.col, row: nextPoint.row });
       }
-      const nextPoint = possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
-      drawPoints.push({ id: `${nextPoint.col}-${nextPoint.row}`, col: nextPoint.col, row: nextPoint.row });
+
+      if (drawPoints.length === targetLength) {
+        return drawPoints;
+      }
     }
-    return drawPoints;
+
+    // Si malgré tout on ne trouve pas de chemin, on retourne un chemin minimal
+    return [{ id: `0-0`, col: 0, row: 0 }];
   }
 
   const buildFigure = () => {
@@ -45,7 +58,7 @@ export default function JeuDessin() {
       drawLines.push({ from: points[index], to: points[index + 1] });
 
     }
-    console.log(drawLines)
+
     return drawLines;
 
   }
@@ -71,15 +84,13 @@ export default function JeuDessin() {
     if (points.length > 0 && etat === 'memorisation') {
       drawLines.current = buildFigure(points);
 
-      console.log('construction')
-      console.log(drawLines.current);
 
       setLines(drawLines.current);
     }
   }, [points]);
 
   useEffect(() => {
-    console.log(etat);
+
     if (etat === 'jeu') {
       if (checkVictory())
       {
@@ -97,9 +108,7 @@ export default function JeuDessin() {
   }
 
   const checkVictory = () => {
-    console.log('Victory');
-    console.log(drawLines.current);
-    console.log(lines)
+
     for (let index = 0; index < drawLines.current.length; index++) {
 
       if (lines.findIndex(x => x.from.id === drawLines.current[index].from.id && x.to.id === drawLines.current[index].to.id) === -1) {
@@ -107,7 +116,7 @@ export default function JeuDessin() {
       }
 
     } 
-    setScore(score + 20);
+    setScore(score + 12);
     return true;
 
 
@@ -161,10 +170,11 @@ export default function JeuDessin() {
 
   return (<React.Fragment>
      <Helmet>
-                    <title>Test de dactylographie</title>
-                    <meta name="description" content="Un test gratuit et  amusant basé sur la dactylographie pour apprendre à taper un texte le plus vite possible." />
+                    <title>Les lignes brisées - Jeu de mémoire visuospatiale pour entraîner votre cerveau</title>
+                    <meta name="description" content="Jeu de mémoire gratuit : observez une ligne brisée, mémorisez-la et reproduisez-la. Un entraînement simple et efficace pour booster votre mémoire visuospatiale." />
       </Helmet>
             {finJeu ? <Resultat score={score} typeExo='vitessedessin'></Resultat> :
+            <React.Fragment>
     <div className="container-dessin">
       <div style={{ position: "relative", width: SIZE, height: SIZE }}>
         {/* SVG pour les lignes */}
@@ -201,8 +211,11 @@ export default function JeuDessin() {
         <Button className="marge20" onClick={memorised}>J'ai mémorisé</Button> :
         <Button className="marge20" onClick={giveUp}>Abandon</Button>
       }
-         <div className="centre marge10"><CompteRebours temps={30} finTimer={timerEnd}></CompteRebours></div>
-    </div>
+         <div className="centre marge10"><CompteRebours temps={60} finTimer={timerEnd}></CompteRebours></div>
+      </div>
+  <div className="titre couleurTitre">Les lignes brisées</div>
+     <div>Mémorise le dessin puis appuie sur le bouton "J'ai mémorisé". Reconstitue ensuite la ligne. Le premier point est toujours en haut à gauche (en jaune). Tu n'as pas besoin de l'indiquer. Tu ne peux cliquer que sur des points adjacents. Si tu as terminé et que tu n'as pas le message de félicitations, c'est qu'il y a une erreur. Tu peux revenir en arrière pour la corriger.</div> 
+    </React.Fragment>
     }
     </React.Fragment>
   );

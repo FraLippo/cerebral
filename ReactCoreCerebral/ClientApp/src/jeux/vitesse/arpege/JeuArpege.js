@@ -18,6 +18,7 @@ class JeuArpege extends Component {
             currentStep: 0,
             isPlaying: false,
             bpm: this.dataLevels[this.gameNb].bpm,
+            titre : this.dataLevels[this.gameNb]?.titre ?? '',
 
             liveNote: null, // currently played live note label
             liveHits: Array.from({ length: 3 }, () => Array(16).fill(false)),
@@ -40,6 +41,7 @@ class JeuArpege extends Component {
             dataLevels.push(defaultArp[f][Math.floor(Math.random() * defaultArp[f].length)])
 
         });
+    
       
    
         return dataLevels;
@@ -76,6 +78,7 @@ class JeuArpege extends Component {
                 currentStep: 0,
                 isPlaying: false,
                 bpm: this.dataLevels[this.gameNb].bpm,
+                   titre : this.dataLevels[this.gameNb]?.titre ?? '',
                 liveNote: null,
                 liveHits: Array.from({ length: 3 }, () => Array(16).fill(false)),
                 countdown: null
@@ -184,19 +187,19 @@ class JeuArpege extends Component {
     }
 
     playNoteByRow = async (row) => {
+        if (!this.audioContext) return;
 
-
-        // Déblocage audio navigateur (try to resume but don't await to avoid extra JS tick)
+        // Déblocage audio navigateur et lancement immédiat du son
         if (this.audioContext.state !== "running") {
-            this.audioContext.resume().catch(() => { });
+            try {
+                await this.audioContext.resume();
+            } catch (e) {
+                // ignore resume errors; continue with current time if possible
+            }
         }
 
         const now = this.audioContext.currentTime;
-        // quantize start time to nearest step according to BPM (eighth notes)
-        const stepDur = (60 / (this.state && this.state.bpm ? this.state.bpm : 120)) / 2; // seconds per step
-        let quantStart = Math.round(now / stepDur) * stepDur;
-        // ensure scheduled time is not slightly in the past
-        if (quantStart <= now + 0.005) quantStart += stepDur;
+        const startTime = now + 0.008; // petit décalage pour laisser le moteur audio préparer le déclenchement
 
         // Prefer sample playback of preloaded buffers for minimal latency and consistent sound
         const buffer = (this.buffers && this.buffers[row]) ? this.buffers[row] : null;
@@ -204,17 +207,14 @@ class JeuArpege extends Component {
             try {
                 const src = this.audioContext.createBufferSource();
                 src.buffer = buffer;
-                // small per-trigger gain to avoid clicks and allow overlapping voices
                 const g = this.audioContext.createGain();
-                const startTime = quantStart;
-                g.gain.setValueAtTime(0.0001, startTime);
-                g.gain.linearRampToValueAtTime(0.9, startTime + 0.006);
-                // connect and start
+                g.gain.setValueAtTime(0.0001, now);
+                g.gain.linearRampToValueAtTime(0.9, startTime + 0.002);
+                g.gain.linearRampToValueAtTime(0.0001, startTime + (buffer.duration || 0.15));
                 src.connect(g);
                 g.connect(this.fxBus);
                 src.start(startTime);
-                // stop slightly after buffer ends to ensure full playback
-                src.stop(startTime + (buffer.duration || 0) + 0.05);
+                src.stop(startTime + (buffer.duration || 0.15) + 0.05);
             } catch (err) {
                 console.warn('Sample playback failed, falling back to oscillator', err);
                 // fall through to oscillator fallback below
@@ -228,14 +228,13 @@ class JeuArpege extends Component {
         const gain = this.audioContext.createGain();
         osc.type = 'sine';
         osc.frequency.value = freqs[row] || 261.63;
-        const startNow = quantStart;
-        gain.gain.setValueAtTime(0.0001, startNow);
-        gain.gain.linearRampToValueAtTime(0.6, startNow + 0.005);
-        gain.gain.linearRampToValueAtTime(0.0001, startNow + 0.18);
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.linearRampToValueAtTime(0.6, startTime + 0.002);
+        gain.gain.linearRampToValueAtTime(0.0001, startTime + 0.12);
         osc.connect(gain);
         gain.connect(this.fxBus);
-        osc.start(startNow);
-        osc.stop(startNow + 0.18 + 0.02);
+        osc.start(startTime);
+        osc.stop(startTime + 0.14);
     };
 
 
@@ -615,6 +614,7 @@ class JeuArpege extends Component {
                         <button className="btn" onClick={() => this.setState((s) => ({ muteNotes: !s.muteNotes }))}>{this.state.muteNotes ? 'Activer sons' : 'Couper sons'}</button>
                     </div>
                     <div className='centre'>BPM : <strong>{this.state.bpm}</strong></div>
+                    <div className='centre fontMoyenne'>{this.state.titre}</div>
                     {this.state.countdown && <div className="countdown-display">{this.state.countdown}</div>}
             <div className='centre marginTop10'><CompteRebours temps={80} finTimer={this.finTimer}></CompteRebours></div>
 

@@ -1,36 +1,95 @@
-.slider
+.slider-inter
 {
-    height: 200px;
+    height: 300px;
 }
 
-.container {
-            width: 100%;
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
+.container-inter {
+  
+           display: flex;
+           flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
           }
+.container-jeu-inter {
+           display: flex;
+           flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+          }
+.space-button-inter
+{
+  width: 170px;
+       display: flex;
+           flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+}
+.space-slider-inter
+{
+  width: 150px;
+       display: flex;
+           flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+}
 
-          .regle {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 10px;
-          }
+.button-inter {
+  padding: .5em .75em;
+  background: #6af7f6;
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 5px 7px 4px 1px #c4c4e4
+}
+.button-inter:hover {
+  background: #e6e6e6;
+}
 
-          .graduation {
-            position: relative;
-            width: 1px;
-            height: 10px;
-            background: black;
-          }
+.button-inter:active {
+ 
+    transform: translateY(3px);
+}
 
-          .graduation span {
-            position: absolute;
-            top: 12px;
-            transform: translateX(-50%);
-          }
+.slider-controls-inter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 0.75rem;
+}
 
-          .slider {
-            width: 100%;
-            margin-top: 20px;
-          }
+.slider-control-button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  background: #d6d6d6;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-control-button:hover {
+  background: #cfcfcf;
+}
+
+.slider-control-button:active {
+  background: #bfbfbf;
+}
+
+.frequency-label {
+  min-width: 80px;
+  text-align: center;
+  font-weight: 600;
+}
+         

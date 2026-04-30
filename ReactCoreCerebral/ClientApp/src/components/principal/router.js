@@ -124,7 +124,7 @@ const router = createBrowserRouter([
       children: [
           {
             index : true,
-            element: <JeuIntervalle />,
+            element: <PresentationTemps />,
           },
          
           {
@@ -386,6 +386,11 @@ const router = createBrowserRouter([
            {
             path: 'vitessefraction',
             element: <JeuFraction/>,
+            
+          },
+             {
+            path: 'vitesseintervalle',
+            element: <JeuIntervalle/>,
             
           },
            {

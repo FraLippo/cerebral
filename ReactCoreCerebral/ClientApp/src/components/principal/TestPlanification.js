@@ -37,7 +37,7 @@ export default class TestPlanification extends Component {
             <meta name="description" content="Découvrez nos tests de planification mentale conçus pour évaluer et améliorer vos compétences en organisation et en gestion du temps. Testez votre capacité à planifier, anticiper et résoudre des problèmes complexes avec nos outils interactifs." />     
             <link rel="alternate" hreflang="en" href="https://brain-games.evalquiz.com/planning-games" />
 <link rel="alternate" hreflang="fr" href="https://cerebral.evalquiz.com/test-planification" />
-<link rel="alternate" hreflang="x-default" href="https://cerebral.evalquiz.com/test-planification" />
+<link rel="alternate" hreflang="x-default" href="https://brain-games.evalquiz.com/planning-games" />
                </Helmet>
 
       <h1 className="titre couleurTitre centre">Les tests de planification</h1>

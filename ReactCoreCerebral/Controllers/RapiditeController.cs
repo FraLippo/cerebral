@@ -9,17 +9,19 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
 using System.Security.Cryptography.X509Certificates;
+using ReactCoreCerebral.Services;
 
 namespace ReactCoreCerebral.Controllers
 {
     public class RapiditeController : Controller
     {
         private readonly TableauContext _dbTableau;
-
+    
 
         public RapiditeController(TableauContext dbTableau)
         {
             _dbTableau = dbTableau;
+  
         }
 
 
@@ -183,6 +185,9 @@ namespace ReactCoreCerebral.Controllers
             var classementsJoueur = _dbTableau.Resultat2019.Where(x => x.noExo == 999 && x.date >= startDate && x.date < endDate && x.prenom == prenom).Select(x => new DTOResultatJoueur() { NomJeu = x.typeExo, Score = x.nbFaute, Categorie = x.listeFautes }).ToList();
 
             DTOInfoClassement DTOInfoJoueur = new() { ClassementJoueurs = classement.Take(10), NbJoueurs = classement.Count, Classement = positionJoueur, Resultats = classementsJoueur, ScoreTotal = scoreJoueur };
+
+          
+
             return DTOInfoJoueur;
         }
 

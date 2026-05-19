@@ -74,8 +74,7 @@ class JeuxSuite extends Component {
             <Helmet>
                 <title>{intl.get('SUITE_TITLE')}</title>
                 <meta name="description" content={intl.get('SUITE_META')} />
-                <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxsuite/${this.idTest}`} />
-                <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-sequence/${this.idTest}`} />
+    
 
 
             </Helmet>

@@ -39,7 +39,7 @@ export default class TestLettres extends Component {
             <meta name="description" content="Découvrez une collection de jeux captivants pour tester et améliorer votre habileté avec les mots et affiner vos compétences verbales."></meta>
             <link rel="alternate" hreflang="en" href="https://brain-games.evalquiz.com/words-games" />
 <link rel="alternate" hreflang="fr" href="https://cerebral.evalquiz.com/test-lettres" />
-<link rel="alternate" hreflang="x-default" href="https://cerebral.evalquiz.com/test-lettres" />
+<link rel="alternate" hreflang="x-default" href="https://brain-games.evalquiz.com/words-games" />
        
        
             </Helmet>

@@ -98,7 +98,7 @@ export default class JeuNombre extends Component {
 
             {!this.state.finJeu ? <React.Fragment>
                 <div className="fontMoyenne couleurTitre">Se souvenir des nombres</div><div ><div className="centre espaceHaut">
-                    {this.state.afficheNombre ? <Nombre nombre={this.state.nombre} niveau={this.niveau} clicNombre={this.clicNombre}></Nombre> : <Saisie clicSaisie={this.clicSaisie}></Saisie>}
+                    {this.state.afficheNombre ? <Nombre nombre={this.state.nombre} niveau={this.niveau} clicNombre={this.clicNombre}></Nombre> : <Saisie clicSaisie={this.clicSaisie} maxLength={this.state.nombre.length}></Saisie>}
 
 
 

@@ -100,8 +100,7 @@ class JeuxOrdre extends Component {
                 <Helmet>
                     <title>{intl.get('ORDRE_TITLE')}</title>
                     <meta name="description" content={intl.get('ORDRE_META')} />
-                    <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxordre/${this.id}`} />
-                    <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-order/${this.id}`} />
+ 
 
                 </Helmet>
 

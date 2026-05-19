@@ -36,7 +36,7 @@ export default class TestMemoire extends Component {
 
         <link rel="alternate" hreflang="en" href="https://brain-games.evalquiz.com/memory-games" />
         <link rel="alternate" hreflang="fr" href="https://cerebral.evalquiz.com/test-memoire" />
-        <link rel="alternate" hreflang="x-default" href="https://cerebral.evalquiz.com/test-memoire" />
+        <link rel="alternate" hreflang="x-default" href="https://brain-games.evalquiz.com/memory-games" />
       </Helmet>
       <h1 className="titre couleurTitre centre">Bilan mémoire : testez votre mémoire</h1>
       <p className='centre'>Évaluez vos capacités de mémorisation à travers une série de jeux interactifs conçus pour faire un bilan complet de votre mémoire.</p>
@@ -54,7 +54,7 @@ export default class TestMemoire extends Component {
 
         <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseloup"] != null ? "dejaFaitCognito" : ""}`}>
           <Link to='/vitesseloup'> <div className="centre titreVitesse" >🐺  Attrape le loup</div>
-            <p className="marge20">But du jeu : Mémorise le déplacement d'un loup sur une grille pour pouvoir le reproduire. Le but est de rejoindre le loup. Le loup démarre avec 4 secondes d'avance. +10 points si tu rattrapes le loup. 30 points de bonus si tu arrives au bout des 10 parties en moins de 110 s. </p>
+            <p className="marge20">But du jeu : Mémorise le déplacement d'un loup sur une grille pour pouvoir le reproduire. Le but est de rejoindre le loup. Le loup démarre avec 4 secondes d'avance. +20 points si tu rattrapes le loup. 30 points de bonus si tu arrives au bout des 6 parties en moins de 90 s. </p>
           </Link>
           <p className='centre'>{this.state.resultatsJoueur["vitesseloup"] != null ? "Ton score : " + this.state.resultatsJoueur["vitesseloup"] : "Pas encore de résultat"}</p>
           <div className="centre"><Link to='/classement/vitesseloup'>Classement</Link></div>

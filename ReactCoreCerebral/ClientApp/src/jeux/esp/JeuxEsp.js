@@ -74,8 +74,7 @@ class JeuEsp extends Component {
                 <Helmet>
                     <title>{intl.get('ESP_TITLE')}(</title>
                     <meta name="description" content={intl.get('ESP_META')} />
-                    <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxesp/${this.id}`} />
-                    <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-cards/${this.id}`} />
+        
                 </Helmet>
                 {this.state.affichageCarte ? <div className="espaceJeu espaceHaut">
                     <CompteRebours affichageCarte={this.affichageCarte} temps={this.LogiqueEsp.temps}></CompteRebours>

@@ -1585,6 +1585,7 @@ path {
 #grande-zone-saisie:focus {
     border-style: none;
     outline: none;
+    caret-color: transparent;
 }
 
 #grande-zone-saisie {
@@ -1594,6 +1595,41 @@ path {
     margin: 20px auto;
     height: 53px;
     text-align: center;
+    caret-color: transparent;
+    border: none;
+}
+
+.saisieNombre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clavierNombre {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(60px, 1fr));
+    gap: 10px;
+    max-width: 360px;
+    margin: 10px auto 0;
+}
+
+.clavierNombreBouton {
+    border: 1px solid #1f73a1;
+    background-color: #a4d2f1;
+    color: #0f2436;
+    font-size: 1.4em;
+    padding: 12px 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.clavierNombreBouton:hover,
+.clavierNombreBouton:focus {
+    background-color: #8fbcec;
+}
+
+.clavierNombreAction {
+    background-color: #f1a07c;
 }
 
 .grandeTaille {

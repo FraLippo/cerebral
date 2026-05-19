@@ -16,7 +16,7 @@ export default class ModalGpt extends Component {
     }
 
      envoiMessageGPT= async() => {
-        let msgHtml = '';
+       let msgHtml = '';
          this.setState({
           loading: true});
 
@@ -31,24 +31,24 @@ export default class ModalGpt extends Component {
 // Pour chaque métier, ajoute une courte description engageante, en utilisant le tutoiement (tu/toi) et un ton positif et encourageant.
 // **Réponds uniquement avec un extrait HTML, sans <html>, <body>, ni CSS.**`
     
-        let message = `Voici les résultats d'une personne à des tests cognitifs (note sur 100) :
-- mémoire (${this.props.tabScoreCategorie[0].score})
-- calcul (${this.props.tabScoreCategorie[2].score})
-- planification (${this.props.tabScoreCategorie[5].score})
-- aptitude verbale (${this.props.tabScoreCategorie[3].score})
-- concentration (${this.props.tabScoreCategorie[1].score})
-- culture générale (${this.props.tabScoreCategorie[4].score})
-1.Propose 4 métiers adaptés au profil cognitif du joueur.
-Pour chaque métier explique brièvement pourquoi il correspond à ses points forts/faiblesses.
-2. Donne 1 ou 2 pistes d'amélioration pour élargir ses possibilités professionnelles.
-Pour les bons scores, adopte un ton enthousiaste et valorisant.
-Pour les mauvais scores, fais de l'humour franc, un peu piquant, mais toujours constructif.
-Utilise le tutoiement. **Réponds uniquement avec un extrait HTML, sans <html>, <body>, ni CSS.**`
+//         let message = `Voici les résultats d'une personne à des tests cognitifs (note sur 100) :
+// - mémoire (${this.props.tabScoreCategorie[0].score})
+// - calcul (${this.props.tabScoreCategorie[2].score})
+// - planification (${this.props.tabScoreCategorie[5].score})
+// - aptitude verbale (${this.props.tabScoreCategorie[3].score})
+// - concentration (${this.props.tabScoreCategorie[1].score})
+// - culture générale (${this.props.tabScoreCategorie[4].score})
+// 1.Propose 4 métiers adaptés au profil cognitif du joueur.
+// Pour chaque métier explique brièvement pourquoi il correspond à ses points forts/faiblesses.
+// 2. Donne 1 ou 2 pistes d'amélioration pour élargir ses possibilités professionnelles.
+// Pour les bons scores, adopte un ton enthousiaste et valorisant.
+// Pour les mauvais scores, fais de l'humour franc, un peu piquant, mais toujours constructif.
+// Utilise le tutoiement. **Réponds uniquement avec un extrait HTML, sans <html>, <body>, ni CSS.**`
     
-        const reponse = await fetch(process.env.REACT_APP_URL_MESSAGEGPT, {
+        const reponse = await fetch(process.env.REACT_APP_URL_RESULTATGPT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message, prenom: this.props.prenom, score : this.props.score })
+            body: JSON.stringify(this.props.prenom)
         });
         if (verifierStatus(reponse.status) && reponse.ok) {
 

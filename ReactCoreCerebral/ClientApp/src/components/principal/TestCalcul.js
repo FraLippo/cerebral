@@ -36,7 +36,7 @@ export default class TestCalcul extends Component {
             <meta name="description" content="Améliorez vos compétences en calcul mental avec nos tests interactifs. Évaluez votre rapidité et précision en mathématiques à travers une série d'exercices stimulants conçus pour affiner votre agilité numérique et renforcer vos capacités cognitives." />
             <link rel="alternate" hreflang="en" href="https://brain-games.evalquiz.com/arithmetic-games" />
 <link rel="alternate" hreflang="fr" href="https://cerebral.evalquiz.com/test-calcul" />
-<link rel="alternate" hreflang="x-default" href="https://cerebral.evalquiz.com/test-calcul" />
+<link rel="alternate" hreflang="x-default" href="https://brain-games.evalquiz.com/arithmetic-games" />
           
             </Helmet>
 

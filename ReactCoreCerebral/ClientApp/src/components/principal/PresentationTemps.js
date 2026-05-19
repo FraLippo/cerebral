@@ -63,7 +63,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
         <meta name="description" content="Des jeux cognitifs simples pour faire travailler son cerveau tout en s'amusant. Tous les jeux sont accessibles en ligne et sont gratuits, ils peuvent être pratiqués aussi bien par les enfants que les adultes et les seniors." />
         <link rel="alternate" hreflang="en" href="https://brain-games.evalquiz.com" />
 <link rel="alternate" hreflang="fr" href="https://cerebral.evalquiz.com" />
-<link rel="alternate" hreflang="x-default" href="https://cerebral.evalquiz.com" />
+<link rel="alternate" hreflang="x-default" href="https://brain-games.evalquiz.com" />
       </Helmet>
       <h1 className="titre centre couleurTitre">Sport cérébral et jeux cognitifs</h1>
       <div className='centre'>evalquiz : le site numéro 1 du divertissement intelligent</div>
@@ -87,7 +87,7 @@ this.nomMois = moisEnFrancais[d.getMonth()];
   
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
-       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x11</span><span className='champVitesse'>Soso x1</span><span className='champVitesse'>LoloLaReine x1</span>👑</p>
+       <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x11</span><span className='champVitesse'>Soso x1</span><span className='champVitesse'>LoloLaReine x1</span><span className='champVitesse'>Soso x1</span>👑</p>
       <div className='centre'><b>🚩Dans le match très serré entre Lolo, Soso et Lili, c’est Soso qui remporte la victoire ce mois-ci ! 📅</b></div>
    
      

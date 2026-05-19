@@ -87,9 +87,7 @@ class JeuxPuzzleRotation extends Component {
             <Helmet>
                 <title>{intl.get('ROTATION_TITLE')}</title>
                 <meta name="description" content={intl.get('ROTATION_META')} />
-                <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxpuzzlerotation/${this.id}`} />
-                <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-rotate/${this.id}`} />
-
+     
 
             </Helmet>
 

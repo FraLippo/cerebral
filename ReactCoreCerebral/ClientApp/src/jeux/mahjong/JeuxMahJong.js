@@ -76,8 +76,7 @@ class JeuxMah extends Component {
             <Helmet>
                 <title>{intl.get('MAH_TITLE')}</title>
                 <meta name="description" content={intl.get('MAH_META')} />
-                <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxmahjong/${this.id}`} />
-                <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-solo/${this.id}`} />
+  
 
             </Helmet>
             <div> {this.state.afficheResultat ?

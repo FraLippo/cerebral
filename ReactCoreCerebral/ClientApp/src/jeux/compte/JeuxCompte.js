@@ -196,8 +196,7 @@ class JeuxCompte extends Component {
             <Helmet>
           <title>{intl.get('META_COMPTE')}</title>
           <meta name="description" content={intl.get('META_COMPTE')} />
-          <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxcompte/${this.id}`}/>
-          <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-numbers/${this.id}`} />
+    
           
                  </Helmet>
             

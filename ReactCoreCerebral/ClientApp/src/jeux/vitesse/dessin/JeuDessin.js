@@ -189,10 +189,10 @@ export default function JeuDessin() {
               onClick={() => handleClickPoint(p)}
               style={{
                 position: "absolute",
-                left: x - 8,
-                top: y - 8,
-                width: 16,
-                height: 16,
+                left: x - 10,
+                top: y - 10,
+                width: 20,
+                height: 20,
                 borderRadius: "50%",
                 border: "2px solid #6b0ce8",
                 background:
@@ -211,7 +211,7 @@ export default function JeuDessin() {
         <Button className="marge20" onClick={memorised}>J'ai mémorisé</Button> :
         <Button className="marge20" onClick={giveUp}>Abandon</Button>
       }
-         <div className="centre marge10"><CompteRebours temps={60} finTimer={timerEnd}></CompteRebours></div>
+         <div className="centre marge10"><CompteRebours temps={80} finTimer={timerEnd}></CompteRebours></div>
       </div>
   <div className="titre couleurTitre">Les lignes brisées</div>
      <div>Mémorise le dessin puis appuie sur le bouton "J'ai mémorisé". Reconstitue ensuite la ligne. Le premier point est toujours en haut à gauche (en jaune). Tu n'as pas besoin de l'indiquer. Tu ne peux cliquer que sur des points adjacents. Si tu as terminé et que tu n'as pas le message de félicitations, c'est qu'il y a une erreur. Tu peux revenir en arrière pour la corriger.</div> 

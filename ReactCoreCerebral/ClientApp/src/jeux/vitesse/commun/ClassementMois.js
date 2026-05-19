@@ -35,7 +35,7 @@ export default class ClassementMois extends Component {
             afficheInfoJoueur: false,
             tabScoreCategorie: [],
             messageGpt: '',
-            disabled : true,
+            disabled : false,
               nbJeuxTotal : 0,
                 nbJeux : 0
         }
@@ -119,7 +119,7 @@ export default class ClassementMois extends Component {
         if (reponse.ok) {
             const res = await reponse.json();
 
-            let disabled = !(res.resultats.length === tabJeu.length);
+         //   let disabled = !(res.resultats.length === tabJeu.length);
        
             this.setState({
                 listePremiers: res.classementJoueurs,
@@ -129,7 +129,7 @@ export default class ClassementMois extends Component {
                 afficheInfoJoueur: this.prenom !== 'inconnu',
                 nbJoueurs: res.nbJoueurs,
                 tabScoreCategorie: this.creerDonneesRadar(res.resultats),
-                disabled,
+             //   disabled,
                 nbJeuxTotal : tabJeu.length,
                 nbJeux : res.resultats.length
 
@@ -190,9 +190,9 @@ export default class ClassementMois extends Component {
                          <p className='fontMoyenne centre couleurHonneur margeHaut10'><strong>Quelle est ta véritable personnalité ? Découvre-le grâce à ChatGPT !</strong></p>
   
               
-                <ModalGpt disabled={this.state.disabled} tabScoreCategorie={this.state.tabScoreCategorie} prenom={this.prenom} score={this.state.scoreTotal} ></ModalGpt>
-                       <div className='centre espaceHaut espaceTitreBas'>{!this.state.disabled ? <span>Bravo, tu as terminé tous les jeux possibles, tu peux toujours améliorer ton score pour gagner le concours du mois, ChatGPT te proposera d'autres métiers si tu augmentes ton score de 200 points.</span> :<div> <div>Tu as terminé <strong>{this.state.nbJeux}</strong> {this.state.nbJeux > 2 ? 'jeux' : 'jeu'} sur {this.state.nbJeuxTotal} possibles. Tu dois tout terminer pour l'analyse de tes résultats.</div>
-                    <p className='centre'>Si tu termines tous les jeux, ChatGPT analysera tes résultats et te proposera une liste de traits amusants qui reflètent ta personnalité de joueur. Ce n'est évidemment pas scientifique, et le contenu généré dépend entièrement de ChatGPT… mais c'est toujours surprenant, fun et souvent très juste ! 😊</p></div>}</div>
+                <ModalGpt disabled={this.state.disabled} prenom={this.prenom}></ModalGpt>
+                       {/* <div className='centre espaceHaut espaceTitreBas'>{!this.state.disabled ? <span>Bravo, tu as terminé tous les jeux possibles, tu peux toujours améliorer ton score pour gagner le concours du mois, ChatGPT te proposera d'autres métiers si tu augmentes ton score de 200 points.</span> :<div> <div>Tu as terminé <strong>{this.state.nbJeux}</strong> {this.state.nbJeux > 2 ? 'jeux' : 'jeu'} sur {this.state.nbJeuxTotal} possibles. Tu dois tout terminer pour l'analyse de tes résultats.*/}
+                    {/* <p className='centre'>Si tu termines tous les jeux, ChatGPT analysera tes résultats et te proposera une liste de traits amusants qui reflètent ta personnalité de joueur. Ce n'est évidemment pas scientifique, et le contenu généré dépend entièrement de ChatGPT… mais c'est toujours surprenant, fun et souvent très juste ! 😊</p></div>}</div> */}
         
 
                       

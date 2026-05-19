@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { message } from 'antd';
 import loup from '../../../images/loup.png';
 import arbre from '../../../images/arbre.png';
+import bosquet from '../../../images/bosquet.png';
 import sphero from '../../../images/sphero.png';
 import Resultat from '../commun/Resultat.js';
 import CompteRebours from '../commun/CompteRebours';
@@ -12,9 +13,9 @@ export default class Tourneur extends Component {
 
   constructor(props) {
     super(props);
-    this.levels = [{ col: 5, trees: 2, time: 3000 }, { col: 6, trees: 4, time: 2900 }, { col: 7, trees: 4, time: 2800 },
-    { col: 7, trees: 6, time: 2600 }, { col: 7, trees: 8, time: 2400 }, { col: 7, trees: 8, time: 2200 }, { col: 8, trees: 12, time: 2000 },
-    { col: 8, trees: 14, time: 1800 }, { col: 8, trees: 16, time: 1600 }, { col: 8, trees: 25, time: 1400 }
+    this.levels = [ { col: 6, trees: 4, time: 2100 }, { col: 7, trees: 4, time: 2000 },
+    { col: 7, trees: 8, time: 1700 },
+    { col: 8, trees: 10, time: 1500 }, { col: 8, trees: 12, time: 1300 }, { col: 8, trees: 15, time: 1100 }
     ]
     this.nbGame = 0;
     this.nbTrees = this.levels[0].trees;
@@ -28,6 +29,7 @@ export default class Tourneur extends Component {
       playerRow: 0,
       playerCol: 0,
       trees: [],
+      bosquets: [],
       visitedOrder: ['0-0'],
       playerProgress: 0,
       running: false,
@@ -61,7 +63,9 @@ export default class Tourneur extends Component {
       currentCol: 0,
       playerRow: 0,
       playerCol: 0,
+      playerStarted: false,
       trees: [],
+      bosquets: [],
       visitedOrder: ['0-0'],
       playerProgress: 0,
       running: false,
@@ -120,33 +124,42 @@ export default class Tourneur extends Component {
 
     const { rows, cols } = this.state;
 
-
     let newRow, newCol, key;
-    let setTrees = new Set();
-    setTrees.add('0-0');
+    let setOccupied = new Set();
+    setOccupied.add('0-0');
     let arrayTrees = [];
-    for (let index = 0; index < this.nbTrees; index++) {
+    let arrayBosquets = [];
 
+    for (let index = 0; index < this.nbTrees; index++) {
       do {
         newRow = Math.floor(Math.random() * rows);
         newCol = Math.floor(Math.random() * cols);
         key = `${newRow}-${newCol}`;
-      } while (setTrees.has(key));
-      setTrees.add(key)
-      arrayTrees.push({ row: newRow, col: newCol })
+      } while (setOccupied.has(key));
+      setOccupied.add(key);
+      arrayTrees.push({ row: newRow, col: newCol });
     }
-  
+
+    for (let index = 0; index < this.nbTrees; index++) {
+      do {
+        newRow = Math.floor(Math.random() * rows);
+        newCol = Math.floor(Math.random() * cols);
+        key = `${newRow}-${newCol}`;
+      } while (setOccupied.has(key));
+      setOccupied.add(key);
+      arrayBosquets.push({ row: newRow, col: newCol });
+    }
+
     this.setState({
-      trees: arrayTrees
-    })
-
-
+      trees: arrayTrees,
+      bosquets: arrayBosquets
+    });
 
   };
 
 
   moveRandomly = () => {
-    const { rows, cols, visitedOrder } = this.state;
+    const { rows, cols, visitedOrder, playerStarted, playerProgress } = this.state;
     if (visitedOrder.length === rows * cols) {
       clearInterval(this.interval);
       clearInterval(this.count);
@@ -161,12 +174,17 @@ export default class Tourneur extends Component {
     } while (visitedOrder.findIndex(x => x === key) !== -1);
 
     const newVisitedOrder = [...visitedOrder, key];
-
-    this.setState({
+    const nextState = {
       currentRow: newRow,
       currentCol: newCol,
       visitedOrder: newVisitedOrder
-    });
+    };
+
+    if (playerStarted && playerProgress === 0 && newVisitedOrder.length > 1) {
+      nextState.playerProgress = 1;
+    }
+
+    this.setState(nextState);
   };
 
   handleCellClick = (r, c) => {
@@ -179,7 +197,7 @@ export default class Tourneur extends Component {
 
     if (key !== visitedOrder[playerProgress]) {
       clearInterval(this.interval);
-      this.score = this.score >= 10 ? this.score - 10 : 0;
+    
       this.fin = true;
       message.error("Tu dois suivre exactement les mêmes cases que le loup !", 2, this.reset);
       return;
@@ -196,7 +214,7 @@ export default class Tourneur extends Component {
       if (nextProgress === visitedOrder.length) {
         clearInterval(this.interval);
         this.setState({  gameWon: true });
-        this.score += 10;
+        this.score += 20;
         this.fin = true;
         message.success("Bravo, tu as rattrapé le loup !", 2, () => {
        
@@ -243,6 +261,10 @@ export default class Tourneur extends Component {
             if (this.state.countdown === 0) {
               clearInterval(this.count);
               this.playBip(600, 500);
+              this.setState((prev) => ({
+                playerStarted: true,
+                playerProgress: prev.visitedOrder.length > 1 ? 1 : 0
+              }));
             } else {
               this.playBip();
             }
@@ -255,13 +277,12 @@ export default class Tourneur extends Component {
       };
 
       render() {
-        const { rows, cols, cellSize, currentRow, currentCol, playerRow, playerCol, sonActive, level, running, gameWon, trees } = this.state;
-        ;
+        const { rows, cols, cellSize, currentRow, currentCol, playerRow, playerCol, playerStarted, sonActive, level, running, gameWon, trees } = this.state;
 
 
         const loupStyle = {
-          width: `${cellSize - 2 * (cellSize * 0.15)}px`,
-          height: `${cellSize - 2 * cellSize * 0.15}px`,
+          width: `${Math.round(cellSize - 2 * (cellSize * 0.15))}px`,
+          height: `${Math.round(cellSize - 2 * cellSize * 0.15)}px`,
           zIndex: '1',
           pointerEvents: 'none'
         }
@@ -269,8 +290,8 @@ export default class Tourneur extends Component {
         const circleStyle = {
 
           position: "absolute",
-          top: `${currentRow * cellSize + cellSize * 0.15}px`,
-          left: `${currentCol * cellSize + cellSize * 0.15}px`,
+          top: `${Math.round(currentRow * cellSize + cellSize * 0.15)}px`,
+          left: `${Math.round(currentCol * cellSize + cellSize * 0.15)}px`,
           transition: "top 0.6s ease, left 0.6s ease",
           pointerEvents: 'none'
 
@@ -279,19 +300,19 @@ export default class Tourneur extends Component {
         const playerStyle = {
 
           position: "absolute",
-          top: `${playerRow * cellSize + cellSize * 0.15}px`,
-          left: `${playerCol * cellSize + cellSize * 0.15}px`,
+          top: `${Math.round(playerRow * cellSize + cellSize * 0.15)}px`,
+          left: `${Math.round(playerCol * cellSize + cellSize * 0.15)}px`,
           zIndex: '8'
         };
 
         const spheroStyle = {
-          width: `${cellSize * 0.7}px`,
-          height: `${cellSize * 0.7}px`,
+          width: `${Math.round(cellSize * 0.7)}px`,
+          height: `${Math.round(cellSize * 0.7)}px`,
 
         };
         const treeStyle = {
-          width: `${cellSize * 0.9}px`,
-          height: `${cellSize * 0.9}px`,
+          width: `${Math.round(cellSize * 0.9)}px`,
+          height: `${Math.round(cellSize * 0.9)}px`,
 
         };
 
@@ -332,15 +353,19 @@ export default class Tourneur extends Component {
                   )}
 
                   <div style={circleStyle}><img style={loupStyle} src={loup} alt="loup"></img></div>
-                  {this.state.playerProgress !== 0 && <div style={playerStyle}><img style={spheroStyle} src={this.preloadImage.src} alt="robot"></img> </div>}
-                  {trees.map((info, i) => <div key={i} style={{
-                    position: "absolute", top: `${info.row * cellSize + cellSize * 0.1}px`,
-                    left: `${info.col * cellSize + cellSize * 0.1}px`, zIndex: '5', pointerEvents: 'none'
+                  {playerStarted && <div style={playerStyle}><img style={spheroStyle} src={this.preloadImage.src} alt="robot"></img> </div>}
+                  {trees.map((info, i) => <div key={`tree-${i}`} style={{
+                    position: "absolute", top: `${Math.round(info.row * cellSize + cellSize * 0.1)}px`,
+                    left: `${Math.round(info.col * cellSize + cellSize * 0.1)}px`, zIndex: '5', pointerEvents: 'none'
                   }}><img alt="arbre" style={treeStyle} src={arbre}></img></div>)}
+                  {this.state.bosquets.map((info, i) => <div key={`bosquet-${i}`} style={{
+                    position: "absolute", top: `${Math.round(info.row * cellSize + cellSize * 0.1)}px`,
+                    left: `${Math.round(info.col * cellSize + cellSize * 0.1)}px`, zIndex: '5', pointerEvents: 'none'
+                  }}><img alt="bosquet" style={treeStyle} src={bosquet}></img></div>)}
                 </div>    </div>
               <div className="grid-tourneur">
                 <div className='countdown-tourneur centre'>
-                  {level === 0 && <div>Tu dois mémoriser les déplacements du loup pour ensuite passer par les mêmes cases pour le rattraper.</div>}
+                  {level === 0 && <div>Tu dois faire passer Sphéro <img src={this.preloadImage.src} width={30}  alt="sphero"></img> par les mêmes cases que le loup. Le loup part avec 4 secondes d'avance, tu dois mémoriser son parcours et l'indiquer à Sphéro.</div>}
                   {!running ? <button onClick={this.startRunning} className="control-btn">
                     Démarrer le jeu
                   </button> : this.state.countdown !== 0 ?<div>
@@ -360,7 +385,7 @@ export default class Tourneur extends Component {
                 >
                   {sonActive ? "🔊" : "🔇"}
                 </button>
-                   <div className="centre marge10"><CompteRebours temps={110} finTimer={this.finTimer}></CompteRebours></div>
+                   <div className="centre marge10"><CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours></div>
               </div>
             </div>}</React.Fragment>
         );

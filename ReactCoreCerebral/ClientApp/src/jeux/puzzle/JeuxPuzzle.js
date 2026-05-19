@@ -189,8 +189,7 @@ class JeuxPuzzle extends Component {
             <Helmet>
                 <title>{intl.get('PUZZLE_TITLE')}</title>
                 <meta name="description" content={intl.get('PUZZLE_META')} />
-                <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxpuzzle/${this.id}`} />
-                <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-puzzle/${this.id}`} />
+
 
 
             </Helmet>

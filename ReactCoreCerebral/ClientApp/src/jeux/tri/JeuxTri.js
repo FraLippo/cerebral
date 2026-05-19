@@ -81,8 +81,7 @@ class JeuxTri extends Component {
             <Helmet>
                 <title>{intl.get('TRI_TITLE')}</title>
                 <meta name="description" content={intl.get('TRI_META')} />
-                <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxtri/${this.id}`} />
-                <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-sorting/${this.id}`} />
+
 
             </Helmet>
             {this.state.finJeu ?  this.logiqueTri.concours ? <FinEtape donneesJeu={this.logiqueTri.donnees} perdu={this.perdu}></FinEtape> :

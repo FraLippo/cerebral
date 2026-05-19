@@ -98,8 +98,7 @@ class JeuxDessin extends Component {
                 <Helmet>
                     <title>{intl.get('DESSIN_TITLE')}</title>
                     <meta name="description" content={intl.get('DESSIN_META')} />
-                    <link rel="alternate" hreflang="fr" href={`https://cerebral.evalquiz.com/jeuxmemoiredessin/${this.id}`} />
-                    <link rel="alternate" hreflang="en" href={`https://cerebral.evalquiz.com/brain-game-drawing/${this.id}`} />
+       
 
                 </Helmet>
                 <h1 id="titreMemoire">{intl.get('DESSIN_TITLE')}</h1>

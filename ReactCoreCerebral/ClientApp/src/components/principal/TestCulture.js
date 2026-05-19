@@ -38,7 +38,7 @@ export default class TestCulture extends Component {
             <meta name="description" content="Teste tes compétences pratiques avec des tests interactifs variés sur la musique, le code de la route ou les langues étrangères." />
             <link rel="alternate" hreflang="en" href="https://brain-games.evalquiz.com/culture-games" />
 <link rel="alternate" hreflang="fr" href="https://cerebral.evalquiz.com/test-culture" />
-<link rel="alternate" hreflang="x-default" href="https://cerebral.evalquiz.com/test-culture" />
+<link rel="alternate" hreflang="x-default" href="https://brain-games.evalquiz.com/culture-games" />
 </Helmet>
   
       <h1 className="titre couleurTitre centre">Tests divers sur la culture</h1>

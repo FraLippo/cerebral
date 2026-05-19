@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using ReactCoreCerebral.Models;
 using ReactCoreCerebral.Services;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -77,6 +79,57 @@ namespace ReactCoreCerebral.Controllers
             await _dbTableau.SaveChangesAsync();
             return Ok(reponse);
            
+        }
+        
+
+        [HttpPost("obtenirresultat")]
+        public async Task<IActionResult> ObtenirResultat([FromBody] string prenom)
+        {
+            var maxScores = new Dictionary<string, int>
+            {
+                ["m"] = 620,
+                ["c"] = 470,
+                ["l"] = 600,
+                ["p"] = 650,
+                ["r"] = 960,
+                ["d"] = 550
+            };
+
+            DateTime now = DateTime.Now;
+            var startDate = new DateTime(now.Year, now.Month, 1);
+            var endDate = startDate.AddMonths(1);
+
+            var query = _dbTableau.Resultat2019
+                .Where(x =>
+                    x.noExo == 999 &&
+                    x.date >= startDate &&
+                    x.date < endDate &&
+                    x.prenom == prenom);
+
+            var data = query.ToList();
+
+            var scoreTotal = data.Sum(x => x.nbFaute);
+
+            var classements = data
+                .GroupBy(x => x.listeFautes)
+                .ToDictionary(
+                    g => g.Key,
+                    g => g.Sum(x => x.nbFaute)
+                );
+
+            var pourcentages = classements.ToDictionary(
+                x => x.Key,
+                x =>
+                {
+                    var max = maxScores.GetValueOrDefault(x.Key, 1);
+                    return (int)Math.Round((double)x.Value / max * 100);
+                }
+            );
+
+            var reponse = await new ChatGPTService(_openAiService, _dbTableau)
+                .ObtenirResultatGpt(prenom, scoreTotal, pourcentages);
+            return Ok(reponse);
+
         }
     }
 }

@@ -73,22 +73,22 @@ this.nomMois = moisEnFrancais[d.getMonth()];
        
         <h2>Développe ton intelligence avec les jeux cognitifs</h2>
         <p>À l'ère numérique actuelle, où nos esprits sont constamment sollicités par une multitude d'informations, la pratique de jeux cognitifs apparait comme une stratégie intelligente pour stimuler et développer notre cerveau. Ces jeux, conçus pour engager activement les processus mentaux, offrent bien plus qu'une simple distraction ludique.</p>
-      <h2>Détermine ta personnalité</h2>
-      {/* <p>Plus besoin d'orientation, nous pouvons désormais déterminer les métiers qui te conviennent le mieux. À partir des résultats de nos tests, ChatGPT te donne désormais les métiers pour lesquels tu es le plus qualifié. Seras-tu chercheur ou artiste de rue ?</p> */}
-   <p>À partir des résultats de nos jeux, on peut dégager quelques traits de personnalité qui dessinent ton style, tes forces ou tes faiblesses. Rien de scientifique ici, juste un portrait franc, parfois piquant, mais toujours bienveillant. Découvre ce que tes scores laissent entrevoir de ta façon d'apprendre, de penser et d'aborder le monde.</p>
-    </div>
-    <p className="centre fontMoyenne">Pratique un jeu par jour pendant un mois, c'est bon pour le cerveau, et à la fin, on te dit tout de ta personnalité !</p>
+    <h2>Analyse tes compétences</h2>
+<p>
+À partir des résultats de tes jeux cognitifs, une analyse des compétences est réalisée pour mettre en évidence tes forces, tes points d’appui et tes axes de progression. Cette évaluation ne repose pas sur un diagnostic scientifique, mais sur une lecture structurée de tes performances. Elle permet de mieux comprendre ton profil de raisonnement, ta logique, ta mémoire et ta façon d’aborder les problèmes.
+</p>  </div>
+    <p className="centre fontMoyenne">Pratique un jeu par jour pendant un mois, c'est bon pour le cerveau, et à la fin, on te dit tout de tes compétences !</p>
       <h2>Le podium du mois  {this.nomMois === 'août' || this.nomMois === 'avril' || this.nomMois === 'octobre' ? "d'" + this.nomMois : 'de ' + this.nomMois} </h2>
       <p>Le podium montre les 3 premiers du mois en cours, le podium peut changer à tout moment, tous les résultats des jeux de rapidité sur cette page sont pris en compte.</p>
       <Podium tabPodium={this.state.tabPodium}></Podium>
    
       <div className="titreClassement"><Link to='classementmois'><div><b>Analyse de tes résultats</b></div>
-      <div>Découvre ta personnalité</div></Link></div>
+      <div>Découvre tes compétences</div></Link></div>
   
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
        <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x11</span><span className='champVitesse'>Soso x1</span><span className='champVitesse'>LoloLaReine x1</span><span className='champVitesse'>Soso x1</span>👑</p>
-      <div className='centre'><b>🚩Dans le match très serré entre Lolo, Soso et Lili, c’est Soso qui remporte la victoire ce mois-ci ! 📅</b></div>
+      <div className='centre'><b>🚩Dans le match très serré entre Lolo, Soso et Lili, c'est Soso qui remporte la victoire ce mois-ci ! 📅</b></div>
    
      
       

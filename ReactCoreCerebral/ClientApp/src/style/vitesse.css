@@ -6,6 +6,17 @@
 
 }
 
+.resultatIA
+{
+    max-width : 600px;
+    background-color: #cce1f2;
+    border : 3px solid black;
+    border-radius: 5px;
+    user-select: all;
+    margin: 10px auto;
+    padding: 5px;
+}
+
 .categorieAutres {
     margin: 10px;
     position: relative;

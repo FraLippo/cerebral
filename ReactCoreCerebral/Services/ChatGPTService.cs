@@ -26,9 +26,11 @@ namespace ReactCoreCerebral.Services
             _openAiService = openAiService;
             _dbTableau = dbTableau;
         }
-        
+      
 
-        public async Task<string> ObtenirResultatGpt(string prenom, int scoreTotal, Dictionary<string, int> classements)
+
+
+public async Task<string> ObtenirResultatGpt(string prenom, int scoreTotal, Dictionary<string, int> classements)
         {
       
                 var requeteGpt = PreparerRequeteGpt(classements);
@@ -39,41 +41,39 @@ namespace ReactCoreCerebral.Services
         private static string PreparerRequeteGpt(Dictionary<string, int> resultatCategorie)
         {
             return $@"
-Voici les résultats d'un test cognitif standardisé (scores /100) :
+Voici les résultats d'un test cognitif standardisé.
 
-Mémoire : {resultatCategorie.GetValueOrDefault("m")}
-Calcul : {resultatCategorie.GetValueOrDefault("c")}
-Planification : {resultatCategorie.GetValueOrDefault("p")}
+Les scores sont indexés sur une moyenne de 100 :
+- 100 correspond à un niveau moyen
+- un score supérieur à 100 indique une performance au-dessus de la moyenne
+- certains très bons profils peuvent dépasser largement 100
+Résultats :
+  Mémoire : {resultatCategorie.GetValueOrDefault("m")}
+   Calcul : {resultatCategorie.GetValueOrDefault("c")}
+Planification: {resultatCategorie.GetValueOrDefault("p")}
 Aptitude verbale : {resultatCategorie.GetValueOrDefault("l")}
-Concentration : {resultatCategorie.GetValueOrDefault("r")}
+Concentration: {resultatCategorie.GetValueOrDefault("r")}
 Culture générale : {resultatCategorie.GetValueOrDefault("d")}
-
 Consignes :
-
 1. Analyse le profil cognitif de manière objective et structurée.
-
-2. Propose 4 métiers adaptés au profil du joueur.
-   - Chaque proposition doit être cohérente avec ses forces réelles
-   - Évite toute suggestion irréaliste ou flatteuse
-
+2. Propose 4 métiers adaptés au profil.
+   - Suggestions réalistes uniquement
+   - Cohérentes avec les capacités observées
 3. Pour chaque métier :
-   - Explique précisément le lien avec les compétences mesurées
-   - Mentionne clairement les limites ou fragilités du profil qui peuvent poser difficulté dans ce métier
-
-4. Propose 1 à 2 axes d'amélioration concrets et réalistes pour améliorer les performances cognitives globales.
-
+   - Explique le lien avec les compétences mesurées
+   - Mentionne les limites possibles du profil
+4. Propose 1 ou 2 axes d'amélioration concrets.
 Ton :
 - Neutre, factuel et professionnel
 - Aucun humour
-- Aucun jugement moral ou dévalorisation
-- Pas de langage affectif ou motivant exagéré
+- Aucun langage affectif ou exagérément positif
 - Analyse directe des forces et faiblesses
-
-Contraintes :
+Contraintes importantes :
 - Utilise le tutoiement
-- Réponds uniquement en HTML (sans <html>, <body>, ni CSS)
+- Réponds uniquement en HTML (sans <html>, <body> ni CSS)
+- Réponse STRICTEMENT limitée à 500 caractères maximum
+- Sois extrêmement concis
 ";
-
         }
         public async Task<string> EnvoyerMessage(string requete, string prenom, int scoreTotal)
         {
@@ -101,6 +101,7 @@ Contraintes :
                 {
                     change = true;
                 }
+             
                 if (change)
                 {
                     resultatUser.Date = DateTime.Now;

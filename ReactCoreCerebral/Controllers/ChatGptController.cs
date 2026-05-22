@@ -13,7 +13,7 @@ namespace ReactCoreCerebral.Controllers
     public class GptRequest
     {
         public string Message { get; set; }
-        public string Prenom { get;set; }
+        public string Prenom { get; set; }
         public int Score { get; set; }
     }
     [ApiController]
@@ -38,7 +38,7 @@ namespace ReactCoreCerebral.Controllers
             {
                 return BadRequest(string.Empty);
             }
-                var resultatUser = await _dbTableau.ReponseIA.FirstOrDefaultAsync(x => x.IdUser == input.Prenom);
+            var resultatUser = await _dbTableau.ReponseIA.FirstOrDefaultAsync(x => x.IdUser == input.Prenom);
 
             if (resultatUser == null)
             {
@@ -70,7 +70,7 @@ namespace ReactCoreCerebral.Controllers
                     reponse = resultatUser.TexteIA;
                 }
             }
-         
+
             if (maj)
             {
                 reponse = await _openAiService.EnvoyerMessageAsync(input.Message);
@@ -78,9 +78,9 @@ namespace ReactCoreCerebral.Controllers
             }
             await _dbTableau.SaveChangesAsync();
             return Ok(reponse);
-           
+
         }
-        
+
 
         [HttpPost("obtenirresultat")]
         public async Task<IActionResult> ObtenirResultat([FromBody] string prenom)
@@ -109,27 +109,35 @@ namespace ReactCoreCerebral.Controllers
             var data = query.ToList();
 
             var scoreTotal = data.Sum(x => x.nbFaute);
+            if (scoreTotal > 1500)
+            {
+                var classements = data
+                    .GroupBy(x => x.listeFautes)
+                    .ToDictionary(
+                        g => g.Key,
+                        g => g.Sum(x => x.nbFaute)
+                    );
 
-            var classements = data
-                .GroupBy(x => x.listeFautes)
-                .ToDictionary(
-                    g => g.Key,
-                    g => g.Sum(x => x.nbFaute)
-                );
+                var pourcentages = maxScores.ToDictionary(
+          x => x.Key,
+          x =>
+          {
+              var score = classements.GetValueOrDefault(x.Key, 0);
+              var max = x.Value;
 
-            var pourcentages = classements.ToDictionary(
-                x => x.Key,
-                x =>
-                {
-                    var max = maxScores.GetValueOrDefault(x.Key, 1);
-                    return (int)Math.Round((double)x.Value / max * 100);
-                }
-            );
+              return (int)Math.Round((double)score / max * 100);
+          }
+      );
 
-            var reponse = await new ChatGPTService(_openAiService, _dbTableau)
-                .ObtenirResultatGpt(prenom, scoreTotal, pourcentages);
-            return Ok(reponse);
+                var reponse = await new ChatGPTService(_openAiService, _dbTableau)
+                    .ObtenirResultatGpt(prenom, scoreTotal, pourcentages);
+                return Ok(reponse);
+            }
+            else
+            {
+                return Ok("Le score total est inférieur à 3000, vous n'avez pas encore accès aux résultats personnalisés. Continuez à vous entraîner pour améliorer votre score !");
 
+            }
         }
     }
 }

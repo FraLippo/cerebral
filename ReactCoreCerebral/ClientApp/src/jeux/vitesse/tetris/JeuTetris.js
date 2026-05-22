@@ -838,11 +838,7 @@ endGame()
   }
       finTimer = () =>
         {
-          // Si une pièce est en cours de chute ou de verrouillage, attendre qu'elle soit placée
-          if (this.currentPiece || this.locking) {
-            setTimeout(this.finTimer, 100);
-            return;
-          }
+    
           this.endGame();
             this.setState({afficheResultat : true});
         }
@@ -868,7 +864,7 @@ endGame()
         </div>
   
       </div>    <div className='texteTitre'>{this.state.nomTableau}</div>
-      <div className="marge20 centre"> <CompteRebours temps={100} finTimer={this.finTimer}></CompteRebours></div>
+      <div className="marge20 centre"> <CompteRebours temps={15} finTimer={this.finTimer}></CompteRebours></div>
       
       </div>}
       </React.Fragment>

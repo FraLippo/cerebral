@@ -16,6 +16,13 @@ export default class JeuMatch extends Component {
         };
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        const margeEcran = document.querySelector('.margeEcran');
+        if (margeEcran) { margeEcran.scrollTop = 0; }
+    }
 
     construireJeu() {
         let tabGrillePositions = [{ x: 4, y: 1 }, { x: 5, y: 1 },

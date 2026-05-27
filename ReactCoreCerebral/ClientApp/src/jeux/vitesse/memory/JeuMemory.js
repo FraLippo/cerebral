@@ -28,6 +28,14 @@ export default class JeuMemory extends Component {
         }
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        const margeEcran = document.querySelector('.margeEcran');
+        if (margeEcran) { margeEcran.scrollTop = 0; }
+    }
+
     shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1)); // Génère un indice aléatoire entre 0 et i inclus

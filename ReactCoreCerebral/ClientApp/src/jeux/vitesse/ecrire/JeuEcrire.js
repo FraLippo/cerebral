@@ -28,26 +28,41 @@ export default class JeuEcrire extends Component {
 
 
 
-    keydownHandler = (event) => {
-        let nouveauTabLettres = [...this.state.tabLettres];
-        let position = this.state.position;
-        if (event.key === nouveauTabLettres[this.state.position]) {
-            position++;
-            this.setState({ position });
-            if (nouveauTabLettres[this.state.position] === ' ') {
-                this.setState({ score: this.state.score + 3 });
+    inputHandler = (event) => {
+        const valeurBrute = event.target.value;
+
+        if (!valeurBrute) return;
+
+        const lettreTapee = valeurBrute.slice(-1);
+
+        event.target.value = '';
+
+        // Ta logique de comparaison
+        if (lettreTapee.toLowerCase() === nouveauTabLettres[this.state.position]) {
+            let nouveauTabLettres = [...this.state.tabLettres];
+            let position = this.state.position;
+            if (lettreTapee.toLowerCase() === nouveauTabLettres[this.state.position]) {
+                position++;
+                this.setState({ position });
+                if (nouveauTabLettres[this.state.position] === ' ') {
+                    this.setState({ score: this.state.score + 3 });
+                }
+            }
+
+            if (position >= this.state.tabLettres.length - 1) {
+                this.setState({
+                    finJeu: true,
+                    score: this.state.score + 53
+                });
             }
         }
-
-        if (position >= this.state.tabLettres.length - 1) {
-            this.setState({
-                finJeu: true,
-                score: this.state.score + 53
-            });
-        }
     }
-
     componentDidMount() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        const margeEcran = document.querySelector('.margeEcran');
+        if (margeEcran) { margeEcran.scrollTop = 0; }
         this.textInput.current.focus();
     }
 
@@ -77,7 +92,7 @@ export default class JeuEcrire extends Component {
                 <React.Fragment><div className="titreJeu">La dactylographie</div>
                     <div>Tapez sur votre clavier la lettre dans le carré bleu. Pour aller vite sur un PC placer vos deux mains côte à côte au milieu du clavier et ne regardez pas votre clavier. </div>
                     <Ligne position={this.state.position} tabLettres={this.state.tabLettres}></Ligne>
-                    <input type="text" onKeyDown={this.keydownHandler} ref={this.textInput} onBlur={this.focusOut} style={{ opacity: 0 }} />
+                    <input type="text" onChange={this.inputHandler} ref={this.textInput} onBlur={this.focusOut} style={{ opacity: 0 }} />
                     <div className="centre marge10"><CompteRebours temps={30} finTimer={this.finTimer}></CompteRebours></div>
                     <div className="centre espaceHaut">{this.state.pause && <Button onClick={this.stopPause}>Revenir au jeu</Button>}</div>
                 </React.Fragment>} </div>

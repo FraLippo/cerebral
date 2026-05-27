@@ -29,6 +29,11 @@ export default class JeuMaitremot extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    const margeEcran = document.querySelector('.margeEcran');
+    if (margeEcran) { margeEcran.scrollTop = 0; }
     this.construireJeu();
   }
 
@@ -174,7 +179,15 @@ export default class JeuMaitremot extends Component {
       <div><MotResultat tabReponse={this.state.tabReponse}></MotResultat></div>
       <div className='centre marge10'><Button onClick={this.reset}>Reset</Button></div>
        <div className='centre marge10'>Score {this.state.score}</div>
-      <div className="centre marge10"><CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours></div>
+<div class="regles-jeu">
+  <p>
+    🔵 <strong>Lettres bleues :</strong> Bien placées, tu peux cliquer directement dessus.<br/>
+    🔴 <strong>Lettres rouges :</strong> Mal placées, tu dois les remettre dans l'ordre.
+  </p>
+  <p class="note-jeu">
+    C'est le même principe que <em>Tusmo</em> ou <em>Motus</em>, mais sans avoir de mots à proposer !
+  </p>
+</div>      <div className="centre marge10"><CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours></div>
       
 
     </div>}</div>

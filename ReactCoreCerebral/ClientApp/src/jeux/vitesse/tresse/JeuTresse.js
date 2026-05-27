@@ -7,13 +7,17 @@ import Resultat from '../commun/Resultat';
 import { Helmet } from 'react-helmet';
 
 const data = [['', 'vert', ''], ['', 'orange', ''],
- ['', 'vert', 'bleu'], ['', 'orange', ''],
+['bleu', 'vert', ''], ['', 'rose', ''],
+ ['', 'vert', 'bleu'], ['', '', 'orange'],
+ ['bleu', 'vert', ''], ['orange', '', 'rose'],
    ['orange', 'vert', 'bleu'], ['vert', '', 'bleu'],
 ['vert', 'orange', ''], ['orange', 'orange', 'vert'],
  ['vert', 'rose', 'bleu'], ['orange', 'bleu', 'orange'],
   ['vert', 'rose', 'vert'], ['bleu', 'rose', 'vert'],
+    ['vert', 'rose', 'vert'], ['bleu', 'orange', 'vert'],
   ['orange', 'rose', 'vert'], ['bleu', 'orange', 'vert'],
   ['rose', 'bleu', 'vert'], ['rose', 'orange', 'bleu'],
+    ['bleu', 'rose', 'orange'], ['rose', 'orange', 'bleu'],
   ['orange', 'vert', 'vert'], ['rose', 'orange', 'rose'],
   ['vert', 'bleu', 'orange'], ['vert', 'orange', 'rose'],
 
@@ -36,14 +40,22 @@ export default class JeuTresse extends Component {
         }
     }
 
-  
-    shuffleArray(array) {
+    componentDidMount() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        const margeEcran = document.querySelector('.margeEcran');
+        if (margeEcran) { margeEcran.scrollTop = 0; }
+    }
+    
+      shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1)); // Génère un indice aléatoire entre 0 et i inclus
             [array[i], array[j]] = [array[j], array[i]]; // Échange les éléments d'indice i et j
         }
         return array;
     }
+ 
   noCouleur =(couleur) =>
   {
     let noCouleur = 1;
@@ -175,7 +187,10 @@ export default class JeuTresse extends Component {
               
                 </div>  <div className="centre marge10"><CompteRebours temps={50} finTimer={this.finTimer}></CompteRebours></div>
             <div className="centre fontMoyenne">Jeu : {this.state.noJeu} / {data.length / 2}</div>
-            <p>Clique sur les pinceaux dans l'ordre pour reconstituer le dessin à gauche.</p>
+            <p><strong>Clique sur les pinceaux dans l'ordre pour reconstituer le même dessin.</strong></p>
+            <p>Améliore ta mémoire visuelle et ta rapidité d'analyse avec ce jeu de réflexion dynamique.
+En reconstituant le dessin le plus vite possible, tu entraînes ton attention, ta perception des détails et ta capacité à reconnaître des formes en un clin d’œil.
+Un excellent exercice cognitif pour booster concentration, réactivité et agilité mentale tout en s'amusant.</p>
               </div>  }
 </React.Fragment>
         );

@@ -183,34 +183,54 @@ export default function JeuDessin() {
         {/* Points cliquables en HTML */}
         {points.map((p) => {
           const { x, y } = getCoord(p.row, p.col);
+          const isSelected = selectedPoint && selectedPoint.id === p.id;
           return (
             <button
               key={p.id}
               onClick={() => handleClickPoint(p)}
+              className="point-button"
               style={{
                 position: "absolute",
-                left: x - 10,
-                top: y - 10,
-                width: 20,
-                height: 20,
-                borderRadius: "50%",
-                border: "2px solid #6b0ce8",
-                background:
-                  selectedPoint && selectedPoint.id === p.id
-                    ? "#ffcc00"
-                    : "white",
+                left: x - 25,
+                top: y - 25,
+                width: 50,
+                height: 50,
                 cursor: "pointer",
                 padding: 0,
+                border: "none",
+                background: "transparent",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                touchAction: "manipulation",
+                WebkitTouchCallout: "none",
+                WebkitUserSelect: "none",
+                userSelect: "none",
+                WebkitTapHighlightColor: "transparent",
               }}
-            />
+              aria-label={`Point ${p.id}`}
+            >
+              <div
+                style={{
+                  width: 20,
+                  height: 20,
+                  borderRadius: "50%",
+                  border: "2px solid #6b0ce8",
+                  background: isSelected ? "#ffcc00" : "white",
+                  transition: "all 0.15s ease-out",
+                  boxShadow: isSelected 
+                    ? "0 0 0 3px rgba(255, 204, 0, 0.3)" 
+                    : "none",
+                  pointerEvents: "none",
+                }}
+              />
+            </button>
           );
         })}
-      </div>
-      <Button onClick={back}>🔙</Button>
-      {etat === 'memorisation' ?
-        <Button className="marge20" onClick={memorised}>J'ai mémorisé</Button> :
-        <Button className="marge20" onClick={giveUp}>Abandon</Button>
-      }
+      </div>    {etat === 'memorisation' &&    <Button type="primary" className="marge20" onClick={memorised}>J'ai mémorisé</Button> }
+      <Button className="marge20" onClick={back}>Retour</Button>
+      {etat !== 'memorisation' &&  <Button className="marge20" onClick={giveUp}>Abandon</Button>}
+      
          <div className="centre marge10"><CompteRebours temps={80} finTimer={timerEnd}></CompteRebours></div>
       </div>
   <div className="titre couleurTitre">Les lignes brisées</div>

@@ -1131,12 +1131,13 @@
     margin-left: 100px;
     display: grid;
     grid-template-columns: repeat(3, 50px);
-    grid-template-rows: repeat(4, 50px);
+    grid-template-rows: repeat(5, 50px);
     grid-template-areas:
         ". haut . "
-        "gauche efface droit"
+        "gauche . droit"
         ". bas ."
-        "fin fin fin";
+        "fin fin fin"
+        "efface efface efface"
 }
 
 .hautTresor {
@@ -1145,6 +1146,7 @@
 
 .finTresor {
     grid-area: fin;
+    align-self: end;
 }
 
 .gaucheTresor {
@@ -1161,6 +1163,7 @@
 
 .effaceTresor {
     grid-area: efface;
+    align-self: end;
 }
 
 .directionsTresor {
@@ -3305,12 +3308,12 @@ svg:hover {
     }
 
     .casebienplacem {
-        width: 42px;
+        width: 40px;
         height: 42px;
     }
 
     .casenormalm {
-        width: 42px;
+        width: 40px;
         height: 42px;
         font-size: 1.5rem;
     }

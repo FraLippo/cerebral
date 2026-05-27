@@ -26,6 +26,14 @@ export default class JeuNombre extends Component {
         }
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        const margeEcran = document.querySelector('.margeEcran');
+        if (margeEcran) { margeEcran.scrollTop = 0; }
+    }
+
     constructionNombre() {
         let tabNombre = [];
         for (let index = 1; index <= this.niveau; index++) {

@@ -43,7 +43,7 @@ export default class ClassementMois extends Component {
         }
         this.columns = [
             {
-                title: 'Position',
+                title: 'No',
                 dataIndex: 'position',
                 key: 'position',
 
@@ -63,11 +63,11 @@ export default class ClassementMois extends Component {
                 key: 'score',
             },
             {
-                title: 'Analyse de compétences par IA',
+                title: 'Résultats IA',
                 dataIndex: 'score',
                 key: 'score',
                 render: (score, record) => {
-                    return score > 2500 ? <Button onClick={() => this.afficherIA(record.prenom)}>Voir les compétences</Button> : "";
+                    return score > 2500 ? <Button onClick={() => this.afficherIA(record.prenom)}>Analyse</Button> : "";
                 }
             },
 

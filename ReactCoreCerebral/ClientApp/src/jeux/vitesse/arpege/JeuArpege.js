@@ -117,6 +117,11 @@ class JeuArpege extends Component {
     }
 
     componentDidMount = async () => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        const margeEcran = document.querySelector('.margeEcran');
+        if (margeEcran) { margeEcran.scrollTop = 0; }
 
         // Init une seule fois
         if (!this.audioContext) {

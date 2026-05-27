@@ -32,7 +32,13 @@ export default class JeuRobot extends Component {
         }
         this.depEnCours = 0;
     }
-
+    componentDidMount() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        const margeEcran = document.querySelector('.margeEcran');
+        if (margeEcran) { margeEcran.scrollTop = 0; }
+    }
     creerNiveaux() {
         let tabRange = [{ min: 0, max: 12 }, { min: 12, max: 14 }];
         let tabNiveauComplet = [];

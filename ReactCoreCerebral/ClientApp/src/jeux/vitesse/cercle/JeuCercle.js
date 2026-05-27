@@ -23,7 +23,15 @@ export default class JeuCercle extends Component {
     }
   }
 
-  clicCamembert = (id) => {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    const margeEcran = document.querySelector('.margeEcran');
+    if (margeEcran) { margeEcran.scrollTop = 0; }
+  }
+
+ clicCamembert = (id) => {
     if (this.fin) return;
     let no = id % 100;
     let noTab = Math.floor(id / 100) - 1;
@@ -36,6 +44,7 @@ export default class JeuCercle extends Component {
     nouveauTabLettresCamemberts[noTab].infoMots[no].etat = 'selection';
     this.setState({ tabLettresCamemberts: nouveauTabLettresCamemberts })
   }
+
 
   clicFleche = (id) => {
     if (this.fin) return;

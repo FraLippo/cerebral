@@ -232,7 +232,7 @@ export default class Tourneur extends Component {
   });
     } 
       // 🔊 Fonction pour générer un bip
-      playBip = (duree = 200, frequence = 800, volume = 0.1) => {
+      playBip = (duree = 200, frequence = 800, volume = 0.03) => {
         if (!this.state.sonActive) return;
         const ctx = new (window.AudioContext || window.webkitAudioContext)();
         const osc = ctx.createOscillator();

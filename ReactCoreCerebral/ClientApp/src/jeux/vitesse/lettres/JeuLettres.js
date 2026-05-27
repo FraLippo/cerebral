@@ -32,6 +32,11 @@ export default class JeuLettres extends Component {
     }
     componentDidMount()
     {
+         window.scrollTo(0, 0);
+         document.documentElement.scrollTop = 0;
+         document.body.scrollTop = 0;
+         const margeEcran = document.querySelector('.margeEcran');
+         if (margeEcran) { margeEcran.scrollTop = 0; }
          this.jeu.creerJeu(this.nbLettres, 3);
          this.setState({
             mots: this.jeu.infoJeu.tabMotsInfo,

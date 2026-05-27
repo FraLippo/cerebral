@@ -36,6 +36,11 @@ const JeuTaquin = () => {
   const [jeu, setJeu] = useState(1);
   const [score, setScore] = useState(0);
   useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    const margeEcran = document.querySelector('.margeEcran');
+    if (margeEcran) { margeEcran.scrollTop = 0; }
     resetGame();
   }, []);
 

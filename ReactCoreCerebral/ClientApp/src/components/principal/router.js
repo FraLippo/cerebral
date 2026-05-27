@@ -1,12 +1,32 @@
 
-import React, {useEffect} from 'react';
-import {ScrollRestoration, createBrowserRouter, Outlet } from "react-router-dom";
+import React, {useEffect, useLayoutEffect} from 'react';
+import {createBrowserRouter, Outlet, useLocation } from "react-router-dom";
 
 import PresentationTemps from './PresentationTemps';
 
 import { Menu } from 'antd';
 import { itemsMenu } from './menu';
 import PageFaute from '../commun/PageFaute';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useLayoutEffect(() => {
+    // Scroll sur la fenêtre
+    window.scrollTo(0, 0);
+    // Scroll sur le document
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    
+    // Chercher la zone scrollable et la scrolller
+    const margeEcran = document.querySelector('.margeEcran');
+    if (margeEcran) {
+      margeEcran.scrollTop = 0;
+    }
+  }, [pathname]);
+
+  return null;
+};
 // import CreationGrilleRobot from '../../jeux/vitesse/robot/CreationGrilleRobot';
 
 
@@ -113,11 +133,8 @@ const EnRedirect = () => {
 const router = createBrowserRouter([
     {
       path: '/',
-      element: <div><ScrollRestoration
-      getKey={(location) => {
-        return location.pathname;
-      }}
-      ></ScrollRestoration>
+      element: <div>
+      <ScrollToTop />
       <div className='menuHaut'><Menu items={itemsMenu} mode="horizontal" style={{lineHeight : '32 px'}}></Menu></div>
       <div className='margeEcran'><Outlet></Outlet></div></div>,
       errorElement : <PageFaute></PageFaute>,

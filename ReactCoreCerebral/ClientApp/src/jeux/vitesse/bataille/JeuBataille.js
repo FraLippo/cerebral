@@ -18,9 +18,17 @@ export default class JeuBataille extends Component {
         this.state= {
             tabBataille, 
             tabNavires :JSON.parse(JSON.stringify(SHIPS)),
-            erreurs : 4,
+            erreurs : 6,
             score : 0
         }
+   }
+
+   componentDidMount() {
+       window.scrollTo(0, 0);
+       document.documentElement.scrollTop = 0;
+       document.body.scrollTop = 0;
+       const margeEcran = document.querySelector('.margeEcran');
+       if (margeEcran) { margeEcran.scrollTop = 0; }
    }
 
    regenerate = () =>
@@ -32,7 +40,7 @@ export default class JeuBataille extends Component {
     this.setState({
         tabBataille,
         tabNavires : JSON.parse(JSON.stringify(SHIPS)),
-        erreurs : 4,
+        erreurs : 6,
         score : this.state.score + 30
         
    })

@@ -27,6 +27,13 @@ export default function JeuParcours({nbPipes ,jeuReussi, espacePipe}) {
             setVelocity(jumpStrength);
         }
   
+        useEffect(() => {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            const margeEcran = document.querySelector('.margeEcran');
+            if (margeEcran) { margeEcran.scrollTop = 0; }
+        }, []);
    
         useEffect(() => {
         if (isGameOver) return;

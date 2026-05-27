@@ -44,9 +44,9 @@ public async Task<string> ObtenirResultatGpt(string prenom, int scoreTotal, Dict
 Voici les résultats d'un test cognitif standardisé.
 
 Les scores sont indexés sur une moyenne de 100 :
-- 100 correspond à un niveau moyen
-- un score supérieur à 100 indique une performance au-dessus de la moyenne
-- certains très bons profils peuvent dépasser largement 100
+- 100 correspond à un très bon niveau
+- un score supérieur à 100 indique une performance exceptionnelle
+- un score de 50 est une performance satisfaisante
 Résultats :
   Mémoire : {resultatCategorie.GetValueOrDefault("m")}
    Calcul : {resultatCategorie.GetValueOrDefault("c")}
@@ -61,7 +61,6 @@ Consignes :
    - Cohérentes avec les capacités observées
 3. Pour chaque métier :
    - Explique le lien avec les compétences mesurées
-   - Mentionne les limites possibles du profil
 4. Propose 1 ou 2 axes d'amélioration concrets.
 Ton :
 - Neutre, factuel et professionnel

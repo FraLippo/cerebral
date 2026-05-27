@@ -6,7 +6,7 @@ import { DndProvider, TouchTransition, MouseTransition } from 'react-dnd-multi-b
 
 import { Game } from './Game.js';
 import '../../../style/vitesse.css';
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { Board } from './Board.js';
 import { Ingredients } from './Ingredients.js';
 import CompteRebours from '../commun/CompteRebours';
@@ -49,7 +49,14 @@ export default function JeuBurger() {
     const [finJeu, setFinJeu] = useState(false); 
     const [score, setScore] = useState(0); 
     game.observeMsg(setTabListe);
-  
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        const margeEcran = document.querySelector('.margeEcran');
+        if (margeEcran) { margeEcran.scrollTop = 0; }
+    }, []);
    
     function finTimer()
     {

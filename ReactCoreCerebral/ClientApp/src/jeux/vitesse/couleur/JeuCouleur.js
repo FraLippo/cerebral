@@ -29,6 +29,11 @@ class JeuCouleur extends Component {
     
     }
     componentDidMount() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        const margeEcran = document.querySelector('.margeEcran');
+        if (margeEcran) { margeEcran.scrollTop = 0; }
         // ajout gestion clavier Y/N
         window.addEventListener('keydown', this.handleKeyDown);
     }

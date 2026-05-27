@@ -64,6 +64,11 @@ export default class JeuNote extends Component {
         });
     }
     async componentDidMount() {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+        const margeEcran = document.querySelector('.margeEcran');
+        if (margeEcran) { margeEcran.scrollTop = 0; }
         //  const instruments = getElectricPianoNames(); // => ["CP80", "PianetT", "WurlitzerEP200"]
 
         this.piano1 = new ElectricPiano(new AudioContext(), {

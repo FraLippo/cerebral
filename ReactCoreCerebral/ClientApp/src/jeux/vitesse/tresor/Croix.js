@@ -19,13 +19,13 @@ export default class Croix extends Component
     
     render()
     {
-    return <div className="grilleCroix">
+    return <div className=" marge10 grilleCroix">
         <img src={flecheHaut} id="haut" onClick={this.clic} className="hautTresor flecheTresor" alt="flêche haut"></img>
         <img src={flecheBas} id="bas" onClick={this.clic}  className="basTresor flecheTresor " alt="flêche bas"></img>
         <img src={flecheGauche} id="gauche" onClick={this.clic}  className="gaucheTresor flecheTresor" alt="flêche gauche"></img>
         <img src={flecheDroite} id="droit" onClick={this.clic}  className="droitTresor flecheTresor" alt="flêche droit"></img>
-        <Button className="effaceTresor" id="efface" onClick={this.clic}  >Efface</Button>
-        <Button className='finTresor' onClick={this.props.ramassage}>Ramasser les pièces</Button>
+        <Button className="effaceTresor" id="efface" onClick={this.clic} >Effacer</Button>
+        <Button type='primary' className='finTresor' onClick={this.props.ramassage}>Ramasser les pièces</Button>
     </div>
     }
 }

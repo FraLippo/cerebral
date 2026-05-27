@@ -864,7 +864,7 @@ endGame()
         </div>
   
       </div>    <div className='texteTitre'>{this.state.nomTableau}</div>
-      <div className="marge20 centre"> <CompteRebours temps={15} finTimer={this.finTimer}></CompteRebours></div>
+      <div className="marge20 centre"> <CompteRebours temps={120} finTimer={this.finTimer}></CompteRebours></div>
       
       </div>}
       </React.Fragment>

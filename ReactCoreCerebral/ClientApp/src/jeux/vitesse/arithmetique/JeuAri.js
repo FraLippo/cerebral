@@ -183,7 +183,8 @@ export default class JeuAri extends Component {
                     <Choix clicChoix={this.clicChoix} clicOperateur={this.clicOperateur} tabOperation={this.state.tabOperation} tabChoix={this.state.tabChoix}></Choix>
                     <div className='centre marge10'><Button onClick={this.clicReset}>Reset</Button></div>
                     <div className="centre marge10"><CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours></div>
-                    <div className="titreJeu">Nombres en désordre</div>
+                    <h1 className="titreJeu">Nombres en désordre</h1>
+                    <p>Un jeu de calcul mental rapide où vous devez retrouver l'opération correcte avec des nombres et des opérations, idéal pour entraîner la vitesse de réflexion et la précision.</p>
                 </div></div>}
         </React.Fragment>
     }

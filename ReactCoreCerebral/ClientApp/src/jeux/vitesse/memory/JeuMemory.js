@@ -93,6 +93,7 @@ export default class JeuMemory extends Component {
            <CompteRebours finTimer={this.finTimer} temps={60}></CompteRebours>
            <div className='marge20 titreJeu'>Le Memory</div>
            <p>Retrouve les paires cachées</p>
+           <p>Notre Memory est une version revisitée du célèbre jeu du mémory : ici, c'est le joueur qui choisit le temps d'affichage des cartes avant qu'elles ne se retournent. Ce mode dynamique permet de travailler la mémoire visuelle, la rapidité d'analyse et la concentration, tout en offrant une expérience plus personnalisée et stimulante. Un excellent exercice cognitif pour progresser à son rythme.</p>
             </div>}
         </React.Fragment>
 

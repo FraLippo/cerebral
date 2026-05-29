@@ -200,7 +200,7 @@ clicTerminer = () =>
         return  <div>
         {this.state.finJeu ?
                         <Resultat score={this.state.score} typeExo='vitessefraction'></Resultat> :
-                        <div className='jeuFrac'>
+                      <div>  <div className='jeuFrac'>
             <div ><Grille tabGrille={this.state.tabGrille} nbCols={8} clic={this.clic}></Grille></div>
             <div className='margeMenu centre texteFrac'>
               
@@ -213,9 +213,11 @@ clicTerminer = () =>
             <div><Button onClick={this.clicTerminer}>J'ai terminé de colorier</Button></div>
             <div className='centre texteFrac margeMenu'>Étape : {this.state.noJeu} / {tabData.length}</div>
                                     <div className="centre marge10"><CompteRebours temps={80} finTimer={this.finTimer}></CompteRebours></div>
-            <div className='espaceTitreBas'></div>
-
-            </div>}
+             <div className='espaceTitreBas'></div>
+      
+            </div><h1 class="titreJeu">Les fractions</h1>
+           <p>Un jeu de calcul mental rapide où vous devez calculer une fraction le plus vite possible en coloriant des cases, idéal pour entraîner la logique, la précision et la vitesse de réflexion.</p>
+    </div>}
             </div>
     }
 }

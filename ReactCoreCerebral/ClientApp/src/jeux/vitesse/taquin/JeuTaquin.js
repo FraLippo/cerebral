@@ -201,7 +201,8 @@ const JeuTaquin = () => {
       {isSolved && <p>Félicitations, tu as résolu le challenge {jeu} / 2 ! </p>}
       <div className="marge20"> <CompteRebours temps={90} finTimer={finTimer}></CompteRebours></div>
       {/* <button onClick={resetGame}>Réinitialiser</button> */}
-      <h1>Le taquin</h1>
+      <h1 className="titreJeu">Le taquin</h1>
+      <p>Un jeu de logique rapide où vous devez reconstituer une ligne ou une colonne le plus vite possible, idéal pour entraîner le repérage spatial, la planification et la vitesse de réflexion.</p>
     </div>}
   </React.Fragment>);
 };

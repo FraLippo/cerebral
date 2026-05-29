@@ -104,6 +104,8 @@ return <React.Fragment>
 <div className="centre fontMoyenne messageCalMen">{this.state.message}</div>
 <div className="centre marge20">Score: {this.state.score}</div>
 <div className="centre"><CompteRebours finTimer={this.finTimer} temps={60}></CompteRebours></div>
+<h1 className='titreJeu'>La grille de calcul</h1>
+<p>Un jeu de calcul mental rapide où vous devez retrouver les bonnes réponses dans une grille pour entraîner votre vitesse, votre précision et votre agilité mentale.</p>
 </div>}</React.Fragment>
 }
 }

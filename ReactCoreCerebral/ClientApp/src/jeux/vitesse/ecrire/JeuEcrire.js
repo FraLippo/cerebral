@@ -28,19 +28,19 @@ export default class JeuEcrire extends Component {
 
 
 
-    inputHandler = (event) => {
+    inputHandler = (event) => {  
+            let position = this.state.position;
         const valeurBrute = event.target.value;
 
         if (!valeurBrute) return;
-
+ let nouveauTabLettres = [...this.state.tabLettres];
         const lettreTapee = valeurBrute.slice(-1);
 
         event.target.value = '';
 
         // Ta logique de comparaison
         if (lettreTapee.toLowerCase() === nouveauTabLettres[this.state.position]) {
-            let nouveauTabLettres = [...this.state.tabLettres];
-            let position = this.state.position;
+         
             if (lettreTapee.toLowerCase() === nouveauTabLettres[this.state.position]) {
                 position++;
                 this.setState({ position });

@@ -88,19 +88,21 @@ class JeuxMemoire extends Component {
 
         return <div>
             <Helmet>
-                <title>Le jeu de la mémoire</title>
+                <title>Les cercles de la mémoire</title>
                 <meta name="description" content="Un jeu de rapidité et de mémorisation pour tous les âges et toute la famille, le principe est simple : se souvenir de ce que l'on vient de voir." />
             </Helmet>
            {this.state.afficheResultat ?  <Resultat score={this.score} typeExo='vitessememoire'></Resultat>  :
-           <React.Fragment>  <div className='titreJeu'>Le jeu de la mémoire</div>
-            <div className="espaceTitreBas">Vous devez mémoriser les cercles qui s'affichent pour ensuite les reproduire à l'identique.</div> 
-             <div className='jeuTimerMemoireV'>     
+           <React.Fragment>  <div className='titreJeu'>Les cercles de la mémoire</div>
+             <div className='plateauForme'>     
             {this.state.type === 'memorisation' ?  
                     <div className='centreMemoireV'><Grille tabGrille={this.state.tabGrilleComplete} taille={this.taille} clic={this.clic}></Grille>
                     <Button type='primary' className="tailleBoutonMemoireV marge10" onClick={this.clicSuite}>J'ai mémorisé</Button> </div> :
                 <div className='centreMemoireV'><Grille tabGrille={this.state.tabGrille} taille={this.taille} clic={this.clic}></Grille>
                     <div  className="tailleBoutonMemoireV marge10">Reproduire le dessin</div></div>
-                } <div className="timerMemoireV"> <CompteRebours temps={70} finTimer={this.finTimer}></CompteRebours></div>
+                }
+                 <div className="timerMemoireV"> <CompteRebours temps={70} finTimer={this.finTimer}></CompteRebours></div>
+                             <div className="espaceTitreBas">Un jeu de mémoire dynamique où vous mémorisez les cercles affichés avant de les reproduire à l'identique. Un excellent entraînement cognitif pour améliorer votre mémoire visuelle, votre concentration et votre rapidité.</div> 
+
                 
             </div></React.Fragment> }
            

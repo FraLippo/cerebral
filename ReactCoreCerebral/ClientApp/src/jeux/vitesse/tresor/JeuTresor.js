@@ -183,6 +183,7 @@ export default class JeuTresor extends Component {
                       <Directions tabDirections={this.state.tabDirections} ></Directions>
                     <div className="centre marge10"><CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours></div>
                     <div className='titreJeu'>Ramasser les pièces d'or</div>
+                    <p>Un jeu de rapidité visuelle où vous devez ramasser les pièces d'or le plus vite possible, idéal pour entraîner l'attention, la coordination œil-main et la vitesse de réaction.</p>
                      
                    
                     </div>

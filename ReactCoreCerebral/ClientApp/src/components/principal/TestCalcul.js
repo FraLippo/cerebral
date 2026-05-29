@@ -66,7 +66,7 @@ export default class TestCalcul extends Component {
 
                 <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseoperation"] != null ? "dejaFaitCognito" : ""}`}>
     <Link to='/vitesseoperation'>    <div className="centre titreVitesse">➕ Les 4 opérations</div>
-        <p className="marge20">But du jeu : le plus simple des jeux de calcul mental, calculer le plus vite possible le résultat d'une simple opération. Les 4 opérateurs sont utilisés. Tu as 90 secondes pour réaliser le meilleur score. Chaque bonne réponse rapporte 1 point.</p>
+        <p className="marge20">But du jeu : le plus simple des jeux de calcul mental, calculer le plus vite possible le résultat d'une simple opération. Les 4 opérateurs sont utilisés. Tu as 60 secondes pour réaliser le meilleur score. Chaque bonne réponse rapporte 1 point.</p>
       </Link>  <p className='centre'>{this.state.resultatsJoueur["vitesseoperation"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesseoperation"]:"Pas encore de résultat" }</p>
 
         <div className="centre"><Link to='/classement/vitesseoperation'>Classement</Link></div>

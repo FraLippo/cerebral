@@ -47,7 +47,7 @@ export default class Saisie extends Component {
     render() {
 
         return <div>
-            <h3>Entrez votre réponse</h3>
+            <h3 className='centre'>Entrez votre réponse</h3>
             <div className="zoneSaisieOp" dangerouslySetInnerHTML={{ __html: this.state.nombre }}></div>
             <ul className="calculatriceOp">
                 {this.tabNombre.map(nombre=> <li key={nombre} id={nombre} onClick={this.clickNombre} className="nombreOp">{nombre}</li>)}

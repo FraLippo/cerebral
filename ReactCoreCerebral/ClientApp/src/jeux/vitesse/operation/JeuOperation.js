@@ -106,7 +106,9 @@ render() {
 
         <div className="calculOp">{this.state.operation}</div>
         <div><Saisie nouveauNombre={this.nouveauNombre} clickNombre={this.clickNombre}></Saisie></div>
-        <div className="centre marge10"><CompteRebours temps={90} finTimer={this.finTimer}></CompteRebours></div>
+        <div className="centre marge10"><CompteRebours temps={60} finTimer={this.finTimer}></CompteRebours></div>
+        <h1>Les 4 opérations</h1>
+        <p>Un jeu de calcul mental rapide où vous devez résoudre des opérations le plus vite possible pour entraîner votre précision, votre concentration et votre vitesse de réflexion.</p>
         </div>}
 </React.Fragment>
 

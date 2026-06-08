@@ -311,7 +311,8 @@ export default class JeuCoupe extends Component {
                 </div>   </div>  
                  <div className="centre marge10"><CompteRebours temps={100} finTimer={this.finTimer}></CompteRebours></div>
                     <div className="centre  marge10">Score : {this.state.score}</div>
-<div className="titre titreCouleur">Les mots coupés</div>
+<h1 className="titreJeu">Les mots coupés</h1>
+<p>Un jeu de vitesse et d’attention où vous devez reconstituer des mots coupés le plus vite possible, idéal pour entraîner la mémoire verbale, la concentration et la reconnaissance visuelle.</p>
             </div>}
             </div>
         )

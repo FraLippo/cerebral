@@ -131,6 +131,8 @@ export default class JeuLettres extends Component {
                 <div className="marge20"><Button onClick={this.passer}>Passer</Button></div>
                 <div>Passer te fait perdre 2 points</div>
                 <div className="centre marge10"><CompteRebours temps={80} finTimer={this.finTimer}></CompteRebours></div>
+                <h1 className='titreJeu'>Les lettres manquantes</h1>
+                <p>Un jeu de rapidité où vous devez retrouver la ou les lettres manquantes le plus vite possible, idéal pour entraîner l'attention, la reconnaissance visuelle et la vitesse de réflexion.</p>
 
             </div>
     }

@@ -83,8 +83,10 @@ this.nomMois = moisEnFrancais[d.getMonth()];
       <Podium tabPodium={this.state.tabPodium}></Podium>
    
       <div className="titreClassement"><Link to='classementmois'><div><b>Analyse de tes résultats</b></div>
-      <div>Découvre tes compétences</div></Link></div>
-     <div className='centre titreJeu'><a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qV7CdWGDWmA5XLwmArF3UGwuYlJYA4Kz4ZdNjSpIWAmxkw/viewform?usp=header">Donne ton avis !</a></div>
+            <div>Découvre tes compétences</div></Link></div>
+        <div className='centre'> <div className='fontMoyenne bandeauLien'>Rejoins-nous sur <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div>
+      </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
+
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'>👑 <span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
        <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'>Lili55 x7</span><span className='champVitesse'>Fitness</span> <span className='champVitesse'>Lili55 x11</span><span className='champVitesse'>Soso x1</span><span className='champVitesse'>LoloLaReine x1</span><span className='champVitesse'>Soso x1</span>

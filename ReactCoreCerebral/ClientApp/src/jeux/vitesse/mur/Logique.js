@@ -1,13 +1,13 @@
 export default class Logique {
     static constructionBriques() {
-        const voyelles = ["E", "A", "U", "I", "O", "E"];
+        const voyelles = ["E", "A", "E", "I", "O", "U"];
         const consonnesFrequentes = ["S", "N", "R", "T", "L", "C", "D", "M"];
         const consonnesMoinsFrequentes = ["P", "V", "F", "B", "G", "H", "J", "Q"];
 
 
         let tabConstruction = [{ type: voyelles, nb: 4 }, { type: consonnesFrequentes, nb: 4 }, { type: consonnesMoinsFrequentes, nb: 2 }];
         let tabBriques = [];
-        for (let k = 0; k < 7; k++) {
+        for (let k = 0; k < 10; k++) {
             let tabLignes = [];
             for (let j = 0; j < tabConstruction.length; j++) {
                 let map = new Map();
@@ -16,7 +16,7 @@ export default class Logique {
                     let v = tabConstruction[j].type[Math.floor(Math.random() * voyelles.length)];
                     if (!map.has(v)) {
                         map.set(v, 1);
-                        tabLignes.push({lettre : v, etat : "init", selection : k===6 });
+                        tabLignes.push({lettre : v, etat : "init", selection : k===9 });
                         i++;
                     }
                     else {
@@ -24,7 +24,7 @@ export default class Logique {
                         if (r < 2 && tabConstruction[j].nb !== 2) {
                             map.set(v, r + 1);
                             i++;
-                            tabLignes.push({lettre : v, etat : "init", selection : k===6 });
+                            tabLignes.push({lettre : v, etat : "init", selection : k===9 });
                         }
                     }
 

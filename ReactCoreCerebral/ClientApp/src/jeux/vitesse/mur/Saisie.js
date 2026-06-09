@@ -12,7 +12,7 @@ export default class Saisie extends Component
     {
         return <React.Fragment>
             <React.Fragment>{this.props.tabSaisie.map((element, i) =>
-             <div  className={element.lettre ===  '' ? 'lettre-vide-mur' : 'lettre-mur' } 
+             <div  className={element.lettre ===  '' ? 'lettre-vide-mur' : 'lettre-mur selection-mur' } 
              key={i+400}>{element.lettre}</div>)}</React.Fragment>
              
              

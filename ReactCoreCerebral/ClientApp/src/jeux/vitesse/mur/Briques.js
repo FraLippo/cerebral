@@ -17,7 +17,7 @@ export default class Briques extends Component
     render()
     {
     return this.props.tabBriques.map((element, i) => 
-    <div key={i} onClick={() => this.clic(element.no)} className={element.etat === 'clic' ? "lettre-mur cache-mur" : element.selection ? "lettre-mur selection-mur" : "lettre-mur"}>
+    <div key={i} onClick={() => this.clic(element.no)} className={element.etat.includes('clic') || element.etat === 'fin'? "lettre-mur cache-mur" : element.selection ? "lettre-mur selection-mur" : "lettre-mur"}>
         {element.lettre}</div>)
         
     }

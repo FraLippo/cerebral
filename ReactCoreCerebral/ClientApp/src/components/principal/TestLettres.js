@@ -49,6 +49,14 @@ export default class TestLettres extends Component {
       <GraphiqueRapidite categorie='l' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
       <Ad></Ad>
       <div className='jeuVitesse marge20'>
+                       <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessebrique"] != null ? "dejaFaitCognito" : ""}`}>
+      <Link to='/vitessebrique'><div className="centre titreVitesse" >🧱 Mur de lettres</div>
+      <p className="marge20">But du jeu : Créer des mots à partir des lettres disponibles dans le mur de lettres, seules les dernières lettres du mur peuvent être utilisées. Le but est d'atteindre le haut du mur. 12 points gagnés par ligne et 150 points si vous atteignez le haut du mur.</p>
+     </Link>
+     <p className='centre'>{this.state.resultatsJoueur["vitessebrique"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessebrique"]:"Pas encore de résultat" }</p>
+
+      <div className="centre"><Link to='/classement/vitessebrique'>Classement</Link></div>
+    </div>
 
                 <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessemotus"] != null ? "dejaFaitCognito" : ""}`}>
       <Link to='/vitessemotus'><div className="centre titreVitesse" >Ⓜ️ Motus</div>

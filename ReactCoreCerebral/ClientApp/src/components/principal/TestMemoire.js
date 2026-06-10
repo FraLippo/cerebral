@@ -40,7 +40,10 @@ export default class TestMemoire extends Component {
       </Helmet>
       <h1 className="titre couleurTitre centre">Bilan mémoire : testez votre mémoire</h1>
       <p className='centre'>Évaluez vos capacités de mémorisation à travers une série de jeux interactifs conçus pour faire un bilan complet de votre mémoire.</p>
-      <GraphiqueRapidite categorie='m' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
+        <GraphiqueRapidite categorie='m' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
+        <div className='centre'> <div className='fontMoyenne bandeauLien'>Rejoins-nous sur <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div>
+        </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
+
       <Ad></Ad>
       <div className='jeuVitesse marge20'>
         <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessedessin"] != null ? "dejaFaitCognito" : ""}`}>

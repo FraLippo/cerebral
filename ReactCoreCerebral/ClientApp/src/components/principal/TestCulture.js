@@ -44,6 +44,9 @@ export default class TestCulture extends Component {
       <h1 className="titre couleurTitre centre">Tests divers sur la culture</h1>
       <p className='centre'>Teste et améliore tes compétences pratiques avec nos exercices interactifs variés sur la culture générale. </p>
       <GraphiqueRapidite categorie='d' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
+        <div className='centre'> <div className='fontMoyenne bandeauLien'>Rejoins-nous sur <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div>
+        </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
+
       <Ad></Ad>
       <div className='jeuVitesse marge20'>
            <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseintervalle"] != null ? "dejaFaitCognito" : ""}`}>

@@ -43,7 +43,10 @@ export default class TestPlanification extends Component {
       <h1 className="titre couleurTitre centre">Les tests de planification</h1>
       <p className='centre'>Développez votre esprit stratégique et améliorez vos compétences en planification avec nos jeux stimulants et captivants !</p>
 
-      <GraphiqueRapidite categorie='p' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
+        <GraphiqueRapidite categorie='p' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
+        <div className='centre'> <div className='fontMoyenne bandeauLien'>Rejoins-nous sur <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div>
+        </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
+
     <Ad></Ad>
       <div className='jeuVitesse marge20'>
                 <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessebataille"] != null ? "dejaFaitCognito" : ""}`}>

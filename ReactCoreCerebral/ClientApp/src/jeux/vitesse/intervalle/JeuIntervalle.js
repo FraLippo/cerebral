@@ -1,22 +1,24 @@
 import React from 'react';
 import './intervalle.css';
-import { Slider, Button} from 'antd';
+import { Slider, Button, message} from 'antd';
 import Resultat from '../commun/Resultat';
 import CompteRebours from '../commun/CompteRebours';
 import { Helmet } from 'react-helmet';
+
 
 class JeuFrequenceRegle extends React.Component {
   constructor(props) {
     super(props);
 
     this.audioContext = null;
-
+    this.nbJeux = 0;
     this.state = {
       frequence: 440,
       result : '',
       score : 0,
       afficheResultat : false
     };
+    this.fin = false;
     this.frequenceToFind = 400;
   }
 
@@ -100,6 +102,16 @@ if (f1 > 0 && f2 > 0) {
 
   let result = `La bonne fréquence était : ${this.frequenceToFind} Hz.</br> La différence est de ${diff.toFixed(2)} cents.
   <br/> ${this.getAppreciation(diff.toFixed(2))}`;
+  this.nbJeux++;
+  if (this.nbJeux ===3)
+  {
+    this.fin = true;
+      message.success('Fin des 3 essais', 2, () => 
+        { 
+          this.setState({afficheResultat : true})
+        } );
+    
+  }
 score += this.getScore(diff);
   this.setState({
     result,
@@ -139,7 +151,9 @@ finTimer = () => {
     }
 nextNote = () =>
 {
-     this.frequenceToFind = Math.floor(Math.random() * (600) + 200);
+  if (this.fin) return;
+ console.log('fin')
+  this.frequenceToFind = Math.floor(Math.random() * (600) + 200);
   
      this.setState({frequence : 440,
       result : ''
@@ -192,7 +206,7 @@ nextNote = () =>
        <CompteRebours finTimer={this.finTimer} temps={45}></CompteRebours>
        {this.state.result !== '' &&<div className='centre'>
        <div className='marge20' dangerouslySetInnerHTML={{__html: this.state.result}}></div>
-       <div><Button onClick={this.nextNote}>Note suivante</Button></div>
+       <div><Button type="primary" onClick={this.nextNote}>Note suivante</Button></div>
        </div>}</div>
        <div className='titre couleurTitre'>L'oreille absolue</div>
      <p>Retrouve la bonne fréquence de la note jouée par l'ordinateur grâce au curseur. Les flèches permettent d'affiner les réglages. Le jeu est plus difficile que la reconnaissance d'une note avec un clavier de piano.</p>

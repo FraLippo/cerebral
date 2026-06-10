@@ -43,6 +43,8 @@ export default class TestCalcul extends Component {
       <h1 className="titre couleurTitre centre">Les tests de calcul mental</h1>
       <p className='centre'>Évaluez et perfectionnez vos compétences en mathématiques avec nos tests de calcul mental stimulants, conçus pour améliorer votre rapidité et précision en calculs numériques.</p> 
       <GraphiqueRapidite categorie='c' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
+        <div className='centre'> <div className='fontMoyenne bandeauLien'>Rejoins-nous sur <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div>
+        </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
 
    <Ad></Ad>
       <div className='jeuVitesse marge20'>

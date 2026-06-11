@@ -5,6 +5,7 @@ import Logique from './Logique';
 import { Button, message } from 'antd';
 import CompteRebours from '../commun/CompteRebours';
 import Resultat from '../commun/Resultat';
+import { Helmet } from 'react-helmet';
 
 export default class JeuMur extends Component {
 
@@ -177,6 +178,9 @@ export default class JeuMur extends Component {
     }
     render() {
         return <div>
+         <Helmet>
+                        <title>Mur de lettres - Formez des mots et grimpez jusqu'au sommet !</title>
+                        <meta name="description" content="Un nouveau jeu de lettres passionnant où vous devez casser un mur de lettres en créant des mots." />       </Helmet>
              {this.state.afficheResultat ?
                             <Resultat score={this.score} typeExo='vitessebrique'></Resultat>:
                             <div className='fond-mur'>

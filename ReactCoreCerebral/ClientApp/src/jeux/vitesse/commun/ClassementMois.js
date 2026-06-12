@@ -78,7 +78,7 @@ export default class ClassementMois extends Component {
 
 
     afficherIA = (prenom) => {
-        console.log(prenom);
+      
         this.setState({
             prenomJoueur: prenom,
             afficheIA: true
@@ -87,7 +87,7 @@ export default class ClassementMois extends Component {
 
 
     finModal = () => {
-        console.log("finModal");
+     
         this.setState({
             prenomJoueur: '',
             afficheIA: false
@@ -96,7 +96,7 @@ export default class ClassementMois extends Component {
 
 
     envoiMessageGPT = async () => {
-        console.log("envoi")
+   
         let msgHtml = '';
         this.setState({
             loading: true

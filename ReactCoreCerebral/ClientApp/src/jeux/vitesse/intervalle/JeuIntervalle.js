@@ -152,7 +152,7 @@ finTimer = () => {
 nextNote = () =>
 {
   if (this.fin) return;
- console.log('fin')
+
   this.frequenceToFind = Math.floor(Math.random() * (600) + 200);
   
      this.setState({frequence : 440,

@@ -12,7 +12,7 @@ export default class ModalGpt extends Component {
             visible: false,
             loading: false
         }
-        console.log("chat")
+      
     }
 
     componentDidMount = async () => {
@@ -23,7 +23,7 @@ export default class ModalGpt extends Component {
     }
 
     envoiMessageGPT = async () => {
-        console.log("envoi")
+   
         let msgHtml = '';
         this.setState({
             loading: true

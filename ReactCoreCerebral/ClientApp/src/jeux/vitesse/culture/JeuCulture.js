@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { verifierStatus } from '../commun/utilitaire';
 import { Button } from 'antd';
 import CompteRebours from '../commun/CompteRebours';
+import Resultat from '../commun/Resultat';
+import { Helmet } from 'react-helmet';
 import './culture.css'
 
 export default class JeuCulture extends Component {
@@ -11,7 +13,7 @@ export default class JeuCulture extends Component {
         super();
         this.qcm = [];
         this.lesQuestions = [];
-
+        this.score = 0;
         this.state =
         {
             question: '',
@@ -20,7 +22,9 @@ export default class JeuCulture extends Component {
             isDisplayedExplication: false,
             explication: '',
             afficheCompteRebours: false,
-            tempsQuestion: 0
+            tempsQuestion: 0,
+            enCoursChargement : true,
+            finJeu : false
         }
         this.fin = false;
         this.noQuestion = 0;
@@ -36,6 +40,9 @@ export default class JeuCulture extends Component {
         if (reponse.ok) {
             const reponseJSON = await reponse.json();
             this.lesQuestions = reponseJSON.questions.lesQuestions;
+            this.setState({
+                enCoursChargement : false
+            })
             this.nouvelleQuestion();
         }
         else {
@@ -47,11 +54,12 @@ export default class JeuCulture extends Component {
     nouvelleQuestion = () => {
 
         this.fin = false;
-        console.log(this.lesQuestions)
+       
         if (this.noQuestion >= this.lesQuestions.length) {
-            //console.log(this.noQuestion);
-            //if (this.noQuestion >= 2) {
-            console.log('fin');
+           this.setState({
+            finJeu : true
+           })
+    
         }
         else {
 
@@ -94,7 +102,7 @@ export default class JeuCulture extends Component {
 
         if (index !== -1 && nouveauReponses[index].valide) {
             nouveauReponses[index].classe = 'correct pouce';
-            this.score++;
+            this.score+=12;
 
         }
         else {
@@ -149,6 +157,14 @@ export default class JeuCulture extends Component {
 
     render() {
         return <React.Fragment>
+             <Helmet>
+                    <title>QCM de culture générale</title>
+                    <meta name="description" content="Teste tes connaissances avec ce quiz de culture générale. Plus de 3000 questions avec les réponses." />
+                </Helmet>
+            {this.state.enCoursChargement ? <div>Préparation des questions...</div> :
+             this.state.finJeu ?
+                            <Resultat score={this.score} typeExo='vitesseculture'></Resultat> :
+          
             <div className='quiz-plateau'>
                 <div className="quiz-container">
                     {this.state.isDisplayedExplication &&
@@ -186,7 +202,7 @@ export default class JeuCulture extends Component {
                 <div className='centre'>{this.state.afficheCompteRebours && <CompteRebours finTimer={this.finTimer} temps={this.state.tempsQuestion}></CompteRebours>}</div>
                 <div>Question : {this.state.noQuestion + 1} / 10 </div>
             </div>
-
+    }
 
         </React.Fragment>
     }

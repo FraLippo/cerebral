@@ -67,14 +67,14 @@ export default class TestCulture extends Component {
 
         <div className="centre"><Link to='/classement/vitessetetris'>Classement</Link></div>
     </div>
-                    <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessebar"] != null ? "dejaFaitCognito" : ""}`}>
-           <Link to='/vitessebar'>   <div className="centre titreVitesse" >🥁 Boite à rythmes</div>
+                    <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseculture"] != null ? "dejaFaitCognito" : ""}`}>
+           <Link to='/vitesseculture'>   <div className="centre titreVitesse" >🖼️ QCM culture générale</div>
    
-          <p className="marge20">La grille de séquence d'une boîte à rythmes est affichée à l'écran. Pour gagner, tu dois reproduire fidèlement le motif rythmique en appuyant sur les bons boutons au bon moment : kick (grosse caisse), snare (caisse claire) et hi-hat (charleston). Chaque grille complétée rapporte 20 points. +30 pour 4 grilles réussies. La précision est essentielle : pour que cela sonne comme de la musique, aucun décalage n'est permis… la musique ne pardonne pas l'approximation, contrairement à notre jeu 😉. </p>
+          <p className="marge20">Un QCM de culture générale avec plus de 3000 questions dans tous les domaines. 10 questions, 12 points par bonne réponse. Score maximum : 120 points. </p>
      </Link>
-     <p className='centre'>{this.state.resultatsJoueur["vitessebar"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessebar"]:"Pas encore de résultat" }</p>
+     <p className='centre'>{this.state.resultatsJoueur["vitesseculture"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesseculture"]:"Pas encore de résultat" }</p>
 
-        <div className="centre"><Link to='/classement/vitessebar'>Classement</Link></div>
+        <div className="centre"><Link to='/classement/vitesseculture'>Classement</Link></div>
     </div>
               
                 <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessepanneauroutier"] != null ? "dejaFaitCognito" : ""}`}>

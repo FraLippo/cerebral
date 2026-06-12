@@ -104,8 +104,8 @@ function nomType(type) {
             return "Attrape le loup";
         case "vitessecompte":
             return "Le compte est bon";
-        case "vitessebar":
-            return "Boite à rythmes";
+        case "vitesseculture":
+            return "QCM culture générale";
          case "vitessetetris":
             return "Tetris Musée";
            case "vitessedessin":
@@ -125,7 +125,7 @@ let tabJeu = ["vitesseaddition", "vitesseburger", "vitessecouleur", "vitessesoli
     "vitessecercle", "vitesselettres", "vitesseboogle", "vitessechasse", "vitessecoupe", "vitessemotus","vitessebrique",
     "vitessechemin", "vitessetresor", "vitessetresse", "vitessetaquin", "vitessefusee", "vitessebataille",
     "vitesseoperation", "vitessecalcul", "vitessearithmetique", "vitessemonnaie", "vitessefraction", "vitessecompte",
-    "vitesseecrire", "vitessenotes", "vitessepanneauroutier", "vitesselangue", "vitessebar","vitessetetris","vitesseintervalle",
+    "vitesseecrire", "vitessenotes", "vitessepanneauroutier", "vitesselangue", "vitesseculture","vitessetetris","vitesseintervalle",
     "vitessememoire", "vitesseforme", "vitessenombre", "vitessememory", "vitessepaire", "vitessealz", "vitesseloup", "vitessedessin"]
 
 let typeJeu = ['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l','l', 'l', 'l', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'd','d', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm']
@@ -208,7 +208,7 @@ function obtenirInfoCategorie(categorie) {
     }
     else if (categorie === 'c') {
         return {
-            max: 470,
+            max: 500,
             message: 'Ta capacité de calcul est '
         }
 
@@ -222,7 +222,7 @@ function obtenirInfoCategorie(categorie) {
     }
     else if (categorie === 'd') {
         return {
-            max: 550,
+            max: 700,
             message: 'Ton aptitude culturelle est '
         }
 

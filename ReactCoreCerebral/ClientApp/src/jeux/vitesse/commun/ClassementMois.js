@@ -243,7 +243,14 @@ export default class ClassementMois extends Component {
                             <p className='centre fontMoyenne margeHaut10'><b>Ton score :</b> {this.state.score}</p>
 
                             <p className='centre fontMoyenne margeHaut10'><b>Ton classement du mois :</b> {this.state.classement} / {this.state.nbJoueurs}</p>
-
+   <div className='centre'> <div className='fontMoyenne bandeauLien'>
+            <div>Envie de papoter avec la communauté ?</div>
+                <div>Envie de connaitre les nouveautés avant tout le monde ?</div>
+                <div>Envie de te plaindre (on sait que tu adores) ?</div>
+                <div>Rejoins-nous sur la messagerie gratuite <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div></div>
+            </div> 
+         
+      
                             {this.state.score > 1500 ?
                                 this.state.loading ? (
                                     <div style={{ textAlign: 'center', padding: 40 }}>

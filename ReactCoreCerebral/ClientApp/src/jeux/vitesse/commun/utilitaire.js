@@ -114,6 +114,8 @@ function nomType(type) {
             return "L'oreille absolue";
              case "vitessebrique":
             return "Le mur de lettres";
+             case "vitessewisconsin":
+            return "Le Wisconsin Test";
         default:
             return "";
     }
@@ -121,14 +123,14 @@ function nomType(type) {
 
 
 let tabJeu = ["vitesseaddition", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitesserecensement"
-    , "vitessematch", "vitessecomplet", "vitessebonneteau", "vitessebinero", "vitessemah", "vitessemulti",
+    , "vitessematch", "vitessecomplet", "vitessebonneteau", "vitessebinero", "vitessemah", "vitessemulti","vitessewisconsin",
     "vitessecercle", "vitesselettres", "vitesseboogle", "vitessechasse", "vitessecoupe", "vitessemotus","vitessebrique",
     "vitessechemin", "vitessetresor", "vitessetresse", "vitessetaquin", "vitessefusee", "vitessebataille",
     "vitesseoperation", "vitessecalcul", "vitessearithmetique", "vitessemonnaie", "vitessefraction", "vitessecompte",
     "vitesseecrire", "vitessenotes", "vitessepanneauroutier", "vitesselangue", "vitesseculture","vitessetetris","vitesseintervalle",
     "vitessememoire", "vitesseforme", "vitessenombre", "vitessememory", "vitessepaire", "vitessealz", "vitesseloup", "vitessedessin"]
 
-let typeJeu = ['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l','l', 'l', 'l', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'd','d', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm']
+let typeJeu = ['r','r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l','l', 'l', 'l', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'd','d', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm']
 
 let tabCategorie = ["test-memoire", "test-concentration", "test-calcul", "test-lettres", "test-culture", "test-planification"]
 let tabCategorie2 = ["memoire", "concentration", "calcul", "vocabulaire", "culture", "planification"]
@@ -215,7 +217,7 @@ function obtenirInfoCategorie(categorie) {
     }
     else if (categorie === 'r') {
         return {
-            max: 960,
+            max: 1030,
             message: 'Ta capacité de concentration est '
         }
 

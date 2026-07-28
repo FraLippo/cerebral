@@ -50,6 +50,17 @@ export default class TesConcentration extends Component {
     <Ad></Ad>
     <div className='jeuVitesse'>
 
+<div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessewisconsin"] != null ? "dejaFaitCognito" : ""}`}>
+     <Link to='/vitessewisconsin'>   <div className="centre titreVitesse" >🙇 Test du Wisconsin</div>
+       
+          <p className="marge20">But du jeu : Associez chaque carte à l'une des quatre cartes de référence en découvrant la règle de classement (couleur, forme ou nombre). La règle change régulièrement sans être annoncée : adaptez-vous le plus vite possible pour obtenir le meilleur score. </p>
+        </Link> 
+        
+         <p className='centre'>{this.state.resultatsJoueur["vitessewisconsin"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessewisconsin"]:"Pas encore de résultat" }</p>
+
+        <div className="centre"><Link to='/classement/vitessewisconsin'>Classement</Link></div>
+      </div>
+
  <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessemulti"] != null ? "dejaFaitCognito" : ""}`}>
      <Link to='/vitessemulti'>   <div className="centre titreVitesse" >💻 Multitâche</div>
        

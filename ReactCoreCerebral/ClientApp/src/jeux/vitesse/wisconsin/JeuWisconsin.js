@@ -180,7 +180,7 @@ finTimer = () =>
                 <div className='fontMoyenne centre'>{this.state.message}</div>
                 </div>
                 <h1 className="couleurTitre centre">Le test du Wisconsin</h1>
-                <p>Trouve la relation qui unit la carte du haut avec une des cartes en bas. Cela peut être même forme, même couleur ou même nombre d'éléments. La relation change au cours de la partie. Tu es obligé d'avoir des réponses incorrectes.</p>
+                <p>Trouve la relation qui unit la carte du haut avec une des cartes en bas. Trois cas sont possibles : la même forme, la même couleur ou le même nombre d'éléments. La relation change au cours de la partie. Tu es obligé d'avoir des réponses incorrectes pour trouver la relation correcte.</p>
             </div>}
             </React.Fragment>
         );

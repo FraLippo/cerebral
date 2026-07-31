@@ -42,31 +42,30 @@ public async Task<string> ObtenirResultatGpt(string prenom, int scoreTotal, Dict
         {
             return $@"
 Voici les résultats d'un test cognitif standardisé.
-
 Les scores sont indexés sur une moyenne de 100 :
 - 100 correspond à un très bon niveau
 - un score supérieur à 100 indique une performance exceptionnelle
 - un score de 50 est une performance satisfaisante
+
 Résultats :
-  Mémoire : {resultatCategorie.GetValueOrDefault("m")}
-   Calcul : {resultatCategorie.GetValueOrDefault("c")}
-Planification: {resultatCategorie.GetValueOrDefault("p")}
+Mémoire : {resultatCategorie.GetValueOrDefault("m")}
+Calcul : {resultatCategorie.GetValueOrDefault("c")}
+Planification : {resultatCategorie.GetValueOrDefault("p")}
 Aptitude verbale : {resultatCategorie.GetValueOrDefault("l")}
-Concentration: {resultatCategorie.GetValueOrDefault("r")}
+Concentration : {resultatCategorie.GetValueOrDefault("r")}
 Culture générale : {resultatCategorie.GetValueOrDefault("d")}
+
 Consignes :
 1. Analyse le profil cognitif de manière objective et structurée.
-2. Propose 4 métiers adaptés au profil.
-   - Suggestions réalistes uniquement
-   - Cohérentes avec les capacités observées
-3. Pour chaque métier :
-   - Explique le lien avec les compétences mesurées
-4. Propose 1 ou 2 axes d'amélioration concrets.
+2. Décris les environnements ou situations dans lesquels ce profil peut être à l'aise.
+3. Propose des domaines d'étude ou de formation pouvant correspondre au profil cognitif observé.
+
 Ton :
 - Neutre, factuel et professionnel
 - Aucun humour
 - Aucun langage affectif ou exagérément positif
 - Analyse directe des forces et faiblesses
+
 Contraintes importantes :
 - Utilise le tutoiement
 - Réponds uniquement en HTML (sans <html>, <body> ni CSS)

@@ -117,6 +117,80 @@ export default class TestMemoire extends Component {
           <div className="centre"><Link to='/classement/vitessepaire'>Classement</Link></div>
         </div>
       </div>
+      
+<div className="table-responsive">
+  <table className="tableau-memoire">
+    <thead>
+      <tr>
+        <th>Jeu</th>
+        <th>Type de mémoire</th>
+        <th>Exemple du quotidien</th>
+        <th>Sensibilité au déclin lié à l'âge</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>🖼️ Lignes brisées</strong></td>
+        <td>Visuo-spatiale</td>
+        <td>Retrouver son chemin ou visualiser un trajet sans GPS</td>
+        <td className="centre"><strong>++</strong></td>
+      </tr>
+      <tr>
+        <td><strong>🐺 Attrape le loup</strong></td>
+        <td>Séquentielle &amp; Réactivité</td>
+        <td>Réagir rapidement face à un imprévu sur la route</td>
+        <td className="centre"><strong>++</strong></td>
+      </tr>
+      <tr>
+        <td><strong>🎗️ La mémoire longue</strong></td>
+        <td>Mémorisation à long terme</td>
+        <td>Retenir une liste de courses ou un rendez-vous à venir</td>
+        <td className="centre"><strong>+</strong></td>
+      </tr>
+      <tr>
+        <td><strong>🎩 Le jeu du memory</strong></td>
+        <td>Visuelle &amp; Repérage</td>
+        <td>Se souvenir d'où on a posé ses clés ou ses lunettes</td>
+        <td className="centre"><strong>+</strong></td>
+      </tr>
+      <tr>
+        <td><strong>✅ Mémoire des nombres</strong></td>
+        <td>Mémoire de travail <em>(Chiffres)</em></td>
+        <td>Retenir un code SMS de validation le temps de le saisir</td>
+        <td className="centre"><strong>++</strong></td>
+      </tr>
+      <tr>
+        <td><strong>🔺 Mémoire des formes</strong></td>
+        <td>Visuelle des détails</td>
+        <td>Reconnaître un visage, un logo ou un objet précis</td>
+        <td className="centre"><strong>+</strong></td>
+      </tr>
+      <tr>
+        <td><strong>🔵 Se souvenir des cercles</strong></td>
+        <td>Spatial des emplacements</td>
+        <td>Se rappeler dans quel rayon est rangé un produit en magasin</td>
+        <td className="centre"><strong>+</strong></td>
+      </tr>
+      <tr>
+        <td><strong>🐈‍⬛ L'animal précédent</strong></td>
+        <td>Concentration rapide <em>(N-back)</em></td>
+        <td>Suivre le fil d'une conversation rapide à plusieurs personnes</td>
+        <td className="centre"><strong>++</strong></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p className="legende-declin">
+    <small>
+      <strong>Légende :</strong><br></br>
+      <strong>+</strong> : Déclin modéré (facile à maintenir avec un peu de pratique).<br></br>
+      <strong>++</strong> : Déclin plus sensible à l'âge (réagit très bien à l'entraînement cérébral régulier).
+    </small>
+  </p>
+</div>
+
+
+
       <div>
         <h2>Des tests de mémoire gratuits en ligne, simples et rapides</h2>
         <p>

@@ -90,8 +90,8 @@ this.nomMois = moisEnFrancais[d.getMonth()];
           <h3>Les précédents champions</h3>
       <p className='fontMoyenne'><span className='champVitesse'>Gwendal x2</span>  <span className='champVitesse'>Meneleus</span> <span className='champVitesse'>Quentin x2</span> <span className='champVitesse'>rvteo x2</span> <span className='champVitesse'>waïra x2</span>
        <span className='champVitesse'>inconnu583 x6</span> <span className='champVitesse'><b>Lili55 x18</b></span><span className='champVitesse'>Fitness</span>
-       <span className='champVitesse'>LoloLaReine x2</span><span className='champVitesse'>Soso x4</span>👑<span className='champVitesse'>Elfi x2</span>👑</p>
-      <div className='centre'><b>🚩Nouvelle victoire pour Elfi !📅</b></div>
+       <span className='champVitesse'>LoloLaReine x2</span><span className='champVitesse'>Soso x4</span><span className='champVitesse'>Elfi</span>👑<span className='champVitesse'>pantx</span>👑</p>
+      <div className='centre'><b>🚩Première victoire pour pantx !📅</b></div>
    
      
       

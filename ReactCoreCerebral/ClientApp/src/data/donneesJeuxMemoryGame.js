@@ -2,7 +2,7 @@ let donneesJeuxMemoryGame =
 [
 {
     id: 1400,
-    titre: "TRES_FACILE_1",
+    titre: "Très facile 1",
     info : 
         {
             taille: 2,
@@ -13,7 +13,7 @@ let donneesJeuxMemoryGame =
 },
 {
     id: 1402,
-    titre: "TRES_FACILE_2",
+    titre: "Très facile 2",
     info : 
         {
             taille: 2,
@@ -24,7 +24,7 @@ let donneesJeuxMemoryGame =
 },
 {
     id: 1403,
-    titre: "TRES_FACILE_3",
+    titre: "Très facile 3",
     info : 
         {
             taille: 2,
@@ -35,7 +35,7 @@ let donneesJeuxMemoryGame =
 },
 {
     id: 1404,
-    titre: "FACILE_1",
+    titre: "Facile 1",
     info : 
         {
             taille: 4,
@@ -46,7 +46,7 @@ let donneesJeuxMemoryGame =
 },
 {
     id: 1405,
-    titre: "FACILE_2",
+    titre: "Facile 2",
     info : 
         {
             taille: 4,
@@ -57,7 +57,7 @@ let donneesJeuxMemoryGame =
 },
 {
     id: 1406,
-    titre: "DIFFICILE_1",
+    titre: "Difficile 1",
     info : 
         {
             taille: 4,
@@ -68,7 +68,7 @@ let donneesJeuxMemoryGame =
 },
 {
     id: 1407,
-    titre: "TRES_DIFFICILE_1",
+    titre: "Très difficile 1",
     info : 
         {
             taille: 4,

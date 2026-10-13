@@ -4,8 +4,7 @@ using CerebralCore.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,18 +27,21 @@ namespace ReactCoreCerebral
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
                 {
-                    builder.WithOrigins("https://brain-games.evalquiz.com", "http://localhost:5173", "https://localhost:7170")
-                           .AllowAnyHeader()
-                           .AllowAnyMethod();
+                    builder.WithOrigins("https://brain-games.evalquiz.com", "http://localhost:5173", "http://localhost", "https://localhost:7170", "http://localhost/quiz/")
+                             .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
                 });
             });
 
             // Vos services existants...
             services.AddControllersWithViews();
+            services.AddRazorPages();
             services.AddSingleton<IDictionnaire, Dictionnaire>();
             services.AddSingleton<IDictionaryEnglish, DictionaryEnglish>();
             services.AddHttpClient<OpenAiService>();
@@ -48,11 +50,7 @@ namespace ReactCoreCerebral
             services.AddDbContext<TableauContext>(options =>
            options.UseSqlServer(Configuration.GetConnectionString("TableauContext")));
 
-            // In production, the React files will be served from this directory
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/build";
-            });
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -71,28 +69,22 @@ namespace ReactCoreCerebral
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseSpaStaticFiles();
+       
 
             app.UseCors();
             app.UseRouting();
- 
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
-               
+
+                endpoints.MapRazorPages();
+
+                endpoints.MapFallbackToFile("index.html");
             });
 
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "ClientApp";
-
-                if (env.IsDevelopment())
-                {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
-                }
-            });
         }
     }
 }

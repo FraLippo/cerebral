@@ -2,7 +2,7 @@ let donneesJeuxMath =
     [
         {
             id: 1308,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             info:
                 [{
                     enonce: "4 + 3 = @",
@@ -38,7 +38,7 @@ let donneesJeuxMath =
         },
         {
             id: 1309,
-            titre: "TRES_FACILE_2",
+            titre: "Très facile 2",
             info:
                 [{
                     enonce: "15 + 3 = @@",
@@ -74,7 +74,7 @@ let donneesJeuxMath =
         },
         {
             id: 1310,
-            titre: "TRES_FACILE_3",
+            titre: "Très facile 3",
             info:
                 [{
                     enonce: "12 + 12 = @@",
@@ -110,7 +110,7 @@ let donneesJeuxMath =
         },
         {
             id: 1300,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             info:
                 [{
                     enonce: "5 + 5 = @@",
@@ -146,7 +146,7 @@ let donneesJeuxMath =
         },
         {
             id: 1301,
-            titre: "FACILE_2",
+            titre: "Facile 2",
             info:
                 [{
                     enonce: "7 x 8 = @@",
@@ -183,7 +183,7 @@ let donneesJeuxMath =
         },
         {
             id: 1302,
-            titre: "MOYEN_1",
+            titre: "Moyen 1",
             info:
                 [{
                     enonce: "15 x 5 = @@",
@@ -220,7 +220,7 @@ let donneesJeuxMath =
         },
         {
             id: 1303,
-            titre: "MOYEN_2",
+            titre: "Moyen 2",
             info:
                 [{
                     enonce: "@@@ + 14 = 142",
@@ -257,7 +257,7 @@ let donneesJeuxMath =
         },
         {
             id: 1304,
-            titre: "DIFFICILE_1",
+            titre: "Difficile 1",
             info:
                 [{
                     enonce: "108 x 4 = @@@",
@@ -293,7 +293,7 @@ let donneesJeuxMath =
         },
         {
             id: 1305,
-            titre: "DIFFICILE_2",
+            titre: "Difficile 2",
             info:
                 [{
                     enonce: "540 - 242 = @@@",
@@ -329,7 +329,7 @@ let donneesJeuxMath =
         },
         {
             id: 1311,
-            titre: "PB_1",
+            titre: "Problème calcul 1 - facile",
             info:
                 [{
                     enonce: "Ayoub avait 15 billes. Léa lui en donne 6. Combien Ayoub a-t-il de billes maintenant ?$@@",
@@ -365,7 +365,7 @@ let donneesJeuxMath =
         },
         {
             id: 1312,
-            titre: "PB_2",
+            titre: "Problème calcul 2 - intermédiaire",
             info:
                 [{
                     enonce: "Lors d’une rencontre de basket, l’équipe de Grenoble a marqué 25 points. L'équipe de Nantes a marqué 2 fois plus de points. Combien l'équipe de Nantes a-t-elle marqué de points ?$@@",
@@ -401,7 +401,7 @@ let donneesJeuxMath =
         },
         {
             id: 1313,
-            titre: "PB_3",
+            titre: "Problème calcul 3 - intermédiaire",
             info:
                 [{
                     enonce: "Indique combien Iris a de perles. Lenny a 43 perles. Iris en a 18 de moins.$@@",
@@ -509,7 +509,7 @@ let donneesJeuxMath =
         // },
         {
             id: 1314,
-            titre: "PB_4",
+            titre: "Problème calcul 4 - intermédiaire",
             info:
                 [{
                     enonce: "A la fête foraine, j’ai acheté 3 tickets de  manège pour 5 €. Combien coûtent 15 tickets ?$@@",
@@ -545,7 +545,7 @@ let donneesJeuxMath =
         },
         {
             id: 1315,
-            titre: "PB_5",
+            titre: "Problème calcul 5 - intermédiaire",
             info:
                 [{
                     enonce: " Le patron d’une entreprise de 350 employés est obligé de se séparer de 20 % des employés. Combien d’employés reste-t-il dans cette entreprise ?$@@@",
@@ -581,7 +581,7 @@ let donneesJeuxMath =
         },
         {
             id: 1316,
-            titre: "PB_6",
+            titre: "Évaluations en calcul niveau sixième - Éducation nationale 2021",
             info:
                 [{
                     enonce: "Sur une carte, 1cm représente 4 km dans la réalité. Quelle est la distance d’un segment (en km) de 10 cm sur le plan ?$@@",

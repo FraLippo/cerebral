@@ -3037,6 +3037,7 @@ svg:hover {
     flex-direction: column;
     align-items: center;
     justify-content: start;
+    width: 100%;
 
 }
 
@@ -3074,7 +3075,9 @@ svg:hover {
 .listeMotCoupe {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 10px;
+    max-width: 100%;
 }
 
 .caseListeCoupeSel {
@@ -3151,6 +3154,10 @@ svg:hover {
         height: 32px;
     }
 
+    .listeMotCoupe {
+        justify-content: center;
+    }
+
     .grilleCoupe {
         width: 260px;
 
@@ -3166,8 +3173,8 @@ svg:hover {
 @media screen and (max-width: 390px) {
     .caseListeCoupe {
         font-size: .9em;
-        width: 30px;
-        height: 30px;
+        width: 28px;
+        height: 28px;
     }
 }
 

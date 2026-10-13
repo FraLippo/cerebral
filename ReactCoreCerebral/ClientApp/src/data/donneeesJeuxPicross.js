@@ -2,7 +2,7 @@ let donneesPicross =
 [
     {
         id: 1600,
-        titre : "TRES_FACILE_1",
+        titre : "Très facile 1",
         temps : 1000,
         indiceX : [[0,0,0],[0,0,0],[0,0,3],[0,0,1],[0,0,0],[0,0,0]],
         indiceY : [[0,0,1],[0,0,1],[0,0,2],[0,0,0],[0,0,0],[0,0,0]],

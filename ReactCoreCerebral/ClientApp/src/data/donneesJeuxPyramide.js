@@ -1,7 +1,7 @@
 let donneesPyramide =
     [{
         id: 1100,
-        titre: "TRES_FACILE_1",
+        titre: "Très facile 1",
         info : 
         {
             taille: 4,
@@ -15,7 +15,7 @@ let donneesPyramide =
     },
     {
         id: 1101,
-        titre: "TRES_FACILE_2",
+        titre: "Très facile 2",
         info : 
         {
             taille: 4,
@@ -28,7 +28,7 @@ let donneesPyramide =
     },
     {
         id: 1102,
-        titre: "TRES_FACILE_3",
+        titre: "Très facile 3",
         info : 
         {
             taille: 4,
@@ -42,7 +42,7 @@ let donneesPyramide =
     },
     {
         id: 1103,
-        titre: "FACILE_1",
+        titre: "Facile 1",
         info : 
         {
             taille: 5,
@@ -57,7 +57,7 @@ let donneesPyramide =
     },
     {
         id: 1104,
-        titre: "FACILE_2",
+        titre: "Facile 2",
         info : 
         {
             taille: 5,
@@ -72,7 +72,7 @@ let donneesPyramide =
     },
     {
         id: 1106,
-        titre: "DIFFICILE_2",
+        titre: "Difficile 2",
         info : 
         {
             taille: 6,
@@ -87,7 +87,7 @@ let donneesPyramide =
     },
     {
         id: 1105,
-        titre: "DIFFICILE_1",
+        titre: "Difficile 1",
         info : 
         {
             taille: 6,
@@ -102,7 +102,7 @@ let donneesPyramide =
     },
     {
         id: 1107,
-        titre: "TRES_DIFFICILE_1",
+        titre: "Très difficile 1",
         info : 
         {
             taille: 6,
@@ -116,7 +116,7 @@ let donneesPyramide =
 
     }, {
         id: 1108,
-        titre: "TRES_DIFFICILE_2",
+        titre: "Très difficile 2",
         info : 
         {
             taille: 6,

@@ -2,8 +2,8 @@ let donneesPuzzleRotation =
 [
     {
         id: 300,
-        titre: "PUZZLE_CHATON",
-        explication: "PUZZLE_CHATON",
+        titre: "Un chaton",
+        explication: "Un chaton",
         temps: 50,
         taille : 4,
         info : [
@@ -104,8 +104,8 @@ let donneesPuzzleRotation =
         ]
     }, {
         id: 301,
-        titre: "PUZZLE_PANDA",
-        explication: "PUZZLE_PANDA",
+        titre: "Un panda géant",
+        explication: "Un panda géant",
         temps: 50,
         taille : 4,
         info : [
@@ -206,8 +206,8 @@ let donneesPuzzleRotation =
         ]
     },{
         id: 305,
-        titre: "PUZZLE_NOISETTES",
-        explication: "PUZZLE_NOISETTES",
+        titre: "Les noisettes par William-Adolphe Bouguereau",
+        explication: "Les noisettes par William-Adolphe Bouguereau",
         temps: 50,
         taille : 4,
         info : [
@@ -309,8 +309,8 @@ let donneesPuzzleRotation =
     },
     {
         id: 306,
-        titre: "PUZZLE_FARDEAU",
-        explication: "PUZZLE_FARDEAU",
+        titre: "Fardeau agréable par William-Adolphe Bouguereau",
+        explication: "Fardeau agréable par William-Adolphe Bouguereau",
         temps: 50,
         taille : 4,
         info : [
@@ -412,8 +412,8 @@ let donneesPuzzleRotation =
     },
     {
         id: 302,
-        titre: "PUZZLE_CHIOT",
-        explication: "PUZZLE_CHIOT",
+        titre: "Un chiot",
+        explication: "Un chiot",
         temps: 50,
         taille : 4,
         info : [
@@ -515,8 +515,8 @@ let donneesPuzzleRotation =
     },
     {
         id: 303,
-        titre: "PUZZLE_PANTHEON",
-        explication: "PUZZLE_PANTHEON",
+        titre: "Le Panthéon à Paris",
+        explication: "Le Panthéon à Paris",
         temps: 50,
         taille : 4,
         info : [
@@ -618,8 +618,8 @@ let donneesPuzzleRotation =
     },
     {
         id: 304,
-        titre: "PUZZLE_USINE",
-        explication: "PUZZLE_USINE",
+        titre: "Une usine",
+        explication: "Une usine",
         temps: 50,
         taille : 4,
         info : [

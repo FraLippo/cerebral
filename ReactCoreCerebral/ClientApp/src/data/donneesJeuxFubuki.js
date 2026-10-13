@@ -2,7 +2,7 @@ let donneesJeuxFubuki =
 [
     {
         id: 1210,
-        titre: "TRES_FACILE_1",
+        titre: "Très facile 1",
         info : 
             {
                 taille: 4,
@@ -15,7 +15,7 @@ let donneesJeuxFubuki =
     },
     {
         id: 1200,
-        titre: "FACILE_1",
+        titre: "Facile 1",
         info : 
             {
                 taille: 4,
@@ -27,7 +27,7 @@ let donneesJeuxFubuki =
     },
     {
         id: 1201,
-        titre: "FACILE_2",
+        titre: "Facile 2",
         info : 
             {
                 taille: 4,
@@ -39,7 +39,7 @@ let donneesJeuxFubuki =
     },
     {
         id: 1202,
-        titre: "FACILE_3",
+        titre: "Facile 3",
         info : 
             {
                 taille: 4,
@@ -52,7 +52,7 @@ let donneesJeuxFubuki =
     },
     {
         id: 1207,
-        titre: "FACILE_4",
+        titre: "Facile 4",
         info : 
             {
                 taille: 5,
@@ -65,7 +65,7 @@ let donneesJeuxFubuki =
     },
     {
         id: 1203,
-        titre: "MOYEN_1",
+        titre: "Moyen 1",
         info : 
             {
                 taille: 5,
@@ -77,7 +77,7 @@ let donneesJeuxFubuki =
     },
     {
         id: 1204,
-        titre: "MOYEN_2",
+        titre: "Moyen 2",
         info : 
             {
                 taille: 5,
@@ -90,7 +90,7 @@ let donneesJeuxFubuki =
   
     {
         id: 1205,
-        titre: "MOYEN_3",
+        titre: "Moyen 3",
         info : 
             {
                 taille: 5,
@@ -102,7 +102,7 @@ let donneesJeuxFubuki =
     },
     {
         id: 1208,
-        titre: "MOYEN_4",
+        titre: "Moyen 4",
         info : 
             {
                 taille: 5,
@@ -114,7 +114,7 @@ let donneesJeuxFubuki =
     },
     {
         id: 1206,
-        titre: "TRES_DIFFICILE_1",
+        titre: "Très difficile 1",
         info : 
             {
                 taille: 4,
@@ -126,7 +126,7 @@ let donneesJeuxFubuki =
     },
     {
         id: 1209,
-        titre: "TRES_DIFFICILE_2",
+        titre: "Très difficile 2",
         info : 
             {
                 taille: 4,

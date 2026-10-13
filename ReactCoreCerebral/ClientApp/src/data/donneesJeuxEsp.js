@@ -2,7 +2,7 @@ let donneesEsp =
 [
     {
         id: 100,
-        titre: "TRES_FACILE_1",
+        titre: "Très facile 1",
         temps : 4,
         info : [
             {
@@ -15,7 +15,7 @@ let donneesEsp =
     },
     {
         id: 101,
-        titre: "TRES_FACILE_2",
+        titre: "Très facile 2",
         temps : 3,
         info : [
             {
@@ -28,7 +28,7 @@ let donneesEsp =
     },
     {
         id: 102,
-        titre: "FACILE_1",
+        titre: "Facile 1",
         temps : 4,
         info : [
             {
@@ -43,7 +43,7 @@ let donneesEsp =
         ]
     },{
         id: 103,
-        titre: "FACILE_2",
+        titre: "Facile 2",
         temps : 3,
         info : [
             {
@@ -58,7 +58,7 @@ let donneesEsp =
         ]
     },{
         id: 104,
-        titre: "DIFFICILE_1",
+        titre: "Difficile 1",
         temps : 4,
         info : [
             {
@@ -77,7 +77,7 @@ let donneesEsp =
     }
     ,{
         id: 105,
-        titre: "DIFFICILE_2",
+        titre: "Difficile 2",
         temps : 3,
         info : [
             {
@@ -96,7 +96,7 @@ let donneesEsp =
     },
     {
         id: 106,
-        titre: "DIFFICILE_3",
+        titre: "Difficile 3",
         temps : 5,
         info : [
             {
@@ -119,7 +119,7 @@ let donneesEsp =
     
     {
         id: 107,
-        titre: "DIFFICILE_4",
+        titre: "Difficile 4",
         temps : 8,
         info : [
             {
@@ -145,7 +145,7 @@ let donneesEsp =
     },
     {
         id: 110,
-        titre: "TRES_DIFFICILE_1",
+        titre: "Très difficile 1",
         temps : 12,
         info : [
             {
@@ -174,7 +174,7 @@ let donneesEsp =
     },
     {
         id: 108,
-        titre: "TROP_DIFFICILE",
+        titre: "Trop difficile pour les joueurs !",
         temps : 12,
         info : [
             {
@@ -207,7 +207,7 @@ let donneesEsp =
     }
     ,{
         id: 109,
-        titre: "TRES_DIFFICILE_2",
+        titre: "Très difficile 2",
         temps : 2,
         info : [
             {

@@ -2,7 +2,7 @@ let donneesOrdre =
     [
         {
             id: 0,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             temps: 15,
             info: [
                 {
@@ -50,7 +50,7 @@ let donneesOrdre =
         },
         {
             id: 1,
-            titre: "TRES_FACILE_2",
+            titre: "Très facile 2",
             temps: 15,
             info: [
                 {
@@ -137,7 +137,7 @@ let donneesOrdre =
         },
         {
             id: 2,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             temps: 15,
             info: [
                 {
@@ -184,7 +184,7 @@ let donneesOrdre =
             ]
         }, {
             id: 3,
-            titre: "FACILE_2",
+            titre: "Facile 2",
             temps: 15,
             info: [
                 {
@@ -271,7 +271,7 @@ let donneesOrdre =
         },
         {
             id: 4,
-            titre: "MOYEN_1",
+            titre: "Moyen 1",
             temps: 12,
             info: [
                 {
@@ -319,7 +319,7 @@ let donneesOrdre =
         },
         {
             id: 5,
-            titre: "MOYEN_2",
+            titre: "Moyen 2",
             temps: 20,
             info: [
                 {
@@ -407,7 +407,7 @@ let donneesOrdre =
             ]
         }, {
             id: 6,
-            titre: "LETTRES_1",
+            titre: "Les lettres dans l'ordre 1 (difficile)",
             temps: 12,
             info: [
                 {
@@ -454,7 +454,7 @@ let donneesOrdre =
         },
         {
             id: 7,
-            titre: "LETTRES_2",
+            titre: "Les lettres dans l'ordre 2 (difficile)",
             temps: 14,
             info: [
                 {
@@ -501,7 +501,7 @@ let donneesOrdre =
         },
         {
             id: 8,
-            titre: "DIFFICILE_3",
+            titre: "Difficile 3",
             temps: 18,
             info: [
                 {
@@ -580,7 +580,7 @@ let donneesOrdre =
         },
         {
             id: 900,
-            titre: "IMPOSSIBLE",
+            titre: "Impossible ?",
             temps: 17,
             info: [
                 {

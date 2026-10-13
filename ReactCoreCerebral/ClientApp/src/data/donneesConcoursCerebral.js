@@ -2,137 +2,137 @@ let donneesConcoursCerebral =
     [
         {
             id: 42,
-            titre: "DEFI_42",
+            titre: "Défi  de la mémoire visuelle - facile",
 
-            liste: [{ type: 'NOM_PHOTO', id: 10420, titre: "photo" },
-            { type: 'NOM_PHOTO', id: 10421, titre: "photo" },
-            { type: 'NOM_PHOTO', id: 10422, titre: "photo" },
+            liste: [{ type: "photo", id: 10420, titre: "photo" },
+            { type: "photo", id: 10421, titre: "photo" },
+            { type: "photo", id: 10422, titre: "photo" },
             ]
 
 
         },
         {
             id: 43,
-            titre: "DEFI_43",
+            titre: "Défi  de la mémoire visuelle - intermédiaire",
 
-            liste: [{ type: 'NOM_PHOTO', id: 10430, titre: "photo" },
-            { type: 'NOM_PHOTO', id: 10431, titre: "photo" },
-            { type: 'NOM_PHOTO', id: 10432, titre: "photo" },
+            liste: [{ type: "photo", id: 10430, titre: "photo" },
+            { type: "photo", id: 10431, titre: "photo" },
+            { type: "photo", id: 10432, titre: "photo" },
             ]
 
 
         },
         {
             id: 44,
-            titre: "DEFI_44",
+            titre: "Défi  de la mémoire visuelle - difficile",
 
-            liste: [{ type: 'NOM_PHOTO', id: 10440, titre: "photo" },
-            { type: 'NOM_PHOTO', id: 10441, titre: "photo" },
-            { type: 'NOM_PHOTO', id: 10442, titre: "photo" },
+            liste: [{ type: "photo", id: 10440, titre: "photo" },
+            { type: "photo", id: 10441, titre: "photo" },
+            { type: "photo", id: 10442, titre: "photo" },
             ]
 
 
         },
         {
             id: 5,
-            titre: "DEFI_5",
+            titre: "Défi logique - facile",
 
-            liste: [{ type: 'NOM_MAH', id: 10050, titre: "intrus" },
-            { type: 'NOM_FAMILLE', id: 10051, titre: "famille" }, { type: 'NOM_ORDRE', id: 10052, titre: "ordre" },
-            { type: 'NOM_SUITE', id: 10053, titre: "suite" }, { type: 'NOM_TRI', id: 10054, titre: "tri" }
+            liste: [{ type: "jeuxmahjong", id: 10050, titre: "solitaire" },
+            { type: "jeuxfamille", id: 10051, titre: "famille" }, { type: "jeuxordre", id: 10052, titre: "ordre" },
+            { type: "jeuxsuite", id: 10053, titre: "suite" }, { type: "jeuxtri", id: 10054, titre: "tri" }
             ]
 
 
         },
         {
             id: 7,
-            titre: "DEFI_7",
-            liste: [{ type: 'NOM_DESSIN', id: 10072, titre: "dessin" }, { type: 'NOM_ESP', id: 10070, titre: "carte" }, { type: 'NOM_SUITE', id: 10071, titre: "suite" },
+            titre: "Défi mémoire - facile",
+            liste: [{ type: "jeuxmemoiredessin", id: 10072, titre: "dessin" }, { type: "jeuxesp", id: 10070, titre: "carte" }, { type: "jeuxsuite", id: 10071, titre: "suite" },
 
             ]
 
         },
         {
             id: 10,
-            titre: "DEFI_10",
-            liste: [{ type: 'NOM_PUZZLE', id: 10100, titre: "puzzle" }, { type: 'NOM_ROTATION', id: 10101, titre: "rotation" }, { type: 'NOM_PUZZLE', id: 10102, titre: "puzzle" },
+            titre: "Défi puzzle - simple",
+            liste: [{ type: "jeuxpuzzle", id: 10100, titre: "puzzle" }, { type: "jeuxpuzzlerotation", id: 10101, titre: "rotation" }, { type: "jeuxpuzzle", id: 10102, titre: "puzzle" },
             ]
 
         },
         {
             id: 28,
-            titre: "DEFI_28",
-            liste: [{ type: 'NOM_PUZZLE', id: 10280, titre: "puzzle" }, { type: 'NOM_MEMORY', id: 10281, titre: "memory" }, { type: 'NOM_PUZZLE', id: 10282, titre: "puzzle" },
+            titre: "Les puzzles et la mémoire - facile",
+            liste: [{ type: "jeuxpuzzle", id: 10280, titre: "puzzle" }, { type: "jeux-memory", id: 10281, titre: "memory" }, { type: "jeuxpuzzle", id: 10282, titre: "puzzle" },
             ]
 
         },
         {
             id: 25,
-            titre: "DEFI_25",
-            liste: [{ type: 'NOM_MEMORY', id: 10250, titre: "memory" }, { type: 'NOM_ESP', id: 10251, titre: "carte" }, { type: 'NOM_MEMORY', id: 10252, titre: "memory" }
+            titre: "Test sur la mémoire - facile",
+            liste: [{ type: "jeux-memory", id: 10250, titre: "memory" }, { type: "jeuxesp", id: 10251, titre: "carte" }, { type: "jeux-memory", id: 10252, titre: "memory" }
             ]
 
         },
         
         {
             id: 31,
-            titre: "DEFI_31",
+            titre: "Testez votre mémoire - facile",
             liste: [{
-                type: "NOM_SIMON",
+                type: "jeux-simon",
                 id: 10310,
                 titre: "simon"
             }, {
-                type: "NOM_ESP",
+                type: "jeuxesp",
                 id: 10311,
                 titre: "carte"
             }, {
-                type: "NOM_SIMON",
+                type: "jeux-simon",
                 id: 10312,
                 titre: "simon"
             }]
         },
         {
             id: 6,
-            titre: "DEFI_6",
+            titre: "Défi logique - intermédiaire",
 
-            liste: [{ type: 'NOM_FAMILLE', id: 10060, titre: "famille" }, { type: 'NOM_MAH', id: 10061, titre: "intrus" },
-            { type: 'NOM_ORDRE', id: 10062, titre: "ordre" }, { type: 'NOM_TRI', id: 10063, titre: "tri" },
-            { type: 'NOM_SUITE', id: 10064, titre: "suite" }
+            liste: [{ type: "jeuxfamille", id: 10060, titre: "famille" }, { type: "jeuxmahjong", id: 10061, titre: "solitaire" },
+            { type: "jeuxordre", id: 10062, titre: "ordre" }, { type: "jeuxtri", id: 10063, titre: "tri" },
+            { type: "jeuxsuite", id: 10064, titre: "suite" }
             ]
         },
         {
             id: 30,
-            titre: "DEFI_30",
-            liste: [{ type: 'NOM_BINGO', id: 10300, titre: "bingo" }, { type: 'NOM_BINGO', id: 10301, titre: "bingo" }
+            titre: "Défi concentration avec le bingo - intermédiaire",
+            liste: [{ type: "jeux-bingo", id: 10300, titre: "bingo" }, { type: "jeux-bingo", id: 10301, titre: "bingo" }
             ]
         },
        
         {
             id: 8,
-            titre: "DEFI_8",
-            liste: [{ type: 'NOM_SUITE', id: 10080, titre: "suite" }, { type: 'NOM_DESSIN', id: 10082, titre: "dessin" }, { type: 'NOM_ESP', id: 10081, titre: "carte" },
+            titre: "Défi mémoire - intermédiaire",
+            liste: [{ type: "jeuxsuite", id: 10080, titre: "suite" }, { type: "jeuxmemoiredessin", id: 10082, titre: "dessin" }, { type: "jeuxesp", id: 10081, titre: "carte" },
             ]
 
         },
         {
             id: 9,
-            titre: "DEFI_9",
-            liste: [{ type: 'NOM_PUZZLE', id: 10090, titre: "puzzle" }, { type: 'NOM_ROTATION', id: 10091, titre: "rotation" }, { type: 'NOM_PUZZLE', id: 10092, titre: "puzzle" },
+            titre: "Défi puzzle - intermédiaire",
+            liste: [{ type: "jeuxpuzzle", id: 10090, titre: "puzzle" }, { type: "jeuxpuzzlerotation", id: 10091, titre: "rotation" }, { type: "jeuxpuzzle", id: 10092, titre: "puzzle" },
             ]
 
         },
         {
             id: 27,
-            titre: "DEFI_27",
-            liste: [{ type: 'NOM_DESSIN', id: 10270, titre: "dessin" }, { type: 'NOM_MEMORY', id: 10271, titre: "memory" }, { type: 'NOM_ESP', id: 10272, titre: "carte" }
+            titre: "Test sur la mémoire 2 - intermédiaire",
+            liste: [{ type: "jeuxmemoiredessin", id: 10270, titre: "dessin" }, { type: "jeux-memory", id: 10271, titre: "memory" }, { type: "jeuxesp", id: 10272, titre: "carte" }
             ]
 
         },
        
         {
             id: 29,
-            titre: "DEFI_29",
-            liste: [{ type: 'NOM_PUZZLE', id: 10290, titre: "puzzle" }, { type: 'NOM_MEMORY', id: 10291, titre: "memory" }, { type: 'NOM_PUZZLE', id: 10292, titre: "puzzle" },
+            titre: "Les puzzles et la mémoire - intermédiaire",
+            liste: [{ type: "jeuxpuzzle", id: 10290, titre: "puzzle" }, { type: "jeux-memory", id: 10291, titre: "memory" }, { type: "jeuxpuzzle", id: 10292, titre: "puzzle" },
             ]
 
         },
@@ -140,41 +140,41 @@ let donneesConcoursCerebral =
       
         {
             id: 26,
-            titre: "DEFI_26",
-            liste: [{ type: 'NOM_MEMORY', id: 10260, titre: "memory" }, { type: 'NOM_DESSIN', id: 10261, titre: "dessin" }, { type: 'NOM_MEMORY', id: 10262, titre: "memory" }
+            titre: "Test sur la mémoire - intermédiaire",
+            liste: [{ type: "jeux-memory", id: 10260, titre: "memory" }, { type: "jeuxmemoiredessin", id: 10261, titre: "dessin" }, { type: "jeux-memory", id: 10262, titre: "memory" }
             ]
 
         },
       
        {
             id: 32,
-            titre: "DEFI_32",
+            titre: "Testez votre mémoire - intermédiaire",
             liste: [{
-                type: "NOM_SIMON",
+                type: "jeux-simon",
                 id: 10320,
                 titre: "simon"
             }, {
-                type: "NOM_ESP",
+                type: "jeuxesp",
                 id: 10321,
                 titre: "carte"
             }, {
-                type: "NOM_SIMON",
+                type: "jeux-simon",
                 id: 10322,
                 titre: "simon"
             }]
         }, {
             id: 33,
-            titre: "DEFI_33",
+            titre: "Test d'entrainement cérébral - intermédiaire",
             liste: [{
-                type: "NOM_ORDRE",
+                type: "jeuxordre",
                 id: 10330,
                 titre: "ordre"
             }, {
-                type: "NOM_BINGO",
+                type: "jeux-bingo",
                 id: 10331,
                 titre: "bingo"
             }, {
-                type: "NOM_FAMILLE",
+                type: "jeuxfamille",
                 id: 10332,
                 titre: "famille"
             }]
@@ -183,54 +183,54 @@ let donneesConcoursCerebral =
         },
         {
             id: 12,
-            titre: "DEFI_12",
+            titre: "Défi logique - difficile",
 
-            liste: [{ type: 'NOM_MAH', id: 10120, titre: "intrus" },
-            { type: 'NOM_ORDRE', id: 10121, titre: "ordre" }, { type: 'NOM_FAMILLE', id: 10122, titre: "famille" }, { type: 'NOM_TRI', id: 10123, titre: "tri" },
+            liste: [{ type: "jeuxmahjong", id: 10120, titre: "solitaire" },
+            { type: "jeuxordre", id: 10121, titre: "ordre" }, { type: "jeuxfamille", id: 10122, titre: "famille" }, { type: "jeuxtri", id: 10123, titre: "tri" },
             ]
         },
         {
             id: 13,
-            titre: "DEFI_13",
-            liste: [{ type: 'NOM_DESSIN', id: 10130, titre: "dessin" }, { type: 'NOM_SUITE', id: 10131, titre: "suite" }, { type: 'NOM_ESP', id: 10132, titre: "carte" },
+            titre: "Défi mémoire - difficile",
+            liste: [{ type: "jeuxmemoiredessin", id: 10130, titre: "dessin" }, { type: "jeuxsuite", id: 10131, titre: "suite" }, { type: "jeuxesp", id: 10132, titre: "carte" },
             ]
 
         },
         {
             id: 14,
-            titre: "DEFI_14",
-            liste: [{ type: 'NOM_PUZZLE', id: 10140, titre: "puzzle" }, { type: 'NOM_ROTATION', id: 10141, titre: "rotation" }, { type: 'NOM_PUZZLE', id: 10142, titre: "puzzle" },
+            titre: "Défi puzzle - difficile",
+            liste: [{ type: "jeuxpuzzle", id: 10140, titre: "puzzle" }, { type: "jeuxpuzzlerotation", id: 10141, titre: "rotation" }, { type: "jeuxpuzzle", id: 10142, titre: "puzzle" },
             ]
 
         },
         {
             id: 35,
-            titre: "DEFI_35",
-            liste: [{ type: 'NOM_BINERO', id: 10350, titre: "binero" },{ type: 'NOM_BINERO', id: 10351, titre: "binero" }, { type: 'NOM_BINERO', id: 10352, titre: "binero" }, { type: 'NOM_BINERO', id: 10353, titre: "binero" } ]
+            titre: "Défi Binero - facile",
+            liste: [{ type: "binero", id: 10350, titre: "binero" },{ type: "binero", id: 10351, titre: "binero" }, { type: "binero", id: 10352, titre: "binero" }, { type: "binero", id: 10353, titre: "binero" } ]
 
         },
         {
             id: 36,
-            titre: "DEFI_36",
-            liste: [{ type: 'NOM_PICROSS', id: 10360, titre: "picross" }, { type: 'NOM_PICROSS', id: 10361, titre: "picross" }, { type: 'NOM_PICROSS', id: 10362, titre: "picross" }, { type: 'NOM_PICROSS', id: 10363, titre: "picross" } ]
+            titre: "Défi Picross - facile ",
+            liste: [{ type: "picross", id: 10360, titre: "picross" }, { type: "picross", id: 10361, titre: "picross" }, { type: "picross", id: 10362, titre: "picross" }, { type: "picross", id: 10363, titre: "picross" } ]
 
         },
         {
             id: 37,
-            titre: "DEFI_37",
-            liste: [{ type: 'NOM_BINERO', id: 10370, titre: "binero" }, { type: 'NOM_PICROSS', id: 10371, titre: "picross" }, { type: 'NOM_BINERO', id: 10372, titre: "binero" }, { type: 'NOM_PICROSS', id: 10373, titre: "picross" } ]
+            titre: "Défi Binero et Picross",
+            liste: [{ type: "binero", id: 10370, titre: "binero" }, { type: "picross", id: 10371, titre: "picross" }, { type: "binero", id: 10372, titre: "binero" }, { type: "picross", id: 10373, titre: "picross" } ]
 
         },
         {
             id: 38,
-            titre: "DEFI_38",
-            liste: [{ type: 'NOM_BINERO', id: 10380, titre: "binero" },{ type: 'NOM_BINERO', id: 10381, titre: "binero" }, { type: 'NOM_BINERO', id: 10382, titre: "binero" } ]
+            titre: "Défi Binero - moyen",
+            liste: [{ type: "binero", id: 10380, titre: "binero" },{ type: "binero", id: 10381, titre: "binero" }, { type: "binero", id: 10382, titre: "binero" } ]
 
         },
         {
             id: 39,
-            titre: "DEFI_39",
-            liste: [{ type: 'NOM_PICROSS', id: 10390, titre: "picross" }, { type: 'NOM_PICROSS', id: 10391, titre: "picross" }, { type: 'NOM_PICROSS', id: 10392, titre: "picross" } ]
+            titre: "Défi Picross - difficile",
+            liste: [{ type: "picross", id: 10390, titre: "picross" }, { type: "picross", id: 10391, titre: "picross" }, { type: "picross", id: 10392, titre: "picross" } ]
 
         },
        

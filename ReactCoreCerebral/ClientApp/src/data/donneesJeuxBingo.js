@@ -2,7 +2,7 @@ let donneesBingo =
 [
     {
         id: 1000,
-        titre: "TRES_FACILE_1",
+        titre: "Très facile 1",
         info : 
             {
                 taille : 4,
@@ -14,7 +14,7 @@ let donneesBingo =
     },
     {
         id: 1001,
-        titre: "FACILE_1",
+        titre: "Facile 1",
         info : 
             {
                 taille : 4,
@@ -26,7 +26,7 @@ let donneesBingo =
     },
     {
         id: 1002,
-        titre: "TRES_DIFFICILE_1",
+        titre: "Très difficile 1",
         info : 
             {
                 taille : 5,
@@ -38,7 +38,7 @@ let donneesBingo =
     },
     {
         id: 1003,
-        titre: "IMPOSSIBLE",
+        titre: "Impossible ?",
         info : 
             {
                 taille : 5,

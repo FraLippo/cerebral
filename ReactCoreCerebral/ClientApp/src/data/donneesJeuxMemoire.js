@@ -2,7 +2,7 @@ let donneesJeuxMemoire =
 [
     {
         id: 500,
-        titre: "FACILE_1",
+        titre: "Facile 1",
         temps: 40,
         info : 
             {
@@ -16,7 +16,7 @@ let donneesJeuxMemoire =
     },
    {
     id: 501,
-    titre: "FACILE_2",
+    titre: "Facile 2",
     temps: 35,
     info : 
         {
@@ -31,7 +31,7 @@ let donneesJeuxMemoire =
 },
     {
         id: 502,
-        titre: "FACILE_3",
+        titre: "Facile 3",
         temps: 35,
         info : 
             {
@@ -45,7 +45,7 @@ let donneesJeuxMemoire =
     },
     {
         id: 503,
-        titre: "ALIEN",
+        titre: "Alien (moyen)",
         temps: 35,
         info : 
             {
@@ -59,7 +59,7 @@ let donneesJeuxMemoire =
     },
     {
         id: 504,
-        titre: "COEUR",
+        titre: "Le cœur (moyen)",
         temps: 40,
         info : 
             {
@@ -73,7 +73,7 @@ let donneesJeuxMemoire =
     },
     {
         id: 505,
-        titre: "MOYEN_2",
+        titre: "Moyen 2",
         temps: 40,
         info : 
             {
@@ -87,7 +87,7 @@ let donneesJeuxMemoire =
     },
     {
         id: 506,
-        titre: "DIFFICILE_1",
+        titre: "Difficile 1",
         temps: 40,
         info : 
             {
@@ -101,7 +101,7 @@ let donneesJeuxMemoire =
     },
     {
         id: 507,
-        titre: "DIFFICILE_2",
+        titre: "Difficile 2",
         temps: 40,
         info : 
             {

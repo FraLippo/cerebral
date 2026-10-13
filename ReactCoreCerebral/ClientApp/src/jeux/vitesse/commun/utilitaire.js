@@ -133,7 +133,7 @@ let tabJeu = ["vitesseaddition", "vitesseburger", "vitessecouleur", "vitessesoli
 let typeJeu = ['r','r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l','l', 'l', 'l', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'd','d', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm']
 
 let tabCategorie = ["test-memoire", "test-concentration", "test-calcul", "test-lettres", "test-culture", "test-planification"]
-let tabCategorie2 = ["memoire", "concentration", "calcul", "vocabulaire", "culture", "planification"]
+let tabCategorie2 = ["mémoire", "concentration", "calcul", "vocabulaire", "culture", "planification"]
 
 
 

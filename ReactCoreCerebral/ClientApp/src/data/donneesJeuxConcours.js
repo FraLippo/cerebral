@@ -2,7 +2,7 @@ let donneesJeuxConcours =
     [
         {
             id: 10050,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 5,
             qualifTemps: 10,
             info:
@@ -14,7 +14,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10051,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 5,
             qualifTemps: 15,
             info:
@@ -25,7 +25,7 @@ let donneesJeuxConcours =
             }
         }, {
             id: 10052,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 5,
             qualifTemps: 10,
             temps: 10,
@@ -75,7 +75,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10053,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 5,
             qualifFaute: 0,
             tabNombre: [1, 2, 1, 1, 2, 1, 1, 2, 2, 1, 2, 1],
@@ -87,7 +87,7 @@ let donneesJeuxConcours =
             temps: 10,
             idConcours: 5,
             qualifTemps: 10,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             choix: ["8 7 3", "4 1 6"],
             info: [
                 {
@@ -119,7 +119,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10061,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 6,
             qualifTemps: 10,
             info:
@@ -131,7 +131,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10060,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 6,
             qualifTemps: 13,
             info:
@@ -142,7 +142,7 @@ let donneesJeuxConcours =
             }
         }, {
             id: 10062,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 6,
             qualifTemps: 22,
             temps: 25,
@@ -224,7 +224,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10064,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 6,
             qualifFaute: 0,
             tabNombre: [1, 1, 2, 1, 3, 3, 3, 2, 2, 1, 2, 1],
@@ -236,7 +236,7 @@ let donneesJeuxConcours =
             temps: 10,
             idConcours: 6,
             qualifTemps: 10,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             choix: ["81 7 33", "8 1 5", "44 3 9"],
             info: [
                 {
@@ -291,7 +291,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10071,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 7,
             qualifFaute: 0,
             tabNombre: [3, 1, 2, 2, 3, 3, 3, 1, 2, 1, 1, 1],
@@ -301,7 +301,7 @@ let donneesJeuxConcours =
         {
             id: 10072,
             idConcours: 7,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             qualifTemps: 40,
             temps: 40,
             info:
@@ -342,7 +342,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10080,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 8,
             qualifFaute: 0,
             tabNombre: [3, 1, 3, 3, 2, 2, 1, 2, 2, 1, 1, 3],
@@ -352,7 +352,7 @@ let donneesJeuxConcours =
         {
             id: 10082,
             idConcours: 8,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             qualifTemps: 30,
             temps: 30,
             info:
@@ -367,8 +367,8 @@ let donneesJeuxConcours =
         },
         {
             id: 10090,
-            titre: "TRES_FACILE_1",
-            explication: "PUZZLE_DANSE",
+            titre: "Très facile 1",
+            explication: "Les ballerines",
             nom: "Entrainement",
             idConcours: 9,
             qualifTemps: 35,
@@ -379,8 +379,8 @@ let donneesJeuxConcours =
 
         }, {
             id: 10091,
-            titre: "FACILE_1",
-            explication: "PUZZLE_REPAS",
+            titre: "Facile 1",
+            explication: "Un repas",
             idConcours: 9,
             qualifTemps: 50,
             temps: 50,
@@ -484,8 +484,8 @@ let donneesJeuxConcours =
         },
         {
             id: 10092,
-            titre: "TRES_FACILE_1",
-            explication: "PUZZLE_FALAISE",
+            titre: "Très facile 1",
+            explication: "La falaise",
             nom: "Entrainement",
             idConcours: 9,
             qualifTemps: 55,
@@ -496,8 +496,8 @@ let donneesJeuxConcours =
 
         }, {
             id: 10100,
-            titre: "TRES_FACILE_1",
-            explication: "PUZZLE_AMOUR1",
+            titre: "Très facile 1",
+            explication: "La rencontre",
             nom: "Entrainement",
             idConcours: 10,
             qualifTemps: 35,
@@ -508,8 +508,8 @@ let donneesJeuxConcours =
 
         }, {
             id: 10101,
-            titre: "FACILE_1",
-            explication: "PUZZLE_AMOUR2",
+            titre: "Facile 1",
+            explication: "Le mariage",
             idConcours: 10,
             qualifTemps: 50,
             temps: 50,
@@ -613,8 +613,8 @@ let donneesJeuxConcours =
         },
         {
             id: 10102,
-            titre: "TRES_FACILE_1",
-            explication: "PUZZLE_AMOUR3",
+            titre: "Très facile 1",
+            explication: "Le divorce",
             nom: "Entrainement",
             idConcours: 10,
             qualifTemps: 40,
@@ -626,7 +626,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10110,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 11,
             qualifFaute: 0,
             info:
@@ -639,7 +639,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10111,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 11,
             qualifFaute: 0,
             info:
@@ -652,7 +652,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10112,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 11,
             qualifFaute: 0,
             info:
@@ -664,7 +664,7 @@ let donneesJeuxConcours =
 
         }, {
             id: 10120,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 12,
             qualifTemps: 10,
             info:
@@ -676,7 +676,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10121,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 12,
             qualifTemps: 20,
             temps: 20,
@@ -758,7 +758,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10122,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 12,
             qualifTemps: 25,
             info:
@@ -773,7 +773,7 @@ let donneesJeuxConcours =
             temps: 13,
             idConcours: 12,
             qualifTemps: 13,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             choix: ["99 3 13", "9 14 5", "55 65 45", "67 68 23"],
             info: [
                 {
@@ -806,7 +806,7 @@ let donneesJeuxConcours =
         {
             id: 10130,
             idConcours: 13,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             qualifTemps: 30,
             temps: 30,
             info:
@@ -821,7 +821,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10131,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 13,
             qualifFaute: 0,
             tabNombre: [3, 4, 4, 3, 2, 1, 1, 4, 3, 4, 4, 3],
@@ -859,8 +859,8 @@ let donneesJeuxConcours =
         },
         {
             id: 10140,
-            titre: "TRES_FACILE_1",
-            explication: "PUZZLE_FETE1",
+            titre: "Très facile 1",
+            explication: "La fête foraine",
             nom: "Entrainement",
             idConcours: 14,
             qualifTemps: 85,
@@ -872,8 +872,8 @@ let donneesJeuxConcours =
         },
         {
             id: 10141,
-            titre: "FACILE_1",
-            explication: "PUZZLE_FETE2",
+            titre: "Facile 1",
+            explication: "Les bonbons",
             idConcours: 14,
             qualifTemps: 70,
             temps: 70,
@@ -977,8 +977,8 @@ let donneesJeuxConcours =
         },
         {
             id: 10142,
-            titre: "TRES_FACILE_1",
-            explication: "PUZZLE_FETE3",
+            titre: "Très facile 1",
+            explication: "La piscine",
             nom: "Entrainement",
             idConcours: 14,
             qualifTemps: 155,
@@ -990,13 +990,13 @@ let donneesJeuxConcours =
         },
         {
             id: "10160/1/1",
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 16
 
         },
         {
             id: 10161,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 16,
             qualifFaute: 0,
             info:
@@ -1009,13 +1009,13 @@ let donneesJeuxConcours =
         },
         {
             id: "10170/1/2",
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 17
 
         },
         {
             id: 10171,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 17,
             qualifFaute: 0,
             info:
@@ -1028,13 +1028,13 @@ let donneesJeuxConcours =
         },
         {
             id: "10180/1/3",
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 18
 
         },
         {
             id: 10181,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 18,
             qualifFaute: 0,
             info:
@@ -1047,7 +1047,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10191,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 19,
             qualifFaute: 0,
             info:
@@ -1063,7 +1063,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10192,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 19,
             qualifFaute: 0,
             info:
@@ -1076,7 +1076,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10193,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 19,
             qualifFaute: 0,
             info:
@@ -1092,7 +1092,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10201,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 20,
             qualifFaute: 0,
             info:
@@ -1108,7 +1108,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10202,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 20,
             qualifFaute: 0,
             info:
@@ -1121,7 +1121,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10203,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 20,
             qualifFaute: 0,
             info:
@@ -1137,7 +1137,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10210,
-            titre: "MOYEN_3",
+            titre: "Moyen 3",
             idConcours: 21,
             qualifFaute: 0,
             info:
@@ -1153,7 +1153,7 @@ let donneesJeuxConcours =
 
         {
             id: 10211,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 21,
             qualifFaute: 0,
             info:
@@ -1169,7 +1169,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10212,
-            titre: "MOYEN_3",
+            titre: "Moyen 3",
             idConcours: 21,
             qualifFaute: 0,
             info:
@@ -1184,7 +1184,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10220,
-            titre: "MOYEN_3",
+            titre: "Moyen 3",
             idConcours: 22,
             qualifFaute: 0,
             info:
@@ -1199,7 +1199,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10221,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 22,
             qualifFaute: 0,
             info:
@@ -1215,7 +1215,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10222,
-            titre: "MOYEN_3",
+            titre: "Moyen 3",
             idConcours: 22,
             qualifFaute: 0,
             info:
@@ -1230,7 +1230,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10230,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 23,
             qualifFaute: 1,
             info:
@@ -1268,7 +1268,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10231,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 23,
             qualifFaute: 0,
             info:
@@ -1284,7 +1284,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10232,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 23,
             qualifFaute: 0,
             info:
@@ -1297,7 +1297,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10240,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 24,
             qualifFaute: 1,
             info:
@@ -1335,7 +1335,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10241,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 24,
             qualifFaute: 0,
             info:
@@ -1351,7 +1351,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10242,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 24,
             qualifFaute: 0,
             info:
@@ -1364,7 +1364,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10250,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 25,
             qualifFaute: 0,
             info:
@@ -1400,7 +1400,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10252,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 25,
             qualifFaute: 2,
             info:
@@ -1413,7 +1413,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10260,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 26,
             qualifFaute: 2,
             info:
@@ -1427,7 +1427,7 @@ let donneesJeuxConcours =
         {
             id: 10261,
             idConcours: 26,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             qualifTemps: 40,
             temps: 40,
             info:
@@ -1442,7 +1442,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10262,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 26,
             qualifFaute: 2,
             info:
@@ -1456,7 +1456,7 @@ let donneesJeuxConcours =
         {
             id: 10270,
             idConcours: 27,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             qualifTemps: 40,
             temps: 40,
             info:
@@ -1471,7 +1471,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10271,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 27,
             qualifFaute: 2,
             info:
@@ -1510,8 +1510,8 @@ let donneesJeuxConcours =
         },
         {
             id: 10280,
-            titre: "TRES_FACILE_1",
-            explication: "PUZZLE_BEBE",
+            titre: "Très facile 1",
+            explication: "Les bébés",
             nom: "Bébés",
             idConcours: 28,
             qualifTemps: 35,
@@ -1523,7 +1523,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10281,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 28,
             qualifFaute: 2,
             info:
@@ -1536,8 +1536,8 @@ let donneesJeuxConcours =
         },
         {
             id: 10282,
-            titre: "TRES_FACILE_1",
-            explication: "PUZZLE_AMIES",
+            titre: "Très facile 1",
+            explication: "Sans modération",
             nom: "Sans modération",
             idConcours: 28,
             qualifTemps: 55,
@@ -1549,8 +1549,8 @@ let donneesJeuxConcours =
         },
         {
             id: 10290,
-            titre: "TRES_FACILE_1",
-            explication: "PUZZLE_DEJEUNER",
+            titre: "Très facile 1",
+            explication: "Petit déjeuner",
             nom: "Petit déjeuner",
             idConcours: 29,
             qualifTemps: 50,
@@ -1562,7 +1562,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10291,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 29,
             qualifFaute: 2,
             info:
@@ -1575,8 +1575,8 @@ let donneesJeuxConcours =
         },
         {
             id: 10292,
-            titre: "TRES_FACILE_1",
-            explication: "PUZZLE_RANDO",
+            titre: "Très facile 1",
+            explication: "Randonnée",
             nom: "Entrainement",
             idConcours: 29,
             qualifTemps: 45,
@@ -1588,7 +1588,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10300,
-            titre: "IMPOSSIBLE",
+            titre: "Impossible ?",
             idConcours: 30,
             info:
             {
@@ -1602,7 +1602,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10301,
-            titre: "IMPOSSIBLE",
+            titre: "Impossible ?",
             idConcours: 30,
             info:
             {
@@ -1616,7 +1616,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10310,
-            titre: "DIFFICILE_2",
+            titre: "Difficile 2",
             idConcours: 31,
             taille: 4,
             intervalle: 1000,
@@ -1642,7 +1642,7 @@ let donneesJeuxConcours =
             }]
         }, {
             id: 10312,
-            titre: "DIFFICILE_2",
+            titre: "Difficile 2",
             idConcours: 31,
             taille: 4,
             intervalle: 800,
@@ -1650,7 +1650,7 @@ let donneesJeuxConcours =
 
         }, {
             id: 10320,
-            titre: "DIFFICILE_2",
+            titre: "Difficile 2",
             idConcours: 32,
             taille: 4,
             intervalle: 600,
@@ -1676,7 +1676,7 @@ let donneesJeuxConcours =
             }]
         }, {
             id: 10322,
-            titre: "DIFFICILE_2",
+            titre: "Difficile 2",
             idConcours: 32,
             taille: 4,
             intervalle: 600,
@@ -1684,7 +1684,7 @@ let donneesJeuxConcours =
 
         }, {
             id: 10330,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 33,
             qualifTemps: 25,
             temps: 25,
@@ -1761,7 +1761,7 @@ let donneesJeuxConcours =
             }]
         }, {
             id: 10331,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 33,
             info: {
                 taille: 5,
@@ -1771,7 +1771,7 @@ let donneesJeuxConcours =
             }
         }, {
             id: 10332,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 33,
             qualifTemps: 22,
             info: {
@@ -1783,7 +1783,7 @@ let donneesJeuxConcours =
         ,
         {
             id: 10340,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 34,
             qualifFaute: 1,
             info:
@@ -1822,7 +1822,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10341,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 34,
             qualifFaute: 1,
             info:
@@ -1861,7 +1861,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10342,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 34,
             qualifFaute: 1,
             info:
@@ -1901,7 +1901,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10343,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 34,
             qualifFaute: 1,
             info:
@@ -1941,7 +1941,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10350,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 35,
             taille: 4,
             temps: 2000,
@@ -1950,7 +1950,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10351,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 35,
             taille: 4,
             temps: 1200,
@@ -1958,7 +1958,7 @@ let donneesJeuxConcours =
 
         }, {
             id: 10352,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 35,
             taille: 4,
             temps: 1200,
@@ -1966,7 +1966,7 @@ let donneesJeuxConcours =
 
         }, {
             id: 10353,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 35,
             taille: 6,
             temps: 1800,
@@ -1975,7 +1975,7 @@ let donneesJeuxConcours =
         }
         , {
             id: 10360,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 36,
             temps: 2000,
             indiceX: [[0, 0, 4], [0, 1, 1], [0, 0, 1], [0, 0, 1]],
@@ -1984,7 +1984,7 @@ let donneesJeuxConcours =
             resultat: [1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0]
         }, {
             id: 10361,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 36,
             temps: 1200,
             indiceX: [[0, 0, 3], [0, 1, 1], [0, 0, 1], [0, 0, 4]],
@@ -1994,7 +1994,7 @@ let donneesJeuxConcours =
 
         }, {
             id: 10362,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 36,
             temps: 1200,
             indiceX: [[0, 2, 1], [0, 2, 1], [0, 1, 2], [0, 1, 2]],
@@ -2005,7 +2005,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10363,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 36,
             temps: 2000,
             indiceX: [[0, 0, 1], [0, 1, 2], [0, 0, 6], [0, 1, 2], [0, 0, 1], [0, 0, 1]],
@@ -2015,7 +2015,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10370,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 37,
             taille: 4,
             temps: 1300,
@@ -2023,7 +2023,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10371,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 37,
             temps: 1500,
             indiceX: [[0, 0, 2], [0, 0, 3], [0, 0, 1], [0, 0, 4]],
@@ -2034,7 +2034,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10372,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 37,
             taille: 6,
             temps: 2000,
@@ -2043,7 +2043,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10373,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 37,
             temps: 2500,
             indiceX: [[0, 1, 1], [0, 1, 1], [0, 0, 6], [0, 0, 2], [0, 0, 2], [0, 0, 4]],
@@ -2054,7 +2054,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10380,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 38,
             taille: 6,
             temps: 1100,
@@ -2063,7 +2063,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10381,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 38,
             taille: 6,
             temps: 1100,
@@ -2071,7 +2071,7 @@ let donneesJeuxConcours =
 
         }, {
             id: 10382,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 38,
             taille: 6,
             temps: 1100,
@@ -2080,7 +2080,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10390,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 39,
             temps: 2200,
             indiceX: [[0, 4, 1], [1, 1, 1], [0, 0, 8], [1, 1, 1], [1, 1, 1], [0, 0, 8], [1, 1, 1], [0, 1, 3]],
@@ -2089,7 +2089,7 @@ let donneesJeuxConcours =
             resultat: [0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0]
         }, {
             id: 10391,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 39,
             temps: 2500,
             indiceX: [[0, 0, 2], [0, 1, 2], [0, 1, 1], [0, 0, 8], [0, 0, 8], [0, 1, 1], [0, 1, 2], [0, 0, 3]],
@@ -2098,7 +2098,7 @@ let donneesJeuxConcours =
             resultat: [0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1]
         }, {
             id: 10392,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 39,
             temps: 3000,
             indiceX: [[0, 4, 1], [0, 1, 1], [0, 4, 3], [0, 0, 1], [0, 0, 1], [0, 3, 4], [0, 1, 1], [0, 1, 4]],
@@ -2109,7 +2109,7 @@ let donneesJeuxConcours =
         ,
         {
             id: 10400,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 40,
             qualifFaute: 0,
             info:
@@ -2122,7 +2122,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10401,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 40,
             qualifFaute: 0,
             info:
@@ -2135,7 +2135,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10402,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             idConcours: 40,
             qualifFaute: 0,
             info:
@@ -2148,7 +2148,7 @@ let donneesJeuxConcours =
         },
         {
             id: 10410,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 41,
             qualifFaute: 1,
             info:
@@ -2181,7 +2181,7 @@ let donneesJeuxConcours =
                 ]
         }, {
             id: 10411,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 41,
             qualifFaute: 1,
             info:
@@ -2211,12 +2211,12 @@ let donneesJeuxConcours =
         },
         {
             id: 10420,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 42,
             qualifFaute: 0,
             info:
             {
-                photo: 'jeuPhoto1.jpg',
+                photo: 'jeuphoto1.jpg',
                 questions: [{
                     question: "La jeune femme tient un livre dans ses mains.",
                     reponses: ["Vrai", "Faux"],
@@ -2238,13 +2238,13 @@ let donneesJeuxConcours =
         },
         {
             id: 10421,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 42,
             qualifFaute: 0,
 
             info:
             {
-                photo: 'jeuPhoto2.jpg',
+                photo: 'jeuphoto2.jpg',
                 questions: [{
                     question: "La jeune femme a l'air très heureuse.",
                     reponses: ["Vrai", "Faux"],
@@ -2267,13 +2267,13 @@ let donneesJeuxConcours =
        
         {
             id: 10422,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 42,
             qualifFaute: 0,
 
             info:
             {
-                photo: 'jeuPhoto3.jpg',
+                photo: 'jeuphoto3.jpg',
                 questions: [{
                     question: "La jeune femme est pieds nus.",
                     reponses: ["Vrai", "Faux"],
@@ -2295,13 +2295,13 @@ let donneesJeuxConcours =
         },
         {
             id: 10430,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 43,
             qualifFaute: 0,
 
             info:
             {
-                photo: 'jeuPhoto4.jpg',
+                photo: 'jeuphoto4.jpg',
                 questions: [{
                     question: "Quelle heure est-il ?",
                     reponses: ["10 h 10", "9 h 10", "8 h 10"],
@@ -2323,13 +2323,13 @@ let donneesJeuxConcours =
         },
         {
             id: 10431,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 43,
             qualifFaute: 0,
 
             info:
             {
-                photo: 'jeuPhoto5.jpg',
+                photo: 'jeuphoto5.jpg',
                 questions: [{
                     question: "Combien voit-on de jeunes femmes ?",
                     reponses: ["1", "2", "3", "4"],
@@ -2352,13 +2352,13 @@ let donneesJeuxConcours =
         },
         {
             id: 10432,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 43,
             qualifFaute: 0,
 
             info:
             {
-                photo: 'jeuPhoto6.jpg',
+                photo: 'jeuphoto6.jpg',
                 questions: [{
                     question: "Le père de famille tient deux enfants dans ses bras.",
                     reponses: ["Vrai", "Faux"],
@@ -2380,12 +2380,12 @@ let donneesJeuxConcours =
         },
         {
             id: 10440,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 44,
             qualifFaute: 0,
             info:
             {
-                photo: 'jeuPhoto7.jpg',
+                photo: 'jeuphoto7.jpg',
                 questions: [{
                     question: "Combien voit-on de petites cuillères dans les soucoupes ?",
                     reponses: ["1", "2"],
@@ -2407,13 +2407,13 @@ let donneesJeuxConcours =
         },
         {
             id: 10441,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 44,
             qualifFaute: 0,
 
             info:
             {
-                photo: 'jeuPhoto8.jpg',
+                photo: 'jeuphoto8.jpg',
                 questions: [{
                     question: "Le père tient un livre avec ses deux mains.",
                     reponses: ["Vrai", "Faux"],
@@ -2435,13 +2435,13 @@ let donneesJeuxConcours =
         },
         {
             id: 10442,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             idConcours: 44,
             qualifFaute: 0,
 
             info:
             {
-                photo: 'jeuPhoto9.jpg',
+                photo: 'jeuphoto9.jpg',
                 questions: [{
                     question: "Quelle est la couleur principale du ballon ?",
                     reponses: ["Blanc", "Noire", "Orange", "Jaune"],

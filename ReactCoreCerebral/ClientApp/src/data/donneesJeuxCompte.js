@@ -2,7 +2,7 @@ let donneesCompte =
 [
     {
         id: 400,
-        titre: "TRES_FACILE_1",
+        titre: "Très facile 1",
         info : 
             {
                 cartes : [7, 8, 10, 100, 9 , 1],
@@ -13,7 +13,7 @@ let donneesCompte =
     },
     {
         id: 401,
-        titre: "TRES_FACILE_2",
+        titre: "Très facile 2",
         info : 
             {
                 cartes : [4, 25, 2, 8, 10 , 2],
@@ -24,7 +24,7 @@ let donneesCompte =
     },
     {
         id: 402,
-        titre: "FACILE_1",
+        titre: "Facile 1",
         info : 
             {
                 cartes : [2, 3, 25, 4, 10 , 4],
@@ -35,7 +35,7 @@ let donneesCompte =
     },
     {
         id: 403,
-        titre: "FACILE_2",
+        titre: "Facile 2",
         info : 
             {
                 cartes : [7, 2, 50, 2, 10 , 9],
@@ -46,7 +46,7 @@ let donneesCompte =
     },
     {
         id: 404,
-        titre: "DIFFICILE_1",
+        titre: "Difficile 1",
         info : 
             {
                 cartes : [4, 6, 1, 8, 4 , 2],
@@ -57,7 +57,7 @@ let donneesCompte =
     },
     {
         id: 405,
-        titre: "DIFFICILE_2",
+        titre: "Difficile 2",
         info : 
             {
                 cartes : [75, 3, 7, 8, 1,6],
@@ -69,7 +69,7 @@ let donneesCompte =
     ,
     {
         id: 406,
-        titre: "DIFFICILE_3",
+        titre: "Difficile 3",
         info : 
             {
                 cartes : [7, 3, 9, 3, 7,10],
@@ -81,7 +81,7 @@ let donneesCompte =
     ,
     {
         id: 407,
-        titre: "MOYEN_1",
+        titre: "Moyen 1",
         info : 
             {
                 cartes : [1, 2, 3, 8, 10, 25],
@@ -92,7 +92,7 @@ let donneesCompte =
     },
     {
         id: 408,
-        titre: "MOYEN_2",
+        titre: "Moyen 2",
         info : 
             {
                 cartes : [7, 75, 8, 2, 6, 3],
@@ -103,7 +103,7 @@ let donneesCompte =
     , 
     {
         id: 409,
-        titre: "FACILE_3",
+        titre: "Facile 3",
         info : 
             {
                 cartes : [6, 8, 10, 4, 1, 25],
@@ -115,7 +115,7 @@ let donneesCompte =
     , 
     {
         id: 410,
-        titre: "FACILE_4",
+        titre: "Facile 4",
         info : 
             {
                 cartes : [3, 4, 3, 2, 6, 7],

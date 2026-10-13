@@ -3,7 +3,7 @@ let donneesTri =
         {
             id: 200,
             temps: 15,
-            titre: "TRES_FACILE_1",
+            titre: "Très facile 1",
             choix: ["1 2 3", "4 5 6"],
             info: [
                 {
@@ -35,7 +35,7 @@ let donneesTri =
         },
         {
             id: 201,
-            titre: "TRES_FACILE_2",
+            titre: "Très facile 2",
             temps: 16,
             choix: ["8 4 2", "3 7 9"],
             info: [
@@ -68,7 +68,7 @@ let donneesTri =
         },
         {
             id: 202,
-            titre: "FACILE_1",
+            titre: "Facile 1",
             temps: 16,
             choix: ["5 3 2", "9 8 7", "1 4 6"],
             info: [
@@ -105,7 +105,7 @@ let donneesTri =
         },
         {
             id: 203,
-            titre: "FACILE_2",
+            titre: "Facile 2",
             temps: 19,
             choix: ["8 4 11", "9 3 12", "1 5 2", "10 6 7"],
             info: [
@@ -142,7 +142,7 @@ let donneesTri =
         },
         {
             id: 204,
-            titre: "MOYEN_1",
+            titre: "Moyen 1",
             temps: 16,
             choix: [["4 B 8", "A 9 C"], ["2 5 Z", "X Y 7"]],
             info: [
@@ -179,7 +179,7 @@ let donneesTri =
         },
         {
             id: 205,
-            titre: "MOYEN_2",
+            titre: "Moyen 2",
             temps: 16,
             choix: [["3 6 2", "K O P"], ["4 7 8", "G A T"], "1 9 5"],
             info: [
@@ -220,7 +220,7 @@ let donneesTri =
         },
         {
             id: 206,
-            titre: "DIFFICILE_1",
+            titre: "Difficile 1",
             temps: 18,
             choix: [["10 2 3", "A B C"], ["9 18 7", "X Y Z"], ["S R T", "1 8 12"], ["M N V", "4 23 21"]],
             info: [
@@ -257,7 +257,7 @@ let donneesTri =
         },
         {
             id: 207,
-            titre: "DIFFICILE_2",
+            titre: "Difficile 2",
             temps: 17,
             choix: [["2 Q 6", "4 Y R"], ["1 3 5", "O P I"], ["7 A 9", "Z W V"], ["8 18 44", "T 33 D"]],
             info: [
@@ -298,7 +298,7 @@ let donneesTri =
         },
         {
             id: 208,
-            titre: "DIFFICILE_3",
+            titre: "Difficile 3",
             temps:19,
             choix: [["33 66 16", "Y 77 H"], ["61 3 55", "O 777 S"], ["333 666 1", "I M V"], ["8 18 5", "G 7 B"]],
             info: [

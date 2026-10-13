@@ -1,5 +1,4 @@
 import AccesDonnees from '../../data/AccesDonnees';
-import intl from 'react-intl-universal';
 
 export default class Logique extends AccesDonnees {
 
@@ -128,11 +127,11 @@ export default class Logique extends AccesDonnees {
             const nbPossibilite = this.nombrePossibiliteGagner(tabPossibilite);
             const victoire = this.testGagne(tabPossibilite);
             if (victoire > 0) {
-                messagesJoueurs[index].msg = messagesJoueurs[index].joueur + intl.get('BINGO_JOUEURSV');
+                messagesJoueurs[index].msg = messagesJoueurs[index].joueur + " a terminé sa grille.";
                 fin = true;
             }
             else if (nbPossibilite > 0) {
-                messagesJoueurs[index].msg = nbPossibilite + (nbPossibilite === 1 ? intl.get('BINGO_CHANCE') : intl.get('BINGO_CHANCES')) + intl.get('BINGO_DEGAGNER');
+                messagesJoueurs[index].msg = nbPossibilite + (nbPossibilite === 1 ? " possibilité" : " possibilités") + " de gagner";
             }
         }
         return { messagesJoueurs, fin };

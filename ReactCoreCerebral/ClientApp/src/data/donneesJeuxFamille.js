@@ -2,7 +2,7 @@ let donneesJeuxFamille =
 [
     {
         id: 700,
-        titre: "FACILE_1",
+        titre: "Facile 1",
         info : 
             {
                 taille: 7,
@@ -12,7 +12,7 @@ let donneesJeuxFamille =
     },
     {
         id: 701,
-        titre: "FACILE_2",
+        titre: "Facile 2",
         info : 
             {
                 taille: 7,
@@ -22,7 +22,7 @@ let donneesJeuxFamille =
     },
     {
         id: 702,
-        titre: "FACILE_3",
+        titre: "Facile 3",
         info : 
             {
                 taille: 7,
@@ -32,7 +32,7 @@ let donneesJeuxFamille =
     },
     {
         id: 703,
-        titre: "MOYEN_1",
+        titre: "Moyen 1",
         info : 
             {
                 taille: 7,
@@ -42,7 +42,7 @@ let donneesJeuxFamille =
     },
     {
         id: 704,
-        titre: "MOYEN_2",
+        titre: "Moyen 2",
         info : 
             {
                 taille: 7,
@@ -52,7 +52,7 @@ let donneesJeuxFamille =
     },
     {
         id: 705,
-        titre: "DIFFICILE_1",
+        titre: "Difficile 1",
         info : 
             {
                 taille: 7,
@@ -62,7 +62,7 @@ let donneesJeuxFamille =
     },
     {
         id: 706,
-        titre: "NUAGE",
+        titre: "Le temps se couvre",
         info : 
             {
                 taille: 7,

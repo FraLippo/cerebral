@@ -17,10 +17,10 @@ export default class JeuWisconsin extends Component {
 
         this.caracteristique = '';
         this.nbTiragesAvantChangement = this.nombreTirages();
-        console.log(this.nbTiragesAvantChangement)
+      
         this.nbTirages = 0;
         this.caracteristique = this.tirageCaracteristique();
-        console.log(this.caracteristique);
+       
         this.state = {
             message: '',
             score: 0,
@@ -125,7 +125,7 @@ export default class JeuWisconsin extends Component {
             this.nbTiragesAvantChangement = this.nombreTirages();
             this.nbTirages = 0;
             this.caracteristique = this.tirageCaracteristique();
-            console.log(this.caracteristique);
+         
         }
         window.setTimeout(() => {this.fin = false; this.setState({ message: '', tirage, carteReference }) }, 1000)
     }

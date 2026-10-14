@@ -118,7 +118,7 @@ export default class JeuMur extends Component {
             return;
         }
         let mot = this.state.tabSaisie.map(x => {return x.lettre}).join('');
-        console.log(mot)
+      
         this.envoyerMessage(mot);
     }
 
@@ -158,7 +158,7 @@ export default class JeuMur extends Component {
      finTimer = () => {
          this.setState({ afficheResultat: true });
           let tabValeurs = this.state.tabBriques.filter(x => x.etat === 'fin').map(x => { return x.no });
-          console.log(tabValeurs);
+         
           let min = 0;
           if (tabValeurs.length === 0)
           {
@@ -168,7 +168,7 @@ export default class JeuMur extends Component {
           {
             min = Math.min(...tabValeurs);
           }
-          console.log(min);
+         
       
          let rangee = Math.floor(min / 10);
 

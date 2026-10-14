@@ -31,11 +31,13 @@ class Resultat extends Component {
     componentDidMount = () => {
 
         let prenom = readFirstName();
+     
         if (prenom !== null && !prenom.includes('@')) {
             prenom = prenom + '@' + Math.floor(Math.random() * 100000);
             addFirstName(prenom);
         }
         if (prenom === null) {
+          
             this.setState({
                 prenomVisible: true
             })

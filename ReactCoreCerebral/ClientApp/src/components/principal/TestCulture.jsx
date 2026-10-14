@@ -147,11 +147,7 @@ export default class TestCulture extends Component {
   <p> Écoutez un mot de politesse et choisissez sa signification. Ce jeu renforce votre <strong>culture générale</strong>, votre <strong>mémoire auditive</strong> et votre curiosité pour les langues.
   </p>
 
-  <h3>Boîte à rythmes</h3>
-  <p>Reproduisez un motif rythmique en appuyant au bon moment. Vous entraînez votre <strong>coordination</strong>, votre <strong>précision</strong> et votre <strong>sens du rythme</strong>.  </p>
- <p>Nous avons ajouté quelques motifs rythmiques des meilleures chansons de Michael Jackson (Beat It, Bad, Billie Jean) pour la sortie du film. </p>
- <div className="centre"><img src={michael} alt="Affiche du film Michael Jackson"></img></div>
-
+  
   <h3>Le test de l'oreille absolue</h3>
 
  <p>Un test très rapide pour savoir si vous possédez l'oreille absolue. L'oreille absolue permet de reconnaître immédiatement la hauteur de n’importe quelle note de musique. Ce test est aussi un excellent exercice pour celles et ceux qui veulent entraîner leur oreille.</p>

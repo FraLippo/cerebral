@@ -37,7 +37,7 @@ export default class Regle extends Component {
         </Button>
         <Modal
           title="Règles du jeu"
-          visible={this.state.visible}
+          open={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >

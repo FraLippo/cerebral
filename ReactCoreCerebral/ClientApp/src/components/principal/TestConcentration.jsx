@@ -50,7 +50,7 @@ export default class TesConcentration extends Component {
     <Ad></Ad>
     <div className='jeuVitesse'>
 
-<div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessewisconsin"] != null ? "dejaFaitCognito" : ""}`}>
+<div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessewisconsin"] != null ? "dejaFaitCognito" : ""}`}>
      <Link to='/vitessewisconsin'>   <div className="centre titreVitesse" >🙇 Test du Wisconsin</div>
        
           <p className="marge20">But du jeu : Associez chaque carte à l'une des quatre cartes de référence en découvrant la règle de classement (couleur, forme ou nombre). La règle change régulièrement sans être annoncée : adaptez-vous le plus vite possible pour obtenir le meilleur score. </p>
@@ -61,7 +61,7 @@ export default class TesConcentration extends Component {
         <div className="centre"><Link to='/classement/vitessewisconsin'>Classement</Link></div>
       </div>
 
- <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessemulti"] != null ? "dejaFaitCognito" : ""}`}>
+ <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessemulti"] != null ? "dejaFaitCognito" : ""}`}>
      <Link to='/vitessemulti'>   <div className="centre titreVitesse" >💻 Multitâche</div>
        
           <p className="marge20">But du jeu : être capable d'effectuer 2 actions en même temps. Tu dois suivre le déplacement d'un cercle avec le doigt ou la souris et répondre à des questions en même temps. Tu as besoin des 2 mains. Tu dois utiliser la barre d'espace (PC) ou taper sur le bandeau/bouton bleu (smartphone) pour indiquer si l'affirmation est fausse. 10 points par bonne réponse. On revient à 0 en cas d'erreur. Score maximum 110 points. </p>
@@ -73,7 +73,7 @@ export default class TesConcentration extends Component {
       </div>
 
 
- <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessemah"] != null ? "dejaFaitCognito" : ""}`}>
+ <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessemah"] != null ? "dejaFaitCognito" : ""}`}>
      <Link to='/vitessemah'>   <div className="centre titreVitesse" >🀄 Le mahjong solitaire</div>
        
           <p className="marge20">But du jeu : Retrouver toutes les paires des tuiles du mahjong. Vous pouvez sélectionner une tuile s'il y a un espace disponible à gauche <b>ou</b> à droite. Si vous voyez que le jeu est bloqué (plus aucune paire n'est possible), vous pouvez changer de grille sans pénalité sauf si vous avez oublié des paires. </p>
@@ -84,7 +84,7 @@ export default class TesConcentration extends Component {
         <div className="centre"><Link to='/classement/vitessemah'>Classement</Link></div>
       </div>
 
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessebinero"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessebinero"] != null ? "dejaFaitCognito" : ""}`}>
      <Link to='/vitessebinero'>   <div className="centre titreVitesse" >0️⃣ Le binero</div>
        
           <p className="marge20">But du jeu : Compléter une grille du jeu Binero. Le jeu est aussi connu sous le nom Takuzu ou Binoxxo. Il faut valider une grille pour obtenir des points, -10 points par grille non validée. Peut-on réussir plus de 72 points ?</p>
@@ -99,7 +99,7 @@ export default class TesConcentration extends Component {
 
 
 
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessebonneteau"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessebonneteau"] != null ? "dejaFaitCognito" : ""}`}>
      <Link to='/vitessebonneteau'>   <div className="centre titreVitesse" >🎩 Le bonneteau</div>
        
           <p className="marge20">But du jeu : Retrouve la carte cachée après plusieurs permutations de 4 cartes. Tu as 90 secondes pour découvrir le maximum de cartes. Le score augmente en fonction du niveau.   </p>
@@ -109,7 +109,7 @@ export default class TesConcentration extends Component {
       </div>
            
 
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessecomplet"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessecomplet"] != null ? "dejaFaitCognito" : ""}`}>
      <Link to='/vitessecomplet'>   <div className="centre titreVitesse" >🧩 Pièce du puzzle</div>
        
           <p className="marge20">But du jeu : Retrouvez la bonne pièce du puzzle qui s'encastre parfaitement dans une autre pièce. Un bonus peut t'être accordé si tu réussis à trouver 10 pièces.   </p>
@@ -121,7 +121,7 @@ export default class TesConcentration extends Component {
 
               
              
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesserecensement"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesserecensement"] != null ? "dejaFaitCognito" : ""}`}>
        <Link to='/vitesserecensement'>  <div className="centre titreVitesse" >🔍 Le recensement</div>
  
           <p className="marge20">But du jeu : Une grille est affichée avec des symboles, il suffit de répondre aux questions concernant l'emplacement de certains symboles ou le nombre de symboles. Attention aux négations dans les questions. Le jeu dure 90 secondes. Une bonne réponse rapporte 5 points et une mauvaise te fait perdre 6 points.</p>
@@ -131,7 +131,7 @@ export default class TesConcentration extends Component {
       </div>
 
 
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessematch"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessematch"] != null ? "dejaFaitCognito" : ""}`}>
       <Link to='/vitessematch'>  <div className="centre titreVitesse" >🐒  Former des paires</div>
          <p className="marge20">But du jeu : Un jeu très simple, reconstituer des paires à partir des éléments qui sont présents sur la page. Le temps alloué est de 60 secondes. Chaque paire trouvée rapporte 1 point. Des bonus te sont alloués à la fin de chaque tableau (5, 10 et 15 points).</p>
          <p className='centre'>{this.state.resultatsJoueur["vitessematch"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessematch"]:"Pas encore de résultat" }</p>
@@ -141,7 +141,7 @@ export default class TesConcentration extends Component {
 
 
       
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseaddition"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesseaddition"] != null ? "dejaFaitCognito" : ""}`}>
        <Link to='/vitesseaddition'> <div className="centre titreVitesse" >⊕ L'addition XOR</div>
          <p className="marge20">But du jeu : Faire la somme de deux grilles dans une troisième grille. L'addition se fait case par case comme une addition normale sauf que si tu additionnes deux cases bleues le résultat est une case blanche. Le terme XOR (ou exclusif) désigne un opérateur logique en informatique. Si tu termines une grille tu gagnes 2 points par bonne réponse. Le temps alloué est de 90 secondes. </p>
       </Link>   <p className='centre'>{this.state.resultatsJoueur["vitesseaddition"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesseaddition"]:"Pas encore de résultat" }</p>
@@ -150,7 +150,7 @@ export default class TesConcentration extends Component {
       </div>
     
   
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseburger"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesseburger"] != null ? "dejaFaitCognito" : ""}`}>
         <Link to='/vitesseburger'><div className="centre titreVitesse">🍔 Préparer des burgers</div>
 
         <p className="marge20">But du jeu : Créer des burger en plaçant les ingrédients de la recette dans l'ordre. Chaque burger créé rapporte 8 points. Le temps alloué pour obtenir le meilleur score est de 40 secondes.</p>
@@ -161,7 +161,7 @@ export default class TesConcentration extends Component {
      
     
    
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessecouleur"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessecouleur"] != null ? "dejaFaitCognito" : ""}`}>
       <Link to='/vitessecouleur'>  <div className="centre titreVitesse">🎨 Reconnaitre les couleurs</div>
      
         <p className="marge20">But du jeu : Reconnaitre la couleur dans laquelle est écrit un mot. La difficulté provient du fait  que le mot affiché est une couleur.
@@ -171,7 +171,7 @@ export default class TesConcentration extends Component {
         <div className="centre"><Link to='/classement/vitessecouleur'>Classement</Link></div>
 
       </div>
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessesolitaire"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessesolitaire"] != null ? "dejaFaitCognito" : ""}`}>
        <Link to='/vitessesolitaire'> <div className="centre titreVitesse">🈂 La tuile solitaire</div>
       
         <p className="marge20">But du jeu : Retrouver la tuile solitaire parmi un ensemble de tuiles. Tu as 60 secondes pour réaliser le meilleur score, le score augmente par multiple de 2. La première tuile trouvée te donne 2 points, la seconde 4 points, etc...   </p>
@@ -180,7 +180,7 @@ export default class TesConcentration extends Component {
         <div className="centre"><Link to='/classement/vitessesolitaire'>Classement</Link></div>
       </div>
 
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseintrus"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesseintrus"] != null ? "dejaFaitCognito" : ""}`}>
       <Link to='/vitesseintrus'>  <div className="centre titreVitesse">👯 Repérer les différences</div>
      
         <p className="marge20">But du jeu : Repérer tous les intrus dans une grille de 3x3 c'est-à-dire toutes les images qui ne correspondent pas à l'image de référence. Tu as 60 secondes pour réaliser le meilleur score, +1 point par bonne réponse, -2 points par mauvaise réponse.</p>
@@ -189,7 +189,7 @@ export default class TesConcentration extends Component {
         <div className="centre"><Link to='/classement/vitesseintrus'>Classement</Link></div>
       </div>
 
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseordre"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesseordre"] != null ? "dejaFaitCognito" : ""}`}>
        <Link to='/vitesseordre'> <div className="centre titreVitesse">🔢 Remettre dans l'ordre</div>
      
         <p className="marge20">But du jeu : Remettre dans l'ordre des nombres entre 1 et 100. Tu as 60 secondes pour réaliser le meilleur score, tu gagnes un point si tu places un nombre dans le bon ordre.</p>

@@ -52,7 +52,7 @@ export default class TestLettres extends Component {
 
       <Ad></Ad>
       <div className='jeuVitesse marge20'>
-                       <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessebrique"] != null ? "dejaFaitCognito" : ""}`}>
+                       <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessebrique"] != null ? "dejaFaitCognito" : ""}`}>
       <Link to='/vitessebrique'><div className="centre titreVitesse" >🧱 Mur de lettres</div>
       <p className="marge20">But du jeu : Créer des mots à partir des lettres disponibles dans le mur de lettres, seules les dernières lettres du mur peuvent être utilisées. Le but est d'atteindre le haut du mur. 12 points gagnés par ligne et 150 points si vous atteignez le haut du mur.</p>
      </Link>
@@ -61,7 +61,7 @@ export default class TestLettres extends Component {
       <div className="centre"><Link to='/classement/vitessebrique'>Classement</Link></div>
     </div>
 
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessemotus"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessemotus"] != null ? "dejaFaitCognito" : ""}`}>
       <Link to='/vitessemotus'><div className="centre titreVitesse" >Ⓜ️ Motus</div>
       <p className="marge20">But du jeu : Retrouver le mot caché en remettant les lettres dans l'ordre, ce jeu est inspiré de Motus, Wordle ou Tusmo. Les lettres bleues sont bien placées, les lettres dans les cercles rouges sont mal placées. Il suffit de cliquer sur les lettres pour les remettre dans l'ordre. Le niveau de difficulté est très variable suivant les mots, la difficulté n'augmente pas.  </p>
      </Link>
@@ -71,7 +71,7 @@ export default class TestLettres extends Component {
     </div>
 
 
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessecoupe"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessecoupe"] != null ? "dejaFaitCognito" : ""}`}>
       <Link to='/vitessecoupe'><div className="centre titreVitesse" >✂️ Les mots coupés</div>
       <p className="marge20">But du jeu : Le classique jeu des mots coupés où il faut reconstituer les mots qui sont coupés en plusieurs syllabes. Vous avez 100 s pour reconstituer le plus grand nombre de mots. +4 points par bonne réponse, -2 par mauvaise réponse. Attention, nous ne validons pas tous les mots, même ceux qui sont correctes grammaticalement, il faut trouver le mot attendu.  </p>
      </Link>
@@ -81,7 +81,7 @@ export default class TestLettres extends Component {
     </div>
 
 
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessechasse"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessechasse"] != null ? "dejaFaitCognito" : ""}`}>
       <Link to='/vitessechasse'><div className="centre titreVitesse" >📯 La chasse aux mots</div>
       <p className="marge20">But du jeu : Trouver des mots à partir des lettres disséminées dans une grille. Terminer une grille rapporte un bonus de 30 points. Plus le mot est long, plus tu gagnes de points. Le temps alloué est de 90 secondes. </p>
      </Link>
@@ -89,7 +89,7 @@ export default class TestLettres extends Component {
 
       <div className="centre"><Link to='/classement/vitessechasse'>Classement</Link></div>
     </div>
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesselettres"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesselettres"] != null ? "dejaFaitCognito" : ""}`}>
       <Link to='/vitesselettres'><div className="centre titreVitesse" >✍ Les lettres manquantes</div>
       <p className="marge20">But du jeu : Retrouver les lettres manquantes dans les mots. Les lettres sont cachées sous des carrés de couleur. L'ordre pour retrouver les lettres associées aux couleurs est toujours le même : bleu, rouge et jaune. Chaque bonne réponse rapporte 3 point puis 4 points quand il y a 2 lettres à retrouver. Chaque mauvaise réponse te fait perdre 1 point, le fait de passer te coûte 2 points. Le temps alloué est de 80 secondes. </p>
      </Link>
@@ -98,7 +98,7 @@ export default class TestLettres extends Component {
       <div className="centre"><Link to='/classement/vitesselettres'>Classement</Link></div>
     </div>
 
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitessecercle"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessecercle"] != null ? "dejaFaitCognito" : ""}`}>
     <Link to='/vitessecercle'>  <div className="centre titreVitesse" >⭕  Cercles de mots</div>
         <p className="marge20">But du jeu : Retrouver des mots de 8 lettres à partir de lettres mélangées. Les lettres du mot sont placées autour d'un cercle. Tu dois indiquer la première lettre du mot puis un sens de rotation pour retrouver le mot caché. Chaque mot trouvé rapporte 10 points, -10 en cas d'erreur. Si tu trouves les 6 mots en moins de 55 secondes tu as un bonus de 50 points. Le score maximal est donc de (6 x 10) + 50 = 110.  </p>
    </Link>
@@ -106,7 +106,7 @@ export default class TestLettres extends Component {
 
       <div className="centre"><Link to='/classement/vitessecercle'>Classement</Link></div>
     </div>
-                <div className={`lienJeuRapidité presentationJeu marge20 + ${this.state.resultatsJoueur["vitesseboogle"] != null ? "dejaFaitCognito" : ""}`}>
+                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesseboogle"] != null ? "dejaFaitCognito" : ""}`}>
       <Link to='/vitesseboogle'> <div className="centre titreVitesse" >🖋️ Le Boogle</div>
         <p className="marge20">But du jeu : Créer des mots à partir de lettres. La lettre centrale est obligatoire dans les mots. Les mots acceptés sont ceux du Scrabble. Il faut créer des mots de plus de 3 lettres. Les points sont doublés pour les mots les plus longs. Si tu trouves 9 mots en moins de 90 s, tu obtiens un bonus de 40 points. </p>
    </Link>

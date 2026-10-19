@@ -53,7 +53,7 @@ export default class ClassementMois extends Component {
                 dataIndex: 'prenom',
                 key: 'prenom',
                 render: (prenom) => {
-                    return <span className={prenom.includes('§') ? "bleuV" : "mauve"}>{prenom.includes('@') ? prenom.split('@')[0] : prenom}</span>;
+                    return <span className={prenom.includes('§') ? "bleuV" : "mauve"}>{prenom.split(/[@$]/)[0].slice(0, 15)}</span>;
                 }
 
             },
@@ -239,7 +239,7 @@ export default class ClassementMois extends Component {
 
                     {this.state.afficheInfoJoueur &&
                         <React.Fragment>
-                            <h2>Tes résultats {this.prenom.includes('@') ? this.prenom.split('@')[0] : this.prenom}</h2>
+                            <h2>Tes résultats {this.prenom.split(/[@$]/)[0].slice(0, 15)}</h2>
                             <p className='centre fontMoyenne margeHaut10'><b>Ton score :</b> {this.state.score}</p>
 
                             <p className='centre fontMoyenne margeHaut10'><b>Ton classement du mois :</b> {this.state.classement} / {this.state.nbJoueurs}</p>

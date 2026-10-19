@@ -71,25 +71,22 @@ export default class JeuNote extends Component {
         if (margeEcran) { margeEcran.scrollTop = 0; }
         //  const instruments = getElectricPianoNames(); // => ["CP80", "PianetT", "WurlitzerEP200"]
 
-        this.piano1 = new ElectricPiano(new AudioContext(), {
+        this.piano2 = ElectricPiano(new AudioContext(), {
             instrument: "PianetT",
         });
-        this.piano2 = new ElectricPiano(new AudioContext(), {
-            instrument: "CP80",
-        });
-        this.piano3 = new ElectricPiano(new AudioContext(), {
+        this.piano1 = ElectricPiano(new AudioContext(), {
             instrument: "WurlitzerEP200",
         });
 
-        this.piano1.loaded().then(() => {
+        // this.piano1.loaded().then(() => {
 
-        });
-        this.piano2.loaded().then(() => {
+        // });
+        // this.piano2.loaded().then(() => {
 
-        });
-        this.piano3.loaded().then(() => {
+        // });
+        // this.piano3.loaded().then(() => {
 
-        });
+        // });
         this.choisirNote();
         setTimeout(() => {
             this.jouerSuite();
@@ -104,11 +101,9 @@ export default class JeuNote extends Component {
             case 1:
                 this.piano1.start({ note: nom, duration: .2 });
                 break;
+
             case 2:
                 this.piano2.start({ note: nom, duration: .2 });
-                break;
-            case 3:
-                this.piano3.start({ note: nom, duration: .2 });
                 break;
         }
     
@@ -202,7 +197,7 @@ export default class JeuNote extends Component {
                 correctCount++;
             }
         }
-
+     
         if (correctCount !== this.state.suiteInconnues.length) {
             message.error(`Erreur. ${correctCount} note${correctCount > 1 ? 's' : ''} correcte${correctCount > 1 ? 's' : ''} sur ${this.state.suiteInconnues.length}`);
             this.fin = true;
@@ -245,12 +240,10 @@ export default class JeuNote extends Component {
             let nextNombre = this.state.nombreNotes + 1;
             let nouveauTabNote = this.state.tabNotes.map(element => { return { note: element.note, nom: element.nom, noteEnCours: 0 } })
             let type = 1;
-            if (this.nbPartie > 1) {
+            if (this.nbPartie > 2) {
                 type = 2;
             }
-            else if (this.nbPartie > 2) {
-                type = 3;
-            }
+          
 
             this.fin = false;
             this.setState({
@@ -299,11 +292,7 @@ export default class JeuNote extends Component {
                             <Button onClick={this.ajouterNoteReponse}>Ajouter à la séquence</Button>
                             <div className="centre marge10"><CompteRebours temps={120} finTimer={this.finTimer}></CompteRebours></div>
                         </div>
-                        {this.state.typePiano === 2 ?
-                            <div className='centre'><img src={cp80} alt="clavier cp80 yamaha"></img>
-                                <div className='infoNote'>Les sons proviennent du CP-80 de chez Yamaha, sorti en 1976. Instrument utilisé par Phil Collins, Joe Jackson et Genesis, parmi beaucoup d'autres.</div>
-                            </div> :
-                            this.state.typePiano === 3 ?
+                        {this.state.typePiano === 1 ?
                                 <div className='centre'><img src={ep200} alt="wurlitzer ep 200"></img>
                                     <div className='infoNote'>Les sons proviennent d'un piano électrique Wurlitzer. Ce piano est un élément caractéristique du son du groupe Supertramp.</div>
                                 </div> :

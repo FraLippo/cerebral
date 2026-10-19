@@ -59,7 +59,7 @@ class JeuxLettres extends Component {
       
         return {
             adversaire: prenom,
-            prenom: this.prenom == null ? '' : this.prenom.includes('@') ? this.prenom.split('@')[0].slice(0, 15)  : this.prenom.slice(0, 15),
+            prenom: this.prenom == null ? '' : this.prenom.split(/[@$]/)[0].slice(0, 15),
             niveau: LogiqueLettre.obtenirNiveau(this.niveau).titre,
             intervalle: LogiqueLettre.obtenirNiveau(this.niveau).intervalle,
             nbLettres: 0,

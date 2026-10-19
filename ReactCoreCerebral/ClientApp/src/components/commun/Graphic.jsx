@@ -1,41 +1,35 @@
-import React from 'react';
+
 import { Column } from '@ant-design/plots';
 
 function Graphic(props) {
-    const data = props.statTemps;
-  
     const config = {
-        data,
-
+        data: props.point,
         xField: 'xTemps',
         yField: 'yNbJoueurs',
         meta: {
             xTemps: { formatter: (val) => `${val}s` }
         },
         tooltip: {
-            formatter: (datum) => {
-              return { name: "Nombre de joueurs", value: datum.yNbJoueurs };
-            },
-          },
+            formatter: (datum) => ({
+                name: "Nombre de joueurs",
+                value: datum.yNbJoueurs
+            }),
+        },
         annotations: [
             {
-                type: 'dataMarker',
+                type: 'text',
                 position: props.point,
-                text: {
-                    content: "Votre temps",
-                    style: { textAlign: 'left', fontWeight: 'bold' },
+                content: 'Votre temps',
+                offsetY: -15,
+                style: {
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    fill: '#f5222d',
                 },
-                line: { length: 5 },
-                point: {
-                    style: {
-                        fill: '#f5222d',
-                        stroke: '#f5222d',
-                    },
-                },
-                autoAdjust: true,
             },
         ],
     };
+
     return <Column {...config} />;
 }
 

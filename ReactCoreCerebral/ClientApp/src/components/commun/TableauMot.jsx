@@ -25,7 +25,7 @@ class TableauMot extends Component {
                 dataIndex: 'prenom',
                 key: 'prenom',
                 render: (prenom) => {
-                    return <span>{prenom.includes('@') ? prenom.split('@')[0] : prenom}</span>;
+                    return <span>{prenom.split(/[@$]/)[0].slice(0, 15)}</span>;
                 }
 
             },

@@ -5,7 +5,7 @@ import { LienMenuPrincipal } from '../commun/SuiteJeux';
 import { Statistic } from 'antd';
 import { Link} from 'react-router-dom';
 import Ad from './adSense';
-import { Graphic } from '../commun/Graphic';
+
 
 
 export default class Resultat extends Component {
@@ -160,7 +160,7 @@ export default class Resultat extends Component {
                             {!this.props.perdu ? <div><h1>{"Votre temps : "}<span className="lettreRouge">{`${Math.floor(this.props.dureeJeu / 60000 | 0)}:${Math.floor((this.props.dureeJeu / 1000) % 60)}`}</span></h1>
                                 <p className="tailleMoyenne"><b>{this.messageFelicitation()}</b></p>
                                 <Statistic title={"Classement"} value={this.state.classement} suffix={'/ ' + this.state.nbJoueurs} />
-                                {this.state.afficheGraphique && <div><p>{"Graphique du nombre de joueurs ayant réussi en fonction du temps"}</p><div className="graph center"><Graphic point={this.state.point} statTemps={this.state.statTemps}></Graphic></div></div>}</div> :
+                                </div> :
                                 <div><div><b>{"Tu as échoué"}</b></div>
                                     <div><Link reloadDocument to={this.chemin + this.props.idTest}>{"Refaire le jeu ?"}</Link></div></div>}
                             <p className="espaceHaut">{"Le meilleur temps est : "}<b>{`${Math.floor(this.state.meilleurTemps / 60 | 0)}:${Math.floor(this.state.meilleurTemps % 60)}`}</b></p>

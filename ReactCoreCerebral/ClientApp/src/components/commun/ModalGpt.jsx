@@ -60,8 +60,7 @@ export default class ModalGpt extends Component {
             body: JSON.stringify(this.props.prenom)
         });
         if (verifierStatus(reponse.status) && reponse.ok) {
-            msgHtml = `<div class='couleurTitre'>Résultat de <strong>${this.props.prenom.includes('@') ? this.props.prenom.split('@')[0] : this.props.prenom}</strong></div>`;
-            msgHtml += await reponse.text();
+msgHtml = `<div class='couleurTitre'>Résultat de <strong>${this.props.prenom.split(/[@$]/)[0]}</strong></div>`;            msgHtml += await reponse.text();
         }
         else {
             msgHtml = "Désolé, il y a un problème. Revenez plus tard."

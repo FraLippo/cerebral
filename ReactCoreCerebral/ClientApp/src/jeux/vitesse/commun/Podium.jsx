@@ -8,18 +8,12 @@ export default function Podium(props)
     for (let index = 0; index < props.tabPodium.length; index++) {
         const element = props.tabPodium[index];
         if (element != null)
-        { if (element.prenom.includes('@'))
         {
-            element.prenom =element.prenom.split('@')[0].slice(0,10);
-        }
-        else
-        {
-            element.prenom = element.prenom.slice(0,10);
-        }
-        
+            element.prenom = element.prenom.split(/[@$]/)[0].slice(0, 11)
         }
         
     }
+  
     return <div className="centrePodium"><div className="placePrenomPodium">{props.tabPodium.length > 2 &&<React.Fragment><div className="prenomPodium">{props.tabPodium[2].prenom}</div>
      <div><small>({props.tabPodium[2].score != null && props.tabPodium[2].score} pts)</small></div></React.Fragment>}
     <div className="placePodium place3Podium">3</div></div>

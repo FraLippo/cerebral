@@ -27,7 +27,7 @@ export default class ClassementScore extends Component {
                 dataIndex: 'prenom',
                 key: 'prenom',
                 render: (prenom) => {
-                    return prenom.includes('@') ? prenom.split('@')[0].slice(0, 15) : prenom.slice(0, 15);
+                    return prenom.split(/[@$]/)[0].slice(0, 15);
                 }
 
             },

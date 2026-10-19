@@ -41,7 +41,7 @@ export default class GraphiqueRapidite extends Component {
 
         let prenom = readFirstName();
         if (prenom !== null) {
-            this.prenom = prenom.includes('@') ? prenom.split('@')[0] : prenom;
+            this.prenom = prenom.split(/[@$]/)[0];
         }
         this.envoyerMessage(prenom);
     }
@@ -52,7 +52,7 @@ export default class GraphiqueRapidite extends Component {
             Math.round(value * 3 / 4),
             Math.round(value * 1 / 2),
             Math.round(value * 1 / 4),
-           0
+            0
         ];
     }
 
@@ -84,13 +84,13 @@ export default class GraphiqueRapidite extends Component {
             if (pourcent > 100) pourcent = 100;
             let tabQuart = this.getFractions(this.max);
             let difference = 0;
-         
-            for (let i = 0; i < tabQuart.length-1; i++) {
-              
-                if (sum < tabQuart[i] && sum >= tabQuart[i+1]) {
-                    
+
+            for (let i = 0; i < tabQuart.length - 1; i++) {
+
+                if (sum < tabQuart[i] && sum >= tabQuart[i + 1]) {
+
                     difference = tabQuart[i] - sum;
-                  
+
                     break;
                 }
 
@@ -101,8 +101,8 @@ export default class GraphiqueRapidite extends Component {
                 tabPodium,
                 pourcent,
                 difference,
-                 classementJoueur : res.classementJoueur,
-                scoreJoueur : res.scoreJoueur
+                classementJoueur: res.classementJoueur,
+                scoreJoueur: res.scoreJoueur
 
 
             })
@@ -118,8 +118,8 @@ export default class GraphiqueRapidite extends Component {
 
     render() {
         return <div>
-             <h1 className='centre'>{`Résultats ${lienVersCategorie(this.props.categorie, 'nom')}`}</h1>
-            {this.state.scoreJoueur === 0  && <div className='centre'>Tu n'as participé à aucun jeu dans cette catégorie.</div>}  
+            <h1 className='centre'>{`Résultats ${lienVersCategorie(this.props.categorie, 'nom')}`}</h1>
+            {this.state.scoreJoueur === 0 && <div className='centre'>Tu n'as participé à aucun jeu dans cette catégorie.</div>}
             <div className='centre'>Tu dois participer à tous les jeux sur cette page pour avoir une évaluation correcte.</div>
             <div className='plateauMonnaie marge20'>
                 <Progress
@@ -134,10 +134,10 @@ export default class GraphiqueRapidite extends Component {
 
             <div className='centre'>
                 {this.prenom !== '' && !this.prenom.includes('inconnu') && <div className='fontMoyenne rougeV'>{this.prenom}</div>}
-                             <div className='fontMoyenne'>{this.state.message}  </div>   <div className='fontMoyenne'><b>{creerMsgResultat(this.state.pourcent)}</b> </div>
+                <div className='fontMoyenne'>{this.state.message}  </div>   <div className='fontMoyenne'><b>{creerMsgResultat(this.state.pourcent)}</b> </div>
 
-                     {this.state.scoreJoueur > 0  && <div className='marge20'>Ton score dans cette catégorie :  <strong>{this.state.scoreJoueur}</strong></div>}
-            {this.state.scoreJoueur > 0  && <div>Ton classement du mois : {this.state.classementJoueur}</div>}
+                {this.state.scoreJoueur > 0 && <div className='marge20'>Ton score dans cette catégorie :  <strong>{this.state.scoreJoueur}</strong></div>}
+                {this.state.scoreJoueur > 0 && <div>Ton classement du mois : {this.state.classementJoueur}</div>}
                 {this.state.pourcent !== 100 && <div className="marge20">Tu dois marquer {this.state.difference} points pour atteindre le niveau suivant.</div>}
                 <div className="centre marge20"><img src={border} alt="bordure" width="100" height="20" ></img></div>
 

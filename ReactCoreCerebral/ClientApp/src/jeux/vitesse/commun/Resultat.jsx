@@ -21,7 +21,7 @@ class Resultat extends Component {
             ancien: 0,
             moyenne: 0,
             nbJoueurs: 0,
-        
+
         }
 
     }
@@ -31,13 +31,13 @@ class Resultat extends Component {
     componentDidMount = () => {
 
         let prenom = readFirstName();
-     
+
         if (prenom !== null && !prenom.includes('@')) {
             prenom = prenom + '@' + Math.floor(Math.random() * 100000);
             addFirstName(prenom);
         }
         if (prenom === null) {
-          
+
             this.setState({
                 prenomVisible: true
             })
@@ -61,8 +61,7 @@ class Resultat extends Component {
 
     }
 
-    trouveCategorie(nom)
-    {
+    trouveCategorie(nom) {
         let i = tabJeu.findIndex(x => x === nom);
         return typeJeu[i];
     }
@@ -87,7 +86,7 @@ class Resultat extends Component {
             const res = await reponse.json();
             this.setState({
                 classement: res.classement,
-                prenom: res.prenom.includes('@') ? res.prenom.split('@')[0] : res.prenom,
+                prenom: res.prenom.split(/[@$]/)[0],
                 ancien: res.ancien,
                 moyenne: res.moyenne,
                 nbJoueurs: res.nbJoueurs
@@ -125,11 +124,10 @@ class Resultat extends Component {
         }
     }
 
-    lienJeux()
-    {
+    lienJeux() {
         let listeLiens = lienAutresJeux(this.props.typeExo);
-      // return tabJeu.map((nom,i) => <div>{nom} <span>{typeJeu[i]}</span></div>)
-       return listeLiens.tabListeJeux.map((jeu, i) => <div className='marge10 resultatLiens' key={i}><Link to={'/' + jeu.lien}>{jeu.nom}</Link></div>)
+        // return tabJeu.map((nom,i) => <div>{nom} <span>{typeJeu[i]}</span></div>)
+        return listeLiens.tabListeJeux.map((jeu, i) => <div className='marge10 resultatLiens' key={i}><Link to={'/' + jeu.lien}>{jeu.nom}</Link></div>)
 
     }
 
@@ -160,17 +158,17 @@ class Resultat extends Component {
                     <div>{this.messageEncouragement()}</div>
 
                     <div>La moyenne des autres joueurs : {this.state.moyenne}</div>
-                     <div>Nombre de joueurs total : {this.state.nbJoueurs}</div>
- <Ad></Ad>
+                    <div>Nombre de joueurs total : {this.state.nbJoueurs}</div>
+                    <Ad></Ad>
                     <div className="marge20"><ButtonLink titre="Recommencer" href={'/' + this.props.typeExo}></ButtonLink></div>
                     <div className="marge20"><span className="margeDroit"><ButtonLink titre="Classement général" href={'/classementmois'}></ButtonLink></span>
-                    <ButtonLink titre="Retour à la catégorie" href={'/' + lienVersCategorie(this.props.typeExo, "lien")}></ButtonLink></div>
+                        <ButtonLink titre="Retour à la catégorie" href={'/' + lienVersCategorie(this.props.typeExo, "lien")}></ButtonLink></div>
 
                     <div className="marge20"><ButtonLink titre="Retour à l'accueil" href={'/'}></ButtonLink></div>
-<h2>Autres jeux de la même catégorie</h2>
-{this.lienJeux()}
+                    <h2>Autres jeux de la même catégorie</h2>
+                    {this.lienJeux()}
 
-                </div> 
+                </div>
             </div>
         </div>
     }

@@ -1,11 +1,11 @@
 
-import React, { Component } from 'react';
+import { Component } from 'react';
 import GraphiqueRapidite from '../commun/GraphiquesRapidité';
 import Ad from '../commun/adSense';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-
-
+import Regles from '../commun/Regles';
+import { listeJeuxMemoire } from '../commun/dataListeJeux';
 
 export default class TestMemoire extends Component {
 
@@ -15,6 +15,7 @@ export default class TestMemoire extends Component {
     this.state =
     {
       resultatsJoueur: [],
+      jeuReglesOuvert: null
 
     }
   }
@@ -40,154 +41,117 @@ export default class TestMemoire extends Component {
       </Helmet>
       <h1 className="titre couleurTitre centre">Bilan mémoire : testez votre mémoire</h1>
       <p className='centre'>Évaluez vos capacités de mémorisation à travers une série de jeux interactifs conçus pour faire un bilan complet de votre mémoire.</p>
-        <GraphiqueRapidite categorie='m' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
-        <div className='centre'> <div className='fontMoyenne bandeauLien'>Rejoins-nous sur <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div>
-        </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
+      <GraphiqueRapidite categorie='m' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
+      <div className='centre'> <div className='fontMoyenne bandeauLien'>Rejoins-nous sur <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div>
+      </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
 
       <Ad></Ad>
       <div className='jeuVitesse marge20'>
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessedessin"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitessedessin'> <div className="centre titreVitesse" >🖼️  Lignes brisées</div>
-            <p className="marge20">But du jeu : Mémorise une ligne brisée puis reconstitue la ligne en cliquant sur les points présents. Le départ se fait toujours en haut à gauche. Tu ne peux sélectionner que des points adjacents. 12 points par dessin reconstitué.  </p>
-          </Link>
-          <p className='centre'>{this.state.resultatsJoueur["vitessedessin"] != null ? "Ton score : " + this.state.resultatsJoueur["vitessedessin"] : "Pas encore de résultat"}</p>
-          <div className="centre"><Link to='/classement/vitessedessin'>Classement</Link></div>
-        </div>
+        {listeJeuxMemoire.map((info) =>
+          <div
+            className={`carte-jeu ${this.state.resultatsJoueur[info.nom] != null ? "dejaFaitCognito" : ""}`}
+            key={info.nom}
+          >
+            <Link to={`/${info.nom}`}>
+              <div className="jeu-emoji">{info.emoji}</div>
 
+              <h3>{info.titre}</h3>
 
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesseloup"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitesseloup'> <div className="centre titreVitesse" >🐺  Attrape le loup</div>
-            <p className="marge20">But du jeu : Mémorise le déplacement d'un loup sur une grille pour pouvoir le reproduire. Le but est de rejoindre le loup. Le loup démarre avec 4 secondes d'avance. +20 points si tu rattrapes le loup. 30 points de bonus si tu arrives au bout des 6 parties en moins de 90 s. </p>
-          </Link>
-          <p className='centre'>{this.state.resultatsJoueur["vitesseloup"] != null ? "Ton score : " + this.state.resultatsJoueur["vitesseloup"] : "Pas encore de résultat"}</p>
-          <div className="centre"><Link to='/classement/vitesseloup'>Classement</Link></div>
-        </div>
+              <p className="jeu-benefice">
+                {info.sousTitre}
+              </p>
+            </Link>
+            <div className="jeu-infos">
+              <p className='centre'>{this.state.resultatsJoueur[info.nom] != null ? "Ton score : " + this.state.resultatsJoueur[info.nom] : "📊 Pas encore de résultat"}</p>
+              <div className="centre fontMoyenne"><Link to={`/classement/${info.nom}`}>🏆 Classement</Link></div>
+            </div>
 
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessealz"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitessealz'> <div className="centre titreVitesse" >🎗️  La mémoire longue</div>
-            <p className="marge20">But du jeu : Se souvenir des mots affichés. À la différence des autres tests, on ne vous demande pas de vous souvenir de la liste de mots tout de suite, vous devez jouer à un petit jeu avant de restituer la liste. Ce jeu de mémoire est inspiré d'un test d'Alzheimer, le test des 5 mots, mais dans une version ludique. 7 points par mot, bonus de 50 points si vous trouvez les 12 mots. </p>
-          </Link>
-          <p className='centre'>{this.state.resultatsJoueur["vitessealz"] != null ? "Ton score : " + this.state.resultatsJoueur["vitessealz"] : "Pas encore de résultat"}</p>
-          <div className="centre"><Link to='/classement/vitessealz'>Classement</Link></div>
-        </div>
-
-
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessememory"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitessememory'> <div className="centre titreVitesse" >🎩  Le jeu du memory</div>
-            <p className="marge20">But du jeu : Trouver toutes les paires comme dans le classique jeu du Memory. Une différence avec le jeu classique : tu découvres les paires à ton rythme. Elles ne disparaissent pas au bout d'un certain temps. Le temps alloué est de 60 secondes pour tenter de trouver toutes les paires, un bonus de 30 points est alloué si tu finis le jeu.</p>
-          </Link>
-          <p className='centre'>{this.state.resultatsJoueur["vitessememory"] != null ? "Ton score : " + this.state.resultatsJoueur["vitessememory"] : "Pas encore de résultat"}</p>
-          <div className="centre"><Link to='/classement/vitessememory'>Classement</Link></div>
-        </div>
-
-
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessenombre"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitessenombre'><div className="centre titreVitesse" >✅  Mémoire des nombres</div>
-
-            <p className="marge20">But du jeu : Mémoriser une série de chiffres pour pouvoir la restituer plus tard. La suite de chiffres augmente à chaque fois d'un chiffre jusqu'à 8 ensuite elle redescend pour revenir à 1 chiffre. Chaque nombre trouvé rapporte 5 points. Si tu réussis à revenir à 1 chiffre en moins de 75 secondes tu obtiens un bonus de 50 points.</p>
-          </Link>
-          <p className='centre'>{this.state.resultatsJoueur["vitessenombre"] != null ? "Ton score : " + this.state.resultatsJoueur["vitessenombre"] : "Pas encore de résultat"}</p>
-
-          <div className="centre"><Link to='/classement/vitessenombre'>Classement</Link></div>
-        </div>
-
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesseforme"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitesseforme'><div className="centre titreVitesse" >🔺 Mémoire des formes</div>
-            <p className="marge20">But du jeu : Se souvenir des formes et de la couleur des éléments présentés sur des cartes. Une fois les cartes mémorisées, elles sont retournées puis c'est à toi de les retrouver. Chaque bonne réponse rapporte 2 points puis 4 points, une mauvaise réponse te fait perdre 3 points. Le temps alloué est de 60 secondes.</p>
-          </Link>
-          <p className='centre'>{this.state.resultatsJoueur["vitesseforme"] != null ? "Ton score : " + this.state.resultatsJoueur["vitesseforme"] : "Pas encore de résultat"}</p>
-
-          <div className="centre "><Link to='/classement/vitesseforme'>Classement</Link></div>
-        </div>
-
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessememoire"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitessememoire'> <div className="centre titreVitesse" >🔵 Se souvenir des cercles</div>
-
-            <p className="marge20">But du jeu : On te montre un certain nombre de cercles dans une grille, tu dois mémoriser leurs emplacements et reproduire ce que tu viens de voir dans une nouvelle grille. Le temps alloué est de 90 secondes, chaque cercle trouvé rapporte 1 point, il n'y a pas de pénalité en cas d'erreur.</p>
-          </Link>   <p className='centre'>{this.state.resultatsJoueur["vitessememoire"] != null ? "Ton score : " + this.state.resultatsJoueur["vitessememoire"] : "Pas encore de résultat"}</p>
-
-          <div className="centre"><Link to='/classement/vitessememoire'>Classement</Link></div>
-        </div>
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessepaire"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitessepaire'>  <div className="centre titreVitesse">🐈‍⬛ L'animal précédent</div>
-
-            <p className="marge20">But du jeu : On te montre une suite d'images d'animaux, tu dois indiquer si l'animal que tu as vu juste avant est le même que l'animal affiché. Tu as 30 secondes pour obtenir le meilleur score, +2 points par bonne réponse, -3 points par mauvaise réponse.</p>
-          </Link>   <p className='centre'>{this.state.resultatsJoueur["vitessepaire"] != null ? "Ton score : " + this.state.resultatsJoueur["vitessepaire"] : "Pas encore de résultat"}</p>
-
-          <div className="centre"><Link to='/classement/vitessepaire'>Classement</Link></div>
-        </div>
+            <button className="btn-regles" onClick={(e) => {
+              e.preventDefault();
+              this.setState({ jeuReglesOuvert: info })
+            }
+            }>
+              Voir les règles
+            </button>
+          </div>
+        )}
       </div>
-      
-<div className="table-responsive">
-  <table className="tableau-memoire">
-    <thead>
-      <tr>
-        <th>Jeu</th>
-        <th>Type de mémoire</th>
-        <th>Exemple du quotidien</th>
-        <th>Sensibilité au déclin lié à l'âge</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>🖼️ Lignes brisées</strong></td>
-        <td>Visuo-spatiale</td>
-        <td>Retrouver son chemin ou visualiser un trajet sans GPS</td>
-        <td className="centre"><strong>++</strong></td>
-      </tr>
-      <tr>
-        <td><strong>🐺 Attrape le loup</strong></td>
-        <td>Séquentielle &amp; Réactivité</td>
-        <td>Réagir rapidement face à un imprévu sur la route</td>
-        <td className="centre"><strong>++</strong></td>
-      </tr>
-      <tr>
-        <td><strong>🎗️ La mémoire longue</strong></td>
-        <td>Mémorisation à long terme</td>
-        <td>Retenir une liste de courses ou un rendez-vous à venir</td>
-        <td className="centre"><strong>+</strong></td>
-      </tr>
-      <tr>
-        <td><strong>🎩 Le jeu du memory</strong></td>
-        <td>Visuelle &amp; Repérage</td>
-        <td>Se souvenir d'où on a posé ses clés ou ses lunettes</td>
-        <td className="centre"><strong>+</strong></td>
-      </tr>
-      <tr>
-        <td><strong>✅ Mémoire des nombres</strong></td>
-        <td>Mémoire de travail <em>(Chiffres)</em></td>
-        <td>Retenir un code SMS de validation le temps de le saisir</td>
-        <td className="centre"><strong>++</strong></td>
-      </tr>
-      <tr>
-        <td><strong>🔺 Mémoire des formes</strong></td>
-        <td>Visuelle des détails</td>
-        <td>Reconnaître un visage, un logo ou un objet précis</td>
-        <td className="centre"><strong>+</strong></td>
-      </tr>
-      <tr>
-        <td><strong>🔵 Se souvenir des cercles</strong></td>
-        <td>Spatial des emplacements</td>
-        <td>Se rappeler dans quel rayon est rangé un produit en magasin</td>
-        <td className="centre"><strong>+</strong></td>
-      </tr>
-      <tr>
-        <td><strong>🐈‍⬛ L'animal précédent</strong></td>
-        <td>Concentration rapide <em>(N-back)</em></td>
-        <td>Suivre le fil d'une conversation rapide à plusieurs personnes</td>
-        <td className="centre"><strong>++</strong></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <p className="legende-declin">
-    <small>
-      <strong>Légende :</strong><br></br>
-      <strong>+</strong> : Déclin modéré (facile à maintenir avec un peu de pratique).<br></br>
-      <strong>++</strong> : Déclin plus sensible à l'âge (réagit très bien à l'entraînement cérébral régulier).
-    </small>
-  </p>
-</div>
+      <Regles
+        jeu={this.state.jeuReglesOuvert?.regles}
+        open={this.state.jeuReglesOuvert !== null}
+        onClose={() => this.setState({ jeuReglesOuvert: null })}
+      />
+
+      <div className="table-responsive">
+        <table className="tableau-memoire">
+          <thead>
+            <tr>
+              <th>Jeu</th>
+              <th>Type de mémoire</th>
+              <th>Exemple du quotidien</th>
+              <th>Sensibilité au déclin lié à l'âge</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>🖼️ Lignes brisées</strong></td>
+              <td>Visuo-spatiale</td>
+              <td>Retrouver son chemin ou visualiser un trajet sans GPS</td>
+              <td className="centre"><strong>++</strong></td>
+            </tr>
+            <tr>
+              <td><strong>🐺 Attrape le loup</strong></td>
+              <td>Séquentielle &amp; Réactivité</td>
+              <td>Réagir rapidement face à un imprévu sur la route</td>
+              <td className="centre"><strong>++</strong></td>
+            </tr>
+            <tr>
+              <td><strong>🎗️ La mémoire longue</strong></td>
+              <td>Mémorisation à long terme</td>
+              <td>Retenir une liste de courses ou un rendez-vous à venir</td>
+              <td className="centre"><strong>+</strong></td>
+            </tr>
+            <tr>
+              <td><strong>🎩 Le jeu du memory</strong></td>
+              <td>Visuelle &amp; Repérage</td>
+              <td>Se souvenir d'où on a posé ses clés ou ses lunettes</td>
+              <td className="centre"><strong>+</strong></td>
+            </tr>
+            <tr>
+              <td><strong>✅ Mémoire des nombres</strong></td>
+              <td>Mémoire de travail <em>(Chiffres)</em></td>
+              <td>Retenir un code SMS de validation le temps de le saisir</td>
+              <td className="centre"><strong>++</strong></td>
+            </tr>
+            <tr>
+              <td><strong>🔺 Mémoire des formes</strong></td>
+              <td>Visuelle des détails</td>
+              <td>Reconnaître un visage, un logo ou un objet précis</td>
+              <td className="centre"><strong>+</strong></td>
+            </tr>
+            <tr>
+              <td><strong>🔵 Se souvenir des cercles</strong></td>
+              <td>Spatial des emplacements</td>
+              <td>Se rappeler dans quel rayon est rangé un produit en magasin</td>
+              <td className="centre"><strong>+</strong></td>
+            </tr>
+            <tr>
+              <td><strong>🐈‍⬛ L'animal précédent</strong></td>
+              <td>Concentration rapide <em>(N-back)</em></td>
+              <td>Suivre le fil d'une conversation rapide à plusieurs personnes</td>
+              <td className="centre"><strong>++</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p className="legende-declin">
+          <small>
+            <strong>Légende :</strong><br></br>
+            <strong>+</strong> : Déclin modéré (facile à maintenir avec un peu de pratique).<br></br>
+            <strong>++</strong> : Déclin plus sensible à l'âge (réagit très bien à l'entraînement cérébral régulier).
+          </small>
+        </p>
+      </div>
 
 
 
@@ -218,6 +182,6 @@ export default class TestMemoire extends Component {
       </div>
 
       <div className='autreVitesse centre'> <a href="/">Les autres catégories</a> </div>
-    </div>
+    </div >
   }
 }

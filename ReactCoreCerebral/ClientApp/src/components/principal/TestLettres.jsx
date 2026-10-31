@@ -1,5 +1,5 @@
 import GraphiqueRapidite from '../commun/GraphiquesRapidité';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Ad from '../commun/adSense';
 import '../../style/jeux.css';
@@ -8,6 +8,8 @@ import genmots from '../../images/genmots.png'
 
 
 import { Helmet } from 'react-helmet';
+import { listeJeuxLettre } from '../commun/dataListeJeux';
+import Regles from '../commun/Regles';
 
 
 export default class TestLettres extends Component {
@@ -19,6 +21,7 @@ export default class TestLettres extends Component {
     this.state =
     {
         resultatsJoueur : [],
+        jeuReglesOuvert: null,
        
     }
   }
@@ -51,70 +54,59 @@ export default class TestLettres extends Component {
         </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
 
       <Ad></Ad>
-      <div className='jeuVitesse marge20'>
-                       <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessebrique"] != null ? "dejaFaitCognito" : ""}`}>
-      <Link to='/vitessebrique'><div className="centre titreVitesse" >🧱 Mur de lettres</div>
-      <p className="marge20">But du jeu : Créer des mots à partir des lettres disponibles dans le mur de lettres, seules les dernières lettres du mur peuvent être utilisées. Le but est d'atteindre le haut du mur. 12 points gagnés par ligne et 150 points si vous atteignez le haut du mur.</p>
-     </Link>
-     <p className='centre'>{this.state.resultatsJoueur["vitessebrique"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessebrique"]:"Pas encore de résultat" }</p>
-
-      <div className="centre"><Link to='/classement/vitessebrique'>Classement</Link></div>
-    </div>
-
-                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessemotus"] != null ? "dejaFaitCognito" : ""}`}>
-      <Link to='/vitessemotus'><div className="centre titreVitesse" >Ⓜ️ Motus</div>
-      <p className="marge20">But du jeu : Retrouver le mot caché en remettant les lettres dans l'ordre, ce jeu est inspiré de Motus, Wordle ou Tusmo. Les lettres bleues sont bien placées, les lettres dans les cercles rouges sont mal placées. Il suffit de cliquer sur les lettres pour les remettre dans l'ordre. Le niveau de difficulté est très variable suivant les mots, la difficulté n'augmente pas.  </p>
-     </Link>
-     <p className='centre'>{this.state.resultatsJoueur["vitessemotus"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessemotus"]:"Pas encore de résultat" }</p>
-
-      <div className="centre"><Link to='/classement/vitessemotus'>Classement</Link></div>
-    </div>
-
-
-                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessecoupe"] != null ? "dejaFaitCognito" : ""}`}>
-      <Link to='/vitessecoupe'><div className="centre titreVitesse" >✂️ Les mots coupés</div>
-      <p className="marge20">But du jeu : Le classique jeu des mots coupés où il faut reconstituer les mots qui sont coupés en plusieurs syllabes. Vous avez 100 s pour reconstituer le plus grand nombre de mots. +4 points par bonne réponse, -2 par mauvaise réponse. Attention, nous ne validons pas tous les mots, même ceux qui sont correctes grammaticalement, il faut trouver le mot attendu.  </p>
-     </Link>
-     <p className='centre'>{this.state.resultatsJoueur["vitessecoupe"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessecoupe"]:"Pas encore de résultat" }</p>
-
-      <div className="centre"><Link to='/classement/vitessecoupe'>Classement</Link></div>
-    </div>
-
-
-                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessechasse"] != null ? "dejaFaitCognito" : ""}`}>
-      <Link to='/vitessechasse'><div className="centre titreVitesse" >📯 La chasse aux mots</div>
-      <p className="marge20">But du jeu : Trouver des mots à partir des lettres disséminées dans une grille. Terminer une grille rapporte un bonus de 30 points. Plus le mot est long, plus tu gagnes de points. Le temps alloué est de 90 secondes. </p>
-     </Link>
-     <p className='centre'>{this.state.resultatsJoueur["vitessechasse"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessechasse"]:"Pas encore de résultat" }</p>
-
-      <div className="centre"><Link to='/classement/vitessechasse'>Classement</Link></div>
-    </div>
-                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesselettres"] != null ? "dejaFaitCognito" : ""}`}>
-      <Link to='/vitesselettres'><div className="centre titreVitesse" >✍ Les lettres manquantes</div>
-      <p className="marge20">But du jeu : Retrouver les lettres manquantes dans les mots. Les lettres sont cachées sous des carrés de couleur. L'ordre pour retrouver les lettres associées aux couleurs est toujours le même : bleu, rouge et jaune. Chaque bonne réponse rapporte 3 point puis 4 points quand il y a 2 lettres à retrouver. Chaque mauvaise réponse te fait perdre 1 point, le fait de passer te coûte 2 points. Le temps alloué est de 80 secondes. </p>
-     </Link>
-     <p className='centre'>{this.state.resultatsJoueur["vitesselettres"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesselettres"]:"Pas encore de résultat" }</p>
-
-      <div className="centre"><Link to='/classement/vitesselettres'>Classement</Link></div>
-    </div>
-
-                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessecercle"] != null ? "dejaFaitCognito" : ""}`}>
-    <Link to='/vitessecercle'>  <div className="centre titreVitesse" >⭕  Cercles de mots</div>
-        <p className="marge20">But du jeu : Retrouver des mots de 8 lettres à partir de lettres mélangées. Les lettres du mot sont placées autour d'un cercle. Tu dois indiquer la première lettre du mot puis un sens de rotation pour retrouver le mot caché. Chaque mot trouvé rapporte 10 points, -10 en cas d'erreur. Si tu trouves les 6 mots en moins de 55 secondes tu as un bonus de 50 points. Le score maximal est donc de (6 x 10) + 50 = 110.  </p>
-   </Link>
-   <p className='centre'>{this.state.resultatsJoueur["vitessecercle"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitessecercle"]:"Pas encore de résultat" }</p>
-
-      <div className="centre"><Link to='/classement/vitessecercle'>Classement</Link></div>
-    </div>
-                <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesseboogle"] != null ? "dejaFaitCognito" : ""}`}>
-      <Link to='/vitesseboogle'> <div className="centre titreVitesse" >🖋️ Le Boogle</div>
-        <p className="marge20">But du jeu : Créer des mots à partir de lettres. La lettre centrale est obligatoire dans les mots. Les mots acceptés sont ceux du Scrabble. Il faut créer des mots de plus de 3 lettres. Les points sont doublés pour les mots les plus longs. Si tu trouves 9 mots en moins de 90 s, tu obtiens un bonus de 40 points. </p>
-   </Link>
-   <p className='centre'>{this.state.resultatsJoueur["vitesseboogle"] != null ? "Ton score : " +  this.state.resultatsJoueur["vitesseboogle"]:"Pas encore de résultat" }</p>
-
-      <div className="centre"><Link to='/classement/vitesseboogle'>Classement</Link></div>
-    </div>
-      </div> 
+      <div className="jeuVitesse marge20">
+        {listeJeuxLettre.map((info) => (
+          <div
+            className={`carte-jeu ${this.state.resultatsJoueur[info.nom] != null ? "dejaFaitCognito" : ""}`}
+            key={info.nom}
+          >
+            <Link to={`/${info.nom}`}>
+              <div className="jeu-emoji">{info.emoji}</div>
+              <h3>{info.titre}</h3>
+              <p className="jeu-benefice">{info.sousTitre}</p>
+            </Link>
+            {info.lienComplementaire && (
+              <p>
+                {info.lienComplementaire.avant}
+                {info.lienComplementaire.externe ? (
+                  <a
+                    href={info.lienComplementaire.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ all: 'revert' }}
+                  >
+                    {info.lienComplementaire.texte}
+                  </a>
+                ) : (
+                  <Link to={info.lienComplementaire.url}>{info.lienComplementaire.texte}</Link>
+                )}
+                {info.lienComplementaire.apres}
+              </p>
+            )}
+            <div className="jeu-infos">
+              <p className="centre">
+                {this.state.resultatsJoueur[info.nom] != null
+                  ? "Ton score : " + this.state.resultatsJoueur[info.nom]
+                  : "📊 Pas encore de résultat"}
+              </p>
+              <div className="centre fontMoyenne">
+                <Link to={`/classement/${info.nom}`}>🏆 Classement</Link>
+              </div>
+            </div>
+            <button
+              className="btn-regles"
+              onClick={() => this.setState({ jeuReglesOuvert: info })}
+            >
+              Voir les règles
+            </button>
+          </div>
+        ))}
+      </div>
+      <Regles
+        jeu={this.state.jeuReglesOuvert?.description}
+        open={this.state.jeuReglesOuvert !== null}
+        onClose={() => this.setState({ jeuReglesOuvert: null })}
+      />
 <h2>Nos autres jeux de mots</h2>
 <p>Vous aimez les jeux de mots et de lettres ? N'hésitez pas à essayer nos jeux sur les mots et les lettres quotidiens. Un nouveau défi chaque jour !</p>
             <div className='plateauCategorie'>

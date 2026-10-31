@@ -142,7 +142,7 @@ const router = createBrowserRouter([
     path: '/',
     element: <div>
       <ScrollToTop />
-      <div className='menuHaut'><Menu items={itemsMenu} mode="horizontal" style={{ lineHeight: '32 px' }}></Menu></div>
+      <div className='menuHaut'><Menu items={itemsMenu} mode="horizontal" style={{ lineHeight: '32 px', backgroundColor : '#F7F4EF' }}></Menu></div>
       <div className='margeEcran'><Outlet></Outlet></div></div>,
     errorElement: <PageFaute></PageFaute>,
     children: [

@@ -1,12 +1,13 @@
 import GraphiqueRapidite from '../commun/GraphiquesRapidité';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Ad from '../commun/adSense';
-import michael from '../../images/michael.jpg'
 import '../../style/jeux.css';
 
 
 import { Helmet } from 'react-helmet';
+import { listeJeuxCulture } from '../commun/dataListeJeux';
+import Regles from '../commun/Regles';
 
 
 export default class TestCulture extends Component {
@@ -17,6 +18,7 @@ export default class TestCulture extends Component {
     this.state =
     {
       resultatsJoueur: [],
+      jeuReglesOuvert: null,
 
     }
   }
@@ -46,75 +48,60 @@ export default class TestCulture extends Component {
       </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
 
       <Ad></Ad>
-      <div className='jeuVitesse marge20'>
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesseintervalle"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitesseintervalle'>   <div className="centre titreVitesse" >👂 L'oreille absolue</div>
-
-            <p className="marge20">Tu dois retrouver la hauteur d'une note de musique jouée au hasard par l'ordinateur. Pour cela, tu dois déplacer un curseur pour ajuster la hauteur de ta note et retrouver la note de référence. Tu dois comparer en permanence ta note à celle de l'ordinateur afin de trouver la bonne hauteur. Si tu y parviens, tu remportes 80 points (ce qui est quasiment impossible, même pour un spécialiste).
-            </p>     </Link>
-          <p className='centre'>{this.state.resultatsJoueur["vitesseintervalle"] != null ? "Ton score : " + this.state.resultatsJoueur["vitesseintervalle"] : "Pas encore de résultat"}</p>
-
-          <div className="centre"><Link to='/classement/vitesseintervalle'>Classement</Link></div>
-        </div>
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessetetris"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitessetetris'>   <div className="centre titreVitesse" >🏛️ Tetris Musée</div>
-
-            <p className="marge20">Dans ce jeu, tu dois reconstituer une image à partir des fragments d'image qui tombent du haut de l'écran. Le principe est le même que le jeu Tetris. Sur PC, il faut utiliser les touches directionnelles pour déplacer les pièces. Sur smartphone, on déplace les pièces en glissant le doigt vers la gauche ou la droite sur l'espace de jeu, un appui sur l'écran (tap) fait tomber l'image plus vite. Le score maximum est de 100 (2 x 25 + 50).   </p>
-          </Link>
-          <p className='centre'>{this.state.resultatsJoueur["vitessetetris"] != null ? "Ton score : " + this.state.resultatsJoueur["vitessetetris"] : "Pas encore de résultat"}</p>
-
-          <div className="centre"><Link to='/classement/vitessetetris'>Classement</Link></div>
-        </div>
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesseculture"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitesseculture'>   <div className="centre titreVitesse" >🖼️ QCM culture générale</div>
-
-            <p className="marge20">Un QCM de culture générale avec plus de 3000 questions dans tous les domaines. 10 questions, 12 points par bonne réponse. Score maximum : 120 points. </p>
-          </Link>
-          <p className='centre'>{this.state.resultatsJoueur["vitesseculture"] != null ? "Ton score : " + this.state.resultatsJoueur["vitesseculture"] : "Pas encore de résultat"}</p>
-
-          <div className="centre"><Link to='/classement/vitesseculture'>Classement</Link></div>
-        </div>
-
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessepanneauroutier"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitessepanneauroutier'>   <div className="centre titreVitesse" >🚦Le code de la route</div>
-
-            <p className="marge20">But du jeu : Une grille est affichée avec des panneaux routiers, il suffit de retrouver le panneau routier indiqué par la question. Tu as 120 secondes pour essayer de trouver tous les panneaux. Tu gagnes 2 points par panneau trouvé, -4 points en cas d'erreur. Si tu termines la grille, bonus de 20 points ! Le maximum est de (36 x 2) + 20 = 92 points. </p>
-          </Link>
-          <p className='centre'>{this.state.resultatsJoueur["vitessepanneauroutier"] != null ? "Ton score : " + this.state.resultatsJoueur["vitessepanneauroutier"] : "Pas encore de résultat"}</p>
-
-          <div className="centre"><Link to='/classement/vitessepanneauroutier'>Classement</Link></div>
-        </div>
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesselangue"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitesselangue'> <div className="centre titreVitesse" >👋 La politesse</div>
-            <p className="marge20">But du jeu : Identifier 5 mots de politesse dans différentes langues. Clique sur le lecteur (le triangle) pour démarrer l'audio s'il ne commence pas automatiquement. Tu as 80 secondes pour essayer de trouver 10 mots. Tu gagnes 9 points par mot trouvé, -3 points en cas d'erreur. </p>
-          </Link>
-          <p>Tu peux consulter tous les mots de politesse du jeu sur cette <Link to='/politesse-langues'>page</Link>.</p>
-          <p className='centre'>{this.state.resultatsJoueur["vitesselangue"] != null ? "Ton score : " + this.state.resultatsJoueur["vitesselangue"] : "Pas encore de résultat"}</p>
-
-          <div className="centre"><Link to='/classement/vitesselangue'>Classement</Link></div>
-        </div>
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitesseecrire"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitesseecrire'> <div className="centre titreVitesse" >📠 La dactylographie</div>
-            <p className="marge20">But du jeu : Taper une série de mots le plus vite possible au clavier. Le temps alloué est de 30 secondes pour 19 mots. Chaque mot correctement saisi augmente votre score de 3 points, il n'y a pas de pénalité si tu ne tapes pas la bonne lettre. Si tu réussis à écrire les 19 mots tu obtiens un bonus de 50 points !
-            </p>
-          </Link>
-          <p>  Tu peux consulter ce <a target='_blank' style={{ all: 'revert' }} href="https://fr.wikihow.com/apprendre-la-dactylographie">wiki</a> si tu désires améliorer ta cadence de frappe.</p>
-          <p className='centre'>{this.state.resultatsJoueur["vitesseecrire"] != null ? "Ton score : " + this.state.resultatsJoueur["vitesseecrire"] : "Pas encore de résultat"}</p>
-
-          <div className="centre"><Link to='/classement/vitesseecrire'>Classement</Link></div>
-        </div>
-        <div className={`lienJeuRapidité presentationJeu marge20 ${this.state.resultatsJoueur["vitessenotes"] != null ? "dejaFaitCognito" : ""}`}>
-          <Link to='/vitessenotes'><div className="centre titreVitesse" >♬ L'oreille musicale</div>
-
-            <p className="marge20">But du jeu : retrouver des notes inconnues. L'ordinateur joue une note. Tu dois trouver à quelle note elle correspond sur le clavier d'un piano, uniquement avec ton oreille. Tu peux réécouter les notes autant de fois que tu le souhaites. À chaque bonne réponse, l'ordinateur ajoute une note à la séquence. Tu dois donc retrouver 2 notes, puis 3 notes, etc. </p>
-          </Link>
-          <p className='centre'>{this.state.resultatsJoueur["vitessenotes"] != null ? "Ton score : " + this.state.resultatsJoueur["vitessenotes"] : "Pas encore de résultat"}</p>
-
-          <div className="centre"><Link to='/classement/vitessenotes'>Classement</Link></div>
-
-        </div>
+      <div className="jeuVitesse marge20">
+        {listeJeuxCulture.map((info) => (
+          <div
+            className={`carte-jeu ${this.state.resultatsJoueur[info.nom] != null ? "dejaFaitCognito" : ""}`}
+            key={info.nom}
+          >
+            <Link to={`/${info.nom}`}>
+              <div className="jeu-emoji">{info.emoji}</div>
+              <h3>{info.titre}</h3>
+              <p className="jeu-benefice">{info.sousTitre}</p>
+            </Link>
+            {info.lienComplementaire && (
+              <p>
+                {info.lienComplementaire.avant}
+                {info.lienComplementaire.externe ? (
+                  <a
+                    href={info.lienComplementaire.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ all: 'revert' }}
+                  >
+                    {info.lienComplementaire.texte}
+                  </a>
+                ) : (
+                  <Link to={info.lienComplementaire.url}>{info.lienComplementaire.texte}</Link>
+                )}
+                {info.lienComplementaire.apres}
+              </p>
+            )}
+            <div className="jeu-infos">
+              <p className="centre">
+                {this.state.resultatsJoueur[info.nom] != null
+                  ? "Ton score : " + this.state.resultatsJoueur[info.nom]
+                  : "📊 Pas encore de résultat"}
+              </p>
+              <div className="centre fontMoyenne">
+                <Link to={`/classement/${info.nom}`}>🏆 Classement</Link>
+              </div>
+            </div>
+            <button
+              className="btn-regles"
+              onClick={() => this.setState({ jeuReglesOuvert: info })}
+            >
+              Voir les règles
+            </button>
+          </div>
+        ))}
       </div>
-      <div>
+      <Regles
+        jeu={this.state.jeuReglesOuvert?.description}
+        open={this.state.jeuReglesOuvert !== null}
+        onClose={() => this.setState({ jeuReglesOuvert: null })}
+      />
+<div>
         <h2 className="couleurTitre">Entraînez votre cerveau avec nos mini-jeux de culture et de logique</h2>
 
         <p>

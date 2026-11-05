@@ -46,10 +46,19 @@ export default class TestLettres extends Component {
        
        
             </Helmet>
-  
-      <h1 className="titre couleurTitre centre">Jouer avec les mots</h1>
-      <p>Découvrez notre série de jeux de mots fascinants et stimulants pour mettre à l'épreuve votre vocabulaire, améliorer votre agilité verbale et vous amuser tout en enrichissant votre langue ! </p>
-        <GraphiqueRapidite categorie='l' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
+   <div className="hero-small">
+                <img
+                    src="/pres/mots.webp"
+                    alt=""
+                    className="hero-image"
+                />
+
+                <div className="hero-content">
+                    <h1>Jouer avec les mots</h1>
+                    <p>Des défis de vocabulaire pour enrichir votre expression et stimuler votre réflexion.</p>
+                </div>
+            </div>
+          <GraphiqueRapidite categorie='l' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
         <div className='centre'> <div className='fontMoyenne bandeauLien'>Rejoins-nous sur <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div>
         </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
 
@@ -110,9 +119,9 @@ export default class TestLettres extends Component {
 <h2>Nos autres jeux de mots</h2>
 <p>Vous aimez les jeux de mots et de lettres ? N'hésitez pas à essayer nos jeux sur les mots et les lettres quotidiens. Un nouveau défi chaque jour !</p>
             <div className='plateauCategorie'>
-        <a href='https://concours.evalquiz.com/pres-jeux-du-jour'>   <div className='categorieVitesse'>
+        <a href='https://concours.evalquiz.com/pres-jeux-du-jour'>   <div className='categorieVitesse' style={{backgroundColor : 'lavender'}}>
     <div className='titreCategorie'>Jeux de mots quotidiens</div>
-    <div className='imageCategorie'><img src={genmots} alt="jeux de lettres quotidiens"></img></div>
+    <div className='imageCategorie'>📝</div>
         </div>
         </a>
       </div>

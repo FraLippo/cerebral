@@ -135,7 +135,7 @@ class Resultat extends Component {
     render() {
 
 
-        return <div>
+        return <div className='resultat-image'>
             <Helmet>
                 <title>Résultat des jeux cognitifs</title>
                 <meta name="description" content="Les résultats des jeux cognitifs " />
@@ -160,8 +160,12 @@ class Resultat extends Component {
                     <div>La moyenne des autres joueurs : {this.state.moyenne}</div>
                     <div>Nombre de joueurs total : {this.state.nbJoueurs}</div>
                     <Ad></Ad>
-                    <div className="marge20"><ButtonLink titre="Recommencer" href={'/' + this.props.typeExo}></ButtonLink></div>
-                    <div className="marge20"><span className="margeDroit"><ButtonLink titre="Classement général" href={'/classementmois'}></ButtonLink></span>
+                    
+                  {(this.state.classement > 10 && this.props.score > this.state.moyenne) &&
+                    <p className='fontMoyenne marge20'>🎉 Ton résultat est supérieur à celui d'une grande partie des joueurs ayant réalisé ce test.</p> }
+                    <div className="marge20"><ButtonLink titre="Recommencer" href={'/' + this.props.typeExo}></ButtonLink></div> 
+                      <div className="marge20"><span className="margeDroit"><ButtonLink titre="Classement général" href={'/classementmois'}></ButtonLink></span>
+                                       
                         <ButtonLink titre="Retour à la catégorie" href={'/' + lienVersCategorie(this.props.typeExo, "lien")}></ButtonLink></div>
 
                     <div className="marge20"><ButtonLink titre="Retour à l'accueil" href={'/'}></ButtonLink></div>

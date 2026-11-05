@@ -39,9 +39,19 @@ export default class TestMemoire extends Component {
         <link rel="alternate" hreflang="fr" href="https://cerebral.evalquiz.com/test-memoire" />
         <link rel="alternate" hreflang="x-default" href="https://brain-games.evalquiz.com/memory-games" />
       </Helmet>
-      <h1 className="titre couleurTitre centre">Bilan mémoire : testez votre mémoire</h1>
-      <p className='centre'>Évaluez vos capacités de mémorisation à travers une série de jeux interactifs conçus pour faire un bilan complet de votre mémoire.</p>
-      <GraphiqueRapidite categorie='m' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
+      <div className="hero-small">
+                <img
+                    src="/pres/memoire.webp"
+                    alt=""
+                    className="hero-image"
+                />
+
+                <div className="hero-content">
+                    <h1>Stimulez votre mémoire</h1>
+                    <p>Développez vos capacités de<br/> mémorisation au fil des entraînements.</p>
+                </div>
+            </div>
+        <GraphiqueRapidite categorie='m' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
       <div className='centre'> <div className='fontMoyenne bandeauLien'>Rejoins-nous sur <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div>
       </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
 

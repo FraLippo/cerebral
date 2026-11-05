@@ -40,10 +40,19 @@ export default class TestCulture extends Component {
         <link rel="alternate" hreflang="fr" href="https://cerebral.evalquiz.com/test-culture" />
         <link rel="alternate" hreflang="x-default" href="https://brain-games.evalquiz.com/culture-games" />
       </Helmet>
+<div className="hero-small">
+                <img
+                    src="/pres/culture.webp"
+                    alt=""
+                    className="hero-image"
+                />
 
-      <h1 className="titre couleurTitre centre">Tests divers sur la culture</h1>
-      <p className='centre'>Teste et améliore tes compétences pratiques avec nos exercices interactifs variés sur la culture générale. </p>
-      <GraphiqueRapidite categorie='d' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
+                <div className="hero-content">
+                    <h1>Cultivez votre curiosité</h1>
+                    <p>Des défis variés pour enrichir vos connaissances et stimuler votre réflexion.</p>
+                </div>
+    </div>
+        <GraphiqueRapidite categorie='d' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
       <div className='centre'> <div className='fontMoyenne bandeauLien'>Rejoins-nous sur <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div>
       </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
 

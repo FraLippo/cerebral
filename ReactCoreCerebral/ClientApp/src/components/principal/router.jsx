@@ -114,6 +114,7 @@ const JeuIntervalle = React.lazy(() => import('../../jeux/vitesse/intervalle/Jeu
 const JeuMur = React.lazy(() => import('../../jeux/vitesse/mur/JeuMur.jsx'));
 const JeuCulture = React.lazy(() => import('../../jeux/vitesse/culture/JeuCulture.jsx'));
 const JeuWisconsin = React.lazy(() => import('../../jeux/vitesse/wisconsin/JeuWisconsin.jsx'));
+const JeuMastermind = React.lazy(() => import('../../jeux/vitesse/mastermind/JeuMastermind'));
 
 //const ConstructionJeuMah = React.lazy(() => import('../../jeux/vitesse/mah/constructionGrille.js'));
 const TestMemoire = React.lazy(() => import('./TestMemoire'));
@@ -415,6 +416,11 @@ const router = createBrowserRouter([
       {
         path: 'vitesseculture',
         element: <JeuCulture />,
+
+      },
+      {
+        path: 'vitessemastermind',
+        element: <JeuMastermind />,
 
       },
       {

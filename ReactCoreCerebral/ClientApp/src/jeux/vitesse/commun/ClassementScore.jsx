@@ -73,10 +73,10 @@ export default class ClassementScore extends Component {
     render() {
         return <React.Fragment>
             <h1 className='centre'>{nomType(this.props.typeExo)}</h1>
-            {this.state.score === 0 ? <div className='centre'>Tu n'as pas encore joué à ce jeu.</div> :
+            {this.state.score === 0 ? <div className='centre'>Vous n'avez pas encore joué à ce jeu.</div> :
                 <React.Fragment>
-                    <div className='centre fontMoyenne'>Ton score : <b>{this.state.score}</b></div>
-                    <div className='centre fontMoyenne'>Ton classement du mois pour ce jeu : <b>{this.state.position}</b></div>
+                    <div className='centre fontMoyenne'>Votre score : <b>{this.state.score}</b></div>
+                    <div className='centre fontMoyenne'>Votre classement du mois pour ce jeu : <b>{this.state.position}</b></div>
                 </React.Fragment>}
             <div className="marge20 centre"><Link className='illusion-btn' to={'/' + this.props.typeExo}>Commencer le jeu</Link></div>
             <div className="marge20 centre"><Link to={'/'}>Retour à l'accueil</Link></div>

@@ -231,6 +231,13 @@ const listeJeuxCulture = [
 ];
 
 const listeJeuxPlanification = [
+     {
+        nom: 'vitessemastermind',
+        emoji: '🟣',
+        titre: 'Le mastermind',
+        sousTitre: 'Sauras-tu retrouver le code caché ?',
+        description: 'Ce jeu est une version simplifiée du célèbre jeu Mastermind. Il faut retrouver le bon ordre des 4 couleurs. Tu as droit à 5 tentatives. Les réponses sont directement affichées dans les cercles de couleur. 30 points par code retrouvé. Un bonus de 30 points si tu arrives au bout des 3 parties. Score maximum : 120 points.'
+    },
     {
         nom: 'vitessebataille',
         emoji: '🚢',

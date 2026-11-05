@@ -118,9 +118,9 @@ export default class GraphiqueRapidite extends Component {
 
     render() {
         return <div>
-            <h1 className='centre'>{`Résultats ${lienVersCategorie(this.props.categorie, 'nom')}`}</h1>
-            {this.state.scoreJoueur === 0 && <div className='centre'>Tu n'as participé à aucun jeu dans cette catégorie.</div>}
-            <div className='centre'>Tu dois participer à tous les jeux sur cette page pour avoir une évaluation correcte.</div>
+            <h1 className='centre'>{`Votre profil ${lienVersCategorie(this.props.categorie, 'nom')}`}</h1>
+            {this.state.scoreJoueur === 0 && <div className='centre'>Vous n'avez participé à aucun jeu dans cette catégorie.</div>}
+            <div className='centre'>Pour une évaluation fiable, participez à l'ensemble des tests proposés sur cette page.</div>
             <div className='plateauMonnaie marge20'>
                 <Progress
                     type="circle"
@@ -136,9 +136,9 @@ export default class GraphiqueRapidite extends Component {
                 {this.prenom !== '' && !this.prenom.includes('inconnu') && <div className='fontMoyenne rougeV'>{this.prenom}</div>}
                 <div className='fontMoyenne'>{this.state.message}  </div>   <div className='fontMoyenne'><b>{creerMsgResultat(this.state.pourcent)}</b> </div>
 
-                {this.state.scoreJoueur > 0 && <div className='marge20'>Ton score dans cette catégorie :  <strong>{this.state.scoreJoueur}</strong></div>}
-                {this.state.scoreJoueur > 0 && <div>Ton classement du mois : {this.state.classementJoueur}</div>}
-                {this.state.pourcent !== 100 && <div className="marge20">Tu dois marquer {this.state.difference} points pour atteindre le niveau suivant.</div>}
+                {this.state.scoreJoueur > 0 && <div className='marge20'>Votre score dans cette catégorie :  <strong>{this.state.scoreJoueur}</strong></div>}
+                {this.state.scoreJoueur > 0 && <div>Votre classement du mois : {this.state.classementJoueur}</div>}
+                {this.state.pourcent !== 100 && <div className="marge20">Vous devez marquer {this.state.difference} points pour atteindre le niveau suivant.</div>}
                 <div className="centre marge20"><img src={border} alt="bordure" width="100" height="20" ></img></div>
 
 

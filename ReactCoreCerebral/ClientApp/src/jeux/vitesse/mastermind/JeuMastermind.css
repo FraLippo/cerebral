@@ -1,0 +1,620 @@
+.mastermind-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #20283a;
+  background:
+    radial-gradient(ellipse at 12% 8%, rgba(216, 228, 255, 0.62), transparent 34%),
+    radial-gradient(ellipse at 90% 86%, rgba(255, 231, 218, 0.48), transparent 32%),
+    #f5f6fa;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.mastermind-page *,
+.mastermind-page *::before,
+.mastermind-page *::after {
+  box-sizing: border-box;
+}
+
+.mastermind-card {
+  width: min(100%, 590px);
+  padding: 14px 38px 22px;
+  border: 1px solid rgba(226, 230, 239, 0.9);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 20px 60px rgba(37, 47, 76, 0.09), 0 2px 8px rgba(37, 47, 76, 0.04);
+}
+
+.mastermind-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.mastermind-eyebrow {
+  color: #77819a;
+  font-size: 0.67rem;
+  font-weight: 750;
+  letter-spacing: 0.18em;
+}
+
+.mastermind-header h1 {
+  margin: 8px 0 5px;
+  color: #20283a;
+  font-size: clamp(2rem, 7vw, 2.55rem);
+  font-weight: 760;
+  letter-spacing: -0.055em;
+  line-height: 1.12;
+}
+
+.mastermind-header p {
+  margin: 0;
+  color: #7b8498;
+  font-size: 0.93rem;
+}
+
+.mastermind-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-bottom: 17px;
+  color: #778198;
+  font-size: 0.7rem;
+}
+
+.mastermind-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mastermind-legend-mark {
+  display: inline-grid;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #e1e5ee;
+  border-radius: 50%;
+  background: #f3f5f9;
+  color: #505a72;
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.mastermind-legend-mark.is-exact,
+.mastermind-legend-mark.is-misplaced {
+  font-size: 0.65rem;
+}
+
+.mastermind-board-heading,
+.mastermind-row {
+  display: grid;
+  grid-template-columns: 39px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 12px;
+}
+
+.mastermind-board-heading {
+  min-height: 22px;
+  color: #a3aabc;
+  font-size: 0.56rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.mastermind-board-heading span:first-child {
+  text-align: center;
+}
+
+.mastermind-board-heading span:last-child {
+  text-align: center;
+}
+
+.mastermind-row {
+  min-height: 41px;
+  padding: 3px 4px;
+  border-radius: 9px;
+  transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.mastermind-row + .mastermind-row {
+  margin-top: 2px;
+}
+
+.mastermind-row.is-active {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(40, 54, 91, 0.09), inset 0 0 0 1px #e6e9f2;
+  transform: translateX(2px);
+}
+
+.mastermind-row.is-submitted {
+  animation: mastermind-row-in 280ms ease both;
+}
+
+.mastermind-attempt-number {
+  color: #a2aabc;
+  font-size: 0.68rem;
+  font-weight: 650;
+  text-align: center;
+}
+
+.mastermind-row.is-active .mastermind-attempt-number {
+  color: #5263ba;
+}
+
+.mastermind-slots {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-items: center;
+  gap: 7px;
+}
+
+.mastermind-slot {
+  position: relative;
+  display: grid;
+  width: 35px;
+  height: 35px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid #e4e7ef;
+  border-radius: 50%;
+  background: #f0f2f7;
+  box-shadow: inset 0 2px 3px rgba(31, 40, 63, 0.035);
+  cursor: default;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.mastermind-row.is-active .mastermind-slot {
+  cursor: pointer;
+}
+
+.mastermind-row.is-active .mastermind-slot:hover {
+  transform: translateY(-2px);
+}
+
+.mastermind-slot.is-selected {
+  border-color: #7c87d1;
+  box-shadow: 0 0 0 3px rgba(105, 120, 202, 0.18);
+}
+
+.mastermind-slot-check {
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.32);
+}
+
+.mastermind-feedback-mark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(20, 25, 40, 0.58);
+  animation: mastermind-peg-in 220ms ease both;
+}
+
+.mastermind-feedback-mark.is-exact,
+.mastermind-feedback-mark.is-misplaced {
+  font-size: 1.1rem;
+}
+
+.mastermind-board {
+  padding: 9px 12px 12px;
+  border: 1px solid #edf0f5;
+  border-radius: 15px;
+  background: #fafbfe;
+}
+
+.color-coral {
+  border-color: red;
+  background-color: red;
+}
+
+.color-blue {
+  border-color: #265cef;
+  background-color: #265cef;
+}
+
+.color-gold {
+  border-color: #ffea00;
+  background-color: #ffea00;
+}
+
+.color-green {
+  border-color: #62a985;
+  background-color: #62a985;
+}
+
+.color-purple {
+  border-color: #9272c8;
+  background-color: #9272c8;
+}
+
+.color-pink {
+  border-color: #ff00A8;
+  background-color: #ff00A8;
+}
+
+.mastermind-palette {
+  margin-top: 21px;
+}
+
+.mastermind-palette-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.mastermind-palette-heading h2 {
+  margin: 0 0 3px;
+  color: #30384b;
+  font-size: 0.88rem;
+  font-weight: 720;
+}
+
+.mastermind-palette-heading p {
+  margin: 0;
+  color: #9299a9;
+  font-size: 0.72rem;
+}
+
+.mastermind-clear-button {
+  padding: 6px 10px;
+  border: 1px solid #e7e9f0;
+  border-radius: 8px;
+  background: #fff;
+  color: #778097;
+  font: inherit;
+  font-size: 0.69rem;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.mastermind-clear-button:hover:not(:disabled) {
+  background: #f4f5fa;
+  color: #424b62;
+}
+
+.mastermind-clear-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mastermind-color-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  padding: 3px 0 6px;
+}
+
+.mastermind-color-option {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  place-items: center;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 3px 7px rgba(33, 42, 66, 0.12);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+    visibility:visible;
+}
+
+.mastermind-color-option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 11px rgba(33, 42, 66, 0.18);
+}
+
+.mastermind-color-option.is-chosen {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(104, 119, 196, 0.25), 0 4px 9px rgba(33, 42, 66, 0.12);
+}
+
+.mastermind-color-option:disabled {
+  filter: grayscale(1);
+  opacity: 0.4;
+  box-shadow: none;
+  cursor: not-allowed;
+  visibility: collapse;
+}
+
+.mastermind-color-option.is-chosen:disabled {
+  opacity: 0.72;
+  box-shadow: 0 0 0 5px rgba(104, 119, 196, 0.25);
+}
+
+.mastermind-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 19px;
+}
+
+.mastermind-turn-count {
+  color: #9299a9;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.mastermind-submit-button,
+.mastermind-new-game-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #505fae;
+  color: #fff;
+  font: inherit;
+  font-size: 0.79rem;
+  font-weight: 680;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(80, 95, 174, 0.2);
+  transition: transform 160ms ease, background 160ms ease, opacity 160ms ease;
+}
+
+.mastermind-submit-button:hover:not(:disabled),
+.mastermind-new-game-button:hover {
+  transform: translateY(-1px);
+  background: #414f9d;
+}
+
+.mastermind-submit-button:disabled {
+  background: #aeb5ce;
+  box-shadow: none;
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+.mastermind-submit-button:focus-visible,
+.mastermind-new-game-button:focus-visible,
+.mastermind-clear-button:focus-visible,
+.mastermind-color-option:focus-visible,
+.mastermind-slot:focus-visible {
+  outline: 3px solid rgba(80, 95, 174, 0.42);
+  outline-offset: 3px;
+}
+
+.mastermind-result {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #e7eaf3;
+  border-radius: 13px;
+  background: #f8f9fd;
+  animation: mastermind-row-in 280ms ease both;
+}
+
+.mastermind-result.is-won {
+  border-color: #dbece3;
+  background: #f3faf6;
+}
+
+.mastermind-result-copy {
+  display: flex;
+  flex: 1 1 190px;
+  align-items: center;
+  gap: 10px;
+}
+
+.mastermind-result-icon {
+  display: grid;
+  width: 33px;
+  height: 33px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 10px;
+  background: #e9ecf8;
+  color: #5263b0;
+  font-size: 1.05rem;
+  animation: mastermind-win 650ms ease both;
+}
+
+.is-won .mastermind-result-icon {
+  background: #e0f1e7;
+  color: #42865d;
+}
+
+.mastermind-result-copy h2 {
+  margin: 0 0 3px;
+  color: #30384b;
+  font-size: 0.88rem;
+}
+
+.mastermind-result-copy p {
+  margin: 0;
+  color: #7e879b;
+  font-size: 0.72rem;
+}
+
+.mastermind-secret-label {
+  color: #9299a9;
+  font-size: 0.57rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.mastermind-revealed-code {
+  display: flex;
+  gap: 5px;
+}
+
+.mastermind-secret-peg {
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(33, 42, 66, 0.09);
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.24);
+}
+
+.mastermind-new-game-button {
+  min-height: 36px;
+  margin-left: auto;
+  padding: 0 12px;
+  font-size: 0.72rem;
+}
+
+.mastermind-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 21px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f1f5;
+  color: #a0a6b5;
+  font-size: 0.65rem;
+}
+
+.mastermind-footer-mark {
+  display: grid;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+  border-radius: 5px;
+  background: #eff0f8;
+  color: #6572b2;
+  font-size: 0.63rem;
+  font-weight: 800;
+}
+
+@keyframes mastermind-peg-in {
+  from {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes mastermind-row-in {
+  from {
+    opacity: 0.55;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mastermind-win {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.12) rotate(-6deg);
+  }
+}
+
+@media (max-width: 520px) {
+  .mastermind-page {
+    min-height: 100vh;
+  
+  }
+
+  .mastermind-card {
+    padding: 25px 16px 18px;
+    border-radius: 18px;
+  }
+
+  .mastermind-header {
+    margin-bottom: 19px;
+  }
+
+  .mastermind-legend {
+    gap: 7px 12px;
+    font-size: 0.63rem;
+  }
+
+  .mastermind-board {
+    padding: 8px 7px 10px;
+  }
+
+  .mastermind-board-heading,
+  .mastermind-row {
+    grid-template-columns: 27px minmax(0, 1fr) 39px;
+    column-gap: 5px;
+  }
+
+  .mastermind-board-heading {
+    font-size: 0.49rem;
+    letter-spacing: 0.06em;
+  }
+
+  .mastermind-slots {
+    gap: 5px;
+  }
+
+  .mastermind-slot {
+    width: clamp(25px, 8vw, 31px);
+    height: clamp(25px, 8vw, 31px);
+  }
+
+  .mastermind-row {
+    min-height: 38px;
+  }
+
+  .mastermind-color-options {
+    gap: clamp(8px, 3.2vw, 13px);
+  }
+
+  .mastermind-color-option {
+    width: 36px;
+    height: 36px;
+  }
+
+  .mastermind-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mastermind-turn-count {
+    text-align: center;
+  }
+
+  .mastermind-submit-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mastermind-page *,
+  .mastermind-page *::before,
+  .mastermind-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

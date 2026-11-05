@@ -1,3 +1,44 @@
+
+
+.resultat-image {
+    position: relative;
+    overflow: hidden;
+      min-height: calc(100vh - 60px);
+}
+
+.resultat-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/pres/resultat.webp");
+
+  background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;    opacity: 0.25;
+    z-index: 0;
+}
+
+@media (max-width: 1500px) {
+   .resultat-image::before {
+
+
+  background-size: cover;
+    background-position: 90% 0%;
+    background-repeat: no-repeat;   
+     opacity: 0.15;
+    z-index: 0;
+}
+}
+
+
+.resultat > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
 .imResponsive {
     height: auto;
     width: auto;
@@ -3500,7 +3541,8 @@ svg:hover {
 .listem {
     margin: 2px auto;
     width: 360px;
-    padding-left: 5px;
+    padding-left: 2px;
+    font-size: 0.9em;
 }
 
 .listem li {

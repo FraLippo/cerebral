@@ -137,7 +137,7 @@ export default class ClassementMois extends Component {
             return {
                 categorie: lienVersCategorie(x, "legende"),
                 score: 0,
-                msg: obtenirInfoCategorie(x).message + 'inconnue.'
+                msg: obtenirInfoCategorie(x).message + ' : ' + 'inconnue.'
 
             }
         });
@@ -233,7 +233,7 @@ export default class ClassementMois extends Component {
                 {this.state.afficheIA && <ModalGpt finModal={this.finModal} disabled={this.state.disabled} prenom={this.state.prenomJoueur}></ModalGpt>}
                 <div>
                     <h1>Les résultats du mois  {this.nomMois === 'août' || this.nomMois === 'avril' || this.nomMois === 'octobre' ? "d'" + this.nomMois : 'de ' + this.nomMois}</h1>
-                    {!this.state.afficheInfoJoueur && <div className="centre margeHaut10"><strong>Pas encore de résultats car tu n'as participé à aucun jeu.</strong></div>}
+                    {!this.state.afficheInfoJoueur && <div className="centre margeHaut10"><strong>Pas encore de résultats car vous n'avez participé à aucun jeu.</strong></div>}
 
 
 
@@ -246,7 +246,6 @@ export default class ClassementMois extends Component {
    <div className='centre'> <div className='fontMoyenne bandeauLien'>
             <div>Envie de papoter avec la communauté ?</div>
                 <div>Envie de connaitre les nouveautés avant tout le monde ?</div>
-                <div>Envie de te plaindre (on sait que tu adores) ?</div>
                 <div>Rejoins-nous sur la messagerie gratuite <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div></div>
             </div> 
          
@@ -262,7 +261,7 @@ export default class ClassementMois extends Component {
                                     <div className='couleurTitre margeHaut10 fontMoyenne centre'>Tu peux obtenir une nouvelle analyse si tu augmentes ton score de 500 points.</div>
                                 </React.Fragment>
                                 :
-                                <div className='centre fontMoyenne'>🔒 Débloque l'analyse de tes compétences par IA avec un score supérieur à 1500 points.</div>
+                                <div className='centre fontMoyenne'>🔒 Débloquez l'analyse de tes compétences par IA avec un score supérieur à 1500 points.</div>
                             }
 
 

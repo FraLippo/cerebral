@@ -42,10 +42,19 @@ export default class TesConcentration extends Component {
 <link rel="alternate" hreflang="x-default" href="https://brain-games.evalquiz.com/concentration-games" />
        
         </Helmet>
+ <div className="hero-small">
+                <img
+                    src="/pres/concentration.webp"
+                    alt=""
+                    className="hero-image"
+                />
 
-      <h1 className="titre couleurTitre centre">Les tests de concentration</h1>
-    <p className='centre'>Plongez dans nos jeux de concentration captivants et découvrez le plaisir de renforcer votre attention tout en vous amusant !</p>
-    <GraphiqueRapidite categorie='r' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
+                <div className="hero-content">
+                    <h1>Entraînez votre concentration</h1>
+                    <p>Des entraînements cognitifs conçus <br/>pour améliorer votre capacité de concentration.</p>
+                </div>
+            </div>
+         <GraphiqueRapidite categorie='r' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
         <div className='centre'> <div className='fontMoyenne bandeauLien'>Rejoins-nous sur <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div>
         </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
 

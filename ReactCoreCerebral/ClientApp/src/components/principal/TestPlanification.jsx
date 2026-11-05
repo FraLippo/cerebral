@@ -36,16 +36,24 @@ export default class TestPlanification extends Component {
   render() {
     return <div>
          <Helmet>
-            <title>Tests de planification mentale</title>
-            <meta name="description" content="Découvrez nos tests de planification mentale conçus pour évaluer et améliorer vos compétences en organisation et en gestion du temps. Testez votre capacité à planifier, anticiper et résoudre des problèmes complexes avec nos outils interactifs." />     
+            <title>Tests de logique</title>
+            <meta name="description" content="Découvrez nos tests de logique conçus pour évaluer et améliorer vos compétences en organisation et en gestion du temps. Testez votre capacité à planifier, anticiper et résoudre des problèmes complexes avec nos tests interactifs." />     
             <link rel="alternate" hreflang="en" href="https://brain-games.evalquiz.com/planning-games" />
 <link rel="alternate" hreflang="fr" href="https://cerebral.evalquiz.com/test-planification" />
 <link rel="alternate" hreflang="x-default" href="https://brain-games.evalquiz.com/planning-games" />
                </Helmet>
+<div className="hero-small">
+                <img
+                    src="/pres/logique.webp"
+                    alt=""
+                    className="hero-image"
+                />
 
-      <h1 className="titre couleurTitre centre">Les tests de planification</h1>
-      <p className='centre'>Développez votre esprit stratégique et améliorez vos compétences en planification avec nos jeux stimulants et captivants !</p>
-
+                <div className="hero-content">
+                    <h1>Développez votre logique</h1>
+                    <p>Exercez votre capacité d'analyse et<br/>votre raisonnement grâce à nos défis cognitifs.</p>
+                </div>
+            </div>
         <GraphiqueRapidite categorie='p' recupererResultatJoueur={this.recupererResultatJoueur}></GraphiqueRapidite>
         <div className='centre'> <div className='fontMoyenne bandeauLien'>Rejoins-nous sur <a href="https://discord.gg/hyGc2PD5T6">Discord</a></div>
         </div> <p>Discord est une messagerie comme WhatsApp, trés utilisé dans le monde des jeux vidéo.</p>
@@ -104,9 +112,17 @@ export default class TestPlanification extends Component {
         open={this.state.jeuReglesOuvert !== null}
         onClose={() => this.setState({ jeuReglesOuvert: null })}
       />
-<h2>Les tests de planification</h2>
-      <p>La planification est une compétence essentielle qui nous aide à organiser et à anticiper les actions nécessaires pour atteindre nos objectifs. Cela implique de savoir quelles étapes suivre, dans quel ordre, et comment utiliser nos ressources efficacement. Chacun a une capacité de planification différente, influencée par des facteurs comme la flexibilité du cerveau et les connexions neuronales. Si notre capacité à planifier est altérée, des tâches quotidiennes comme organiser un événement ou suivre des instructions peuvent devenir plus difficiles. Heureusement, cette compétence peut être améliorée grâce à nos exercices mentaux et de bonnes habitudes. </p>
-
+<h2>Pourquoi pratiquer des jeux de logique ?</h2>
+      <p>Les exercices de logique entraînent votre esprit à analyser, comparer et déduire. Ils vous invitent à rechercher des indices, établir des liens pertinents et construire des raisonnements cohérents. Une pratique régulière contribue à développer votre agilité intellectuelle et votre capacité à résoudre efficacement de nouveaux problèmes.</p>
+<h2>Les bénéfices des jeux de logique au quotidien</h2>
+<ul>
+<li>Gérer plus facilement des situations complexes comportant de nombreuses informations.</li>
+<li>Développer sa capacité à résoudre des problèmes inattendus.</li>
+<li>Améliorer sa capacité à anticiper les conséquences de ses actions.</li>
+<li>Comprendre plus rapidement les règles d'un nouveau jeu ou d'un nouveau logiciel.</li>
+<li>Trouver des solutions créatives face à un défi.</li>
+<li>Décomposer un problème complexe en étapes plus simples.</li>
+</ul>
      <div className='autreVitesse centre'> <a href="/">Les autres catégories</a> </div>
 
       </div>

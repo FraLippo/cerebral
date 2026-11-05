@@ -185,7 +185,7 @@ export default class JeuTresse extends Component {
                     <Grille tabGrille={this.state.tabGrilleVerif}></Grille>
                 </div>
               
-                </div>  <div className="centre marge10"><CompteRebours temps={50} finTimer={this.finTimer}></CompteRebours></div>
+                </div>  <div className="centre marge10"><CompteRebours temps={5} finTimer={this.finTimer}></CompteRebours></div>
             <div className="centre fontMoyenne">Jeu : {this.state.noJeu} / {data.length / 2}</div>
             <p><strong>Clique sur les pinceaux dans l'ordre pour reconstituer le même dessin.</strong></p>
             <p>Améliore ta mémoire visuelle et ta rapidité d'analyse avec ce jeu de réflexion dynamique.

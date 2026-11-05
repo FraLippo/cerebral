@@ -73,7 +73,22 @@ namespace ReactCoreCerebral
 
             app.UseCors();
             app.UseRouting();
+            app.Use(async (context, next) =>
+            {
+                await next();
 
+                if (context.Response.ContentType?.Contains("text/html") == true)
+                {
+                    context.Response.Headers.CacheControl =
+                        "no-cache, no-store, must-revalidate";
+
+                    context.Response.Headers.Pragma = "no-cache";
+                    context.Response.Headers.Expires = "0";
+
+                    context.Response.Headers.Remove("ETag");
+                    context.Response.Headers.Remove("Last-Modified");
+                }
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

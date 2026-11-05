@@ -125,15 +125,15 @@ function nomType(type) {
 let tabJeu = ["vitesseaddition", "vitesseburger", "vitessecouleur", "vitessesolitaire", "vitesseordre", "vitesseintrus", "vitesserecensement"
     , "vitessematch", "vitessecomplet", "vitessebonneteau", "vitessebinero", "vitessemah", "vitessemulti","vitessewisconsin",
     "vitessecercle", "vitesselettres", "vitesseboogle", "vitessechasse", "vitessecoupe", "vitessemotus","vitessebrique",
-    "vitessechemin", "vitessetresor", "vitessetresse", "vitessetaquin", "vitessefusee", "vitessebataille",
+    "vitessechemin", "vitessetresor", "vitessetresse", "vitessetaquin", "vitessefusee", "vitessebataille",'vitessemastermind',
     "vitesseoperation", "vitessecalcul", "vitessearithmetique", "vitessemonnaie", "vitessefraction", "vitessecompte",
     "vitesseecrire", "vitessenotes", "vitessepanneauroutier", "vitesselangue", "vitesseculture","vitessetetris","vitesseintervalle",
     "vitessememoire", "vitesseforme", "vitessenombre", "vitessememory", "vitessepaire", "vitessealz", "vitesseloup", "vitessedessin"]
 
-let typeJeu = ['r','r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l','l', 'l', 'l', 'l', 'l', 'l', 'p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'd','d', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm']
+let typeJeu = ['r','r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'l','l', 'l', 'l', 'l', 'l', 'l', 'p','p', 'p', 'p', 'p', 'p', 'p', 'c', 'c', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd', 'd', 'd','d', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm']
 
 let tabCategorie = ["test-memoire", "test-concentration", "test-calcul", "test-lettres", "test-culture", "test-planification"]
-let tabCategorie2 = ["mémoire", "concentration", "calcul", "vocabulaire", "culture", "planification"]
+let tabCategorie2 = ["mémoire", "concentration", "calcul", "vocabulaire", "culture", "logique"]
 
 
 
@@ -193,51 +193,51 @@ function obtenirInfoCategorie(categorie) {
 
         return {
             max: 620,
-            message: 'Ta capacité de mémorisation est '
+            message: 'Votre capacité de mémorisation est '
         }
     } else if (categorie === 'l') {
         return {
             max: 680,
-            message: 'Ton aptitude verbale est '
+            message: 'Votre aptitude verbale est '
         }
     }
     else if (categorie === 'p') {
         return {
-            max: 650,
-            message: 'Ta capacité de planification est '
+            max: 710,
+            message: 'Votre aptitude en logique est '
         }
 
     }
     else if (categorie === 'c') {
         return {
             max: 500,
-            message: 'Ta capacité de calcul est '
+            message: 'Votre capacité de calcul est '
         }
 
     }
     else if (categorie === 'r') {
         return {
             max: 1030,
-            message: 'Ta capacité de concentration est '
+            message: 'Votre capacité de concentration est '
         }
 
     }
     else if (categorie === 'd') {
         return {
             max: 700,
-            message: 'Ton aptitude culturelle est '
+            message: 'Votre aptitude culturelle est '
         }
 
     }
 }
 
 function creerMsgResultat(pourcentage) {
-
-    if (pourcentage < 25) return 'faible';
-    else if (pourcentage < 50) return 'satisfaisante';
-    else if (pourcentage < 75) return 'bonne';
-    else if (pourcentage < 100) return 'excellente';
-    else if (pourcentage = 100) return 'exceptionnelle';
+ if (pourcentage == 0) return "Pas encore disponible.";
+    if (pourcentage < 25) return 'À développer 🌱';
+    else if (pourcentage < 50) return 'Satisfaisante 📈 ';
+    else if (pourcentage < 75) return 'Bonne 🎯';
+    else if (pourcentage < 100) return 'Excellente ⚡';
+    else if (pourcentage = 100) return 'Exceptionnelle 🏆';
 }
 
 export { verifierStatus, nomType, tabJeu, lienAutresJeux, typeJeu, lienVersCategorie, obtenirInfoCategorie, creerMsgResultat };

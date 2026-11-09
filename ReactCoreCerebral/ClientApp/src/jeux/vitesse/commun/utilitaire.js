@@ -116,6 +116,8 @@ function nomType(type) {
             return "Le mur de lettres";
              case "vitessewisconsin":
             return "Le Wisconsin Test";
+                 case "vitessemastermind":
+            return "Mastermind";
         default:
             return "";
     }

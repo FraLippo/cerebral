@@ -32,10 +32,7 @@ class Resultat extends Component {
 
         let prenom = readFirstName();
 
-        if (prenom !== null && !prenom.includes('@')) {
-            prenom = prenom + '@' + Math.floor(Math.random() * 100000);
-            addFirstName(prenom);
-        }
+  
         if (prenom === null) {
 
             this.setState({
@@ -53,6 +50,9 @@ class Resultat extends Component {
     callbackPrenom = (prenom) => {
         addFirstName(prenom);
 
+       if (prenom !== null && !prenom.includes('@') && !prenom.includes('$')) {
+    prenom = prenom + '@' + Math.floor(Math.random() * 100000);
+       }
         this.envoyerMessage(prenom);
         this.setState({
             prenomVisible: false
